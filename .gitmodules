@@ -4,3 +4,6 @@
 [submodule "vcpkg"]
 	path = vcpkg
 	url = https://github.com/StoneyDSP/vcpkg.git
+[submodule "JUCE"]
+	path = JUCE
+	url = https://github.com/StoneyDSP/JUCE.git
