@@ -1,0 +1,6 @@
+[submodule "CMake"]
+	path = CMake
+	url = https://github.com/StoneyDSP/CMake.git
+[submodule "vcpkg"]
+	path = vcpkg
+	url = https://github.com/StoneyDSP/vcpkg.git
