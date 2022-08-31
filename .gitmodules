@@ -7,3 +7,6 @@
 [submodule "JUCE"]
 	path = JUCE
 	url = https://github.com/StoneyDSP/JUCE.git
+[submodule "doxygen"]
+	path = doxygen
+	url = https://github.com/StoneyDSP/doxygen.git
