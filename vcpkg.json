@@ -1,0 +1,13 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg/master/scripts/vcpkg.schema.json",
+
+        "name": "stoneydsp",
+        "version-string": "0.0.1",
+    "dependencies": [
+        "cppunit",
+        "fmt",
+        "vcpkg-cmake",
+        "vcpkg-cmake-config",
+        "vcpkg-cmake-get-vars"
+    ]
+}
