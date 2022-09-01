@@ -16,3 +16,6 @@
 [submodule "CMakeProject1"]
 	path = CMakeProject1
 	url = https://github.com/StoneyDSP/CMakeProject1.git
+[submodule "StoneyDSP"]
+	path = StoneyDSP
+	url = https://github.com/StoneyDSP/StoneyDSP.git
