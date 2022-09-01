@@ -2,6 +2,7 @@
 
 *.tcl
 *.dll
+CMakeUserPresets.json
 compile_commands.json
 CMakeCache.txt
 
