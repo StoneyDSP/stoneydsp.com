@@ -1,102 +1,23 @@
 {
-    "version": 5,
+    "version": 3,
     "cmakeMinimumRequired": {
         "major": 3,
-        "minor": 24,
+        "minor": 15,
         "patch": 0
     },
     "configurePresets": [
         {
-            "name": "default",
-            "displayName": "Default Config",
-            "description": "Default build using Ninja generator",
-            "hidden": true,
-            "generator": "Ninja",
-            "binaryDir": "${workspaceRoot}",
-            "installDir": "${workspaceRoot}",
-            "toolchainFile": "${workspaceRoot}/vcpkg/scripts/buildsystems/vcpkg.cmake",
-            "debug": {
-                "find": false,
-                "output": false,
-                "tryCompile": false
-            },
-            "errors": {
-                "deprecated": true,
-                "dev": true
-            },
-            "warnings": {
-                "deprecated": true,
-                "dev": true,
-                "systemVars": true,
-                "unusedCli": true,
-                "uninitialized": false
-            },
-            "cacheVariables": {},
-            "environment": {
-                "VCPKG_ROOT": "${workspaceRoot}/vcpkg/"
-            },
-            "vendor": {}
-        },
-        {
-            "name": "ninja-multi",
-            "inherits": "default",
-            "displayName": "Ninja Multi-Config",
-            "description": "Default build using Ninja Multi-Config generator",
-            "generator": "Ninja Multi-Config",
-            "hidden": true
-        },
-        {
             "name": "windows-base",
-            "inherits": "default",
             "description": "Target Windows with the Visual Studio development environment.",
             "hidden": true,
-            "environment": {},
-            "cacheVariables": {},
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "installDir": "${sourceDir}/out/install/${presetName}",
+            "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS":"Windows",
-                    "intelliSenseMode": "windows-msvc-x64",
-                    "intelliSenseOptions": {
-                        "useCompilerDefaults": true
-                    },
-                    "enableMicrosoftCodeAnalysis": true,
-                    "enableClangTidyCodeAnalysis": false
-                },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-                    "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
-                    "copySources": true,
-                    "copyBuildOutput": false,
-                    "copyAdditionalIncludeDirectoriesList": [],
-                    "copyExcludeDirectoriesList": [],
-                    "copySourcesOptions": {
-                        "method": "rsync",
-                        "outputVerbosity": "Normal",
-                        "concurrentCopies": 5,
-                        "exclusionList": [
-                            ".vs",
-                            "out"
-                        ]
-                    },
-                    "copyOptimizations": {
-                        "useOptimizations": "RsyncAndSftp",
-                        "maxSmallChange": 10,
-                        "rsyncSingleDirectoryCommandArgs": [
-                            "-t",
-                            "-d"
-                        ]
-                    },
-                    "rsyncCommandArgs": [
-                        "-t",
-                        "--delete",
-                        "--delete-excluded"
-                    ],
-                    "forceWSL1Toolset": false
-                }
             }
         },
         {
@@ -112,17 +33,9 @@
                 "value": "x64",
                 "strategy": "external"
             },
-            "environment": {
-                "VCPKG_DEFAULT_TRIPLET": "x64-windows"
-            },
             "cacheVariables": {
-                "CMAKE_CXX_COMPILER": "cl.exe",
-                "CMAKE_C_COMPILER": "cl.exe"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "intelliSenseMode": "windows-msvc-x64"
-                }
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
             }
         },
         {
@@ -131,24 +44,16 @@
             "description": "Target Windows (32-bit) with the Visual Studio development environment.",
             "inherits": "windows-base",
             "toolset": {
-                "value": "host=86",
+                "value": "host=x86",
                 "strategy": "external"
             },
             "architecture": {
                 "value": "x86",
                 "strategy": "external"
             },
-            "environment": {
-                "VCPKG_DEFAULT_TRIPLET": "x86-windows"
-            },
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "intelliSenseMode": "windows-msvc-x86"
-                }
             }
         }
     ],
@@ -170,7 +75,7 @@
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
             "verbose": true,
-            "inherits": [ "x64 Debug" ]
+            "inherits":["x64 Debug"]
         },
         {
             "name": "x64 RelWithDebInfo",
@@ -180,7 +85,7 @@
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
             "verbose": true,
-            "inherits": [ "x64 Debug" ]
+            "inherits":["x64 Debug"]
         },
         {
             "name": "x64 MinSizeRel",
@@ -190,12 +95,12 @@
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
             "verbose": true,
-            "inherits": [ "x64 Debug" ]
+            "inherits":["x64 Debug"]
         },
         {
             "name": "x86 Debug",
             "displayName": "Debug",
-            "description": "Target Windows (32-bit) with the Visual Studio development environment. (Debug)",
+            "description": "x86 Debug",
             "configurePreset": "x86",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
@@ -204,32 +109,32 @@
         {
             "name": "x86 Release",
             "displayName": "Release",
-            "description": "Target Windows (32-bit) with the Visual Studio development environment. (Release)",
+            "description": "x86 Release",
             "configurePreset": "x86",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
             "verbose": true,
-            "inherits": [ "x86 Debug" ]
+            "inherits":["x86 Debug"]
         },
         {
             "name": "x86 RelWithDebInfo",
             "displayName": "RelWithDebInfo",
-            "description": "Target Windows (32-bit) with the Visual Studio development environment. (RelWithDebInfo)",
+            "description": "x86 RelWithDebInfo",
             "configurePreset": "x86",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
             "verbose": true,
-            "inherits": [ "x86 Debug" ]
+            "inherits":["x86 Debug"]
         },
         {
             "name": "x86 MinSizeRel",
             "displayName": "MinSizeRel",
-            "description": "Target Windows (32-bit) with the Visual Studio development environment. (MinSizeRel)",
+            "description": "x86 MinSizeRel",
             "configurePreset": "x86",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
             "verbose": true,
-            "inherits": [ "x86 Debug" ]
+            "inherits":["x86 Debug"]
         }
     ],
     "testPresets": [
