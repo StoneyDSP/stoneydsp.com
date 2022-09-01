@@ -56,3 +56,10 @@ endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
 # Export options
 set(CMAKE_EXPORT_COMPILE_COMMANDS on)
 set(CMAKE_ENABLE_EXPORTS on)
+
+# Add tests and install targets if needed. Comment out if not required.
+#include(CPACK)
+#include(CTest)
+
+# Enable testing. Comment out if not required.
+#enable_testing()
