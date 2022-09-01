@@ -19,3 +19,6 @@
 [submodule "StoneyDSP"]
 	path = StoneyDSP
 	url = https://github.com/StoneyDSP/StoneyDSP.git
+[submodule "PowerShell"]
+	path = PowerShell
+	url = https://github.com/StoneyDSP/PowerShell.git
