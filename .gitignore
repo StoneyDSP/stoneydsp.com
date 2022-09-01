@@ -1,4 +1,5 @@
 *_Config.h
+CMakeDoxyfile.in
 
 *.tcl
 *.dll
