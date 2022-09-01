@@ -1,19 +1,19 @@
 {
-    "version": 3,
+    "version": 5,
     "cmakeMinimumRequired": {
         "major": 3,
-        "minor": 15,
+        "minor": 24,
         "patch": 0
     },
     "configurePresets": [
         {
-            "name": "windows-base",
-            "description": "Target Windows with the Visual Studio development environment.",
+            "name": "default",
+            "displayName": "Default Config",
+            "description": "Default build using Ninja generator",
             "hidden": true,
             "generator": "Ninja",
-            "toolchainFile": "E:/StoneyDSP/vcpkg/scripts/buildsystems/vcpkg.cmake",
-            "environment": {
-            },
+            "binaryDir": "${sourceDir}/out/build/${generator}/${presetName}",
+            "toolchainFile": "${workspaceRoot}/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "debug": {
                 "find": false,
                 "output": false,
@@ -30,10 +30,72 @@
                 "unusedCli": true,
                 "uninitialized": false
             },
+            "cacheVariables": {},
+            "environment": {
+                "VCPKG_ROOT": "${workspaceRoot}/vcpkg/"
+            },
+            "vendor": {}
+        },
+        {
+            "name": "ninja-multi",
+            "inherits": "default",
+            "displayName": "Ninja Multi-Config",
+            "description": "Default build using Ninja Multi-Config generator",
+            "generator": "Ninja Multi-Config",
+            "hidden": true
+        },
+        {
+            "name": "windows-base",
+            "inherits": "default",
+            "description": "Target Windows with the Visual Studio development environment.",
+            "hidden": true,
+            "environment": {},
+            "cacheVariables": {},
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "hostOS":"Windows",
+                    "intelliSenseMode": "windows-msvc-x64",
+                    "intelliSenseOptions": {
+                        "useCompilerDefaults": true
+                    },
+                    "enableMicrosoftCodeAnalysis": true,
+                    "enableClangTidyCodeAnalysis": false
+                },
+                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+                    "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
+                    "copySources": true,
+                    "copyBuildOutput": false,
+                    "copyAdditionalIncludeDirectoriesList": [],
+                    "copyExcludeDirectoriesList": [],
+                    "copySourcesOptions": {
+                        "method": "rsync",
+                        "outputVerbosity": "Normal",
+                        "concurrentCopies": 5,
+                        "exclusionList": [
+                            ".vs",
+                            "out"
+                        ]
+                    },
+                    "copyOptimizations": {
+                        "useOptimizations": "RsyncAndSftp",
+                        "maxSmallChange": 10,
+                        "rsyncSingleDirectoryCommandArgs": [
+                            "-t",
+                            "-d"
+                        ]
+                    },
+                    "rsyncCommandArgs": [
+                        "-t",
+                        "--delete",
+                        "--delete-excluded"
+                    ],
+                    "forceWSL1Toolset": false
+                }
             }
         },
         {
@@ -50,53 +112,15 @@
                 "strategy": "external"
             },
             "environment": {
+                "VCPKG_DEFAULT_TRIPLET": "x64-windows"
             },
             "cacheVariables": {
-                "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe",
-                "CMAKE_TOOLCHAIN_FILE": {
-                    "value": "E:/StoneyDSP/vcpkg/scripts/buildsystems/vcpkg.cmake",
-                    "type": "FILEPATH"
-                }
+                "CMAKE_C_COMPILER": "cl.exe"
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": "Windows",
-                    "enableMicrosoftCodeAnalysis": true,
-                    "enableClangTidyCodeAnalysis": true,
-                    "intelliSenseMode": "windows-msvc-x64",
-                    "intelliSenseOptions": {
-                        "useCompilerDefaults": true,
-                        "additionalCompilerArgs": []
-                    }
-                },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-                    "copySources": true,
-                    "forceWSL1Toolset": false,
-                    "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
-                    "copyAdditionalIncludeDirectoriesList": [],
-                    "copyExcludeDirectoriesList": [],
-                    "copySourcesOptions": {
-                        "concurrentCopies": 5,
-                        "method": "rsync",
-                        "outputVerbosity": "Normal",
-                        "exclusionList": [
-                            ".vs",
-                            ".git",
-                            "out",
-                            "build"
-                        ]
-                    },
-                    "rsyncCommandArgs": [
-                        "-t",
-                        "--delete"
-                    ],
-                    "copyBuildOutput": true,
-                    "copyOptimizations": {
-                        "useOptimizations": "RsyncAndSftp",
-                        "maxSmallChange": 10,
-                        "rsyncSingleDirectoryCommandArgs": []
-                    }
+                    "intelliSenseMode": "windows-msvc-x64"
                 }
             }
         },
@@ -118,54 +142,11 @@
             },
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "cl.exe",
-                "CMAKE_CXX_COMPILER": "cl.exe",
-                "CMAKE_TOOLCHAIN_FILE": {
-                    "value": "E:/StoneyDSP/vcpkg/scripts/buildsystems/vcpkg.cmake",
-                    "type": "FILEPATH"
-                }
+                "CMAKE_CXX_COMPILER": "cl.exe"
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": "Windows",
-                    "enableMicrosoftCodeAnalysis": true,
-                    "enableClangTidyCodeAnalysis": true,
-                    "intelliSenseMode": "windows-msvc-x86",
-                    "intelliSenseOptions": {
-                        "useCompilerDefaults": true,
-                        "additionalCompilerArgs": []
-                    }
-                },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-                    "copySources": true,
-                    "forceWSL1Toolset": false,
-                    "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
-                    "copyAdditionalIncludeDirectoriesList": [],
-                    "copyExcludeDirectoriesList": [],
-                    "copySourcesOptions": {
-                        "concurrentCopies": 5,
-                        "method": "rsync",
-                        "outputVerbosity": "Normal",
-                        "exclusionList": [
-                            ".vs",
-                            ".git",
-                            "out",
-                            "build",
-                            "assets",
-                            "html",
-                            "css",
-                            "vcpkg"
-                        ]
-                    },
-                    "rsyncCommandArgs": [
-                        "-t",
-                        "--delete"
-                    ],
-                    "copyBuildOutput": true,
-                    "copyOptimizations": {
-                        "useOptimizations": "RsyncAndSftp",
-                        "maxSmallChange": 10,
-                        "rsyncSingleDirectoryCommandArgs": []
-                    }
+                    "intelliSenseMode": "windows-msvc-x86"
                 }
             }
         }
