@@ -17,10 +17,18 @@ project (
 )
 
 # Add packages (including IntelliSense) to the project.
+find_package (asio CONFIG REQUIRED)
+find_package (ASIOSDK REQUIRED)
 find_package (CppUnit CONFIG REQUIRED)
 find_package (Doxygen REQUIRED)
 find_package (fmt CONFIG REQUIRED)
+find_package (Git REQUIRED)
 find_package (JUCE CONFIG REQUIRED)
+find_package (Lua REQUIRED)
+find_package (Msys REQUIRED)
+find_package (portaudio CONFIG REQUIRED)
+find_package (portmidi CONFIG REQUIRED)
+find_package (portsmf CONFIG REQUIRED)
 
 #add_subdirectory (Biquads)
 add_subdirectory (ConsoleApplication)

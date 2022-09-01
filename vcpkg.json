@@ -4,8 +4,14 @@
         "name": "stoneydsp",
         "version-string": "0.0.1",
     "dependencies": [
+        "asio",
+        "asiosdk",
         "cppunit",
         "fmt",
+        "lua",
+        "portaudio",
+        "portmidi",
+        "portsmf",
         "vcpkg-cmake",
         "vcpkg-cmake-config",
         "vcpkg-cmake-get-vars"
