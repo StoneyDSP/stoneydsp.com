@@ -13,3 +13,6 @@
 [submodule "ConsoleApplication"]
 	path = ConsoleApplication
 	url = https://github.com/StoneyDSP/ConsoleApplication.git
+[submodule "CMakeProject1"]
+	path = CMakeProject1
+	url = https://github.com/StoneyDSP/CMakeProject1.git
