@@ -10,6 +10,3 @@
 [submodule "doxygen"]
 	path = doxygen
 	url = https://github.com/StoneyDSP/doxygen.git
-[submodule "ConsoleApplication"]
-	path = ConsoleApplication
-	url = https://github.com/StoneyDSP/ConsoleApplication.git
