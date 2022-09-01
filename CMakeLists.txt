@@ -22,8 +22,9 @@ find_package (Doxygen REQUIRED)
 find_package (fmt CONFIG REQUIRED)
 find_package (JUCE CONFIG REQUIRED)
 
+#add_subdirectory (Biquads)
 add_subdirectory (ConsoleApplication)
-add_subdirectory (CMakeProject1)
+#add_subdirectory (CMakeProject1)
 
 # Host handling
 if(WIN32)
