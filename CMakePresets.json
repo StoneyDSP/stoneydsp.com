@@ -12,7 +12,8 @@
             "description": "Default build using Ninja generator",
             "hidden": true,
             "generator": "Ninja",
-            "binaryDir": "${sourceDir}/out/build/${generator}/${presetName}",
+            "binaryDir": "${workspaceRoot}",
+            "installDir": "${workspaceRoot}",
             "toolchainFile": "${workspaceRoot}/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "debug": {
                 "find": false,
