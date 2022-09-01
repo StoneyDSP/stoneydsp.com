@@ -10,7 +10,7 @@
             "includePath": [
                 "${env.INCLUDE}",
                 "${workspaceRoot}\\**",
-                "${vcpkgRoot}/x64-windows/include"
+                "${vcpkgRoot}\\x64-windows\\include"
             ],
             "defines": [
                 "WIN32",
@@ -40,7 +40,7 @@
             "includePath": [
                 "${env.INCLUDE}",
                 "${workspaceRoot}\\**",
-                "${vcpkgRoot}/x64-windows/include"
+                "${vcpkgRoot}\\x64-windows\\include"
             ],
             "defines": [
                 "WIN32",
@@ -70,7 +70,7 @@
             "includePath": [
                 "${env.INCLUDE}",
                 "${workspaceRoot}\\**",
-                "${vcpkgRoot}/x86-windows/include"
+                "${vcpkgRoot}\\x86-windows\\include"
             ],
             "defines": [
                 "WIN32",
@@ -100,7 +100,7 @@
             "includePath": [
                 "${env.INCLUDE}",
                 "${workspaceRoot}\\**",
-                "${vcpkgRoot}/x86-windows/include"
+                "${vcpkgRoot}\\x86-windows\\include"
             ],
             "defines": [
                 "WIN32",
@@ -129,8 +129,8 @@
             ],
             "includePath": [
                 "${env.INCLUDE}",
-                "${workspaceRoot}/**",
-                "${vcpkgRoot}/x64-windows/include"
+                "${workspaceRoot}\\**",
+                "${vcpkgRoot}\\x64-windows\\include"
             ],
             "intelliSenseMode": "linux-gcc-x64",
             "environments": [
