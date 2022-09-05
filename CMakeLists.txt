@@ -31,8 +31,10 @@ find_package (portmidi CONFIG REQUIRED)
 find_package (portsmf CONFIG REQUIRED)
 
 #add_subdirectory (Biquads)
+#add_subdirectory (JUCE)
 add_subdirectory (ConsoleApplication)
 add_subdirectory (CMakeProject1)
+add_subdirectory (StoneyDSP)
 
 # Host handling
 if(WIN32)
@@ -62,4 +64,4 @@ endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
 #include(CTest)
 
 # Enable testing. Comment out if not required.
-#enable_testing()
+enable_testing()

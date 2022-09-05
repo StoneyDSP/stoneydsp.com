@@ -10,10 +10,13 @@
             "name": "windows-base",
             "description": "Target Windows with the Visual Studio development environment.",
             "hidden": true,
-            "generator": "Ninja",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "installDir": "${sourceDir}/out/install/${presetName}",
+            "generator": "Visual Studio 17 2022",
+            "binaryDir": ".",
+            "installDir": ".",
             "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "environment": {
+                "VCPKG_DEFAULT_TRIPLET": "x64-windows"
+            },
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
