@@ -14,6 +14,9 @@
             "binaryDir": ".",
             "installDir": ".",
             "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "environment": {
+                "VCPKG_DEFAULT_TRIPLET": "x64-windows"
+            },
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
