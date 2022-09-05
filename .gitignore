@@ -1,11 +1,20 @@
-*_Config.h
-CMakeDoxyfile.in
+############################################################
+# StoneyDSP - Start
+############################################################
+
+*.vcxproj*
+CMakeUserPresets.json
+MinSizeRel
+RelWithDebInfo
 
 *.tcl
 *.dll
-CMakeUserPresets.json
 compile_commands.json
 CMakeCache.txt
+
+############################################################
+# StoneyDSP - End
+############################################################
 
 ############################################################
 # CMake - Start
