@@ -141,8 +141,7 @@
             "configurePreset": "x64",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": true,
-            "inherits":["x64 Debug"]
+            "verbose": true
         },
         {
             "name": "x64 RelWithDebInfo",
@@ -151,8 +150,7 @@
             "configurePreset": "x64",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
-            "verbose": true,
-            "inherits":["x64 Debug"]
+            "verbose": true
         },
         {
             "name": "x64 MinSizeRel",
@@ -161,8 +159,7 @@
             "configurePreset": "x64",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": true,
-            "inherits":["x64 Debug"]
+            "verbose": true
         },
         {
             "name": "x86 Debug",
@@ -180,8 +177,7 @@
             "configurePreset": "x86",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": true,
-            "inherits":["x86 Debug"]
+            "verbose": true
         },
         {
             "name": "x86 RelWithDebInfo",
@@ -190,8 +186,7 @@
             "configurePreset": "x86",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
-            "verbose": true,
-            "inherits":["x86 Debug"]
+            "verbose": true
         },
         {
             "name": "x86 MinSizeRel",
@@ -200,8 +195,7 @@
             "configurePreset": "x86",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": true,
-            "inherits":["x86 Debug"]
+            "verbose": true
         }
     ],
     "testPresets": [
