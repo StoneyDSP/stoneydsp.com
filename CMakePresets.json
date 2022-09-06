@@ -8,15 +8,16 @@
     "configurePresets": [
         {
             "name": "windows-base",
+            "displayName": "Windows",
             "description": "Target Windows with the Visual Studio development environment.",
             "hidden": true,
             "generator": "Visual Studio 17 2022",
             "binaryDir": ".",
             "installDir": ".",
             "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
-            "environment": {
-                "VCPKG_DEFAULT_TRIPLET": "x64-windows"
-            },
+            "environment": {},
+            "cacheVariables": {},
+            "cmakeExecutable": "cmake",
             "debug": {
                 "find": false,
                 "output": false,
