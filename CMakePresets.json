@@ -17,10 +17,69 @@
             "environment": {
                 "VCPKG_DEFAULT_TRIPLET": "x64-windows"
             },
+            "debug": {
+                "find": false,
+                "output": false,
+                "tryCompile": false
+            },
+            "errors": {
+                "deprecated": true,
+                "dev": true
+            },
+            "warnings": {
+                "deprecated": true,
+                "dev": true,
+                "systemVars": true,
+                "uninitialized": false,
+                "unusedCli": true
+            },
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "hostOS": "Windows",
+                    "enableMicrosoftCodeAnalysis": true,
+                    "enableClangTidyCodeAnalysis": false,
+                    "cacheRoot": "${sourceDir}",
+                    "intelliSenseOptions": {
+                        "useCompilerDefaults": true
+                    },
+                    "intelliSenseMode": "windows-msvc-x64"
+                },
+                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+                    "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
+                    "copyBuildOutput": false,
+                    "copySources": true,
+                    "forceWSL1Toolset": false,
+                    "rsyncCommandArgs": [
+                        "-t",
+                        "--delete",
+                        "--delete-excluded"
+                    ],
+                    "copyOptimizations": {
+                        "useOptimizations": "RsyncAndSftp",
+                        "maxSmallChange": 10,
+                        "rsyncSingleDirectoryCommandArgs": [
+                            "-t",
+                            "-d"
+                        ]
+                    },
+                    "copyExcludeDirectoriesList": [],
+                    "copyAdditionalIncludeDirectoriesList": [],
+                    "copySourcesOptions": {
+                        "method": "rsync",
+                        "concurrentCopies": 5,
+                        "outputVerbosity": "Diagnostic",
+                        "exclusionList": [
+                            ".vs",
+                            ".git",
+                            "out"
+                        ]
+                    }
+                }
             }
         },
         {
@@ -57,6 +116,11 @@
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "intelliSenseMode": "windows-msvc-x86"
+                }
             }
         }
     ],
