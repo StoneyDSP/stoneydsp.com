@@ -1,0 +1,60 @@
+{
+    "projectName": "StoneyDSP",
+    "environments": [],
+    "configurations": [
+        {
+            "name": "x86",
+            "compilers": {
+                "c": {
+                    "path": "cl.exe",
+                    "args": "",
+                    "standard": ""
+                },
+                "cpp": {
+                    "path": "cl.exe",
+                    "args": "",
+                    "standard": ""
+                }
+            },
+            "includePath": [
+                "${workspaceRoot}/**",
+                "${default}",
+                "${vcpkgRoot}/x86-windows/include"
+            ],
+            "defines": [
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "undefines": [],
+            "environments": [],
+            "intelliSenseMode": "windows-msvc-x86"
+        },
+        {
+            "name": "x64",
+            "compilers": {
+                "c": {
+                    "path": "cl.exe",
+                    "args": "",
+                    "standard": ""
+                },
+                "cpp": {
+                    "path": "cl.exe",
+                    "args": "",
+                    "standard": ""
+                }
+            },
+            "includePath": [
+                "${workspaceRoot}/**",
+                "${default}",
+                "${vcpkgRoot}/x64-windows/include"
+            ],
+            "defines": [
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "undefines": [],
+            "environments": [],
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ]
+}
