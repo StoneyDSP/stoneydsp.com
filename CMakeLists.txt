@@ -3,6 +3,7 @@
 
 # CMake requirements.
 cmake_minimum_required (VERSION 3.15)
+
 set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
 
 # The top-level CMakeLists.txt file for a project must contain a literal, direct call to the
@@ -15,6 +16,58 @@ project (
 	HOMEPAGE_URL https://stoneydsp.github.io/html/index.html
 	LANGUAGES C CXX
 )
+
+# Host handling:
+if(WIN32)
+    add_compile_definitions(WINDOWS=1)
+    message(STATUS "Setting Compile Definition WINDOWS=1")
+endif ()
+
+if (UNIX AND NOT APPLE)
+    add_compile_definitions(LINUX=1)
+    message(STATUS "Setting Compile Definition LINUX=1")
+endif ()
+
+if (APPLE)
+    add_compile_definitions(APPLE=1)
+    message(STATUS "Setting Compile Definition APPLE=1")
+endif ()
+
+# Debug definitions:
+if(${CMAKE_BUILD_TYPE} MATCHES Debug)
+    add_compile_definitions(_DEBUG=1)
+    message(STATUS "Setting Compile Definition _DEBUG=1")
+else()
+    add_compile_definitions(NDEBUG=1)
+    message(STATUS "Setting Compile Definition NDEBUG=1")
+endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
+
+# Check if we are in the top-level project or not:
+if (NOT CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+    message(STATUS "[${PROJECT_NAME}] is a sub-project of [${CMAKE_PROJECT_NAME}]")
+else()
+    message(STATUS "[${CMAKE_PROJECT_NAME}] is a top-level project")
+endif()
+
+# Set install directory
+if(DEFINED CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    message(
+        STATUS
+        "CMAKE_INSTALL_PREFIX is not set\n"
+        "Default value: ${CMAKE_INSTALL_PREFIX}\n"
+        "Will set it to ${CMAKE_SOURCE_DIR}/install"
+    )
+    set(CMAKE_INSTALL_PREFIX
+        "${CMAKE_SOURCE_DIR}/install"
+        CACHE PATH "Where the library will be installed to" FORCE
+    )
+else()
+    message(
+        STATUS
+        "CMAKE_INSTALL_PREFIX was already set\n"
+        "Current value: ${CMAKE_INSTALL_PREFIX}"
+    )
+endif()
 
 # Add packages (including IntelliSense) to the project.
 find_package (asio CONFIG REQUIRED)
@@ -35,25 +88,6 @@ find_package (portsmf CONFIG REQUIRED)
 add_subdirectory (ConsoleApplication)
 add_subdirectory (CMakeProject1)
 add_subdirectory (StoneyDSP)
-
-# Host handling
-if(WIN32)
-    add_compile_definitions(WINDOWS=1)
-endif ()
-
-if (UNIX AND NOT APPLE)
-    add_compile_definitions(LINUX=1)
-endif ()
-
-if (APPLE)
-    add_compile_definitions(APPLE=1)
-endif ()
-
-if(${CMAKE_BUILD_TYPE} MATCHES Debug)
-    add_compile_definitions(_DEBUG=1)
-else()
-    add_compile_definitions(NDEBUG=1)
-endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
 
 # Export options
 #set(CMAKE_EXPORT_COMPILE_COMMANDS on)
