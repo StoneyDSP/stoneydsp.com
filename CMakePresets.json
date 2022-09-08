@@ -8,16 +8,13 @@
     "configurePresets": [
         {
             "name": "windows-base",
-            "displayName": "Windows",
             "description": "Target Windows with the Visual Studio development environment.",
             "hidden": true,
             "generator": "Visual Studio 17 2022",
-            "binaryDir": ".",
-            "installDir": ".",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "installDir": "${sourceDir}/out/install/${presetName}",
             "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "environment": {},
-            "cacheVariables": {},
-            "cmakeExecutable": "cmake",
             "debug": {
                 "find": false,
                 "output": false,
@@ -33,11 +30,6 @@
                 "systemVars": true,
                 "uninitialized": false,
                 "unusedCli": true
-            },
-            "condition": {
-                "type": "equals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Windows"
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
@@ -81,6 +73,11 @@
                         ]
                     }
                 }
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
             }
         },
         {
