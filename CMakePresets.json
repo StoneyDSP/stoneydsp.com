@@ -1,10 +1,15 @@
 {
-    "version": 3,
+    "version": 5,
     "cmakeMinimumRequired": {
         "major": 3,
-        "minor": 15,
-        "patch": 0
+        "minor": 24,
+        "patch": 1
     },
+    "include": [
+        "vcpkg.json",
+        "Directory.Build.props",
+        "Directory.Build.targets"
+    ],
     "configurePresets": [
         {
             "name": "windows-base",
@@ -30,49 +35,6 @@
                 "systemVars": true,
                 "uninitialized": false,
                 "unusedCli": true
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": "Windows",
-                    "enableMicrosoftCodeAnalysis": true,
-                    "enableClangTidyCodeAnalysis": false,
-                    "cacheRoot": "${sourceDir}",
-                    "intelliSenseOptions": {
-                        "useCompilerDefaults": true
-                    },
-                    "intelliSenseMode": "windows-msvc-x64"
-                },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-                    "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
-                    "copyBuildOutput": false,
-                    "copySources": true,
-                    "forceWSL1Toolset": false,
-                    "rsyncCommandArgs": [
-                        "-t",
-                        "--delete",
-                        "--delete-excluded"
-                    ],
-                    "copyOptimizations": {
-                        "useOptimizations": "RsyncAndSftp",
-                        "maxSmallChange": 10,
-                        "rsyncSingleDirectoryCommandArgs": [
-                            "-t",
-                            "-d"
-                        ]
-                    },
-                    "copyExcludeDirectoriesList": [],
-                    "copyAdditionalIncludeDirectoriesList": [],
-                    "copySourcesOptions": {
-                        "method": "rsync",
-                        "concurrentCopies": 5,
-                        "outputVerbosity": "Diagnostic",
-                        "exclusionList": [
-                            ".vs",
-                            ".git",
-                            "out"
-                        ]
-                    }
-                }
             },
             "condition": {
                 "type": "equals",
@@ -223,5 +185,48 @@
                 "stopOnFailure": true
             }
         }
-    ]
+    ],
+    "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+            "hostOS": "Windows",
+            "enableMicrosoftCodeAnalysis": true,
+            "enableClangTidyCodeAnalysis": false,
+            "cacheRoot": "${sourceDir}",
+            "intelliSenseOptions": {
+                "useCompilerDefaults": true
+            },
+            "intelliSenseMode": "windows-msvc-x64"
+        },
+        "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+            "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
+            "copyBuildOutput": false,
+            "copySources": true,
+            "forceWSL1Toolset": false,
+            "rsyncCommandArgs": [
+                "-t",
+                "--delete",
+                "--delete-excluded"
+            ],
+            "copyOptimizations": {
+                "useOptimizations": "RsyncAndSftp",
+                "maxSmallChange": 10,
+                "rsyncSingleDirectoryCommandArgs": [
+                    "-t",
+                    "-d"
+                ]
+            },
+            "copyExcludeDirectoriesList": [],
+            "copyAdditionalIncludeDirectoriesList": [],
+            "copySourcesOptions": {
+                "method": "rsync",
+                "concurrentCopies": 5,
+                "outputVerbosity": "Diagnostic",
+                "exclusionList": [
+                    ".vs",
+                    ".git",
+                    "out"
+                ]
+            }
+        }
+    }
 }

@@ -2,9 +2,19 @@
 # and include sub-projects here.
 
 # CMake requirements.
-cmake_minimum_required (VERSION 3.15)
+cmake_minimum_required(VERSION 3.7...3.24)
 
-set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+if(${CMAKE_VERSION} VERSION_LESS 3.12)
+    cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
+endif()
+
+# Toolchain location. Stores result in the CMakeCache.
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Toolchain file")
+
+# Company/author name
+set(CMAKE_COMPANY_NAME "StoneyDSP" CACHE STRING "Company Name")
+
+set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 
 # The top-level CMakeLists.txt file for a project must contain a literal, direct call to the
 # `project()` command. `project()` sets up some helpful variables that describe source/binary
@@ -73,10 +83,10 @@ endif()
 find_package (asio CONFIG REQUIRED)
 find_package (ASIOSDK REQUIRED)
 find_package (CppUnit CONFIG REQUIRED)
-find_package (Doxygen REQUIRED)
+#find_package (Doxygen REQUIRED)
 find_package (fmt CONFIG REQUIRED)
 find_package (Git REQUIRED)
-find_package (JUCE CONFIG REQUIRED)
+#find_package (JUCE CONFIG REQUIRED)
 find_package (Lua REQUIRED)
 find_package (Msys REQUIRED)
 find_package (portaudio CONFIG REQUIRED)
@@ -84,7 +94,8 @@ find_package (portmidi CONFIG REQUIRED)
 find_package (portsmf CONFIG REQUIRED)
 
 #add_subdirectory (Biquads)
-#add_subdirectory (JUCE)
+#add_subdirectory (doxygen)
+add_subdirectory (JUCE)
 add_subdirectory (ConsoleApplication)
 add_subdirectory (CMakeProject1)
 add_subdirectory (StoneyDSP)
@@ -98,4 +109,4 @@ add_subdirectory (StoneyDSP)
 #include(CTest)
 
 # Enable testing. Comment out if not required.
-enable_testing()
+# enable_testing()
