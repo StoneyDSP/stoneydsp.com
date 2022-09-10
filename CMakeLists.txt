@@ -8,13 +8,9 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
 
-# Toolchain location. Stores result in the CMakeCache.
-set(CMAKE_TOOLCHAIN_FILE
-  ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake
-  CACHE STRING "Toolchain file"
-)
-
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
+
+add_subdirectory(extern)
 
 # The top-level CMakeLists.txt file for a project must contain a literal, direct call to the
 # `project()` command. `project()` sets up some helpful variables that describe source/binary
