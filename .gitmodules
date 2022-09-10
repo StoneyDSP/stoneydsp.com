@@ -1,6 +1,3 @@
-[submodule "vcpkg"]
-	path = vcpkg
-	url = https://github.com/StoneyDSP/vcpkg.git
 [submodule "ConsoleApplication"]
 	path = ConsoleApplication
 	url = https://github.com/StoneyDSP/ConsoleApplication.git
@@ -22,3 +19,6 @@
 [submodule "extern/CMake"]
 	path = extern/CMake
 	url = ../../StoneyDSP/CMake.git
+[submodule "extern/vcpkg"]
+	path = extern/vcpkg
+	url = ../../StoneyDSP/vcpkg.git
