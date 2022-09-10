@@ -8,9 +8,10 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
 
-set_property(GLOBAL PROPERTY USE_FOLDERS YES)
-
-add_subdirectory(extern)
+# add required submodules
+if (NOT EXISTS GIT_FOUND)
+    add_subdirectory(extern)
+endif()
 
 # The top-level CMakeLists.txt file for a project must contain a literal, direct call to the
 # `project()` command. `project()` sets up some helpful variables that describe source/binary
@@ -22,6 +23,12 @@ project (
 	HOMEPAGE_URL https://stoneydsp.github.io/html/index.html
 	LANGUAGES C CXX
 )
+
+# make cache variables for install destinations
+include(GNUInstallDirs)
+
+# include CMakePackageConfigHelpers macro
+include(CMakePackageConfigHelpers)
 
 # Add packages (including IntelliSense) to the project.
 find_package (asio CONFIG REQUIRED)
