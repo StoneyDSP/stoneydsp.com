@@ -1,6 +1,13 @@
 {
-        "name": "stoneydsp",
-        "version-string": "0.0.1",
+    "name": "stoneydsp-workspace",
+    "version": "0.0.0.1",
+    "description": [
+        "C++ Tools for Audio DSP"
+    ],
+    "homepage": "https://github.com/StoneyDSP",
+    "maintainers": [
+        "Nathan J. Hood"
+    ],
     "dependencies": [
         "asio",
         "asiosdk",

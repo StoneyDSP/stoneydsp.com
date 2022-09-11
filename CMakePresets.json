@@ -1,23 +1,19 @@
 {
-    "version": 3,
+    "version": 5,
     "cmakeMinimumRequired": {
         "major": 3,
-        "minor": 15,
-        "patch": 0
+        "minor": 24,
+        "patch": 1
     },
     "configurePresets": [
         {
             "name": "windows-base",
-            "displayName": "Windows",
             "description": "Target Windows with the Visual Studio development environment.",
             "hidden": true,
             "generator": "Visual Studio 17 2022",
-            "binaryDir": ".",
-            "installDir": ".",
-            "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "binaryDir": "${sourceDir}/bin/${presetName}",
+            "installDir": "${sourceDir}/installed/${presetName}",
             "environment": {},
-            "cacheVariables": {},
-            "cmakeExecutable": "cmake",
             "debug": {
                 "find": false,
                 "output": false,
@@ -38,53 +34,10 @@
                 "type": "equals",
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": "Windows",
-                    "enableMicrosoftCodeAnalysis": true,
-                    "enableClangTidyCodeAnalysis": false,
-                    "cacheRoot": "${sourceDir}",
-                    "intelliSenseOptions": {
-                        "useCompilerDefaults": true
-                    },
-                    "intelliSenseMode": "windows-msvc-x64"
-                },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-                    "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
-                    "copyBuildOutput": false,
-                    "copySources": true,
-                    "forceWSL1Toolset": false,
-                    "rsyncCommandArgs": [
-                        "-t",
-                        "--delete",
-                        "--delete-excluded"
-                    ],
-                    "copyOptimizations": {
-                        "useOptimizations": "RsyncAndSftp",
-                        "maxSmallChange": 10,
-                        "rsyncSingleDirectoryCommandArgs": [
-                            "-t",
-                            "-d"
-                        ]
-                    },
-                    "copyExcludeDirectoriesList": [],
-                    "copyAdditionalIncludeDirectoriesList": [],
-                    "copySourcesOptions": {
-                        "method": "rsync",
-                        "concurrentCopies": 5,
-                        "outputVerbosity": "Diagnostic",
-                        "exclusionList": [
-                            ".vs",
-                            ".git",
-                            "out"
-                        ]
-                    }
-                }
             }
         },
         {
-            "name": "x64",
+            "name": "x64-windows",
             "displayName": "x64",
             "description": "Target Windows (64-bit) with the Visual Studio development environment.",
             "inherits": "windows-base",
@@ -102,7 +55,7 @@
             }
         },
         {
-            "name": "x86",
+            "name": "x86-windows",
             "displayName": "x86",
             "description": "Target Windows (32-bit) with the Visual Studio development environment.",
             "inherits": "windows-base",
@@ -130,7 +83,7 @@
             "name": "x64 Debug",
             "displayName": "Debug",
             "description": "Target Windows (64-bit) with the Visual Studio development environment. (Debug)",
-            "configurePreset": "x64",
+            "configurePreset": "x64-windows",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
             "verbose": true
@@ -139,16 +92,16 @@
             "name": "x64 Release",
             "displayName": "Release",
             "description": "Target Windows (64-bit) with the Visual Studio development environment. (Release)",
-            "configurePreset": "x64",
+            "configurePreset": "x64-windows",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x64 RelWithDebInfo",
             "displayName": "RelWithDebInfo",
             "description": "Target Windows (64-bit) with the Visual Studio development environment. (RelWithDebInfo)",
-            "configurePreset": "x64",
+            "configurePreset": "x64-windows",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
             "verbose": true
@@ -157,16 +110,16 @@
             "name": "x64 MinSizeRel",
             "displayName": "MinSizeRel",
             "description": "Target Windows (64-bit) with the Visual Studio development environment. (MinSizeRel)",
-            "configurePreset": "x64",
+            "configurePreset": "x64-windows",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x86 Debug",
             "displayName": "Debug",
             "description": "x86 Debug",
-            "configurePreset": "x86",
+            "configurePreset": "x86-windows",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
             "verbose": true
@@ -175,16 +128,16 @@
             "name": "x86 Release",
             "displayName": "Release",
             "description": "x86 Release",
-            "configurePreset": "x86",
+            "configurePreset": "x86-windows",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x86 RelWithDebInfo",
             "displayName": "RelWithDebInfo",
             "description": "x86 RelWithDebInfo",
-            "configurePreset": "x86",
+            "configurePreset": "x86-windows",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
             "verbose": true
@@ -193,10 +146,10 @@
             "name": "x86 MinSizeRel",
             "displayName": "MinSizeRel",
             "description": "x86 MinSizeRel",
-            "configurePreset": "x86",
+            "configurePreset": "x86-windows",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         }
     ],
     "testPresets": [
@@ -204,7 +157,7 @@
             "name": "x64 Test",
             "displayName": "Test",
             "description": "x64 Test",
-            "configurePreset": "x64",
+            "configurePreset": "x64-windows",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
             "output": { "outputOnFailure": true },
@@ -217,7 +170,7 @@
             "name": "x86 Test",
             "displayName": "Test",
             "description": "x86 Test",
-            "configurePreset": "x86",
+            "configurePreset": "x86-windows",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
             "output": { "outputOnFailure": true },
@@ -226,5 +179,48 @@
                 "stopOnFailure": true
             }
         }
-    ]
+    ],
+    "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+            "hostOS": "Windows",
+            "enableMicrosoftCodeAnalysis": true,
+            "enableClangTidyCodeAnalysis": false,
+            "cacheRoot": "${sourceDir}/bin/${presetName}",
+            "intelliSenseOptions": {
+                "useCompilerDefaults": true
+            },
+            "intelliSenseMode": "windows-msvc-x64"
+        },
+        "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+            "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
+            "copyBuildOutput": false,
+            "copySources": true,
+            "forceWSL1Toolset": false,
+            "rsyncCommandArgs": [
+                "-t",
+                "--delete",
+                "--delete-excluded"
+            ],
+            "copyOptimizations": {
+                "useOptimizations": "RsyncAndSftp",
+                "maxSmallChange": 10,
+                "rsyncSingleDirectoryCommandArgs": [
+                    "-t",
+                    "-d"
+                ]
+            },
+            "copyExcludeDirectoriesList": [],
+            "copyAdditionalIncludeDirectoriesList": [],
+            "copySourcesOptions": {
+                "method": "rsync",
+                "concurrentCopies": 5,
+                "outputVerbosity": "Diagnostic",
+                "exclusionList": [
+                    ".vs",
+                    ".git",
+                    "out"
+                ]
+            }
+        }
+    }
 }
