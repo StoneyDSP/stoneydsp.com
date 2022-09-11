@@ -49,9 +49,11 @@ find_package (portsmf CONFIG REQUIRED)
 #add_subdirectory (CMake)
 #add_subdirectory (doxygen)
 #add_subdirectory (JUCE)
+
+# add sub-projects...
+add_subdirectory (StoneyDSP)
 add_subdirectory (ConsoleApplication)
 add_subdirectory (CMakeProject1)
-add_subdirectory (StoneyDSP)
 
 # Export options
 #set(CMAKE_EXPORT_COMPILE_COMMANDS on)
