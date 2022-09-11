@@ -11,9 +11,8 @@
             "description": "Target Windows with the Visual Studio development environment.",
             "hidden": true,
             "generator": "Visual Studio 17 2022",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "installDir": "${sourceDir}/out/install/${presetName}",
-            "toolchainFile": "${sourceDir}/extern/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "binaryDir": "${sourceDir}/bin/${presetName}",
+            "installDir": "${sourceDir}/install/${presetName}",
             "environment": {},
             "debug": {
                 "find": false,

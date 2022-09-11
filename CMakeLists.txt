@@ -9,7 +9,9 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 # add required submodules
-if (NOT EXISTS GIT_FOUND)
+if(GIT_FOUND AND EXISTS ${CMAKE_SOURCE_DIR}/.git)
+else()
+    set_property(GLOBAL PROPERTY USE_FOLDERS YES)
     add_subdirectory(extern)
 endif()
 
