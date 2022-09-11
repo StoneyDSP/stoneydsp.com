@@ -95,7 +95,7 @@
             "configurePreset": "x64-windows",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x64 RelWithDebInfo",
@@ -113,7 +113,7 @@
             "configurePreset": "x64-windows",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x86 Debug",
@@ -131,7 +131,7 @@
             "configurePreset": "x86-windows",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x86 RelWithDebInfo",
@@ -149,7 +149,7 @@
             "configurePreset": "x86-windows",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         }
     ],
     "testPresets": [
