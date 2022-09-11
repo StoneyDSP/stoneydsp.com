@@ -185,7 +185,7 @@
             "hostOS": "Windows",
             "enableMicrosoftCodeAnalysis": true,
             "enableClangTidyCodeAnalysis": false,
-            "cacheRoot": "${sourceDir}",
+            "cacheRoot": "${sourceDir}/bin/${presetName}",
             "intelliSenseOptions": {
                 "useCompilerDefaults": true
             },
