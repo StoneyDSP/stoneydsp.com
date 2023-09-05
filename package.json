@@ -1,0 +1,39 @@
+{
+  "name": "stoneydsp.io",
+  "version": "0.0.1-608e088576e7c5c103dc2bf4850152752beed94b",
+  "description": "StoneyDSP Official Website",
+  "main": "./index.html",
+  "icon": "./public/favicon.ico",
+  "author": "StoneyDSP <nathanjhood@googlemail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/StoneyDSP/stoneydsp.io#readme",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StoneyDSP/stoneydsp.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/StoneyDSP/stoneydsp.io/issues"
+  },
+  "private": true,
+  "preferGlobal": true,
+  "packageManager": "yarn@1.22.19",
+  "scripts": {
+    "dev": "npx serve",
+    "rebuild": "yarn clean && yarn build",
+    "clean": "rm -rvf src/main/main.js",
+    "wipe": "yarn clean && rm -rvf node_modules"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "files": [
+    "./public",
+    "./src"
+  ],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
