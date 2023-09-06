@@ -1,5 +1,6 @@
 .bak
 .cache
+.out
 .vscode
 
 *bak*
@@ -8,3 +9,4 @@ node_modules
 
 !*.png
 !*.svg
+!/public
