@@ -33,6 +33,10 @@ var menudata={
       url: "index.html",
       children: [
         {
+          text: "Biquads",
+          url: "https://stoneydsp.github.io/Biquads/index.html"
+        },
+        {
           text: "CxxWin",
           url: "https://stoneydsp.github.io/CxxWin/index.html"
         }
