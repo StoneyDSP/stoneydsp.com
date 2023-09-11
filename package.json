@@ -20,11 +20,15 @@
   "packageManager": "yarn@1.22.19",
   "scripts": {
     "dev": "npx serve",
+    "build": "node --version",
     "rebuild": "yarn clean && yarn build",
     "clean": "rm -rvf src/main/main.js",
     "wipe": "yarn clean && rm -rvf node_modules"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@vercel/analytics": "^1.0.2",
+    "vercel": "^32.2.0"
+  },
   "devDependencies": {},
   "files": [
     "./public",
