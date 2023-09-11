@@ -1,7 +1,7 @@
 
 /* Calculate fractional font size using responsive 'vw' prop...*/
 /* Set all cascaded font sizes to be relative */
-body {
+/* body {
     font-family: 'Cascadia';
     font-size: calc(15.00px + 0.390625vw);
     background-color: var(--brand-color__black);
@@ -14,9 +14,9 @@ body {
     min-height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-}
+} */
 
-header {
+/* header {
     position: fixed;
     top: 0;
     min-width: 100%;
@@ -27,25 +27,25 @@ header {
     justify-content: center;
     background-color: var(--brand-color__red);
     z-index: var(--z-index__overground);
-}
+} */
 
-main {
+/* main {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: calc(inherit + var(--z-index__scale-depth));
-}
+} */
 
-footer {
+/* footer {
     position: relative;
     min-width: 100.0%;
     align-items: center;
     font-size: smaller;
     z-index: calc(inherit + var(--z-index__scale-depth));
-}
-section {
+} */
+/* section {
     contain: content;
     z-index: calc(inherit + var(--z-index__scale-depth));
     width: 100%;
@@ -53,17 +53,17 @@ section {
     justify-content: center;
     padding-top: 0;
     padding-bottom: 1.0em;
-}
+} */
 
-div {
+/* div {
     display: flex;
-}
-figure {
+} */
+/* figure {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-}
-nav {
+} */
+/* nav {
     width: 100.0%;
     display: flex;
     -ms-flex-direction: row;
@@ -71,9 +71,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     z-index: var(--z-index__foreground);
-}
+} */
 
-menu {
+/* menu {
     display: flex;
     list-style-type: none;
     -ms-flex-direction: row;
@@ -83,22 +83,22 @@ menu {
     min-height: 100.0%;
     margin: 0;
     padding: 0;
-}
-menu > li {
+} */
+/* menu > li {
     list-style-type: none;
     padding: 1.0em;
     background-color: transparent;
     text-align: center;
-}
-li {
+} */
+/* li {
     list-style-type: none;
     padding: 1.0em;
     background-color: transparent;
-}
+} */
 
-menu > li > a:visited {
+/* menu > li > a:visited {
     color: var(--brand-color__white);
-}
+} */
 
 /*
 * When setting the style for several link states, there are some order rules:
@@ -106,36 +106,36 @@ menu > li > a:visited {
 * a:active MUST come after a:hover
 */
 
-a {
+/* a {
     cursor: pointer;
     z-index: calc(inherit + var(--z-index__scale-depth));
     font-weight: bolder;
-}
+} */
 
 /* unvisited link */
-a:link {
+/* a:link {
     text-decoration: none;
     color: var(--brand-color__link);
-}
+} */
 
 /* visited link */
-a:visited {
+/* a:visited {
     text-decoration: none;
     color: var(--brand-color__link-visited);
-}
+} */
 
 /* mouse over link */
-a:hover {
+/* a:hover {
     text-decoration: underline var(--brand-color__link-hover);
     color: var(--brand-color__link-hover);
     font-weight: bolder;
-}
+} */
 
 /* selected link */
-a:active {
+/* a:active {
     text-decoration: underline;
     color: var(--brand-color__link-active);
-}
+} */
 
 h1 {
     display: block;
@@ -147,8 +147,8 @@ h1 {
     margin-top: 0.67em;
     margin-bottom: 0.67em;
 
-    color: var(--brand-color__text);
-    z-index: calc(inherit + var(--z-index__scale-depth));
+    /* color: var(--brand-color__text);
+    z-index: calc(inherit + var(--z-index__scale-depth)); */
 }
 h2 {
     display: block;
@@ -160,8 +160,8 @@ h2 {
     margin-top: 0.83em;
     margin-bottom: 0.83em;
 
-    color: var(--brand-color__text);
-    z-index: calc(inherit + var(--z-index__scale-depth));
+    /* color: var(--brand-color__text);
+    z-index: calc(inherit + var(--z-index__scale-depth)); */
 }
 h3 {
     display: block;
@@ -173,8 +173,8 @@ h3 {
     margin-top: 1.00em;
     margin-bottom: 1.00em;
 
-    color: var(--brand-color__text);
-    z-index: calc(inherit + var(--z-index__scale-depth));
+    /* color: var(--brand-color__text);
+    z-index: calc(inherit + var(--z-index__scale-depth)); */
 }
 h4 {
     display: block;
@@ -187,8 +187,8 @@ h4 {
     margin-top: 1.33em;
     margin-bottom: 1.33em;
 
-    color: var(--brand-color__text);
-    z-index: calc(inherit + var(--z-index__scale-depth));
+    /* color: var(--brand-color__text);
+    z-index: calc(inherit + var(--z-index__scale-depth)); */
 }
 h5 {
     display: block;
@@ -201,8 +201,8 @@ h5 {
     margin-top: 1.67em;
     margin-bottom: 1.67em;
 
-    color: var(--brand-color__text);
-    z-index: calc(inherit + var(--z-index__scale-depth));
+    /* color: var(--brand-color__text);
+    z-index: calc(inherit + var(--z-index__scale-depth)); */
 }
 h6 {
     display: block;
@@ -215,8 +215,8 @@ h6 {
     margin-top: 2.33em;
     margin-bottom: 2.33em;
 
-    color: var(--brand-color__text);
-    z-index: calc(inherit + var(--z-index__scale-depth));
+    /* color: var(--brand-color__text);
+    z-index: calc(inherit + var(--z-index__scale-depth)); */
 }
 p {
     display: block;
@@ -228,8 +228,8 @@ p {
     font-weight: normal;
     font-size: 1.0rem;
 
-    color: var(--brand-color__text);
-    z-index: calc(inherit + var(--z-index__scale-depth));
+    /* color: var(--brand-color__text);
+    z-index: calc(inherit + var(--z-index__scale-depth)); */
 }
 
 small {
@@ -239,11 +239,11 @@ address {
     text-align: center;
     justify-content: center;
 }
-img {
+/* img {
     width: 100%;
     height: auto;
     z-index: calc(inherit + var(--z-index__scale-depth));
-}
+} */
 
 /* Sensible HTML Table layout */
 table {
@@ -290,7 +290,7 @@ tfoot {
 
 
 
-/* Size of all tables contained within 'sections's */
+/* Size of all tables contained within 'sections's
 table {
     width: 80%;
     background-color: var(--color__white-alpha-10);
@@ -345,6 +345,7 @@ table > tfoot > tr > td {
     padding: 1.0em;
 }
 
+*/
 
 :root {
     --scrollbar-x__width: calc(100vh - (100vh - 100%));
