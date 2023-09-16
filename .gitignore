@@ -1,13 +1,17 @@
 .bak
 .cache
+.nuxt
 .out
+.vercel
 .vscode
 
 *bak*
+*log*
 
 node_modules
 
+!*.ico
 !*.png
 !*.svg
+!/.npmrc
 !/public
-.vercel
