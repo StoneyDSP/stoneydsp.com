@@ -3,13 +3,16 @@
 .nuxt
 .out
 .vercel
+.vercel
 .vscode
 
 *bak*
 *log*
+*log*
 
 node_modules
 
+!*.ico
 !*.ico
 !*.png
 !*.svg
