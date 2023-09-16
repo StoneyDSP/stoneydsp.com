@@ -2,11 +2,10 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "redirects": [],
-  "name": "stoneydsp.github.io",
   "devCommand": "yarn dev",
   "installCommand": "yarn install",
   "buildCommand": "yarn build",
-  "outputDirectory": "./dist",
+  "outputDirectory": ".",
   "public": false,
   "framework": null
 }
