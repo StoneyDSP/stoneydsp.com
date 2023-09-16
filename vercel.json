@@ -5,7 +5,7 @@
   "devCommand": "yarn dev",
   "installCommand": "yarn install",
   "buildCommand": "yarn build",
-  "outputDirectory": "./dist",
+  "outputDirectory": ".",
   "public": false,
   "framework": null
 }
