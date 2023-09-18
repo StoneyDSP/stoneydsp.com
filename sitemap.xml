@@ -8,6 +8,10 @@
     <loc>https://stoneydsp.github.io/Biquads/index.html</loc>
     <lastmod>2023-09-18</lastmod>
   </url>
+	<url>
+    <loc>https://stoneydsp.github.io/biquads.html</loc>
+    <lastmod>2023-09-18</lastmod>
+  </url>
   <url>
     <loc>https://stoneydsp.github.io/CxxWin/index.html</loc>
     <lastmod>2023-09-18</lastmod>
@@ -17,7 +21,15 @@
     <lastmod>2023-09-18</lastmod>
   </url>
 	<url>
+    <loc>https://stoneydsp.github.io/ubento.html</loc>
+    <lastmod>2023-09-18</lastmod>
+  </url>
+	<url>
     <loc>https://stoneydsp.github.io/Contact/index.html</loc>
+    <lastmod>2023-09-18</lastmod>
+  </url>
+	<url>
+    <loc>https://stoneydsp.github.io/contact.html</loc>
     <lastmod>2023-09-18</lastmod>
   </url>
 </urlset>
