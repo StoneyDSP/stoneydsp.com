@@ -1,4 +1,5 @@
 {
+	"$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/eslintrc.json",
 	"env": {
 		"browser": true,
 		"es2021": true,
@@ -44,6 +45,8 @@
 		"@html-eslint/indent": [
 			"error",
 			4
-		]
+		],
+		"@html-eslint/require-lang": "error",
+		"@html-eslint/no-multiple-h1": "warn"
 	}
 }
