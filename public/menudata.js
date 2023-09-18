@@ -25,21 +25,9 @@
 var menudata={
   children: [
     {
-       text: "Home",
-       url: "https://stoneydsp.github.io/index.html"
+      text: "Home",
+      url: "https://stoneydsp.github.io/index.html"
     },
-    // {
-    //    text: "Biquads",
-    //    url: "https://stoneydsp.github.io/Biquads/index.html"
-    // },
-    // {
-    //    text: "CxxWin",
-    //    url: "https://stoneydsp.github.io/CxxWin/index.html"
-    // },
-    // {
-    //    text: "UBento",
-    //    url: "https://stoneydsp.github.io/UBento/index.html"
-    // }
     {
       text: "Projects",
       url: "index.html",
@@ -62,33 +50,5 @@ var menudata={
       text: "Contact",
       url: "https://stoneydsp.github.io/Contact/index.html"
     }
-    // {
-    //   text: "CxxWin",
-    //   url: "https://stoneydsp.github.io/CxxWin/index.html"
-    // }
-    // {
-    //   text:"Files",
-    //   url:"files.html",
-    //   children: [
-    //     {
-    //       text:"File List",
-    //       url:"files.html"
-    //     },
-    //     {
-    //       text: "File Members",
-    //       url: "globals.html",
-    //       children: [
-    //         {
-    //           text:"All",
-    //           url:"globals.html"
-    //         },
-    //         {
-    //           text:"Functions",
-    //           url:"globals_func.html"
-    //         }
-    //       ]
-    //     }
-    //   ]
-    // }
   ]
 }
