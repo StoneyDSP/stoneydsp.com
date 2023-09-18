@@ -13,7 +13,7 @@ updates:
       interval: "weekly"
 
   # Maintain dependencies for npm
-  - package-ecosystem: "yarn"
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
