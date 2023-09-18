@@ -6,14 +6,14 @@
   "icon": "./public/favicon.ico",
   "author": "StoneyDSP <nathanjhood@googlemail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/StoneyDSP/stoneydsp.io#readme",
+  "homepage": "https://github.com/StoneyDSP/stoneydsp.github.io#readme",
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StoneyDSP/stoneydsp.io.git"
+    "url": "git+https://github.com/StoneyDSP/stoneydsp.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/StoneyDSP/stoneydsp.io/issues"
+    "url": "https://github.com/StoneyDSP/stoneydsp.github.io/issues"
   },
   "private": true,
   "preferGlobal": true,

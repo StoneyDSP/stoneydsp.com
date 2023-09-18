@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stoneydsp.github.io/sitemap.xml
+Sitemap: https://www.stoneydsp.com/sitemap.xml
