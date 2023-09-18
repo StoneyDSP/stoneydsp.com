@@ -1,0 +1,4 @@
+[submodule "UBento"]
+	path = UBento
+	url = ../../StoneyDSP/UBento.git
+	branch = docs
