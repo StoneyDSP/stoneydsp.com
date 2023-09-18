@@ -19,6 +19,7 @@
   "preferGlobal": true,
   "packageManager": "yarn@1.22.19",
   "scripts": {
+		"lint": "eslint *.html",
     "dev": "npx serve",
     "build": "node --version",
     "rebuild": "yarn clean && yarn build",
