@@ -46,7 +46,11 @@
 			"error",
 			4
 		],
-		"@html-eslint/require-lang": "error",
-		"@html-eslint/no-multiple-h1": "warn"
+		"@html-eslint/require-lang": [
+			"error"
+		],
+		"@html-eslint/no-multiple-h1": [
+			"warn"
+		]
 	}
 }

@@ -37,8 +37,7 @@
     "typescript": "*"
   },
   "files": [
-    "./public",
-    "./src"
+    "./public"
   ],
   "browserslist": [
     "> 1%",
