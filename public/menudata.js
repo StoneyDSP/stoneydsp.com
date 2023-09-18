@@ -26,7 +26,7 @@ var menudata={
   children: [
     {
       text: "Home",
-      url: "https://stoneydsp.github.io/index.html"
+      url: "https://www.stoneydsp.com"
     },
     {
       text: "Projects",
@@ -42,7 +42,7 @@ var menudata={
         },
         {
           text: "UBento",
-          url: "https://stoneydsp.github.io/ubento/index.html"
+          url: "https://stoneydsp.github.io/UBento/index.html"
         }
       ]
     },
