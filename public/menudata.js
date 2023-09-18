@@ -30,7 +30,7 @@ var menudata={
     },
     {
       text: "Projects",
-      url: "index.html",
+      url: "https://www.stoneydsp.com/projects.html",
       children: [
         {
           text: "Biquads",
