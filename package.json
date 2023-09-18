@@ -29,8 +29,11 @@
     "@vercel/analytics": "^1.0.2"
   },
   "devDependencies": {
+    "@html-eslint/eslint-plugin": "^0.19.1",
+    "@html-eslint/parser": "^0.19.1",
+    "@vercel/node": "^3.0.5",
     "eslint": "^8.49.0",
-    "eslint-plugin-html": "^7.1.0"
+    "typescript": "*"
   },
   "files": [
     "./public",
