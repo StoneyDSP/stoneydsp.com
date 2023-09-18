@@ -28,36 +28,40 @@ var menudata={
        text: "Home",
        url: "https://stoneydsp.github.io/index.html"
     },
-    {
-       text: "Biquads",
-       url: "https://stoneydsp.github.io/Biquads/index.html"
-    },
-    {
-       text: "CxxWin",
-       url: "https://stoneydsp.github.io/CxxWin/index.html"
-    },
-    {
-       text: "UBento",
-       url: "https://stoneydsp.github.io/UBento/index.html"
-    }
     // {
-    //   text: "Projects",
-    //   url: "index.html",
-    //   children: [
-    //     {
-    //       text: "Biquads",
-    //       url: "https://stoneydsp.github.io/Biquads/index.html"
-    //     },
-    //     {
-    //       text: "CxxWin",
-    //       url: "https://stoneydsp.github.io/CxxWin/index.html"
-    //     },
-    //     {
-    //       text: "UBento",
-    //       url: "https://stoneydsp.github.io/ubento/index.html"
-    //     }
-    //   ]
+    //    text: "Biquads",
+    //    url: "https://stoneydsp.github.io/Biquads/index.html"
+    // },
+    // {
+    //    text: "CxxWin",
+    //    url: "https://stoneydsp.github.io/CxxWin/index.html"
+    // },
+    // {
+    //    text: "UBento",
+    //    url: "https://stoneydsp.github.io/UBento/index.html"
     // }
+    {
+      text: "Projects",
+      url: "index.html",
+      children: [
+        {
+          text: "Biquads",
+          url: "https://stoneydsp.github.io/Biquads/index.html"
+        },
+        {
+          text: "CxxWin",
+          url: "https://stoneydsp.github.io/CxxWin/index.html"
+        },
+        {
+          text: "UBento",
+          url: "https://stoneydsp.github.io/ubento/index.html"
+        }
+      ]
+    },
+    {
+      text: "Contact",
+      url: "https://stoneydsp.github.io/Contact/index.html"
+    }
     // {
     //   text: "CxxWin",
     //   url: "https://stoneydsp.github.io/CxxWin/index.html"
