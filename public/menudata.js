@@ -48,7 +48,7 @@ var menudata={
     },
     {
       text: "Contact",
-      url: "https://stoneydsp.github.io/Contact/index.html"
+      url: "https://stoneydsp.com/contact.html"
     }
   ]
 }
