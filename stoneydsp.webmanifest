@@ -6,6 +6,11 @@
 	"background_color": "#fff",
 	"description": "Systems, Web, Audio & Graphics software developer",
 	"icons": [
+		{
+			"src": "public/favicon.ico",
+		    "sizes": "64x64",
+			"type": "image/x-icon"
+		}
 	],
 	"related_applications": [
 	],
