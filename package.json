@@ -1,5 +1,5 @@
 {
-  "name": "stoneydsp.io",
+  "name": "@stoneydsp/stoneydsp.github.io",
   "version": "0.0.1-608e088576e7c5c103dc2bf4850152752beed94b",
   "description": "StoneyDSP Official Website",
   "main": "./index.html",
