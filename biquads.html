@@ -87,7 +87,7 @@
 	</div>
 
 	<div><div class="header">
-	<div class="headertitle"><div class="title"><a class="el" href="https://stoneydsp.github.io/biquads/df/d7e/class_biquads.html" title="The &#39;Biquads&#39; class.">Biquads</a> </div></div>
+	<div class="headertitle"><div class="title"><a class="el" href="https://stoneydsp.github.io/Biquads/df/d7e/class_biquads.html" title="The &#39;Biquads&#39; class.">Biquads</a> </div></div>
 	</div><!--header-->
 	<div class="contents">
 	<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a> Current: v1.1.0b</p>
@@ -185,7 +185,7 @@
 		output sample = y;
 	}
 	</pre>
-	<p> <a class="el" href="https://stoneydsp.github.io/biquads/d6/d6d/class_coefficient.html" title="The &#39;Coefficient&#39; class.">Coefficient</a> "b" is used as a gain multiplier for our direct signal (i.e., the level of our input signal to appear at the output).</p>
+	<p> <a class="el" href="https://stoneydsp.github.io/Biquads/d6/d6d/class_coefficient.html" title="The &#39;Coefficient&#39; class.">Coefficient</a> "b" is used as a gain multiplier for our direct signal (i.e., the level of our input signal to appear at the output).</p>
 	<p>But first, our "a" is used to scale (multiply) our "b" like so: </p>
 	<pre class="fragment">
 	{
@@ -448,7 +448,7 @@
 	</pre>
 	<p> <img src="https://raw.githubusercontent.com/StoneyDSP/Biquads/dev/Res/LP2res.png" alt="LP2res" class="inline"/></p>
 	<p>In our above example, we have added two further "degrees" - coefficients - with which to manipulate our signal; we have also added an additional parameter "⍺" ("alpha"), which in this forumula provides us with the typical "resonance" control that we ususally see on 2nd-order (or higher) filters. This "resonance" parameter is directly (and solely) responsible for the "bump" seen around the centre frequency of the filter, and can be increased or decreased as desired. Higher resonance can be reminiscent of a wah-wah pedal or synthesizer effect, while lower resonance is more like a trumpet-mute.</p>
-	<p>You will have also noted a cosine math operation being performed on "⍵", expressed as "cos(θ)". This was calculated previously, in our <a class="el" href="https://stoneydsp.github.io/biquads/da/d39/class_parameters.html">Parameters</a> chapter. It is equivalent to "cos(⍵)".</p>
+	<p>You will have also noted a cosine math operation being performed on "⍵", expressed as "cos(θ)". This was calculated previously, in our <a class="el" href="https://stoneydsp.github.io/Biquads/da/d39/class_parameters.html">Parameters</a> chapter. It is equivalent to "cos(⍵)".</p>
 	<h1><a class="anchor" id="autotoc_md11"></a>
 	Transformations</h1>
 	<p>Now, we are determining an output transfer function (Y(n)), given an input value (X(n)) and our six multiplier coefficients ("degrees of freesom") within an audio feedback path (b0, b1, b2, a1, and a2 - all of which are pre-scaled by 1/a0) - please note that each feedback term requires a delay of one audio sample ("z-1");</p>
