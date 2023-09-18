@@ -28,7 +28,7 @@
 	"rules": {
 		"indent": [
 			"error",
-			4
+			2
 		],
 		"linebreak-style": [
 			"error",
@@ -44,7 +44,7 @@
 		],
 		"@html-eslint/indent": [
 			"error",
-			4
+			2
 		],
 		"@html-eslint/require-lang": [
 			"error"
