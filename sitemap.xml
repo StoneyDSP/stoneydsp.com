@@ -2,6 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://stoneydsp.github.io/index.html</loc>
-    <lastmod>2023-01-01</lastmod>
+    <lastmod>2023-09-18</lastmod>
+  </url>
+  <url>
+    <loc>https://stoneydsp.github.io/Biquads/index.html</loc>
+    <lastmod>2023-09-18</lastmod>
+  </url>
+  <url>
+    <loc>https://stoneydsp.github.io/CxxWin/index.html</loc>
+    <lastmod>2023-09-18</lastmod>
+  </url>
+  <url>
+    <loc>https://stoneydsp.github.io/UBento/index.html</loc>
+    <lastmod>2023-09-18</lastmod>
+  </url>
+	<url>
+    <loc>https://stoneydsp.github.io/Contact/index.html</loc>
+    <lastmod>2023-09-18</lastmod>
   </url>
 </urlset>
