@@ -2,7 +2,7 @@
 	"name": "stoneydsp.github.io",
 	"short_name": "stoneydsp",
 	"start_url": "/index.html",
-    "id": "/index.html"
+    "id": "/index.html",
 	"display": "browser",
 	"background_color": "#fff",
 	"description": "Systems, Web, Audio & Graphics software developer",
