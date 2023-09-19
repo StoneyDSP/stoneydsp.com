@@ -34,21 +34,21 @@ var menudata={
       children: [
         {
           text: "Biquads",
-          url: "https://stoneydsp.github.io/Biquads/index.html"
+          url: "https://biquads.stoneydsp.com"
         },
         {
           text: "CxxWin",
-          url: "https://stoneydsp.github.io/CxxWin/index.html"
+          url: "https://cxxwin.stoneydsp.github.io"
         },
         {
           text: "UBento",
-          url: "https://stoneydsp.github.io/UBento/index.html"
+          url: "https://ubento.stoneydsp.com"
         }
       ]
     },
     {
       text: "Contact",
-      url: "https://stoneydsp.com/contact.html"
+      url: "https://contact.stoneydsp.com"
     }
   ]
 }
