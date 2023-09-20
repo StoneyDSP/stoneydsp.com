@@ -16,6 +16,10 @@
 		{
 			"source": "/redirect/",
 			"destination": "/index.html"
+		},
+		{
+			"source": "/",
+			"destination": "https://www.stoneydsp.com/index.html"
 		}
 	]
 }
