@@ -14,3 +14,7 @@ node_modules
 !*.svg
 !/.npmrc
 !/public
+
+yarn.lock
+package-lock.json
+coverage

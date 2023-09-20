@@ -1,11 +1,15 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "redirects": [],
-  "devCommand": "yarn dev",
-  "installCommand": "yarn install",
-  "buildCommand": "yarn build",
-  "outputDirectory": ".",
+  "devCommand": null,
+  "installCommand": null,
+  "buildCommand": null,
+  "outputDirectory": null,
   "public": false,
-  "framework": null
+  "framework": null,
+	"functions": {
+    "api/*.js": {
+      "memory": 128,
+      "maxDuration": 10
+    }
+  }
 }
