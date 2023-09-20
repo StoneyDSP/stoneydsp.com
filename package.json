@@ -3,7 +3,7 @@
   "version": "0.0.1-608e088576e7c5c103dc2bf4850152752beed94b",
   "description": "StoneyDSP Official Website",
   "main": "./index.html",
-  "icon": "./public/favicon.ico",
+  "icon": "./favicon.ico",
   "author": "StoneyDSP <nathanjhood@googlemail.com>",
   "license": "MIT",
   "homepage": "https://github.com/StoneyDSP/StoneyDSP.github.io#readme",

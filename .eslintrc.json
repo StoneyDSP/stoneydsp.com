@@ -37,10 +37,10 @@
 		"no-unused-vars": [
 			"off"
 		],
-		"quotes": [
-			"error",
-			"double"
-		],
+		// "quotes": [
+		// 	"error",
+		// 	"double"
+		// ],
 		"semi": [
 			"error",
 			"always"
@@ -54,6 +54,10 @@
 		],
 		"@html-eslint/no-multiple-h1": [
 			"warn"
+		],
+		"@html-eslint/quotes": [
+			"error",
+			"double"
 		]
 	}
 }
