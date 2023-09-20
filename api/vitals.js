@@ -1,7 +1,9 @@
+// import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'https://unpkg.com/web-vitals?module';
+
 import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'web-vitals';
- 
+
 const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals';
- 
+
 function getConnectionSpeed() {
   return 'connection' in navigator &&
     navigator['connection'] &&
@@ -9,13 +11,13 @@ function getConnectionSpeed() {
     ? navigator['connection']['effectiveType']
     : '';
 }
- 
+
 function sendToAnalytics(metric, options) {
   const page = Object.entries(options.params).reduce(
     (acc, [key, value]) => acc.replace(value, `[${key}]`),
     options.path,
   );
- 
+
   const body = {
     dsn: options.analyticsId, // qPgJqYH9LQX5o31Ormk8iWhCxZO
     id: metric.id, // v2-1653884975443-1839479248192
@@ -25,11 +27,11 @@ function sendToAnalytics(metric, options) {
     value: metric.value.toString(), // 60.20000000298023
     speed: getConnectionSpeed(), // 4g
   };
- 
+
   if (options.debug) {
     console.log('[Analytics]', metric.name, JSON.stringify(body, null, 2));
   }
- 
+
   const blob = new Blob([new URLSearchParams(body).toString()], {
     // This content type is necessary for `sendBeacon`
     type: 'application/x-www-form-urlencoded',
@@ -44,7 +46,7 @@ function sendToAnalytics(metric, options) {
       keepalive: true,
     });
 }
- 
+
 export function webVitals(options) {
   try {
     getFID((metric) => sendToAnalytics(metric, options));
@@ -56,3 +58,9 @@ export function webVitals(options) {
     console.error('[Analytics]', err);
   }
 }
+
+getCLS(console.log);
+getFCP(console.log);
+getFID(console.log);
+getLCP(console.log);
+getTTFB(console.log);

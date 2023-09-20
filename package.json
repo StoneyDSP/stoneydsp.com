@@ -35,7 +35,8 @@
     "@vercel/node": "^3.0.5",
     "@vercel/postgres": "^0.4.2",
     "eslint": "^8.49.0",
-    "typescript": "*"
+    "typescript": "*",
+    "web-vitals": "^3.4.0"
   },
   "files": [
     "./public"
