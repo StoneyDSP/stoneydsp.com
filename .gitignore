@@ -1,6 +1,5 @@
 .bak
 .cache
-.env
 .nitro
 .nuxt
 .out
@@ -9,6 +8,10 @@
 *.tsbuildinfo
 .vercel
 .vscode
+
+.env
+.env.*
+!.env.example
 
 *.log*
 
