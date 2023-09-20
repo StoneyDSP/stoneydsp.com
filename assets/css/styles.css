@@ -21,6 +21,7 @@ html {
 	--colour-dull: hsla(0, 0%, 0%, 50%);
 	--powered-by-vercel: url("../../public/powered-by-vercel_d.svg");
 	--table-gradient: url("../../src/assets/css/doxygen/tab_b.png");
+	--table-row-gradient: ("../../src/assets/css/doxygen/nav_h.png");
 
 	--git-stats-card: url("https://github-readme-stats.stoneydsp.com/api?username=StoneyDSP&show_icons=true&theme=default");
 
@@ -41,6 +42,7 @@ html.dark-mode {
 	--colour-dull: hsla(0, 0%, 100%, 50%);
 	--powered-by-vercel: url("../../public/powered-by-vercel.svg");
 	--table-gradient: url("../../src/assets/css/doxygen/tab_bd.png");
+	--table-row-gradient: ("../../src/assets/css/doxygen/nav_hd.png");
 
 	--git-stats-card: url("https://github-readme-stats.stoneydsp.com/api?username=StoneyDSP&show_icons=true&theme=dark");
 
@@ -198,7 +200,7 @@ img.lang-icon-html:hover {
 } */
 
 tr.markdownTableRowOdd {
-	background-image: var(--header-gradient-image);
+	background-image: var(--table-row-gradient);
 	background-repeat: repeat-x;
 	background-color: var(--header-background-color);
 }
