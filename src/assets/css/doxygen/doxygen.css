@@ -80,7 +80,7 @@ html {
 	--nav-gradient-image: url('tab_b.png');
 	--nav-gradient-hover-image: url('tab_h.png');
 	--nav-gradient-active-image: url('tab_a.png');
-	--nav-gradient-active-image-parent: url("../tab_a.png");
+	--nav-gradient-active-image-parent: url("tab_a.png");
 	--nav-separator-image: url('tab_s.png');
 	--nav-breadcrumb-image: url('bc_s.png');
 	--nav-breadcrumb-border-color: #C2C2E4;
@@ -245,7 +245,7 @@ html {
 		--nav-gradient-image: url('tab_bd.png');
 		--nav-gradient-hover-image: url('tab_hd.png');
 		--nav-gradient-active-image: url('tab_ad.png');
-		--nav-gradient-active-image-parent: url("../tab_ad.png");
+		--nav-gradient-active-image-parent: url("tab_ad.png");
 		--nav-separator-image: url('tab_sd.png');
 		--nav-breadcrumb-image: url('bc_sd.png');
 		--nav-breadcrumb-border-color: #2A2A61;

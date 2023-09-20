@@ -26,11 +26,11 @@ var menudata={
   children: [
     {
       text: "Home",
-      url: "https://www.stoneydsp.com/index.html"
+      url: "index.html"
     },
     {
       text: "Projects",
-      url: "https://www.stoneydsp.com/projects.html",
+      url: "projects.html",
       children: [
         {
           text: "Biquads",
@@ -38,17 +38,21 @@ var menudata={
         },
         {
           text: "CxxWin",
-          url: "https://cxxwin.stoneydsp.github.io"
+          url: "https://cxxwin.stoneydsp.com"
         },
         {
           text: "UBento",
           url: "https://ubento.stoneydsp.com"
         }
+        // {
+        //   text: "redirect",
+        //   url: "/redirect/"
+        // }
       ]
     },
     {
       text: "Contact",
-      url: "https://contact.stoneydsp.com"
+      url: "contact.html"
     }
   ]
-}
+};

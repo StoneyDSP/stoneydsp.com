@@ -34,6 +34,9 @@
 			"error",
 			"unix"
 		],
+		"no-unused-vars": [
+			"off"
+		],
 		"quotes": [
 			"error",
 			"double"

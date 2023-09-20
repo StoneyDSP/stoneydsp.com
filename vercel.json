@@ -13,9 +13,9 @@
     }
   },
 	"redirects": [
-    {
-      "source": "/",
-      "destination": "https://www.stoneydsp.com/index.html"
-    }
-  ]
+		{
+			"source": "/redirect/",
+			"destination": "/index.html"
+		}
+	]
 }
