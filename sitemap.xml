@@ -2,38 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://stoneydsp.com/index.html</loc>
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-20</lastmod>
   </url>
 	  <url>
     <loc>https://stoneydsp.com/projects.html</loc>
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-20</lastmod>
   </url>
-  <url>
-    <loc>https://stoneydsp.com/Biquads/index.html</loc>
-    <lastmod>2023-09-18</lastmod>
+	<url>
+    <loc>https://projects.stoneydsp.com/index.html</loc>
+    <lastmod>2023-09-20</lastmod>
   </url>
 	<url>
     <loc>https://stoneydsp.com/biquads.html</loc>
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-20</lastmod>
+  </url>
+	<url>
+    <loc>https://biquads.stoneydsp.com/index.html</loc>
+    <lastmod>2023-09-20</lastmod>
   </url>
   <url>
-    <loc>https://stoneydsp.com/CxxWin/index.html</loc>
-    <lastmod>2023-09-18</lastmod>
+    <loc>https://stoneydsp.com/cxxwin/index.html</loc>
+    <lastmod>2023-09-20</lastmod>
   </url>
-  <url>
-    <loc>https://stoneydsp.com/UBento/index.html</loc>
-    <lastmod>2023-09-18</lastmod>
+	<url>
+    <loc>https://cxxwin.stoneydsp.com/index.html</loc>
+    <lastmod>2023-09-20</lastmod>
   </url>
 	<url>
     <loc>https://stoneydsp.com/ubento.html</loc>
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-20</lastmod>
   </url>
 	<url>
-    <loc>https://stoneydsp.com/Contact/index.html</loc>
-    <lastmod>2023-09-18</lastmod>
+    <loc>https://ubento.stoneydsp.com/index.html</loc>
+    <lastmod>2023-09-20</lastmod>
   </url>
 	<url>
     <loc>https://stoneydsp.com/contact.html</loc>
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-20</lastmod>
+  </url>
+	<url>
+    <loc>https://contact.stoneydsp.com/index.html</loc>
+    <lastmod>2023-09-20</lastmod>
   </url>
 </urlset>

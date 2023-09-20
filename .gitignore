@@ -1,10 +1,24 @@
 .bak
 .cache
-.env
+.nitro
 .nuxt
 .out
+.output
+.turbo
+*.tsbuildinfo
 .vercel
 .vscode
+
+.env
+.env.*
+!.env.example
+
+*.log*
+
+.DS_Store
+
+dist
+node_modules
 
 *bak*
 *log*
@@ -14,5 +28,5 @@ node_modules
 !*.ico
 !*.png
 !*.svg
-!/.npmrc
+!*.npmrc
 !/public

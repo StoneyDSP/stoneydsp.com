@@ -3,23 +3,23 @@
   "version": "0.0.1-608e088576e7c5c103dc2bf4850152752beed94b",
   "description": "StoneyDSP Official Website",
   "main": "./index.html",
-  "icon": "./public/favicon.ico",
+  "icon": "./favicon.ico",
   "author": "StoneyDSP <nathanjhood@googlemail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/StoneyDSP/stoneydsp.github.io#readme",
+  "homepage": "https://github.com/StoneyDSP/StoneyDSP.github.io#readme",
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StoneyDSP/stoneydsp.github.io.git"
+    "url": "git+https://github.com/StoneyDSP/StoneyDSP.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/StoneyDSP/stoneydsp.github.io/issues"
+    "url": "https://github.com/StoneyDSP/StoneyDSP.github.io/issues"
   },
   "private": true,
   "preferGlobal": true,
   "packageManager": "yarn@1.22.19",
   "scripts": {
-		"lint": "eslint *.html public/*.js",
+    "lint": "eslint *.html public/*.js",
     "dev": "npx serve",
     "build": "node --version",
     "rebuild": "yarn clean && yarn build",
@@ -33,6 +33,7 @@
     "@html-eslint/eslint-plugin": "^0.19.1",
     "@html-eslint/parser": "^0.19.1",
     "@vercel/node": "^3.0.5",
+    "@vercel/postgres": "^0.4.2",
     "eslint": "^8.49.0",
     "typescript": "*"
   },

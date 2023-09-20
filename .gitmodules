@@ -1,4 +1,0 @@
-[submodule "Projects/Biquads"]
-	path = Projects/Biquads
-	url = ../../StoneyDSP/Biquads.git
-	branch = docs
