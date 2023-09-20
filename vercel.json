@@ -25,10 +25,13 @@
   },
 	"redirects": [
 		{
+			"source": "/",
+			"destination": "/index.html"
+		},
+		{
 			"source": "/redirect/",
 			"destination": "/index.html"
 		},
-
 		{
 			"source": "/backup/",
 			"destination": "https://www.stoneydsp.com/index.html"
