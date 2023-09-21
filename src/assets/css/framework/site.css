@@ -128,8 +128,8 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-    /* text-decoration: underline var(--brand-color__link-hover);
-    color: var(--brand-color__link-hover); */
+    text-decoration: underline;
+    /* color: var(--brand-color__link-hover); */
     font-weight: bolder;
 }
 
