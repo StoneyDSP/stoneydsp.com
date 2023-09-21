@@ -105,47 +105,6 @@ img.top-langs-card {
 	background-repeat: no-repeat;
 	text-align: center;
 	border-radius: 0.25rem;
-
-	box-shadow: 0 0 2.0rem var(--colour-dull);
-	background-color: var(--colour-dull);
-
-	-webkit-transition-property: width, height, background-color, box-shadow;
-	-webkit-transition-duration: 0.5s;
-	-webkit-transition-timing-function: ease-in-out;
-	-moz-transition-property: width, height, background-color, box-shadow;
-	-moz-transition-duration: 0.5s;
-	-moz-transition-timing-function: ease-in-out;
-	-ms-transition-property: width, height, background-color, box-shadow;
-	-ms-transition-duration: 0.5s;
-	-ms-transition-timing-function: ease-in-out;
-	-o-transition-property: width, height, background-color, box-shadow;
-	-o-transition-duration: 0.5s;
-	-o-transition-timing-function: ease-in-out;
-	transition-property: width, height, background-color, box-shadow;
-	transition-duration: 0.5s;
-	transition-timing-function: ease-in-out;
-}
-
-img.git-stats-card:hover,
-img.top-langs-card:hover {
-	box-shadow: 0 0 3.0rem var(--glow-color);
-	background-color: var(--glow-color);
-
-	-webkit-transition-property: width, height, background-color, box-shadow;
-	-webkit-transition-duration: 0.5s;
-	-webkit-transition-timing-function: ease-in-out;
-	-moz-transition-property: width, height, background-color, box-shadow;
-	-moz-transition-duration: 0.5s;
-	-moz-transition-timing-function: ease-in-out;
-	-ms-transition-property: width, height, background-color, box-shadow;
-	-ms-transition-duration: 0.5s;
-	-ms-transition-timing-function: ease-in-out;
-	-o-transition-property: width, height, background-color, box-shadow;
-	-o-transition-duration: 0.5s;
-	-o-transition-timing-function: ease-in-out;
-	transition-property: width, height, background-color, box-shadow;
-	transition-duration: 0.5s;
-	transition-timing-function: ease-in-out;
 }
 
 img.lang-icon-cpp,
