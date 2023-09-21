@@ -57,7 +57,7 @@
 			"destination": "https://www.stoneydsp.com/index.html"
 		},
 		{
-			"source": "/wp-login.php/",
+			"source": "/wp-login.php",
 			"destination": "https://www.stoneydsp.com/index.html"
 		}
 	],
