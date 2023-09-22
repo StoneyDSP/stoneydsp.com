@@ -27,7 +27,7 @@ var menudata = {
   children: [
     {
       text: "Home",
-      url: "index.html"
+      url: "https://www.stoneydsp.com/index.html"
     },
     {
       text: "Projects",
@@ -49,7 +49,7 @@ var menudata = {
     },
     {
       text: "Contact",
-      url: "contact.html"
+      url: "https://contact.stoneydsp.com"
     }
   ]
 };
