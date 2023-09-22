@@ -29,14 +29,6 @@
 			"destination": "/index.html"
 		},
 		{
-			"source": "/*.php",
-			"destination": "/index.html"
-		},
-		{
-			"source": "/*/*.hp",
-			"destination": "/index.html"
-		},
-		{
 			"source": "/redirect/",
 			"destination": "/index.html"
 		},
@@ -123,7 +115,7 @@
 			]
 		},
 		{
-			"source": "https://github-readme-stats.stoneydsp.com/(.*)",
+			"source": "github-readme-stats.stoneydsp.com/(.*)",
 			"headers": [
 				{
 					"key": "Vercel-CDN-Cache-Control",
@@ -140,7 +132,7 @@
 			]
 		},
 		{
-			"source": "https://skillicons.dev/",
+			"source": "skillicons.dev/",
 			"headers": [
 				{
 					"key": "Vercel-CDN-Cache-Control",
