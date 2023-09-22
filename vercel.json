@@ -30,35 +30,35 @@
 		},
 		{
 			"source": "/backup/",
-			"destination": "https://www.stoneydsp.com/index.html"
+			"destination": "/index.html"
 		},
 		{
 			"source": "/new/",
-			"destination": "https://www.stoneydsp.com/index.html"
+			"destination": "/index.html"
 		},
 		{
 			"source": "/old/",
-			"destination": "https://www.stoneydsp.com/index.html"
+			"destination": "/index.html"
 		},
 		{
 			"source": "/temp/",
-			"destination": "https://www.stoneydsp.com/index.html"
+			"destination": "/index.html"
 		},
 		{
 			"source": "/test/",
-			"destination": "https://www.stoneydsp.com/index.html"
+			"destination": "/index.html"
 		},
 		{
 			"source": "/wordpress/",
-			"destination": "https://www.stoneydsp.com/index.html"
+			"destination": "/index.html"
 		},
         {
 			"source": "/wp/",
-			"destination": "https://www.stoneydsp.com/index.html"
+			"destination": "/index.html"
 		},
 		{
 			"source": "/wp-login.php",
-			"destination": "https://www.stoneydsp.com/index.html"
+			"destination": "/index.html"
 		}
 	],
 	"git": {
@@ -69,15 +69,6 @@
 		"silent": false
 	},
 	"headers": [
-        {
-            "source": "/service-worker.js",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=0, must-revalidate"
-                }
-            ]
-        },
 		{
 			"source": "/(.html)",
 			"headers": [
