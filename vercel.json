@@ -6,7 +6,7 @@
     "outputDirectory": ".",
     "public": false,
     "framework": null,
-	"functions": {
+	  "functions": {
 
 	    "api/*.js": {
             "memory": 1024,
