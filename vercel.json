@@ -25,11 +25,27 @@
     },
 	"redirects": [
 		{
+			"source": "/.well-known/",
+			"destination": "/index.html"
+		},
+		{
+			"source": "/*.php",
+			"destination": "/index.html"
+		},
+		{
+			"source": "/*/*.hp",
+			"destination": "/index.html"
+		},
+		{
 			"source": "/redirect/",
 			"destination": "/index.html"
 		},
 		{
 			"source": "/backup/",
+			"destination": "/index.html"
+		},
+		{
+			"source": "/blog/",
 			"destination": "/index.html"
 		},
 		{
@@ -52,8 +68,20 @@
 			"source": "/wordpress/",
 			"destination": "/index.html"
 		},
-        {
+    {
 			"source": "/wp/",
+			"destination": "/index.html"
+		},
+		{
+			"source": "/wp-admin/",
+			"destination": "/index.html"
+		},
+		{
+			"source": "/wp-content/",
+			"destination": "/index.html"
+		},
+		{
+			"source": "/wp-includes/",
 			"destination": "/index.html"
 		},
 		{
@@ -95,7 +123,7 @@
 			]
 		},
 		{
-			"source": "github-readme-stats.stoneydsp.com/(.*)",
+			"source": "https://github-readme-stats.stoneydsp.com/(.*)",
 			"headers": [
 				{
 					"key": "Vercel-CDN-Cache-Control",
@@ -112,7 +140,7 @@
 			]
 		},
 		{
-			"source": "skillicons.dev/",
+			"source": "https://skillicons.dev/",
 			"headers": [
 				{
 					"key": "Vercel-CDN-Cache-Control",
