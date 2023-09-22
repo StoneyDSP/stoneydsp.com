@@ -31,7 +31,7 @@ var menudata = {
     },
     {
       text: "Projects",
-      url: "projects.html",
+      url: "https://projects.stoneydsp.com",
       children: [
         {
           text: "Biquads",
@@ -45,10 +45,6 @@ var menudata = {
           text: "UBento",
           url: "https://ubento.stoneydsp.com"
         }
-        // {
-        //   text: "redirect",
-        //   url: "/redirect/"
-        // }
       ]
     },
     {
