@@ -19,6 +19,9 @@
 
 html {
 	--colour-dull: hsla(0, 0%, 0%, 50%);
+
+	--brand-logo-512x96: url("../../public/StoneyDSP-Regular-512x96d.svg");
+
 	--powered-by-vercel: url("../../public/powered-by-vercel_d.svg");
 	--table-gradient: url("../../src/assets/css/doxygen/tab_b.png");
 	--table-row-gradient: ("../../src/assets/css/doxygen/nav_h.png");
@@ -49,6 +52,9 @@ html {
 
 html.dark-mode {
 	--colour-dull: hsla(0, 0%, 100%, 50%);
+
+	--brand-logo-512x96: url("../../public/StoneyDSP-Regular-512x96.svg");
+
 	--powered-by-vercel: url("../../public/powered-by-vercel.svg");
 	--table-gradient: url("../../src/assets/css/doxygen/tab_bd.png");
 	--table-row-gradient: ("../../src/assets/css/doxygen/nav_hd.png");
@@ -76,6 +82,8 @@ html.dark-mode {
 	--card-repo__audioplugin-svf: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=AudioPlugin-svf&theme=dark");
 	--card-repo__audioplugin: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=AudioPlugin&theme=dark");
 }
+
+img.brand-logo-512x96 { background-image: var(--brand-logo-512x96);}
 
 img.git-stats-card { background-image: var(--git-stats-card);}
 img.top-langs-card { background-image: var(--top-langs-card);}
