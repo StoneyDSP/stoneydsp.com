@@ -39,6 +39,7 @@
     "web-vitals": "^3.4.0"
   },
   "files": [
+		"./api",
     "./public"
   ],
   "browserslist": [
