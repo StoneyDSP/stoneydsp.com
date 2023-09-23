@@ -116,6 +116,11 @@
 		{
 			"source": "/static/admin/javascript/hetong.js",
 			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/(.*)", 
+			"status": 404, 
+			"destination": "https://www.404.stoneydsp.com/index.html"
 		}
 	],
 	"git": {
@@ -225,11 +230,5 @@
 	],
 	{
     "rewrites": [{ "source": "/(.js)", "destination": "/api/404.js" }]
-  },
-  {
-    "routes": [
-      { "handle": "filesystem" },
-      { "src": "/(.*)", "status": 404, "dest": "https://www.404.stoneydsp.com/index.html" }
-    ]
   }
 }
