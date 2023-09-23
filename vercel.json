@@ -1,11 +1,13 @@
 {
-    "version": 2,
-    "devCommand": null,
-    "installCommand": null,
-    "buildCommand": null,
-    "outputDirectory": ".",
-    "public": false,
-    "framework": null,
+  "version": 2,
+  "devCommand": null,
+  "installCommand": null,
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "public": false,
+  "framework": null,
+	"trailingSlash": true,
+	"cleanUrls": true,
 	"redirects": [
 		{
 			"source": "/redirect/",
