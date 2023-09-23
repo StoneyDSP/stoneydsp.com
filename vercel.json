@@ -222,8 +222,5 @@
 				}
 			]
 		}
-	],
-	{
-    "rewrites": [{ "source": "/(.js)", "destination": "https://www.404.stoneydsp.com/index.html" }]
-  }
+	]
 }
