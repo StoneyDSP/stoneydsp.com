@@ -119,7 +119,6 @@
 		},
 		{
 			"source": "/(.*)", 
-			"status": 404, 
 			"destination": "https://www.404.stoneydsp.com/index.html"
 		}
 	],
@@ -227,5 +226,8 @@
 				}
 			]
 		}
-	]
+	],
+	{
+    "rewrites": [{ "source": "/(.js)", "destination": "https://www.404.stoneydsp.com/index.html" }]
+  }
 }
