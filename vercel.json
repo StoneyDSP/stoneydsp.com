@@ -1,11 +1,13 @@
 {
-    "version": 2,
-    "devCommand": null,
-    "installCommand": null,
-    "buildCommand": null,
-    "outputDirectory": ".",
-    "public": false,
-    "framework": null,
+  "version": 2,
+  "devCommand": null,
+  "installCommand": null,
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "public": false,
+  "framework": null,
+	"trailingSlash": true,
+	"cleanUrls": true,
 	"redirects": [
 		{
 			"source": "/redirect/",
@@ -220,5 +222,14 @@
 				}
 			]
 		}
-	]
+	],
+	{
+    "rewrites": [{ "source": "/(.js)", "destination": "/api/404.js" }]
+  },
+  {
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/(.*)", "status": 404, "dest": "https://www.404.stoneydsp.com/index.html" }
+    ]
+  }
 }
