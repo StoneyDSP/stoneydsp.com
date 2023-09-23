@@ -227,8 +227,5 @@
 				}
 			]
 		}
-	],
-	{
-    "rewrites": [{ "source": "/(.js)", "destination": "/api/404.js" }]
-  }
+	]
 }
