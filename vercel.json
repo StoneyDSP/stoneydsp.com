@@ -116,10 +116,6 @@
 		{
 			"source": "/static/admin/javascript/hetong.js",
 			"destination": "https://www.404.stoneydsp.com/index.html"
-		},
-		{
-			"source": "/(.*)", 
-			"destination": "https://www.404.stoneydsp.com/index.html"
 		}
 	],
 	"git": {
