@@ -1,31 +1,24 @@
 {
-  "version": 2,
-  "devCommand": "yarn dev",
-  "installCommand": "yarn install",
-  "buildCommand": "yarn build",
-  "outputDirectory": ".",
-  "public": false,
-  "framework": null,
+	"version": 2,
+	"devCommand": "yarn dev",
+	"installCommand": "yarn install",
+	"buildCommand": "yarn build",
+	"outputDirectory": ".",
+	"public": false,
+	"framework": null,
 	"functions": {
-	  "api/vitals/index.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    },
-    "api/headers/index.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    },
-    "api/db/index.ts": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
-	"git": {
-		"deploymentEnabled": true
-	},
-	"github": {
-		"enabled": true,
-		"silent": false
+		"api/vitals/index.js": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/headers/index.js": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/db/index.ts": {
+			"memory": 1024,
+			"maxDuration": 10
+		}
 	},
 	"headers": [
 		{
@@ -126,8 +119,8 @@
 		}
 	],
 	"redirects": [
-		{
-			"source": "/.env",
+    {
+      "source": "/.env",
 			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
 		},
 		{
