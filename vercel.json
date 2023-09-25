@@ -124,5 +124,15 @@
 				}
 			]
 		}
+	],
+	"redirects": [
+		{
+			"source": "/.env",
+			"destination": "https://www.stoneydsp.com/api/index?query=cunt"
+		},
+				{
+			"source": "/.git/",
+			"destination": "https://www.stoneydsp.com/api/index?query=cunt"
+		}
 	]
 }
