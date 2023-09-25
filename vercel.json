@@ -7,15 +7,15 @@
   "public": false,
   "framework": null,
 	"functions": {
-	  "api/*.js": {
+	  "api/vitals/index.js": {
       "memory": 1024,
       "maxDuration": 10
     },
-    "api/**/*.js": {
+    "api/headers/index.js": {
       "memory": 1024,
       "maxDuration": 10
     },
-    "api/**/*.ts": {
+    "api/db/index.ts": {
       "memory": 1024,
       "maxDuration": 10
     }
