@@ -34,7 +34,7 @@
     "@html-eslint/parser": "^0.19.1",
     "@vercel/node": "^3.0.5",
     "@vercel/postgres": "^0.4.2",
-    "eslint": "^8.49.0",
+    "eslint": "^8.50.0",
     "typescript": "*",
     "web-vitals": "^3.4.0"
   },
