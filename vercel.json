@@ -1,31 +1,24 @@
 {
-  "version": 2,
-  "devCommand": "yarn dev",
-  "installCommand": "yarn install",
-  "buildCommand": "yarn build",
-  "outputDirectory": ".",
-  "public": false,
-  "framework": null,
+	"version": 2,
+	"devCommand": "yarn dev",
+	"installCommand": "yarn install",
+	"buildCommand": "yarn build",
+	"outputDirectory": ".",
+	"public": false,
+	"framework": null,
 	"functions": {
-	  "api/vitals/index.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    },
-    "api/headers/index.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    },
-    "api/db/index.ts": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
-	"git": {
-		"deploymentEnabled": true
-	},
-	"github": {
-		"enabled": true,
-		"silent": false
+		"api/vitals/index.js": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/headers/index.js": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/db/index.ts": {
+			"memory": 1024,
+			"maxDuration": 10
+		}
 	},
 	"headers": [
 		{
@@ -127,36 +120,188 @@
 	],
 	"redirects": [
 		{
-			"source": "/.env",
-			"destination": "/api/headers?query=nope%20nothing%20there"
+			"source": "/redirect/",
+			"destination": "https://www.404.stoneydsp.com/index.html"
 		},
 		{
-			"source": "/.git/",
-			"destination": "/api/headers?query=fuck%20off%20cunt"
+			"source": "/backup/",
+			"destination": "https://www.404.stoneydsp.com/index.html"
 		},
 		{
+			"source": "/new/",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/old/",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/temp/",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/tmp/",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/test/",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/v2/",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/wordpress/",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+    	{
 			"source": "/wp/",
-			"destination": "/api/headers?query=this%20is%20not%20a%20wordpress%20site%20you%20twat"
+			"destination": "https://www.404.stoneydsp.com/index.html"
 		},
-		{
-			"source": "/.git/config",
-			"destination": "/api/headers?query=unlucky"
-		},
-		{
-			"source": "/_all_dbs",
-			"destination": "/api/headers?query=yes%20here%20is%20my%20credit%20card%20info%20%you%20dickhead"
-		},
-		{
-			"source": "/login.action",
-			"destination": "/api/headers?query=not%20giving%20me%20enough%20much%20credit%20here"
-		},
-		{
-			"source": "/config.json",
-			"destination": "/api/headers?query=lol"
+    	{
+			"source": "/wp-includes/",
+			"destination": "https://www.404.stoneydsp.com/index.html"
 		},
 		{
 			"source": "/wp-login.php",
-			"destination": "/api/headers?query=open%20sesame"
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/login.action",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/_all_dbs",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/_catalog",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/config.json",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/.DS_Store",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/.env",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/server-status",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/telescope/requests",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/.vscode/sftp.json",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/about",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/debug/default/view",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/.git/config",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/Public/home/js/check.js",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/static/admin/javascript/hetong.js",
+			"destination": "https://www.404.stoneydsp.com/index.html"
+		},
+		{
+			"source": "/.env",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/.git/",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/wp/",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/.git/config",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/_all_dbs",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/login.action",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/config.json",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/wp-login.php",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/.DS_Store",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/telescope/requests",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/.vscode/sftp.json",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/about",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/server-status",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/v2/_catalog",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/debug/default/view",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/s/3393e21323e26373e26373/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/wp/v2/users",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
 		}
 	]
 }

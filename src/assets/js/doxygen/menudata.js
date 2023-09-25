@@ -27,29 +27,29 @@ var menudata = {
   children: [
     {
       text: "Home",
-      url: "https://www.stoneydsp.com/index.html"
+      url: "https://www.stoneydsp.com"
     },
     {
       text: "Projects",
-      url: "https://projects.stoneydsp.com",
+      url: "https://www.projects.stoneydsp.com",
       children: [
         {
           text: "Biquads",
-          url: "https://biquads.stoneydsp.com"
+          url: "https://www.biquads.stoneydsp.com"
         },
         {
           text: "CxxWin",
-          url: "https://cxxwin.stoneydsp.com"
+          url: "https://www.cxxwin.stoneydsp.com"
         },
         {
           text: "UBento",
-          url: "https://ubento.stoneydsp.com"
+          url: "https://www.ubento.stoneydsp.com"
         }
       ]
     },
     {
       text: "Contact",
-      url: "https://contact.stoneydsp.com"
+      url: "https://www.contact.stoneydsp.com"
     }
   ]
 };
