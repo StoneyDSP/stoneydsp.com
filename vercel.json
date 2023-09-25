@@ -128,11 +128,35 @@
 	"redirects": [
 		{
 			"source": "/.env",
-			"destination": "https://www.stoneydsp.com/api/bot?msg=cunt"
+			"destination": "/api/headers?query=nope%20nothing%20there"
 		},
-				{
+		{
 			"source": "/.git/",
-			"destination": "https://www.stoneydsp.com/api/bot?msg"
+			"destination": "/api/headers?query=fuck%20off%20cunt"
+		},
+		{
+			"source": "/wp/",
+			"destination": "/api/headers?query=this%20is%20not%20a%20wordpress%20site%20you%20twat"
+		},
+		{
+			"source": "/.git/config",
+			"destination": "/api/headers?query=unlucky"
+		},
+		{
+			"source": "/_all_dbs",
+			"destination": "/api/headers?query=yes%20here%20is%20my%20credit%20card%20info%20%you%20dickhead"
+		},
+		{
+			"source": "/login.action",
+			"destination": "/api/headers?query=not%20giving%20me%20enough%20much%20credit%20here"
+		},
+		{
+			"source": "/config.json",
+			"destination": "/api/headers?query=lol"
+		},
+		{
+			"source": "/wp-login.php",
+			"destination": "/api/headers?query=open%20sesame"
 		}
 	]
 }
