@@ -139,10 +139,6 @@
 			"destination": "/api/headers?query=this%20is%20not%20a%20wordpress%20site%20you%20twat"
 		},
 		{
-			"source": "/wp/",
-			"destination": "/api/headers?query=this%20is%20not%20a%20wordpress%20site%20you%20twat"
-		},
-		{
 			"source": "/.git/config",
 			"destination": "/api/headers?query=unlucky"
 		},
@@ -153,6 +149,14 @@
 		{
 			"source": "/login.action",
 			"destination": "/api/headers?query=not%20giving%20me%20enough%20much%20credit%20here"
+		},
+		{
+			"source": "/config.json",
+			"destination": "/api/headers?query=lol"
+		},
+		{
+			"source": "/wp-login.php",
+			"destination": "/api/headers?query=open%20sesame"
 		}
 	]
 }
