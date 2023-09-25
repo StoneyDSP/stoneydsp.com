@@ -128,11 +128,11 @@
 	"redirects": [
 		{
 			"source": "/.env",
-			"destination": "https://www.stoneydsp.com/api/index?msg=cunt"
+			"destination": "https://www.stoneydsp.com/api/bot?msg=cunt"
 		},
 				{
 			"source": "/.git/",
-			"destination": "https://www.stoneydsp.com/api/index?msg"
+			"destination": "https://www.stoneydsp.com/api/bot?msg"
 		}
 	]
 }
