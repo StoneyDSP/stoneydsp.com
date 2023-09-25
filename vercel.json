@@ -128,35 +128,79 @@
 	"redirects": [
 		{
 			"source": "/.env",
-			"destination": "/api/headers?query=nope%20nothing%20there"
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
 		},
 		{
 			"source": "/.git/",
-			"destination": "/api/headers?query=fuck%20off%20cunt"
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
 		},
 		{
 			"source": "/wp/",
-			"destination": "/api/headers?query=this%20is%20not%20a%20wordpress%20site%20you%20twat"
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
 		},
 		{
 			"source": "/.git/config",
-			"destination": "/api/headers?query=unlucky"
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
 		},
 		{
 			"source": "/_all_dbs",
-			"destination": "/api/headers?query=yes%20here%20is%20my%20credit%20card%20info%20%you%20dickhead"
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
 		},
 		{
 			"source": "/login.action",
-			"destination": "/api/headers?query=not%20giving%20me%20enough%20much%20credit%20here"
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
 		},
 		{
 			"source": "/config.json",
-			"destination": "/api/headers?query=lol"
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
 		},
 		{
 			"source": "/wp-login.php",
-			"destination": "/api/headers?query=open%20sesame"
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/.DS_Store",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/telescope/requests",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/.vscode/sftp.json",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/about",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/server-status",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/v2/_catalog",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/debug/default/view",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/s/3393e21323e26373e26373/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/wp/v2/users",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
 		}
 	]
 }
