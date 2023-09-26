@@ -22,7 +22,7 @@ html {
 
 	--brand-logo-512x96: url("../../../public/StoneyDSP-Regular-512x96d.svg");
 
-	--powered-by-vercel: url("../../../public/public/powered-by-vercel_d.svg");
+	--powered-by-vercel: url("../../../public/powered-by-vercel_d.svg");
 	--table-gradient: url("../../../public/doxygen/tab_b.png");
 	--table-row-gradient: ("../../../public/doxygen/nav_h.png");
 
@@ -53,9 +53,9 @@ html {
 html.dark-mode {
 	--colour-dull: hsla(0, 0%, 100%, 50%);
 
-	--brand-logo-512x96: url("../../../public/public/StoneyDSP-Regular-512x96.svg");
+	--brand-logo-512x96: url("../../../public/StoneyDSP-Regular-512x96.svg");
 
-	--powered-by-vercel: url("../../../public/public/powered-by-vercel.svg");
+	--powered-by-vercel: url("../../../public/powered-by-vercel.svg");
 	--table-gradient: url("../../../public/doxygen/tab_bd.png");
 	--table-row-gradient: ("../../../public/doxygen/nav_hd.png");
 
