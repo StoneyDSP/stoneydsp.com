@@ -4231,7 +4231,7 @@
   S
 });
 /*! jQuery UI - v1.13.2 - 2022-08-01
-* http://jqueryui.com
+* https://jqueryui.com
 * Includes: widget.js, position.js, data.js, disable-selection.js, focusable.js, form-reset-mixin.js, jquery-patch.js, keycode.js, labels.js, scroll-parent.js, tabbable.js, unique-id.js, widgets/resizable.js, widgets/mouse.js
 * Copyright jQuery Foundation and other contributors; Licensed MIT */
 
@@ -5898,7 +5898,7 @@
 /*!
 PowerTip v1.3.1 (2018-04-15)
 https://stevenbenner.github.io/jquery-powertip/
-Copyright (c) 2018 Steven Benner (http://stevenbenner.com/).
+Copyright (c) 2018 Steven Benner (https://stevenbenner.com/).
 Released under MIT license.
 https://raw.github.com/stevenbenner/jquery-powertip/master/LICENSE.txt
 */
@@ -6678,8 +6678,8 @@ https://raw.github.com/stevenbenner/jquery-powertip/master/LICENSE.txt
   }
 }(jQuery);
 /*! SmartMenus jQuery Plugin - v1.1.0 - September 17, 2017
-* http://www.smartmenus.org/
-* Copyright Vasil Dinkov, Vadikom Web Ltd. http://vadikom.com; Licensed MIT */
+* https://www.smartmenus.org/
+* Copyright Vasil Dinkov, Vadikom Web Ltd. https://vadikom.com; Licensed MIT */
 (function(t) {
   "function" == typeof define && define.amd ? define(["jquery"], t) : "object" == typeof module && "object" == typeof module.exports ? module.exports = t(require("jquery")) : t(jQuery)
 }

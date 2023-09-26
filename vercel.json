@@ -22,15 +22,6 @@
 	},
 	"headers": [
 		{
-			"source": "/service-worker.js",
-			"headers": [
-				{
-					"key": "Cache-Control",
-					"value": "public, max-age=0, must-revalidate"
-				}
-			]
-		},
-		{
 			"source": "/(.html)",
 			"headers": [
 				{
@@ -121,79 +112,79 @@
 	"redirects": [
     {
       "source": "/.env",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/.git/",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/wp/",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/.git/config",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/_all_dbs",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/login.action",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/config.json",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/wp-login.php",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/.DS_Store",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/telescope/requests",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/.vscode/sftp.json",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/about",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/server-status",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/v2/_catalog",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/debug/default/view",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/s/3393e21323e26373e26373/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/wp/v2/users",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		},
 		{
 			"source": "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php",
-			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+			"destination": "/404.html"
 		}
 	]
 }
