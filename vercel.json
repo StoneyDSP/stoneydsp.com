@@ -94,7 +94,16 @@
 			]
 		},
 		{
-			"source": "/public/assets/css/styles.css",
+			"source": "/public/(.*)",
+			"headers": [
+				{
+					"key": "Access-Control-Allow-Origin",
+					"value": "*"
+				}
+			]
+		},
+		{
+			"source": "/public/*/(.*)",
 			"headers": [
 				{
 					"key": "Access-Control-Allow-Origin",
