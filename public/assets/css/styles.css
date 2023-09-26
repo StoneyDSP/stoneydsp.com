@@ -23,8 +23,8 @@ html {
 	--brand-logo-512x96: url("../../../public/StoneyDSP-Regular-512x96d.svg");
 
 	--powered-by-vercel: url("../../../public/powered-by-vercel_d.svg");
-	--table-gradient: url("../../../public/doxygen/tab_b.png");
-	--table-row-gradient: ("../../../public/doxygen/nav_h.png");
+	--table-gradient: url("../../../src/assets/css/doxygen/tab_b.png");
+	--table-row-gradient: ("../../../src/assets/css/doxygen/doxygen/nav_h.png");
 
 	--git-stats-card: url("https://www.github-readme-stats.stoneydsp.com/api?username=StoneyDSP&show_icons=true&theme=default");
 
@@ -56,8 +56,8 @@ html.dark-mode {
 	--brand-logo-512x96: url("../../../public/StoneyDSP-Regular-512x96.svg");
 
 	--powered-by-vercel: url("../../../public/powered-by-vercel.svg");
-	--table-gradient: url("../../../public/doxygen/tab_bd.png");
-	--table-row-gradient: ("../../../public/doxygen/nav_hd.png");
+	--table-gradient: url("../../../src/assets/css/doxygen/tab_bd.png");
+	--table-row-gradient: ("../../../src/assets/css/doxygen/nav_hd.png");
 
 	--git-stats-card: url("https://www.github-readme-stats.stoneydsp.com/api?username=StoneyDSP&show_icons=true&theme=dark");
 
