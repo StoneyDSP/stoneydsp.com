@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("../../../src/assets/css/framework/fonts/microsoft/cascadia/font-cascadia-dynamic.css") layer(fontFace);
 /* @import url("../../src/assets/css/framework/reset.css") layer(reset); */
-@import url("../../../src/assets/css/ramework/support.css") layer(defaults.support);
+@import url("../../../src/assets/css/framework/support.css") layer(defaults.support);
 @import url("../../../src/assets/css/framework/defaults.css") layer(defaults);
 @import url("../../../src/assets/css/framework/global.css") layer(global);
 /* @import url("../../src/assets/css/framework/helpers.css") layer(global.helpers); */
