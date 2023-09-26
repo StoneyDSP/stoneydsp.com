@@ -94,6 +94,15 @@
 			]
 		},
 		{
+			"source": "/public/(.*)",
+			"headers": [
+				{
+					"key": "Access-Control-Allow-Origin",
+					"value": "*"
+				}
+			]
+		},
+		{
 			"source": "/:path*",
 			"has": [
 				{
