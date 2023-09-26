@@ -1,7 +1,7 @@
 {
 	"name": "stoneydsp.github.io",
 	"short_name": "stoneydsp",
-	"start_url": "/index.html",
+	"start_url": ".",
     "id": "/index.html",
 	"display": "browser",
 	"background_color": "#fff",

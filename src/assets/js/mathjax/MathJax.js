@@ -7,7 +7,7 @@
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
@@ -3411,14 +3411,14 @@ if (document.getElementById && document.childNodes && document.createElement) {
                                   i.id = "mathplayer";
                                   i.classid = "clsid:32F66A20-7614-11D4-BD11-00104BD3F987";
                                   g.appendChild(i);
-                                  document.namespaces.add("m", "http://www.w3.org/1998/Math/MathML");
+                                  document.namespaces.add("m", "https://www.w3.org/1998/Math/MathML");
                                   j.mpNamespace = true;
                                   if (document.readyState && (document.readyState === "loading" || document.readyState === "interactive")) {
                                       document.write('<?import namespace="m" implementation="#MathPlayer">');
                                       j.mpImported = true
                                   }
                               } else {
-                                  document.namespaces.add("mjx_IE_fix", "http://www.w3.org/1999/xlink")
+                                  document.namespaces.add("mjx_IE_fix", "https://www.w3.org/1999/xlink")
                               }
                           } catch (m) {}
                       }
