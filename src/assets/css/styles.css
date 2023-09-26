@@ -26,28 +26,28 @@ html {
 	--table-gradient: url("../../../src/assets/css/doxygen/tab_b.png");
 	--table-row-gradient: ("../../../src/assets/css/doxygen/nav_h.png");
 
-	--git-stats-card: url("https://github-readme-stats.stoneydsp.com/api?username=StoneyDSP&show_icons=true&theme=default");
+	--git-stats-card: url("https://www.github-readme-stats.stoneydsp.com/api?username=StoneyDSP&show_icons=true&theme=default");
 
-	--top-langs-card: url("https://github-readme-stats.stoneydsp.com/api/top-langs/?username=StoneyDSP&langs_count=8&show_icons=true&theme=default&hide=tex,html&layout=donut");
+	--top-langs-card: url("https://www.github-readme-stats.stoneydsp.com/api/top-langs/?username=StoneyDSP&langs_count=8&show_icons=true&theme=default&hide=tex,html&layout=donut");
 
-	--lang-icon-cpp: url("https://skillicons.dev/icons?i=cpp&theme=light");
-	--lang-icon-c: url("https://skillicons.dev/icons?i=c&theme=light");
-	--lang-icon-cmake: url("https://skillicons.dev/icons?i=cmake&theme=light");
-	--lang-icon-nodejs: url("https://skillicons.dev/icons?i=nodejs&theme=light");
+	--lang-icon-cpp: url("https://www.skillicons.dev/icons?i=cpp&theme=light");
+	--lang-icon-c: url("https://www.skillicons.dev/icons?i=c&theme=light");
+	--lang-icon-cmake: url("https://www.skillicons.dev/icons?i=cmake&theme=light");
+	--lang-icon-nodejs: url("https://www.skillicons.dev/icons?i=nodejs&theme=light");
 
-	--lang-icon-html: url("https://skillicons.dev/icons?i=html&theme=light");
-	--lang-icon-css: url("https://skillicons.dev/icons?i=css&theme=light");
-	--lang-icon-ts: url("https://skillicons.dev/icons?i=ts&theme=light");
-	--lang-icon-js: url("https://skillicons.dev/icons?i=js&theme=light");
+	--lang-icon-html: url("https://www.skillicons.dev/icons?i=html&theme=light");
+	--lang-icon-css: url("https://www.skillicons.dev/icons?i=css&theme=light");
+	--lang-icon-ts: url("https://www.skillicons.dev/icons?i=ts&theme=light");
+	--lang-icon-js: url("https://www.skillicons.dev/icons?i=js&theme=light");
 
-	--card-repo__biquads: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=Biquads&theme=default");
-	--card-repo__ubento: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=UBento&theme=default");
-	--card-repo__orfanidis: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=OrfanidisBiquad&theme=default");
-	--card-repo__cxxwin: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=CxxWin&theme=default");
-	--card-repo__nonlinearfilters: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=NonLinearFilters&theme=default");
-	--card-repo__cmodule: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=cmodule&theme=default");
-	--card-repo__audioplugin-svf: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=AudioPlugin-svf&theme=default");
-	--card-repo__audioplugin: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=AudioPlugin&theme=default");
+	--card-repo__biquads: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=Biquads&theme=default");
+	--card-repo__ubento: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=UBento&theme=default");
+	--card-repo__orfanidis: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=OrfanidisBiquad&theme=default");
+	--card-repo__cxxwin: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=CxxWin&theme=default");
+	--card-repo__nonlinearfilters: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=NonLinearFilters&theme=default");
+	--card-repo__cmodule: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=cmodule&theme=default");
+	--card-repo__audioplugin-svf: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=AudioPlugin-svf&theme=default");
+	--card-repo__audioplugin: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=AudioPlugin&theme=default");
 }
 
 html.dark-mode {
@@ -59,28 +59,28 @@ html.dark-mode {
 	--table-gradient: url("../../../src/assets/css/doxygen/tab_bd.png");
 	--table-row-gradient: ("../../../src/assets/css/doxygen/nav_hd.png");
 
-	--git-stats-card: url("https://github-readme-stats.stoneydsp.com/api?username=StoneyDSP&show_icons=true&theme=dark");
+	--git-stats-card: url("https://www.github-readme-stats.stoneydsp.com/api?username=StoneyDSP&show_icons=true&theme=dark");
 
-	--top-langs-card: url("https://github-readme-stats.stoneydsp.com/api/top-langs/?username=StoneyDSP&langs_count=8&show_icons=true&theme=dark&hide=tex,html&layout=donut");
+	--top-langs-card: url("https://www.github-readme-stats.stoneydsp.com/api/top-langs/?username=StoneyDSP&langs_count=8&show_icons=true&theme=dark&hide=tex,html&layout=donut");
 
-	--lang-icon-cpp: url("https://skillicons.dev/icons?i=cpp&theme=dark");
-	--lang-icon-c: url("https://skillicons.dev/icons?i=c&theme=dark");
-	--lang-icon-cmake: url("https://skillicons.dev/icons?i=cmake&theme=dark");
-	--lang-icon-nodejs: url("https://skillicons.dev/icons?i=nodejs&theme=dark");
+	--lang-icon-cpp: url("https://www.skillicons.dev/icons?i=cpp&theme=dark");
+	--lang-icon-c: url("https://www.skillicons.dev/icons?i=c&theme=dark");
+	--lang-icon-cmake: url("https://www.skillicons.dev/icons?i=cmake&theme=dark");
+	--lang-icon-nodejs: url("https://www.skillicons.dev/icons?i=nodejs&theme=dark");
 
-	--lang-icon-html: url("https://skillicons.dev/icons?i=html&theme=dark");
-	--lang-icon-css: url("https://skillicons.dev/icons?i=css&theme=dark");
-	--lang-icon-ts: url("https://skillicons.dev/icons?i=ts&theme=dark");
-	--lang-icon-js: url("https://skillicons.dev/icons?i=js&theme=dark");
+	--lang-icon-html: url("https://www.skillicons.dev/icons?i=html&theme=dark");
+	--lang-icon-css: url("https://www.skillicons.dev/icons?i=css&theme=dark");
+	--lang-icon-ts: url("https://www.skillicons.dev/icons?i=ts&theme=dark");
+	--lang-icon-js: url("https://www.skillicons.dev/icons?i=js&theme=dark");
 
-	--card-repo__biquads: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=Biquads&theme=dark");
-	--card-repo__ubento: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=UBento&theme=dark");
-	--card-repo__orfanidis: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=OrfanidisBiquad&theme=dark");
-	--card-repo__cxxwin: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=CxxWin&theme=dark");
-	--card-repo__nonlinearfilters: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=NonLinearFilters&theme=dark");
-	--card-repo__cmodule: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=cmodule&theme=dark");
-	--card-repo__audioplugin-svf: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=AudioPlugin-svf&theme=dark");
-	--card-repo__audioplugin: url("https://github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=AudioPlugin&theme=dark");
+	--card-repo__biquads: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=Biquads&theme=dark");
+	--card-repo__ubento: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=UBento&theme=dark");
+	--card-repo__orfanidis: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=OrfanidisBiquad&theme=dark");
+	--card-repo__cxxwin: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=CxxWin&theme=dark");
+	--card-repo__nonlinearfilters: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=NonLinearFilters&theme=dark");
+	--card-repo__cmodule: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=cmodule&theme=dark");
+	--card-repo__audioplugin-svf: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=AudioPlugin-svf&theme=dark");
+	--card-repo__audioplugin: url("https://www.github-readme-stats.stoneydsp.com/api/pin/?username=StoneyDSP&repo=AudioPlugin&theme=dark");
 }
 
 img.brand-logo-512x96 { background-image: var(--brand-logo-512x96);}
