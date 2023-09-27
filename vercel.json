@@ -128,71 +128,7 @@
 			"destination": "/404.html"
 		},
 		{
-			"source": "/wp/",
-			"destination": "/404.html"
-		},
-		{
 			"source": "/.git/config",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/_all_dbs",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/login.action",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/config.json",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/wp-login.php",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/.DS_Store",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/telescope/requests",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/.vscode/sftp.json",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/about",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/server-status",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/v2/_catalog",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/debug/default/view",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/s/3393e21323e26373e26373/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/wp/v2/users",
-			"destination": "/404.html"
-		},
-		{
-			"source": "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php",
 			"destination": "/404.html"
 		},
 		{
