@@ -26,7 +26,7 @@ html {
 	--table-gradient: url("../../../src/assets/css/doxygen/tab_b.png");
 	--table-row-gradient: ("../../../src/assets/css/doxygen/doxygen/nav_h.png");
 
-	--git-stats-card: url("https://www.github-readme-stats.vercel.app/api?username=nathanjhood&show_icons=true&theme=default");
+	--git-stats-card: url("https://www.github-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&theme=default");
 
 	--top-langs-card: url("https://www.github-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=default&hide=tex,html&layout=donut");
 
