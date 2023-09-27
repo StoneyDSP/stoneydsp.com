@@ -128,71 +128,67 @@
 			"destination": "/404.html"
 		},
 		{
-			"source": "/wp/",
-			"destination": "/404.html"
-		},
-		{
 			"source": "/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/_all_dbs",
+			"source": "/api/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/login.action",
+			"source": "/api/v1/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/config.json",
+			"source": "/api/v2/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/wp-login.php",
+			"source": "/api/v3/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application",
+			"source": "/api/v4/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/.DS_Store",
+			"source": "/api/user/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/telescope/requests",
+			"source": "/api/user/v1/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/.vscode/sftp.json",
+			"source": "/api/user/v2/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/about",
+			"source": "/api/user/v3/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/server-status",
+			"source": "/api/user/v4/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/v2/_catalog",
+			"source": "/api/admin/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/debug/default/view",
+			"source": "/api/admin/v1/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/s/3393e21323e26373e26373/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties",
+			"source": "/api/admin/v2/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/wp/v2/users",
+			"source": "/api/admin/v3/.git/config",
 			"destination": "/404.html"
 		},
 		{
-			"source": "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php",
+			"source": "/api/admin/v4/.git/config",
 			"destination": "/404.html"
 		}
 	]
