@@ -7,11 +7,15 @@
 	"public": false,
 	"framework": null,
 	"functions": {
-		"api/vitals/index.js": {
+		"api/vitals/index.mjs": {
 			"memory": 1024,
 			"maxDuration": 10
 		},
-		"api/headers/index.js": {
+		"api/headers/index.mjs": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/get/index.mjs": {
 			"memory": 1024,
 			"maxDuration": 10
 		},
@@ -60,6 +64,10 @@
 				{
 					"key": "Cache-Control",
 					"value": "public, max-age=10, s-maxage=86400, immutable"
+				},
+				{
+					"key": "X-XSS-Protection",
+					"value": "1; mode=block"
 				}
 			]
 		},
@@ -77,6 +85,10 @@
 				{
 					"key": "Cache-Control",
 					"value": "public, max-age=10, s-maxage=86400, immutable"
+				},
+				{
+					"key": "X-XSS-Protection",
+					"value": "1; mode=block"
 				}
 			]
 		},
@@ -110,10 +122,25 @@
 					"key": "authorized"
 				}
 			],
-		"headers": [
+		  "headers": [
 				{
 					"key": "x-authorized",
 					"value": "true"
+				}
+			]
+		},
+		{
+			"source": "/:path*",
+			"missing": [
+				{
+					"type": "query",
+					"key": "authorized"
+				}
+			],
+		  "headers": [
+				{
+					"key": "x-authorized",
+					"value": "false"
 				}
 			]
 		}
