@@ -19,4 +19,13 @@ yarn.lock
 package-lock.json
 coverage
 
-./contact/.git
+.editorconfig
+.eslintignore
+.eslintrc.json
+.gitattributes
+.gitignore
+.github
+.nojekyll
+.nvmrc
+
+share
