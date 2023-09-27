@@ -59,7 +59,7 @@ html.dark-mode {
 	--table-gradient: url("../../../src/assets/css/doxygen/tab_bd.png");
 	--table-row-gradient: ("../../../src/assets/css/doxygen/nav_hd.png");
 
-	--git-stats-card: url("https://www.github-readme-stats.vercel.app/api?username=nathanjhood&show_icons=true&theme=dark");
+	--git-stats-card: url("https://www.github-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&theme=dark");
 
 	--top-langs-card: url("https://www.github-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=dark&hide=tex,html&layout=donut");
 
