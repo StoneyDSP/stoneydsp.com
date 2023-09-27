@@ -60,6 +60,10 @@
 				{
 					"key": "Cache-Control",
 					"value": "public, max-age=10, s-maxage=86400, immutable"
+				},
+				{
+					"key": "X-XSS-Protection",
+					"value": "1; mode=block"
 				}
 			]
 		},
@@ -77,6 +81,10 @@
 				{
 					"key": "Cache-Control",
 					"value": "public, max-age=10, s-maxage=86400, immutable"
+				},
+				{
+					"key": "X-XSS-Protection",
+					"value": "1; mode=block"
 				}
 			]
 		},
@@ -110,10 +118,25 @@
 					"key": "authorized"
 				}
 			],
-		"headers": [
+		  "headers": [
 				{
 					"key": "x-authorized",
 					"value": "true"
+				}
+			]
+		},
+		{
+			"source": "/:path*",
+			"missing": [
+				{
+					"type": "query",
+					"key": "authorized"
+				}
+			],
+		  "headers": [
+				{
+					"key": "x-authorized",
+					"value": "false"
 				}
 			]
 		}
