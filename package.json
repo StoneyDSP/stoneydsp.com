@@ -1,19 +1,19 @@
 {
-  "name": "@stoneydsp/stoneydsp.github.io",
+  "name": "@stoneydsp/stoneydsp.com",
   "version": "0.0.1-608e088576e7c5c103dc2bf4850152752beed94b",
   "description": "StoneyDSP Official Website",
   "main": "./index.html",
   "icon": "./favicon.ico",
   "author": "StoneyDSP <nathanjhood@googlemail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/StoneyDSP/StoneyDSP.github.io#readme",
+  "homepage": "https://github.com/StoneyDSP/stoneydsp.com#readme",
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StoneyDSP/StoneyDSP.github.io.git"
+    "url": "git+https://github.com/StoneyDSP/stoneydsp.com.git"
   },
   "bugs": {
-    "url": "https://github.com/StoneyDSP/StoneyDSP.github.io/issues"
+    "url": "https://github.com/StoneyDSP/stoneydsp.com/issues"
   },
   "private": true,
   "preferGlobal": true,
@@ -35,8 +35,7 @@
     "@vercel/node": "^3.0.6",
     "@vercel/postgres": "^0.5.0",
     "eslint": "^8.50.0",
-    "typescript": "*",
-    "web-vitals": "^3.4.0"
+    "typescript": "*"
   },
   "files": [
 		"./api",
