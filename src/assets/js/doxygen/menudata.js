@@ -43,7 +43,7 @@ var menudata = {
         },
         {
           text: "UBento",
-          url: "https://www.ubento.stoneydsp.com/"
+          url: "https://www.stoneydsp.com/projects/ubento/"
         }
       ]
     },
