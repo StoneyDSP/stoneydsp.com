@@ -27,11 +27,11 @@ var menudata = {
   children: [
     {
       text: "Home",
-      url: "https://www.stoneydsp.com"
+      url: "/"
     },
     {
       text: "Projects",
-      url: "https://www.projects.stoneydsp.com",
+      url: "/projects",
       children: [
         {
           text: "Biquads",
@@ -49,7 +49,7 @@ var menudata = {
     },
     {
       text: "Contact",
-      url: "https://www.contact.stoneydsp.com"
+      url: "/contact"
     }
   ]
 };
