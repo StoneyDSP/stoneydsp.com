@@ -1,3 +1,5 @@
+import { Base64 } from 'js-base64';
+
 export default async function handler(request, response) {
   response.setHeader('X-UA-Compatible', 'ie-edge' );
   response.setHeader('Content-Type', 'application/json' );
@@ -9,13 +11,12 @@ export default async function handler(request, response) {
   try {
     request.body;
   } catch (error) {
-    return response.status(400).json({ error: 'My custom 400 error' });
+    return response.status(400).json({ error: '400' });
   }
 
+  // console.log(Base64.decode(JSON.stringify(request.query)));
+
   return response.status(200).json({
-    body: request.body,
-    query: request.query,
-    cookies: request.cookies,
-    headers: request.headers
+    query: Base64.decode(JSON.stringify(request.query))
   });
 }
