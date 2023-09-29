@@ -217,6 +217,14 @@
 		{
 			"source": "/api/admin/v4/.git/config",
 			"destination": "/404.html"
+		},
+		{
+			"source": "/api/pin/",
+			"destination": "https://github-readme-stats.vercel.app/api/pins/"
+		},
+				{
+			"source": "/api/top-langs/",
+			"destination": "https://github-readme-stats.vercel.app/api/top-langs/"
 		}
 	]
 }
