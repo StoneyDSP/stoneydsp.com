@@ -243,18 +243,6 @@
 			"destination": "https://github-readme-stats.vercel.app/api/top-langs/"
 		},
 		{
-			"source": "/_vercel/insights/view",
-			"destination": "https://www.stoneydsp.com/api/headers?query=whoami"
-		},
-		{
-			"source": "/_vercel/insights/script.js",
-			"destination": "https://www.stoneydsp.com/api?query=whoami"
-		},
-		{
-			"source": "/api/headers/index.js",
-			"destination": "https://www.stoneydsp.com/api?query=whoami"
-		},
-		{
 			"source": "/",
 			"destination": "https://www.stoneydsp.com/api?query=whoami"
 		}
