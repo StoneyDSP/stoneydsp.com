@@ -231,11 +231,31 @@
 			"destination": "https://www.stoneydsp.com/api?query=whoami"
 		},
 		{
-			"source": "static/admin/javascript/hetong.js",
+			"source": "/Public/home/js/check.js",
+			"destination": "https://www.stoneydsp.com/api?query=whoami"
+    },
+		{
+			"source": "/api/pin/",
+			"destination": "https://github-readme-stats.vercel.app/api/pin/"
+		},
+		{
+			"source": "/api/top-langs/",
+			"destination": "https://github-readme-stats.vercel.app/api/top-langs/"
+		},
+		{
+			"source": "/_vercel/insights/view",
+			"destination": "https://www.stoneydsp.com/api/headers?query=whoami"
+		},
+		{
+			"source": "/_vercel/insights/script.js",
 			"destination": "https://www.stoneydsp.com/api?query=whoami"
 		},
 		{
-			"source": "/Public/home/js/check.js",
+			"source": "/api/headers/index.js",
+			"destination": "https://www.stoneydsp.com/api?query=whoami"
+		},
+		{
+			"source": "/",
 			"destination": "https://www.stoneydsp.com/api?query=whoami"
 		}
 	]
