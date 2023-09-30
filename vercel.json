@@ -7,7 +7,7 @@
 	"public": false,
 	"framework": null,
 	"functions": {
-		"api/headers/index.js": {
+		"api/decode/index.js": {
 			"memory": 1024,
 			"maxDuration": 10
 		},
@@ -15,7 +15,7 @@
 			"memory": 1024,
 			"maxDuration": 10
 		},
-		"api/decode/index.js": {
+		"api/index.js": {
 			"memory": 1024,
 			"maxDuration": 10
 		},
@@ -28,6 +28,10 @@
 		{
 			"source": "/(.html)",
 			"headers": [
+				{
+					"key": "Access-Control-Allow-Origin",
+					"value": "*"
+				},
 				{
 					"key": "X-UA-Compatible",
 					"value": "ie-edge"
@@ -45,8 +49,16 @@
 					"value": "public, max-age=10, s-maxage=86400, immutable"
 				},
 				{
+					"key": "X-DNS-Prefetch-Control",
+					"value": "on"
+				},
+				{
 					"key": "X-XSS-Protection",
 					"value": "1; mode=block"
+				},
+				{
+					"key": "Strict-Transport-Security",
+					"value": "max-age=63072000; includeSubDomains; preload"
 				}
 			]
 		},
