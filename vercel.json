@@ -248,19 +248,19 @@
 		},
 		{
 			"source": "/_vercel/insights/view",
-			"destination": "https://www.stoneydsp/api/headers?query=whoami"
+			"destination": "https://www.stoneydsp.com/api/headers?query=whoami"
 		},
 		{
 			"source": "/_vercel/insights/script.js",
-			"destination": "https://www.stoneydsp/api/headers?query=whoami"
+			"destination": "https://www.stoneydsp.com/api/headers?query=whoami"
 		},
 		{
 			"source": "/api/headers/index.js",
-			"destination": "https://www.stoneydsp/api/headers?query=whoami"
+			"destination": "https://www.stoneydsp.com/api/headers?query=whoami"
 		},
 		{
 			"source": "/",
-			"destination": "https://www.stoneydsp/api/headers?query=whoami"
+			"destination": "https://www.stoneydsp.com/api/headers?query=whoami"
 		}
 	]
 }
