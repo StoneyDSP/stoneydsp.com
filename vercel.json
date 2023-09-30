@@ -299,6 +299,14 @@
 			"destination": "/api/418/?query=whoami"
 		},
 		{
+			"source": "/src/assets/js/doxygen/search/search.js",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/src/assets/js/doxygen/search/searchdata.js",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
 			"source": "/.aws/credentials",
 			"destination": "/api/418/?query=whoami"
 		}
