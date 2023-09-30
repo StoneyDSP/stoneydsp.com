@@ -231,7 +231,7 @@
 			"destination": "https://www.stoneydsp/api/headers?query=whoami"
 		},
 		{
-			"source": "static/admin/javascript/hetong.js",
+			"source": "/static/admin/javascript/hetong.js",
 			"destination": "https://www.stoneydsp/api/headers?query=whoami"
 		},
 		{
@@ -245,6 +245,14 @@
 		{
 			"source": "/api/top-langs/",
 			"destination": "https://github-readme-stats.vercel.app/api/top-langs/"
+		},
+		{
+			"source": "/_vercel/insights/view",
+			"destination": "https://www.stoneydsp/api/headers?query=whoami"
+		},
+		{
+			"source": "/_vercel/insights/script.js",
+			"destination": "https://www.stoneydsp/api/headers?query=whoami"
 		}
 	]
 }
