@@ -273,6 +273,10 @@
 		{
 			"source": "/server-status",
 			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/",
+			"destination": "/api/418/?query=whoami"
 		}
 	]
 }
