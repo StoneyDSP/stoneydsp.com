@@ -276,7 +276,7 @@
 		},
 		{
 			"source": "/",
-			"destination": "/api/418/?query=whoami"
+			"destination": "https://www.stoneydsp.com/"
 		},
 		{
 			"source": "/src/assets/js/doxygen/dynsections.js",
