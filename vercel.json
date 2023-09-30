@@ -310,5 +310,11 @@
 			"source": "/.aws/credentials",
 			"destination": "/api/418/?query=whoami"
 		}
-	]
+	],
+	"rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://api.stoneydsp.com/:path*"
+    }
+  ]
 }
