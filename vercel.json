@@ -231,7 +231,7 @@
 			"destination": "/api/418/?query=whoami"
 		},
 		{
-			"source": "/",
+			"source": "/wp-login.php",
 			"destination": "/api/418/?query=whoami"
 		}
 	]
