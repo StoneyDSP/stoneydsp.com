@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:api/decode/index.js
 import { Base64 } from 'js-base64';
 
-========
->>>>>>>> 7451139534a520401a9c06a6a1610926338e0599:api/headers/index.js
 export default async function handler(request, response) {
   response.setHeader('X-UA-Compatible', 'ie-edge' );
   response.setHeader('Content-Type', 'application/json' );
