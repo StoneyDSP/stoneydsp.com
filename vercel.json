@@ -238,22 +238,7 @@
 			"source": "/api/",
 			"destination": "/api/418/?query=whoami"
 		},
-		{
-			"source": "/config.json",
-			"destination": "/api/418/?query=whoami"
-		},
-		{
-			"source": "/login.action",
-			"destination": "/api/418/?query=whoami"
-		},
-		{
-			"source": "/.DS_Store",
-			"destination": "/api/418/?query=whoami"
-		},
-		{
-			"source": "/telescope/requests",
-			"destination": "/api/418/?query=whoami"
-		},
+		
 		{
 			"source": "/.vscode/sftp.json",
 			"destination": "/api/418/?query=whoami"
@@ -277,34 +262,6 @@
 		{
 			"source": "/",
 			"destination": "https://www.stoneydsp.com/"
-		},
-		{
-			"source": "/src/assets/js/doxygen/dynsections.js",
-			"destination": "/api/418/?query=whoami"
-		},
-		{
-			"source": "/src/assets/js/doxygen/darkmode_toggle.js",
-			"destination": "/api/418/?query=whoami"
-		},
-		{
-			"source": "/src/assets/js/doxygen/menudata.js",
-			"destination": "/api/418/?query=whoami"
-		},
-		{
-			"source": "/src/assets/js/doxygen/menu.js",
-			"destination": "/api/418/?query=whoami"
-		},
-		{
-			"source": "/src/assets/js/jquery/jquery.js",
-			"destination": "/api/418/?query=whoami"
-		},
-		{
-			"source": "/src/assets/js/doxygen/search/search.js",
-			"destination": "/api/418/?query=whoami"
-		},
-		{
-			"source": "/src/assets/js/doxygen/search/searchdata.js",
-			"destination": "/api/418/?query=whoami"
 		},
 		{
 			"source": "/.aws/credentials",
