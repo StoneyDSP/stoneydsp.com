@@ -237,6 +237,14 @@
 		{
 			"source": "/Public/home/js/check.js",
 			"destination": "https://www.stoneydsp/api/headers?query=whoami"
+		},
+		{
+			"source": "/api/pin/",
+			"destination": "https://github-readme-stats.vercel.app/api/pin/"
+		},
+		{
+			"source": "/api/top-langs/",
+			"destination": "https://github-readme-stats.vercel.app/api/top-langs/"
 		}
 	]
 }
