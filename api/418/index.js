@@ -11,10 +11,10 @@ export default async function handler(request, response) {
   try {
     request.body;
   } catch (error) {
-    return response.status(400).json({ error: ```400 error - bad request: ${error}``` });
+    return response.status(400).json({ error: ```400 error ${error}``` });
   }
 
-  response.status(418).json({
+  response.status(200).json({
     query: request.query,
     httpVersion: request.httpVersion,
     httpVersionMinor: request.httpVersionMajor,
