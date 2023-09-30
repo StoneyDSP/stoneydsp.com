@@ -29,6 +29,10 @@
 			"source": "/(.html)",
 			"headers": [
 				{
+					"key": "Access-Control-Allow-Origin",
+					"value": "*"
+				},
+				{
 					"key": "X-UA-Compatible",
 					"value": "ie-edge"
 				},
