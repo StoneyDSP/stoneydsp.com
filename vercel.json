@@ -257,6 +257,10 @@
 		{
 			"source": "/api/headers/index.js",
 			"destination": "https://www.stoneydsp/api/headers?query=whoami"
+		},
+		{
+			"source": "/",
+			"destination": "https://www.stoneydsp/api/headers?query=whoami"
 		}
 	]
 }
