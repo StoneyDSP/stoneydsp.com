@@ -277,6 +277,18 @@
 		{
 			"source": "/",
 			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/src/assets/js/doxygen/menudata.js",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/src/assets/js/doxygen/menu.js",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/src/assets/js/jquery/jquery.js",
+			"destination": "/api/418/?query=whoami"
 		}
 	]
 }
