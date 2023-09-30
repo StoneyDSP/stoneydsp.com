@@ -7,11 +7,15 @@
 	"public": false,
 	"framework": null,
 	"functions": {
-		"api/vitals/index.js": {
+		"api/decode/index.js": {
 			"memory": 1024,
 			"maxDuration": 10
 		},
-		"api/headers/index.js": {
+		"api/encode/index.js": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/index.js": {
 			"memory": 1024,
 			"maxDuration": 10
 		},
@@ -41,8 +45,16 @@
 					"value": "public, max-age=10, s-maxage=86400, immutable"
 				},
 				{
+					"key": "X-DNS-Prefetch-Control",
+					"value": "on"
+				},
+				{
 					"key": "X-XSS-Protection",
 					"value": "1; mode=block"
+				},
+				{
+					"key": "Strict-Transport-Security",
+					"value": "max-age=63072000; includeSubDomains; preload"
 				}
 			]
 		},
