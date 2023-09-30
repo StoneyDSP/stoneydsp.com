@@ -233,6 +233,46 @@
 		{
 			"source": "/wp-login.php",
 			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/api/",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/config.json",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/login.action",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/.DS_Store",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/telescope/requests",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/.vscode/sftp.json",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/config.json",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/_all_dbs",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application",
+			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/server-status",
+			"destination": "/api/418/?query=whoami"
 		}
 	]
 }
