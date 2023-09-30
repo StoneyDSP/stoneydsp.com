@@ -260,10 +260,6 @@
 			"destination": "/api/418/?query=whoami"
 		},
 		{
-			"source": "/",
-			"destination": "https://www.stoneydsp.com/"
-		},
-		{
 			"source": "/.aws/credentials",
 			"destination": "/api/418/?query=whoami"
 		}
