@@ -148,47 +148,47 @@
 	"redirects": [
     {
       "source": "/.env",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/.git/",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/v1/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/v2/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/v3/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/v4/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/user/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/user/v1/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/user/v2/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/user/v3/.git/config",
@@ -196,11 +196,11 @@
 		},
 		{
 			"source": "/api/user/v4/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/admin/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/admin/v1/.git/config",
@@ -208,66 +208,66 @@
 		},
 		{
 			"source": "/api/admin/v2/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/admin/v3/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/admin/v4/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/Public/home/js/check.js",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
     },
 		{
 			"source": "/api/pin/",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418?query=whoami"
 		},
 		{
 			"source": "/api/top-langs/",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api/418/query=whoami"
 		},
 		{
 			"source": "/wp-login.php",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api?query=whoami"
 		},
 		{
 			"source": "/api/",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api?query=whoami"
 		},
 		
 		{
 			"source": "/.vscode/sftp.json",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api?query=whoami"
 		},
 		{
 			"source": "/config.json",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api?query=whoami"
 		},
 		{
 			"source": "/_all_dbs",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api?query=whoami"
 		},
 		{
 			"source": "/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api?query=whoami"
 		},
 		{
 			"source": "/server-status",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api?query=whoami"
 		},
 		{
 			"source": "/.aws/credentials",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api?query=whoami"
 		}
 	],
 	"rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://api.stoneydsp.com/:path*"
+      "destination": "https://www.stoneydsp.com/teapot/:path*"
     }
   ]
 }
