@@ -26,6 +26,8 @@ html {
 	--table-gradient: url("../../../src/assets/css/doxygen/tab_b.png");
 	--table-row-gradient: ("../../../src/assets/css/doxygen/doxygen/nav_h.png");
 
+	/* --http-headers: url("https://www.stoneydsp.com/api?query=whoami"); */
+
 	--git-stats-card: url("https://github-readme-stats.vercel.app/api?username=nathanjhood&show_icons=true&theme=default");
 
 	--top-langs-card: url("https://github-readme-stats.vercel.app/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=default&hide=tex,html&layout=donut");
@@ -59,6 +61,8 @@ html.dark-mode {
 	--table-gradient: url("../../../src/assets/css/doxygen/tab_bd.png");
 	--table-row-gradient: ("../../../src/assets/css/doxygen/nav_hd.png");
 
+	/* --http-headers: url("https://www.stoneydsp.com/api?query=whoami"); */
+
 	--git-stats-card: url("https://github-readme-stats.vercel.app/api?username=nathanjhood&show_icons=true&theme=dark");
 
 	--top-langs-card: url("https://github-readme-stats.vercel.app/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=dark&hide=tex,html&layout=donut");
@@ -82,6 +86,10 @@ html.dark-mode {
 	--card-repo__audioplugin-svf: url("https://github-readme-stats.vercel.app/api/pin/?username=nathanjhood&repo=AudioPlugin-svf&theme=dark");
 	--card-repo__audioplugin: url("https://github-readme-stats.vercel.app/api/pin/?username=nathanjhood&repo=AudioPlugin&theme=dark");
 }
+
+/* .http {
+	background-image: var(--http-headers);
+} */
 
 img.brand-logo-512x96 { background-image: var(--brand-logo-512x96);}
 
