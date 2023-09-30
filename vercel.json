@@ -289,6 +289,10 @@
 		{
 			"source": "/src/assets/js/jquery/jquery.js",
 			"destination": "/api/418/?query=whoami"
+		},
+		{
+			"source": "/.aws/credentials",
+			"destination": "/api/418/?query=whoami"
 		}
 	]
 }
