@@ -281,6 +281,10 @@
 		{
 			"source": "/Dockerrun.aws.json",
 			"destination": "/api?query=whoami"
+		},
+		{
+			"source": "/s3cmd.ini",
+			"destination": "/api?query=imafuckinteapot"
 		}
 	],
 	"rewrites": [
