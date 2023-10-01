@@ -291,6 +291,10 @@
 			"destination": "/api?query=imafuckinteapot"
 		},
 		{
+			"source": "/sitemap.xml",
+			"destination": "/api?query=imafuckinteapot"
+		},
+		{
       "source": "/.whoami",
 			"destination": "/api?query=whoami"
 		}
