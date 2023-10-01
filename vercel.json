@@ -277,6 +277,10 @@
 		{
 			"source": "/wp-config.php-backup",
 			"destination": "/api?query=whoami"
+		},
+		{
+			"source": "/Dockerrun.aws.json",
+			"destination": "/api?query=whoami"
 		}
 	],
 	"rewrites": [
