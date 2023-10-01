@@ -285,6 +285,10 @@
 		{
 			"source": "/s3cmd.ini",
 			"destination": "/api?query=imafuckinteapot"
+		},
+		{
+			"source": "/.svn/entries",
+			"destination": "/api?query=imafuckinteapot"
 		}
 	],
 	"rewrites": [
