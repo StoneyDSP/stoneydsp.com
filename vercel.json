@@ -231,7 +231,7 @@
 			"destination": "/api?query=whoami"
 		},
 		{
-			"source": "/api/pin/",
+			"source": "/api/pin",
 			"destination": "/api/418?query=whoami"
 		},
 		{
@@ -246,7 +246,6 @@
 			"source": "/api/",
 			"destination": "/api?query=whoami"
 		},
-		
 		{
 			"source": "/.vscode/sftp.json",
 			"destination": "/api?query=whoami"
