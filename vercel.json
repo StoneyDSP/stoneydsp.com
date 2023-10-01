@@ -156,111 +156,111 @@
 		},
 		{
 			"source": "/.git/",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/v1/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/v2/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/v3/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/v4/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/user/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/user/v1/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/user/v2/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/user/v3/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/user/v4/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/admin/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/admin/v1/.git/config",
-			"destination": "/api/418/?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/admin/v2/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/admin/v3/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/admin/v4/.git/config",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/Public/home/js/check.js",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
     },
 		{
 			"source": "/static/admin/javascript/hetong.js",
-			"destination": "/api?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/pin",
-			"destination": "/api/418?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/top-langs/",
-			"destination": "/api/418/query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/wp-login.php",
-			"destination": "/api?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/api/",
-			"destination": "/api?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/.vscode/sftp.json",
-			"destination": "/api?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/config.json",
-			"destination": "/api?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/_all_dbs",
-			"destination": "/api?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application",
-			"destination": "/api?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/server-status",
@@ -272,15 +272,15 @@
 		},
 		{
 			"source": "/.gitlab-ci.yml",
-			"destination": "/api?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/wp-config.php-backup",
-			"destination": "/api?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/Dockerrun.aws.json",
-			"destination": "/api?query=whoami"
+			"destination": "/api?query=imafuckinteapot"
 		},
 		{
 			"source": "/s3cmd.ini",
@@ -289,6 +289,10 @@
 		{
 			"source": "/.svn/entries",
 			"destination": "/api?query=imafuckinteapot"
+		},
+		{
+      "source": "/.whoami",
+			"destination": "/api?query=whoami"
 		}
 	],
 	"rewrites": [
