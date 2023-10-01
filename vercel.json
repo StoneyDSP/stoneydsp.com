@@ -273,6 +273,10 @@
 		{
 			"source": "/.gitlab-ci.yml",
 			"destination": "/api?query=whoami"
+		},
+		{
+			"source": "/wp-config.php-backup",
+			"destination": "/api?query=whoami"
 		}
 	],
 	"rewrites": [
