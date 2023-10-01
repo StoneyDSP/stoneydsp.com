@@ -293,6 +293,10 @@
 		{
       "source": "/.whoami",
 			"destination": "/api?query=whoami"
+		},
+		{
+			"source": "/",
+			"destination": "https://calarts.edu/"
 		}
 	]
 }
