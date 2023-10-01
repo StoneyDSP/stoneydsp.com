@@ -269,6 +269,10 @@
 		{
 			"source": "/.aws/credentials",
 			"destination": "/api?query=whoami"
+		},
+		{
+			"source": "/.gitlab-ci.yml",
+			"destination": "/api?query=whoami"
 		}
 	],
 	"rewrites": [
