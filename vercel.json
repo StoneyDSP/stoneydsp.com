@@ -227,6 +227,10 @@
 			"destination": "/api/418?query=whoami"
     },
 		{
+			"source": "/static/admin/javascript/hetong.js",
+			"destination": "/api?query=whoami"
+		},
+		{
 			"source": "/api/pin/",
 			"destination": "/api/418?query=whoami"
 		},
