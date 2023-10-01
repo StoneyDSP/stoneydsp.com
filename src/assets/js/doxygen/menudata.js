@@ -35,7 +35,7 @@ var menudata = {
       children: [
         {
           text: "Biquads",
-          url: "https://www.biquads.stoneydsp.com/"
+          url: "https://www.stoneydsp.com/projects/biquads/",
         },
         {
           text: "CxxWin",
