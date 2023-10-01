@@ -231,7 +231,7 @@
 			"destination": "/api?query=imafuckinteapot"
 		},
 		{
-			"source": "/api/pin",
+			"source": "/api/pin/",
 			"destination": "/api?query=imafuckinteapot"
 		},
 		{
