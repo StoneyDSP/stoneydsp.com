@@ -1,30 +1,30 @@
 @charset "UTF-8";
-@import url("../../../src/assets/css/framework/fonts/microsoft/cascadia/font-cascadia-dynamic.css") layer(fontFace);
+@import url("https://www.stoneydsp.com/src/assets/css/framework/fonts/microsoft/cascadia/font-cascadia-dynamic.css") layer(fontFace);
 /* @import url("../../src/assets/css/framework/reset.css") layer(reset); */
-@import url("../../../src/assets/css/framework/support.css") layer(defaults.support);
-@import url("../../../src/assets/css/framework/defaults.css") layer(defaults);
-@import url("../../../src/assets/css/framework/global.css") layer(global);
+@import url("https://www.stoneydsp.com/src/assets/css/framework/support.css") layer(defaults.support);
+@import url("https://www.stoneydsp.com/src/assets/css/framework/defaults.css") layer(defaults);
+@import url("https://www.stoneydsp.com/src/assets/css/framework/global.css") layer(global);
 /* @import url("../../src/assets/css/framework/helpers.css") layer(global.helpers); */
 /* @import url("../src/assets/css/framework/animations/animations.css") layer(site.animations); */
-@import url("../../../src/assets/css/framework/site.css") layer(site);
+@import url("https://www.stoneydsp.com/src/assets/css/framework/site.css") layer(site);
 /* @import url("../../src/assets/css/framework/components/header.css") layer(header); */
 /* @import url("./framework/components/footer.css") layer(footer); */
 
 /* @import url("../../src/assets/css/framework/debug/dbg.css") layer(site.dbg); */
 /* @import url("../../src/assets/css/framework/debug/lint.css") layer(site.dbg.lint); */
 
-@import url("../../../src/assets/css/doxygen/doxygen.css") layer(site.doxygen);
-@import url("../../../src/assets/css/doxygen/tabs.css") layer(site.doxygen.tabs);
-@import url("../../../src/assets/css/doxygen/search.css") layer(site.doxygen.search);
+@import url("https://www.stoneydsp.com/src/assets/css/doxygen/doxygen.css") layer(site.doxygen);
+@import url("https://www.stoneydsp.com/src/assets/css/doxygen/tabs.css") layer(site.doxygen.tabs);
+@import url("https://www.stoneydsp.com/src/assets/css/doxygen/search.css") layer(site.doxygen.search);
 
 html {
 	--colour-dull: hsla(0, 0%, 0%, 50%);
 
-	--brand-logo-512x96: url("../../../public/StoneyDSP-Regular-512x96d.svg");
+	--brand-logo-512x96: url("https://www.stoneydsp.com/public/StoneyDSP-Regular-512x96d.svg");
 
-	--powered-by-vercel: url("../../../public/powered-by-vercel_d.svg");
-	--table-gradient: url("../../../src/assets/css/doxygen/tab_b.png");
-	--table-row-gradient: ("../../../src/assets/css/doxygen/doxygen/nav_h.png");
+	--powered-by-vercel: url("https://www.stoneydsp.com/public/powered-by-vercel_d.svg");
+	--table-gradient: url("https://www.stoneydsp.com/src/assets/css/doxygen/tab_b.png");
+	--table-row-gradient: ("https://www.stoneydsp.com/src/assets/css/doxygen/doxygen/nav_h.png");
 
 	/* --http-headers: url("https://www.stoneydsp.com/api?query=whoami"); */
 
@@ -61,11 +61,11 @@ html {
 html.dark-mode {
 	--colour-dull: hsla(0, 0%, 100%, 50%);
 
-	--brand-logo-512x96: url("../../../public/StoneyDSP-Regular-512x96.svg");
+	--brand-logo-512x96: url("https://www.stoneydsp.com/public/StoneyDSP-Regular-512x96.svg");
 
-	--powered-by-vercel: url("../../../public/powered-by-vercel.svg");
-	--table-gradient: url("../../../src/assets/css/doxygen/tab_bd.png");
-	--table-row-gradient: ("../../../src/assets/css/doxygen/nav_hd.png");
+	--powered-by-vercel: url("https://www.stoneydsp.com/public/powered-by-vercel.svg");
+	--table-gradient: url("https://www.stoneydsp.com/src/assets/css/doxygen/tab_bd.png");
+	--table-row-gradient: ("https://www.stoneydsp.com/rc/assets/css/doxygen/nav_hd.png");
 
 	/* --http-headers: url("https://www.stoneydsp.com/api?query=whoami"); */
 
