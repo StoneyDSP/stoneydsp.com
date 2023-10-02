@@ -19,7 +19,7 @@ html {
 	/* header */
 	--header-background-color: #F9F9FC;
 	--header-separator-color: #C4C4E5;
-	--header-gradient-image: url('nav_h.png'); /* https://raw.githubusercontent.com/StoneyDSP/StoneyDSP.github.io/main/public/ */
+	--header-gradient-image: url('nav_h.png');
 	--group-header-separator-color: #8787CB;
 	--group-header-color: #35357B;
 	--inherit-header-color: gray;
@@ -42,9 +42,9 @@ html {
 
 	--icon-background-color: #7272C1;
 	--icon-foreground-color: white;
-	--icon-doc-image: url('doc.svg');
-	--icon-folder-open-image: url('folderopen.svg');
-	--icon-folder-closed-image: url('folderclosed.svg');
+	--icon-doc-image: url("https://www.stoneydsp.com/public/doc.svg");
+	--icon-folder-open-image: url('https://www.stoneydsp.com/public/folderopen.svg');
+	--icon-folder-closed-image: url('https://www.stoneydsp.com/public/folderclosed.svg');
 
 	/* brief member declaration list */
 	--memdecl-background-color: #F9F9FC;
@@ -110,8 +110,8 @@ html {
 	/** search field */
 	--search-background-color: white;
 	--search-foreground-color: #909090;
-	--search-magnification-image: url('../../../../public/search/mag.svg');
-	--search-magnification-select-image: url('../../../../public/search/mag_sel.svg');
+	--search-magnification-image: url('https://www.stoneydsp.com/public/search/mag.svg');
+	--search-magnification-select-image: url('https://www.stoneydsp.com/public/search/mag_sel.svg');
 	--search-active-color: black;
 	--search-filter-background-color: #F9F9FC;
 	--search-filter-foreground-color: black;
@@ -207,9 +207,9 @@ html {
 
 		--icon-background-color: #333375;
 		--icon-foreground-color: #C4C4E5;
-		--icon-doc-image: url('docd.svg');
-		--icon-folder-open-image: url('folderopend.svg');
-		--icon-folder-closed-image: url('folderclosedd.svg');
+		--icon-doc-image: url('https://www.stoneydsp.com/public/docd.svg');
+		--icon-folder-open-image: url('https://www.stoneydsp.com/public/folderopend.svg');
+		--icon-folder-closed-image: url('https://www.stoneydsp.com/public/folderclosedd.svg');
 
 		/* brief member declaration list */
 		--memdecl-background-color: #0B0B1A;
@@ -275,8 +275,8 @@ html {
 		/** search field */
 		--search-background-color: black;
 		--search-foreground-color: #C5C5C5;
-		--search-magnification-image: url('../../../../public/search/mag_d.svg');
-		--search-magnification-select-image: url('../../../../public/search/mag_seld.svg');
+		--search-magnification-image: url('https://www.stoneydsp.com/public/search/mag_d.svg');
+		--search-magnification-select-image: url('https://www.stoneydsp.com/public/search/mag_seld.svg');
 		--search-active-color: #C5C5C5;
 		--search-filter-background-color: #101026;
 		--search-filter-foreground-color: #9090CE;
