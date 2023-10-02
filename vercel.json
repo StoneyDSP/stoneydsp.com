@@ -7,11 +7,23 @@
 	"public": false,
 	"framework": null,
 	"functions": {
-		"api/418/index.js": {
+		"api/418/index.ts": {
 			"memory": 1024,
 			"maxDuration": 10
 		},
-		"api/index.js": {
+		"api/encode/index.ts": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/decode/index.ts": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/headers/index.ts": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/index.ts": {
 			"memory": 1024,
 			"maxDuration": 10
 		}
