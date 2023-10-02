@@ -51,11 +51,11 @@ html {
 	--card-repo__audioplugin-svf: url("https://github-readme-stats.vercel.app/api/pin/?username=nathanjhood&repo=AudioPlugin-svf&theme=default");
 	--card-repo__audioplugin: url("https://github-readme-stats.vercel.app/api/pin/?username=nathanjhood&repo=AudioPlugin&theme=default");
 
-	--icon-social__github: url("../../../public/icon__github.svg");
-	--icon-social__facebook: url("../../../public/icon__facebook.svg");
-	--icon-social__instagram: url("../../../public/icon__insta.svg");
-	--icon-social__twitter: url("../../../public/icon__twitter.svg");
-	--icon-social__linkedin: url("../../../public/icon__linkedin.svg");
+	--icon-social__github: url("https://www.stoneydsp.com/public/icon__github.svg");
+	--icon-social__facebook: url("https://www.stoneydsp.com/public/icon__facebook.svg");
+	--icon-social__instagram: url("https://www.stoneydsp.com/public/icon__insta.svg");
+	--icon-social__twitter: url("https://www.stoneydsp.com/public/icon__twitter.svg");
+	--icon-social__linkedin: url("https://www.stoneydsp.com/public/icon__linkedin.svg");
 }
 
 html.dark-mode {
@@ -92,11 +92,11 @@ html.dark-mode {
 	--card-repo__audioplugin-svf: url("https://github-readme-stats.vercel.app/api/pin/?username=nathanjhood&repo=AudioPlugin-svf&theme=dark");
 	--card-repo__audioplugin: url("https://github-readme-stats.vercel.app/api/pin/?username=nathanjhood&repo=AudioPlugin&theme=dark");
 
-	--icon-social__github: url("../../../public/icon__githubd.svg");
-	--icon-social__facebook: url("../../../public/icon__facebookd.svg");
-	--icon-social__instagram: url("../../../public/icon__instad.svg");
-	--icon-social__twitter: url("../../../public/icon__twitterd.svg");
-	--icon-social__linkedin: url("../../../public/icon__linkedind.svg");
+	--icon-social__github: url("https://www.stoneydsp.com/public/icon__githubd.svg");
+	--icon-social__facebook: url("https://www.stoneydsp.com/public/icon__facebookd.svg");
+	--icon-social__instagram: url("https://www.stoneydsp.com/public/icon__instad.svg");
+	--icon-social__twitter: url("https://www.stoneydsp.com/public/icon__twitterd.svg");
+	--icon-social__linkedin: url("https://www.stoneydsp.com/public/icon__linkedind.svg");
 }
 
 img.icon-social {
