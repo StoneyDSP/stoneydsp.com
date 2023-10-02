@@ -8,6 +8,46 @@
 	"description": "Systems, Web, Audio & Graphics software developer",
 	"icons": [
 		{
+			"src": "/public/icon__32x32.ico",
+			"sizes": "32x32",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "/public/icon__48x48.ico",
+			"sizes": "48x48",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "/public/icon__64x64.ico",
+			"sizes": "64x64",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "/public/icon__96x96.ico",
+			"sizes": "96x96",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "/public/icon__144x144.ico",
+			"sizes": "144x144",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "/public/icon__168x168.ico",
+			"sizes": "168x168",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "/public/icon__256x256.ico",
+			"sizes": "256x256",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "/public/icon__512x512.ico",
+			"sizes": "512x512",
+			"type": "image/x-icon"
+		},
+		{
 			"src": "/public/icon__32x32.png",
 			"sizes": "32x32",
 			"type": "image/png"
