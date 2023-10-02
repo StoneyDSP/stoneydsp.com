@@ -1,4 +1,7 @@
-export default async function handler(request, response) {
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+
+export default function handler(request: VercelRequest, response: VercelResponse): void | VercelResponse
+{
   response.setHeader('X-UA-Compatible', 'ie-edge' );
   response.setHeader('Content-Type', 'application/json' );
   response.setHeader('Vercel-CDN-Cache-Control', 'max-age=3600');
@@ -11,7 +14,7 @@ export default async function handler(request, response) {
   try {
     request.body;
   } catch (error) {
-    return response.status(400).json({ error: ```400 error ${error}``` });
+    return response.status(400).json({ error: "400 error" });
   }
 
   response.status(200).json({
