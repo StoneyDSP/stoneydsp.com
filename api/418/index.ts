@@ -10,7 +10,7 @@ export default function handler(request: VercelRequest, response: VercelResponse
   response.setHeader('X-DNS-Prefetch-Control', 'on');
   response.setHeader('X-XSS-Protection', '1; mode=block');
   response.setHeader('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
-  response.setHeader("Content-Security-Policy", "script-src 'none'");
+  response.setHeader("script-src 'self'; connect-src 'vitals.vercel-insights.com'; default-src 'self' https://www.stoneydsp.com https://*.stoneydsp.com");
 
   try {
     request.body;
