@@ -1,10 +1,10 @@
 {
   "name": "@stoneydsp/stoneydsp.com",
-  "version": "0.0.1-608e088576e7c5c103dc2bf4850152752beed94b",
+  "version": "0.0.1b",
   "description": "StoneyDSP Official Website",
   "main": "./index.html",
   "icon": "./favicon.ico",
-  "author": "StoneyDSP <nathanjhood@googlemail.com>",
+  "author": "StoneyDSP",
   "license": "MIT",
   "homepage": "https://github.com/StoneyDSP/stoneydsp.com#readme",
   "readme": "README.md",

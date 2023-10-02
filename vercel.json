@@ -1,0 +1,298 @@
+{
+	"version": 2,
+	"devCommand": "yarn dev",
+	"installCommand": "yarn install",
+	"buildCommand": "yarn build",
+	"outputDirectory": ".",
+	"public": false,
+	"framework": null,
+	"functions": {
+		"api/418/index.js": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/index.js": {
+			"memory": 1024,
+			"maxDuration": 10
+		}
+	},
+	"headers": [
+		{
+			"source": "/(.html)",
+			"headers": [
+				{
+					"key": "Access-Control-Allow-Origin",
+					"value": "*"
+				},
+				{
+					"key": "X-UA-Compatible",
+					"value": "ie-edge"
+				},
+				{
+					"key": "Vercel-CDN-Cache-Control",
+					"value": "max-age=3600"
+				},
+				{
+					"key": "CDN-Cache-Control",
+					"value": "max-age=60"
+				},
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=10, s-maxage=86400, immutable"
+				},
+				{
+					"key": "X-DNS-Prefetch-Control",
+					"value": "on"
+				},
+				{
+					"key": "X-XSS-Protection",
+					"value": "1; mode=block"
+				},
+				{
+					"key": "Strict-Transport-Security",
+					"value": "max-age=63072000; includeSubDomains; preload"
+				}
+			]
+		},
+		{
+			"source": "github-readme-stats.vercel.app/(.*)",
+			"headers": [
+				{
+					"key": "Vercel-CDN-Cache-Control",
+					"value": "max-age=3600"
+				},
+				{
+					"key": "CDN-Cache-Control",
+					"value": "max-age=60"
+				},
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=10, s-maxage=86400, immutable"
+				},
+				{
+					"key": "X-XSS-Protection",
+					"value": "1; mode=block"
+				}
+			]
+		},
+		{
+			"source": "skillicons.dev/",
+			"headers": [
+				{
+					"key": "Vercel-CDN-Cache-Control",
+					"value": "max-age=3600"
+				},
+				{
+					"key": "CDN-Cache-Control",
+					"value": "max-age=60"
+				},
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=10, s-maxage=86400, immutable"
+				},
+				{
+					"key": "X-XSS-Protection",
+					"value": "1; mode=block"
+				}
+			]
+		},
+		{
+			"source": "/(.*)",
+			"headers": [
+				{
+					"key": "X-Content-Type-Options",
+					"value": "nosniff"
+				},
+				{
+					"key": "X-Frame-Options",
+					"value": "DENY"
+				}
+			]
+		},
+		{
+			"source": "/public/(.*)",
+			"headers": [
+				{
+					"key": "Access-Control-Allow-Origin",
+					"value": "*"
+				}
+			]
+		},
+		{
+			"source": "/:path*",
+			"has": [
+				{
+					"type": "query",
+					"key": "authorized"
+				}
+			],
+		  "headers": [
+				{
+					"key": "x-authorized",
+					"value": "true"
+				}
+			]
+		},
+		{
+			"source": "/:path*",
+			"missing": [
+				{
+					"type": "query",
+					"key": "authorized"
+				}
+			],
+		  "headers": [
+				{
+					"key": "x-authorized",
+					"value": "false"
+				}
+			]
+		}
+	],
+	"redirects": [
+    {
+      "source": "/.env",
+			"destination": "/api/418?query=whoami"
+		},
+		{
+			"source": "/.git/",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/v1/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/v2/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/v3/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/v4/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/user/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/user/v1/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/user/v2/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/user/v3/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/user/v4/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/admin/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/admin/v1/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/admin/v2/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/admin/v3/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/admin/v4/.git/config",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/Public/home/js/check.js",
+			"destination": "/api/418?query=teapot&status=418"
+    },
+		{
+			"source": "/static/admin/javascript/hetong.js",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/pin/",
+			"destination": "/api?query=teapot&status=418"
+		},
+		{
+			"source": "/api/top-langs/",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/wp-login.php",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/api/",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/.vscode/sftp.json",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/config.json",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/_all_dbs",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/server-status",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/.aws/credentials",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/.gitlab-ci.yml",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/wp-config.php-backup",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/Dockerrun.aws.json",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/s3cmd.ini",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+			"source": "/.svn/entries",
+			"destination": "/api/418?query=teapot&status=418"
+		},
+		{
+      "source": "/.whoami",
+			"destination": "/api?query=whoami"
+		}
+	]
+}
