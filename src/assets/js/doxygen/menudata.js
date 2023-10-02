@@ -39,7 +39,7 @@ var menudata = {
         },
         {
           text: "CxxWin",
-          url: "https://www.cxxwin.stoneydsp.com/"
+          url: "https://www.stoneydsp.com/projects/cxxwin/"
         },
         {
           text: "UBento",
