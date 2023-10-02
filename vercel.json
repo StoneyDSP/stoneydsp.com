@@ -30,6 +30,15 @@
 	},
 	"headers": [
 		{
+			"source": "https://stoneydsp-git-img-link-stoneydsp.vercel.app",
+			"headers": [
+				{
+					"key": "Access-Control-Allow-Origin",
+					"value": "*"
+				}
+			]
+		},
+		{
 			"source": "/(.html)",
 			"headers": [
 				{
