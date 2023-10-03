@@ -27,6 +27,7 @@
     "wipe": "yarn clean && rm -rvf node_modules"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.37.0",
     "@vercel/analytics": "^1.0.2",
     "js-base64": "^3.7.5"
   },
