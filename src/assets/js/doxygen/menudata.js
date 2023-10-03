@@ -30,26 +30,30 @@ var menudata = {
       url: "https://www.stoneydsp.com/"
     },
     {
+      text: "About",
+      url: "/about/"
+    },
+    {
       text: "Projects",
-      url: "https://www.stoneydsp.com/projects/",
+      url: "/projects/",
       children: [
         {
           text: "Biquads",
-          url: "https://www.stoneydsp.com/projects/biquads/",
+          url: "/projects/biquads/",
         },
         {
           text: "CxxWin",
-          url: "https://www.stoneydsp.com/projects/cxxwin/"
+          url: "/projects/cxxwin/"
         },
         {
           text: "UBento",
-          url: "https://www.stoneydsp.com/projects/ubento/"
+          url: "/projects/ubento/"
         }
       ]
     },
     {
       text: "Contact",
-      url: "https://www.stoneydsp.com/contact/"
+      url: "/contact/"
     }
   ]
 };
