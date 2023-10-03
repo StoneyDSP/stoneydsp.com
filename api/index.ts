@@ -5,7 +5,9 @@ export default async function handler(request: VercelRequest, response: VercelRe
 {
   // This is needed if you're planning to invoke your function from a browser.
   if (request.method === 'OPTIONS') {
-    return response.status(200).json({ message: 'ok', headers: { ...cors.headers }});
+    return response.status(200).json({
+      message: 'ok',
+      headers: { ...cors.headers }});
   }
 
   try {
