@@ -26,7 +26,7 @@ html {
 	--table-gradient: url("https://www.stoneydsp.com/src/assets/css/doxygen/tab_b.png");
 	--table-row-gradient: ("https://www.stoneydsp.com/src/assets/css/doxygen/doxygen/nav_h.png");
 
-	/* --http-headers: url("https://www.stoneydsp.com/api?query=whoami"); */
+	--icon-home: url("https://www.stoneydsp.com/public/icon__1024x768.png");
 
 	--git-stats-card: url("https://github-readme-stats.vercel.app/api?username=nathanjhood&show_icons=true&theme=default");
 
@@ -65,9 +65,9 @@ html.dark-mode {
 
 	--powered-by-vercel: url("https://www.stoneydsp.com/public/powered-by-vercel.svg");
 	--table-gradient: url("https://www.stoneydsp.com/src/assets/css/doxygen/tab_bd.png");
-	--table-row-gradient: ("https://www.stoneydsp.com/rc/assets/css/doxygen/nav_hd.png");
+	--table-row-gradient: ("https://www.stoneydsp.com/src/assets/css/doxygen/nav_hd.png");
 
-	/* --http-headers: url("https://www.stoneydsp.com/api?query=whoami"); */
+	--icon-home: url("https://www.stoneydsp.com/public/icon__1024x768.png");
 
 	--git-stats-card: url("https://github-readme-stats.vercel.app/api?username=nathanjhood&show_icons=true&theme=dark");
 
@@ -97,6 +97,12 @@ html.dark-mode {
 	--icon-social__instagram: url("https://www.stoneydsp.com/public/icon__instad.svg");
 	--icon-social__twitter: url("https://www.stoneydsp.com/public/icon__twitterd.svg");
 	--icon-social__linkedin: url("https://www.stoneydsp.com/public/icon__linkedind.svg");
+}
+
+img.icon__home {
+	background-image: var(--icon-home);
+	background-position: center;
+	background-size: contain;
 }
 
 img.icon-social {
