@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-export default function handler(request: VercelRequest, response: VercelResponse): void | VercelResponse
+export default async function handler(request: VercelRequest, response: VercelResponse)
 {
   response.setHeader("X-UA-Compatible", "ie-edge");
   response.setHeader("Content-Type", "application/json");
