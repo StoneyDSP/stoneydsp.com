@@ -11,6 +11,9 @@ export default async function handler(
   request: VercelRequest,
   response: VercelResponse
   ) {
+
+  response.setHeader('Content-Type', 'application/json');
+
   // We will use this to filter out suspicious requests, such as
   // 'HEAD' on the preview branch/environment...
   const env = process.env.NODE_ENV;

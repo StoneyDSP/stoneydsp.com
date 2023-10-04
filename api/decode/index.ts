@@ -6,6 +6,9 @@ import * as Methods from '../_shared/methods';
 
 export default async function handler(request: VercelRequest, response: VercelResponse)
 {
+
+  response.setHeader('Content-Type', 'application/json');
+
   // This is needed if you're planning to invoke your function from a browser.
   if (request.method === 'OPTIONS') {
     return response.status(200).json({
