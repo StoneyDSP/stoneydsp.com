@@ -31,7 +31,8 @@
     "@supabase/supabase-js": "^2.37.0",
     "@vercel/analytics": "^1.0.2",
     "js-base64": "^3.7.5",
-    "stripe": "^13.8.0"
+    "stripe": "^13.8.0",
+    "ua-parser-js": "^1.0.36"
   },
   "devDependencies": {
     "@html-eslint/eslint-plugin": "^0.19.1",
