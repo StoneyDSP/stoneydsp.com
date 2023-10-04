@@ -1,6 +1,6 @@
 import { Pool } from "postgres";
 import { serve } from "std/server";
-import { corsHeaders } from "../_shared/cors";
+import { corsHeaders } from "cors";
 
 // Create a database pool with one connection.
 const pool = new Pool(
