@@ -1,11 +1,10 @@
 // Follow this setup guide to integrate the Deno language server with your editor:
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
-
-import { serve } from 'std/server'
+import { serve } from "std/server";
 
 // Import via bare specifier thanks to the import_map.json file.
-import Stripe from 'stripe'
+import Stripe from "stripe";
 
 const stripe = new Stripe(Deno.env.get('STRIPE_API_KEY') as string, {
   // This is needed to use the Fetch API rather than relying on the Node http
