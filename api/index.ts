@@ -31,10 +31,6 @@ export default async function handler(request: VercelRequest, response: VercelRe
 
   switch (request.method) {
 
-    case 'GET':
-    //block of code
-    break;
-
     case 'HEAD':
     //block of code
     if (env !== 'production') {
@@ -133,7 +129,7 @@ export default async function handler(request: VercelRequest, response: VercelRe
     break;
 
     default:
-    //block of code
+    // i.e., 'GET'
     response.status(200).json({
       status: 200,
       message: 'default response',
@@ -144,5 +140,5 @@ export default async function handler(request: VercelRequest, response: VercelRe
     });
     };
 
-    return console.log(response);
+    return console.log(response.json);
 };
