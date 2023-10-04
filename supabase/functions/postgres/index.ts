@@ -1,5 +1,5 @@
-import { Pool } from "https://deno.land/x/postgres@v0.17.0/mod.ts";
-import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
+import { Pool } from "postgres";
+import { serve } from "std/server";
 import { corsHeaders } from "../_shared/cors";
 
 // Create a database pool with one connection.
