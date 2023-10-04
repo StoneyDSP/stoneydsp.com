@@ -1,5 +1,6 @@
 import { Pool } from "https://deno.land/x/postgres@v0.17.0/mod.ts";
 import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
+import { corsHeaders } from "../_shared/cors";
 
 // Create a database pool with one connection.
 const pool = new Pool(
@@ -37,6 +38,7 @@ serve(async (_req) => {
       return new Response(body, {
         status: 200,
         headers: {
+          ...corsHeaders,
           'Content-Type': 'application/json; charset=utf-8',
         },
       })
