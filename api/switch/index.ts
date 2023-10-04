@@ -15,13 +15,14 @@ export default async function handler(
   const ua = UserAgents.userAgent(request.headers.toString['user-agent']);
 
   switch (request.method) {
-  case 'GET':
-  //block of code
-  break;
 
-  case 'HEAD':
-  //block of code
-  break;
+  // case 'GET':
+  // //block of code
+  // break;
+
+  // case 'HEAD':
+  // //block of code
+  // break;
 
   case 'OPTIONS':
   if (ua.isBot) {
@@ -58,17 +59,17 @@ export default async function handler(
   });
   break;
 
-  case 'PUT':
-  //block of code
-  break;
+  // case 'PUT':
+  // //block of code
+  // break;
 
-  case 'DELETE':
-  //block of code
-  break;
+  // case 'DELETE':
+  // //block of code
+  // break;
 
-  case 'PATCH':
-  //block of code
-  break;
+  // case 'PATCH':
+  // //block of code
+  // break;
 
   default:
   //block of code
@@ -82,5 +83,5 @@ export default async function handler(
   });
   };
 
-  return console.log(response);
+  return response;
 }

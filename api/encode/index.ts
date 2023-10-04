@@ -1,6 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Base64 } from 'js-base64';
-import * as cors from '../_shared/headers';
+import * as Headers from '../_shared/headers';
+import * as Methods from '../_shared/methods';
+
 
 export default async function handler(request: VercelRequest, response: VercelResponse)
 {
@@ -8,7 +10,7 @@ export default async function handler(request: VercelRequest, response: VercelRe
   if (request.method === 'OPTIONS') {
     return response.status(200).json({
       message: 'ok',
-      headers: { ...cors.headers, 'Content-Type': 'application/json; charset=utf-8' },
+      headers: { ...Headers.headers, 'Content-Type': 'application/json; charset=utf-8' },
       status: 200,
     });
   }
@@ -18,14 +20,14 @@ export default async function handler(request: VercelRequest, response: VercelRe
   } catch (error) {
     return response.status(400).json({
       error: error.message,
-      headers: { ...cors.headers, 'Content-Type': 'application/json; charset=utf-8' },
+      headers: { ...Headers.headers, 'Content-Type': 'application/json; charset=utf-8' },
       status: 400,
     });
   };
 
-  return response.status(200).json({
-    query: Base64.encode(JSON.stringify(request.query)),
-    headers: { ...cors.headers, 'Content-Type': 'application/json; charset=utf-8' },
-    status: 200,
+  response.status(200).json({
+    message: Base64.encode(JSON.stringify(request.query), true),
   });
+
+  return response;
 };
