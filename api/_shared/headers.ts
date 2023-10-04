@@ -2,7 +2,6 @@ export const headers = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
   "X-UA-Compatible": "ie-edge",
-  "Content-Type": "application/json",
   "Cache-Control": "max-age=10, s-maxage=86400, immutable",
   "CDN-Cache-Control": "max-age=60",
   "Vercel-CDN-Cache-Control": "max-age=3600",
