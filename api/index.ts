@@ -7,7 +7,9 @@ export default async function handler(request: VercelRequest, response: VercelRe
   if (request.method === 'OPTIONS') {
     return response.status(200).json({
       message: 'ok',
-      headers: { ...cors.headers }});
+      headers: { ...cors.headers, 'Content-Type': 'application/json' },
+      status: 200,
+    });
   }
 
   try {
@@ -15,13 +17,13 @@ export default async function handler(request: VercelRequest, response: VercelRe
   } catch (error) {
     return response.status(400).json({
       error: error.message,
-      headers: { ...cors.headers },
+      headers: { ...cors.headers, 'Content-Type': 'application/json' },
       status: 400,
     });
   };
 
   return response.status(200).json({
-    headers: { ...cors.headers },
+    headers: { ...cors.headers, 'Content-Type': 'application/json' },
     status: 200,
   });
 };
