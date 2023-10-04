@@ -8,6 +8,7 @@ export default async function handler(request: VercelRequest, response: VercelRe
     return response.status(200).json({
       message: 'ok',
       headers: { ...cors.headers, 'Content-Type': 'application/json' },
+      status: 200,
     });
   }
 
