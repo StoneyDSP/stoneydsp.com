@@ -2,9 +2,9 @@
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
 
-import { serve } from 'std/server';
+import { serve } from "std/server";
 
-import * as cors from "../../../api/_shared/headers";
+import { corsHeaders } from "../_shared/cors.ts";
 
 console.log(`Function "browser-with-cors" up and running!`)
 
@@ -16,7 +16,7 @@ serve(async (req) => {
 
   return new Response(
     JSON.stringify(data),
-    { headers: { ...cors.headers } },
+    { headers: { ...corsHeaders, 'Content-Type': 'application/json; charset=utf-8' }}
   )
 })
 

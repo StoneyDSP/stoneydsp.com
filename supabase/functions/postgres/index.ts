@@ -1,5 +1,6 @@
 import { Pool } from "postgres";
 import { serve } from "std/server";
+import { corsHeaders } from "../_shared/cors";
 
 // Create a database pool with one connection.
 const pool = new Pool(
@@ -37,6 +38,7 @@ serve(async (_req) => {
       return new Response(body, {
         status: 200,
         headers: {
+          ...corsHeaders,
           'Content-Type': 'application/json; charset=utf-8',
         },
       })
