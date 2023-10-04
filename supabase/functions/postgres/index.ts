@@ -1,5 +1,5 @@
-import { Pool } from "postgres";
-import { serve } from "std/server";
+import { Pool } from "https://deno.land/x/postgres@v0.17.0/mod.ts";
+import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
 
 // Create a database pool with one connection.
 const pool = new Pool(
