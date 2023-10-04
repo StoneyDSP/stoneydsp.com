@@ -29,3 +29,11 @@ coverage
 .nvmrc
 
 share
+
+
+supabase/.branches
+supabase/.temp
+supabase/migrations
+supabase/config.toml
+supabase/.gitignore
+supabase/seed.sql
