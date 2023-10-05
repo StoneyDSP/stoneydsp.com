@@ -2,7 +2,7 @@
   "name": "@stoneydsp/stoneydsp.com",
   "version": "0.0.1b",
   "description": "StoneyDSP Official Website",
-  "main": "./index.html",
+  "main": "./index.js",
   "icon": "./favicon.ico",
   "author": "StoneyDSP",
   "license": "MIT",
@@ -20,7 +20,7 @@
   "packageManager": "yarn@1.22.19",
   "scripts": {
     "lint": "eslint *.html public/*.js",
-    "dev": "npx serve",
+    "dev": "node index.js",
     "build": "node --version",
     "rebuild": "yarn clean && yarn build",
     "clean": "rm -rvf src/main/main.js",
