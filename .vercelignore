@@ -9,12 +9,6 @@
 
 node_modules
 
-!*.ico
-!*.png
-!*.svg
-!/.npmrc
-!/public
-
 yarn.lock
 package-lock.json
 coverage
