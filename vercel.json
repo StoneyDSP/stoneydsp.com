@@ -23,6 +23,18 @@
 			"memory": 1024,
 			"maxDuration": 10
 		},
+		"api/switch/index.ts": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/svg/index.ts": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/supabase/functions/og-image/index.ts": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
 		"api/index.ts": {
 			"memory": 1024,
 			"maxDuration": 10
