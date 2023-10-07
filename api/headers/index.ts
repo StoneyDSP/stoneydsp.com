@@ -36,7 +36,7 @@ export default async function handler(
     status: 200,
     query: request.query,
     headers: {
-      'Content-Type': 'application/json; charset=utf-8'
+      'Content-Type': 'application/json; charset=utf-8',
       ...Headers.headers,
     },
   });
