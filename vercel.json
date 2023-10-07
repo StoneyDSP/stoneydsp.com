@@ -35,6 +35,10 @@
 			"memory": 1024,
 			"maxDuration": 10
 		},
+		"api/webhook/index.ts": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
 		"api/index.ts": {
 			"memory": 1024,
 			"maxDuration": 10
