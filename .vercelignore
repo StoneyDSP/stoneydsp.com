@@ -31,3 +31,7 @@ supabase/migrations
 supabase/config.toml
 supabase/.gitignore
 supabase/seed.sql
+
+schema.sql
+.dockerignore
+fixtures

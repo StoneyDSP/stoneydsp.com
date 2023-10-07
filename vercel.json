@@ -35,6 +35,10 @@
 			"memory": 1024,
 			"maxDuration": 10
 		},
+		"api/webhook/index.ts": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
 		"api/index.ts": {
 			"memory": 1024,
 			"maxDuration": 10
@@ -55,6 +59,14 @@
 				{
 					"key": "Access-Control-Allow-Headers",
 					"value": "authorization, x-client-info, apikey, content-type"
+				},
+				{
+					"key": "Access-Control-Allow-Methods",
+					"value": "POST, GET, OPTIONS"
+				},
+				{
+					"key": "Access-Control-Allow-Methods",
+					"value": "*"
 				},
 				{
 					"key": "X-UA-Compatible",

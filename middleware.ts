@@ -1,11 +1,13 @@
 import { next } from '@vercel/edge';
+import { NextRequest } from 'next/server';
 
-export default function middleware(req) {
+export default function middleware(req: NextRequest) {
+
   // Extract country. Default to US if not found.
   const country = (req.geo && req.geo.country) || 'US';
 
   console.log(`Visitor from ${country}`);
-  
+
   return next({
     headers: {
       'Referrer-Policy': 'origin-when-cross-origin',
@@ -13,6 +15,7 @@ export default function middleware(req) {
       'X-Content-Type-Options': 'nosniff',
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+      "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
       "X-UA-Compatible": "ie-edge",
       "Cache-Control": "max-age=10, s-maxage=86400, immutable",
       "CDN-Cache-Control": "max-age=60",
