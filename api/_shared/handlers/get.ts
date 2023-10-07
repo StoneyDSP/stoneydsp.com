@@ -1,5 +1,4 @@
-// import type { VercelRequest, VercelResponse, VercelApiHandler } from '@vercel/node';
-import type { VercelRequest, VercelResponse, VercelApiHandler } from '../../../types/vercel/index';
+import type { VercelRequest, VercelResponse, VercelApiHandler } from '@vercel/node';
 import * as Headers from '../headers';
 import * as Methods from '../methods';
 // import * as UserAgents from '../useragents';
