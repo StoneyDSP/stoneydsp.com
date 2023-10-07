@@ -164,7 +164,7 @@ html {
 	--font-family-toc: Verdana,'DejaVu Sans',Geneva,sans-serif;
 	--font-family-search: Arial,Verdana,sans-serif;
 	--font-family-icon: Arial,Helvetica;
-	--font-family-tooltip: Cascadia Code,sans-serif;
+	--font-family-tooltip: 'Cascadia Code',sans-serif;
 
 }
 
@@ -329,7 +329,7 @@ html.dark-mode {
 	--font-family-toc: Verdana,'DejaVu Sans',Geneva,sans-serif;
 	--font-family-search: Arial,Verdana,sans-serif;
 	--font-family-icon: Arial,Helvetica;
-	--font-family-tooltip: Cascadia Code,sans-serif;
+	--font-family-tooltip: 'Cascadia Code',sans-serif;
 
 }
 
