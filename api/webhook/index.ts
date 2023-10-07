@@ -1,11 +1,11 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-import type { Readable } from 'node:stream';
+import type { VercelRequest, VercelResponse } from '@vercel/node'
+import type { Readable } from 'node:stream'
 
 export const config = {
   api: {
     bodyParser: false,
   },
-};
+}
 
 async function buffer(readable: Readable) {
   const chunks = []
@@ -13,7 +13,7 @@ async function buffer(readable: Readable) {
     chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk)
   }
   return Buffer.concat(chunks)
-};
+}
 
 export default async function (req: VercelRequest, res: VercelResponse) {
   if (req.method === 'POST') {
@@ -25,4 +25,4 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     res.setHeader('Allow', 'POST')
     res.status(405).end('Method Not Allowed')
   }
-};
+}
