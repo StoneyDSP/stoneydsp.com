@@ -14,8 +14,7 @@ export default function middleware(req) {
       "Vercel-CDN-Cache-Control": "max-age=3600",
       "X-DNS-Prefetch-Control": "on",
       "X-XSS-Protection": "1; mode=block",
-      "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
-      "Content-Security-Policy": "script-src 'self'; connect-src 'vitals.vercel-insights.com'; default-src 'self' https://www.stoneydsp.com https://*.stoneydsp.com"
+      "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload"
     },
   });
 }
