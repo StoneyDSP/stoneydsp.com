@@ -25,13 +25,22 @@
     "rebuild": "yarn clean && yarn build",
     "clean": "rm -rvf src/main/main.js",
     "wipe": "yarn clean && rm -rvf node_modules",
-    "generate-types": "npx supabase gen types typescript --project-id yzvoonrfhutvhtsnadbx --schema public > types_db.ts"
+    "stripe:listen": "stripe listen --forward-to=localhost:3000/api/webhook",
+    "generate-types": "npx supabase gen types typescript --project-id $SUPABASE_PROJECT_REF --schema public > types_db.ts"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^2.1.7",
+    "@supabase/auth-helpers-nextjs": "^0.8.1",
+    "@supabase/auth-ui-react": "^0.4.5",
+    "@supabase/auth-ui-shared": "^0.1.7",
     "@supabase/supabase-js": "^2.37.0",
     "@vercel/analytics": "^1.0.2",
-		"@vercel/edge": "^0.1.2",
+    "@vercel/edge": "^0.1.2",
+    "classnames": "^2.3.2",
     "js-base64": "^3.7.5",
+    "next": "^13.5.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "stripe": "^13.8.0",
     "ua-parser-js": "^1.0.36"
   },
@@ -39,6 +48,7 @@
     "@html-eslint/eslint-plugin": "^0.19.1",
     "@html-eslint/parser": "^0.19.1",
     "@types/node": "^20.8.2",
+    "@types/react": "^18.2.25",
     "@vercel/node": "^3.0.6",
     "@vercel/postgres": "^0.5.0",
     "eslint": "^8.50.0",
