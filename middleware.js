@@ -15,7 +15,7 @@ export default function middleware(req) {
       "X-DNS-Prefetch-Control": "on",
       "X-XSS-Protection": "1; mode=block",
       "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
-      "Content-Security-Policy": "script-src 'self'; connect-src 'vitals.vercel-insights.com'; default-src 'self' https://www.stoneydsp.com https://*.stoneydsp.com"
+      "Content-Security-Policy": "connect-src 'vitals.vercel-insights.com'; default-src 'self' https://www.stoneydsp.com https://*.stoneydsp.com"
     },
   });
 }
