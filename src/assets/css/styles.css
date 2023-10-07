@@ -1,34 +1,34 @@
 @charset "UTF-8";
-@import url("https://www.stoneydsp.com/src/assets/css/framework/fonts/microsoft/cascadia/font-cascadia-dynamic.css") layer(fontFace);
+@import url("./framework/fonts/microsoft/cascadia/font-cascadia-dynamic.css") layer(fontFace);
 /* @import url("../../src/assets/css/framework/reset.css") layer(reset); */
-@import url("https://www.stoneydsp.com/src/assets/css/framework/support.css") layer(defaults.support);
-@import url("https://www.stoneydsp.com/src/assets/css/framework/defaults.css") layer(defaults);
-@import url("https://www.stoneydsp.com/src/assets/css/framework/global.css") layer(global);
+@import url("./framework/support.css") layer(defaults.support);
+@import url("./framework/defaults.css") layer(defaults);
+@import url("./framework/global.css") layer(global);
 /* @import url("../../src/assets/css/framework/helpers.css") layer(global.helpers); */
 /* @import url("../src/assets/css/framework/animations/animations.css") layer(site.animations); */
-@import url("https://www.stoneydsp.com/src/assets/css/framework/site.css") layer(site);
+@import url("./framework/site.css") layer(site);
 /* @import url("../../src/assets/css/framework/components/header.css") layer(header); */
 /* @import url("./framework/components/footer.css") layer(footer); */
 
 /* @import url("../../src/assets/css/framework/debug/dbg.css") layer(site.dbg); */
 /* @import url("../../src/assets/css/framework/debug/lint.css") layer(site.dbg.lint); */
 
-@import url("https://www.stoneydsp.com/src/assets/css/doxygen/doxygen.css") layer(site.doxygen);
-@import url("https://www.stoneydsp.com/src/assets/css/doxygen/tabs.css") layer(site.doxygen.tabs);
-@import url("https://www.stoneydsp.com/src/assets/css/doxygen/search.css") layer(site.doxygen.search);
+@import url("./doxygen/doxygen.css") layer(site.doxygen);
+@import url("./doxygen/tabs.css") layer(site.doxygen.tabs);
+@import url("./doxygen/search.css") layer(site.doxygen.search);
 
 html {
 	--colour-dull: hsla(0, 0%, 0%, 50%);
 
-	--brand-logo-512x96: url("https://www.stoneydsp.com/public/StoneyDSP-Regular-512x96d.svg");
+	--brand-logo-512x96: url("../../../public/StoneyDSP-Regular-512x96d.svg");
 
 	/* --powered-by-vercel: url("https://www.stoneydsp.com/public/powered-by-vercel_d.svg"); */
-	--powered-by-vercel: url("http://localhost:3000/api/svg");
+	--powered-by-vercel: url("../../../public/powered-by-vercel.svg");
 
-	--table-gradient: url("https://www.stoneydsp.com/src/assets/css/doxygen/tab_b.png");
-	--table-row-gradient: ("https://www.stoneydsp.com/src/assets/css/doxygen/doxygen/nav_h.png");
+	--table-gradient: url("./doxygen/tab_b.png");
+	--table-row-gradient: ("./doxygen/doxygen/nav_h.png");
 
-	--icon-home: url("https://www.stoneydsp.com/public/icon__1024x768.png");
+	--icon-home: url("../../../public/icon__1024x768.png");
 
 	--git-stats-card: url("https://github-readme-stats.vercel.app/api?username=nathanjhood&show_icons=true&theme=default");
 
@@ -53,25 +53,25 @@ html {
 	--card-repo__audioplugin-svf: url("https://github-readme-stats.vercel.app/api/pin/?username=nathanjhood&repo=AudioPlugin-svf&theme=default");
 	--card-repo__audioplugin: url("https://github-readme-stats.vercel.app/api/pin/?username=nathanjhood&repo=AudioPlugin&theme=default");
 
-	--icon-social__github: url("https://www.stoneydsp.com/public/icon__github.svg");
-	--icon-social__facebook: url("https://www.stoneydsp.com/public/icon__facebook.svg");
-	--icon-social__instagram: url("https://www.stoneydsp.com/public/icon__insta.svg");
-	--icon-social__twitter: url("https://www.stoneydsp.com/public/icon__twitter.svg");
-	--icon-social__linkedin: url("https://www.stoneydsp.com/public/icon__linkedin.svg");
+	--icon-social__github: url("../../../public/icon__github.svg");
+	--icon-social__facebook: url("../../../public/icon__facebook.svg");
+	--icon-social__instagram: url("../../../public/icon__insta.svg");
+	--icon-social__twitter: url("../../../public/icon__twitter.svg");
+	--icon-social__linkedin: url("../../../public/icon__linkedin.svg");
 }
 
 html.dark-mode {
 	--colour-dull: hsla(0, 0%, 100%, 50%);
 
-	--brand-logo-512x96: url("https://www.stoneydsp.com/public/StoneyDSP-Regular-512x96.svg");
+	--brand-logo-512x96: url("../../../public/StoneyDSP-Regular-512x96.svg");
 
 	/* --powered-by-vercel: url("https://www.stoneydsp.com/public/powered-by-vercel.svg"); */
-	--powered-by-vercel: url("http://localhost:3000/api/svg");
+	--powered-by-vercel: url("../../../public/powered-by-vercel_d.svg");
 
-	--table-gradient: url("https://www.stoneydsp.com/src/assets/css/doxygen/tab_bd.png");
-	--table-row-gradient: ("https://www.stoneydsp.com/src/assets/css/doxygen/nav_hd.png");
+	--table-gradient: url("./doxygen/tab_bd.png");
+	--table-row-gradient: ("./doxygen/nav_hd.png");
 
-	--icon-home: url("https://www.stoneydsp.com/public/icon__1024x768.png");
+	--icon-home: url("../../../public/icon__1024x768.png");
 
 	--git-stats-card: url("https://github-readme-stats.vercel.app/api?username=nathanjhood&show_icons=true&theme=dark");
 
@@ -96,11 +96,11 @@ html.dark-mode {
 	--card-repo__audioplugin-svf: url("https://github-readme-stats.vercel.app/api/pin/?username=nathanjhood&repo=AudioPlugin-svf&theme=dark");
 	--card-repo__audioplugin: url("https://github-readme-stats.vercel.app/api/pin/?username=nathanjhood&repo=AudioPlugin&theme=dark");
 
-	--icon-social__github: url("https://www.stoneydsp.com/public/icon__githubd.svg");
-	--icon-social__facebook: url("https://www.stoneydsp.com/public/icon__facebookd.svg");
-	--icon-social__instagram: url("https://www.stoneydsp.com/public/icon__instad.svg");
-	--icon-social__twitter: url("https://www.stoneydsp.com/public/icon__twitterd.svg");
-	--icon-social__linkedin: url("https://www.stoneydsp.com/public/icon__linkedind.svg");
+	--icon-social__github: url("../../../public/icon__githubd.svg");
+	--icon-social__facebook: url("../../../public/icon__facebookd.svg");
+	--icon-social__instagram: url("../../../public/icon__instad.svg");
+	--icon-social__twitter: url("../../../public/icon__twitterd.svg");
+	--icon-social__linkedin: url("../../../public/icon__linkedind.svg");
 }
 
 img.icon__home {
