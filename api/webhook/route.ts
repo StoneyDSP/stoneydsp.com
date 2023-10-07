@@ -4,7 +4,7 @@ import {
   upsertProductRecord,
   upsertPriceRecord,
   manageSubscriptionStatusChange
-} from '@/utils/supabase-admin';
+} from '../../src/assets/ts/supabase-admin';
 
 const relevantEvents = new Set([
   'product.created',
