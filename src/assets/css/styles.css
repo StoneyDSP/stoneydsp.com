@@ -22,7 +22,9 @@ html {
 
 	--brand-logo-512x96: url("https://www.stoneydsp.com/public/StoneyDSP-Regular-512x96d.svg");
 
-	--powered-by-vercel: url("https://www.stoneydsp.com/public/powered-by-vercel_d.svg");
+	/* --powered-by-vercel: url("https://www.stoneydsp.com/public/powered-by-vercel_d.svg"); */
+	--powered-by-vercel: url("http://localhost:3000/api/svg");
+
 	--table-gradient: url("https://www.stoneydsp.com/src/assets/css/doxygen/tab_b.png");
 	--table-row-gradient: ("https://www.stoneydsp.com/src/assets/css/doxygen/doxygen/nav_h.png");
 
@@ -63,7 +65,9 @@ html.dark-mode {
 
 	--brand-logo-512x96: url("https://www.stoneydsp.com/public/StoneyDSP-Regular-512x96.svg");
 
-	--powered-by-vercel: url("https://www.stoneydsp.com/public/powered-by-vercel.svg");
+	/* --powered-by-vercel: url("https://www.stoneydsp.com/public/powered-by-vercel.svg"); */
+	--powered-by-vercel: url("http://localhost:3000/api/svg");
+
 	--table-gradient: url("https://www.stoneydsp.com/src/assets/css/doxygen/tab_bd.png");
 	--table-row-gradient: ("https://www.stoneydsp.com/src/assets/css/doxygen/nav_hd.png");
 
