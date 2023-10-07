@@ -1,6 +1,11 @@
 import { next } from '@vercel/edge';
 
 export default function middleware(req) {
+  // Extract country. Default to US if not found.
+  const country = (req.geo && req.geo.country) || 'US';
+
+  console.log(`Visitor from ${country}`);
+  
   return next({
     headers: {
       'Referrer-Policy': 'origin-when-cross-origin',
