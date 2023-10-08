@@ -1,3 +1,4 @@
+import { processEnv } from '@next/env';
 import { next } from '@vercel/edge';
 import { NextRequest } from 'next/server';
 
@@ -6,7 +7,9 @@ export default function middleware(req: NextRequest) {
   // Extract country. Default to US if not found.
   const country = (req.geo && req.geo.country) || 'US';
 
-  console.log(`Visitor from ${country}`);
+  const agent = (process.env.USER) || 'USER';
+
+  console.log(`Visitor: ${agent} from ${country}`);
 
   return next({
     headers: {
