@@ -1,31 +1,21 @@
-import { processEnv } from '@next/env';
-import { next } from '@vercel/edge';
-import { NextRequest } from 'next/server';
+import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
+import { NextResponse } from 'next/server'
 
-export default function middleware(req: NextRequest) {
+import type { NextRequest } from 'next/server'
 
-  // Extract country. Default to US if not found.
-  const country = (req.geo && req.geo.country) || 'US';
+export async function middleware(req: NextRequest) {
+  const res = NextResponse.next()
 
-  const agent = (process.env.USER) || 'USER';
+  // Create a Supabase client configured to use cookies
+  const supabase = createMiddlewareClient({ req, res })
 
-  console.log(`Visitor: ${agent} from ${country}`);
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
 
-  return next({
-    headers: {
-      'Referrer-Policy': 'origin-when-cross-origin',
-      'X-Frame-Options': 'DENY',
-      'X-Content-Type-Options': 'nosniff',
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-      "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-      "X-UA-Compatible": "ie-edge",
-      "Cache-Control": "max-age=10, s-maxage=86400, immutable",
-      "CDN-Cache-Control": "max-age=60",
-      "Vercel-CDN-Cache-Control": "max-age=3600",
-      "X-DNS-Prefetch-Control": "on",
-      "X-XSS-Protection": "1; mode=block",
-      "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload"
-    },
-  });
+  // Refresh session if expired - required for Server Components
+  // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
+  await supabase.auth.getSession()
+
+  return res
 }
