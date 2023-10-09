@@ -1,31 +1,28 @@
-import { processEnv } from '@next/env';
-import { next } from '@vercel/edge';
-import { NextRequest } from 'next/server';
+import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
+import { NextResponse } from 'next/server'
 
-export default function middleware(req: NextRequest) {
+import type { NextRequest } from 'next/server'
+
+export async function middleware(req: NextRequest) {
+  const res = NextResponse.next()
+
+  // Create a Supabase client configured to use cookies
+  const supabase = createMiddlewareClient({ req, res })
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  // Refresh session if expired - required for Server Components
+  // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
+  await supabase.auth.getSession()
 
   // Extract country. Default to US if not found.
-  const country = (req.geo && req.geo.country) || 'US';
+  const country = (req.geo && req.geo.country) || 'US'
 
-  const agent = (process.env.USER) || 'USER';
+  const agent = (process.env.USER) || 'USER'
 
-  console.log(`Visitor: ${agent} from ${country}`);
+  console.log(`Visitor: ${agent} from ${country}`)
 
-  return next({
-    headers: {
-      'Referrer-Policy': 'origin-when-cross-origin',
-      'X-Frame-Options': 'DENY',
-      'X-Content-Type-Options': 'nosniff',
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-      "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-      "X-UA-Compatible": "ie-edge",
-      "Cache-Control": "max-age=10, s-maxage=86400, immutable",
-      "CDN-Cache-Control": "max-age=60",
-      "Vercel-CDN-Cache-Control": "max-age=3600",
-      "X-DNS-Prefetch-Control": "on",
-      "X-XSS-Protection": "1; mode=block",
-      "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload"
-    },
-  });
+  return res
 }
