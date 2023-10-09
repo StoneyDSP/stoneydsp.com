@@ -17,5 +17,12 @@ export async function middleware(req: NextRequest) {
   // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
   await supabase.auth.getSession()
 
+  // Extract country. Default to US if not found.
+  const country = (req.geo && req.geo.country) || 'US'
+
+  const agent = (process.env.USER) || 'USER'
+
+  console.log(`Visitor: ${agent} from ${country}`)
+
   return res
 }
