@@ -16,6 +16,7 @@ const views: { id: ViewType; title: string }[] = [
 
 const socialAlignments = ['horizontal', 'vertical'] as const
 
+const publicSiteURL = process.env.NEXT_PUBLIC_SITE_URL?.concat('/auth/callback')
 
 export default function AuthForm() {
 
@@ -34,7 +35,7 @@ export default function AuthForm() {
       showLinks={false}
       providers={['google', 'facebook', 'twitter', 'apple', 'github']}
       socialLayout={socialLayout}
-      redirectTo="http://localhost:3000/auth/callback"
+      redirectTo={publicSiteURL}
     />
   )
 }

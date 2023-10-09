@@ -1,5 +1,3 @@
-// TODO: Duplicate or move this file outside the `_examples` folder to make it a route
-
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
