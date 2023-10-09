@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^2.1.7",
     "@supabase/auth-helpers-nextjs": "latest",
     "@supabase/auth-ui-react": "^0.4.5",
     "@supabase/auth-ui-shared": "^0.1.7",
@@ -22,6 +23,7 @@
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
-    "encoding": "^0.1.13"
+    "encoding": "^0.1.13",
+    "stripe": "^13.9.0"
   }
 }
