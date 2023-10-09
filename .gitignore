@@ -38,3 +38,6 @@ next-env.d.ts
 !favicon.ico
 !*.png
 !*.ico
+
+.vercel
+.env*.local

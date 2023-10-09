@@ -134,6 +134,40 @@ export interface Database {
         }
         Relationships: []
       }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          full_name: string | null
+          id: string
+          updated_at: string | null
+          username: string | null
+          website: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          full_name?: string | null
+          id: string
+          updated_at?: string | null
+          username?: string | null
+          website?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string | null
+          username?: string | null
+          website?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profiles_id_fkey"
+            columns: ["id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       subscriptions: {
         Row: {
           cancel_at: string | null
@@ -203,25 +237,25 @@ export interface Database {
       }
       todos: {
         Row: {
-          id: number
-          inserted_at: string
+          created_at: string
+          id: string
           is_complete: boolean | null
-          task: string | null
-          user_id: string
+          title: string | null
+          user_id: string | null
         }
         Insert: {
-          id?: number
-          inserted_at?: string
+          created_at?: string
+          id?: string
           is_complete?: boolean | null
-          task?: string | null
-          user_id: string
+          title?: string | null
+          user_id?: string | null
         }
         Update: {
-          id?: number
-          inserted_at?: string
+          created_at?: string
+          id?: string
           is_complete?: boolean | null
-          task?: string | null
-          user_id?: string
+          title?: string | null
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -268,7 +302,19 @@ export interface Database {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      delete_avatar: {
+        Args: {
+          avatar_url: string
+        }
+        Returns: Record<string, unknown>
+      }
+      delete_storage_object: {
+        Args: {
+          bucket: string
+          object: string
+        }
+        Returns: Record<string, unknown>
+      }
     }
     Enums: {
       continents:
@@ -289,6 +335,7 @@ export interface Database {
         | "incomplete_expired"
         | "past_due"
         | "unpaid"
+        | "paused"
     }
     CompositeTypes: {
       [_ in never]: never
