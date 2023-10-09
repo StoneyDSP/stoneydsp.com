@@ -1,6 +1,6 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
-import { useEffect, useState } from 'react'
+
 import Link from 'next/link'
 import LogoutButton from '../components/LogoutButton'
 // import SupabaseLogo from '../components/SupabaseLogo'
@@ -8,7 +8,7 @@ import LogoutButton from '../components/LogoutButton'
 import DeployButton from '../components/DeployButton'
 import BrandBadge from '@/components/StoneyDSPBadge'
 
-import AuthForm from './auth-form'
+import { Database } from './database.types'
 
 export const dynamic = 'force-dynamic'
 
@@ -90,7 +90,8 @@ const examples = [
 ]
 
 export default async function Index() {
-  const supabase = createServerComponentClient({ cookies })
+  const cookieStore = cookies()
+  const supabase = createServerComponentClient<Database>({ cookies: () => cookieStore })
 
   const {
     data: { user },
