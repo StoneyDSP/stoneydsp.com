@@ -15,7 +15,7 @@ async function buffer(readable: Readable) {
   return Buffer.concat(chunks)
 }
 
-export default async function (req: VercelRequest, res: VercelResponse) {
+export default async function handler (req: VercelRequest, res: VercelResponse) {
   if (req.method === 'POST') {
     const buf = await buffer(req)
     const rawBody = buf.toString('utf8')
