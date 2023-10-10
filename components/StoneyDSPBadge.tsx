@@ -2,10 +2,12 @@
 
 import './badge.css'
 
+import '../app/globals.css'
+
 export default function BrandBadge() {
   return (
     <a
-      className="py-2 px-3 flex rounded-md no-underline text-white bg-black transition-colors hover:bg-gray-700 border"
+      className="py-2 px-3 flex rounded-md no-underline bg-black transition-colors hover:bg-gray-700 border"
       href="https://www.stoneydsp.com/"
       target="_blank"
       rel="noreferrer"
@@ -21,7 +23,7 @@ export default function BrandBadge() {
           fill="currentColor"
         ></path>
       </svg> */}
-      <h1 className="text-black">StoneyDSP</h1>
+      <h1 className="text-lg font-bold text-center">StoneyDSP</h1>
     </a>
   )
 }

@@ -3,10 +3,9 @@ import { cookies } from 'next/headers'
 
 import Link from 'next/link'
 import LogoutButton from '../components/LogoutButton'
-// import SupabaseLogo from '../components/SupabaseLogo'
-// import NextJsLogo from '../components/NextJsLogo'
 import DeployButton from '../components/DeployButton'
 import BrandBadge from '@/components/StoneyDSPBadge'
+import Footer from './footer'
 
 import { Database } from './database.types'
 
@@ -297,7 +296,7 @@ export default async function Index() {
           </div>
         </div> */}
 
-        <div className="flex justify-center text-center text-xs">
+        {/* <div className="flex justify-center text-center text-xs">
           <p>
             Powered by{' '}
             <Link
@@ -308,7 +307,8 @@ export default async function Index() {
               Supabase
             </Link>
           </p>
-        </div>
+        </div> */}
+        <Footer />
       </div>
     </div>
   )
