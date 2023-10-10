@@ -7,7 +7,8 @@ export default function Login() {
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md">
       <BackButton />
-      <div className="justify-center gap-2">
+      {/* not sure about the repeated CSS */}
+      <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
         <form
           className="flex-1 flex flex-col w-full justify-center gap-2 text-foreground"
           action="/auth/sign-in"
