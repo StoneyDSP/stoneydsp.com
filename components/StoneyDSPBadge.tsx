@@ -2,6 +2,8 @@
 
 import './badge.css'
 
+import '../app/globals.css'
+
 export default function BrandBadge() {
   return (
     <a
@@ -21,7 +23,7 @@ export default function BrandBadge() {
           fill="currentColor"
         ></path>
       </svg> */}
-      <h1 className="text-black">StoneyDSP</h1>
+      <h1>StoneyDSP</h1>
     </a>
   )
 }
