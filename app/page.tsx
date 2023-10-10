@@ -1,12 +1,9 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
-
 import Link from 'next/link'
-import LogoutButton from '../components/LogoutButton'
-import DeployButton from '../components/DeployButton'
+import LogoutButton from '@/components/LogoutButton'
 import BrandBadge from '@/components/StoneyDSPBadge'
-import Footer from './footer'
-
+import Footer from '@/components/Footer'
 import { Database } from './database.types'
 
 export const dynamic = 'force-dynamic'
@@ -296,18 +293,6 @@ export default async function Index() {
           </div>
         </div> */}
 
-        {/* <div className="flex justify-center text-center text-xs">
-          <p>
-            Powered by{' '}
-            <Link
-              href="https://supabase.com/"
-              target="_blank"
-              className="font-bold"
-            >
-              Supabase
-            </Link>
-          </p>
-        </div> */}
         <Footer />
       </div>
     </div>

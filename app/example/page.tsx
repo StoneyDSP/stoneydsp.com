@@ -1,13 +1,11 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import Link from 'next/link'
-import LogoutButton from '../../components/LogoutButton'
-import SupabaseLogo from '../../components/SupabaseLogo'
-import NextJsLogo from '../../components/NextJsLogo'
-import DeployButton from '../../components/DeployButton'
+import LogoutButton from '@/components/LogoutButton'
+import SupabaseLogo from '@/components/SupabaseLogo'
+import NextJsLogo from '@/components/NextJsLogo'
 import BrandBadge from '@/components/StoneyDSPBadge'
-
-import Footer from '../footer'
+import Footer from '@/components/Footer'
 
 export const dynamic = 'force-dynamic'
 
@@ -174,18 +172,6 @@ export default async function Example() {
           </div>
         </div>
 
-        {/* <div className="flex justify-center text-center text-xs">
-          <p>
-            Powered by{' '}
-            <Link
-              href="https://supabase.com/"
-              target="_blank"
-              className="font-bold"
-            >
-              Supabase
-            </Link>
-          </p>
-        </div> */}
         <Footer />
       </div>
     </div>

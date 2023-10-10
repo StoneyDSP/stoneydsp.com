@@ -1,5 +1,4 @@
 import { Analytics } from '@vercel/analytics/react'
-// import Footer from './footer'
 import './globals.css'
 
 export const metadata = {
@@ -21,7 +20,6 @@ export default function RootLayout({
           {children}
           <Analytics />
         </main>
-        {/* <Footer /> */}
       </body>
     </html>
   )

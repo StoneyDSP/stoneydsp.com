@@ -11,5 +11,11 @@ export default async function Account() {
     data: { session },
   } = await supabase.auth.getSession()
 
-  return <AccountForm session={session} />
+  return (
+    <div className="w-full flex flex-col items-center">
+      <div className="animate-in flex flex-col gap-14 opacity-0 max-w-4xl px-3 py-16 lg:py-24 text-foreground">
+        <AccountForm session={session} />
+      </div>
+    </div>
+  )
 }
