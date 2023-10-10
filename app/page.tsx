@@ -5,6 +5,7 @@ import Link from 'next/link'
 import LogoutButton from '../components/LogoutButton'
 import DeployButton from '../components/DeployButton'
 import BrandBadge from '@/components/StoneyDSPBadge'
+import Footer from './footer'
 
 import { Database } from './database.types'
 
@@ -120,7 +121,7 @@ export default async function Index() {
     <div className="w-full flex flex-col items-center">
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm text-foreground">
-          <DeployButton />
+          {/* <DeployButton /> */}
           <BrandBadge />
           {user ? (
             <div className="flex items-center gap-4">
@@ -307,6 +308,7 @@ export default async function Index() {
             </Link>
           </p>
         </div> */}
+        <Footer />
       </div>
     </div>
   )
