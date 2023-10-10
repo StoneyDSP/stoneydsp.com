@@ -121,7 +121,7 @@ export default async function Index() {
           <BrandBadge />
           {user ? (
             <div className="flex items-center gap-4">
-              <Link href="/account" target="_blank">Hey, {user.email}!</Link>
+              <Link href="/account" target="_self">Hey, {user.email}!</Link>
               <LogoutButton />
             </div>
           ) : (

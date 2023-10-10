@@ -65,7 +65,9 @@ export default function Avatar({
   }
 
   return (
-    <div>
+    <div
+      className="flex-1 flex flex-col w-full justify-center"
+    >
       {avatarUrl ? (
         <Image
           width={size}
