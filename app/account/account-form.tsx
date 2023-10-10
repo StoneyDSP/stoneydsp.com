@@ -81,15 +81,17 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
   return (
     <div className="form-widget">
-      <Avatar
-        uid={user?.id || 'undefined'}
-        url={avatar_url}
-        size={150}
-        onUpload={(url) => {
-          setAvatarUrl(url)
-          updateProfile({ fullname, username, website, avatar_url: url })
-        }}
-      />
+      <div>
+        <Avatar
+          uid={user?.id || 'undefined'}
+          url={avatar_url}
+          size={150}
+          onUpload={(url) => {
+            setAvatarUrl(url)
+            updateProfile({ fullname, username, website, avatar_url: url })
+          }}
+        />
+      </div>
       <div>
         <label htmlFor="email">Email</label>
         <input id="email" type="text" value={session?.user.email} disabled />
