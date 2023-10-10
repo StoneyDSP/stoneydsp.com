@@ -171,7 +171,6 @@ export default async function Example() {
             ))}
           </div>
         </div>
-
         <Footer />
       </div>
     </div>

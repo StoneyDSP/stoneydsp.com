@@ -4,7 +4,7 @@ import Link from 'next/link'
 import LogoutButton from '@/components/LogoutButton'
 import BrandBadge from '@/components/StoneyDSPBadge'
 import Footer from '@/components/Footer'
-import { Database } from './database.types'
+import { Database } from '@/types_db'
 
 export const dynamic = 'force-dynamic'
 
