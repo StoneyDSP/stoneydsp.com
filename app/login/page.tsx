@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Messages from './messages'
+import Footer from '@/components/Footer'
 
 export default function Login() {
   return (
@@ -60,7 +61,7 @@ export default function Login() {
         </button>
         <Messages />
       </form>
-
+      <Footer />
     </div>
   )
 }
