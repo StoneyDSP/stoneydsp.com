@@ -3,10 +3,9 @@ import { cookies } from 'next/headers'
 
 import Link from 'next/link'
 import LogoutButton from '../components/LogoutButton'
-// import SupabaseLogo from '../components/SupabaseLogo'
-// import NextJsLogo from '../components/NextJsLogo'
 import DeployButton from '../components/DeployButton'
 import BrandBadge from '@/components/StoneyDSPBadge'
+import Footer from './footer'
 
 import { Database } from './database.types'
 
@@ -69,15 +68,36 @@ const repos = [
   {
     title: 'NonLinearFilters',
     subtitle:
-      'Win32API project implementing a COM application window for Windows platforms in C++ using Direct2D.',
+      'A collection of Non-Linear filters of various topologies and types, for analysis and occasional mixing/production uses.',
     url: 'https://github.com/nathanjhood/NonLinearFilters',
     icon: 'M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528',
   },
   {
     title: 'cmodule',
     subtitle:
-      'Win32API project implementing a COM application window for Windows platforms in C++ using Direct2D.',
+      'Multi-platform, multi-architecture C/C++ modules that compile into \'<*>.node\' files, which can be imported as JS modules, for example to run in the NodeJS runtime environment as NPM packages.',
     url: 'https://github.com/nathanjhood/cmodule',
+    icon: 'M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528',
+  },
+  {
+    title: 'AudioPlugin-SVF',
+    subtitle:
+      'Simple Multi-Mode State Variable Filter plugin using TPT, built directly from the StoneyDSP/AudioPlugin template repository and a single juce DSP module.',
+    url: 'https://github.com/nathanjhood/AudioPlugin-SVF',
+    icon: 'M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528',
+  },
+  {
+    title: 'MSYS2-Toolchain',
+    subtitle:
+      'A set of gentle 1st-order filter types for delicate emphasis/de-emphasis equalization of audio tracks.',
+      url: 'https://github.com/nathanjhood/MSYS2-Toolchain',
+    icon: 'M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528',
+  },
+  {
+    title: 'BiLinearEQ',
+    subtitle:
+      'A set of gentle 1st-order filter types for delicate emphasis/de-emphasis equalization of audio tracks.',
+      url: 'https://github.com/nathanjhood/BiLinearEQ',
     icon: 'M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528',
   }
 ]
@@ -120,15 +140,18 @@ export default async function Index() {
       </nav>
 
       <div className="animate-in flex flex-col gap-14 opacity-0 max-w-4xl px-3 py-16 lg:py-24 text-foreground">
-        {/* <div className="flex flex-col items-center mb-4 lg:mb-12">
+        <div className="flex flex-col items-center mb-4 lg:mb-12">
           <div className="flex gap-8 justify-center items-center">
-            <Link href="https://supabase.com/" target="_blank">
-              <SupabaseLogo />
+            <Link href="#" target="_blank">
+              <BrandBadge />
             </Link>
-            <span className="border-l rotate-45 h-6" />
-            <NextJsLogo />
+            {/* <Link href="https://supabase.com/" target="_blank">
+              <SupabaseLogo />
+            </Link> */}
+            {/* <span className="border-l rotate-45 h-6" />
+            <NextJsLogo /> */}
           </div>
-        </div> */}
+        </div>
 
         <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent" />
 
@@ -273,7 +296,7 @@ export default async function Index() {
           </div>
         </div> */}
 
-        <div className="flex justify-center text-center text-xs">
+        {/* <div className="flex justify-center text-center text-xs">
           <p>
             Powered by{' '}
             <Link
@@ -284,7 +307,8 @@ export default async function Index() {
               Supabase
             </Link>
           </p>
-        </div>
+        </div> */}
+        <Footer />
       </div>
     </div>
   )
