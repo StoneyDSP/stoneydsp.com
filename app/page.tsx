@@ -295,7 +295,7 @@ export default async function Index() {
           </div>
         </div> */}
 
-        <div className="flex justify-center text-center text-xs">
+        {/* <div className="flex justify-center text-center text-xs">
           <p>
             Powered by{' '}
             <Link
@@ -306,7 +306,7 @@ export default async function Index() {
               Supabase
             </Link>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   )
