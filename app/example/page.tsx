@@ -38,14 +38,14 @@ const examples = [
   { type: 'Server Components', src: 'app/_examples/server-component/page.tsx' },
   { type: 'Server Actions', src: 'app/_examples/server-action/page.tsx' },
   { type: 'Route Handlers', src: 'app/_examples/route-handler.ts' },
-];
+]
 
 export default async function Example() {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createServerComponentClient({ cookies })
 
   const {
     data: { user },
-  } = await supabase.auth.getUser();
+  } = await supabase.auth.getUser()
 
   return (
     <div className="w-full flex flex-col items-center">
@@ -174,5 +174,5 @@ export default async function Example() {
         <Footer />
       </div>
     </div>
-  );
-};
+  )
+}

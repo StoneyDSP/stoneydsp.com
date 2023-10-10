@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { Database } from '../database.types'
+import { Database } from '@/types_db'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import Image from 'next/image'
 type Profiles = Database['public']['Tables']['profiles']['Row']
