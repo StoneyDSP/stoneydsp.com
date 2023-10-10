@@ -11,7 +11,7 @@ export default async function Footer() {
           target="_blank"
           className="font-bold"
         >
-          Supabases
+          Supabase
         </Link>
       </p>
     </div>
