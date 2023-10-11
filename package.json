@@ -24,6 +24,8 @@
     "generate-types": "npx supabase gen types typescript --project-id $SUPABASE_PROJECT_REF --schema public > types_db.ts"
   },
   "dependencies": {
+		"@vercel/analytics": "^1.0.2",
+    "@vercel/edge": "^1.1.0",
     "@stripe/stripe-js": "^2.1.7",
     "@supabase/auth-helpers-nextjs": "latest",
     "@supabase/auth-ui-react": "^0.4.5",
@@ -52,7 +54,6 @@
     "@vercel/postgres": "^0.5.0",
     "encoding": "^0.1.13",
     "eslint": "^8.50.0",
-    "supabase": "^1.99.5",
-    "typescript": "*"
+    "supabase": "^1.99.5"
   }
 }
