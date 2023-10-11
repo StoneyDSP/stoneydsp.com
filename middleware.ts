@@ -17,12 +17,12 @@ export async function middleware(req: NextRequest) {
   // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
   await supabase.auth.getSession()
 
-  // Extract country. Default to US if not found.
-  const country = (req.geo && req.geo.country) || 'US'
+  // Extract visitor info
+  const country = (req.geo && req.geo.country) || 'Earth'
+  const city = (req.geo && req.geo.city) || 'Nowhere'
+  const agent = (req.ip) || 'Visitor'
 
-  const agent = (process.env.USER) || 'USER'
-
-  console.log(`Visitor: ${agent} from ${country}`)
+  console.log(`${agent} visiting from ${city}, ${country}`)
 
   // // if user is signed in and the current path is / redirect the user to /account
   // if (user && req.nextUrl.pathname === '/') {
@@ -38,6 +38,11 @@ export async function middleware(req: NextRequest) {
   // if (!user && req.nextUrl.pathname === '/') {
   //   return NextResponse.redirect(new URL('/login', req.url))
   // }
+
+  // if user is not signed in and the current path is not /login redirect the user to /login
+  if (!user && req.nextUrl.pathname !== '/login') {
+    return NextResponse.redirect(new URL('/login', req.url))
+  }
 
   // if user is not signed in and the current path is not /login redirect the user to /login
   if (!user && req.nextUrl.pathname !== '/login') {

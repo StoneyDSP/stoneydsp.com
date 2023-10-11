@@ -1,12 +1,23 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import Link from 'next/link'
+import { Database } from '@/types_db'
+
+import { NextResponse } from 'next/server'
+
+import type { NextRequest } from 'next/server'
 
 import LogoutButton from '@/components/LogoutButton'
 import SupabaseLogo from '@/components/SupabaseLogo'
 import NextJsLogo from '@/components/NextJsLogo'
 import BrandBadge from '@/components/StoneyDSPBadge'
 import Footer from '@/components/Footer'
+
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Example',
+}
 
 export const dynamic = 'force-dynamic'
 
@@ -42,11 +53,14 @@ const examples = [
 ]
 
 export default async function Example() {
-  const supabase = createServerComponentClient({ cookies })
+  const cookieStore = cookies()
+  const supabase = createServerComponentClient<Database>({ cookies: () => cookieStore })
 
   const {
     data: { user },
   } = await supabase.auth.getUser()
+
+  await supabase.auth.getSession()
 
   return (
     <div className="w-full flex flex-col items-center">
@@ -172,9 +186,9 @@ export default async function Example() {
             ))}
           </div>
         </div>
-        
+
         <Footer />
-      
+
       </div>
     </div>
   )
