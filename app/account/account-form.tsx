@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { Database } from '@/types_db'
 import { Session, createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
-import Link from 'next/link'
+import '@/app/globals.css'
 
 // Import the new component
 import Avatar from './avatar'

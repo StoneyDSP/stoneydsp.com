@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import '@/app/globals.css'
 import Messages from './messages'
 import Footer from '@/components/Footer'
 import BackButton from '@/components/BackButton'
