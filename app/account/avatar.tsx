@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { Database } from '@/types_db'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import Image from 'next/image'
+import '@/app/globals.css'
+
 type Profiles = Database['public']['Tables']['profiles']['Row']
 
 export default function Avatar({
@@ -80,8 +82,13 @@ export default function Avatar({
       ) : (
         <div className="avatar no-image" style={{ height: size, width: size }} />
       )}
-      <div style={{ width: size }}>
-        <label className="button primary block" htmlFor="single">
+      <div
+        style={{ width: size }}
+      >
+        <label
+          className="button primary block"
+          htmlFor="single"
+        >
           {uploading ? 'Uploading ...' : 'Upload'}
         </label>
         <input

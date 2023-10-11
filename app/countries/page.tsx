@@ -3,6 +3,12 @@ import { cookies } from "next/headers"
 import { Database } from "@/types_db"
 import '@/app/globals.css'
 
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Countries',
+}
+
 export default async function Countries() {
   const cookieStore = cookies()
   const supabase = createServerComponentClient<Database>({ cookies: () => cookieStore })
@@ -10,12 +16,10 @@ export default async function Countries() {
   const { data: countries } = await supabase.from("countries").select()
 
   return (
-    <div className="w-full flex flex-col items-center">
-      <ul className="my-auto text-foreground">
-        {countries?.map((country) => (
-          <li key={country.id}>{country.name}</li>
-        ))}
-      </ul>
-    </div>
+    <ul className="my-auto text-foreground">
+      {countries?.map((country) => (
+        <li key={country.id}>{country.name}</li>
+      ))}
+    </ul>
   )
 }

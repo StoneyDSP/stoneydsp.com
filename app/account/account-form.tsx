@@ -80,8 +80,9 @@ export default function AccountForm({ session }: { session: Session | null }) {
   }
 
   return (
-    <div className="form-widget">
-      <div className="w-full flex flex-col items-center">
+    // <div className="form-widget">
+    <div className="animate-in flex flex-col gap-14 opacity-0 max-w-4xl px-3 py-16 lg:py-24 text-foreground">
+      <div className="w-full flex flex-col items-center justify-center text-foreground">
         <Avatar
           uid={user?.id || 'undefined'}
           url={avatar_url}
@@ -92,9 +93,15 @@ export default function AccountForm({ session }: { session: Session | null }) {
           }}
         />
       </div>
-      <div>
-        <label className="text-md" htmlFor="email">Email</label>
-        <input id="email" type="text" value={session?.user.email} disabled />
+      <div className="text-foreground">
+        <label className="text-md" htmlFor="email">
+          Email
+        </label>
+        <input
+          id="email"
+          type="text"
+          value={session?.user.email} disabled
+        />
       </div>
       <div>
         <label className="text-md" htmlFor="fullName">Full Name</label>
@@ -117,9 +124,10 @@ export default function AccountForm({ session }: { session: Session | null }) {
         />
       </div>
       <div>
-        <label className="text-md" htmlFor="website">Website</label>
+        <label className="text-md" htmlFor="website-form">Website</label>
         <input
-          id="website"
+          name="website"
+          id="website-form"
           type="url"
           className="rounded-md px-4 py-2 bg-inherit border mb-6"
           value={website || ''}
@@ -129,7 +137,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
       <div>
         <button
-          className="button primary block border-gray-700 rounded px-4 py-2 text-white mb-2"
+          className="block border primary border-gray-700 bg-green-700 rounded px-4 py-2 text-white mb-2"
           onClick={() => updateProfile({ fullname, username, website, avatar_url })}
           disabled={loading}
         >
@@ -140,7 +148,8 @@ export default function AccountForm({ session }: { session: Session | null }) {
       <div>
         <form action="/auth/signout" method="post">
           <button
-            className="button block border border-gray-700 rounded px-4 py-2 text-white mb-2"
+            // className="button block border border-gray-700 rounded px-4 py-2 text-white mb-2"
+            className="block border border-gray-700 bg-green-700 rounded px-4 py-2 text-white mb-2"
             type="submit"
           >
             Sign out
