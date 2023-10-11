@@ -101,6 +101,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
         <input
           id="fullName"
           type="text"
+          className="rounded-md px-4 py-2 bg-inherit border mb-6"
           value={fullname || ''}
           onChange={(e) => setFullname(e.target.value)}
         />
@@ -110,6 +111,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
         <input
           id="username"
           type="text"
+          className="rounded-md px-4 py-2 bg-inherit border mb-6"
           value={username || ''}
           onChange={(e) => setUsername(e.target.value)}
         />
@@ -119,6 +121,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
         <input
           id="website"
           type="url"
+          className="rounded-md px-4 py-2 bg-inherit border mb-6"
           value={website || ''}
           onChange={(e) => setWebsite(e.target.value)}
         />
