@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { Database } from '../database.types'
+import { Database } from '@/types_db'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import Image from 'next/image'
 type Profiles = Database['public']['Tables']['profiles']['Row']
@@ -65,7 +65,9 @@ export default function Avatar({
   }
 
   return (
-    <div>
+    <div
+      className="flex-1 flex flex-col w-full justify-center"
+    >
       {avatarUrl ? (
         <Image
           width={size}
