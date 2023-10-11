@@ -14,10 +14,8 @@ export default async function Account() {
   } = await supabase.auth.getSession()
 
   return (
-    <div>
-      <BackButton />
+    <div className="w-full flex flex-col items-center">
       <AccountForm session={session} />
-      <Footer />
     </div>
   )
 }

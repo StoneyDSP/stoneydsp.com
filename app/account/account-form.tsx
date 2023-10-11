@@ -81,7 +81,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
   return (
     <div className="form-widget">
-      <div>
+      <div className="w-full flex flex-col items-center">
         <Avatar
           uid={user?.id || 'undefined'}
           url={avatar_url}
@@ -93,11 +93,11 @@ export default function AccountForm({ session }: { session: Session | null }) {
         />
       </div>
       <div>
-        <label htmlFor="email">Email</label>
+        <label className="text-md" htmlFor="email">Email</label>
         <input id="email" type="text" value={session?.user.email} disabled />
       </div>
       <div>
-        <label htmlFor="fullName">Full Name</label>
+        <label className="text-md" htmlFor="fullName">Full Name</label>
         <input
           id="fullName"
           type="text"
@@ -106,7 +106,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
         />
       </div>
       <div>
-        <label htmlFor="username">Username</label>
+        <label className="text-md" htmlFor="username">Username</label>
         <input
           id="username"
           type="text"
@@ -115,7 +115,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
         />
       </div>
       <div>
-        <label htmlFor="website">Website</label>
+        <label className="text-md" htmlFor="website">Website</label>
         <input
           id="website"
           type="url"
@@ -126,7 +126,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
       <div>
         <button
-          className="button primary block"
+          className="button primary block border-gray-700 rounded px-4 py-2 text-white mb-2"
           onClick={() => updateProfile({ fullname, username, website, avatar_url })}
           disabled={loading}
         >
@@ -136,7 +136,10 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
       <div>
         <form action="/auth/signout" method="post">
-          <button className="button block" type="submit">
+          <button
+            className="button block border border-gray-700 rounded px-4 py-2 text-white mb-2"
+            type="submit"
+          >
             Sign out
           </button>
         </form>
