@@ -6,6 +6,13 @@ import Link from 'next/link'
 import { Database } from '@/types_db'
 import '@/app/globals.css'
 
+import { Metadata } from 'next'
+import BrandBadge from '@/components/StoneyDSPBadge'
+
+export const metadata: Metadata = {
+  title: 'Account',
+}
+
 export default async function Account() {
   const cookieStore = cookies()
   const supabase = createServerComponentClient<Database>({ cookies: () => cookieStore })
@@ -40,10 +47,11 @@ export default async function Account() {
           </Link>
         </div>
       </nav>
-      <div className="animate-in flex flex-col gap-14 opacity-0 max-w-4xl px-3 py-16 lg:py-24 text-foreground">
+
+      <div className="animate-in flex flex-col gap-14 opacity-0 max-w-4xl px-3 py-16 lg:py-24">
         <AccountForm session={session} />
+        <Footer />
       </div>
-      <Footer />
     </div>
   )
 }
