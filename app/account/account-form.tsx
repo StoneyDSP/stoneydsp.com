@@ -1,9 +1,9 @@
 'use client'
 import { useCallback, useEffect, useState } from 'react'
-import { Database } from '../database.types'
+import { Database } from '@/types_db'
 import { Session, createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
-import Link from 'next/link'
+import '@/app/globals.css'
 
 // Import the new component
 import Avatar from './avatar'
@@ -81,42 +81,47 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
   return (
     <div className="form-widget">
-      <Avatar
-        uid={user?.id || 'undefined'}
-        url={avatar_url}
-        size={150}
-        onUpload={(url) => {
-          setAvatarUrl(url)
-          updateProfile({ fullname, username, website, avatar_url: url })
-        }}
-      />
+      <div className="w-full flex flex-col items-center">
+        <Avatar
+          uid={user?.id || 'undefined'}
+          url={avatar_url}
+          size={150}
+          onUpload={(url) => {
+            setAvatarUrl(url)
+            updateProfile({ fullname, username, website, avatar_url: url })
+          }}
+        />
+      </div>
       <div>
-        <label htmlFor="email">Email</label>
+        <label className="text-md" htmlFor="email">Email</label>
         <input id="email" type="text" value={session?.user.email} disabled />
       </div>
       <div>
-        <label htmlFor="fullName">Full Name</label>
+        <label className="text-md" htmlFor="fullName">Full Name</label>
         <input
           id="fullName"
           type="text"
+          className="rounded-md px-4 py-2 bg-inherit border mb-6"
           value={fullname || ''}
           onChange={(e) => setFullname(e.target.value)}
         />
       </div>
       <div>
-        <label htmlFor="username">Username</label>
+        <label className="text-md" htmlFor="username">Username</label>
         <input
           id="username"
           type="text"
+          className="rounded-md px-4 py-2 bg-inherit border mb-6"
           value={username || ''}
           onChange={(e) => setUsername(e.target.value)}
         />
       </div>
       <div>
-        <label htmlFor="website">Website</label>
+        <label className="text-md" htmlFor="website">Website</label>
         <input
           id="website"
           type="url"
+          className="rounded-md px-4 py-2 bg-inherit border mb-6"
           value={website || ''}
           onChange={(e) => setWebsite(e.target.value)}
         />
@@ -124,7 +129,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
       <div>
         <button
-          className="button primary block"
+          className="button primary block border-gray-700 rounded px-4 py-2 text-white mb-2"
           onClick={() => updateProfile({ fullname, username, website, avatar_url })}
           disabled={loading}
         >
@@ -134,34 +139,15 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
       <div>
         <form action="/auth/signout" method="post">
-          <button className="button block" type="submit">
+          <button
+            className="button block border border-gray-700 rounded px-4 py-2 text-white mb-2"
+            type="submit"
+          >
             Sign out
           </button>
         </form>
       </div>
 
-      <div>
-        <Link
-          href="/"
-          className="absolute left-8 top-8 py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
-          >
-            <polyline points="15 18 9 12 15 6" />
-          </svg>{' '}
-          Back
-        </Link>
-      </div>
     </div>
   )
 }
