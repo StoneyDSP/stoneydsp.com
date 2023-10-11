@@ -3,7 +3,7 @@ import '@/app/globals.css'
 
 export default async function Footer() {
   return (
-    <div className="flex justify-center text-center text-xs">
+    <div className="flex justify-center text-foreground text-center text-xs">
       <p>
         Powered by{' '}
         <Link

@@ -4,6 +4,7 @@ import AccountForm from './account-form'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { Database } from '@/types_db'
+import '@/app/globals.css'
 
 export default async function Account() {
   const cookieStore = cookies()
@@ -17,7 +18,6 @@ export default async function Account() {
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm text-foreground">
-          {/* <BrandBadge /> */}
           <Link
             href="/"
             className="absolute left-8 top-8 py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm"
