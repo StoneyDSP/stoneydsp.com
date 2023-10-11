@@ -33,7 +33,7 @@ export default function AuthForm() {
       appearance={{ theme: ThemeSupa }}
       theme={theme}
       showLinks={false}
-      providers={['google', 'facebook', 'twitter', 'apple', 'github']}
+      providers={['discord', 'github']}
       socialLayout={socialLayout}
       redirectTo={publicSiteURL}
     />
