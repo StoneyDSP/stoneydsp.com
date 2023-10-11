@@ -1,18 +1,21 @@
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-import { Database } from "../database.types";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+import { cookies } from "next/headers"
+import { Database } from "@/types_db"
+import '@/app/globals.css'
 
-export default async function Index() {
+export default async function Countries() {
   const cookieStore = cookies()
   const supabase = createServerComponentClient<Database>({ cookies: () => cookieStore })
 
-  const { data: countries } = await supabase.from("countries").select();
+  const { data: countries } = await supabase.from("countries").select()
 
   return (
-    <ul className="my-auto text-foreground">
-      {countries?.map((country) => (
-        <li key={country.id}>{country.name}</li>
-      ))}
-    </ul>
-  );
+    <div className="w-full flex flex-col items-center">
+      <ul className="my-auto text-foreground">
+        {countries?.map((country) => (
+          <li key={country.id}>{country.name}</li>
+        ))}
+      </ul>
+    </div>
+  )
 }
