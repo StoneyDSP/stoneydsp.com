@@ -16,12 +16,10 @@ export default async function Countries() {
   const { data: countries } = await supabase.from("countries").select()
 
   return (
-    <div className="w-full flex flex-col items-center">
-      <ul className="my-auto text-foreground">
-        {countries?.map((country) => (
-          <li key={country.id}>{country.name}</li>
-        ))}
-      </ul>
-    </div>
+    <ul className="my-auto text-foreground">
+      {countries?.map((country) => (
+        <li key={country.id}>{country.name}</li>
+      ))}
+    </ul>
   )
 }
