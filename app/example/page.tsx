@@ -1,12 +1,13 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
-import Link from 'next/link';
-import LogoutButton from '../../components/LogoutButton';
-import SupabaseLogo from '../../components/SupabaseLogo';
-import NextJsLogo from '../../components/NextJsLogo';
-import DeployButton from '../../components/DeployButton';
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { cookies } from 'next/headers'
+import Link from 'next/link'
+import LogoutButton from '@/components/LogoutButton'
+import SupabaseLogo from '@/components/SupabaseLogo'
+import NextJsLogo from '@/components/NextJsLogo'
+import BrandBadge from '@/components/StoneyDSPBadge'
+import Footer from '@/components/Footer'
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic'
 
 const resources = [
   {
@@ -37,20 +38,21 @@ const examples = [
   { type: 'Server Components', src: 'app/_examples/server-component/page.tsx' },
   { type: 'Server Actions', src: 'app/_examples/server-action/page.tsx' },
   { type: 'Route Handlers', src: 'app/_examples/route-handler.ts' },
-];
+]
 
 export default async function Example() {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createServerComponentClient({ cookies })
 
   const {
     data: { user },
-  } = await supabase.auth.getUser();
+  } = await supabase.auth.getUser()
 
   return (
     <div className="w-full flex flex-col items-center">
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm text-foreground">
-          <DeployButton />
+          {/* <DeployButton /> */}
+          <BrandBadge />
           {user ? (
             <div className="flex items-center gap-4">
               Hey, {user.email}!
@@ -169,20 +171,8 @@ export default async function Example() {
             ))}
           </div>
         </div>
-
-        <div className="flex justify-center text-center text-xs">
-          <p>
-            Powered by{' '}
-            <Link
-              href="https://supabase.com/"
-              target="_blank"
-              className="font-bold"
-            >
-              Supabase
-            </Link>
-          </p>
-        </div>
+        <Footer />
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,14 +1,10 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
-
 import Link from 'next/link'
-import LogoutButton from '../components/LogoutButton'
-// import SupabaseLogo from '../components/SupabaseLogo'
-// import NextJsLogo from '../components/NextJsLogo'
-import DeployButton from '../components/DeployButton'
+import LogoutButton from '@/components/LogoutButton'
 import BrandBadge from '@/components/StoneyDSPBadge'
-
-import { Database } from './database.types'
+import Footer from '@/components/Footer'
+import { Database } from '@/types_db'
 
 export const dynamic = 'force-dynamic'
 
@@ -122,11 +118,10 @@ export default async function Index() {
     <div className="w-full flex flex-col items-center">
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm text-foreground">
-          {/* <DeployButton /> */}
           <BrandBadge />
           {user ? (
             <div className="flex items-center gap-4">
-              Hey, {user.email}!
+              <Link href="/account" target="_self">Hey, {user.email}!</Link>
               <LogoutButton />
             </div>
           ) : (
@@ -297,18 +292,7 @@ export default async function Index() {
           </div>
         </div> */}
 
-        <div className="flex justify-center text-center text-xs">
-          <p>
-            Powered by{' '}
-            <Link
-              href="https://supabase.com/"
-              target="_blank"
-              className="font-bold"
-            >
-              Supabase
-            </Link>
-          </p>
-        </div>
+        <Footer />
       </div>
     </div>
   )
