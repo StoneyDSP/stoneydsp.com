@@ -5,53 +5,44 @@ import type { NextRequest } from 'next/server'
 
 export async function middleware(req: NextRequest) {
 
-  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
-
-  const cspHeader = `
-    default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
-    style-src 'self' 'nonce-${nonce}';
-    img-src 'self' blob: data:;
-    font-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    block-all-mixed-content;
-    upgrade-insecure-requests;
-  `
-
+  // const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
   // const isDev = process.env.VERCEL_ENV !== 'production' as const
-  // ${isDev ? "connect-src vitals.vercel-insights.com" : ""};
-  // script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: 'unsafe-inline'${
-  //   isDev ? " 'unsafe-eval'" : ''
-  // };
-  // style-src 'self' 'nonce-${nonce}';
-  // img-src 'self' blob: data:;
-  // font-src 'self';
-  // object-src 'none';
-  // base-uri 'self';
-  // form-action 'self';
-  // frame-ancestors 'none';
-  // block-all-mixed-content;
-  // upgrade-insecure-requests;
 
-  const requestHeaders = new Headers(req.headers)
+  // const cspHeader = `
+  //   default-src 'self';
+  //   script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: 'unsafe-inline'${
+  //     isDev ? " 'unsafe-eval'" : ''
+  //   };
+  //   style-src 'self' 'nonce-${nonce}';
+  //   ${isDev ? "connect-src vitals.vercel-insights.com" : ""};
+  //   img-src 'self' blob: data:;
+  //   font-src 'self';
+  //   object-src 'none';
+  //   base-uri 'self';
+  //   form-action 'self';
+  //   frame-ancestors 'none';
+  //   block-all-mixed-content;
+  //   upgrade-insecure-requests;
+  // `
 
-  // Setting request headers
-  requestHeaders.set('x-nonce', nonce)
-  requestHeaders.set(
-    'Content-Security-Policy',
-    // Replace newline characters and spaces
-    cspHeader.replace(/\s{2,}/g, ' ').trim()
+  // const requestHeaders = new Headers(req.headers)
+
+  // // Setting request headers
+  // requestHeaders.set('x-nonce', nonce)
+  // requestHeaders.set(
+  //   'Content-Security-Policy',
+  //   // Replace newline characters and spaces
+  //   cspHeader.replace(/\s{2,}/g, ' ').trim()
+  // )
+
+  const res = NextResponse.next(
+    // {
+    //   headers: requestHeaders,
+    //   request: {
+    //     headers: requestHeaders,
+    //   },
+    // }
   )
-
-  const res = NextResponse.next({
-    headers: requestHeaders,
-    request: {
-      headers: requestHeaders,
-    },
-  })
 
   // Create a Supabase client configured to use cookies
   const supabase = createMiddlewareClient({ req, res })
@@ -72,37 +63,18 @@ export async function middleware(req: NextRequest) {
 
   console.log(`${agent} visiting from ${city}, ${region}, ${country}`)
 
-  // // if user is signed in and the current path is / redirect the user to /account
-  // if (user && req.nextUrl.pathname === '/') {
-  //   return NextResponse.redirect(new URL('/account', req.url))
-  // }
-
-  // // if user is not signed in and the current path is not / redirect the user to /
-  // if (!user && req.nextUrl.pathname !== '/') {
-  //   return NextResponse.redirect(new URL('/', req.url))
-  // }
-
-  // if user is not signed in and the current path is / redirect the user to /login
-  // if (!user && req.nextUrl.pathname === '/') {
+  // // if user is not signed in and the current path is not /login redirect the user to /login
+  // if (!user && req.nextUrl.pathname !== '/login') {
   //   return NextResponse.redirect(new URL('/login', req.url))
   // }
 
-  // if user is not signed in and the current path is not /login redirect the user to /login
-  if (!user && req.nextUrl.pathname !== '/login') {
-    return NextResponse.redirect(new URL('/login', req.url))
-  }
-
-  // if user is not signed in and the current path is not /login redirect the user to /login
-  if (!user && req.nextUrl.pathname !== '/login') {
-    return NextResponse.redirect(new URL('/login', req.url))
-  }
+  // // if user is not signed in and the current path is not /login redirect the user to /login
+  // if (!user && req.nextUrl.pathname !== '/login') {
+  //   return NextResponse.redirect(new URL('/login', req.url))
+  // }
 
   return res
 }
-
-// export const config = {
-//   matcher: ['/', '/login'],
-// }
 
 export const config = {
   matcher: [
