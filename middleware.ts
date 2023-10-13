@@ -4,7 +4,39 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export async function middleware(req: NextRequest) {
-  const res = NextResponse.next()
+
+  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
+
+  const cspHeader = `
+    default-src 'self';
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+    style-src 'self' 'nonce-${nonce}';
+    img-src 'self' blob: data:;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    block-all-mixed-content;
+    upgrade-insecure-requests;
+  `
+
+  const requestHeaders = new Headers(req.headers)
+
+  // Setting request headers
+  requestHeaders.set('x-nonce', nonce)
+  requestHeaders.set(
+    'Content-Security-Policy',
+    // Replace newline characters and spaces
+    cspHeader.replace(/\s{2,}/g, ' ').trim()
+  )
+
+  const res = NextResponse.next({
+    headers: requestHeaders,
+    request: {
+      headers: requestHeaders,
+    },
+  })
 
   // Create a Supabase client configured to use cookies
   const supabase = createMiddlewareClient({ req, res })
@@ -52,6 +84,25 @@ export async function middleware(req: NextRequest) {
   return res
 }
 
+// export const config = {
+//   matcher: ['/', '/login'],
+// }
+
 export const config = {
-  matcher: ['/', '/login'],
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    {
+      source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
+      missing: [
+        { type: 'header', key: 'next-router-prefetch' },
+        { type: 'header', key: 'purpose', value: 'prefetch' },
+      ],
+    },
+  ],
 }
