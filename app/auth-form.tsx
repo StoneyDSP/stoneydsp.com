@@ -3,7 +3,7 @@ import { Auth } from '@supabase/auth-ui-react'
 import { SocialLayout, ThemeSupa, ViewType } from '@supabase/auth-ui-shared'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useState } from 'react'
-import { Database } from './database.types'
+import { Database } from '@/types_db'
 
 const views: { id: ViewType; title: string }[] = [
   { id: 'sign_in', title: 'Sign In' },

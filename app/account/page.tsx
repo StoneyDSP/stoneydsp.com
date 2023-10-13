@@ -1,25 +1,27 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
-import AccountForm from './account-form'
+import { getSession, getUser, getUserDetails } from '@/app/supabase-server'
+import AccountForm from '@/app/account/account-form'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { Database } from '@/types_db'
+import { redirect } from 'next/navigation'
 import '@/app/globals.css'
 
 import { Metadata } from 'next'
-import BrandBadge from '@/components/StoneyDSPBadge'
 
 export const metadata: Metadata = {
   title: 'Account',
 }
 
 export default async function Account() {
-  const cookieStore = cookies()
-  const supabase = createServerComponentClient<Database>({ cookies: () => cookieStore })
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
+  const [ session, userDetails, user, ] = await Promise.all([
+    getSession(),
+    getUserDetails(),
+    getUser(),
+  ])
+
+  if (!session) {
+    return redirect('/login');
+  }
 
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
