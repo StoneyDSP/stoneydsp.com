@@ -18,11 +18,13 @@ export async function middleware(req: NextRequest) {
   await supabase.auth.getSession()
 
   // Extract visitor info
+  // Extract visitor info
   const country = (req.geo && req.geo.country) || 'Earth'
   const city = (req.geo && req.geo.city) || 'Nowhere'
+  const region = (req.geo && req.geo.region) || 'Somewhere'
   const agent = (req.ip) || 'Visitor'
 
-  console.log(`${agent} visiting from ${city}, ${country}`)
+  console.log(`${agent} visiting from ${city}, ${region}, ${country}`)
 
   // // if user is signed in and the current path is / redirect the user to /account
   // if (user && req.nextUrl.pathname === '/') {
