@@ -20,11 +20,16 @@ export async function POST(req: NextRequest) {
     await supabase.auth.signOut()
   }
 
-  // return NextResponse.redirect(new URL('/', req.url), {
+  // return NextResponse.redirect(new URL('/login', requestUrl.origin), {
   //   status: 302,
   // })
 
-  return NextResponse.redirect(`${requestUrl.origin}/login`, {
+  // return NextResponse.redirect(`${requestUrl.origin}/login`, {
+  //   // a 301 status is required to redirect from a POST to a GET route
+  //   status: 301,
+  // })
+
+  return NextResponse.redirect(new URL('/login', requestUrl.origin), {
     // a 301 status is required to redirect from a POST to a GET route
     status: 301,
   })
