@@ -55,6 +55,14 @@ export async function middleware(req: NextRequest) {
   // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
   await supabase.auth.getSession()
 
+  // Extract visitor info
+  const country = (req.geo && req.geo.country) || 'Earth'
+  const city = (req.geo && req.geo.city) || 'Nowhere'
+  const region = (req.geo && req.geo.region) || 'Somewhere'
+  const agent = (req.ip) || 'Visitor'
+
+  console.log(`${agent} visiting from ${city}, ${region}, ${country}`)
+
   return res
 }
 
