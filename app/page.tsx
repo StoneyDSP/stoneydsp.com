@@ -1,7 +1,9 @@
 
 import { getSession, getUser, getUserDetails } from '@/app/supabase-server'
+import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
+import Script from 'next/script'
 import NavBar from '@/components/NavBar'
 import LogoutButton from '@/components/LogoutButton'
 import BrandBadge from '@/components/StoneyDSPBadge'
@@ -110,6 +112,8 @@ const examples = [
 
 export default async function Index() {
 
+  const nonce = headers().get('x-nonce')
+
   const [ session, user, userDetails, ] = await Promise.all([
     getSession(),
     getUser(),
@@ -122,6 +126,7 @@ export default async function Index() {
 
   return (
     <div className="w-full flex flex-col items-center">
+      {/* <Script src="https://..." strategy="afterInteractive" nonce={nonce?} /> */}
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm text-foreground">
           <BrandBadge />

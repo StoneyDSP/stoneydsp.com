@@ -11,7 +11,6 @@ export async function middleware(req: NextRequest) {
     default-src 'self';
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
     style-src 'self' 'nonce-${nonce}';
-    connect-src 'vitals.vercel-insights.com';
     img-src 'self' blob: data:;
     font-src 'self';
     object-src 'none';
@@ -21,6 +20,21 @@ export async function middleware(req: NextRequest) {
     block-all-mixed-content;
     upgrade-insecure-requests;
   `
+
+  // const isDev = process.env.VERCEL_ENV !== 'production' as const
+  // ${isDev ? "connect-src vitals.vercel-insights.com" : ""};
+  // script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: 'unsafe-inline'${
+  //   isDev ? " 'unsafe-eval'" : ''
+  // };
+  // style-src 'self' 'nonce-${nonce}';
+  // img-src 'self' blob: data:;
+  // font-src 'self';
+  // object-src 'none';
+  // base-uri 'self';
+  // form-action 'self';
+  // frame-ancestors 'none';
+  // block-all-mixed-content;
+  // upgrade-insecure-requests;
 
   const requestHeaders = new Headers(req.headers)
 
@@ -53,9 +67,10 @@ export async function middleware(req: NextRequest) {
   // Extract visitor info
   const country = (req.geo && req.geo.country) || 'Earth'
   const city = (req.geo && req.geo.city) || 'Nowhere'
+  const region = (req.geo && req.geo.region) || 'Somewhere'
   const agent = (req.ip) || 'Visitor'
 
-  console.log(`${agent} visiting from ${city}, ${country}`)
+  console.log(`${agent} visiting from ${city}, ${region}, ${country}`)
 
   // // if user is signed in and the current path is / redirect the user to /account
   // if (user && req.nextUrl.pathname === '/') {

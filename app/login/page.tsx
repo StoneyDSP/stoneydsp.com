@@ -1,3 +1,4 @@
+import { headers } from 'next/headers'
 import '@/app/globals.css'
 import Messages from './messages'
 import BrandBadge from '@/components/StoneyDSPBadge'
@@ -11,6 +12,9 @@ export const metadata: Metadata = {
 }
 
 export default function Login() {
+
+  const nonce = headers().get('x-nonce')
+
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
