@@ -4,6 +4,7 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export async function middleware(req: NextRequest) {
+  const requestUrl = new URL(req.url)
   const res = NextResponse.next()
 
   // Create a Supabase client configured to use cookies
@@ -20,9 +21,10 @@ export async function middleware(req: NextRequest) {
   // Extract visitor info
   const country = (req.geo && req.geo.country) || 'Earth'
   const city = (req.geo && req.geo.city) || 'Nowhere'
+  const region = (req.geo && req.geo.region) || 'Somewhere'
   const agent = (req.ip) || 'Visitor'
 
-  console.log(`${agent} visiting from ${city}, ${country}`)
+  console.log(`${agent} visiting from ${city}, ${region}, ${country}`)
 
   // // if user is signed in and the current path is / redirect the user to /account
   // if (user && req.nextUrl.pathname === '/') {
@@ -41,12 +43,12 @@ export async function middleware(req: NextRequest) {
 
   // if user is not signed in and the current path is not /login redirect the user to /login
   if (!user && req.nextUrl.pathname !== '/login') {
-    return NextResponse.redirect(new URL('/login', req.url))
+    return NextResponse.redirect(new URL('/login', requestUrl.origin))
   }
 
   // if user is not signed in and the current path is not /login redirect the user to /login
   if (!user && req.nextUrl.pathname !== '/login') {
-    return NextResponse.redirect(new URL('/login', req.url))
+    return NextResponse.redirect(new URL('/login', requestUrl.origin))
   }
 
   return res
