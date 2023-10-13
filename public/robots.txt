@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+
+# Block all crawlers for /**/
+User-agent: *
+Disallow: /logs/
+Disallow: /src/
+Disallow: /vercel/
+
+# Allow all crawlers
+User-agent: *
+Allow: /
