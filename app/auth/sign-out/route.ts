@@ -7,6 +7,7 @@ import { Database } from '@/types_db'
 export const dynamic = 'force-dynamic'
 
 export async function POST(req: NextRequest) {
+  const requestUrl = new URL(req.url)
   const cookieStore = cookies()
   const supabase = createRouteHandlerClient<Database>({ cookies: () => cookieStore })
 
@@ -19,7 +20,12 @@ export async function POST(req: NextRequest) {
     await supabase.auth.signOut()
   }
 
-  return NextResponse.redirect(new URL('/', req.url), {
-    status: 302,
+  // return NextResponse.redirect(new URL('/', req.url), {
+  //   status: 302,
+  // })
+
+  return NextResponse.redirect(`${requestUrl.origin}/login`, {
+    // a 301 status is required to redirect from a POST to a GET route
+    status: 301,
   })
 }
