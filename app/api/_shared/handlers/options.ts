@@ -15,7 +15,7 @@ export async function optionsHandler(
     return console.log(response.status(400).json(
       {
         status: 400,
-        error: error.message,
+        // error: error.message,
         headers: {
           'Content-Type': 'application/json',
           ...Headers.headers,
