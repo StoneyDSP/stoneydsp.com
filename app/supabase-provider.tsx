@@ -21,15 +21,20 @@ export default function SupabaseProvider({
   const router = useRouter()
 
   useEffect(() => {
-    const {
-      data: { subscription }
-    } = supabase.auth.onAuthStateChange((event) => {
-      if (event === 'SIGNED_IN') router.refresh()
-    })
+    const getSupabase = async () => {
 
-    return () => {
-      subscription.unsubscribe()
+      const { data: { subscription } } = await supabase.auth.onAuthStateChange((event) => {
+      if (event === 'SIGNED_IN')
+        router.refresh()
+      })
+
+      return () => {
+        subscription.unsubscribe()
+      }
     }
+
+    getSupabase()
+
   }, [router, supabase])
 
   return (
