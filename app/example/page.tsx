@@ -1,18 +1,15 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
-import Link from 'next/link'
+import { getSession, getUser, getUserDetails } from '@/app/supabase-server'
 import { Database } from '@/types_db'
-
-import { NextResponse } from 'next/server'
-
-import type { NextRequest } from 'next/server'
-
 import LogoutButton from '@/components/LogoutButton'
 import SupabaseLogo from '@/components/SupabaseLogo'
 import NextJsLogo from '@/components/NextJsLogo'
 import BrandBadge from '@/components/StoneyDSPBadge'
 import Footer from '@/components/Footer'
 
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -53,14 +50,16 @@ const examples = [
 ]
 
 export default async function Example() {
-  const cookieStore = cookies()
-  const supabase = createServerComponentClient<Database>({ cookies: () => cookieStore })
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  const [ session, user, userDetails, ] = await Promise.all([
+    getSession(),
+    getUser(),
+    getUserDetails(),
+  ])
 
-  await supabase.auth.getSession()
+  if (!session) {
+    return redirect('/login')
+  }
 
   return (
     <div className="w-full flex flex-col items-center">
