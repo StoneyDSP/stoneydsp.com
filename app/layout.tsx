@@ -5,8 +5,8 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata  = {
   title: {
-    default: '%s | StoneyDSP',
-    template: 'StoneyDSP',
+    default: 'StoneyDSP',
+    template: '%s | StoneyDSP',
   },
   applicationName: 'StoneyDSP',
   description: 'Systems, Web, Audio & Graphics',
@@ -25,7 +25,7 @@ export const metadata: Metadata  = {
   },
   openGraph: {
     title: 'StoneyDSP.com',
-    description: 'The React Framework for the Web',
+    description: 'Systems, Web, Audio & Graphics',
     url: 'https://www.stoneydsp.com',
     siteName: 'StoneyDSP.com',
     images: [
