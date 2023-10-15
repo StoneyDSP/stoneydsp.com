@@ -46,6 +46,7 @@ export default function Login() {
         <div className="flex flex-col items-center mb-4 lg:mb-12">
           <div className="flex gap-8 justify-center items-center">
             <BrandBadge />
+            <p>Systems, Web, Audio & Graphics</p>
           </div>
         </div>
 
