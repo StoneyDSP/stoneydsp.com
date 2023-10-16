@@ -1,5 +1,4 @@
 import { headers } from 'next/headers'
-import '@/app/globals.css'
 import Messages from './messages'
 import BrandBadge from '@/components/StoneyDSPBadge'
 import Footer from '@/components/Footer'
@@ -42,12 +41,12 @@ export default function Login() {
         </div>
       </nav>
 
-      <div className="animate-in flex flex-col gap-14 opacity-0 max-w-4xl px-3 py-16 lg:py-24 text-foreground">
+      <div className="animate-in flex flex-col gap-8 opacity-0 max-w-4xl px-3 py-16 lg:py-24 text-foreground">
         <div className="flex flex-col items-center mb-4 lg:mb-12">
           <div className="flex gap-8 justify-center items-center">
             <BrandBadge />
           </div>
-          <div className="flex gap-8 justify-center items-center text-foreground">
+          <div className="flex gap-8 justify-center items-center text-foreground py-8">
             <p>Systems, Web, Audio & Graphics</p>
           </div>
         </div>
