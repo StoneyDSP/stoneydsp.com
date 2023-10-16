@@ -2,7 +2,7 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
-import '@/app/globals.css'
+// import '@/app/globals.css'
 
 export default function NavBar() {
   const pathname = usePathname()
