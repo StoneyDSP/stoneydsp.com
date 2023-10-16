@@ -1,0 +1,44 @@
+/* Utils */
+
+.block {
+  display: block;
+  width: 100%;
+}
+.inline-block {
+  display: inline-block;
+  width: 100%;
+}
+.flex {
+  display: flex;
+}
+.flex.column {
+  flex-direction: column;
+}
+.flex.row {
+  flex-direction: row;
+}
+.flex.flex-1 {
+  flex: 1 1 0;
+}
+.flex-end {
+  justify-content: flex-end;
+}
+.flex-center {
+  justify-content: center;
+}
+.items-center {
+  align-items: center;
+}
+.text-sm {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.text-right {
+  text-align: right;
+}
+.font-light {
+  font-weight: 300;
+}
+.opacity-half {
+  opacity: 50%;
+}

@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/react'
 import SupabaseProvider from './supabase-provider'
-import './globals.css'
+// import './globals.css'
+import '@/app/styles.css'
 import { Metadata } from 'next'
 
 export const metadata: Metadata  = {
@@ -119,7 +120,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SupabaseProvider>
-          <main className="min-h-screen bg-background flex flex-col items-center">
+          <main
+            className="site"
+            // className="min-h-screen bg-background flex flex-col items-center"
+          >
             {children}
             <Analytics />
           </main>

@@ -1,11 +1,11 @@
 import './badge.css'
 
-import '../app/globals.css'
+// import '../app/globals.css'
 
 export default async function BrandBadge() {
   return (
     <a
-      className="py-2 px-3 flex rounded-md no-underline bg-black transition-colors hover:bg-gray-700 border"
+      // className="py-2 px-3 flex rounded-md no-underline bg-black transition-colors hover:bg-gray-700 border"
       href="https://www.stoneydsp.com/"
       target="_blank"
       rel="noreferrer"

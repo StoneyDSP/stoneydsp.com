@@ -1,5 +1,4 @@
 import { headers } from 'next/headers'
-import '@/app/globals.css'
 import Messages from './messages'
 import BrandBadge from '@/components/StoneyDSPBadge'
 import Footer from '@/components/Footer'
@@ -16,7 +15,8 @@ export default function Login() {
   const nonce = headers().get('x-nonce')
 
   return (
-    <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
+    <div>
+      {/* className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2" */}
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm text-foreground">
           {/* <Link
