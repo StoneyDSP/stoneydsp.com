@@ -27,7 +27,7 @@
     "@stripe/stripe-js": "^2.1.7",
     "@supabase/auth-helpers-nextjs": "latest",
     "@supabase/auth-ui-react": "^0.4.5",
-    "@supabase/auth-ui-shared": "^0.1.7",
+    "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/supabase-js": "latest",
     "@vercel/analytics": "^1.0.2",
     "@vercel/edge": "^0.1.2",
