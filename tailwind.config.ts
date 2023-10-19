@@ -19,7 +19,7 @@ import type { Config } from 'tailwindcss'
 // } satisfies Config
 
 export default {
-  content: [],
+  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}'],
   presets: [],
   darkMode: 'media', // or 'class'
   theme: {
