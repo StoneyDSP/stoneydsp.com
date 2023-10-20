@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 // import Link from 'next/link'
 
 import { Metadata } from 'next'
+// import Logo from '@/components/Logo'
 
 export const metadata: Metadata = {
   title: 'Login',
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function Login() {
 
-  const nonce = headers().get('x-nonce')
+  // const nonce = headers().get('x-nonce')
 
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
@@ -49,6 +50,7 @@ export default function Login() {
           <div className="flex gap-8 justify-center items-center text-foreground py-8">
             <p>Systems, Web, Audio & Graphics</p>
           </div>
+          {/* <Logo /> */}
         </div>
 
         <form
@@ -79,7 +81,7 @@ export default function Login() {
             id="password-form"
             required
           />
-          <button className="bg-green-700 rounded px-4 py-2 text-white mb-2">
+          <button className="bg-purple-700 rounded px-4 py-2 text-white mb-2">
             Sign In
           </button>
           <button
