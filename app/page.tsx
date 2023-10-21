@@ -1,4 +1,3 @@
-
 import { getSession, getUser, getUserDetails } from '@/app/supabase-server'
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
