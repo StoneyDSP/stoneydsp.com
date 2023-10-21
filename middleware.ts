@@ -11,15 +11,15 @@ export async function middleware(req: NextRequest) {
   // Create a Supabase client configured to use cookies
   const supabase = createMiddlewareClient<Database>({ req, res })
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-
   // Refresh session if expired - required for Server Components
   // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
   await supabase.auth.getSession()
 
-  // Extract visitor info
+  // Extract user info
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
   // Extract visitor info
   const country = (req.geo && req.geo.country) || 'Earth'
   const city = (req.geo && req.geo.city) || 'Nowhere'

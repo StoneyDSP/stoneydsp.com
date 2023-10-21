@@ -4,8 +4,6 @@ import { NextResponse } from 'next/server'
 
 import type { NextRequest } from 'next/server'
 
-import type { Database } from '@/types_db'
-
 export const dynamic = 'force-dynamic'
 
 export async function GET(req: NextRequest) {
@@ -17,8 +15,7 @@ export async function GET(req: NextRequest) {
   const code = searchParams.get('code')
 
   if (code) {
-    const cookieStore = cookies()
-    const supabase = createRouteHandlerClient<Database>({ cookies: () => cookieStore })
+    const supabase = createRouteHandlerClient({ cookies })
     await supabase.auth.exchangeCodeForSession(code)
   }
 

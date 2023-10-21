@@ -11,7 +11,7 @@ import ResourceCards from '@/components/cards/ResourceCards/ResourceCards'
 import TextLargeBoldCenter from '@/components/TextLargeBoldCenter'
 import HRGradient from '@/components/HRGradient'
 
-// export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic'
 
 export default async function Index() {
 
