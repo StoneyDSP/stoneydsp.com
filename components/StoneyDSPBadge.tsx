@@ -20,7 +20,7 @@ export default async function BrandBadge() {
       target="_blank"
       rel="noreferrer"
     >
-      <h1 className="text-lg font-bold text-center text-background">StoneyDSP</h1>
+      <h1 className="text-lg font-bold text-center text-foreground">StoneyDSP</h1>
     </a>
   )
 }

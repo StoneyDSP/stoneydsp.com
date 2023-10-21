@@ -3,15 +3,17 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { cache } from 'react'
 
-// export const dynamic = 'force-dynamic'
-
-export const createCookieStore = cache(() =>
-  cookies()
-)
-
 export const createServerSupabaseClient = cache(() =>
-  createServerComponentClient<Database>({ cookies: () => createCookieStore() })
+  createServerComponentClient<Database>({ cookies })
 )
+
+// export const createCookieStore = cache(() =>
+//   cookies()
+// )
+
+// export const createServerSupabaseClient = cache(() =>
+//   createServerComponentClient<Database>({ cookies: () => createCookieStore() })
+// )
 
 export async function getSession() {
   const supabase = createServerSupabaseClient()

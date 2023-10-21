@@ -15,12 +15,9 @@ export const dynamic = 'force-dynamic'
 
 export default async function Index() {
 
-  const nonce = headers().get('x-nonce')
-
-  const [ session, user, userDetails, ] = await Promise.all([
+  const [ session, user, ] = await Promise.all([
     getSession(),
-    getUser(),
-    getUserDetails(),
+    getUser()
   ])
 
   if (!session) {
