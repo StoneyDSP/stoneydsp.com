@@ -1,4 +1,3 @@
-import { headers } from 'next/headers'
 import Messages from './messages'
 import BrandBadge from '@/components/StoneyDSPBadge'
 import Footer from '@/components/Footer'
