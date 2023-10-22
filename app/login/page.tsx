@@ -1,5 +1,5 @@
-import { getSession } from '@/app/supabase-server'
-import { redirect } from 'next/navigation'
+// import { getSession } from '@/app/supabase-server'
+// import { redirect } from 'next/navigation'
 import Messages from './messages'
 import AuthForm from './auth-form'
 import BrandBadge from '@/components/StoneyDSPBadge'
@@ -17,11 +17,11 @@ export const metadata: Metadata = {
 
 export default async function Login() {
 
-  const session = await getSession()
+  // const session = await getSession()
 
-  if (session) {
-    return redirect('/account')
-  }
+  // if (session) {
+  //   return redirect('/account')
+  // }
 
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
