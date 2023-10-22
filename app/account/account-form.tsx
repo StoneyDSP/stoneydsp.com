@@ -137,7 +137,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
       <div>
         <button
-          className="block border primary border-gray-700 bg-green-700 rounded px-4 py-2 text-white mb-2"
+          className="block border primary border-gray-700 bg-purple-700 rounded px-4 py-2 text-white mb-2"
           onClick={() => updateProfile({ fullname, username, website, avatar_url })}
           disabled={loading}
         >
@@ -149,7 +149,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
         <form action="/auth/sign-out" method="post">
           <button
             // className="button block border border-gray-700 rounded px-4 py-2 text-white mb-2"
-            className="block border border-gray-700 bg-green-700 rounded px-4 py-2 text-white mb-2"
+            className="block border border-gray-700 bg-purple-700 rounded px-4 py-2 text-white mb-2"
             type="submit"
           >
             Sign out
