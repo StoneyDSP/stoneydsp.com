@@ -34,7 +34,6 @@ export default async function Login() {
           </div>
 
           <div className="flex justify-center items-center text-foreground pt-8">
-
             <p>Systems, Web, Audio & Graphics</p>
           </div>
 

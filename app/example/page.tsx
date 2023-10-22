@@ -1,53 +1,10 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { getSession, getUser, getUserDetails } from '@/app/supabase-server'
-import { Database } from '@/types_db'
-import LogoutButton from '@/components/LogoutButton'
-import SupabaseLogo from '@/components/SupabaseLogo'
-import NextJsLogo from '@/components/NextJsLogo'
-import BrandBadge from '@/components/StoneyDSPBadge'
-import Footer from '@/components/Footer'
+import { getURL } from '@/utils/helpers'
+import GitStats from '@/components/cards/GitStats/GitStats'
 
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
-import Link from 'next/link'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Example',
-}
-
-export const dynamic = 'force-dynamic'
-
-const resources = [
-  {
-    title: 'Cookie-based Auth and the Next.js App Router',
-    subtitle:
-      'This free course by Jon Meyers, shows you how to configure Supabase Auth to use cookies, and steps through some common patterns.',
-    url: 'https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF',
-    icon: 'M7 4V20M17 4V20M3 8H7M17 8H21M3 12H21M3 16H7M17 16H21M4 20H20C20.5523 20 21 19.5523 21 19V5C21 4.44772 20.5523 4 20 4H4C3.44772 4 3 4.44772 3 5V19C3 19.5523 3.44772 20 4 20Z',
-  },
-  {
-    title: 'Supabase Next.js App Router Example',
-    subtitle:
-      'Want to see a code example containing some common patterns with Next.js and Supabase? Check out this repo!',
-    url: 'https://github.com/supabase/supabase/tree/master/examples/auth/nextjs',
-    icon: 'M10 20L14 4M18 8L22 12L18 16M6 16L2 12L6 8',
-  },
-  {
-    title: 'Supabase Auth Helpers Docs',
-    subtitle:
-      'This template has configured Supabase Auth to use cookies for you, but the docs are a great place to learn more.',
-    url: 'https://supabase.com/docs/guides/auth/auth-helpers/nextjs',
-    icon: 'M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528',
-  },
-];
-
-const examples = [
-  { type: 'Client Components', src: 'app/_examples/client-component/page.tsx' },
-  { type: 'Server Components', src: 'app/_examples/server-component/page.tsx' },
-  { type: 'Server Actions', src: 'app/_examples/server-action/page.tsx' },
-  { type: 'Route Handlers', src: 'app/_examples/route-handler.ts' },
-]
+import '@/assets/doxygen/doxygen.css'
 
 export default async function Example() {
 
@@ -58,136 +15,280 @@ export default async function Example() {
   ])
 
   if (!session) {
-    return redirect('/login')
+    return redirect(`${getURL()}/login`)
   }
 
+  const gitStats = GitStats()
+
   return (
-    <div className="w-full flex flex-col items-center">
-      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-        <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm text-foreground">
-          {/* <DeployButton /> */}
-          <BrandBadge />
-          {user ? (
-            <div className="flex items-center gap-4">
-              Hey, {user.email}!
-              <LogoutButton />
-            </div>
-          ) : (
-            <Link
-              href="/login"
-              className="py-2 px-3 flex rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
-            >
-              Login
-            </Link>
-          )}
-        </div>
-      </nav>
-
-      <div className="animate-in flex flex-col gap-14 opacity-0 max-w-4xl px-3 py-16 lg:py-24 text-foreground">
-        <div className="flex flex-col items-center mb-4 lg:mb-12">
-          <div className="flex gap-8 justify-center items-center">
-            <Link href="https://supabase.com/" target="_blank">
-              <SupabaseLogo />
-            </Link>
-            <span className="border-l rotate-45 h-6" />
-            <NextJsLogo />
-          </div>
-          <h1 className="sr-only">Supabase and Next.js Starter Template</h1>
-          <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center my-12">
-            The fastest way to start building apps with{' '}
-            <strong>Supabase</strong> and <strong>Next.js</strong>
-          </p>
-          <div className="bg-foreground py-3 px-6 rounded-lg font-mono text-sm text-background">
-            Get started by editing <strong>app/page.tsx</strong>
-          </div>
-        </div>
-
-        <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent" />
-
-        <div className="flex flex-col gap-8 text-foreground">
-          <h2 className="text-lg font-bold text-center">
-            Everything you need to get started
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {resources.map(({ title, subtitle, url, icon }) => (
-              <a
-                key={title}
-                className="relative flex flex-col group rounded-lg border p-6 hover:border-foreground"
-                href={url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <h3 className="font-bold mb-2  min-h-[40px] lg:min-h-[60px]">
-                  {title}
-                </h3>
-                <div className="flex flex-col grow gap-4 justify-between">
-                  <p className="text-sm opacity-70">{subtitle}</p>
-                  <div className="flex justify-between items-center">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="opacity-80 group-hover:opacity-100"
-                    >
-                      <path
-                        d={icon}
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="ml-2 h-4 w-4 opacity-0 -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all"
-                    >
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                  </div>
-                </div>
+    <div className="contents">
+      <div className="textblock">
+        <p>
+          <a className="anchor" id="md__r_e_a_d_m_e"></a>
+        </p>
+        <table className="markdownTable">
+          <tr className="markdownTableHead">
+            <th className="markdownTableHeadCenter">Hi! I'm Nathan (aka StoneyDSP).</th>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">I am a software developer with a strong interest in system-level programming.</td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">
+              <a href="https://github.com/nathanjhood">
+                <img
+                  src="https://github-readme-stats-two-lime-18.vercel.app/api?username=nathanjhood&show_icons=true&theme=transparent"
+                  alt="StoneyDSP's GitHub stats"
+                  className="
+                    git-stats-card
+                    transition__glow
+                  "
+                />
               </a>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-8 text-foreground">
-          <div className="grid gap-2 justify-center mx-auto text-center">
-            <h2 className="text-lg font-bold text-center">Examples</h2>
-            <p className="text-sm">
-              Look in the <code>_examples</code> folder to see how to create a
-              Supabase client in all the different contexts.
-            </p>
-          </div>
-          <div className="w-full justify-center border rounded-lg overflow-hidden">
-            {examples.map(({ type, src }) => (
-              <div
-                key={type}
-                className="w-full grid grid-cols-3 border-b last:border-b-0 text-sm"
+            </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">I am also a musician making Audio software plugins using a variety of languages and workflows, and also have experience in web development.    </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">
+              <a href="https://github.com/nathanjhood">
+                <img
+                  src="https://github-readme-stats-two-lime-18.vercel.app/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html"
+                  alt="StoneyDSP's Top Languages"
+                  className="
+                    top-langs-card
+                    transition__glow
+                  "
+                />
+              </a>
+            </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">In my personal work, I have developed an interest in automating build systems for system-agnostic interoperabilities and cross-compiling routines, with an eye for driving continuous integration/deployment pipelines in modern software development and production workflows.    </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">
+              <img src="https://www.skillicons.dev/icons?i=cpp&theme=light" alt="Tech Stack: C++" className="lang-icon-cpp transition__glow" />
+              <img src="https://www.skillicons.dev/icons?i=c&theme=light" alt="Tech Stack: C" className="lang-icon-c transition__glow" />
+              <img src="https://www.skillicons.dev/icons?i=cmake&theme=light" alt="Tech Stack: CMake" className="lang-icon-cmake transition__glow" />
+              <img src="https://www.skillicons.dev/icons?i=nodejs&theme=light" alt="Tech Stack: NodeJS" className="lang-icon-nodejs transition__glow" />
+              <img src="https://www.skillicons.dev/icons?i=js&theme=light" alt="Tech Stack: JavaScript" className="lang-icon-js transition__glow" />
+              <img src="https://www.skillicons.dev/icons?i=ts&theme=light" alt="Tech Stack: TypeScript" className="lang-icon-ts transition__glow" />
+              <img src="https://www.skillicons.dev/icons?i=css&theme=light" alt="Tech Stack: CSS" className="lang-icon-css transition__glow" />
+              <img src="https://www.skillicons.dev/icons?i=html&theme=light" alt="Tech Stack: HTML" className="lang-icon-html transition__glow" />
+            </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">Here you will find public repos of my personal research and development of audio plugins using popular frameworks such as JUCE and my own DSP, and more recently; explorations in cross-compiling toolchain technologies (WSL, MSYS2, MinGW, etc) and popular buildsystems (CMake, Meson, Make, Autotools, etc); code bindings to families such as the Win32 API, Linux Standards Base and Unix Single Specification; and usage of the Component Object Model alongside the C and C++ standard libraries, which you may download, compile, use, and study for free (mostly MIT or GPL2/3).    </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">
+              <a href="https://github.com/nathanjhood/Biquads.git">
+                <img
+                  width="400"
+                  height="150"
+                  src="https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood&repo=Biquads&theme=transparent"
+                  alt="StoneyDSP Biquads"
+                  className="
+                    card-repo__biquads
+                    transition__glow
+                  "
+                />
+              </a>
+              <a href="https://github.com/nathanjhood/UBento.git">
+                <img
+                  width="400"
+                  height="150"
+                  src="https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood&repo=UBento&theme=transparent"
+                  alt="StoneyDSP UBento"
+                  className="
+                    card-repo__ubento
+                    transition__glow
+                  "
+                />
+              </a>
+            </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">
+              <a href="https://github.com/nathanjhood/OrfanidisBiquad.git">
+                <img
+                  width="400"
+                  height="150"
+                  src="https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood&repo=OrfanidisBiquad&theme=transparent"
+                  alt="StoneyDSP OrfanidisBiquad"
+                  className="
+                    card-repo__orfanidis
+                    transition__glow
+                  "
+                />
+              </a>
+              <a href="https://github.com/nathanjhood/CxxWin.git">
+                <img
+                  width="400"
+                  height="150"
+                  src="https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood&repo=CxxWin&theme=transparent"
+                  alt="StoneyDSP CxxWin"
+                  className="
+                    card-repo__cxxwin
+                    transition__glow
+                  "
+                />
+              </a>
+            </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">
+              <a href="https://github.com/nathanjhood/NonLinearFilters.git">
+                <img
+                  width="400"
+                  height="150"
+                  src="https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood&repo=NonLinearFilters&theme=transparent"
+                  alt="StoneyDSP NonLinearFilters"
+                  className="
+                    card-repo__nonlinearfilters
+                    transition__glow
+                  "
+                />
+              </a>
+              <a href="https://github.com/nathanjhood/cmodule.git">
+                <img
+                  width="400"
+                  height="150"
+                  src="https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood&repo=cmodule&theme=transparent"
+                  alt="StoneyDSP cmodule"
+                  className="
+                    card-repo__cmodule
+                    transition__glow
+                  "
+                />
+              </a>
+            </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">
+              <a href="https://github.com/nathanjhood/AudioPlugin-SVF.git">
+                <img
+                  width="400"
+                  height="150"
+                  src="https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood&repo=AudioPlugin-SVF&theme=transparent"
+                  alt="StoneyDSP AudioPlugin-SVF"
+                  className="
+                    card-repo__audioplugin-svf
+                    transition__glow
+                  "
+                />
+              </a>
+              <a href="https://github.com/nathanjhood/AudioPlugin.git">
+                <img
+                  width="400"
+                  height="150"
+                  src="https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood&repo=AudioPlugin&theme=transparent"
+                  alt="StoneyDSP AudioPlugin"
+                  className="
+                    card-repo__audioplugin
+                    transition__glow
+                  "
+                />
+              </a>
+            </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">
+              <p
+                className="starttd"
+                // align="centre"
               >
-                <div className="flex items-center font-bold p-4 min-h-12 w-full">
-                  {type}
-                </div>
-                <div className="col-span-2 border-l p-4 flex items-center">
-                  <code className="text-sm whitespace-pre-wrap">{src}</code>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <Footer />
-
+              </p>
+              <p className="intertd"
+              >
+                Currently on the workbench:
+              </p>
+              <p
+                className="intertd"
+                // align="left"
+              >
+              </p>
+              <ul>
+                <li>
+                  <a href="https://github.com/nathanjhood/MSYS2-toolchain.git">A CMake buildsystem and toolchain for (Msys2) MinGW/Cygwin-based C/C++ projects on Windows, inspired by microsoft vcpkg</a>.
+                </li>
+                <li>
+                  <a href="https://github.com/nathanjhood/MSYS2-libconfig.git">A piecewise conversion of Arch Linux Pacman package manager to the CMake build platform, for eventual usage with the above</a>.
+                </li>
+                <li>
+                  <a href="https://github.com/nathanjhood/CxxWin.git">A Windows-Native graphics application using Direct2D and Microsoft's COM - a good tester project for the Msys toolchains!</a>.
+                </li>
+                <li>
+                  <a href="https://github.com/nathanjhood/cmodule.git">A study on bridging the gap between NodeJS-based application binary development and C/C++ code libraries</a>.
+                </li>
+                <li>A large pot of coffee, forever in need of refilling.</li>
+              </ul>
+              <p className="endtd"></p>
+            </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">Much of my code as presented here is something of a personal archive, a series of breadcrumbs through a journey of personal development. I anticipate that my work might mostly be useful as study pieces for other learners on the same path. My projects are typically either something I needed for a specific reason, or something I needed to learn about. The codebase itself strives for a minimal dependency overhead, in favour of longer shelf-life, cross-environment stability, and lower cognitive load. I tend toward traditionalism over modernism, but consider myself flexible and emperically-minded. If you have any suggestions or questions, get in touch - I love to chat code!    </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter"></td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">
+              Coffee! That's how I get things done!! If you'd like to see me get more things done, please kindly consider <a href="https://www.patreon.com/bePatron?u=8549187" data-patreon-widget-type="become-patron-button">buying me a coffee</a> or two!
+            </td>
+          </tr>
+          <tr className="markdownTableRowEven">
+            <td className="markdownTableBodyCenter">
+            </td>
+          </tr>
+          <tr className="markdownTableRowOdd">
+            <td className="markdownTableBodyCenter">
+              <p>
+                <a href="https://paypal.me/StoneyDSPAudio?country.x=ES&amp;locale.x=en_US">
+                  <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt="Paypal button" className="paypal-button transition__glow" />
+                </a>
+              </p>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
   )

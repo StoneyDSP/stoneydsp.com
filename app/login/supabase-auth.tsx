@@ -29,8 +29,15 @@ export default function AuthForm() {
     <Auth
       supabaseClient={supabase}
       view={view.id}
-      appearance={{ theme: ThemeSupa }}
-      // theme={theme}
+      // appearance={{ theme: ThemeSupa }} "button", "container", "anchor", "divider", "label", "input", "loader", "message"
+      appearance={{
+        style: {
+          // button: { background: 'red', color: 'white' },
+          // anchor: { color: 'blue' },
+          //..
+        },
+      }}
+      theme="default"
       showLinks={true}
       providers={['github']}
       socialLayout={socialLayout}

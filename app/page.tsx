@@ -1,4 +1,4 @@
-import { getSession, getUser, getUserDetails } from '@/app/supabase-server'
+import { getSession, getUser } from '@/app/supabase-server'
 import { getURL } from '@/utils/helpers'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'

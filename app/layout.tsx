@@ -1,6 +1,9 @@
 import { Analytics } from '@vercel/analytics/react'
+import { getGoogleAnalyticsID } from '@/utils/helpers'
+import Script from 'next/script'
 import SupabaseProvider from '@/app/supabase-provider'
 import { Metadata } from 'next'
+import '@/assets/main.css'
 import '@/app/globals.css'
 
 export const metadata: Metadata  = {
@@ -115,9 +118,31 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  const googleAnalyticsID = getGoogleAnalyticsID()
+
   return (
     <html lang="en">
       <body>
+        {/* <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WCM3NS5C"
+            height="0"
+            width="0"
+            className="invisible hidden"
+          >
+          </iframe>
+        </noscript> */}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsID}`} />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${googleAnalyticsID}');
+          `}
+        </Script>
         <SupabaseProvider>
           <main
             className="min-h-screen bg-background flex flex-col items-center"
