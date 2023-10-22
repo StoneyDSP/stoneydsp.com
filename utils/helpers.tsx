@@ -2,6 +2,13 @@ import { Database } from '@/types_db'
 
 type Price = Database['public']['Tables']['prices']['Row']
 
+export const getGoogleAnalyticsID = () => {
+  let ga =
+    process?.env?.GOOGLE_ANALYTICS_ID ?? 'undefined'
+
+  return ga
+}
+
 export const getURL = () => {
   let url =
     process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
