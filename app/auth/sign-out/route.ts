@@ -6,7 +6,8 @@ export const dynamic = 'force-dynamic'
 
 export async function POST(req: NextRequest) {
   const requestUrl = new URL(req.url)
-  const supabase = createRouteHandlerClient({ cookies })
+  const cookieStore = cookies()
+  const supabase = createRouteHandlerClient({ cookies: () => cookieStore })
 
   // Check if we have a session
   const {
