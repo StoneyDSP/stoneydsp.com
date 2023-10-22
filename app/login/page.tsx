@@ -1,13 +1,12 @@
-// import { getSession } from '@/app/supabase-server'
-// import { redirect } from 'next/navigation'
-import Messages from './messages'
+import { getSession } from '@/app/supabase-server'
+import { redirect } from 'next/navigation'
+// import Messages from './messages'
 import AuthForm from './auth-form'
 import BrandBadge from '@/components/StoneyDSPBadge'
 import Footer from '@/components/Footer'
 // import Link from 'next/link'
 
 import { Metadata } from 'next'
-// import Logo from '@/components/Logo'
 
 // export const dynamic = 'force-dynamic'
 
@@ -17,11 +16,11 @@ export const metadata: Metadata = {
 
 export default async function Login() {
 
-  // const session = await getSession()
+  const session = await getSession()
 
-  // if (session) {
-  //   return redirect('/account')
-  // }
+  if (session) {
+    return redirect('/account')
+  }
 
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
@@ -37,7 +36,6 @@ export default async function Login() {
         </div>
 
         <AuthForm />
-        <Messages />
 
         {/* <form
           className="flex-1 flex flex-col w-full justify-center gap-2 text-foreground"
