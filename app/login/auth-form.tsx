@@ -3,7 +3,8 @@ import { Auth } from '@supabase/auth-ui-react'
 import { SocialLayout, ThemeSupa, ViewType } from '@supabase/auth-ui-shared'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useState } from 'react'
-import { Database } from '@/types_db'
+import { getURL } from '@/utils/helpers'
+import type { Database } from '@/types_db'
 
 const views: { id: ViewType; title: string }[] = [
   { id: 'sign_in', title: 'Sign In' },
@@ -16,11 +17,9 @@ const views: { id: ViewType; title: string }[] = [
 
 const socialAlignments = ['horizontal', 'vertical'] as const
 
-const publicSiteURL = process.env.NEXT_PUBLIC_SITE_URL?.concat('/auth/callback')
-
 export default function AuthForm() {
 
-  const [theme, setTheme] = useState('dark')
+  // const [theme, setTheme] = useState('dark')
   const [socialLayout, setSocialLayout] = useState<SocialLayout>(socialAlignments[1] satisfies SocialLayout)
 
   const [view, setView] = useState(views[0])
@@ -31,11 +30,11 @@ export default function AuthForm() {
       supabaseClient={supabase}
       view={view.id}
       appearance={{ theme: ThemeSupa }}
-      theme={theme}
-      showLinks={false}
-      providers={['discord', 'github']}
+      // theme={theme}
+      showLinks={true}
+      providers={['github']}
       socialLayout={socialLayout}
-      redirectTo={publicSiteURL}
+      redirectTo={`${getURL()}/auth/callback`}
     />
   )
 }

@@ -60,7 +60,7 @@ const createOrRetrieveCustomer = async ({
     .from('customers')
     .select('stripe_customer_id')
     .eq('id', uuid)
-    .single();
+    .single()
   if (error || !data?.stripe_customer_id) {
     // No customer record found, let's create one.
     const customerData: { metadata: { supabaseUUID: string }; email?: string } =
@@ -115,7 +115,7 @@ const manageSubscriptionStatusChange = async (
     .from('customers')
     .select('id')
     .eq('stripe_customer_id', customerId)
-    .single();
+    .single()
   if (noCustomerError) throw noCustomerError
 
   const { id: uuid } = customerData!
@@ -162,7 +162,7 @@ const manageSubscriptionStatusChange = async (
   const { error } = await supabaseAdmin
     .from('subscriptions')
     .upsert([subscriptionData])
-  if (error) throw error;
+  if (error) throw error
   console.log(
     `Inserted/updated subscription [${subscription.id}] for user [${uuid}]`
   )

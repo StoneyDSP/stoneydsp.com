@@ -1,4 +1,3 @@
-
 import { getSession, getUser, getUserDetails } from '@/app/supabase-server'
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
@@ -16,12 +15,9 @@ export const dynamic = 'force-dynamic'
 
 export default async function Index() {
 
-  const nonce = headers().get('x-nonce')
-
-  const [ session, user, userDetails, ] = await Promise.all([
+  const [ session, user, ] = await Promise.all([
     getSession(),
-    getUser(),
-    getUserDetails(),
+    getUser()
   ])
 
   if (!session) {
