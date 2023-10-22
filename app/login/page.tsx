@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 
 import { Metadata } from 'next'
 
-// export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Login',
