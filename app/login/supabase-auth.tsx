@@ -29,13 +29,20 @@ export default function AuthForm() {
     <Auth
       supabaseClient={supabase}
       view={view.id}
-      // appearance={{ theme: ThemeSupa }} "button", "container", "anchor", "divider", "label", "input", "loader", "message"
+      // appearance={{ theme: ThemeSupa }}
       appearance={{
-        style: {
+        theme: ThemeSupa
+        // style: {
           // button: { background: 'red', color: 'white' },
+          // container: {}
           // anchor: { color: 'blue' },
+          // divider: {},
+          // label: {},
+          // input: {},
+          // loader: {},
+          // message: {}
           //..
-        },
+        // },
       }}
       theme="default"
       showLinks={true}
