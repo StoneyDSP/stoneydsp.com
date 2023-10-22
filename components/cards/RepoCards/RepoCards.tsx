@@ -71,7 +71,7 @@ export default async function RepoCards() {
       {repos.map(({ title, subtitle, url, icon }) => (
         <a
           key={title}
-          className="relative flex flex-col group rounded-lg border p-6 hover:border-foreground"
+          className="relative flex flex-col group rounded-lg border p-6 hover:border-foreground transition___shadow_off"
           href={url}
           target="_blank"
           rel="noreferrer"
