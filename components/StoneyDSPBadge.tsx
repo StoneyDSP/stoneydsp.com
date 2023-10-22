@@ -1,5 +1,3 @@
-import '@/components/badge.module.css'
-
 export default async function BrandBadge() {
   return (
     <a
