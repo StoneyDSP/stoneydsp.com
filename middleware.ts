@@ -20,6 +20,7 @@ export async function middleware(req: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
+
   // Extract visitor info
   const country = (req.geo && req.geo.country) || 'Earth'
   const city = (req.geo && req.geo.city) || 'Nowhere'
@@ -27,10 +28,6 @@ export async function middleware(req: NextRequest) {
   const agent = (req.ip) || 'Visitor'
 
   console.log(`${agent} visiting from ${city}, ${region}, ${country}`)
-
-  // if (!user) {
-  //   return redirect('/login')
-  // }
 
   return res
 }
