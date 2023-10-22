@@ -1,5 +1,5 @@
 import { getSession, getUser, getUserDetails } from '@/app/supabase-server'
-import { headers } from 'next/headers'
+import { getURL } from '@/utils/helpers'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import NavBar from '@/components/NavBar'
@@ -21,7 +21,7 @@ export default async function Index() {
   ])
 
   if (!session) {
-    return redirect('/login')
+    return redirect(`${getURL()}/login`)
   }
 
   return (
