@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/react'
 // import { getGoogleAnalyticsID } from '@/utils/helpers'
-import Script from 'next/script'
+// import Script from 'next/script'
 import SupabaseProvider from '@/app/supabase-provider'
 import { Metadata } from 'next'
 import '@/assets/main.css'

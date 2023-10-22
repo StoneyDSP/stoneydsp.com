@@ -6,6 +6,8 @@ import { redirect } from 'next/navigation'
 
 import '@/assets/doxygen/doxygen.css'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Example() {
 
   const [ session, user, userDetails, ] = await Promise.all([
