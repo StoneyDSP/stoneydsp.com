@@ -46,7 +46,7 @@ export default function AuthForm() {
       }}
       theme="default"
       showLinks={true}
-      providers={['github', 'discord']}
+      providers={['github', 'discord', 'google']}
       socialLayout={socialLayout}
       redirectTo={`${getURL()}/auth/callback`}
     />
