@@ -7,18 +7,16 @@ import { cache } from 'react'
 //   createServerComponentClient<Database>({ cookies })
 // )
 
-// export const createCookieStore = cache(() =>
-//   cookies()
-// )
+export const createCookieStore = cache(() =>
+  cookies()
+)
 
 // export const createRouteHandlerSupabaseClient = cache(() =>
 //   createRouteHandlerClient({ cookies: () => createCookieStore() })
 // )
 
-const cookieStore = cookies()
-
 export const createServerSupabaseClient = cache(() =>
-  createServerComponentClient<Database>({ cookies: () => cookieStore })
+  createServerComponentClient<Database>({ cookies: () => createCookieStore() })
 )
 
 export async function getSession() {
