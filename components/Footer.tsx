@@ -1,11 +1,11 @@
+'use-client'
 import Link from 'next/link'
-import HRGradient from './HRGradient'
 import SocialIcons from './icons/social/IconSocial'
 
 export default async function Footer() {
   return (
-    <footer id="index__body__footer">
-      <div className="flex justify-center text-foreground text-center text-xs">
+    <footer id="index__body__footer" className="py-2">
+      <div className="flex justify-center text-foreground text-center text-xs py-2">
         <p>
           Powered by{' '}
           <Link
@@ -18,9 +18,7 @@ export default async function Footer() {
         </p>
       </div>
 
-      <div className="gap-14" />
-
-      <div className="flex justify-center text-foreground text-center text-xs py-16">
+      <div className="flex justify-center text-foreground text-center text-xs py-2">
         <p>
           Deployed with{' '}
           <Link
@@ -33,7 +31,7 @@ export default async function Footer() {
         </p>
       </div>
 
-      <div className="flex flex-row justify-center text-foreground text-center text-xs">
+      <div className="flex flex-row justify-center text-foreground text-center text-xs py-2">
 
         <SocialIcons />
 
