@@ -1,7 +1,3 @@
-import '@/components/badge.module.css'
-
-// import '../app/globals.css'
-
 export default async function BrandBadge() {
   return (
     <a
@@ -15,6 +11,7 @@ export default async function BrandBadge() {
         bg-purple-500
         hover:bg-purple-700
         border
+        transition___shadow_off
         "
       href="https://www.stoneydsp.com/"
       target="_blank"
