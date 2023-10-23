@@ -44,6 +44,10 @@ export default function SupabaseProvider({
       }
     })
 
+    return () => {
+      subscription.unsubscribe()
+    }
+
   }, [router, supabase])
 
   return (
