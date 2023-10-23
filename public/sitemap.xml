@@ -1,32 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-        
-	<url>
-		<loc>https://www.stoneydsp.com/</loc>
-	</url>
-	<url>
-		<loc>https://www.stoneydsp.com/account/</loc>
-	</url>
-	<url>
-		<loc>https://www.stoneydsp.com/countries/</loc>
-	</url>
-	<url>
-		<loc>https://www.stoneydsp.com/example/</loc>
-	</url>
-	<url>
-		<loc>https://www.stoneydsp.com/login/</loc>
-	</url>
-	<url>
-		<loc>https://www.stoneydsp.com/_examples/client-component/</loc>
-	</url>
-	<url>
-		<loc>https://www.stoneydsp.com/_examples/example/</loc>
-	</url>
-	<url>
-		<loc>https://www.stoneydsp.com/_examples/server-action/</loc>
-	</url>
-	<url>
-		<loc>https://www.stoneydsp.com/_examples/server-component/</loc>
-	</url>
-</urlset>
-    
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://stoneydsp.com/www_sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://stoneydsp.com/sitemap.xml</loc>
+  </sitemap>
+</sitemapindex>
