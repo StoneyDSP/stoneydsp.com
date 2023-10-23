@@ -20,14 +20,20 @@ export async function middleware(req: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-
-  // Extract visitor info
+  // Extract visitor info. This can be moved below the login check to prevent
+  // double-logging if preferred.
   const country = (req.geo && req.geo.country) || 'Earth'
   const city = (req.geo && req.geo.city) || 'Nowhere'
   const region = (req.geo && req.geo.region) || 'Somewhere'
   const agent = (req.ip) || 'Visitor'
 
   console.log(`${agent} visiting from ${city}, ${region}, ${country}`)
+
+  // if user is not signed in and the current path is not '/login',
+  // redirect the user to '/login'
+  if (!user && req.nextUrl.pathname !== '/login') {
+    return NextResponse.redirect(new URL('/login', req.url))
+  }
 
   return res
 }
