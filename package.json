@@ -20,7 +20,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "node ./assets/js/generate-sitemap.mjs",
+    "postbuild": "node ./internals/generate-sitemap.mjs",
     "wipe": "yarn clean && rm -rvf node_modules",
     "stripe:listen": "stripe listen --forward-to=localhost:3000/api/webhooks",
     "generate-types": "npx supabase gen types typescript --project-id $SUPABASE_PROJECT_REF --schema public > types_db.ts"
