@@ -20,6 +20,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "postbuild": "node ./assets/js/generate-sitemap.mjs",
     "wipe": "yarn clean && rm -rvf node_modules",
     "stripe:listen": "stripe listen --forward-to=localhost:3000/api/webhooks",
     "generate-types": "npx supabase gen types typescript --project-id $SUPABASE_PROJECT_REF --schema public > types_db.ts"
@@ -34,15 +35,17 @@
     "@vercel/edge": "^1.1.0",
     "autoprefixer": "10.4.15",
     "classnames": "^2.3.2",
+    "isbot": "^3.7.0",
     "js-base64": "^3.7.5",
     "next": "^13.5.6",
     "postcss": "8.4.31",
+    "prettier": "^3.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "stripe": "^13.11.0",
     "tailwindcss": "3.3.3",
-    "ua-parser-js": "^1.0.36",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "ua-parser-js": "^1.0.36"
   },
   "devDependencies": {
     "@html-eslint/eslint-plugin": "^0.19.1",
@@ -54,6 +57,7 @@
     "encoding": "^0.1.13",
     "eslint": "^8.50.0",
     "eslint-config-next": "13.5.6",
+    "globby": "^13.2.2",
     "supabase": "^1.99.5"
   }
 }
