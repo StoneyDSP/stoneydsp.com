@@ -16,8 +16,8 @@ async function generate() {
 	'app/**/page.tsx'
   ]);
 
-  const sitemap = `
-<?xml version="1.0" encoding="UTF-8"?>
+  const sitemap =
+`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         ${pages
           .map((page) => {
@@ -32,9 +32,9 @@ async function generate() {
             const route = path === '/page' ? '' : path;
 
             return `
-<url>
-    <loc>${`https://www.stoneydsp.com${route}`}</loc>
-</url>`;
+	<url>
+		<loc>${`https://www.stoneydsp.com${route}`}</loc>
+	</url>`;
           })
           .join('')}
 </urlset>
