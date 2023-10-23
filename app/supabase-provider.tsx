@@ -41,6 +41,8 @@ export default function SupabaseProvider({
 
   }, [router, supabase])
 
+  console.log([router, supabase])
+
   return (
     <Context.Provider value={{ supabase }}>
       <>{children}</>
