@@ -1,52 +1,43 @@
 'use client'
-
 import type { Database } from '@/types_db'
-import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs'
-import type { SupabaseClient } from '@supabase/auth-helpers-nextjs'
+import { Session, SupabaseClient, createPagesBrowserClient } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/navigation'
 import { createContext, useContext, useEffect, useState } from 'react'
 
+type MaybeSession = Session | null
+
 type SupabaseContext = {
-  supabase: SupabaseClient<Database>;
+  supabase: SupabaseClient<Database>
 }
 
 const Context = createContext<SupabaseContext | undefined>(undefined)
 
 export default function SupabaseProvider({
-  children
+  children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
 }) {
   const [supabase] = useState(() => createPagesBrowserClient())
   const router = useRouter()
 
-  // useEffect(() => {
-  //   const getSupabase = async () => {
-
-  //     const { data: { subscription } } = await supabase.auth.onAuthStateChange((event) => {
-  //     if (event === 'SIGNED_IN')
-  //       router.refresh()
-  //     })
-
-  //     return () => {
-  //       subscription.unsubscribe()
-  //     }
-  //   }
-
-  //   getSupabase()
-
   useEffect(() => {
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((event) => {
-      if (event === 'SIGNED_IN') {
-        router.refresh()
-      }
-    })
 
-    return () => {
-      subscription.unsubscribe()
+    const getSupabase = async () => {
+
+      const {
+        data: { subscription },
+      } = supabase.auth.onAuthStateChange((event) => {
+        if (event === 'SIGNED_IN') {
+          router.refresh()
+        }
+      })
+
+      return () => {
+        subscription.unsubscribe()
+      }
     }
+
+    getSupabase()
 
   }, [router, supabase])
 
@@ -57,14 +48,20 @@ export default function SupabaseProvider({
   )
 }
 
-export const useSupabase = () => {
+export const useSupabase = <
+  Database = any,
+  SchemaName extends string & keyof Database = 'public' extends keyof Database
+    ? 'public'
+    : string & keyof Database
+>() => {
+// export const useSupabase = () => {
   const context = useContext(Context)
 
   if (context === undefined) {
     throw new Error('useSupabase must be used inside SupabaseProvider')
   }
 
-  return context
+  return context.supabase as SupabaseClient<Database, SchemaName>
 }
 
 // 'use client'

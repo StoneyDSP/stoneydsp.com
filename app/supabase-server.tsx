@@ -11,10 +11,6 @@ export const createCookieStore = cache(() =>
   cookies()
 )
 
-// export const createRouteHandlerSupabaseClient = cache(() =>
-//   createRouteHandlerClient({ cookies: () => createCookieStore() })
-// )
-
 export const createServerSupabaseClient = cache(() =>
   createServerComponentClient<Database>({ cookies: () => createCookieStore() })
 )
