@@ -2,10 +2,12 @@
 
 # Block all crawlers for /**/
 User-agent: *
+Sitemap: https://www.stoneydsp.com/sitemap.xml
 Disallow: /logs/
 Disallow: /src/
 Disallow: /vercel/
 
 # Allow all crawlers
 User-agent: *
+Sitemap: https://www.stoneydsp.com/sitemap.xml
 Allow: /
