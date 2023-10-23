@@ -21,7 +21,7 @@ export default async function Index() {
   ])
 
   if (!session) {
-    return redirect(`${getURL()}/login`)
+    return redirect(`${getURL()}login`)
   }
 
   return (
