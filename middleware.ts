@@ -1,6 +1,8 @@
 import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
 import { NextResponse } from 'next/server'
 
+import isbot from 'isbot'
+
 import type { NextRequest } from 'next/server'
 import type { Database } from './types_db'
 
@@ -15,18 +17,22 @@ export async function middleware(req: NextRequest) {
   // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
   await supabase.auth.getSession()
 
-  // Extract user info
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  // // Extract user info
+  // const {
+  //   data: { user },
+  // } = await supabase.auth.getUser()
 
   // Extract visitor info
   const country = (req.geo && req.geo.country) || 'Earth'
   const city = (req.geo && req.geo.city) || 'Nowhere'
   const region = (req.geo && req.geo.region) || 'Somewhere'
-  const agent = (req.ip) || 'Visitor'
+  const id = (req.ip) || 'Visitor'
 
-  console.log(`${agent} visiting from ${city}, ${region}, ${country}`)
+  if (isbot(req.headers.get('user-agent'))) {
+    console.log(`Bot ${id} crawling from ${city}, ${region}, ${country}`)
+  } else {
+    console.log(`User ${id} visiting from ${city}, ${region}, ${country}`)
+  }
 
   // if (!user) {
   //   return redirect('/login')
