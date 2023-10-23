@@ -5,7 +5,6 @@ import {
   upsertPriceRecord,
   manageSubscriptionStatusChange
 } from '@/utils/supabase-admin'
-import type { NextRequest } from 'next/server'
 
 const relevantEvents = new Set([
   'product.created',
@@ -18,14 +17,14 @@ const relevantEvents = new Set([
   'customer.subscription.deleted'
 ])
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
 
-  const country = (req.geo && req.geo.country) || 'Earth'
-  const city = (req.geo && req.geo.city) || 'Nowhere'
-  const region = (req.geo && req.geo.region) || 'Somewhere'
-  const agent = (req.ip) || 'Visitor'
+  // const country = (req.geo && req.geo.country) || 'Earth'
+  // const city = (req.geo && req.geo.city) || 'Nowhere'
+  // const region = (req.geo && req.geo.region) || 'Somewhere'
+  // const agent = (req.ip) || 'Visitor'
 
-  console.log(`${agent} calling Stripe webhook from ${city}, ${region}, ${country}`)
+  // console.log(`${agent} calling Stripe webhook from ${city}, ${region}, ${country}`)
 
   const body = await req.text()
   const sig = req.headers.get('stripe-signature') as string
