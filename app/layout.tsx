@@ -33,25 +33,25 @@ export const metadata: Metadata  = {
     siteName: 'StoneyDSP.com',
     images: [
       {
-        url: 'https://www.stoneydsp.com/w_icon__196x128.png',
+        url: 'https://www.stoneydsp.com/images/w_icon__196x128.png',
         width: 196,
         height: 128,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: 'https://www.stoneydsp.com/w_icon__384x256.png',
+        url: 'https://www.stoneydsp.com/images/w_icon__384x256.png',
         width: 384,
         height: 256,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: 'https://www.stoneydsp.com/w_icon__768x512.png',
+        url: 'https://www.stoneydsp.com/images/w_icon__768x512.png',
         width: 768,
         height: 512,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: 'https://www.stoneydsp.com/w_icon__1024x768.png',
+        url: 'https://www.stoneydsp.com/images/w_icon__1024x768.png',
         width: 1024,
         height: 768,
         alt: 'Systems, Web, Audio & Graphics',
@@ -67,25 +67,25 @@ export const metadata: Metadata  = {
     siteId: '1467726470533754880',
     images: [
       {
-        url: 'https://www.stoneydsp.com/w_icon__196x128.png',
+        url: 'https://www.stoneydsp.com/images/w_icon__196x128.png',
         width: 196,
         height: 128,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: 'https://www.stoneydsp.com/w_icon__384x256.png',
+        url: 'https://www.stoneydsp.com/images/w_icon__384x256.png',
         width: 384,
         height: 256,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: 'https://www.stoneydsp.com/w_icon__768x512.png',
+        url: 'https://www.stoneydsp.com/images/w_icon__768x512.png',
         width: 768,
         height: 512,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: 'https://www.stoneydsp.com/w_icon__1024x768.png',
+        url: 'https://www.stoneydsp.com/images/w_icon__1024x768.png',
         width: 1024,
         height: 768,
         alt: 'Systems, Web, Audio & Graphics',
