@@ -19,7 +19,7 @@ const relevantEvents = new Set([
   'customer.subscription.deleted'
 ])
 
-export async function POST(req: NextRequest) {
+export async function GET(req: NextRequest) {
 
   const country = (req.geo && req.geo.country) || 'Earth'
   const city = (req.geo && req.geo.city) || 'Nowhere'
@@ -31,6 +31,9 @@ export async function POST(req: NextRequest) {
   } else {
     console.log(`User ${id} visiting from ${city}, ${region}, ${country}`)
   }
+}
+
+export async function POST(req: Request) {
 
   const body = await req.text()
   const sig = req.headers.get('stripe-signature') as string
