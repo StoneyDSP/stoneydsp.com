@@ -48,7 +48,7 @@
     "ua-parser-js": "^1.0.36"
   },
   "devDependencies": {
-    "@html-eslint/eslint-plugin": "^0.19.1",
+    "@html-eslint/eslint-plugin": "^0.20.0",
     "@html-eslint/parser": "^0.20.0",
     "@types/node": "^20.8.6",
     "@types/react": "^18.2.31",
