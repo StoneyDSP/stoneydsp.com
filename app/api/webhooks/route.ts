@@ -5,8 +5,6 @@ import {
   upsertPriceRecord,
   manageSubscriptionStatusChange
 } from '@/utils/supabase-admin'
-import type { NextRequest } from 'next/server'
-import isbot from 'isbot'
 
 const relevantEvents = new Set([
   'product.created',
@@ -18,20 +16,6 @@ const relevantEvents = new Set([
   'customer.subscription.updated',
   'customer.subscription.deleted'
 ])
-
-export async function GET(req: NextRequest) {
-
-  const country = (req.geo && req.geo.country) || 'Earth'
-  const city = (req.geo && req.geo.city) || 'Nowhere'
-  const region = (req.geo && req.geo.region) || 'Somewhere'
-  const id = (req.ip) || 'Visitor'
-
-  if (isbot(req.headers.get('user-agent'))) {
-    console.log(`Bot ${id} crawling from ${city}, ${region}, ${country}`)
-  } else {
-    console.log(`User ${id} visiting from ${city}, ${region}, ${country}`)
-  }
-}
 
 export async function POST(req: Request) {
 
