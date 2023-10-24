@@ -48,14 +48,14 @@
     "ua-parser-js": "^1.0.36"
   },
   "devDependencies": {
-    "@html-eslint/eslint-plugin": "^0.19.1",
-    "@html-eslint/parser": "^0.19.1",
+    "@html-eslint/eslint-plugin": "^0.20.0",
+    "@html-eslint/parser": "^0.20.0",
     "@types/node": "^20.8.6",
-    "@types/react": "^18.2.26",
+    "@types/react": "^18.2.31",
     "@vercel/node": "^3.0.6",
     "@vercel/postgres": "^0.5.0",
     "encoding": "^0.1.13",
-    "eslint": "^8.50.0",
+    "eslint": "^8.52.0",
     "eslint-config-next": "13.5.6",
     "globby": "^13.2.2",
     "supabase": "^1.99.5"
