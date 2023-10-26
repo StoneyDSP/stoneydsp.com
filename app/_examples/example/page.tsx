@@ -1,4 +1,4 @@
-import { getSession, getUser, getUserDetails } from '@/app/supabase-server'
+import { getSession, getUser, getUserDetails } from '@/utils/supabase-server'
 import LogoutButton from '@/components/LogoutButton'
 import SupabaseLogo from '@/components/SupabaseLogo'
 import NextJsLogo from '@/components/NextJsLogo'
