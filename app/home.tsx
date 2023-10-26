@@ -30,10 +30,7 @@ export default async function Home() {
               <img
                 src="https://github-readme-stats-two-lime-18.vercel.app/api?username=nathanjhood&show_icons=true&theme=transparent"
                 alt="StoneyDSP's GitHub stats"
-                className="
-                  git-stats-card
-                  transition__glow
-                "
+                className="transition___shadow_off"
               />
             </a>
           )} />
@@ -55,10 +52,7 @@ export default async function Home() {
               <img
                 src="https://github-readme-stats-two-lime-18.vercel.app/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html"
                 alt="StoneyDSP's Top Languages"
-                className="
-                  top-langs-card
-                  transition__glow
-                "
+                className="transition___shadow_off"
               />
             </a>
           )} />

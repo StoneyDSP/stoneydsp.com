@@ -44,6 +44,26 @@
 html, body {
   font-size: calc((15.00px + 0.390625vw) * (15.00 / 18.00));
 }
+html {
+	--page-background-colour: var(--color__white);
+	--page-foreground-colour: var(--color__black);
+	--colour-dull: hsla(0, 0%, 0%, 50%);
+	--colour-glow: hsl(180, 100%, 50%);
+}
+html.dark-mode {
+	--page-background-colour: var(--color__black);
+	--page-foreground-colour: var(--color__white);
+	--colour-dull: hsla(0, 0%, 100%, 50%);
+	--colour-glow: hsl(180, 100%, 50%);
+}
+
+html,
+body,
+#__next {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
 
 h1 {
   display: block;
@@ -133,4 +153,74 @@ font-weight: 300;
 }
 .opacity-half {
 opacity: 50%;
+}
+
+
+
+.transition__glow {
+	box-shadow: 0 0 1.0rem var(--colour-dull);
+	background-color: var(--colour-dull);
+
+	transition-property: background-color, box-shadow;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+
+.transition__glow:hover {
+	background-color: var(--glow-color);
+	box-shadow: 0 0 2.0rem var(--glow-color);
+
+	transition-property: background-color, box-shadow;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+
+.transition__trans_glow {
+	box-shadow: none;
+	background-color: none;
+
+	transition-property: background-color, box-shadow;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+
+.transition__trans_glow:hover {
+	background-color: none;
+	box-shadow: 0 0 2.0rem var(--glow-color);
+
+	transition-property: background-color, box-shadow;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+
+.transition___shadow_glow {
+	box-shadow: 0 0 1.0rem var(--colour-dull);
+
+	transition-property: box-shadow;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+
+.transition___shadow_glow:hover {
+	box-shadow: 0 0 2.0rem var(--colour-glow);
+
+	transition-property: box-shadow;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+
+.transition___shadow_off {
+	box-shadow: 0 0 1.0rem var(--colour-dull);
+
+	transition-property: box-shadow;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+
+.transition___shadow_off:hover {
+	box-shadow: none;
+
+	transition-property: box-shadow;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
 }

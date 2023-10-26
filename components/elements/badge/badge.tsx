@@ -1,4 +1,4 @@
-export default async function BrandBadge() {
+export default async function Badge() {
   return (
     <a
       className="
@@ -13,11 +13,12 @@ export default async function BrandBadge() {
         border
         transition___shadow_off
         "
-      href="https://www.stoneydsp.com/"
-      target="_blank"
+      href="/"
       rel="noreferrer"
     >
-      <h1 className="text-lg font-bold text-center text-foreground">StoneyDSP</h1>
+      <h1 className="text-lg font-bold text-center text-foreground">
+        StoneyDSP
+      </h1>
     </a>
   )
 }
