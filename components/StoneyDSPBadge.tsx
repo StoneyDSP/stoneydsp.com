@@ -8,8 +8,8 @@ export default async function BrandBadge() {
         rounded-md
         no-underline
         transition-colors
-        bg-gray-300
-        hover:bg-gray-500
+        bg-green-500
+        hover:bg-green-300
         border
         transition___shadow_off
         "
