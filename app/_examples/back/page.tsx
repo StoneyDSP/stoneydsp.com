@@ -1,4 +1,4 @@
-import { getSession, getUser, getUserDetails } from '@/app/supabase-server'
+import { getSession, getUser, getUserDetails } from '@/utils/supabase-server'
 import { getURL } from '@/utils/helpers'
 import GitStats from '@/components/cards/GitStats/GitStats'
 
@@ -8,7 +8,7 @@ import '@/assets/doxygen/doxygen.css'
 
 export const dynamic = 'force-dynamic'
 
-export default async function Example() {
+export default async function Back() {
 
   const [ session, user, userDetails, ] = await Promise.all([
     getSession(),

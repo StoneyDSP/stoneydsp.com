@@ -1,4 +1,4 @@
-import { getSession } from '@/app/supabase-server'
+import { getSession } from '@/utils/supabase-server'
 import { redirect } from 'next/navigation'
 import AuthForm from './supabase-auth'
 import BrandBadge from '@/components/StoneyDSPBadge'

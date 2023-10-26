@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
   //   status: 301,
   // })
 
-  return NextResponse.redirect(new URL('/login', requestUrl.origin), {
+  return NextResponse.redirect(`${requestUrl.origin}/login`, {
     // a 301 status is required to redirect from a POST to a GET route
     status: 301,
   })

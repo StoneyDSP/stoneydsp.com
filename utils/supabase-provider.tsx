@@ -17,25 +17,26 @@ export default function SupabaseProvider({
 }: {
   children: React.ReactNode,
 }) {
+
   const [supabase] = useState(() => createPagesBrowserClient())
   const router = useRouter()
 
-  useEffect(() => {
+  const getSupabase = async () => {
 
-    const getSupabase = async () => {
-
-      const {
-        data: { subscription },
-      } = supabase.auth.onAuthStateChange((event) => {
-        if (event === 'SIGNED_IN') {
-          router.refresh()
-        }
-      })
-
-      return () => {
-        subscription.unsubscribe()
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event) => {
+      if (event === 'SIGNED_IN') {
+        router.refresh()
       }
+    })
+
+    return () => {
+      subscription.unsubscribe()
     }
+  }
+
+  useEffect(() => {
 
     getSupabase()
 
