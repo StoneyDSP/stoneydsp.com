@@ -30,7 +30,6 @@ export default async function Nav() {
               Login
             </Link>
           )} */}
-          {/* <div>{user? (<p></p>) : (<p></p>)}</div> */}
         </div>
       </div>
     </nav>
