@@ -1,34 +1,40 @@
-// import { getSession, getUser } from '@/utils/supabase-server'
-// import { getURL } from '@/utils/helpers'
-// import { redirect } from 'next/navigation'
+import RepoCards from '@/components/cards/RepoCards/RepoCards'
+import ResourceCards from '@/components/cards/ResourceCards/ResourceCards'
+import HRGradient from '@/components/layouts/HRGradient'
+import TextLargeBoldCenter from '@/components/layouts/TextLargeBoldCenter'
+import FlexColCenter from '@/components/layouts/FlexColCenter'
 
-import HRGradient from "@/components/HRGradient"
-import TextLargeBoldCenter from "@/components/TextLargeBoldCenter"
-import RepoCards from "@/components/cards/RepoCards/RepoCards"
-import ResourceCards from "@/components/cards/ResourceCards/ResourceCards"
-import Footer from "@/components/Footer"
-
-// import Link from "next/link"
+import styles from './home.module.css'
 
 export const dynamic = 'force-dynamic'
 
 export default async function Home() {
 
-  // const [ session, user, ] = await Promise.all([
-  //   getSession(),
-  //   getUser()
-  // ])
-
-  // if (!session) {
-  //   return redirect(`${getURL()}login`)
-  // }
-
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className={styles.container}>
 
-      <div className="animate-in flex flex-col gap-14 opacity-0 max-w-4xl px-3 py-16 lg:py-24 text-foreground">
+      <div className={styles.content}>
 
         <div className="flex flex-col gap-8 text-foreground">
+
+          <HRGradient />
+
+          <TextLargeBoldCenter>
+            Hi! I'm Nathan, a.k.a StoneyDSP.
+          </TextLargeBoldCenter>
+
+          <HRGradient />
+
+          <FlexColCenter children={(
+            <a href="https://github.com/nathanjhood">
+              <img
+                src="https://github-readme-stats-two-lime-18.vercel.app/api?username=nathanjhood&show_icons=true&theme=transparent"
+                alt="StoneyDSP's GitHub stats"
+                className="transition___shadow_off"
+              />
+            </a>
+          )} />
+
           <HRGradient />
 
           <TextLargeBoldCenter>
@@ -36,40 +42,20 @@ export default async function Home() {
           </TextLargeBoldCenter>
 
           <HRGradient />
-          <div className="flex flex-col items-center">
 
-            <a href="https://github.com/nathanjhood">
-              <img
-                src="https://github-readme-stats-two-lime-18.vercel.app/api?username=nathanjhood&show_icons=true&theme=transparent"
-                alt="StoneyDSP's GitHub stats"
-                className="
-                  git-stats-card
-                  transition__glow
-                "
-              />
-            </a>
-
-          </div>
+          <ResourceCards />
 
           <HRGradient />
 
-          <div className="flex flex-col items-center">
-
+          <FlexColCenter children={(
             <a href="https://github.com/nathanjhood">
               <img
                 src="https://github-readme-stats-two-lime-18.vercel.app/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html"
                 alt="StoneyDSP's Top Languages"
-                className="
-                  top-langs-card
-                  transition__glow
-                "
+                className="transition___shadow_off"
               />
             </a>
-          </div>
-
-          <HRGradient />
-
-          <ResourceCards />
+          )} />
 
           <HRGradient />
 
@@ -85,11 +71,8 @@ export default async function Home() {
 
         <HRGradient />
 
-        <Footer />
-
-        {/* <HRGradient /> */}
-
       </div>
+
     </div>
   )
 }

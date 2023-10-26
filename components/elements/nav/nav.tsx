@@ -1,21 +1,14 @@
-// import { getSession, getUser } from '@/utils/supabase-server'
-import BrandBadge from '@/components/StoneyDSPBadge'
-// import LogoutButton from '@/components/LogoutButton'
-// import Link from 'next/link'
+import Badge from '@/components/elements/badge/badge'
 
 import styles from './nav.module.css'
 
 export default async function Nav() {
 
-  // const [ session, user, ] = await Promise.all([
-  //   getSession(),
-  //   getUser()
-  // ])
 
   return (
     <nav className={styles.nav}>
       <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm text-foreground">
-        <BrandBadge />
+        <Badge />
         <div>
           {/* {user ? (
             <div className="flex items-center gap-4">
