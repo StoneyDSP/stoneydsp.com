@@ -1,7 +1,7 @@
 import { getSession, getUser } from '@/utils/supabase-server'
 import BrandBadge from '@/components/StoneyDSPBadge'
-import LogoutButton from '@/components/LogoutButton'
-import Link from 'next/link'
+// import LogoutButton from '@/components/LogoutButton'
+// import Link from 'next/link'
 
 import styles from './nav.module.css'
 
@@ -17,7 +17,7 @@ export default async function Nav() {
       <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm text-foreground">
         <BrandBadge />
         <div>
-          {user ? (
+          {/* {user ? (
             <div className="flex items-center gap-4">
               <Link href="/account" target="_self">Hey, {user.email}! ({session?.user.role})</Link>
               <LogoutButton />
@@ -29,7 +29,8 @@ export default async function Nav() {
             >
               Login
             </Link>
-          )}
+          )} */}
+          <div>{user? (<p></p>) : (<p></p>)}</div>
         </div>
       </div>
     </nav>

@@ -1,22 +1,22 @@
-import { getSession, getUser } from '@/utils/supabase-server'
-import { getURL } from '@/utils/helpers'
-import { redirect } from 'next/navigation'
+// import { getSession, getUser } from '@/utils/supabase-server'
+// import { getURL } from '@/utils/helpers'
+// import { redirect } from 'next/navigation'
 
 import HRGradient from "@/components/HRGradient"
 import TextLargeBoldCenter from "@/components/TextLargeBoldCenter"
 import RepoCards from "@/components/cards/RepoCards/RepoCards"
 import ResourceCards from "@/components/cards/ResourceCards/ResourceCards"
 import Footer from "@/components/Footer"
-import Link from "next/link"
+// import Link from "next/link"
 
 export const dynamic = 'force-dynamic'
 
 export default async function Home() {
 
-  const [ session, user, ] = await Promise.all([
-    getSession(),
-    getUser()
-  ])
+  // const [ session, user, ] = await Promise.all([
+  //   getSession(),
+  //   getUser()
+  // ])
 
   // if (!session) {
   //   return redirect(`${getURL()}login`)
