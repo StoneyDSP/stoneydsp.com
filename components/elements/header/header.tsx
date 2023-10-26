@@ -9,7 +9,7 @@ export default function Header({ title }: {
   return (
     <header className={styles.header}>
       <Nav />
-      <h1>
+      <h1 className="hidden">
         Page: {title ? title : 'Default title'}
       </h1>
     </header>
