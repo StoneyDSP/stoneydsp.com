@@ -36,6 +36,7 @@ export default async function Home() {
           </TextLargeBoldCenter>
 
           <HRGradient />
+
           <div className="flex flex-col items-center">
 
             <a href="https://github.com/nathanjhood">
@@ -53,6 +54,10 @@ export default async function Home() {
 
           <HRGradient />
 
+          <ResourceCards />
+
+          <HRGradient />
+
           <div className="flex flex-col items-center">
 
             <a href="https://github.com/nathanjhood">
@@ -66,10 +71,6 @@ export default async function Home() {
               />
             </a>
           </div>
-
-          <HRGradient />
-
-          <ResourceCards />
 
           <HRGradient />
 
