@@ -55,7 +55,7 @@ export default async function SocialIcons() {
                 width="32"
                 height="32"
                 viewBox={viewBox}
-                fill="currentColor"
+                fill="grey"
                 xmlns="http://www.w3.org/2000/svg"
                 className="opacity-80 group-hover:opacity-100"
               >
