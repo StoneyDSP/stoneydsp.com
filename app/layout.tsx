@@ -1,10 +1,31 @@
+import Header from '@/components/elements/header/header'
+import Footer from '@/components/elements/footer/footer'
+import Main from '@/components/elements/main/main'
 import { Analytics } from '@vercel/analytics/react'
-// import { getGoogleAnalyticsID } from '@/utils/helpers'
-// import Script from 'next/script'
-import SupabaseProvider from '@/app/supabase-provider'
+// import SupabaseProvider from '@/utils/supabase-provider'
 import { Metadata } from 'next'
-import '@/assets/main.css'
-import '@/app/globals.css'
+import '@/styles/global.css'
+
+export default function RootLayout({
+  // Layouts must accept a children prop.
+  // This will be populated with nested layouts or pages
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body>
+        {/* <SupabaseProvider> */}
+        <Header title={'Home'} />
+        <Main children={children} />
+        <Footer />
+        <Analytics />
+        {/* </SupabaseProvider> */}
+      </body>
+    </html>
+  )
+}
 
 export const metadata: Metadata  = {
   title: {
@@ -109,47 +130,4 @@ export const metadata: Metadata  = {
     { media: '(prefers-color-scheme: light)', color: 'cyan' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
-}
-
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode
-}) {
-
-  // const googleAnalyticsID = getGoogleAnalyticsID()
-
-  return (
-    <html lang="en">
-      <body>
-        {/* <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-WCM3NS5C"
-            height="0"
-            width="0"
-            className="invisible hidden"
-          >
-          </iframe>
-        </noscript> */}
-        {/* <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsID}`} />
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', '${googleAnalyticsID}');
-          `}
-        </Script> */}
-        <SupabaseProvider>
-          <main
-            className="min-h-screen bg-background flex flex-col items-center"
-          >
-            {children}
-            <Analytics />
-          </main>
-        </SupabaseProvider>
-      </body>
-    </html>
-  )
 }
