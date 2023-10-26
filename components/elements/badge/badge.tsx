@@ -9,7 +9,7 @@ export default async function Badge() {
         no-underline
         transition-colors
         bg-green-500
-        hover:bg-green-300
+        hover:bg-purple-400
         border
         transition___shadow_off
         "
