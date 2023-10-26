@@ -1,4 +1,4 @@
-import { getSession, getUser } from '@/utils/supabase-server'
+// import { getSession, getUser } from '@/utils/supabase-server'
 import BrandBadge from '@/components/StoneyDSPBadge'
 // import LogoutButton from '@/components/LogoutButton'
 // import Link from 'next/link'
@@ -7,10 +7,10 @@ import styles from './nav.module.css'
 
 export default async function Nav() {
 
-  const [ session, user, ] = await Promise.all([
-    getSession(),
-    getUser()
-  ])
+  // const [ session, user, ] = await Promise.all([
+  //   getSession(),
+  //   getUser()
+  // ])
 
   return (
     <nav className={styles.nav}>
@@ -30,7 +30,7 @@ export default async function Nav() {
               Login
             </Link>
           )} */}
-          <div>{user? (<p></p>) : (<p></p>)}</div>
+          {/* <div>{user? (<p></p>) : (<p></p>)}</div> */}
         </div>
       </div>
     </nav>
