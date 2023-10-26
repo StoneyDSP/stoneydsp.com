@@ -22,7 +22,7 @@ file_header_template = Copyright (c) StoneyDSP.\nLicensed under the MIT License.
 indent_style = space
 indent_size = 2
 
-[*.{js,jsx,ts,tsx,mls}]
+[*.{js,jsx,ts,tsx,mjs,cjs}]
 indent_style = space
 indent_size = 2
 
