@@ -15,7 +15,7 @@ export default async function Home() {
 
       <div className={styles.content}>
 
-        <div className="flex flex-col gap-8 text-foreground">
+        <div className="flex flex-col gap-8 bg-background text-foreground">
 
           <HRGradient />
 
@@ -28,9 +28,9 @@ export default async function Home() {
           <FlexColCenter children={(
             <a href="https://github.com/nathanjhood">
               <img
-                src="https://github-readme-stats-two-lime-18.vercel.app/api?username=nathanjhood&show_icons=true&theme=transparent"
+                src="https://github-readme-stats-two-lime-18.vercel.app/api?username=nathanjhood&show_icons=true&theme=transparent&border_radius=0&hide_border=true"
                 alt="StoneyDSP's GitHub stats"
-                className="transition___shadow_off"
+                className="transition___shadow_off rounded-lg border hover:border-foreground"
               />
             </a>
           )} />
@@ -50,9 +50,9 @@ export default async function Home() {
           <FlexColCenter children={(
             <a href="https://github.com/nathanjhood">
               <img
-                src="https://github-readme-stats-two-lime-18.vercel.app/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html"
+                src="https://github-readme-stats-two-lime-18.vercel.app/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true"
                 alt="StoneyDSP's Top Languages"
-                className="transition___shadow_off"
+                className="transition___shadow_off rounded-lg border hover:border-foreground"
               />
             </a>
           )} />
