@@ -1,5 +1,5 @@
 import { getSession, getUser, getUserDetails } from '@/utils/supabase-server'
-import AccountForm from '@/app/account/account-form'
+import AccountForm from '@/app/_examples/account/account-form'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
