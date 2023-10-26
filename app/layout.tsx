@@ -2,7 +2,7 @@ import Header from '@/components/elements/header/header'
 import Footer from '@/components/elements/footer/footer'
 import Main from '@/components/elements/main/main'
 import { Analytics } from '@vercel/analytics/react'
-import SupabaseProvider from '@/utils/supabase-provider'
+// import SupabaseProvider from '@/utils/supabase-provider'
 import { Metadata } from 'next'
 import '@/styles/global.css'
 
@@ -16,12 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SupabaseProvider>
+        {/* <SupabaseProvider> */}
         <Header title={'Home'} />
         <Main children={children} />
         <Footer />
         <Analytics />
-        </SupabaseProvider>
+        {/* </SupabaseProvider> */}
       </body>
     </html>
   )
