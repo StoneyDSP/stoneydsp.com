@@ -1,4 +1,5 @@
 import TextLargeBoldCenter from '@/components/layouts/TextLargeBoldCenter'
+import Ribbon from '@/components/layouts/ribbon/ribbon'
 import HRGradient from '@/components/layouts/HRGradient'
 import styles from './about.module.css'
 
@@ -12,9 +13,7 @@ export default async function About() {
 
           <HRGradient />
 
-          <TextLargeBoldCenter>
-            Hi! I'm Nathan, a.k.a StoneyDSP.
-          </TextLargeBoldCenter>
+          <Ribbon>Hi! I'm Nathan, a.k.a StoneyDSP.</Ribbon>
 
           <HRGradient />
 
@@ -22,7 +21,11 @@ export default async function About() {
 
           <HRGradient />
 
+          <HRGradient />
+
           <p>I am also a musician making Audio software plugins using a variety of languages and workflows.</p>
+
+          <HRGradient />
 
           <HRGradient />
 
@@ -30,7 +33,11 @@ export default async function About() {
 
           <HRGradient />
 
+          <HRGradient />
+
           <p>After having studied DSP (digital signal processing) in audio and graphic systems - which began as a musical pursuit, but soon became another primary interest - I tentatively began translating some of this acquired knowledge into audio plugins beginning in 2021, primarily using the C++-based JUCE framework. Encouraged by some early success (despite the steep learning curve of C++ as a first language), and a strong mental affinity with Object Oriented Programming paradigm, I also became fascinated with the creative solutions to complex obstacles that we find in all of the most successful programming examples in the world today. Several of these early audio projects, written from the perspective of a tutorial, remain among my most enduringly popular to this day.</p>
+
+          <HRGradient />
 
           <HRGradient />
 
@@ -38,7 +45,11 @@ export default async function About() {
 
           <HRGradient />
 
+          <HRGradient />
+
           <p>When it became clear to me that there is more to software development beyond writing (and principally understanding) functional code, I took some opportunities to intern in some different fields, such as web dev consultancy, where my learning skills were well exercised with all things NodeJS, React, Next, Vue, Nuxt, SQL with Postgres and MySQL, SaaS and BaaS platforms, cybersecurity fundamentals, as well as daily routines and workflows in modern software development.</p>
+
+          <HRGradient />
 
           <HRGradient />
 

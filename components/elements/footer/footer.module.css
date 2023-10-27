@@ -3,4 +3,7 @@
 	padding-bottom: 0.5rem/* 8px */;
 	background-color: hsl(var(--background));
 	color: hsl(var(--foreground));
+
+	margin:  0px;
+	border-top: 1px solid var(--header-separator-color);
 }

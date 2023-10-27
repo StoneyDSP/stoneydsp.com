@@ -1,0 +1,17 @@
+.ribbon {
+	gap: 2rem/* 32px */;
+}
+
+.tableRowOdd {
+	background-image: var(--table-row-gradient);
+	background-repeat: repeat-x;
+	background-color: var(--header-background-color);
+	/* padding-top: 2rem;
+	padding-bottom: 2rem; */
+}
+
+.tableRowEven {
+	background-image: var(--table-gradient);
+	background-repeat: repeat-x;
+	background-color: var(--header-background-color);
+}
