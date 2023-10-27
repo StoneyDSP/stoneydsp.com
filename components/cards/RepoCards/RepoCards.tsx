@@ -71,16 +71,16 @@ export default async function RepoCards() {
       {repos.map(({ title, subtitle, url, icon }) => (
         <a
           key={title}
-          className="relative flex flex-col group rounded-lg border p-6 hover:border-foreground transition___shadow_off"
+          className="relative flex flex-col text-foreground group rounded-lg border p-6 hover:border-foreground transition___shadow_off"
           href={url}
           target="_blank"
           rel="noreferrer"
         >
-          <h3 className="font-bold mb-2 opacity-90  min-h-[40px] lg:min-h-[60px]">
+          <h3 className="font-bold hover:opacity-80 mb-2 min-h-[40px] lg:min-h-[60px]">
             {title}
           </h3>
           <div className="flex flex-col grow gap-4 justify-between">
-            <p className="text-sm opacity-70">{subtitle}</p>
+            <p className="text-sm hover:opacity-70">{subtitle}</p>
             <div className="flex justify-between items-center">
               <svg
                 width="24"

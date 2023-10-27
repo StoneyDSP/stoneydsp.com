@@ -47,6 +47,8 @@ export default async function Home() {
 
           <HRGradient />
 
+          <HRGradient />
+
           <FlexColCenter children={(
             <a href="https://github.com/nathanjhood">
               <img
