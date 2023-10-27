@@ -33,11 +33,11 @@ export default async function ResourceCards() {
           target="_blank"
           rel="noreferrer"
         >
-          <h3 className="font-bold mb-2 hover:opacity-90 min-h-[40px] lg:min-h-[60px]">
+          <h3 className="font-bold mb-2 opacity-90 group-hover:opacity-100 min-h-[40px] lg:min-h-[60px]">
             {title}
           </h3>
           <div className="flex flex-col grow gap-4 justify-between">
-            <p className="text-sm hover:opacity-70">{subtitle}</p>
+            <p className="text-sm opacity-80 group-hover:opacity-100">{subtitle}</p>
             <div className="flex justify-between items-center">
               <svg
                 width="24"
