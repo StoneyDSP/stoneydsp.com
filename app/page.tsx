@@ -1,4 +1,4 @@
-import Home from './home'
+import Home from '@/app/home/home'
 
 export const dynamic = 'force-dynamic'
 
