@@ -5,38 +5,38 @@ const nextConfig = {
   experimental: {
     serverActions: true,
   },
-  basePath: '',
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'Strict-Transport-Security',
-            value: '',
-          },
-          {
-            key: 'X-Robots-Tag',
-            value: 'all',
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-        ],
-      },
-    ]
-  },
-  async redirects() {
-    return [
-      {
-        source: '/index.html',
-        destination: '/',
-        basePath: false,
-        permanent: true,
-      },
-    ]
-  },
+  // basePath: '',
+  // async headers() {
+  //   return [
+  //     {
+  //       source: '/:path*',
+  //       headers: [
+  //         {
+  //           key: 'Strict-Transport-Security',
+  //           value: '',
+  //         },
+  //         {
+  //           key: 'X-Robots-Tag',
+  //           value: 'all',
+  //         },
+  //         {
+  //           key: 'X-Frame-Options',
+  //           value: 'DENY',
+  //         },
+  //       ],
+  //     },
+  //   ]
+  // },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/index.html',
+  //       destination: '/',
+  //       basePath: false,
+  //       permanent: true,
+  //     },
+  //   ]
+  // },
 }
 
 // module.exports = nextConfig
