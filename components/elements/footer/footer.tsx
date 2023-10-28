@@ -37,22 +37,29 @@ export default function Footer() {
         <SocialIcons />
       </div>
 
-      <div className="flex flex-row justify-center text-foreground text-center text-xs py-2">
-        <p className="text-foreground bg-background">
-          Copyright <small>StoneyDSP 2023</small>.
-        </p>
-      </div>
-
       <div className="flex justify-center text-foreground text-center text-xs py-2">
         <p className="text-foreground bg-background">
           <small>{' '}</small>
           <Link
             href="/terms-of-service"
-            target="_blank"
             className="font-bold"
           >
             Terms of Service
           </Link>
+          <span> || </span>
+          <small>{' '}</small>
+          <Link
+            href="/privacy-policy"
+            className="font-bold"
+          >
+            Privacy Policy
+          </Link>
+        </p>
+      </div>
+
+      <div className="flex flex-row justify-center text-foreground text-center text-xs py-2">
+        <p className="text-foreground bg-background">
+          Copyright <small>StoneyDSP 2023</small>.
         </p>
       </div>
 
