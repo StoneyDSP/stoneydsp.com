@@ -1,2 +1,7 @@
 supabase/functions
 app/_examples
+.github
+.vscode
+.editorconfig
+custom-talwind.config.ts
+headers.md
