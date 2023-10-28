@@ -43,6 +43,19 @@ export default function Footer() {
         </p>
       </div>
 
+      <div className="flex justify-center text-foreground text-center text-xs py-2">
+        <p className="text-foreground bg-background">
+          <small>{' '}</small>
+          <Link
+            href="/terms-of-service"
+            target="_blank"
+            className="font-bold"
+          >
+            Terms of Service
+          </Link>
+        </p>
+      </div>
+
     </footer>
   )
 }
