@@ -1,11 +1,5 @@
-[[NOTE TO MERCHANT: Please read and remove/replace text wrapped in double square brackets like this]]
-
-[[NOTE TO MERCHANT: This is a template Privacy Policy designed to cover your collection, use, and disclosure of personal information about visitors and customers of your Shopify-powered Site. Please review and customize the content so that it is tailored to your store and business practices regarding how you collect, use, and disclose personal data. For example, you may need to update the template content if: you are based in certain jurisdictions (particularly to reflect certain disclosures that are required under GDPR), you collect information from other sources like third parties or offline; you disclose information to additional service providers or business partners; or you add third-party cookies or other analytics tools. Please also remember to delete all "Note to Merchant" drafting notes prior to publishing.]]
-
-[[NOTE TO MERCHANT: This template is not legal advice, and you are solely responsible for ensuring that you meet your obligations under applicable laws. As privacy laws are constantly evolving, you should regularly review your privacy notice to ensure that it is compliant with updated laws and regulation and that it accurately reflects current data handling practices. We recommend that you consult a lawyer as needed.]]
-
 StoneyDSP Privacy Policy.
-Last updated: [[Date]]
+Last updated:
 
 This Privacy Policy describes how StoneyDSP (the "Site", "we", "us", or "our") collects, uses, and discloses your personal information when you visit, use our services, or make a purchase from https://www.stoneydp.com (the "Site") or otherwise communicate with us (collectively, the "Services"). For purposes of this Privacy Policy, "you" and "your" means you as the user of the Services, whether you are a customer, website visitor, or another individual whose information we have collected pursuant to this Privacy Policy.
 
@@ -90,8 +84,6 @@ Categories of Recipients:
 
 We do not use or disclose sensitive personal information for the purposes of inferring characteristics about you.
 
-[[NOTE TO MERCHANT- INSERT THE FOLLOWING PARAGRAPH AND LISTS IF USING SHOPIFY'S AD SERVICES SUCH AS SHOPIFY AUDIENCES OR ENGAGING IN ANY OTHER ACTIVITY THAT MAY BE CONSIDERED "SELLING" OR "SHARING" PERSONAL INFORMATION OR PROCESSING PERSONAL INFORMATION FOR "TARGETED ADVERTISING"]]
-
 We have "sold" and "shared" (as those terms are defined in applicable law) personal information over the preceding 12 months for the purpose of engaging in advertising and marketing activities, as follows.
 
 Category of Personal Information
@@ -120,8 +112,6 @@ The Services are not intended to be used by children, and we do not knowingly co
 
 As of the Effective Date of this Privacy Policy, we do not have actual knowledge that we "share" or "sell" (as those terms are defined in applicable law) personal information of individuals under 16 years of age.
 
-[[NOTE TO MERCHANT: PLEASE CONSULT WITH LEGAL COUNSEL IF YOUR SITE IS CHILD FOCUSSED OR DIRECTED, AS MORE SPECIFIC DISCLOSURES MAY BE REQUIRED.]]
-
 Security and Retention of Your Information
 
 Please be aware that no security measures are perfect or impenetrable, and we cannot guarantee "perfect security." In addition, any information you send to us may not be secure while in transit. We recommend that you do not use unsecure channels to communicate sensitive or confidential information to us.
@@ -136,13 +126,6 @@ Depending on where you live, you may have some or all of the rights listed below
 - Right to Delete. You may have a right to request that we delete personal information we maintain about you.
 - Right to Correct. You may have a right to request that we correct inaccurate personal information we maintain about you.
 - Right of Portability. You may have a right to receive a copy of the personal information we hold about you and to request that we transfer it to a third party, in certain circumstances and with certain exceptions.
-
-[[NOTE TO MERCHANT: IF USING SHOPIFY'S AD SERVICES SUCH AS SHOPIFY AUDIENCES OR ENGAGING IN ANY OTHER ACTIVITY THAT MAY BE CONSIDERED "SELLING" OR "SHARING" PERSONAL INFORMATION OR PROCESSING PERSONAL INFORMATION FOR "TARGETED ADVERTISING", INSERT THE LIST ITEM BELOW AND ENSURE YOU PROVIDE CUSTOMERS THE ABILITY TO "OPT OUT" OF THIS ACTIVITY ON YOUR SITE BY USING SHOPIFY'S PRIVACY AND COMPLIANCE APP OR OTHERWISE.]]
-
-- Right to Opt out of Sale or Sharing or Targeted Advertising. You may have a right to direct us not to "sell" or "share" your personal information or to opt out of the processing of your personal information for purposes considered to be "targeted advertising", as defined in applicable privacy laws. Please note that if you visit our Site with the Global Privacy Control opt-out preference signal enabled, depending on where you are, we will automatically treat this as a request to opt-out of the "sale" or "sharing" of information for the device and browser that you use to visit the Site.
-
-[[NOTE TO MERCHANT: IF YOU COLLECT INFORMATION THAT MAY BE DEEMED TO BE SENSITIVE PERSONAL INFORMATION UNDER APPLICABLE PRIVACY LAWS THERE MAY BE ADDITIONAL CONSENTS/DISCLOSURES REQUIRED. INSERT THE LIST ITEM BELOW IF YOU COLLECT SENSITIVE PERSONAL INFORMATION AND CONSULT WITH EXTERNAL LEGAL COUNSEL TO CONFIRM YOUR RESPONSIBILITIES.]]
-
 - Right to Limit and/or Opt out of Use and Disclosure of Sensitive Personal Information. You may have a right to direct us to limit our use and/or disclosure of sensitive personal information to only what is necessary to perform the Services or provide the goods reasonably expected by an average individual.
 - Restriction of Processing: You may have the right to ask us to stop or restrict our processing of personal information.
 - Withdrawal of Consent: Where we rely on consent to process your personal information, you may have the right to withdraw this consent.
@@ -152,10 +135,6 @@ Depending on where you live, you may have some or all of the rights listed below
 You may exercise any of these rights where indicated on our Site or by contacting us using the contact details provided below.
 
 We will not discriminate against you for exercising any of these rights. We may need to collect information from you to verify your identity, such as your email address or account information, before providing a substantive response to the request. In accordance with applicable laws, You may designate an authorized agent to make requests on your behalf to exercise your rights. Before accepting such a request from an agent, we will require that the agent provide proof you have authorized them to act on your behalf, and we may need you to verify your identity directly with us. We will respond to your request in a timely manner as required under applicable law.
-
-[[NOTE TO MERCHANT: INSERT THE FOLLOWING SENTENCE IF USING SHOPIFY'S AD SERVICES SUCH AS SHOPIFY AUDIENCES]]
-
-We use Shopify's ad services such as Shopify Audiences to help personalize the advertising you see on third party websites. To restrict Shopify merchants that use these ad services from using your personal information for such services, visit https://privacy.shopify.com/en.
 
 Complaints
 
@@ -168,6 +147,4 @@ If we transfer your personal information out of Europe, we will rely on recogniz
 
 Contact
 
-Should you have any questions about our privacy practices or this Privacy Policy, or if you would like to exercise any of the rights available to you, please call [[TOLL FREE TELEPHONE NUMBER IF YOU HAVE A PHYSICAL RETAIL LOCATION]] or email us at nathanjhood@googlemail.com or contact us at Avenida Coll Del Portell, 57, SA1, Barcelona, B, 08024, Spain.
-
-[[NOTE TO MERCHANT: INSERT THE FOLLOWING IF YOUR SITE IS GOVERNED BY GDPR]] For the purpose of applicable data protection laws, we are the data controller of your personal information. Our representative in the [[EEA]] [[and]] [[the UK]] is [[INSERT REPRESENTATIVE DETAILS]].
+Should you have any questions about our privacy practices or this Privacy Policy, or if you would like to exercise any of the rights available to you, please call [[TOLL FREE TELEPHONE NUMBER IF YOU HAVE A PHYSICAL RETAIL LOCATION]] or email us at nathanjhood@googlemail.com.
