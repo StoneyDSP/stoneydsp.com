@@ -1,7 +1,9 @@
+import {
+  HRGradient,
+  TextLargeBoldCenter,
+  BackToHome
+} from '@/components/layouts'
 import RepoCards from '@/components/cards/RepoCards/RepoCards'
-import HRGradient from '@/components/layouts/HRGradient'
-import TextLargeBoldCenter from '@/components/layouts/TextLargeBoldCenter'
-
 import styles from './projects.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -25,9 +27,13 @@ export default async function Projects() {
 
           <RepoCards />
 
-        </div>
+          <HRGradient />
 
-        <HRGradient />
+          <BackToHome />
+
+          <HRGradient />
+
+        </div>
 
       </div>
 

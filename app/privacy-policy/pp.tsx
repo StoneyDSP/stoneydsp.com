@@ -1,5 +1,8 @@
-import HRGradient from '@/components/layouts/HRGradient'
-
+import {
+  HRGradient,
+  TextLargeBoldCenter,
+  BackToHome
+} from '@/components/layouts'
 import styles from './pp.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -212,6 +215,12 @@ export default async function PrivacyPolicy() {
             <br />
             {/* [[NOTE TO MERCHANT: INSERT THE FOLLOWING IF YOUR SITE IS GOVERNED BY GDPR]] For the purpose of applicable data protection laws, we are the data controller of your personal information. Our representative in the [[EEA]] [[and]] [[the UK]] is [[INSERT REPRESENTATIVE DETAILS]]. */}
           </section>
+
+          <HRGradient />
+
+          <BackToHome />
+
+          <HRGradient />
 
         </div>
       </div>
