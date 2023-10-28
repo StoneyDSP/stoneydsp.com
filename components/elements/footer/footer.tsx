@@ -57,6 +57,18 @@ export default function Footer() {
         </p>
       </div>
 
+      <div className="flex justify-center text-foreground text-center text-xs py-2">
+        <p className="text-foreground bg-background">
+          <small>{' '}</small>
+          <Link
+            href="/sitemap"
+            className="font-bold"
+          >
+            <small>Sitemap</small>
+          </Link>
+        </p>
+      </div>
+
       <div className="flex flex-row justify-center text-foreground text-center text-xs py-2">
         <p className="text-foreground bg-background">
           Copyright <small>StoneyDSP 2023</small>.

@@ -1,5 +1,8 @@
-import HRGradient from '@/components/layouts/HRGradient'
-
+import {
+  HRGradient,
+  TextLargeBoldCenter,
+  BackToHome
+} from '@/components/layouts'
 import styles from './tos.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -302,6 +305,10 @@ export default async function TermsOfService() {
             [INSERT VAT NUMBER]</p>
 
           </section>
+
+          <HRGradient />
+
+          <BackToHome />
 
           <HRGradient />
 
