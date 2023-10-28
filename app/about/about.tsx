@@ -1,6 +1,9 @@
-import TextLargeBoldCenter from '@/components/layouts/TextLargeBoldCenter'
+import {
+  HRGradient,
+  TextLargeBoldCenter,
+  BackToHome
+} from '@/components/layouts'
 import Ribbon from '@/components/layouts/ribbon/ribbon'
-import HRGradient from '@/components/layouts/HRGradient'
 import styles from './about.module.css'
 
 export default async function About() {
@@ -54,6 +57,10 @@ export default async function About() {
           <HRGradient />
 
           <p>I am currently finessing several of my audio and system app projects as well as a website, where I intend to provide RESTful APIs and serverless/Edge functions via a secure content delivery mechanisms for further demonstrating and sharing new ideas in audio DSP, directly in the web browser.</p>
+
+          <HRGradient />
+
+          <BackToHome />
 
           <HRGradient />
 
