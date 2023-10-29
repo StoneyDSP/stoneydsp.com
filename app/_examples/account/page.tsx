@@ -1,4 +1,4 @@
-import { getSession, getUser, getUserDetails } from '@/utils/supabase-server'
+import { getSession, getUser, getUserDetails } from '@/_utils/supabase-server'
 import AccountForm from '@/app/_examples/account/account-form'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
