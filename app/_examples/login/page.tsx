@@ -1,11 +1,11 @@
-import { getSession } from '@/utils/supabase-server'
+import { getSession } from '@/_utils/supabase-server'
 import { redirect } from 'next/navigation'
 import AuthForm from './supabase-auth'
 import BrandBadge from '@/components/StoneyDSPBadge'
 import Footer from '@/components/Footer'
 
 import { Metadata } from 'next'
-import { getURL } from '@/utils/helpers'
+import { getURL } from '@/_utils/helpers'
 
 export const dynamic = 'force-dynamic'
 
