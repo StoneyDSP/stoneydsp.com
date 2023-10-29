@@ -3,6 +3,7 @@
   "description": "StoneyDSP Official Website",
   "author": "StoneyDSP",
   "license": "MIT",
+  "icon": "./app/favicon.ico",
   "homepage": "https://github.com/StoneyDSP/stoneydsp.com#readme",
   "readme": "README.md",
   "repository": {
@@ -26,25 +27,17 @@
     "generate-types": "npx supabase gen types typescript --project-id $SUPABASE_PROJECT_REF --schema public > types_db.ts"
   },
   "dependencies": {
-    "@stripe/stripe-js": "^2.1.7",
-    "@supabase/auth-helpers-nextjs": "^0.8.1",
-    "@supabase/auth-ui-react": "^0.4.5",
-    "@supabase/auth-ui-shared": "^0.1.8",
-    "@supabase/supabase-js": "^2.38.2",
     "@vercel/analytics": "^1.0.2",
     "@vercel/edge": "^1.1.0",
     "autoprefixer": "10.4.15",
     "classnames": "^2.3.2",
     "isbot": "^3.7.0",
-    "js-base64": "^3.7.5",
     "next": "^13.5.6",
     "postcss": "8.4.31",
     "prettier": "^3.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "stripe": "^14.1.0",
     "tailwindcss": "3.3.3",
-    "typescript": "^5.2.2",
     "ua-parser-js": "^1.0.36"
   },
   "devDependencies": {
@@ -53,12 +46,11 @@
     "@types/node": "^20.8.6",
     "@types/react": "^18.2.31",
     "@vercel/node": "^3.0.6",
-    "@vercel/postgres": "^0.5.0",
     "encoding": "^0.1.13",
     "eslint": "^8.52.0",
     "eslint-config-next": "13.5.6",
     "eslint-plugin-react-hooks": "^4.6.0",
     "globby": "^13.2.2",
-    "supabase": "^1.99.5"
+    "typescript": "^5.2.2"
   }
 }
