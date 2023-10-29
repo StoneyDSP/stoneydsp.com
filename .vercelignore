@@ -5,3 +5,5 @@ app/_examples
 .editorconfig
 custom-talwind.config.ts
 headers.md
+_utils
+yarn.lock
