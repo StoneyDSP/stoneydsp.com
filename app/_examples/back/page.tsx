@@ -1,5 +1,5 @@
-import { getSession, getUser, getUserDetails } from '@/utils/supabase-server'
-import { getURL } from '@/utils/helpers'
+import { getSession, getUser, getUserDetails } from '@/_utils/supabase-server'
+import { getURL } from '@/_utils/helpers'
 import GitStats from '@/components/cards/GitStats/GitStats'
 
 import { redirect } from 'next/navigation'
