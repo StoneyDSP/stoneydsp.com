@@ -8,7 +8,7 @@ import type { Database } from './types_db'
 
 export async function middleware(req: NextRequest) {
 
-  // const res = NextResponse.next()
+  const res = NextResponse.next()
 
   // // Create a Supabase client configured to use cookies
   // const supabase = createMiddlewareClient<Database>({ req, res })
@@ -42,40 +42,40 @@ export async function middleware(req: NextRequest) {
   //   return NextResponse.redirect(new URL('/login', req.url))
   // }
 
-  // return res
+  return res
 
-  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
-  const cspHeader = `
-    default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
-    style-src 'self' 'nonce-${nonce}';
-    img-src 'self' blob: data:;
-    connect-src vitals.vercel-insights.com github-readme-stats-two-lime-18.vercel.app;
-    font-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    block-all-mixed-content;
-    upgrade-insecure-requests;
-`
+//   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
+//   const cspHeader = `
+//     default-src 'self';
+//     script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+//     style-src 'self' 'nonce-${nonce}';
+//     img-src 'self' blob: data:;
+//     connect-src vitals.vercel-insights.com github-readme-stats-two-lime-18.vercel.app;
+//     font-src 'self';
+//     object-src 'none';
+//     base-uri 'self';
+//     form-action 'self';
+//     frame-ancestors 'none';
+//     block-all-mixed-content;
+//     upgrade-insecure-requests;
+// `
 
-  const requestHeaders = new Headers(req.headers)
-  requestHeaders.set('x-nonce', nonce)
-  requestHeaders.set(
-    'Content-Security-Policy',
-    // Replace newline characters and spaces
-    cspHeader.replace(/\s{2,}/g, ' ').trim()
-  )
-  requestHeaders.set('Access-Control-Allow-Origin', 'vitals.vercel-insights.com')
-  requestHeaders.set('Access-Control-Allow-Origin', 'github-readme-stats-two-lime-18.vercel.app')
+//   const requestHeaders = new Headers(req.headers)
+//   requestHeaders.set('x-nonce', nonce)
+//   requestHeaders.set(
+//     'Content-Security-Policy',
+//     // Replace newline characters and spaces
+//     cspHeader.replace(/\s{2,}/g, ' ').trim()
+//   )
+//   requestHeaders.set('Access-Control-Allow-Origin', 'vitals.vercel-insights.com')
+//   requestHeaders.set('Access-Control-Allow-Origin', 'github-readme-stats-two-lime-18.vercel.app')
 
-  return NextResponse.next({
-    headers: requestHeaders,
-    request: {
-      headers: requestHeaders,
-    },
-  })
+//   return NextResponse.next({
+//     headers: requestHeaders,
+//     request: {
+//       headers: requestHeaders,
+//     },
+//   })
 }
 
 export const config = {
