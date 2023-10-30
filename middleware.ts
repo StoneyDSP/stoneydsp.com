@@ -50,7 +50,7 @@ export async function middleware(req: NextRequest) {
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
     style-src 'self' 'nonce-${nonce}';
     img-src 'self' blob: data:;
-    connect-src 'self' vitals.vercel-insights.com github-readme-stats-two-lime-18.vercel.app;
+    connect-src vitals.vercel-insights.com github-readme-stats-two-lime-18.vercel.app;
     font-src 'self';
     object-src 'none';
     base-uri 'self';
