@@ -2,7 +2,7 @@ import { Header, Footer, Main } from '@/components/elements'
 import { Analytics } from '@vercel/analytics/react'
 // import SupabaseProvider from '@/utils/supabase-provider'
 import { Metadata } from 'next'
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/dist/google'
 import './globals.css'
 
 export default function RootLayout({
