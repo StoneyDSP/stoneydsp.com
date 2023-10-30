@@ -9,8 +9,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'github-readme-stats-two-lime-18.vercel.app',
-        port: '',
+        hostname: '**.vercel.app',
+        // port: '',
         pathname: '/**',
       },
     ],
