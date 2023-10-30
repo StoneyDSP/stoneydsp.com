@@ -23,7 +23,7 @@ export default async function Home() {
 
       <div className={styles.content}>
 
-        <div className="flex flex-col gap-8 bg-background text-foreground">
+        <div className="flex flex-col gap-8 text-foreground">
 
           <HRGradient />
 
