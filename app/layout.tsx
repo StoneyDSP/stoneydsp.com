@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="text-foreground">
+      <body className="text-foreground bg-background">
         {/* <SupabaseProvider> */}
         <Header title={'Home'} />
         <Main>
