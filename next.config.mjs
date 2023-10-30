@@ -5,28 +5,38 @@ const nextConfig = {
   experimental: {
     serverActions: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.vercel.app',
+        // port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   // basePath: '',
-  // async headers() {
-  //   return [
-  //     {
-  //       source: '/:path*',
-  //       headers: [
-  //         {
-  //           key: 'Strict-Transport-Security',
-  //           value: '',
-  //         },
-  //         {
-  //           key: 'X-Robots-Tag',
-  //           value: 'all',
-  //         },
-  //         {
-  //           key: 'X-Frame-Options',
-  //           value: 'DENY',
-  //         },
-  //       ],
-  //     },
-  //   ]
-  // },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Strict-Transport-Security',
+            value: '',
+          },
+          {
+            key: 'X-Robots-Tag',
+            value: 'all',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+        ],
+      },
+    ]
+  },
   // async redirects() {
   //   return [
   //     {
@@ -39,10 +49,10 @@ const nextConfig = {
   // },
 }
 
-// module.exports = nextConfig
+export default nextConfig
 // next.config.js.
-export default () => {
-	// const plugins = [withMDX, withBundleAnalyzer, withTM(['ui', 'common', 'shared-data'])]
-	// return plugins.reduce((acc, next) => next(acc), nextConfig)
-	return nextConfig
-}
+// export default () => {
+// 	// const plugins = [withMDX, withBundleAnalyzer, withTM(['ui', 'common', 'shared-data'])]
+// 	// return plugins.reduce((acc, next) => next(acc), nextConfig)
+// 	return nextConfig
+// }

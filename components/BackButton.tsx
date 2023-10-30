@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-export default async function BackButton() {
+export default function BackButton() {
   return (
     <a
       href="/"
