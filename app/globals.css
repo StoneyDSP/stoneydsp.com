@@ -20,6 +20,10 @@
 			--btn-background-hover: 200 10% 89%;
 			--foreground: 200 50% 3%;
 
+			--foreground-rgb: 0, 0, 0;
+  			--background-start-rgb: 214, 219, 220;
+  			--background-end-rgb: 255, 255, 255;
+
 			--custom-bg-color:  var(--background);
 			--custom-panel-color: #222;
 			--custom-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8);
@@ -61,6 +65,10 @@
 			--btn-background: 200 10% 9%;
 			--btn-background-hover: 200 10% 12%;
 			--foreground: 200 20% 96%;
+
+			--foreground-rgb: 255, 255, 255;
+    		--background-start-rgb: 0, 0, 0;
+    		--background-end-rgb: 0, 0, 0;
 
 			--custom-bg-color: var(--background);
 			--custom-panel-color: #222;
@@ -149,6 +157,16 @@ body,
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
 h1 {
