@@ -16,7 +16,7 @@ export default async function About() {
 
           <HRGradient />
 
-          <Ribbon>Hi! I'm Nathan, a.k.a StoneyDSP.</Ribbon>
+          <Ribbon>Hi! I&#39;m Nathan, a.k.a StoneyDSP.</Ribbon>
 
           <HRGradient />
 
