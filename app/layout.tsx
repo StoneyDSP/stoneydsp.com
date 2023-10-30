@@ -20,14 +20,7 @@ export default function RootLayout({
           {children}
         </Main>
         <Footer />
-        <Analytics
-          beforeSend={(event) => {
-            if (localStorage.getItem('va-disable')) {
-              return null;
-            }
-            return event;
-          }}
-        />
+        <Analytics />
         {/* </SupabaseProvider> */}
       </body>
     </html>
