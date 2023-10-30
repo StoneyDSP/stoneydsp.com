@@ -35,27 +35,6 @@ const nextConfig = {
           },
         ],
       },
-      {
-        source: "github-readme-stats-two-lime-18.vercel.app/(.*)",
-        headers: [
-          {
-            key: "Vercel-CDN-Cache-Control",
-            value: "max-age=3600"
-          },
-          {
-            key: "CDN-Cache-Control",
-            value: "max-age=60"
-          },
-          {
-            key: "Cache-Control",
-            value: "public, max-age=10, s-maxage=86400, immutable"
-          },
-          {
-            key: "X-XSS-Protection",
-            value: "1; mode=block"
-          }
-        ]
-      }
     ]
   },
   // async redirects() {

@@ -1,10 +1,13 @@
-import RepoCards from '@/components/cards/RepoCards/RepoCards'
-import ResourceCards from '@/components/cards/ResourceCards/ResourceCards'
-import HRGradient from '@/components/layouts/HRGradient'
-import TextLargeBoldCenter from '@/components/layouts/TextLargeBoldCenter'
-import FlexColCenter from '@/components/layouts/FlexColCenter'
+import {
+  RepoCards,
+  ResourceCards
+} from '@/components/cards'
+import {
+  HRGradient,
+  TextLargeBoldCenter,
+  FlexColCenter
+} from '@/components/layouts'
 
-import Image from 'next/image'
 import { headers } from 'next/headers'
 
 import styles from './home.module.css'
@@ -32,7 +35,7 @@ export default async function Home() {
 
           <FlexColCenter>
             <a href="https://github.com/nathanjhood">
-              <Image
+              <img
                 src="https://github-readme-stats-two-lime-18.vercel.app/api?username=nathanjhood&show_icons=true&theme=transparent&border_radius=0&hide_border=true"
                 alt="StoneyDSP's GitHub stats"
                 className="transition___shadow_off rounded-lg border hover:border-foreground"
@@ -56,7 +59,7 @@ export default async function Home() {
 
           <FlexColCenter>
             <a href="https://github.com/nathanjhood">
-              <Image
+              <img
                 src="https://github-readme-stats-two-lime-18.vercel.app/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true"
                 width={350}
                 height={311}
