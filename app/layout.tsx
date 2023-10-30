@@ -1,6 +1,4 @@
-import Header from '@/components/elements/header/header'
-import Footer from '@/components/elements/footer/footer'
-import Main from '@/components/elements/main/main'
+import { Header, Footer, Main } from '@/components/elements'
 import { Analytics } from '@vercel/analytics/react'
 // import SupabaseProvider from '@/utils/supabase-provider'
 import { Metadata } from 'next'
@@ -18,9 +16,18 @@ export default function RootLayout({
       <body>
         {/* <SupabaseProvider> */}
         <Header title={'Home'} />
-        <Main children={children} />
+        <Main>
+          {children}
+        </Main>
         <Footer />
-        <Analytics />
+        <Analytics
+          beforeSend={(event) => {
+            if (localStorage.getItem('va-disable')) {
+              return null;
+            }
+            return event;
+          }}
+        />
         {/* </SupabaseProvider> */}
       </body>
     </html>

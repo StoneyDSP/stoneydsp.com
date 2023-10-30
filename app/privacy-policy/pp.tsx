@@ -33,7 +33,7 @@ export default async function PrivacyPolicy() {
 
           <section id="PP-OVERVIEW">
 
-            <p>This Privacy Policy describes how StoneyDSP (the "Site", "we", "us", or "our") collects, uses, and discloses your personal information when you visit, use our services, or make a purchase from https://www.stoneydp.com (the "Site") or otherwise communicate with us (collectively, the "Services"). For purposes of this Privacy Policy, "you" and "your" means you as the user of the Services, whether you are a customer, website visitor, or another individual whose information we have collected pursuant to this Privacy Policy.</p>
+            <p>This Privacy Policy describes how StoneyDSP (the &#34;Site&#34;, &#34;we&#34;, &#34;us&#34;, or &#34;our&#34;) collects, uses, and discloses your personal information when you visit, use our services, or make a purchase from https://www.stoneydp.com (the &#34;Site&#34;) or otherwise communicate with us (collectively, the &#34;Services&#34;). For purposes of this Privacy Policy, &#34;you&#34; and &#34;your&#34; means you as the user of the Services, whether you are a customer, website visitor, or another individual whose information we have collected pursuant to this Privacy Policy.</p>
             <br />
             <p>Please read this Privacy Policy carefully. By using and accessing any of the Services, you agree to the collection, use, and disclosure of your information as described in this Privacy Policy. If you do not agree to this Privacy Policy, please do not use or access any of the Services.</p>
 
@@ -45,7 +45,7 @@ export default async function PrivacyPolicy() {
 
             <p>Changes to This Privacy Policy</p>
             <br />
-            <p>We may update this Privacy Policy from time to time, including to reflect changes to our practices or for other operational, legal, or regulatory reasons. We will post the revised Privacy Policy on the Site, update the "Last updated" date and take any other steps required by applicable law.</p>
+            <p>We may update this Privacy Policy from time to time, including to reflect changes to our practices or for other operational, legal, or regulatory reasons. We will post the revised Privacy Policy on the Site, update the &#34;Last updated&#34; date and take any other steps required by applicable law.</p>
             <br />
             <p>How We Collect and Use Your Personal Information</p>
             <br />
@@ -55,7 +55,7 @@ export default async function PrivacyPolicy() {
             <br />
             <p>What Personal Information We Collect</p>
             <br />
-            <p>The types of personal information we obtain about you depends on how you interact with our Site and use our Services. When we use the term "personal information", we are referring to information that identifies, relates to, describes or can be associated with you. The following sections describe the categories and specific types of personal information we collect.</p>
+            <p>The types of personal information we obtain about you depends on how you interact with our Site and use our Services. When we use the term &#34;personal information&#34;, we are referring to information that identifies, relates to, describes or can be associated with you. The following sections describe the categories and specific types of personal information we collect.</p>
             <br />
             <p>Information We Collect Directly from You</p>
             <br />
@@ -73,7 +73,7 @@ export default async function PrivacyPolicy() {
             <br />
             <p>Information We Collect through Cookies</p>
             <br />
-            <p>We also automatically collect certain information about your interaction with the Services ("Usage Data"). To do this, we may use cookies, pixels and similar technologies ("Cookies"). Usage Data may include information about how you access and use our Site and your account, including device information, browser information, information about your network connection, your IP address and other information regarding your interaction with the Services.</p>
+            <p>We also automatically collect certain information about your interaction with the Services (&#34;Usage Data&#34;). To do this, we may use cookies, pixels and similar technologies (&#34;Cookies&#34;). Usage Data may include information about how you access and use our Site and your account, including device information, browser information, information about your network connection, your IP address and other information regarding your interaction with the Services.</p>
             <br />
             <p>Information We Obtain from Third Parties</p>
             <br />
@@ -85,7 +85,7 @@ export default async function PrivacyPolicy() {
               <li>When you visit our Site, open or click on emails we send you, or interact with our Services or advertisements, we, or third parties we work with, may automatically collect certain information using online tracking technologies such as pixels, web beacons, software developer kits, third-party libraries, and cookies.</li>
             </ul>
             <br />
-            <p>Any information we obtain from third parties will be treated in accordance with this Privacy Policy. We are not responsible or liable for the accuracy of the information provided to us by third parties and are not responsible for any third party's policies or practices. For more information, see the section below, Third Party Websites and Links.</p>
+            <p>Any information we obtain from third parties will be treated in accordance with this Privacy Policy. We are not responsible or liable for the accuracy of the information provided to us by third parties and are not responsible for any third party&#39;s policies or practices. For more information, see the section below, Third Party Websites and Links.</p>
             <br />
             <p>How We Use Your Personal Information</p>
             <br />
@@ -134,7 +134,7 @@ export default async function PrivacyPolicy() {
             <br />
             {/* [[NOTE TO MERCHANT- INSERT THE FOLLOWING PARAGRAPH AND LISTS IF USING SHOPIFY'S AD SERVICES SUCH AS SHOPIFY AUDIENCES OR ENGAGING IN ANY OTHER ACTIVITY THAT MAY BE CONSIDERED "SELLING" OR "SHARING" PERSONAL INFORMATION OR PROCESSING PERSONAL INFORMATION FOR "TARGETED ADVERTISING"]] */}
             <br />
-            <p>We have "sold" and "shared" (as those terms are defined in applicable law) personal information over the preceding 12 months for the purpose of engaging in advertising and marketing activities, as follows.</p>
+            <p>We have &#34;sold&#34; and &#34;shared&#34; (as those terms are defined in applicable law) personal information over the preceding 12 months for the purpose of engaging in advertising and marketing activities, as follows.</p>
             <br />
             <p>Category of Personal Information</p>
             <br />
@@ -160,17 +160,17 @@ export default async function PrivacyPolicy() {
             <br />
             <p>Our Site may provide links to websites or other online platforms operated by third parties. If you follow links to sites not affiliated or controlled by us, you should review their privacy and security policies and other terms and conditions. We do not guarantee and are not responsible for the privacy or security of such sites, including the accuracy, completeness, or reliability of information found on these sites. Information you provide on public or semi-public venues, including information you share on third-party social networking platforms may also be viewable by other users of the Services and/or users of those third-party platforms without limitation as to its use by us or by a third party. Our inclusion of such links does not, by itself, imply any endorsement of the content on such platforms or of their owners or operators, except as disclosed on the Services.</p>
             <br />
-            <p>Children's Data</p>
+            <p>Children&#39;s Data</p>
             <br />
             <p>The Services are not intended to be used by children, and we do not knowingly collect any personal information about children. If you are the parent or guardian of a child who has provided us with their personal information, you may contact us using the contact details set out below to request that it be deleted.</p>
             <br />
-            <p>As of the Effective Date of this Privacy Policy, we do not have actual knowledge that we "share" or "sell" (as those terms are defined in applicable law) personal information of individuals under 16 years of age.</p>
+            <p>As of the Effective Date of this Privacy Policy, we do not have actual knowledge that we &#34;share&#34; or &#34;sell&#34; (as those terms are defined in applicable law) personal information of individuals under 16 years of age.</p>
             <br />
             {/* [[NOTE TO MERCHANT: PLEASE CONSULT WITH LEGAL COUNSEL IF YOUR SITE IS CHILD FOCUSSED OR DIRECTED, AS MORE SPECIFIC DISCLOSURES MAY BE REQUIRED.]] */}
             <br />
             <p>Security and Retention of Your Information</p>
             <br />
-            <p>Please be aware that no security measures are perfect or impenetrable, and we cannot guarantee "perfect security." In addition, any information you send to us may not be secure while in transit. We recommend that you do not use unsecure channels to communicate sensitive or confidential information to us.</p>
+            <p>Please be aware that no security measures are perfect or impenetrable, and we cannot guarantee &#34;perfect security.&#34; In addition, any information you send to us may not be secure while in transit. We recommend that you do not use unsecure channels to communicate sensitive or confidential information to us.</p>
             <br />
             <p>How long we retain your personal information depends on different factors, such as whether we need the information to maintain your account, to provide the Services, comply with legal obligations, resolve disputes or enforce other applicable contracts and policies.</p>
             <br />
@@ -184,7 +184,7 @@ export default async function PrivacyPolicy() {
               <li>Right to Correct. You may have a right to request that we correct inaccurate personal information we maintain about you.</li>
               <li>Right of Portability. You may have a right to receive a copy of the personal information we hold about you and to request that we transfer it to a third party, in certain circumstances and with certain exceptions.</li>
               {/* [[NOTE TO MERCHANT: IF USING SHOPIFY'S AD SERVICES SUCH AS SHOPIFY AUDIENCES OR ENGAGING IN ANY OTHER ACTIVITY THAT MAY BE CONSIDERED "SELLING" OR "SHARING" PERSONAL INFORMATION OR PROCESSING PERSONAL INFORMATION FOR "TARGETED ADVERTISING", INSERT THE LIST ITEM BELOW AND ENSURE YOU PROVIDE CUSTOMERS THE ABILITY TO "OPT OUT" OF THIS ACTIVITY ON YOUR SITE BY USING SHOPIFY'S PRIVACY AND COMPLIANCE APP OR OTHERWISE.]] */}
-              <li>Right to Opt out of Sale or Sharing or Targeted Advertising. You may have a right to direct us not to "sell" or "share" your personal information or to opt out of the processing of your personal information for purposes considered to be "targeted advertising", as defined in applicable privacy laws. Please note that if you visit our Site with the Global Privacy Control opt-out preference signal enabled, depending on where you are, we will automatically treat this as a request to opt-out of the "sale" or "sharing" of information for the device and browser that you use to visit the Site.</li>
+              <li>Right to Opt out of Sale or Sharing or Targeted Advertising. You may have a right to direct us not to &#34;sell&#34; or &#34;share&#34; your personal information or to opt out of the processing of your personal information for purposes considered to be &#34;targeted advertising&#34;, as defined in applicable privacy laws. Please note that if you visit our Site with the Global Privacy Control opt-out preference signal enabled, depending on where you are, we will automatically treat this as a request to opt-out of the &#34;sale&#34; or &#34;sharing&#34; of information for the device and browser that you use to visit the Site.</li>
               {/* [[NOTE TO MERCHANT: IF YOU COLLECT INFORMATION THAT MAY BE DEEMED TO BE SENSITIVE PERSONAL INFORMATION UNDER APPLICABLE PRIVACY LAWS THERE MAY BE ADDITIONAL CONSENTS/DISCLOSURES REQUIRED. INSERT THE LIST ITEM BELOW IF YOU COLLECT SENSITIVE PERSONAL INFORMATION AND CONSULT WITH EXTERNAL LEGAL COUNSEL TO CONFIRM YOUR RESPONSIBILITIES.]] */}
               <li>Right to Limit and/or Opt out of Use and Disclosure of Sensitive Personal Information. You may have a right to direct us to limit our use and/or disclosure of sensitive personal information to only what is necessary to perform the Services or provide the goods reasonably expected by an average individual.</li>
               <li>Restriction of Processing: You may have the right to ask us to stop or restrict our processing of personal information.</li>
@@ -207,7 +207,7 @@ export default async function PrivacyPolicy() {
             <p>International Users</p>
             <br />
             <p>Please note that we may transfer, store and process your personal information outside the country you live in, including the United States. Your personal information is also processed by staff and third party service providers and partners in these countries.</p>
-            <p>If we transfer your personal information out of Europe, we will rely on recognized transfer mechanisms like the European Commission's Standard Contractual Clauses, or any equivalent contracts issued by the relevant competent authority of the UK, as relevant, unless the data transfer is to a country that has been determined to provide an adequate level of protection.</p>
+            <p>If we transfer your personal information out of Europe, we will rely on recognized transfer mechanisms like the European Commission&#39;s Standard Contractual Clauses, or any equivalent contracts issued by the relevant competent authority of the UK, as relevant, unless the data transfer is to a country that has been determined to provide an adequate level of protection.</p>
             <br />
             <p>Contact</p>
             <br />
