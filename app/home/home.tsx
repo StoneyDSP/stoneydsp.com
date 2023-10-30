@@ -58,6 +58,8 @@ export default async function Home() {
             <a href="https://github.com/nathanjhood">
               <Image
                 src="https://github-readme-stats-two-lime-18.vercel.app/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true"
+                width={350}
+                height={311}
                 alt="StoneyDSP's Top Languages"
                 className="transition___shadow_off rounded-lg border hover:border-foreground"
               />
