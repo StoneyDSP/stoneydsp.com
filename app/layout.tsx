@@ -4,7 +4,7 @@ import Main from '@/components/elements/main/main'
 import { Analytics } from '@vercel/analytics/react'
 // import SupabaseProvider from '@/utils/supabase-provider'
 import { Metadata } from 'next'
-import '@/styles/global.css'
+import './globals.css'
 
 export default function RootLayout({
   // Layouts must accept a children prop.
@@ -37,15 +37,25 @@ export const metadata: Metadata  = {
   referrer: 'origin-when-cross-origin',
   authors: [{ name: 'Nathan', url: 'https://github.com/nathanjhood' }],
   metadataBase: new URL('https://www.stoneydsp.com'),
+  // icons: [
+  //   {
+  //     rel: "icon",
+  //     url: "https://example.com/icon.png"
+  //   },
+  //   {
+  //     rel: "apple-touch-icon",
+  //     url: "https://example.com/apple-icon.png"
+  //   }
+  // ],
   alternates: {
     canonical: '/',
-    languages: {
-      'en-GB': '/en-GB',
+    // languages: {
+      // 'en-GB': '/en-GB',
       // 'en-US': '/en-US',
       // 'es-ES': '/es-ES',
       // 'de-DE': '/de-DE',
       // 'fr-FR': '/fr-FR',
-    },
+    // },
   },
   openGraph: {
     title: 'StoneyDSP.com',
