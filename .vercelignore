@@ -8,3 +8,5 @@ headers.md
 _logs
 _utils
 yarn.lock
+!*.png
+!*.ico

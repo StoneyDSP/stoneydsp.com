@@ -2,6 +2,7 @@ import { Header, Footer, Main } from '@/components/elements'
 import { Analytics } from '@vercel/analytics/react'
 // import SupabaseProvider from '@/utils/supabase-provider'
 import { Metadata } from 'next'
+// import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
 
 export default function RootLayout({
@@ -13,13 +14,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="text-foreground bg-background">
         {/* <SupabaseProvider> */}
         <Header title={'Home'} />
         <Main>
           {children}
         </Main>
         <Footer />
+        {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
         <Analytics />
         {/* </SupabaseProvider> */}
       </body>
