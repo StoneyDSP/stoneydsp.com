@@ -100,6 +100,7 @@ export default async function GitHubIcons() {
     <div>
       {iconsGitHub.map(({ title, viewBox, path }) => (
       <svg
+        key={title}
         data-testid={title}
         className="icon"
         viewBox={viewBox}

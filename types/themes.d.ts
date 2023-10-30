@@ -1,4 +1,4 @@
-type ThemeNames = keyof typeof import('./themes')
+type ThemeNames = keyof typeof import('@/_utils/themes/themes')
 type RankIcon = "default" | "github" | "percentile"
 
 export type CommonOptions = {
