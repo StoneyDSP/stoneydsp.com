@@ -3,7 +3,6 @@
   "description": "StoneyDSP Official Website",
   "author": "StoneyDSP",
   "license": "MIT",
-  "icon": "./app/favicon.ico",
   "homepage": "https://github.com/StoneyDSP/stoneydsp.com#readme",
   "readme": "README.md",
   "repository": {
