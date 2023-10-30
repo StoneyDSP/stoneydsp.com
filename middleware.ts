@@ -31,9 +31,9 @@ export async function middleware(req: NextRequest) {
   const agent = (req.headers.get('user-agent')) || 'Agent Unknown'
 
   if (isbot(req.headers.get('user-agent'))) {
-    console.log(`Bot ${ip} ${agent} crawling from ${city}, ${region}, ${country}`)
+    console.log(`Bot ${ip} crawling from ${city}, ${region}, ${country} with ${agent}`)
   } else {
-    console.log(`User ${ip} ${agent} visiting from ${city}, ${region}, ${country}`)
+    console.log(`User ${ip} visiting from ${city}, ${region}, ${country} with ${agent} `)
   }
 
   // if user is not signed in and the current path is not '/login',
