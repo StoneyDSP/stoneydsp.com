@@ -4,4 +4,14 @@
 	"deno.enablePaths": ["./supabase/functions"],
 	"deno.importMap": "./supabase/functions/import_map.json",
   "eslint.enable": true,
+	"eslint.validate": [
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact"
+	],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }

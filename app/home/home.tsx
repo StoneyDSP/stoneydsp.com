@@ -8,7 +8,7 @@ import {
   FlexColCenter
 } from '@/components/layouts'
 
-import { headers } from 'next/headers'
+// import { headers } from 'next/headers'
 
 import styles from './home.module.css'
 
@@ -16,14 +16,14 @@ export const dynamic = 'force-dynamic'
 
 export default async function Home() {
 
-  const nonce = headers().get('x-nonce')
+  // const nonce = headers().get('x-nonce')
 
   return (
     <div className={styles.container}>
 
       <div className={styles.content}>
 
-        <div className="flex flex-col gap-8 text-foreground">
+        <div className="flex flex-col gap-8 bg-background text-foreground">
 
           <HRGradient />
 
