@@ -2,6 +2,7 @@ import { Header, Footer, Main } from '@/components/elements'
 import { Analytics } from '@vercel/analytics/react'
 // import Favicon from '@/app/favicon.ico'
 import { Metadata } from 'next'
+import { Suspense } from 'react'
 // import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
 
@@ -15,11 +16,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="text-foreground bg-background">
-        <Header title={'Home'} />
-        <Main>
-          {children}
-        </Main>
-        <Footer />
+        <Suspense>
+          <Header title={'Home'} />
+          <Main>
+            {children}
+          </Main>
+          <Footer />
+        </Suspense>
         {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
         <Analytics />
       </body>
