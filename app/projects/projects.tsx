@@ -4,7 +4,7 @@ import {
   BackToHome
 } from '@/components/layouts'
 import RepoCards from '@/components/cards/RepoCards/RepoCards'
-import styles from './projects.module.css'
+import styles from '@/app/projects/projects.module.css'
 
 export const dynamic = 'force-dynamic'
 

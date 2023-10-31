@@ -4,7 +4,7 @@ import {
   BackToHome
 } from '@/components/layouts'
 // import '@/app/globals.css'
-import styles from '@/app/projects/biquads/mdx.module.css'
+import styles from '@/app/projects/cxxwin/cxxwin.module.css'
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
   // Create any shared layout or styles here
