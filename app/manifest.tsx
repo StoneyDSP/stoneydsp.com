@@ -4,6 +4,11 @@ export default function webmanifest(): MetadataRoute.Manifest {
   return {
     name: "StoneyDSP",
     short_name: "StoneyDSP",
+    description: 'Systems, Web, Audio & Graphics',
+    start_url: '/',
+    theme_color: "#000000",
+    background_color: "#000000",
+    display: "standalone",
     icons: [
       {
         src: "https://www.stoneydsp.com/favicon/android-icon-36x36.png",
@@ -46,8 +51,5 @@ export default function webmanifest(): MetadataRoute.Manifest {
         type: "image/png"
       }
     ],
-    theme_color: "#000000",
-    background_color: "#000000",
-    display: "standalone",
   }
 }
