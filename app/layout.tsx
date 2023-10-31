@@ -1,6 +1,6 @@
 import { Header, Footer, Main } from '@/components/elements'
 import { Analytics } from '@vercel/analytics/react'
-// import SupabaseProvider from '@/utils/supabase-provider'
+import Favicon from '@/app/favicon.ico'
 import { Metadata } from 'next'
 // import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
@@ -39,13 +39,14 @@ export const metadata: Metadata  = {
   referrer: 'origin-when-cross-origin',
   authors: [{ name: 'Nathan', url: 'https://github.com/nathanjhood' }],
   metadataBase: new URL('https://www.stoneydsp.com'),
-  manifest: "https://www.stoneydsp.com/manifest.json",
+  manifest: "https://www.stoneydsp.com/manifest.webmanifest",
   verification: {
     google: "U222mQRVBnX_8XrWZU9c6ETanVW8lFK6jvhJFQwtcdE",
   },
   other: {
     "google-site-verification": "RGeh6hqM-ZZ-p0iM4G9NekMKA5RJmK-3qsmVmghRA6o"
   },
+  icons: [{ rel: 'icon', url: Favicon.src }],
   // icons: [
   //   {
   //     rel: "icon",
