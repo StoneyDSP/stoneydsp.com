@@ -1,26 +1,11 @@
-// import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
 import { NextResponse } from 'next/server'
-
 import isbot from 'isbot'
 
 import type { NextRequest } from 'next/server'
-import type { Database } from './types_db'
 
 export async function middleware(req: NextRequest) {
 
   const res = NextResponse.next()
-
-  // // Create a Supabase client configured to use cookies
-  // const supabase = createMiddlewareClient<Database>({ req, res })
-
-  // // Refresh session if expired - required for Server Components
-  // // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
-  // await supabase.auth.getSession()
-
-  // // Extract user info
-  // const {
-  //   data: { user },
-  // } = await supabase.auth.getUser()
 
   // Extract visitor info. This can be moved below the login check to prevent
   // double-logging if preferred.
@@ -42,9 +27,9 @@ export async function middleware(req: NextRequest) {
   //   return NextResponse.redirect(new URL('/login', req.url))
   // }
 
-  return res
+  // return res
 
-//   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
+  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
 //   const cspHeader = `
 //     default-src 'self';
 //     script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
@@ -60,22 +45,33 @@ export async function middleware(req: NextRequest) {
 //     upgrade-insecure-requests;
 // `
 
-//   const requestHeaders = new Headers(req.headers)
-//   requestHeaders.set('x-nonce', nonce)
-//   requestHeaders.set(
-//     'Content-Security-Policy',
-//     // Replace newline characters and spaces
-//     cspHeader.replace(/\s{2,}/g, ' ').trim()
-//   )
+  const requestHeaders = new Headers(req.headers)
+  requestHeaders.set('x-nonce', nonce)
+  // requestHeaders.set(
+  //   'Content-Security-Policy',
+  //   // Replace newline characters and spaces
+  //   cspHeader.replace(/\s{2,}/g, ' ').trim()
+  // )
+  requestHeaders.set('Access-Control-Allow-Origin', '*')
 //   requestHeaders.set('Access-Control-Allow-Origin', 'vitals.vercel-insights.com')
-//   requestHeaders.set('Access-Control-Allow-Origin', 'github-readme-stats-two-lime-18.vercel.app')
+  requestHeaders.set('Access-Control-Allow-Origin', 'github-readme-stats-two-lime-18.vercel.app')
+  requestHeaders.set('Referrer-Policy', 'origin-when-cross-origin')
 
-//   return NextResponse.next({
-//     headers: requestHeaders,
-//     request: {
-//       headers: requestHeaders,
-//     },
-//   })
+  requestHeaders.set('X-DNS-Prefetch-Control', 'on')
+  requestHeaders.set('X-XSS-Protection', '1; mode=block')
+  requestHeaders.set('X-Frame-Options', 'DENY')
+  requestHeaders.set('X-Content-Type-Options', 'nosniff')
+
+  requestHeaders.set('X-Robots-Tag', 'all')
+  requestHeaders.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
+  requestHeaders.set('X-Frame-Options', 'DENY')
+
+  return NextResponse.next({
+    headers: requestHeaders,
+    request: {
+      headers: requestHeaders,
+    },
+  })
 }
 
 export const config = {
