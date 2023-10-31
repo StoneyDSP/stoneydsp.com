@@ -39,7 +39,7 @@ export const metadata: Metadata  = {
   referrer: 'origin-when-cross-origin',
   authors: [{ name: 'Nathan', url: 'https://github.com/nathanjhood' }],
   metadataBase: new URL('https://www.stoneydsp.com'),
-  manifest: "https://www.stoneydsp.com/manifest.json",
+  manifest: "https://www.stoneydsp.com/manifest.webmanifest",
   verification: {
     google: "U222mQRVBnX_8XrWZU9c6ETanVW8lFK6jvhJFQwtcdE",
   },
