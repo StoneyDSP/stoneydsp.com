@@ -57,7 +57,7 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="flex justify-center text-foreground text-center text-xs py-2">
+      {/* <div className="flex justify-center text-foreground text-center text-xs py-2">
         <p className="text-foreground bg-background">
           <small>{' '}</small>
           <Link
@@ -67,7 +67,7 @@ export default function Footer() {
             <small>Sitemap</small>
           </Link>
         </p>
-      </div>
+      </div> */}
 
       <div className="flex flex-row justify-center text-foreground text-center text-xs py-2">
         <p className="text-foreground bg-background">
