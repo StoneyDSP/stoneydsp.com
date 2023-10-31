@@ -5,8 +5,6 @@ import type { NextRequest } from 'next/server'
 
 export async function middleware(req: NextRequest) {
 
-  const res = NextResponse.next()
-
   // Extract visitor info. This can be moved below the login check to prevent
   // double-logging if preferred.
   const country = (req.geo && req.geo.country) || 'Earth'
@@ -26,8 +24,6 @@ export async function middleware(req: NextRequest) {
   // if (!user && req.nextUrl.pathname !== '/login') {
   //   return NextResponse.redirect(new URL('/login', req.url))
   // }
-
-  // return res
 
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
 //   const cspHeader = `
@@ -66,12 +62,14 @@ export async function middleware(req: NextRequest) {
   requestHeaders.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
   requestHeaders.set('X-Frame-Options', 'DENY')
 
-  return NextResponse.next({
+  const res = NextResponse.next({
     headers: requestHeaders,
     request: {
       headers: requestHeaders,
     },
   })
+
+  return res
 }
 
 export const config = {
