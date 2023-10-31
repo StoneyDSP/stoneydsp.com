@@ -1,6 +1,6 @@
 import { Header, Footer, Main } from '@/components/elements'
 import { Analytics } from '@vercel/analytics/react'
-// import SupabaseProvider from '@/utils/supabase-provider'
+import Favicon from '@/app/favicon.ico'
 import { Metadata } from 'next'
 // import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
@@ -46,6 +46,7 @@ export const metadata: Metadata  = {
   other: {
     "google-site-verification": "RGeh6hqM-ZZ-p0iM4G9NekMKA5RJmK-3qsmVmghRA6o"
   },
+  icons: [{ rel: 'icon', url: Favicon.src }],
   // icons: [
   //   {
   //     rel: "icon",
