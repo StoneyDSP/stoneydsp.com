@@ -39,6 +39,13 @@ export const metadata: Metadata  = {
   referrer: 'origin-when-cross-origin',
   authors: [{ name: 'Nathan', url: 'https://github.com/nathanjhood' }],
   metadataBase: new URL('https://www.stoneydsp.com'),
+  manifest: "https://www.stoneydsp.com/manifest.json",
+  verification: {
+    google: "U222mQRVBnX_8XrWZU9c6ETanVW8lFK6jvhJFQwtcdE",
+  },
+  other: {
+    "google-site-verification": "RGeh6hqM-ZZ-p0iM4G9NekMKA5RJmK-3qsmVmghRA6o"
+  },
   // icons: [
   //   {
   //     rel: "icon",
@@ -125,21 +132,23 @@ export const metadata: Metadata  = {
       },
     ],
   },
-  robots: {
-    index: false,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: false,
-      noimageindex: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+  // robots: {
+  //   index: false,
+  //   follow: true,
+  //   nocache: true,
+  //   googleBot: {
+  //     index: true,
+  //     follow: false,
+  //     noimageindex: true,
+  //     'max-video-preview': -1,
+  //     'max-image-preview': 'large',
+  //     'max-snippet': -1,
+  //   },
+  // },
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'cyan' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" }
+    // { media: '(prefers-color-scheme: light)', color: 'cyan' },
+    // { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
 }
