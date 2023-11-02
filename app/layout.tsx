@@ -69,10 +69,10 @@ export const metadata: Metadata  = {
     // },
   },
   openGraph: {
-    title: 'StoneyDSP.com',
+    title: 'StoneyDSP',
     description: 'Systems, Web, Audio & Graphics',
+    siteName: 'stoneydsp.com',
     url: 'https://www.stoneydsp.com',
-    siteName: 'StoneyDSP.com',
     images: [
       {
         url: '/images/w_icon__196x128.png',
@@ -141,7 +141,7 @@ export const metadata: Metadata  = {
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: '/images/favicon/android-chrome-512x512',
+        url: '/images/favicon/android-chrome-512x512.png',
         width: '512',
         height: '512',
         type: 'image/png',
@@ -153,7 +153,7 @@ export const metadata: Metadata  = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'StoneyDSP.com',
+    title: 'StoneyDSP',
     description: 'Systems, Web, Audio & Graphics',
     siteId: '1467726470533754880',
     site: 'https://www.stoneydsp.com',
