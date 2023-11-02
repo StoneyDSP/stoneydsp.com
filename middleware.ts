@@ -5,6 +5,8 @@ import type { NextRequest } from 'next/server'
 
 export async function middleware(req: NextRequest) {
 
+  const res = NextResponse.next()
+
   // Extract visitor info. This can be moved below the login check to prevent
   // double-logging if preferred.
   const country = (req.geo && req.geo.country) || 'Earth'
@@ -24,9 +26,7 @@ export async function middleware(req: NextRequest) {
   // if (!user && req.nextUrl.pathname !== '/login') {
   //   return NextResponse.redirect(new URL('/login', req.url))
   // }
-
-  const res = NextResponse.next()
-
+  
   return res
 }
 
