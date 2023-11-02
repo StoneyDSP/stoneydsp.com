@@ -72,6 +72,7 @@ export const metadata: Metadata  = {
     title: 'StoneyDSP',
     description: 'Systems, Web, Audio & Graphics',
     siteName: 'stoneydsp.com',
+    url: 'https://www.stoneydsp.com',
     images: [
       {
         url: 'https://www.stoneydsp.com/images/w_icon__196x128.png',
