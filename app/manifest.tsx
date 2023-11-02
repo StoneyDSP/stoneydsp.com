@@ -41,7 +41,7 @@ export default function webmanifest(): MetadataRoute.Manifest {
         type: 'image/png',
       },
       {
-        src: 'https://www.stoneydsp.com/images/favicon/android-chrome-512x512',
+        src: 'https://www.stoneydsp.com/images/favicon/android-chrome-512x512.png',
         sizes: '512x512',
         type: 'image/png',
       },

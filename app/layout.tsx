@@ -141,7 +141,7 @@ export const metadata: Metadata  = {
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: 'https://www.stoneydsp.com/images/favicon/android-chrome-512x512',
+        url: 'https://www.stoneydsp.com/images/favicon/android-chrome-512x512.png',
         width: '512',
         height: '512',
         type: 'image/png',
