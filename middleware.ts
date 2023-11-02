@@ -26,7 +26,7 @@ export async function middleware(req: NextRequest) {
   // if (!user && req.nextUrl.pathname !== '/login') {
   //   return NextResponse.redirect(new URL('/login', req.url))
   // }
-  
+
   return res
 }
 
