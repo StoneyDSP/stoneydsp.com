@@ -11,45 +11,155 @@ export default function webmanifest(): MetadataRoute.Manifest {
     display: "standalone",
     icons: [
       {
-        src: "https://www.stoneydsp.com/favicon/android-icon-36x36.png",
+        src: "https://www.stoneydsp.com/images/favicon/android-icon-36x36.png",
         sizes: "36x36",
         type: "image/png",
-        // density: "0.75"
       },
       {
-        src: "https://www.stoneydsp.com/favicon/android-icon-48x48.png",
+        src: "https://www.stoneydsp.com/images/favicon/android-icon-48x48.png",
         sizes: "48x48",
         type: "image/png",
-        // density: "1.0"
       },
       {
-        src: "https://www.stoneydsp.com/favicon/android-icon-72x72.png",
+        src: "https://www.stoneydsp.com/images/favicon/android-icon-72x72.png",
         sizes: "72x72",
         type: "image/png",
-        // density: "1.5"
       },
       {
-        src: "https://www.stoneydsp.com/favicon/android-icon-96x96.png",
+        src: "https://www.stoneydsp.com/images/favicon/android-icon-96x96.png",
         sizes: "96x96",
         type: "image/png",
-        // density: "2.0"
       },
       {
-        src: "https://www.stoneydsp.com/favicon/android-icon-144x144.png",
-        sizes: "144x144",
-        type: "image/png",
-        // density: "3.0"
+        src: 'https://www.stoneydsp.com/images/favicon/android-icon-144x144.png',
+        sizes: '144x144',
+        type: 'image/png',
       },
       {
-        src: "https://www.stoneydsp.com/favicon/android-chrome-192x192.png",
-        sizes: "192x192",
-        type: "image/png"
+        src: 'https://www.stoneydsp.com/images/favicon/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
       },
       {
-        src: "https://www.stoneydsp.com/favicon/android-chrome-512x512.png",
-        sizes: "512x512",
-        type: "image/png"
-      }
+        src: 'https://www.stoneydsp.com/images/favicon/android-chrome-512x512',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon__32x32.ico',
+        sizes: '32x32',
+        type: 'image/x-icon'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon__48x48.ico',
+        sizes: '48x48',
+        type: 'image/x-icon'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon__64x64.ico',
+        sizes: '64x64',
+        type: 'image/x-icon'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon__96x96.ico',
+        sizes: '96x96',
+        type: 'image/x-icon'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon__144x144.ico',
+        sizes: '144x144',
+        type: 'image/x-icon'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon__168x168.ico',
+        sizes: '168x168',
+        type: 'image/x-icon'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon__256x256.ico',
+        sizes: '256x256',
+        type: 'image/x-icon'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon__512x512.ico',
+        sizes: '512x512',
+        type: 'image/x-icon'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon-32x32.png',
+        sizes: '32x32',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon-48x48.png',
+        sizes: '48x48',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon-64x64.png',
+        sizes: '64x64',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon-96x96.png',
+        sizes: '96x96',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon-144x144.png',
+        sizes: '144x144',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon-168x168.png',
+        sizes: '168x168',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon-256x256.png',
+        sizes: '256x256',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/favicon-512x512.png',
+        sizes: '512x512',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/ms-icon-70x70.png',
+        sizes: '70x70',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/ms-icon-150x150.png',
+        sizes: '150x150',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/favicon/ms-icon-310x310.png',
+        sizes: '310x310',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/w_icon__196x128.png',
+        sizes: '196x128',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/w_icon__384x256.png',
+        sizes: '384x256',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/w_icon__768x512.png',
+        sizes: '768x512',
+        type: 'image/png'
+      },
+      {
+        src: 'https://www.stoneydsp.com/images/w_icon__1024x768.png',
+        sizes: '1024x768',
+        type: 'image/png'
+      },
     ],
   }
 }
