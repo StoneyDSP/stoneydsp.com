@@ -47,7 +47,7 @@ export async function middleware(req: NextRequest) {
 
   // Setting request headers
   requestHeaders.set('x-nonce', nonce)
-  requestHeaders.set('Strict-Transport-Security', 'max-age=300; includeSubDomains; preload')
+  requestHeaders.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
   // requestHeaders.set(
   //   'Content-Security-Policy',
   //   // Replace newline characters and spaces
