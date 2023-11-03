@@ -24,7 +24,7 @@ async function generate() {
 				//   .replace('.mdx', '');
 					.replace('app', '')
 					.replace('.tsx', '')
-					.replace('page', '');
+					// .replace('/page', '');
 				const route = path === '/page' ? '' : path;
 
 				return `
@@ -46,22 +46,22 @@ async function generate() {
    *
    * this points to www and docs sitemaps
    */
-//   const sitemapRouter = `<?xml version="1.0" encoding="UTF-8"?>
-// <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-//   <sitemap>
-//     <loc>https://stoneydsp.com/www_sitemap.xml</loc>
-//   </sitemap>
-//   <sitemap>
-//     <loc>https://stoneydsp.com/sitemap.xml</loc>
-//   </sitemap>
-// </sitemapindex>
-// `
+  const sitemapRouter = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://stoneydsp.com/www_sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://stoneydsp.com/sitemap.xml</loc>
+  </sitemap>
+</sitemapindex>
+`
 
 	/**
    	* write sitemaps
    	*/
   	// eslint-disable-next-line no-sync
-  	// writeFileSync('public/sitemap.xml', sitemapRouter)
+  	writeFileSync('public/sitemap.xml', sitemapRouter)
   	// eslint-disable-next-line no-sync
   	writeFileSync('public/www_sitemap.xml', formatted)
 
