@@ -1,3 +1,15 @@
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import {
+  HRGradient,
+  TextLargeBoldCenter,
+  BackToHome
+} from '@/components/layouts'
+// import '@/app/globals.css'
+import styles from '@/app/projects/cxxwin/cxxwin.module.css'
+
+export default async function CxxwinContent() {
+  // MDX text - can be from a local file, database, CMS, fetch, anywhere...
+  const markdown = `
 # CxxWin
 
 ![Win-Msys2-UCRT64](https://github.com/StoneyDSP/CxxWin/actions/workflows/MSYS_UCRT64.yml/badge.svg)
@@ -66,3 +78,27 @@ BONUS 2: Additional support for CMake builds, making the configure/build process
 - <a href="https://github.com/juce-framework/JUCE.git">JUCE Framework</a>
 
 - <a href="https://www.msys2.org/docs/environments/">Msys64 subsystems</a>
+  `
+  
+  return (
+    <div className={styles.container}>
+
+      <div className={styles.content}>
+
+        <div className="flex flex-col gap-8 bg-background text-foreground">
+
+          <HRGradient />
+
+          <MDXRemote source={markdown} />
+
+          <HRGradient />
+
+          <BackToHome />
+
+          <HRGradient />
+
+        </div>
+      </div>
+    </div>
+  )
+}

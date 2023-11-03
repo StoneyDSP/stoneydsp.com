@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Biquads',
+  description: 'Simple two-pole equalizer with variable oversampling.',
 }
 
 export default async function BiquadsPage() {
