@@ -8,7 +8,7 @@ import styles from '@/app/projects/ubento/ubento.module.css'
 
 export default async function UbentoContent() {
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
-  const res = await fetch('https://raw.githubusercontent.com/nathanjhood/ubento/main/README.md')
+  const res = await fetch('https://raw.githubusercontent.com/nathanjhood/UBento/main/README.md')
   const markdown = await res.text()
   return (
     <div className={styles.container}>
