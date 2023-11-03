@@ -13,6 +13,8 @@ export default async function MsystoolchainContent() {
   const markdown = `
 # MSYS2 toolchain
 
+[![MSYS2-Toolchain](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=MSYS2-Toolchain\&theme=transparent)](https://github.com/StoneyDSP/MSYS2-Toolchain)
+
 <i>The below is quoted from <a href="https://www.msys2.org/license/">https://www.msys2.org/license/</a></i>
 
 "MSYS2 is a software distribution consisting of several independent parts, each with their own licenses, comparable to a Linux distribution.
