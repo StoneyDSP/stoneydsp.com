@@ -8,6 +8,8 @@ import {
   FlexColCenter
 } from '@/components/layouts'
 
+import Image from 'next/image'
+
 // import { headers } from 'next/headers'
 
 import styles from './home.module.css'
@@ -33,10 +35,10 @@ export default async function Home() {
 
           <HRGradient />
 
-          <FlexColCenter>
+          {/* <FlexColCenter>
             <a href="https://github.com/nathanjhood">
-              <img
-                src="https://github-readme-stats-two-lime-18.vercel.app/api?username=nathanjhood&show_icons=true&theme=transparent&border_radius=0&hide_border=true"
+              <Image
+                src="https://gh-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&theme=transparent&border_radius=0&hide_border=true"
                 alt="StoneyDSP's GitHub stats"
                 className="transition___shadow_off rounded-lg border hover:border-foreground"
               />
@@ -49,7 +51,7 @@ export default async function Home() {
             Welcome to my workbench.
           </TextLargeBoldCenter>
 
-          <HRGradient />
+          <HRGradient /> */}
 
           <ResourceCards />
 
@@ -57,10 +59,10 @@ export default async function Home() {
 
           <HRGradient />
 
-          <FlexColCenter>
+          {/* <FlexColCenter>
             <a href="https://github.com/nathanjhood">
-              <img
-                src="https://github-readme-stats-two-lime-18.vercel.app/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true"
+              <Image
+                src="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true"
                 width={350}
                 height={311}
                 alt="StoneyDSP's Top Languages"
@@ -69,7 +71,7 @@ export default async function Home() {
             </a>
           </FlexColCenter>
 
-          <HRGradient />
+          <HRGradient /> */}
 
           <TextLargeBoldCenter>
             Here are some examples of my work:
