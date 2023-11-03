@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'UBento',
 }
 
-export default async function BiquadsPage() {
+export default async function UbentoPage() {
   return (
     <UbentoContent />
   )
