@@ -10,7 +10,7 @@ import styles from '@/app/projects/msys2-toolchain/msys2-toolchain.module.css'
 export default async function MsystoolchainContent() {
 
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
-  const res = await fetch('@/markdown/projects/msys2-toolchain.mdx')
+  const res = await fetch('/markdown/projects/msys2-toolchain.mdx')
   const markdown = await res.text()
 
   return (

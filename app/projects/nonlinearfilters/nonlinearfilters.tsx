@@ -9,7 +9,7 @@ import styles from '@/app/projects/nonlinearfilters/nonlinearfilters.module.css'
 
 export default async function NonlinearfiltersContent() {
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
-  const res = await fetch('@/markdown/projects/nonlinearfilters.mdx')
+  const res = await fetch('/markdown/projects/nonlinearfilters.mdx')
   const markdown = await res.text()
 
   return (

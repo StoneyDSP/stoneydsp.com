@@ -9,7 +9,7 @@ import styles from '@/app/projects/cxxwin/cxxwin.module.css'
 
 export default async function CxxwinContent() {
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
-  const res = await fetch('@/public/markdown/projects/cxxwin.mdx')
+  const res = await fetch('/markdown/projects/cxxwin.mdx')
   const markdown = await res.text()
   
   return (

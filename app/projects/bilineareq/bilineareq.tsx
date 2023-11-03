@@ -10,7 +10,7 @@ import styles from '@/app/projects/bilineareq/bilineareq.module.css'
 export default async function BilineareqContent() {
 
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
-  const res = await fetch('@/markdown/projects/bilineareq.mdx')
+  const res = await fetch('/markdown/projects/bilineareq.mdx')
   const markdown = await res.text()
 
   return (

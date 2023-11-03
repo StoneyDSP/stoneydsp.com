@@ -9,7 +9,7 @@ import styles from '@/app/projects/orfanidisbiquad/orfanidisbiquad.module.css'
 
 export default async function OrfanidisbiquadContent() {
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
-  const res = await fetch('@/public/markdown/projects/orfanidisbiquad.mdx')
+  const res = await fetch('/markdown/projects/orfanidisbiquad.mdx')
   const markdown = await res.text()
   return (
     <div className={styles.container}>

@@ -10,7 +10,7 @@ import styles from '@/app/projects/audioplugin-svf/audioplugin-svf.module.css'
 export default async function AudiopluginsvfContent() {
   
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
-  const res = await fetch('@/markdown/projects/audioplugin-svf.mdx')
+  const res = await fetch('/markdown/projects/audioplugin-svf.mdx')
   const markdown = await res.text()
 
   return (
