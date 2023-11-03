@@ -8,6 +8,8 @@ import {
   FlexColCenter
 } from '@/components/layouts'
 
+import Image from 'next/image'
+
 // import { headers } from 'next/headers'
 
 import styles from './home.module.css'
@@ -35,7 +37,7 @@ export default async function Home() {
 
           <FlexColCenter>
             <a href="https://github.com/nathanjhood">
-              <img
+              <Image
                 src="https://github-readme-stats-two-lime-18.vercel.app/api?username=nathanjhood&show_icons=true&theme=transparent&border_radius=0&hide_border=true"
                 alt="StoneyDSP's GitHub stats"
                 className="transition___shadow_off rounded-lg border hover:border-foreground"
@@ -59,7 +61,7 @@ export default async function Home() {
 
           <FlexColCenter>
             <a href="https://github.com/nathanjhood">
-              <img
+              <Image
                 src="https://github-readme-stats-two-lime-18.vercel.app/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true"
                 width={350}
                 height={311}
