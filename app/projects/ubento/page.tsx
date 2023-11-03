@@ -1,7 +1,7 @@
 import UbentoContent from '@/app/projects/ubento/ubento'
 import { Metadata } from 'next'
 
-export const dynamic = 'Simple two-pole equalizer with variable oversampling.'
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'UBento',
