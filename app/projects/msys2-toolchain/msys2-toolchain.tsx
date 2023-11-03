@@ -1,3 +1,4 @@
+import { MDXRemote } from 'next-mdx-remote/rsc'
 import {
   HRGradient,
   TextLargeBoldCenter,
@@ -6,8 +7,12 @@ import {
 // import '@/app/globals.css'
 import styles from '@/app/projects/msys2-toolchain/msys2-toolchain.module.css'
 
-export default function MdxLayout({ children }: { children: React.ReactNode }) {
-  // Create any shared layout or styles here
+export default async function MsystoolchainContent() {
+
+  // MDX text - can be from a local file, database, CMS, fetch, anywhere...
+  const res = await fetch('@/markdown/projects/msys2-toolchain.mdx')
+  const markdown = await res.text()
+
   return (
     <div className={styles.container}>
 
@@ -15,9 +20,9 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
 
         <div className="flex flex-col gap-8 bg-background text-foreground">
 
-          <div>
-            {children}
-          </div>
+          <HRGradient />
+
+          <MDXRemote source={markdown} />
 
           <HRGradient />
 
