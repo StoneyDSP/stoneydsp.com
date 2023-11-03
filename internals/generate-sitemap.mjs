@@ -24,7 +24,7 @@ async function generate() {
 				//   .replace('.mdx', '');
 					.replace('app', '')
 					.replace('.tsx', '')
-					// .replace('/page', '');
+					.replace('/page', '');
 				const route = path === '/page' ? '' : path;
 
 				return `
