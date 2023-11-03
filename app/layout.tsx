@@ -44,9 +44,9 @@ export const metadata: Metadata  = {
   verification: {
     google: "U222mQRVBnX_8XrWZU9c6ETanVW8lFK6jvhJFQwtcdE",
   },
-  other: {
-    "google-site-verification": "RGeh6hqM-ZZ-p0iM4G9NekMKA5RJmK-3qsmVmghRA6o"
-  },
+  // other: {
+  //   "google-site-verification": "RGeh6hqM-ZZ-p0iM4G9NekMKA5RJmK-3qsmVmghRA6o"
+  // },
   // icons: [{ rel: 'icon', url: Favicon.src }],
   // icons: [
   //   {
