@@ -12,6 +12,8 @@ export default async function CxxwinContent() {
   const markdown = `
 # CxxWin
 
+[![CxxWin](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=CxxWin\&theme=transparent)](https://github.com/StoneyDSP/CxxWin)
+
 ![Win-Msys2-UCRT64](https://github.com/StoneyDSP/CxxWin/actions/workflows/MSYS_UCRT64.yml/badge.svg)
 ![Win-Msys2-MINGW64](https://github.com/StoneyDSP/CxxWin/actions/workflows/MSYS_MINGW64.yml/badge.svg)
 ![Win-Msys2-CLANG64](https://github.com/StoneyDSP/CxxWin/actions/workflows/MSYS_CLANG64.yml/badge.svg)

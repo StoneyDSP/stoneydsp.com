@@ -11,7 +11,9 @@ export default async function BilineareqContent() {
 
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
   const markdown = `
-# Manual - v1.0.0b
+# BiLinearEQ
+
+[![BiLinearEQ](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=BiLinearEQ\&theme=transparent)](https://github.com/nathanjhood/BiLinearEQ)
 
 + coming soon!
 
