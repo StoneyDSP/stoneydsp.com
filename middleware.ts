@@ -30,9 +30,10 @@ export async function middleware(req: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+    connext-src 'self' vitals.vercel-insights.com;
+    script-src 'self' gh-readme-stats.stoneydsp.com 'nonce-${nonce}' 'strict-dynamic';
     style-src 'self' 'nonce-${nonce}';
-    img-src 'self' blob: data:;
+    img-src 'self' gh-readme-stats.stoneydsp.com blob: data:;
     font-src 'self';
     object-src 'none';
     base-uri 'self';
@@ -47,11 +48,16 @@ export async function middleware(req: NextRequest) {
   // Setting request headers
   requestHeaders.set('x-nonce', nonce)
   requestHeaders.set('Strict-Transport-Security', 'max-age=300; includeSubDomains; preload')
+  // requestHeaders.set(
+  //   'Content-Security-Policy',
+  //   // Replace newline characters and spaces
+  //   cspHeader.replace(/\s{2,}/g, ' ').trim()
+  // )
   requestHeaders.set(
-    'Content-Security-Policy',
+    'Content-Security-Policy-Report-Only',
     // Replace newline characters and spaces
     cspHeader.replace(/\s{2,}/g, ' ').trim()
-  )
+    )
 
   return res({
     headers: requestHeaders,

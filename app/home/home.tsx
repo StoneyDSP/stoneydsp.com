@@ -35,7 +35,7 @@ export default async function Home() {
 
           <HRGradient />
 
-          <FlexColCenter>
+          {/* <FlexColCenter>
             <a href="https://github.com/nathanjhood">
               <Image
                 src="https://gh-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&theme=transparent&border_radius=0&hide_border=true"
@@ -51,7 +51,7 @@ export default async function Home() {
             Welcome to my workbench.
           </TextLargeBoldCenter>
 
-          <HRGradient />
+          <HRGradient /> */}
 
           <ResourceCards />
 
@@ -59,7 +59,7 @@ export default async function Home() {
 
           <HRGradient />
 
-          <FlexColCenter>
+          {/* <FlexColCenter>
             <a href="https://github.com/nathanjhood">
               <Image
                 src="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true"
@@ -71,7 +71,7 @@ export default async function Home() {
             </a>
           </FlexColCenter>
 
-          <HRGradient />
+          <HRGradient /> */}
 
           <TextLargeBoldCenter>
             Here are some examples of my work:
