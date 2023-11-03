@@ -9,8 +9,18 @@ import styles from '@/app/projects/nonlinearfilters/nonlinearfilters.module.css'
 
 export default async function NonlinearfiltersContent() {
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
-  const res = await fetch('/markdown/projects/nonlinearfilters.mdx')
-  const markdown = await res.text()
+  const markdown = `
+# Non-Linear Filters
+
++ Initial implementation of non-linear 1st- and 2nd- order filters are up and ready to go...
++ More coming soon!
+
+...stay tuned for more!
+
+I will try to take some breaks inbetween GUI work and other errands in order to provide some interesting write-ups on the core module at play here - and the many myriad use cases that module has ahead :) - but life is generally busy and I only do this in my spare time, so please stay tuned :)
+
+- Nathan (StoneyDSP) June 2022
+`
 
   return (
     <div className={styles.container}>
