@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server'
 
 export async function middleware(req: NextRequest) {
 
-  const res = NextResponse.next()
+  const res = NextResponse.next
 
   // Extract visitor info. This can be moved below the login check to prevent
   // double-logging if preferred.
@@ -27,7 +27,38 @@ export async function middleware(req: NextRequest) {
   //   return NextResponse.redirect(new URL('/login', req.url))
   // }
 
-  return res
+  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
+  const cspHeader = `
+    default-src 'self';
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+    style-src 'self' 'nonce-${nonce}';
+    img-src 'self' blob: data:;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    block-all-mixed-content;
+    upgrade-insecure-requests;
+  `
+
+  const requestHeaders = new Headers(req.headers)
+
+  // Setting request headers
+  requestHeaders.set('x-nonce', nonce)
+  requestHeaders.set('Strict-Transport-Security', 'max-age=300; includeSubDomains; preload')
+  requestHeaders.set(
+    'Content-Security-Policy',
+    // Replace newline characters and spaces
+    cspHeader.replace(/\s{2,}/g, ' ').trim()
+  )
+
+  return res({
+    headers: requestHeaders,
+    request: {
+      headers: requestHeaders,
+    },
+  })
 }
 
 export const config = {
