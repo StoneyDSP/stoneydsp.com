@@ -1,9 +1,11 @@
+import Link from 'next/link'
+
 export const resources = [
   {
     title: 'Read about my most popular projects',
     subtitle:
       'Here you will find my personal research and development of audio plugins.',
-    url: 'https://www.stoneydsp.com/nathanjhood',
+    url: 'https://www.stoneydsp.com/projects',
     icon: 'M7 4V20M17 4V20M3 8H7M17 8H21M3 12H21M3 16H7M17 16H21M4 20H20C20.5523 20 21 19.5523 21 19V5C21 4.44772 20.5523 4 20 4H4C3.44772 4 3 4.44772 3 5V19C3 19.5523 3.44772 20 4 20Z',
   },
   {
@@ -26,11 +28,11 @@ export default async function ResourceCards() {
   return (
     <div className="animate-in grid grid-cols-1 lg:grid-cols-3 gap-4">
       {resources.map(({ title, subtitle, url, icon }) => (
-        <a
+        <Link
           key={title}
           className="relative flex flex-col group rounded-lg border p-6 hover:border-foreground text-foreground transition___shadow_off"
           href={url}
-          target="_blank"
+          // target="_blank"
           rel="noreferrer"
         >
           <h3 className="font-bold mb-2 opacity-90 group-hover:opacity-100 min-h-[40px] lg:min-h-[60px]">
@@ -72,7 +74,7 @@ export default async function ResourceCards() {
               </svg>
             </div>
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   )
