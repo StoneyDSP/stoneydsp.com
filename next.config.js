@@ -12,7 +12,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'github-readme-stats-two-lime-18.vercel.app',
+        hostname: 'gh-readme-stats.stoneydsp.com',
         // port: '',
         pathname: '/**',
       },
