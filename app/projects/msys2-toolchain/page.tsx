@@ -1,7 +1,7 @@
 import MsystoolchainContent from '@/app/projects/msys2-toolchain/msys2-toolchain'
 import { Metadata } from 'next'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Msys2-Toolchain',

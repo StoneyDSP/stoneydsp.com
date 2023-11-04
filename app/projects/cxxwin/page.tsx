@@ -1,7 +1,7 @@
 import CxxwinContent from '@/app/projects/cxxwin/cxxwin'
 import { Metadata } from 'next'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'CxxWin',
