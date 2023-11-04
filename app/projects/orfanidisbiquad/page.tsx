@@ -1,7 +1,7 @@
 import OrfanidisbiquadContent from '@/app/projects/orfanidisbiquad/orfanidisbiquad'
 import { Metadata } from 'next'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Orfanidis Biquad',

@@ -1,7 +1,7 @@
 import BiquadsContent from '@/app/projects/biquads/biquads'
 import { Metadata } from 'next'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Biquads',
