@@ -1,7 +1,7 @@
 import AudiopluginsvfContent from '@/app/projects/audioplugin-svf/audioplugin-svf'
 import { Metadata } from 'next'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Audioplugin-SVF',
