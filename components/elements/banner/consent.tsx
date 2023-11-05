@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 export default function ConsentBanner() {
 
@@ -47,6 +48,14 @@ export default function ConsentBanner() {
       >
         Decline cookies
       </button>
+      <Analytics
+        beforeSend={(event) => {
+          if (localStorage.getItem('va-disable')) {
+            return null;
+          }
+          return event;
+        }}
+      />
     </div>
   )
 }
