@@ -1,7 +1,7 @@
 import Badge from '@/components/elements/badge/badge'
 
-import styles from './nav.module.css'
-import NavMenu from './menu/menu'
+// import styles from './nav.module.css'
+import NavMenu from '@/components/elements/nav/menu/menu'
 import Link from 'next/link'
 import { Suspense } from 'react'
 
@@ -9,7 +9,9 @@ export default async function Nav() {
 
 
   return (
-    <nav className={styles.nav}>
+    <nav 
+      // className={styles.nav}
+    >
       <div className="w-full max-w-4xl flex justify-between gap-8 items-center p-3 text-sm text-foreground">
         <Badge />
         <Suspense>
