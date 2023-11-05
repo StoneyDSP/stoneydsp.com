@@ -5,8 +5,18 @@
 @layer base {
 	:root {
 		--custom-font-size: calc((15.00px + 0.390625vw) * (15.00 / 18.00));
-		--custom-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-			Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+		--custom-font-family: 
+			-apple-system, 
+			BlinkMacSystemFont, 
+			'Segoe UI', 
+			Roboto,
+			Oxygen, 
+			Ubuntu, 
+			Cantarell, 
+			'Fira Sans', 
+			'Droid Sans', 
+			'Helvetica Neue', 
+			sans-serif;
 
 		--scrollbar-x__width: calc(100vh - (100vh - 100%));
     	--scrollbar-y__width: calc(100vw - (100vw - 100%));
@@ -196,7 +206,7 @@ header {
 
 	z-index: 500;
 	position: absolute;
-	width: var((100vw) - var(--scrollbar-x__width));
+	width: var(100vw - var(--scrollbar-x__width));
 }
 
 nav {
