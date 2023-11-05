@@ -1,4 +1,4 @@
-import { Header, Footer, Main } from '@/components/elements'
+import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
 import { Analytics } from '@vercel/analytics/react'
 // import Favicon from '@/app/favicon.ico'
 import { Metadata } from 'next'
@@ -21,10 +21,18 @@ export default function RootLayout({
           <Main>
             {children}
           </Main>
+          <ConsentBanner />
           <Footer />
         </Suspense>
         {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
-        <Analytics />
+        <Analytics
+          beforeSend={(event) => {
+            if (localStorage.getItem('va-disable')) {
+              return null;
+            }
+            return event;
+          }}
+        />
       </body>
     </html>
   )
