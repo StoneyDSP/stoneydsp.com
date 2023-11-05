@@ -1,4 +1,4 @@
-import type { IconSVG } from "../icons"
+import type { IconSVG } from '@/types'
 
 export const icons: IconSVG = [
   {
