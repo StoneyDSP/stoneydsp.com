@@ -1,4 +1,4 @@
-import styles from './main.module.css'
+// import styles from './main.module.css'
 
 export default function Main({
   // Layouts must accept a children prop.
@@ -9,10 +9,10 @@ export default function Main({
 }) {
 
   return (
-    <main className={styles.main}>
-
+    <main 
+      // className={styles.main}
+    >
       {children}
-
     </main>
   )
 }
