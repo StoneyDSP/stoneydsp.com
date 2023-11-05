@@ -204,8 +204,8 @@ header {
 	margin:  0px;
 	border-bottom: 1px solid var(--header-separator-color);
 
-	position: absolute;
-	width: auto;
+	/* position: absolute;
+	width: auto; */
 	z-index: calc(inherit + var(--z-index__scale-depth));
 }
 
