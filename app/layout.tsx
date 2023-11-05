@@ -1,5 +1,5 @@
 import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
-import { Analytics } from '@vercel/analytics/server'
+import Analytics from '@vercel/analytics'
 // import Favicon from '@/app/favicon.ico'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
