@@ -18,8 +18,8 @@
 			'Helvetica Neue', 
 			sans-serif;
 
-		--scrollbar-x__width: calc(100vh - (100vh - 100%));
-    	--scrollbar-y__width: calc(100vw - (100vw - 100%));
+		--scrollbar-x__width: calc(100vw - (100vw - 100%));
+    	--scrollbar-y__width: calc(100vh - (100vh - 100%));
 
 		/* Dimmed black & white to prevent screen reflecting light at user's eyes */
 		--color__black: hsl(0, 0%, 0.1%);
@@ -206,7 +206,7 @@ header {
 
 	z-index: 500;
 	position: absolute;
-	width: var(100vw - var(--scrollbar-x__width));
+	width: var(100vw - 100%);
 }
 
 nav {
