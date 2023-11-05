@@ -1,9 +1,11 @@
 import {
   HRGradient,
   TextLargeBoldCenter,
-  BackToHome
+  BackToHome,
+  FlexColCenter,
+  Ribbon
 } from '@/components/layouts'
-import Ribbon from '@/components/layouts/ribbon/ribbon'
+import Image from 'next/image'
 import styles from './about.module.css'
 
 export default async function About() {
@@ -24,9 +26,33 @@ export default async function About() {
 
           <HRGradient />
 
+          <FlexColCenter>
+            <a href="https://github.com/nathanjhood">
+              <Image
+                src="https://gh-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&theme=transparent&border_radius=0&hide_border=true"
+                alt="StoneyDSP's GitHub stats"
+                className="transition___shadow_off rounded-lg border hover:border-foreground"
+              />
+            </a>
+          </FlexColCenter>
+
           <HRGradient />
 
           <p>I am also a musician making Audio software plugins using a variety of languages and workflows.</p>
+
+          <HRGradient />
+
+          <FlexColCenter>
+            <a href="https://github.com/nathanjhood">
+              <Image
+                src="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true"
+                width={350}
+                height={311}
+                alt="StoneyDSP's Top Languages"
+                className="transition___shadow_off rounded-lg border hover:border-foreground"
+              />
+            </a>
+          </FlexColCenter>
 
           <HRGradient />
 
