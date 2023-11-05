@@ -1,5 +1,5 @@
-import { Header, Footer, Main } from '@/components/elements'
-import { Analytics } from '@vercel/analytics/react'
+import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
+// import { Analytics } from '@vercel/analytics/react'
 // import Favicon from '@/app/favicon.ico'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
@@ -20,12 +20,20 @@ export default function RootLayout({
           <Header title={'Home'} />
           <Main>
             {children}
+            <ConsentBanner />
           </Main>
           <Footer />
         </Suspense>
-        {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
-        <Analytics />
+        {/* <Analytics
+          beforeSend={(event) => {
+            if (localStorage.getItem('va-disable')) {
+              return null;
+            }
+            return event;
+          }}
+        /> */}
       </body>
+      {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
     </html>
   )
 }
