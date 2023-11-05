@@ -21,9 +21,9 @@ export default function RootLayout({
           <Main>
             {children}
           </Main>
-          <ConsentBanner />
           <Footer />
         </Suspense>
+        <ConsentBanner />
         {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
         <Analytics
           beforeSend={(event) => {
