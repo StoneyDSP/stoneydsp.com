@@ -1,5 +1,6 @@
+'use client'
 import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
-import Analytics from '@vercel/analytics'
+import { Analytics } from '@vercel/analytics/react'
 // import Favicon from '@/app/favicon.ico'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
