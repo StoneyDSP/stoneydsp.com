@@ -1,4 +1,3 @@
-'use client'
 import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
 import { Analytics } from '@vercel/analytics/react'
 // import Favicon from '@/app/favicon.ico'
@@ -21,11 +20,10 @@ export default function RootLayout({
           <Header title={'Home'} />
           <Main>
             {children}
+            <ConsentBanner />
           </Main>
           <Footer />
         </Suspense>
-        <ConsentBanner />
-        {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
         <Analytics
           beforeSend={(event) => {
             if (localStorage.getItem('va-disable')) {
@@ -35,6 +33,7 @@ export default function RootLayout({
           }}
         />
       </body>
+      {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
     </html>
   )
 }
