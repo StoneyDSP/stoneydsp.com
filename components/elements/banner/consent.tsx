@@ -36,7 +36,7 @@ export default function ConsentBanner() {
         Please accept cookies to help us improve
       </p>
       <div
-        className='flex flex-row justify-center gap-8 text-foreground text-center'
+        className='flex flex-row justify-center gap-4 text-foreground text-center'
       >      
         <button 
           type='button'
@@ -46,7 +46,7 @@ export default function ConsentBanner() {
           <span
             className='text-sm font-bold text-center text-foreground'
           >
-            Accept cookies
+            Accept
           </span>
         </button>
         <button 
@@ -57,7 +57,7 @@ export default function ConsentBanner() {
           <span
             className='text-sm font-bold text-center text-foreground'
           >
-            Decline cookies
+            Decline
           </span>
         </button>
       </div>
