@@ -11,7 +11,7 @@ export const resources = [
   {
     title: 'Browse my Source Code on GitHub',
     subtitle:
-      'Want to see some code examples of audio plugins with popular frameworks such as JUCE, iPlug2, and VCV Rack? Chlick here!',
+      'Want to see some code examples of audio plugins with popular frameworks such as JUCE, iPlug2, and VCV Rack? Click here!',
     url: 'https://github.com/nathanjhood',
     icon: 'M10 20L14 4M18 8L22 12L18 16M6 16L2 12L6 8',
   },

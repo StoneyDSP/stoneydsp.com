@@ -29,6 +29,8 @@
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.1",
     "@next/third-parties": "^14.0.0",
+    "@supabase/ssr": "^0.0.9",
+    "@supabase/supabase-js": "^2.38.4",
     "@types/mdx": "^2.0.9",
     "@vercel/analytics": "^1.1.1",
     "@vercel/edge": "^1.1.0",
