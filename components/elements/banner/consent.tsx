@@ -35,11 +35,11 @@ export default function ConsentBanner() {
     >
       <Ribbon>
         <p
-          className='text-foreground text-center text-xs'
+          className='text-foreground font-normal text-center text-xs'
         >
           We use tracking cookies to understand how you use
           the product and help us improve it.
-          Please accept cookies to help us improve
+          Please accept cookies to help us improve.
         </p>
         <div
           className='flex flex-row justify-center gap-4 text-foreground text-center'
