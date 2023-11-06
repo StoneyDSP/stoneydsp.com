@@ -38,8 +38,29 @@ export default function ConsentBanner() {
         <p
           className='text-foreground font-normal text-center text-xs'
         >
-          We use <a href='https://vercel.com/docs/analytics#how-visitors-are-determined'>analytics</a> to understand how you use the site and help us improve it.
+          We use <a href='https://vercel.com/docs/analytics#how-visitors-are-determined' target='_blank'>analytics</a> to understand how you use the site and help us improve it.
         </p>
+        <div className="flex flex-col justify-center py-1">
+          <p className="text-foreground text-center text-xs">
+            <small>{' '}</small>
+            <Link
+              href="/terms-of-service"
+              className="font-bold"
+              target="_blank"
+            >
+              Terms of Service
+            </Link>
+            <span> || </span>
+            <small>{' '}</small>
+            <Link
+              href="/privacy-policy"
+              className="font-bold"
+              target="_blank"
+            >
+              Privacy Policy
+            </Link>
+          </p>
+        </div>
         <div
           className='flex flex-row justify-center gap-4 text-foreground text-center px-3 py-2'
         >
@@ -75,27 +96,6 @@ export default function ConsentBanner() {
               Decline
             </span>
           </button>
-        </div>
-        <div className="flex flex-col justify-center py-2">
-          <p className="text-foreground text-center text-xs">
-            <small>{' '}</small>
-            <Link
-              href="/terms-of-service"
-              className="font-bold"
-              target="_blank"
-            >
-              Terms of Service
-            </Link>
-            <span> || </span>
-            <small>{' '}</small>
-            <Link
-              href="/privacy-policy"
-              className="font-bold"
-              target="_blank"
-            >
-              Privacy Policy
-            </Link>
-          </p>
         </div>
         <Analytics
           beforeSend={(event) => {
