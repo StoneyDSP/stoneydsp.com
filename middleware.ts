@@ -60,52 +60,54 @@ export async function middleware(req: NextRequest) {
   //   cspHeader.replace(/\s{2,}/g, ' ').trim()
   // )
 
-  try {
-
-    // This `try/catch` block is only here for the interactive tutorial.
-    // Feel free to remove once you have Supabase connected.
-    const { supabase, response } = createClient(req)
-
-    // Refresh session if expired - required for Server Components
-    // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
-    await supabase.auth.getSession()
-
-    return response
-
-  } catch (e) {
-
-    // // If you are here, a Supabase client could not be created!
-    // // This is likely because you have not set up environment variables.
-    // // Check out http://localhost:3000 for Next Steps.
-    // return NextResponse.next({
-    //   request: {
-    //     headers: req.headers,
-    //   },
-    // })
-    return res({
+  return res({
+    headers: requestHeaders,
+    request: {
       headers: requestHeaders,
-      request: {
-        headers: requestHeaders,
-      },
-    })
-  }
+    },
+  })
+
+  // try {
+
+  //   // This `try/catch` block is only here for the interactive tutorial.
+  //   // Feel free to remove once you have Supabase connected.
+  //   const { supabase, response } = createClient(req)
+
+  //   // Refresh session if expired - required for Server Components
+  //   // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
+  //   await supabase.auth.getSession()
+
+  //   return response
+
+  // } catch (e) {
+
+  //   // // If you are here, a Supabase client could not be created!
+  //   // // This is likely because you have not set up environment variables.
+  //   // // Check out http://localhost:3000 for Next Steps.
+  //   return res({
+  //     headers: requestHeaders,
+  //     request: {
+  //       headers: requestHeaders,
+  //     },
+  //   })
+  // }
 }
 
-// export const config = {
-//   matcher: [
-//     /*
-//      * Match all request paths except for the ones starting with:
-//      * - api (API routes)
-//      * - _next/static (static files)
-//      * - _next/image (image optimization files)
-//      * - favicon.ico (favicon file)
-//      */
-//     {
-//       source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
-//       missing: [
-//         { type: 'header', key: 'next-router-prefetch' },
-//         { type: 'header', key: 'purpose', value: 'prefetch' },
-//       ],
-//     },
-//   ],
-// }
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    {
+      source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
+      missing: [
+        { type: 'header', key: 'next-router-prefetch' },
+        { type: 'header', key: 'purpose', value: 'prefetch' },
+      ],
+    },
+  ],
+}
