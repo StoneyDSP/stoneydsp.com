@@ -28,35 +28,39 @@ export default function ConsentBanner() {
 
   return (
     <div 
-      className='flex justify-center text-foreground text-center text-xs py-2'
+      className='flex flex-col justify-center text-foreground text-center text-xs py-2'
     >
       <p>
         We use tracking cookies to understand how you use 
         the product and help us improve it.
         Please accept cookies to help us improve
       </p>
-      <button 
-        type='button'
-        onClick={acceptCookies}
-        className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-300 border transition___shadow_off'
-      >
-        <span
-          className='text-sm font-bold text-center text-foreground'
+      <div
+        className='flex flex-row justify-center text-foreground text-center'
+      >      
+        <button 
+          type='button'
+          onClick={acceptCookies}
+          className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-300 border transition___shadow_off'
         >
-          Accept cookies
-        </span>
-      </button>
-      <button 
-        type='button'
-        onClick={declineCookies}
-        className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-300 border transition___shadow_off'
-      >
-        <span
-          className='text-sm font-bold text-center text-foreground'
+          <span
+            className='text-sm font-bold text-center text-foreground'
+          >
+            Accept cookies
+          </span>
+        </button>
+        <button 
+          type='button'
+          onClick={declineCookies}
+          className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-300 border transition___shadow_off'
         >
-          Decline cookies
-        </span>
-      </button>
+          <span
+            className='text-sm font-bold text-center text-foreground'
+          >
+            Decline cookies
+          </span>
+        </button>
+      </div>
       <Analytics
         beforeSend={(event) => {
           if (localStorage.getItem('vercel-analytics') === 'false') {
