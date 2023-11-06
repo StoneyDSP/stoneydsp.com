@@ -81,11 +81,6 @@ export default function webmanifest(): MetadataRoute.Manifest {
         type: 'image/x-icon'
       },
       {
-        src: 'https://www.stoneydsp.com/images/favicon/favicon__512x512.ico',
-        sizes: '512x512',
-        type: 'image/x-icon'
-      },
-      {
         src: 'https://www.stoneydsp.com/images/favicon/favicon-32x32.png',
         sizes: '32x32',
         type: 'image/png'
