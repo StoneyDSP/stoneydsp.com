@@ -17,19 +17,11 @@ export default function RootLayout({
         <Suspense>
           <Header title={'Home'} />
           <Main>
-            {children}
             <ConsentBanner />
+            {children}
           </Main>
           <Footer />
         </Suspense>
-        {/* <Analytics
-          beforeSend={(event) => {
-            if (localStorage.getItem('va-disable')) {
-              return null;
-            }
-            return event;
-          }}
-        /> */}
       </body>
       {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
     </html>
