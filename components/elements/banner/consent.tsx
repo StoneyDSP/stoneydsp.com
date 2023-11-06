@@ -35,7 +35,7 @@ export default function ConsentBanner() {
     >
       <Ribbon>
         <p
-          className='text-foreground font-normal text-center text-xs'
+          className='text-foreground font-normal text-center text-xs py-2'
         >
           We use tracking cookies to understand how you use
           the product and help us improve it.
