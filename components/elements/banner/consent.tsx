@@ -42,7 +42,7 @@ export default function ConsentBanner() {
           Please accept cookies to help us improve.
         </p>
         <div
-          className='flex flex-row justify-center gap-4 text-foreground text-center'
+          className='flex flex-row justify-center gap-4 text-foreground text-center px-3 py-2'
         >
           <button
             type='button'
