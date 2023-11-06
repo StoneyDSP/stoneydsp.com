@@ -28,7 +28,7 @@ export default function ConsentBanner() {
 
   return (
     <div 
-      className='flex flex-col justify-center text-foreground text-center text-xs py-2'
+      className='flex flex-col justify-center gap-8 text-foreground text-center text-xs py-2'
     >
       <p>
         We use tracking cookies to understand how you use 
@@ -36,7 +36,7 @@ export default function ConsentBanner() {
         Please accept cookies to help us improve
       </p>
       <div
-        className='flex flex-row justify-center text-foreground text-center'
+        className='flex flex-row justify-between text-foreground text-center'
       >      
         <button 
           type='button'
