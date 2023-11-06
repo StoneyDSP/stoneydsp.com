@@ -27,7 +27,9 @@ export default function ConsentBanner() {
   };
 
   return (
-    <div>
+    <div 
+      className='flex justify-center text-foreground text-center text-xs py-2'
+    >
       <p>
         We use tracking cookies to understand how you use 
         the product and help us improve it.

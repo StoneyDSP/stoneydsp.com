@@ -204,8 +204,8 @@ export const metadata: Metadata  = {
   //   },
   // },
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" }
+    { media: "(prefers-color-scheme: light)", color: "#00ffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#800080" }
     // { media: '(prefers-color-scheme: light)', color: 'cyan' },
     // { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],

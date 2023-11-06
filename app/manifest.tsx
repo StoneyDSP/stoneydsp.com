@@ -6,6 +6,7 @@ export default function webmanifest(): MetadataRoute.Manifest {
     short_name: "StoneyDSP",
     description: 'Systems, Web, Audio & Graphics',
     start_url: '/',
+    id: '/',
     theme_color: "#000000",
     background_color: "#000000",
     display: "standalone",
@@ -86,23 +87,8 @@ export default function webmanifest(): MetadataRoute.Manifest {
         type: 'image/png'
       },
       {
-        src: 'https://www.stoneydsp.com/images/favicon/favicon-48x48.png',
-        sizes: '48x48',
-        type: 'image/png'
-      },
-      {
         src: 'https://www.stoneydsp.com/images/favicon/favicon-64x64.png',
         sizes: '64x64',
-        type: 'image/png'
-      },
-      {
-        src: 'https://www.stoneydsp.com/images/favicon/favicon-96x96.png',
-        sizes: '96x96',
-        type: 'image/png'
-      },
-      {
-        src: 'https://www.stoneydsp.com/images/favicon/favicon-144x144.png',
-        sizes: '144x144',
         type: 'image/png'
       },
       {
@@ -113,11 +99,6 @@ export default function webmanifest(): MetadataRoute.Manifest {
       {
         src: 'https://www.stoneydsp.com/images/favicon/favicon-256x256.png',
         sizes: '256x256',
-        type: 'image/png'
-      },
-      {
-        src: 'https://www.stoneydsp.com/images/favicon/favicon-512x512.png',
-        sizes: '512x512',
         type: 'image/png'
       },
       {
