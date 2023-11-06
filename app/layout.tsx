@@ -1,6 +1,4 @@
 import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
-// import { Analytics } from '@vercel/analytics/react'
-// import Favicon from '@/app/favicon.ico'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
 // import { GoogleTagManager } from '@next/third-parties/google'
