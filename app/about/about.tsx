@@ -26,7 +26,7 @@ export default async function About() {
 
           <HRGradient />
 
-          <FlexColCenter>
+          {/* <FlexColCenter>
             <a href="https://github.com/nathanjhood">
               <Image
                 src="https://gh-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&theme=transparent&border_radius=0&hide_border=true"
@@ -34,7 +34,7 @@ export default async function About() {
                 className="transition___shadow_off rounded-lg border hover:border-foreground"
               />
             </a>
-          </FlexColCenter>
+          </FlexColCenter> */}
 
           <HRGradient />
 
@@ -42,7 +42,7 @@ export default async function About() {
 
           <HRGradient />
 
-          <FlexColCenter>
+          {/* <FlexColCenter>
             <a href="https://github.com/nathanjhood">
               <Image
                 src="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true"
@@ -52,7 +52,7 @@ export default async function About() {
                 className="transition___shadow_off rounded-lg border hover:border-foreground"
               />
             </a>
-          </FlexColCenter>
+          </FlexColCenter> */}
 
           <HRGradient />
 
