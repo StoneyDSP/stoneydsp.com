@@ -34,7 +34,9 @@ export default function ConsentBanner() {
       className='flex flex-col justify-center gap-8 text-foreground text-center text-xs py-4'
     >
       <Ribbon>
-        <p>
+        <p
+          className='text-foreground text-center text-xs'
+        >
           We use tracking cookies to understand how you use
           the product and help us improve it.
           Please accept cookies to help us improve
@@ -48,7 +50,7 @@ export default function ConsentBanner() {
             onClick={() => {
               track('Accept Cookies');
               // ... other logic
-              acceptCookies
+              acceptCookies()
             }}
             className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-300 border transition___shadow_off'
           >
@@ -64,7 +66,7 @@ export default function ConsentBanner() {
             onClick={() => {
               track('Decline Cookies');
               // ... other logic
-              declineCookies
+              declineCookies()
             }}
             className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-300 border transition___shadow_off'
           >
