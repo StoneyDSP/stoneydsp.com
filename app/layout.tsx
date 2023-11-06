@@ -1,6 +1,4 @@
-import { Header, Footer, Main } from '@/components/elements'
-import { Analytics } from '@vercel/analytics/react'
-// import Favicon from '@/app/favicon.ico'
+import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
 // import { GoogleTagManager } from '@next/third-parties/google'
@@ -19,13 +17,13 @@ export default function RootLayout({
         <Suspense>
           <Header title={'Home'} />
           <Main>
+            <ConsentBanner />
             {children}
           </Main>
           <Footer />
         </Suspense>
-        {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
-        <Analytics />
       </body>
+      {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
     </html>
   )
 }
@@ -198,8 +196,8 @@ export const metadata: Metadata  = {
   //   },
   // },
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" }
+    { media: "(prefers-color-scheme: light)", color: "#00ffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#800080" }
     // { media: '(prefers-color-scheme: light)', color: 'cyan' },
     // { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
