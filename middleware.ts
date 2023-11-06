@@ -30,10 +30,10 @@ export async function middleware(req: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
   const cspHeader = `
     default-src 'self';
-    connect-src 'self' gh-readme-stats.stoneydsp.com vitals.vercel-insights.com;
-    script-src 'self' gh-readme-stats.stoneydsp.com 'nonce-${nonce}' 'strict-dynamic';
+    connect-src vitals.vercel-insights.com;
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
     style-src 'self' 'nonce-${nonce}';
-    img-src 'self' gh-readme-stats.stoneydsp.com blob: data:;
+    img-src 'self' blob: data:;
     font-src 'self';
     object-src 'none';
     base-uri 'self';
