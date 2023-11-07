@@ -33,7 +33,7 @@ const defaultUrl = process.env.VERCEL_URL
   : 'http://localhost:3000'
 
 const nextPublicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
+  ? `${process.env.NEXT_PUBLIC_SITE_URL}`
   : 'http://localhost:3000'
 
 export const metadata: Metadata  = {
@@ -64,8 +64,8 @@ export const metadata: Metadata  = {
   //     url: "https://example.com/apple-icon.png"
   //   }
   // ],
-  alternates: {
-    canonical: '/',
+  // alternates: {
+    // canonical: '/',
     // languages: {
       // 'en-GB': '/en-GB',
       // 'en-US': '/en-US',
@@ -73,7 +73,7 @@ export const metadata: Metadata  = {
       // 'de-DE': '/de-DE',
       // 'fr-FR': '/fr-FR',
     // },
-  },
+  // },
   openGraph: {
     title: 'StoneyDSP',
     description: 'Systems, Web, Audio & Graphics',
