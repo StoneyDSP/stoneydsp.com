@@ -203,10 +203,10 @@ export const metadata: Metadata  = {
   //     'max-snippet': -1,
   //   },
   // },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#00ffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#800080" }
-    // { media: '(prefers-color-scheme: light)', color: 'cyan' },
-    // { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  // themeColor: [
+  //   { media: "(prefers-color-scheme: light)", color: "#00ffff" },
+  //   { media: "(prefers-color-scheme: dark)", color: "#800080" }
+  //   { media: '(prefers-color-scheme: light)', color: 'cyan' },
+  //   { media: '(prefers-color-scheme: dark)', color: 'black' },
+  // ],
 }
