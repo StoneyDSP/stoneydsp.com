@@ -53,7 +53,7 @@
     "@types/react": "^18.2.36",
     "encoding": "^0.1.13",
     "eslint": "^8.52.0",
-    "eslint-config-next": "14.0.0",
+    "eslint-config-next": "14.0.1",
     "globby": "^13.2.2",
     "typescript": "^5.2.2"
   }
