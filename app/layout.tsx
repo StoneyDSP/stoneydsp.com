@@ -32,6 +32,10 @@ const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : 'http://localhost:3000'
 
+const nextPublicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
+  : 'http://localhost:3000'
+
 export const metadata: Metadata  = {
   title: {
     default: 'StoneyDSP',
@@ -41,8 +45,8 @@ export const metadata: Metadata  = {
   description: 'Systems, Web, Audio & Graphics',
   referrer: 'origin-when-cross-origin',
   authors: [{ name: 'Nathan', url: 'https://github.com/nathanjhood' }],
-  metadataBase: new URL(defaultUrl),
-  // manifest: `${defaultUrl}/manifest.webmanifest`,
+  metadataBase: new URL(nextPublicSiteUrl),
+  manifest: `${nextPublicSiteUrl}/manifest.webmanifest`,
   verification: {
     google: "U222mQRVBnX_8XrWZU9c6ETanVW8lFK6jvhJFQwtcdE",
   },
@@ -74,7 +78,7 @@ export const metadata: Metadata  = {
     title: 'StoneyDSP',
     description: 'Systems, Web, Audio & Graphics',
     siteName: 'stoneydsp.com',
-    url: `${defaultUrl}`,
+    url: new URL(nextPublicSiteUrl),
     images: [
       {
         url: `/images/w_icon__196x128.png`,
@@ -158,7 +162,7 @@ export const metadata: Metadata  = {
     title: 'StoneyDSP',
     description: 'Systems, Web, Audio & Graphics',
     siteId: '1467726470533754880',
-    site: `${defaultUrl}`,
+    site: `${nextPublicSiteUrl}`,
     images: [
       {
         url: `/images/w_icon__196x128.png`,
