@@ -10,7 +10,7 @@ export default function ConsentBanner() {
   const [showConsentBanner, setShowConsentBanner] = useState(false)
 
   useEffect(() => {
-    if (!(localStorage.getItem('vercel-analytics'))) {
+    if (!(sessionStorage.getItem('vercel-analytics'))) {
       /* || (localStorage.getItem('vercel-analytics') == 'true') */
       setShowConsentBanner(true);
     }
@@ -21,13 +21,13 @@ export default function ConsentBanner() {
   }
 
   const acceptCookies = () => {
-    localStorage.setItem('vercel-analytics', 'true')
+    sessionStorage.setItem('vercel-analytics', 'true')
     setShowConsentBanner(false);
   };
 
   const declineCookies = () => {
     // localStorage.setItem('vercel-analytics', 'false')
-    localStorage.removeItem('vercel-analytics')
+    sessionStorage.removeItem('vercel-analytics')
     setShowConsentBanner(false);
   };
 
@@ -101,7 +101,7 @@ export default function ConsentBanner() {
         <Analytics
           beforeSend={(event) => {
             // if (localStorage.getItem('vercel-analytics') === 'false') {
-            if (!(localStorage.getItem('vercel-analytics'))) {
+            if (!(sessionStorage.getItem('vercel-analytics'))) {
               return null;
             } else {
               return event;
