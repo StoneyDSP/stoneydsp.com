@@ -26,7 +26,8 @@ export default function ConsentBanner() {
   };
 
   const declineCookies = () => {
-    localStorage.setItem('vercel-analytics', 'false')
+    // localStorage.setItem('vercel-analytics', 'false')
+    localStorage.removeItem('vercel-analytics')
     setShowConsentBanner(false);
   };
 
@@ -99,7 +100,8 @@ export default function ConsentBanner() {
         </div>
         <Analytics
           beforeSend={(event) => {
-            if (localStorage.getItem('vercel-analytics') === 'false') {
+            // if (localStorage.getItem('vercel-analytics') === 'false') {
+            if (!(localStorage.getItem('vercel-analytics'))) {
               return null;
             } else {
               return event;

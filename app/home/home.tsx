@@ -7,12 +7,9 @@ import {
   TextLargeBoldCenter,
   FlexColCenter
 } from '@/components/layouts'
-
-import Image from 'next/image'
-
+// import Image from 'next/image'
 // import { headers } from 'next/headers'
-
-import styles from './home.module.css'
+import styles from '@/app/home/home.module.css'
 
 export const dynamic = 'force-dynamic'
 

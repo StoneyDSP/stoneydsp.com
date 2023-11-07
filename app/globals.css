@@ -5,21 +5,21 @@
 @layer base {
 	:root {
 		--custom-font-size: calc((15.00px + 0.390625vw) * (15.00 / 18.00));
-		--custom-font-family: 
-			-apple-system, 
-			BlinkMacSystemFont, 
-			'Segoe UI', 
+		--custom-font-family:
+			-apple-system,
+			BlinkMacSystemFont,
+			'Segoe UI',
 			Roboto,
-			Oxygen, 
-			Ubuntu, 
-			Cantarell, 
-			'Fira Sans', 
-			'Droid Sans', 
-			'Helvetica Neue', 
+			Oxygen,
+			Ubuntu,
+			Cantarell,
+			'Fira Sans',
+			'Droid Sans',
+			'Helvetica Neue',
 			sans-serif;
 
 		--scrollbar-x__width: calc(100vw - (100vw - 100%));
-    	--scrollbar-y__width: calc(100vh - (100vh - 100%));
+    --scrollbar-y__width: calc(100vh - (100vh - 100%));
 
 		/* Dimmed black & white to prevent screen reflecting light at user's eyes */
 		--color__black: hsl(0, 0%, 0.1%);
@@ -30,7 +30,7 @@
 
 		/* Set a number to scale (increase and decrease) the starting point by */
 		--z-index__scale-depth: 100;
-	
+
 		/*  Calculate a palette by cascading those two vars */
 		--z-index__100: calc(var(--z-index__200) - var(--z-index__scale-depth));
 		--z-index__200: calc(var(--z-index__300) - var(--z-index__scale-depth));
@@ -41,7 +41,7 @@
 		--z-index__700: calc(var(--z-index__600) + var(--z-index__scale-depth));
 		--z-index__800: calc(var(--z-index__700) + var(--z-index__scale-depth));
 		--z-index__900: calc(var(--z-index__800) + var(--z-index__scale-depth));
-	
+
 		/*  Apply the calculations to some well-named vars */
 		--z-index__underground: var(--z-index__100);
 		--z-index__background: var(--z-index__300);
@@ -355,6 +355,16 @@ a.code.hl_sequence { opacity: 1; /* style for links to sequence names in code sn
 a.code.hl_dictionary { opacity: 1; /* style for links to dictionary names in code snippets */ }
 
 /* @end */
+
+span.emoji {
+	/* font family used at the site: https://unicode.org/emoji/charts/full-emoji-list.html */
+	font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", Times, Symbola, Aegyptus, Code2000, Code2001, Code2002, Musica, serif, LastResort;
+	opacity: 1;
+}
+
+span.obfuscator {
+	display: none;
+}
 
 /* Utility classes */
 
