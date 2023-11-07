@@ -49,11 +49,11 @@ export async function middleware(req: NextRequest) {
   requestHeaders.set('X-Content-Type-Options', 'nosniff')
   requestHeaders.set('cache-control', 'public, max-age=0, s-maxage=86400, must-revalidate')
   requestHeaders.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
-  // requestHeaders.set(
-  //   'Content-Security-Policy',
-  //   // Replace newline characters and spaces
-  //   cspHeader.replace(/\s{2,}/g, ' ').trim()
-  // )
+  requestHeaders.set(
+    'Content-Security-Policy',
+    // Replace newline characters and spaces
+    cspHeader.replace(/\s{2,}/g, ' ').trim()
+  )
   // requestHeaders.set(
   //   'Content-Security-Policy-Report-Only',
   //   // Replace newline characters and spaces
