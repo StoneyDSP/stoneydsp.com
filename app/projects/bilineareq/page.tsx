@@ -1,7 +1,7 @@
-import BilineareqContent from '@/app/projects/bilineareq/bilineareq'
+import BilineareqContent from '@/app/projects/bilineareq/bilineareq_content'
 import { Metadata } from 'next'
 
-// export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'BiLinearEQ',
