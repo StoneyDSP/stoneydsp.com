@@ -28,6 +28,11 @@ export default function RootLayout({
   )
 }
 
+// export function MdxLayout({ children }: { children: React.ReactNode }) {
+//   // Create any shared layout or styles here
+//   return <div style={{ color: 'blue' }}>{children}</div>
+// }
+
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : 'http://localhost:3000'
