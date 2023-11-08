@@ -1,3 +1,4 @@
+import { MDXRemote } from 'next-mdx-remote/rsc'
 import {
   HRGradient,
   TextLargeBoldCenter,
@@ -5,8 +6,7 @@ import {
   FlexColCenter,
   Ribbon
 } from '@/components/layouts'
-import Image from 'next/image'
-import styles from './about.module.css'
+import styles from '@/app/layout.module.css'
 
 export default async function About() {
   return (
@@ -14,9 +14,9 @@ export default async function About() {
 
       <div className={styles.content}>
 
-        <div className="flex flex-col gap-8 bg-background text-foreground">
+        <div className={styles.flexboxgrid}>
 
-          <HRGradient />
+          {/* <HRGradient /> */}
 
           <Ribbon>Hi! I&#39;m Nathan, a.k.a StoneyDSP.</Ribbon>
 
@@ -26,15 +26,15 @@ export default async function About() {
 
           <HRGradient />
 
-          {/* <FlexColCenter>
-            <a href="https://github.com/nathanjhood">
-              <Image
-                src="https://gh-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&theme=transparent&border_radius=0&hide_border=true"
-                alt="StoneyDSP's GitHub stats"
-                className="transition___shadow_off rounded-lg border hover:border-foreground"
-              />
-            </a>
-          </FlexColCenter> */}
+          <HRGradient />
+
+          <div className='flex justify-center align-middle items-center'>
+            <MDXRemote source={`
+            [![StoneyDSP's GitHub stats](https://gh-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&theme=transparent&border_radius=0&hide_border=true)](https://github.com/nathanjhood)
+            `} />
+          </div>
+
+          <HRGradient />
 
           <HRGradient />
 
@@ -42,17 +42,13 @@ export default async function About() {
 
           <HRGradient />
 
-          {/* <FlexColCenter>
-            <a href="https://github.com/nathanjhood">
-              <Image
-                src="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true"
-                width={350}
-                height={311}
-                alt="StoneyDSP's Top Languages"
-                className="transition___shadow_off rounded-lg border hover:border-foreground"
-              />
-            </a>
-          </FlexColCenter> */}
+          <HRGradient />
+
+          <div className='flex justify-center align-middle items-center'>
+            <MDXRemote source={`
+            [![StoneyDSP's Top Languages](https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true)](https://github.com/nathanjhood)
+            `} />
+          </div>
 
           <HRGradient />
 
@@ -83,6 +79,8 @@ export default async function About() {
           <HRGradient />
 
           <p>I am currently finessing several of my audio and system app projects as well as a website, where I intend to provide RESTful APIs and serverless/Edge functions via a secure content delivery mechanisms for further demonstrating and sharing new ideas in audio DSP, directly in the web browser.</p>
+
+          <HRGradient />
 
           <HRGradient />
 
