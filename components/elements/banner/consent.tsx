@@ -33,20 +33,20 @@ export default function ConsentBanner() {
 
   return (
     <div
-      className='flex flex-col justify-center gap-8 text-foreground text-center text-xs py-4'
+      className='animate-in flex flex-col bottom-4 opacity-100 z-50 absolute justify-center gap-8 text-foreground text-center text-xs group rounded-lg border hover:border-foreground transition___shadow_off'
     >
       <Ribbon>
         <p
-          className='text-foreground font-normal text-center text-xs'
+          className='text-foreground font-normal text-center text-xs p-4'
         >
-          We use <a href='https://vercel.com/docs/analytics#how-visitors-are-determined' target='_blank'>analytics</a> to understand how you use the site and help us improve it.
+          We use <a href='https://vercel.com/docs/analytics#how-visitors-are-determined' target='_blank' className='text-xs'>analytics</a> to understand how you use the site and help us improve it.
         </p>
         <div className="flex flex-col justify-center py-1">
           <p className="text-foreground text-center text-xs">
             <small>{' '}</small>
             <Link
               href="/terms-of-service"
-              className="font-bold"
+              className="font-bold text-xs"
               target="_blank"
             >
               Terms of Service
@@ -55,7 +55,7 @@ export default function ConsentBanner() {
             <small>{' '}</small>
             <Link
               href="/privacy-policy"
-              className="font-bold"
+              className="font-bold text-xs"
               target="_blank"
             >
               Privacy Policy

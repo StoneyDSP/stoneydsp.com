@@ -3,6 +3,7 @@ import {
   HRGradient,
   BackToHome
 } from '@/components/layouts'
+import { Article } from '@/components/elements'
 import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -14,24 +15,26 @@ export default async function BiquadsContent() {
   const markdown = await res.text()
 
   return (
-    <div className={styles.container}>
+    <Article>
+      <div className={styles.container}>
 
-      <div className={styles.content}>
+        <div className={styles.content}>
 
-        <div className={styles.flexboxgrid}>
+          <div className={styles.flexboxgrid}>
 
-          {/* <MDXRemote source={`[![Biquads](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=Biquads\&theme=transparent)](https://github.com/StoneyDSP/Biquads)`} /> */}
+            {/* <MDXRemote source={`[![Biquads](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=Biquads\&theme=transparent)](https://github.com/StoneyDSP/Biquads)`} /> */}
 
-          <MDXRemote source={markdown} />
+            <MDXRemote source={markdown} />
 
-          <HRGradient />
+            <HRGradient />
 
-          <BackToHome />
+            <BackToHome />
 
-          <HRGradient />
+            <HRGradient />
 
+          </div>
         </div>
       </div>
-    </div>
+    </Article>
   )
 }

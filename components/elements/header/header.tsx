@@ -1,15 +1,11 @@
-import Nav from '@/components/elements/nav/nav'
-
-// import styles from './header.module.css'
+import { Nav } from '@/components/elements'
 
 export default function Header({ title }: {
-  title: string;
+  title: string
 }): JSX.Element {
 
   return (
-    <header 
-      // className={styles.header}
-    >
+    <header>
       <Nav />
       {/* <h2>
         {title ? title : 'Default title'}

@@ -9,7 +9,7 @@ export default async function Nav() {
 
 
   return (
-    <nav 
+    <nav
       // className={styles.nav}
     >
       <div className="w-full max-w-4xl flex justify-between gap-8 items-center p-3 text-sm text-foreground">
@@ -32,7 +32,7 @@ export default async function Nav() {
     )} */}
     <Link
         href="/"
-        className="py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-300 border transition___shadow_off"
+        className="py-2 px-3 flex rounded-md no-underline transition-colors bg-green-700 hover:bg-purple-500 border transition___shadow_off"
       >
         <span className='text-sm font-bold text-center text-foreground'>
           Login

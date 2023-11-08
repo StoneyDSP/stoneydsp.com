@@ -8,6 +8,9 @@ import Main from '@/components/elements/main/main'
 import Nav from '@/components/elements/nav/nav'
 import ConsentBanner from '@/components/elements/banner/consent'
 
+import ButtonBack from '@/components/elements/button/back'
+import ButtonLike from '@/components/elements/button/like'
+
 export {
   Article,
   Badge,
@@ -15,5 +18,8 @@ export {
   Header,
   Main,
   Nav,
-  ConsentBanner
+  ConsentBanner,
+
+  ButtonBack,
+  ButtonLike
 }
