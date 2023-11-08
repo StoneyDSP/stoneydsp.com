@@ -231,7 +231,6 @@
 }
 
 html, body {
-  font-size: var(--custom-font-size);
   padding: 0;
   margin: 0;
   font-family: var(--custom-font-family);
@@ -240,7 +239,6 @@ html, body {
 }
 html.dark-mode,
 body.dark-mode {
-	font-size: var(--custom-font-size);
   padding: 0;
   margin: 0;
   font-family: var(--custom-font-family);
@@ -251,12 +249,14 @@ body.dark-mode {
 * {
   color: var(--custom-color);
   background-color: var(--background);
+	font-size: var(--custom-font-size);
   font-family: var(--custom-font-family);
   box-sizing: border-box;
 }
 html,
 body,
 #__next {
+	font-size: var(--custom-font-size);
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
