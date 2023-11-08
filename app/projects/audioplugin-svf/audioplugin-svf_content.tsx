@@ -9,10 +9,10 @@ import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
 
-export default async function CxxwinContent() {
+export default async function AudiopluginsvfContent() {
 
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
-  const res = await fetch('https://raw.githubusercontent.com/nathanjhood/CxxWin/main/README.md')
+  const res = await fetch('https://raw.githubusercontent.com/nathanjhood/AudioPlugin-SVF/main/README.md')
   const markdown = await res.text()
 
   return (

@@ -1,7 +1,8 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import {
   HRGradient,
-  BackToHome
+  BackToHome,
+  BackToTop
 } from '@/components/layouts'
 import { Article } from '@/components/elements'
 import styles from '@/app/layout.module.css'
@@ -22,11 +23,11 @@ export default async function BiquadsContent() {
 
           <div className={styles.flexboxgrid}>
 
-            {/* <MDXRemote source={`[![Biquads](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=Biquads\&theme=transparent)](https://github.com/StoneyDSP/Biquads)`} /> */}
-
             <MDXRemote source={markdown} />
 
             <HRGradient />
+
+            <BackToTop />
 
             <BackToHome />
 
