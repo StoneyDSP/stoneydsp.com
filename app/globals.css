@@ -297,10 +297,10 @@ main {
 footer {
 	padding-top: 0.5rem; /* 8px */
 	padding-bottom: 0.5rem;  /* 8px */
-	background-image:none;
+	/* background-image: none;
 	background-repeat:no-repeat;
 	background-position:right;
-	/* background-color:var(--background); */
+	background-color: hsl(var(--background) * 0.5); */
 	color: var(--footer-foreground-color);
 
 	margin:  0px;

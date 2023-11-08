@@ -1,12 +1,12 @@
 import SocialIcons from '@/components/icons/social/IconSocial'
 import Link from 'next/link'
-// import styles from './footer.module.css'
+import styles from './footer.module.css'
 
 export default function Footer() {
 
   return (
     <footer
-      // className={styles.footer}
+      className={styles.footer}
     >
 
       <div className="flex justify-center text-center text-xs py-2">

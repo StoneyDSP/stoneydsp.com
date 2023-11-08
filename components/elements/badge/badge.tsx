@@ -8,8 +8,8 @@ export default async function Badge() {
         rounded-md
         no-underline
         transition-colors
-        bg-green-500
-        hover:bg-purple-300
+        bg-green-700
+        hover:bg-purple-500
         border
         transition___shadow_off
         "

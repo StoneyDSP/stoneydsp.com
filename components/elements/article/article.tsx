@@ -1,7 +1,10 @@
 'use client'
+import {
+  ButtonBack,
+  ButtonLike
+} from '@/components/elements'
 import { useState } from "react"
-
-import styles from './article.module.css'
+import Link from "next/link"
 
 export default function Article({
   children,
@@ -15,15 +18,16 @@ export default function Article({
   }
 
   return (
-    <article className={styles.article}>
+    <article className='animate-in'>
 
-      <div>
-        {children}
+      <div
+        className='animate-in flex flex-row gap-8'
+      >
+        <ButtonBack />
+        <ButtonLike />
       </div>
 
-      <button onClick={handleClick}>
-        Like ({likes})
-      </button>
+      {children}
 
     </article>
   )

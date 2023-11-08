@@ -13,9 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="text-foreground bg-background">
+      <body>
         <Suspense>
-          <Header title={'Home'} />
+          <Header title={''} />
           <Main>
             <ConsentBanner />
             {children}
