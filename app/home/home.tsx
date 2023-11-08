@@ -5,11 +5,11 @@ import {
 import {
   HRGradient,
   TextLargeBoldCenter,
-  FlexColCenter
+  BackToTop
 } from '@/components/layouts'
 // import Image from 'next/image'
 // import { headers } from 'next/headers'
-import styles from '@/app/home/home.module.css'
+import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
 
@@ -22,7 +22,7 @@ export default async function Home() {
 
       <div className={styles.content}>
 
-        <div className="flex flex-col gap-8 bg-background text-foreground">
+        <div className={styles.flexboxgrid}>
 
           <HRGradient />
 
@@ -32,43 +32,9 @@ export default async function Home() {
 
           <HRGradient />
 
-          {/* <FlexColCenter>
-            <a href="https://github.com/nathanjhood">
-              <Image
-                src="https://gh-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&theme=transparent&border_radius=0&hide_border=true"
-                alt="StoneyDSP's GitHub stats"
-                className="transition___shadow_off rounded-lg border hover:border-foreground"
-              />
-            </a>
-          </FlexColCenter>
-
-          <HRGradient />
-
-          <TextLargeBoldCenter>
-            Welcome to my workbench.
-          </TextLargeBoldCenter>
-
-          <HRGradient /> */}
-
           <ResourceCards />
 
           <HRGradient />
-
-          <HRGradient />
-
-          {/* <FlexColCenter>
-            <a href="https://github.com/nathanjhood">
-              <Image
-                src="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true"
-                width={350}
-                height={311}
-                alt="StoneyDSP's Top Languages"
-                className="transition___shadow_off rounded-lg border hover:border-foreground"
-              />
-            </a>
-          </FlexColCenter>
-
-          <HRGradient /> */}
 
           <TextLargeBoldCenter>
             Here are some examples of my work:
@@ -79,6 +45,10 @@ export default async function Home() {
           <RepoCards />
 
         </div>
+
+        <HRGradient />
+
+        <BackToTop />
 
         <HRGradient />
 

@@ -1,19 +1,18 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import {
   HRGradient,
-  TextLargeBoldCenter,
-  BackToHome
+  BackToHome,
+  BackToTop
 } from '@/components/layouts'
-// import '@/app/globals.css'
-import styles from '@/app/projects/msys2-toolchain/msys2-toolchain.module.css'
+import styles from '@/app/layout.module.css'
+
+export const dynamic = 'force-dynamic'
 
 export default async function MsystoolchainContent() {
 
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
   const markdown = `
 # MSYS2 toolchain
-
-[![MSYS2-Toolchain](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=MSYS2-Toolchain\&theme=transparent)](https://github.com/StoneyDSP/MSYS2-Toolchain)
 
 <i>The below is quoted from <a href="https://www.msys2.org/license/">https://www.msys2.org/license/</a></i>
 
@@ -51,13 +50,13 @@ All rights reserved.
 
       <div className={styles.content}>
 
-        <div className="flex flex-col gap-8 bg-background text-foreground">
-
-          <HRGradient />
+        <div className={styles.flexboxgrid}>
 
           <MDXRemote source={markdown} />
 
           <HRGradient />
+
+          <BackToTop />
 
           <BackToHome />
 

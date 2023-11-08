@@ -1,9 +1,9 @@
 import {
   HRGradient,
-  TextLargeBoldCenter,
-  BackToHome
+  BackToHome,
+  BackToTop
 } from '@/components/layouts'
-import styles from './contact.module.css'
+import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
 
@@ -14,15 +14,17 @@ export default async function Contact() {
 
       <div className={styles.content}>
 
-        <div className="flex flex-col gap-8 bg-background text-foreground">
+        <div className={styles.flexboxgrid}>
+
+          <HRGradient />
+
+          <BackToTop />
+
+          <BackToHome />
+
+          <HRGradient />
 
         </div>
-
-        <HRGradient />
-
-        <BackToHome />
-
-        <HRGradient />
 
       </div>
 
