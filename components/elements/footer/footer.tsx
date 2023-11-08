@@ -5,12 +5,12 @@ import Link from 'next/link'
 export default function Footer() {
 
   return (
-    <footer 
+    <footer
       // className={styles.footer}
     >
 
-      <div className="flex justify-center text-foreground text-center text-xs py-2">
-        <p className="text-foreground bg-background">
+      <div className="flex justify-center text-center text-xs py-2">
+        <p className="text-foreground">
           Powered by{' '}
           <Link
             href="https://supabase.com/"
@@ -22,8 +22,8 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="flex justify-center text-foreground text-center text-xs py-2">
-        <p className="text-foreground bg-background">
+      <div className="flex justify-center text-center text-xs py-2">
+        <p className="text-foreground">
           Deployed with{' '}
           <Link
             href="https://vercel.com/"
@@ -35,12 +35,12 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="flex flex-row justify-center text-foreground text-center text-xs py-2">
+      <div className="flex flex-row justify-center text-center text-xs py-2">
         <SocialIcons />
       </div>
 
-      <div className="flex justify-center text-foreground text-center text-xs py-2">
-        <p className="text-foreground bg-background">
+      <div className="flex justify-center text-center text-xs py-2">
+        <p className="text-foreground">
           <small>{' '}</small>
           <Link
             href="/terms-of-service"
@@ -71,8 +71,8 @@ export default function Footer() {
         </p>
       </div> */}
 
-      <div className="flex flex-row justify-center text-foreground text-center text-xs py-2">
-        <p className="text-foreground bg-background">
+      <div className="flex flex-row justify-center text-center text-xs py-2">
+        <p className="text-foreground">
           Copyright <small>StoneyDSP 2023</small>.
         </p>
       </div>

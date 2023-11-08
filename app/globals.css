@@ -72,18 +72,51 @@
 			--custom-spacing: 5px;
 
 			/* page base colors */
-			--page-background-color: white;
-			--page-foreground-color: black;
-			--page-link-color: #3D3D8C;
-			--page-visited-link-color: #4646A2;
+			--page-background-color: var(--background);
+			--page-foreground-color: var(--foreground);
+			--page-link-color: hsl(240, 39%, 39%);
+			--page-visited-link-color: hsl(240, 40%, 45%);
 
 			/* header */
-			--header-background-color: #F9F9FC;
-			--header-separator-color: #C4C4E5;
+			--header-background-color: hsl(240, 33%, 98%);
+			--header-separator-color: hsl(240, 39%, 83%);
 			--header-gradient-image: url('../styles/doxygen/nav_h.png'); /* https://raw.githubusercontent.com/StoneyDSP/StoneyDSP.github.io/main/public/ */
 			--group-header-separator-color: #8787CB;
 			--group-header-color: #35357B;
 			--inherit-header-color: gray;
+
+			/** code fragments */
+			--code-keyword-color: hsl(120, 100%, 25%);
+			--code-type-keyword-color: hsl(30, 50%, 25%);
+			--code-flow-keyword-color: hsl(34, 100%, 44%);
+			--code-comment-color: hsl(0, 100%, 25%);
+			--code-preprocessor-color: hsl(40, 60%, 31%);
+			--code-string-literal-color: hsl(225, 100%, 25%);
+			--code-char-literal-color: hsl(180, 100%, 25%);
+			--code-xml-cdata-color: hsl(0, 0%, 0%);
+			--code-vhdl-digit-color: hsl(300, 100%, 50%);
+			--code-vhdl-char-color: hsl(0, 0%, 0%);
+			--code-vhdl-keyword-color: hsl(300, 100%, 22%);
+			--code-vhdl-logic-color: hsl(0, 100%, 50%);
+			--code-link-color: hsl(240, 40%, 45%);
+			--code-external-link-color: hsl(240, 40%, 45%);
+			--fragment-foreground-color: hsl(0, 0%, 0%);
+			--fragment-background-color: hsl(240, 33%, 99%);
+			--fragment-border-color: #C4C4E5;
+			--fragment-lineno-border-color: #00FF00;
+			--fragment-lineno-background-color: #E8E8E8;
+			--fragment-lineno-foreground-color: black;
+			--fragment-lineno-link-fg-color: #4646A2;
+			--fragment-lineno-link-bg-color: #D8D8D8;
+			--fragment-lineno-link-hover-fg-color: #4646A2;
+			--fragment-lineno-link-hover-bg-color: #C8C8C8;
+			--tooltip-foreground-color: black;
+			--tooltip-background-color: white;
+			--tooltip-border-color: gray;
+			--tooltip-doc-color: grey;
+			--tooltip-declaration-color: #006318;
+			--tooltip-link-color: #4646A2;
+			--tooltip-shadow: 1px 1px 7px gray;
 
 			--colour-dull: hsla(0, 0%, 0%, 50%);
 			--colour-glow: hsl(180, 100%, 50%);
@@ -91,8 +124,8 @@
 			--table-gradient: url("../styles/doxygen/tab_b.png");
 			--table-row-gradient: ("../styles/doxygen/nav_h.png");
 
-			--footer-foreground-color: #2A2A61;
-			--citation-label-color: #333375;
+			--footer-foreground-color: hsl(240, 40%, 27%);
+			--citation-label-color: hsl(240, 39%, 33%);
 		}
 	}
 
@@ -118,18 +151,51 @@
 			--custom-spacing: 5px;
 
 			/* page base colors */
-			--page-background-color: black;
-			--page-foreground-color: #C9D1D9;
-			--page-link-color: #9090CE;
-			--page-visited-link-color: #A3A3D7;
+			--page-background-color: var(--background);
+			--page-foreground-color: var(--foreground);
+			--page-link-color: hsl(240, 39%, 69%);
+			--page-visited-link-color: hsl(240, 39%, 74%);
 
 			/* header */
-			--header-background-color: #070711;
-			--header-separator-color: #14142E;
+			--header-background-color: hsl(240, 42%, 5%);
+			--header-separator-color: hsl(240, 39%, 13%);
 			--header-gradient-image: url('../styles/doxygen/nav_hd.png');
-			--group-header-separator-color: #28285D;
-			--group-header-color: #9090CE;
-			--inherit-header-color: #A0A0A0;
+			--group-header-separator-color: hsl(240, 40%, 26%);
+			--group-header-color: hsl(240, 39%, 69%);
+			--inherit-header-color: hsl(0, 0%, 63%);
+
+			/** code fragments */
+			--code-keyword-color: #CC99CD;
+			--code-type-keyword-color: #AB99CD;
+			--code-flow-keyword-color: #E08000;
+			--code-comment-color: #717790;
+			--code-preprocessor-color: #65CABE;
+			--code-string-literal-color: #7EC699;
+			--code-char-literal-color: #00E0F0;
+			--code-xml-cdata-color: #C9D1D9;
+			--code-vhdl-digit-color: #FF00FF;
+			--code-vhdl-char-color: #000000;
+			--code-vhdl-keyword-color: #700070;
+			--code-vhdl-logic-color: #FF0000;
+			--code-link-color: #79C0FF;
+			--code-external-link-color: #79C0FF;
+			--fragment-foreground-color: hsl(210, 17%, 82%);
+			--fragment-background-color: #000000;
+			--fragment-border-color: #30363D;
+			--fragment-lineno-border-color: #30363D;
+			--fragment-lineno-background-color: black;
+			--fragment-lineno-foreground-color: #6E7681;
+			--fragment-lineno-link-fg-color: #6E7681;
+			--fragment-lineno-link-bg-color: #303030;
+			--fragment-lineno-link-hover-fg-color: #8E96A1;
+			--fragment-lineno-link-hover-bg-color: #505050;
+			--tooltip-foreground-color: #C9D1D9;
+			--tooltip-background-color: #202020;
+			--tooltip-border-color: #C9D1D9;
+			--tooltip-doc-color: #D9E1E9;
+			--tooltip-declaration-color: #20C348;
+			--tooltip-link-color: #79C0FF;
+			--tooltip-shadow: none;
 
 			--colour-dull: hsla(0, 0%, 100%, 50%);
 			--colour-glow: hsl(180, 100%, 50%);
@@ -231,8 +297,11 @@ main {
 footer {
 	padding-top: 0.5rem; /* 8px */
 	padding-bottom: 0.5rem;  /* 8px */
-	background-color: hsl(var(--background));
-	color: hsl(var(--foreground));
+	background-image:none;
+	background-repeat:no-repeat;
+	background-position:right;
+	/* background-color:var(--background); */
+	color: var(--footer-foreground-color);
 
 	margin:  0px;
 	border-top: 1px solid var(--header-separator-color);
@@ -242,6 +311,13 @@ footer {
 section {
 	z-index: calc(inherit + var(--z-index__scale-depth));
 }
+
+/* pre {
+	color: var(--fragment-foreground-color);
+	background-color: var(--fragment-background-color);
+	border: var(--custom-border);
+	border-radius: var(--custom-border-radius);
+} */
 
 h1 {
   display: block;
@@ -354,7 +430,93 @@ a.code.hl_event { opacity: 1; /* style for links to event names in code snippets
 a.code.hl_sequence { opacity: 1; /* style for links to sequence names in code snippets */ }
 a.code.hl_dictionary { opacity: 1; /* style for links to dictionary names in code snippets */ }
 
+.fragment {
+	text-align: left;
+	direction: ltr;
+	overflow-x: auto; /*Fixed: fragment lines overlap floating elements*/
+	overflow-y: hidden;
+}
+
+pre.fragment {
+	border: 1px solid var(--fragment-border-color);
+	background-color: var(--fragment-background-color);
+	color: var(--fragment-foreground-color);
+	padding: 4px 6px;
+	margin: 4px 8px 4px 2px;
+	overflow: auto;
+	word-wrap: break-word;
+	font-size:  9pt;
+	line-height: 125%;
+	font-family: var(--font-family-monospace);
+	font-size: 105%;
+}
+
+code.fragment {
+	padding: 0 0 1px 0; /*Fixed: last line underline overlap border*/
+	margin: 4px 8px 4px 2px;
+	color: var(--fragment-foreground-color);
+	background-color: var(--fragment-background-color);
+	border: 1px solid var(--fragment-border-color);
+}
+
 /* @end */
+
+/* @group Code Colorization */
+
+span.keyword {
+	color: var(--code-keyword-color);
+}
+
+span.keywordtype {
+	color: var(--code-type-keyword-color);
+}
+
+span.keywordflow {
+	color: var(--code-flow-keyword-color);
+}
+
+span.comment {
+	color: var(--code-comment-color);
+}
+
+span.preprocessor {
+	color: var(--code-preprocessor-color);
+}
+
+span.stringliteral {
+	color: var(--code-string-literal-color);
+}
+
+span.charliteral {
+	color: var(--code-char-literal-color);
+}
+
+span.xmlcdata {
+	color: var(--code-xml-cdata-color);
+}
+
+span.vhdldigit {
+	color: var(--code-vhdl-digit-color);
+}
+
+span.vhdlchar {
+	color: var(--code-vhdl-char-color);
+}
+
+span.vhdlkeyword {
+	color: var(--code-vhdl-keyword-color);
+}
+
+span.vhdllogic {
+	color: var(--code-vhdl-logic-color);
+}
+
+blockquote {
+	background-color: var(--blockquote-background-color);
+	border-left: 2px solid var(--blockquote-border-color);
+	margin: 0 24px 0 4px;
+	padding: 0 12px 0 16px;
+}
 
 span.emoji {
 	/* font family used at the site: https://unicode.org/emoji/charts/full-emoji-list.html */
@@ -410,8 +572,6 @@ font-weight: 300;
 .opacity-half {
 opacity: 50%;
 }
-
-
 
 .transition__glow {
 	box-shadow: 0 0 1.0rem var(--colour-dull);
