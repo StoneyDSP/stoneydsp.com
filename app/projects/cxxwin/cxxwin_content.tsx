@@ -1,15 +1,15 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import {
   HRGradient,
-  TextLargeBoldCenter,
   BackToHome
 } from '@/components/layouts'
-import styles from '@/app/projects/cxxwin/cxxwin.module.css'
+import styles from '@/app/layout.module.css'
+
+export const dynamic = 'force-dynamic'
 
 export default async function CxxwinContent() {
 
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
-  // const res = await fetch('http://localhost:3000/markdown/projects/cxxwin/cxxwin.mdx')
   const res = await fetch('https://raw.githubusercontent.com/nathanjhood/CxxWin/main/README.md')
   const markdown = await res.text()
 
@@ -18,9 +18,7 @@ export default async function CxxwinContent() {
 
       <div className={styles.content}>
 
-        <div className="flex flex-col gap-8 bg-background text-foreground">
-
-          <HRGradient />
+        <div className={styles.flexboxgrid}>
 
           <MDXRemote source={markdown} />
 
