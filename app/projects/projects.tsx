@@ -1,6 +1,5 @@
 import {
   HRGradient,
-  TextLargeBoldCenter,
   BackToHome,
   BackToTop
 } from '@/components/layouts'
@@ -18,11 +17,17 @@ export default async function Projects() {
 
         <div className={styles.flexboxgrid}>
 
+          {/* <div className='tableRowOdd py-0 text-center'>
+            <div className='pt-0 pb-1'>
+            <HRGradient />
+            </div>
+          </div> */}
+
           <HRGradient />
 
-          <TextLargeBoldCenter>
-            Here you may find some examples of my work:
-          </TextLargeBoldCenter>
+          <h2 className='text-center'>
+            Read about some of my most popular projects:
+          </h2>
 
           <HRGradient />
 

@@ -12,8 +12,11 @@
 	align-items: center;
 	gap: 3.5rem; /* 56px */
 
-	padding-left: 0.75rem; /* 12px */
-  padding-right: 0.75rem; /* 12px */
+	background-color: hsl(var(--background));
+	color: hsl(var(--foreground));
+
+	padding-left: 2rem;
+  padding-right: 2rem;
 
 	padding-top: 2rem; /* 32px */
   padding-bottom: 2rem; /* 32px */

@@ -30,16 +30,16 @@ export default async function ResourceCards() {
       {resources.map(({ title, subtitle, url, icon }) => (
         <Link
           key={title}
-          className="relative flex flex-col group rounded-lg border p-6 hover:border-foreground text-foreground transition___shadow_off"
+          className="relative flex flex-col tableRowOdd group rounded-lg border p-6 hover:border-foreground text-foreground transition___shadow_off"
           href={url}
           // target="_blank"
           rel="noreferrer"
         >
-          <h3 className="font-bold mb-2 opacity-90 group-hover:opacity-100 min-h-[40px] lg:min-h-[60px]">
+          <h3 className="animate-in font-bold mb-2 opacity-90 group-hover:opacity-100 min-h-[40px] lg:min-h-[60px]">
             {title}
           </h3>
           <div className="flex flex-col grow gap-4 justify-between">
-            <p className="text-sm opacity-80 group-hover:opacity-100">{subtitle}</p>
+            <p className="animate-in text-sm opacity-80 group-hover:opacity-100">{subtitle}</p>
             <div className="flex justify-between items-center">
               <svg
                 width="24"

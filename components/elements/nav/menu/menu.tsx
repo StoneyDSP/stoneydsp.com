@@ -27,7 +27,23 @@ export default function NavMenu() {
         <li key={page}>
           <Link
             href={path}
-            className={`link ${pathname === path ? 'active' : ''} py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm`}
+            className={`
+              link ${pathname === path ? 'active' : ''}
+              py-2
+              px-4
+              rounded-md
+              no-underline
+              hover:no-underline
+              text-foreground
+              bg-btn-background
+              hover:bg-btn-background-hover
+              flex
+              items-center
+              group
+              text-sm
+              border
+
+            `}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,8 +58,7 @@ export default function NavMenu() {
               className="mr-2 h-4 w-4 transition-transform group-hover:translate-y-1"
             >
               <polyline points="6 9 12 15 18 9" />
-            </svg>{' '}
-            {page}
+            </svg><span className='hover:no-underline'>|&nbsp;&nbsp;&nbsp;&nbsp;</span>{' '}{page}
           </Link>
         </li>
       ))}

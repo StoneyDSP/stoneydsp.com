@@ -4,6 +4,7 @@ import {
   BackToHome,
   BackToTop
 } from '@/components/layouts'
+import { Article } from '@/components/elements'
 import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -46,24 +47,30 @@ All rights reserved.
 `
 
   return (
-    <div className={styles.container}>
+    <Article>
+      <div className={styles.container}>
 
-      <div className={styles.content}>
+        <div className={styles.content}>
 
-        <div className={styles.flexboxgrid}>
+          <div className={styles.flexboxgrid}>
 
-          <MDXRemote source={markdown} />
+            <div className='flex justify-center align-middle'>
+              <MDXRemote source={`[![MSYS2-Toolchain](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=MSYS2-Toolchain\&theme=transparent)](https://github.com/nathanjhood/MSYS2-Toolchain)`} />
+            </div>
 
-          <HRGradient />
+            <MDXRemote source={markdown} />
 
-          <BackToTop />
+            <HRGradient />
 
-          <BackToHome />
+            <BackToTop />
 
-          <HRGradient />
+            <BackToHome />
 
+            <HRGradient />
+
+          </div>
         </div>
       </div>
-    </div>
+    </Article>
   )
 }

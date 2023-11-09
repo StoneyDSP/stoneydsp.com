@@ -6,7 +6,10 @@ export default {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './mdx-components.tsx'
   ],
-  darkMode: ['class', '[data-mode="dark-mode"]'],
+  darkMode: [
+    'class',
+    // '[data-mode="dark-mode"]'
+  ],
   presets: [],
   theme: {
     extend: {
@@ -66,6 +69,8 @@ export default {
       'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))',
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
       'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
+      'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
     },
     backgroundOpacity: ({ theme }) => theme('opacity'),
     backgroundPosition: {
