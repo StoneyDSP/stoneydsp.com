@@ -1,10 +1,13 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import {
   HRGradient,
-  TextLargeBoldCenter,
-  BackToHome
+  BackToHome,
+  BackToTop
 } from '@/components/layouts'
-import styles from '@/app/projects/ubento/ubento.module.css'
+import { Article } from '@/components/elements'
+import styles from '@/app/layout.module.css'
+
+export const dynamic = 'force-dynamic'
 
 export default async function UbentoContent() {
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
@@ -12,29 +15,33 @@ export default async function UbentoContent() {
 # UBento
 
 Minimal, bento-box style Ubuntu-based WSL distro front-end, ideal for targeting Linux-style NodeJs and CMake development environments from Windows platforms.
-
-[![UBento](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=UBento\&theme=transparent)](https://github.com/StoneyDSP/UBento)
 `
 
   return (
-    <div className={styles.container}>
+    <Article>
+      <div className={styles.container}>
 
-      <div className={styles.content}>
+        <div className={styles.content}>
 
-        <div className="flex flex-col gap-8 bg-background text-foreground">
+          <div className={styles.flexboxgrid}>
 
-          <HRGradient />
+            <div className='flex justify-center align-middle'>
+              <MDXRemote source={`[![UBento](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=UBento\&theme=transparent)](https://github.com/StoneyDSP/UBento)`} />
+            </div>
 
-          <MDXRemote source={markdown} />
+            <HRGradient />
 
-          <HRGradient />
+            <MDXRemote source={markdown} />
 
-          <BackToHome />
+            <HRGradient />
 
-          <HRGradient />
+            <BackToHome />
 
+            <HRGradient />
+
+          </div>
         </div>
       </div>
-    </div>
+    </Article>
   )
 }

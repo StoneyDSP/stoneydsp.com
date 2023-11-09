@@ -16,6 +16,18 @@ export default async function Contact() {
 
         <div className={styles.flexboxgrid}>
 
+          {/* <div className='tableRowOdd py-0 text-center'>
+            <div className='pt-0 pb-1'>
+            <HRGradient />
+            </div>
+          </div> */}
+
+          <h2 className='text-center'>
+            Hi! I&#39;m Nathan, a.k.a StoneyDSP.
+          </h2>
+
+          <HRGradient />
+
           <HRGradient />
 
           <BackToTop />

@@ -3,6 +3,7 @@ import {
   ResourceCards
 } from '@/components/cards'
 import {
+  Ribbon,
   HRGradient,
   TextLargeBoldCenter,
   BackToTop
@@ -18,17 +19,24 @@ export default async function Home() {
   // const nonce = headers().get('x-nonce')
 
   return (
+
     <div className={styles.container}>
 
       <div className={styles.content}>
 
         <div className={styles.flexboxgrid}>
 
+          {/* <div className='animate-in tableRowOdd py-0 text-center'>
+            <div className='animate-in pt-0 pb-1'>
+            <HRGradient />
+            </div>
+          </div> */}
+
           <HRGradient />
 
-          <TextLargeBoldCenter>
+          <h2 className='animate-in text-center'>
             Hi! I&#39;m Nathan, a.k.a StoneyDSP.
-          </TextLargeBoldCenter>
+          </h2>
 
           <HRGradient />
 
@@ -36,9 +44,9 @@ export default async function Home() {
 
           <HRGradient />
 
-          <TextLargeBoldCenter>
-            Here are some examples of my work:
-          </TextLargeBoldCenter>
+          <h2 className='animate-in text-center'>
+            Welcome to my workbench.
+          </h2>
 
           <HRGradient />
 

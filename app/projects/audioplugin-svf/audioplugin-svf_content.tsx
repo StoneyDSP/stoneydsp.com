@@ -23,6 +23,10 @@ export default async function AudiopluginsvfContent() {
 
           <div className={styles.flexboxgrid}>
 
+            <div className='flex justify-center align-middle'>
+              <MDXRemote source={`[![AudioPlugin-SVF](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=AudioPlugin-SVF\&theme=transparent)](https://github.com/nathanjhood/AudioPlugin-SVF)`} />
+            </div>
+
             <MDXRemote source={markdown} />
 
             <HRGradient />

@@ -1,7 +1,7 @@
 import TextLargeBoldCenter from '@/components/layouts/TextLargeBoldCenter'
 import HRGradient from '@/components/layouts/HRGradient'
 
-import styles from './ribbon.module.css'
+// import styles from './ribbon.module.css'
 
 export default async function Ribbon({
   children,
@@ -9,7 +9,7 @@ export default async function Ribbon({
   children: React.ReactNode
 }) {
   return (
-    <div className={styles.tableRowOdd}>
+    <div className='tableRowOdd rounded-lg'>
 
       <HRGradient />
 

@@ -23,6 +23,10 @@ export default async function OrfanidisbiquadContent() {
 
           <div className={styles.flexboxgrid}>
 
+            <div className='flex justify-center align-middle'>
+              <MDXRemote source={`[![OrfanidisBiquad](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=OrfanidisBiquad\&theme=transparent)](https://github.com/nathanjhood/OrfanidisBiquad)`} />
+            </div>
+
             <MDXRemote source={markdown} />
 
             <HRGradient />

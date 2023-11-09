@@ -23,6 +23,12 @@ export default async function BiquadsContent() {
 
           <div className={styles.flexboxgrid}>
 
+            <div className='flex justify-center align-middle'>
+              <MDXRemote source={`[![Biquads](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=Biquads\&theme=transparent)](https://github.com/nathanjhood/Biquads)`} />
+            </div>
+
+            <HRGradient />
+
             <MDXRemote source={markdown} />
 
             <HRGradient />

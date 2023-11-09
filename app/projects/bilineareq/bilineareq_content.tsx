@@ -23,6 +23,10 @@ export default async function BilineareqContent() {
 
           <div className={styles.flexboxgrid}>
 
+            <div className='flex justify-center align-middle'>
+              <MDXRemote source={`[![BiLinearEQ](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=BiLinearEQ\&theme=transparent)](https://github.com/nathanjhood/BiLinearEQ)`} />
+            </div>
+
             <MDXRemote source={markdown} />
 
             <HRGradient />

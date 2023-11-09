@@ -23,6 +23,10 @@ export default async function CxxwinContent() {
 
           <div className={styles.flexboxgrid}>
 
+            <div className='flex justify-center align-middle'>
+              <MDXRemote source={`[![CxxWin](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=CxxWin\&theme=transparent)](https://github.com/nathanjhood/Cxxwin)`} />
+            </div>
+
             <MDXRemote source={markdown} />
 
             <HRGradient />
