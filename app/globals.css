@@ -52,14 +52,20 @@
 
 	@media (prefers-color-scheme: light) {
 		:root {
-			--background: 200 20% 98%;
+			--background: 200 20% 99%;
 			--btn-background: 200 10% 91%;
-			--btn-background-hover: 200 10% 89%;
+			--btn-background-hover: 200 10% 95%;
 			--foreground: 200 50% 3%;
 
-			/* --foreground-rgb: 0, 0, 0;
-  			--background-start-rgb: 214, 219, 220;
-  			--background-end-rgb: 255, 255, 255; */
+			--whut: rgb(252, 253, 253);
+			--btn-whut: hsl(200 10% 93%);
+
+			--foreground-rgb: 4, 9, 11;
+			--background-start-rgb: 214, 219, 220;
+			--background-end-rgb: 252, 253, 253;
+
+			--whut-start:rgb(214, 219, 220);
+			--whut-end:rgb(255, 255, 255);
 
 			--custom-bg-color:  var(--background);
 			--custom-panel-color: #222;
@@ -80,7 +86,7 @@
 			/* header */
 			--header-background-color: hsl(240, 33%, 98%);
 			--header-separator-color: hsl(240, 39%, 83%);
-			--header-gradient-image: url('../styles/doxygen/nav_h.png'); /* https://raw.githubusercontent.com/StoneyDSP/StoneyDSP.github.io/main/public/ */
+			--header-gradient-image: url('../styles/doxygen/nav_h.png');
 			--group-header-separator-color: #8787CB;
 			--group-header-color: #35357B;
 			--inherit-header-color: gray;
@@ -126,19 +132,28 @@
 
 			--footer-foreground-color: hsl(240, 40%, 27%);
 			--citation-label-color: hsl(240, 39%, 33%);
+
+			--header-nav-tab: url('../styles/doxygen/bc_s.png');
 		}
 	}
 
 	@media (prefers-color-scheme: dark) or (prefers-color-scheme: no-preference) {
 		:root {
-			--background: 200 50% 3%;
+			--background: 200 50% 5%;
 			--btn-background: 200 10% 9%;
 			--btn-background-hover: 200 10% 12%;
 			--foreground: 200 20% 96%;
 
-			/* --foreground-rgb: 255, 255, 255;
-    		--background-start-rgb: 0, 0, 0;
-    		--background-end-rgb: 0, 0, 0; */
+			--whut: rgb(6, 15, 19);
+
+			--foreground-rgb: 243, 245, 247;
+			/* --background-start-rgb: 10, 20, 24;
+			--background-end-rgb: 6, 15, 19; */
+			--background-start-rgb: 6, 15, 19;
+			--background-end-rgb: 10, 20, 24;
+
+			--whut-start:rgb(41, 36, 20);
+			--whut-end:rgb(0, 0, 0);
 
 			--custom-bg-color: var(--background);
 			--custom-panel-color: #222;
@@ -205,6 +220,8 @@
 
 			--footer-foreground-color: #5B5BB7;
 			--citation-label-color: #9090CE;
+
+			--header-nav-tab: url('../styles/doxygen/bc_sd.png');
 		}
 	}
 }
@@ -230,21 +247,30 @@
   }
 }
 
+html {
+	font-family: var(--custom-font-family);
+	background-color: var(--custom-bg-color);
+  color: var(--custom-color);
+}
+html.dark-mode {
+	font-family: var(--custom-font-family);
+	background-color: var(--custom-bg-color);
+  color: var(--custom-color);
+}
+
 html, body {
   padding: 0;
   margin: 0;
-  font-family: var(--custom-font-family);
-  background-color: var(--custom-bg-color);
-  color: var(--custom-color);
+  /* background-color: var(--custom-bg-color);
+  color: var(--custom-color); */
 }
-html.dark-mode,
+/* html.dark-mode,
 body.dark-mode {
   padding: 0;
   margin: 0;
-  font-family: var(--custom-font-family);
   background-color: var(--custom-bg-color);
   color: var(--custom-color);
-}
+} */
 
 * {
   color: var(--custom-color);
@@ -286,8 +312,8 @@ nav {
 
 main {
 	min-height: 100vh;
-	background-color: hsl(var(--background));
-	color: hsl(var(--foreground));
+	/* background-color: hsl(var(--background));
+	color: hsl(var(--foreground)); */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -321,36 +347,42 @@ section {
 
 h1 {
   display: block;
+	opacity: 80%;
   font-size: 2.0rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h2 {
   display: block;
+	opacity: 80%;
   font-size: 1.5rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h3 {
   display: block;
+	opacity: 80%;
   font-size: 1.17rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h4 {
   display: block;
+	opacity: 80%;
   font-size: 1.0rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h5 {
   display: block;
+	opacity: 80%;
   font-size: 0.83rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h6 {
   display: block;
+	opacity: 80%;
   font-size: 0.67rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
@@ -360,6 +392,7 @@ hgroup {
 }
 p {
   display: block;
+	opacity: 80%;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 i {
@@ -641,6 +674,30 @@ opacity: 50%;
 	transition-timing-function: ease-in-out;
 }
 
+.transition___shadow_hold {
+	box-shadow: 0 0 1.0rem var(--colour-dull);
+}
+
+.transition___glow_on {
+	box-shadow: none;
+
+	transition-property: box-shadow;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+
+.transition___glow_on:hover {
+	box-shadow: 0 0 0.5rem var(--colour-glow);
+
+	transition-property: box-shadow;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+
+.ribbon {
+	gap: 2rem/* 32px */;
+}
+
 .tableRowOdd {
 	background-image: var(--table-row-gradient);
 	background-repeat: repeat-x;
@@ -650,5 +707,32 @@ opacity: 50%;
 .tableRowEven {
 	background-image: var(--table-gradient);
 	background-repeat: repeat-x;
+	background-size: contain;
 	background-color: var(--header-background-color);
+}
+
+body, .fadedbody {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+		to bottom,
+		transparent,
+		rgb(var(--background-end-rgb))
+	)
+	rgb(var(--background-start-rgb));
+}
+
+.fadedbody-inverse {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+		to top,
+		transparent,
+		rgb(var(--background-start-rgb))
+	)
+	rgb(var(--background-end-rgb));
+}
+
+.navtab {
+	background-image: var(--header-nav-tab);
+	background-repeat: repeat-x;
+	background-size: contain;
 }

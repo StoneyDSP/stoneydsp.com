@@ -24,6 +24,10 @@ export default async function NonlinearfiltersContent() {
 
           <div className={styles.flexboxgrid} id=''>
 
+            <div className='flex justify-center align-middle'>
+              <MDXRemote source={`[![NonLinearFilters](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=NonLinearFilters\&theme=transparent)](https://github.com/nathanjhood/NonLinearFilters)`} />
+            </div>
+
             <MDXRemote source={markdown} />
 
             <HRGradient />

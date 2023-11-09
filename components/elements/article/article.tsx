@@ -3,8 +3,7 @@ import {
   ButtonBack,
   ButtonLike
 } from '@/components/elements'
-import { useState } from "react"
-import Link from "next/link"
+import { useState } from 'react'
 
 export default function Article({
   children,
@@ -18,10 +17,10 @@ export default function Article({
   }
 
   return (
-    <article className='animate-in'>
+    <article className='animate-in min-h-screen'>
 
       <div
-        className='animate-in flex flex-row gap-8'
+        className='animate-in flex flex-col gap-8'
       >
         <ButtonBack />
         <ButtonLike />

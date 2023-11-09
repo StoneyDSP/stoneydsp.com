@@ -1,5 +1,5 @@
 'use client'
-import { Ribbon } from '@/components/layouts'
+import { HRGradient } from '@/components/layouts'
 import { Analytics } from '@vercel/analytics/react'
 import { track } from '@vercel/analytics'
 import { useEffect, useState } from 'react'
@@ -10,8 +10,8 @@ export default function ConsentBanner() {
   const [showConsentBanner, setShowConsentBanner] = useState(false)
 
   useEffect(() => {
-    if (!(sessionStorage.getItem('vercel-analytics'))) {
-      /* || (localStorage.getItem('vercel-analytics') == 'true') */
+    if (!(sessionStorage.getItem('va-disable'))) {
+      /* || (localStorage.getItem('va-disable') == 'true') */
       setShowConsentBanner(true);
     }
   }, []);
@@ -21,27 +21,49 @@ export default function ConsentBanner() {
   }
 
   const acceptCookies = () => {
-    sessionStorage.setItem('vercel-analytics', 'true')
-    setShowConsentBanner(false);
-  };
+    sessionStorage.setItem('va-disable', 'false')
+    setShowConsentBanner(false)
+    track('Accepted Cookies')
+  }
 
   const declineCookies = () => {
-    // localStorage.setItem('vercel-analytics', 'false')
-    sessionStorage.removeItem('vercel-analytics')
-    setShowConsentBanner(false);
-  };
+    sessionStorage.setItem('va-disable', 'true')
+    // sessionStorage.removeItem('va-disable')
+    setShowConsentBanner(false)
+    track('Declined Cookies')
+  }
+
+  const closeBanner = () => {
+    setShowConsentBanner(false)
+    track('Ignored Cookies')
+  }
 
   return (
     <div
-      className='animate-in flex flex-col bottom-4 opacity-100 z-50 absolute justify-center gap-8 text-foreground text-center text-xs group rounded-lg border hover:border-foreground transition___shadow_off'
+      className='animate-in flex flex-col bottom-4 opacity-100 z-50 absolute justify-center text-foreground text-center bg-btn-background hover:bg-btn-background-hover text-xs group rounded-lg border hover:border-foreground transition___shadow_off'
     >
-      <Ribbon>
+      {/* <Ribbon> */}
+        <div className=''>
+          <button
+            type='button'
+            onClick={closeBanner}
+            className='absolute right-0 py-1 px-1 flex no-underline'
+          >
+            <span
+              className='flex text-center text-foreground border hover:border-foreground rounded-md text-xs'
+            >&nbsp;&nbsp;x&nbsp;&nbsp;</span>
+          </button>
+        </div>
+
+        <HRGradient />
+
         <p
-          className='text-foreground font-normal text-center text-xs p-4'
+          className='text-foreground font-normal text-center text-xs rounded-lg px-2 pt-6 pb-1'
         >
           We use <a href='https://vercel.com/docs/analytics#how-visitors-are-determined' target='_blank' className='text-xs'>analytics</a> to understand how you use the site and help us improve it.
         </p>
-        <div className="flex flex-col justify-center py-1">
+        <div className="bg-background py-0">
+          <HRGradient />
           <p className="text-foreground text-center text-xs">
             <small>{' '}</small>
             <Link
@@ -51,7 +73,9 @@ export default function ConsentBanner() {
             >
               Terms of Service
             </Link>
-            <span> || </span>
+          </p>
+          <HRGradient />
+          <p className="text-foreground text-center text-xs">
             <small>{' '}</small>
             <Link
               href="/privacy-policy"
@@ -61,38 +85,29 @@ export default function ConsentBanner() {
               Privacy Policy
             </Link>
           </p>
+          <HRGradient />
         </div>
         <div
-          className='flex flex-row justify-center gap-4 text-foreground text-center px-3 py-2'
+          className='flex flex-row justify-center gap-4 text-foreground text-center px-3 pt-2 pb-4'
         >
           <button
             type='button'
-            // onClick={acceptCookies}
-            onClick={() => {
-              track('Accept Cookies');
-              // ... other logic
-              acceptCookies()
-            }}
-            className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-300 border transition___shadow_off'
+            onClick={acceptCookies}
+            className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-400 border-2'
           >
             <span
-              className='text-sm font-bold text-center text-foreground'
+              className='font-bold text-center text-white'
             >
               Accept
             </span>
           </button>
           <button
             type='button'
-            // onClick={declineCookies}
-            onClick={() => {
-              track('Decline Cookies');
-              // ... other logic
-              declineCookies()
-            }}
-            className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-300 border transition___shadow_off'
+            onClick={declineCookies}
+            className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-400 border-2'
           >
             <span
-              className='text-sm font-bold text-center text-foreground'
+              className='font-bold text-center text-white'
             >
               Decline
             </span>
@@ -100,15 +115,15 @@ export default function ConsentBanner() {
         </div>
         <Analytics
           beforeSend={(event) => {
-            // if (localStorage.getItem('vercel-analytics') === 'false') {
-            if (!(sessionStorage.getItem('vercel-analytics'))) {
+            if (sessionStorage.getItem('va-disable') === 'false') {
+            // if (!(sessionStorage.getItem('vercel-analytics'))) {
               return null;
             } else {
               return event;
             }
           }}
         />
-      </Ribbon>
+      {/* </Ribbon> */}
     </div>
   )
 }

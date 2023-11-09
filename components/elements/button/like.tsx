@@ -12,7 +12,7 @@ export default function ButtonLike() {
     <div className='flex justify-center align-middle items-center'>
       <button
         onClick={handleClick}
-        className='absolute right-8 top-8 py-2 px-4 transition-colors bg-green-500 hover:bg-purple-500 border transition___shadow_off rounded-md text-foreground mb-2'
+        className='absolute right-8 top-8 py-2 px-4 transition-colors bg-green-500 hover:bg-purple-400 border transition___shadow_off rounded-md text-white mb-2'
       >
         Like ({likes})
       </button>
