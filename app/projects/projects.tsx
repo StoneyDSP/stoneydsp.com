@@ -1,10 +1,11 @@
 import {
   HRGradient,
   TextLargeBoldCenter,
-  BackToHome
+  BackToHome,
+  BackToTop
 } from '@/components/layouts'
 import RepoCards from '@/components/cards/RepoCards/RepoCards'
-import styles from '@/app/projects/projects.module.css'
+import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
 
@@ -15,7 +16,7 @@ export default async function Projects() {
 
       <div className={styles.content}>
 
-        <div className="flex flex-col gap-8 bg-background text-foreground">
+        <div className={styles.flexboxgrid}>
 
           <HRGradient />
 
@@ -28,6 +29,8 @@ export default async function Projects() {
           <RepoCards />
 
           <HRGradient />
+
+          <BackToTop />
 
           <BackToHome />
 

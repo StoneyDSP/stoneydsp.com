@@ -1,7 +1,8 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import {
   HRGradient,
-  BackToHome
+  BackToHome,
+  BackToTop
 } from '@/components/layouts'
 import { Article } from '@/components/elements'
 import styles from '@/app/layout.module.css'
@@ -25,6 +26,8 @@ export default async function BilineareqContent() {
             <MDXRemote source={markdown} />
 
             <HRGradient />
+
+            <BackToTop />
 
             <BackToHome />
 

@@ -3,7 +3,7 @@ import {
   HRGradient,
   TextLargeBoldCenter,
   BackToHome,
-  FlexColCenter,
+  BackToTop,
   Ribbon
 } from '@/components/layouts'
 import styles from '@/app/layout.module.css'
@@ -83,6 +83,8 @@ export default async function About() {
           <HRGradient />
 
           <HRGradient />
+
+          <BackToTop />
 
           <BackToHome />
 
