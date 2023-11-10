@@ -43,17 +43,17 @@ export default function ConsentBanner() {
       className='animate-in flex flex-col bottom-4 opacity-100 z-50 absolute justify-center text-foreground text-center bg-btn-background hover:bg-btn-background-hover text-xs group rounded-lg border hover:border-foreground transition___shadow_off'
     >
       {/* <Ribbon> */}
-        <div className=''>
-          <button
-            type='button'
-            onClick={closeBanner}
-            className='absolute right-0 py-1 px-1 flex no-underline'
-          >
-            <span
-              className='flex text-center text-foreground border hover:border-foreground rounded-md text-xs'
-            >&nbsp;&nbsp;x&nbsp;&nbsp;</span>
-          </button>
-        </div>
+
+        <button
+          type='button'
+          onClick={closeBanner}
+          className='absolute right-0 py-1 px-1 flex no-underline'
+        >
+          <span
+            className='flex text-center text-foreground border hover:border-foreground rounded-md text-xs'
+          >&nbsp;&nbsp;x&nbsp;&nbsp;</span>
+        </button>
+
 
         <HRGradient />
 

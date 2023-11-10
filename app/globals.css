@@ -182,7 +182,7 @@
 			--code-link-color: hsl(208, 100%, 74%);
 			--code-external-link-color: hsl(208, 100%, 74%);
 			--fragment-foreground-color: hsl(210, 17%, 82%);
-			--fragment-background-color: hsl(0, 0%, 0%);
+			--fragment-background-color: hsl(200 10% 9%);
 			--fragment-border-color: hsl(212, 12%, 21%);
 			--fragment-lineno-border-color: hsl(212, 12%, 21%);
 			--fragment-lineno-background-color: hsl(0, 0%, 0%);
