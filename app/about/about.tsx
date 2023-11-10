@@ -8,6 +8,8 @@ import {
 } from '@/components/layouts'
 import styles from '@/app/layout.module.css'
 
+export const dynamic = 'force-dynamic'
+
 export default async function About() {
   return (
     <div className={styles.container}>

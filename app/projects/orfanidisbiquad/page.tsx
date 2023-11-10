@@ -5,7 +5,10 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Orfanidis Biquad',
-  description: 'Multi-mode Biquad filter for audio analysis purposes using variable BiLinear transforms, processing precision, and pre-warped co-efficients to achieve high-quality results.',
+  description: 'De-cramped digital filter design.',
+  alternates: {
+    canonical: 'https://www.stoneydsp.com/projects/orfanidisbiquad'
+  }
 }
 
 export default async function OrfanidisbiquadPage() {

@@ -5,7 +5,10 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Biquads',
-  description: 'Simple two-pole equalizer with variable oversampling.',
+  description: 'Multi-mode equalizer with variable BiLinear Tranformations and oversampling.',
+  alternates: {
+    canonical: 'https://www.stoneydsp.com/projects/biquads'
+  }
 }
 
 export default async function BiquadsPage() {

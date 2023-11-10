@@ -5,7 +5,10 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Audioplugin-SVF',
-  description: 'Simple Multi-Mode State Variable Filter using TPT, built directly from the StoneyDSP AudioPlugin template repository and the juce State Variable TPT Filter module (with a few mods)...',
+  description: 'Multi-Mode State Variable Filter using TPT.',
+  alternates: {
+    canonical: 'https://www.stoneydsp.com/projects/audioplugin-svf'
+  }
 }
 
 export default async function AudiopluginsvfPage() {

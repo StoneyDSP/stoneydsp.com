@@ -5,7 +5,10 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Msys2-Toolchain',
-  description: 'Full CMake build support for all Msys64 sub-systems, with optional vcpkg integration.',
+  description: 'CMake build support for Msys64.',
+  alternates: {
+    canonical: 'https://www.stoneydsp.com/projects/msys2-toolchain'
+  }
 }
 
 export default async function MsystoolchainPage() {
