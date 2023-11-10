@@ -57,15 +57,9 @@
 			--btn-background-hover: 200 10% 95%;
 			--foreground: 200 50% 3%;
 
-			--whut: rgb(252, 253, 253);
-			--btn-whut: hsl(200 10% 93%);
-
 			--foreground-rgb: 4, 9, 11;
 			--background-start-rgb: 214, 219, 220;
 			--background-end-rgb: 252, 253, 253;
-
-			--whut-start:rgb(214, 219, 220);
-			--whut-end:rgb(255, 255, 255);
 
 			--custom-bg-color:  var(--background);
 			--custom-panel-color: #222;
@@ -87,9 +81,9 @@
 			--header-background-color: hsl(240, 33%, 98%);
 			--header-separator-color: hsl(240, 39%, 83%);
 			--header-gradient-image: url('../styles/doxygen/nav_h.png');
-			--group-header-separator-color: #8787CB;
-			--group-header-color: #35357B;
-			--inherit-header-color: gray;
+			--group-header-separator-color: hsl(240, 40%, 66%);
+			--group-header-color: hsl(240, 40%, 35%);
+			--inherit-header-color: hsl(0, 0%, 50%);
 
 			/** code fragments */
 			--code-keyword-color: hsl(120, 100%, 25%);
@@ -107,22 +101,22 @@
 			--code-link-color: hsl(240, 40%, 45%);
 			--code-external-link-color: hsl(240, 40%, 45%);
 			--fragment-foreground-color: hsl(0, 0%, 0%);
-			--fragment-background-color: hsl(240, 33%, 99%);
-			--fragment-border-color: #C4C4E5;
-			--fragment-lineno-border-color: #00FF00;
-			--fragment-lineno-background-color: #E8E8E8;
-			--fragment-lineno-foreground-color: black;
-			--fragment-lineno-link-fg-color: #4646A2;
-			--fragment-lineno-link-bg-color: #D8D8D8;
-			--fragment-lineno-link-hover-fg-color: #4646A2;
-			--fragment-lineno-link-hover-bg-color: #C8C8C8;
-			--tooltip-foreground-color: black;
-			--tooltip-background-color: white;
-			--tooltip-border-color: gray;
-			--tooltip-doc-color: grey;
-			--tooltip-declaration-color: #006318;
-			--tooltip-link-color: #4646A2;
-			--tooltip-shadow: 1px 1px 7px gray;
+			--fragment-background-color: hsl(200 10% 91%);
+			--fragment-border-color: hsl(240, 39%, 83%);
+			--fragment-lineno-border-color: hsl(120, 100%, 50%);
+			--fragment-lineno-background-color: hsl(0, 0%, 91%);
+			--fragment-lineno-foreground-color: hsl(0, 0%, 0%);
+			--fragment-lineno-link-fg-color: hsl(240, 40%, 45%);
+			--fragment-lineno-link-bg-color: hsl(0, 0%, 85%);
+			--fragment-lineno-link-hover-fg-color: hsl(240, 40%, 45%);
+			--fragment-lineno-link-hover-bg-color: hsl(0, 0%, 78%);
+			--tooltip-foreground-color: hsl(0, 0%, 0%);
+			--tooltip-background-color: hsl(0, 0%, 100%);
+			--tooltip-border-color: hsl(0, 0%, 50%);
+			--tooltip-doc-color: hsl(0, 0%, 50%);
+			--tooltip-declaration-color: hsl(135, 100%, 19%);
+			--tooltip-link-color: hsl(240, 40%, 45%);
+			--tooltip-shadow: 1px 1px 7px hsl(0, 0%, 50%);
 
 			--colour-dull: hsla(0, 0%, 0%, 50%);
 			--colour-glow: hsl(180, 100%, 50%);
@@ -130,7 +124,7 @@
 			--table-gradient: url("../styles/doxygen/tab_b.png");
 			--table-row-gradient: ("../styles/doxygen/nav_h.png");
 
-			--footer-foreground-color: hsl(240, 40%, 27%);
+			--footer-foreground-color: hsl(240, 41%, 27%);
 			--citation-label-color: hsl(240, 39%, 33%);
 
 			--header-nav-tab: url('../styles/doxygen/bc_s.png');
@@ -144,16 +138,9 @@
 			--btn-background-hover: 200 10% 12%;
 			--foreground: 200 20% 96%;
 
-			--whut: rgb(6, 15, 19);
-
 			--foreground-rgb: 243, 245, 247;
-			/* --background-start-rgb: 10, 20, 24;
-			--background-end-rgb: 6, 15, 19; */
 			--background-start-rgb: 6, 15, 19;
 			--background-end-rgb: 10, 20, 24;
-
-			--whut-start:rgb(41, 36, 20);
-			--whut-end:rgb(0, 0, 0);
 
 			--custom-bg-color: var(--background);
 			--custom-panel-color: #222;
@@ -180,36 +167,36 @@
 			--inherit-header-color: hsl(0, 0%, 63%);
 
 			/** code fragments */
-			--code-keyword-color: #CC99CD;
-			--code-type-keyword-color: #AB99CD;
-			--code-flow-keyword-color: #E08000;
-			--code-comment-color: #717790;
-			--code-preprocessor-color: #65CABE;
-			--code-string-literal-color: #7EC699;
-			--code-char-literal-color: #00E0F0;
-			--code-xml-cdata-color: #C9D1D9;
-			--code-vhdl-digit-color: #FF00FF;
-			--code-vhdl-char-color: #000000;
-			--code-vhdl-keyword-color: #700070;
-			--code-vhdl-logic-color: #FF0000;
-			--code-link-color: #79C0FF;
-			--code-external-link-color: #79C0FF;
+			--code-keyword-color: hsl(299, 34%, 70%);
+			--code-type-keyword-color: hsl(261, 34%, 70%);
+			--code-flow-keyword-color: hsl(34, 100%, 44%);
+			--code-comment-color: hsl(228, 12%, 50%);
+			--code-preprocessor-color: hsl(173, 49%, 59%);
+			--code-string-literal-color: hsl(143, 39%, 64%);
+			--code-char-literal-color: hsl(184, 100%, 47%);
+			--code-xml-cdata-color: hsl(210, 17%, 82%);
+			--code-vhdl-digit-color: hsl(300, 100%, 50%);
+			--code-vhdl-char-color: hsl(0, 0%, 0%);
+			--code-vhdl-keyword-color: hsl(300, 100%, 22%);
+			--code-vhdl-logic-color: hsl(0, 100%, 50%);
+			--code-link-color: hsl(208, 100%, 74%);
+			--code-external-link-color: hsl(208, 100%, 74%);
 			--fragment-foreground-color: hsl(210, 17%, 82%);
-			--fragment-background-color: #000000;
-			--fragment-border-color: #30363D;
-			--fragment-lineno-border-color: #30363D;
-			--fragment-lineno-background-color: black;
-			--fragment-lineno-foreground-color: #6E7681;
-			--fragment-lineno-link-fg-color: #6E7681;
-			--fragment-lineno-link-bg-color: #303030;
-			--fragment-lineno-link-hover-fg-color: #8E96A1;
-			--fragment-lineno-link-hover-bg-color: #505050;
-			--tooltip-foreground-color: #C9D1D9;
-			--tooltip-background-color: #202020;
-			--tooltip-border-color: #C9D1D9;
-			--tooltip-doc-color: #D9E1E9;
-			--tooltip-declaration-color: #20C348;
-			--tooltip-link-color: #79C0FF;
+			--fragment-background-color: hsl(0, 0%, 0%);
+			--fragment-border-color: hsl(212, 12%, 21%);
+			--fragment-lineno-border-color: hsl(212, 12%, 21%);
+			--fragment-lineno-background-color: hsl(0, 0%, 0%);
+			--fragment-lineno-foreground-color: hsl(215, 8%, 47%);
+			--fragment-lineno-link-fg-color: hsl(215, 8%, 47%);
+			--fragment-lineno-link-bg-color: hsl(0, 0%, 19%);
+			--fragment-lineno-link-hover-fg-color: hsl(215, 9%, 59%);
+			--fragment-lineno-link-hover-bg-color: hsl(0, 0%, 31%);
+			--tooltip-foreground-color: hsl(210, 17%, 82%);
+			--tooltip-background-color: hsl(0, 0%, 13%);
+			--tooltip-border-color: hsl(210, 17%, 82%);
+			--tooltip-doc-color: hsl(210, 27%, 88%);
+			--tooltip-declaration-color: hsl(135, 72%, 45%);
+			--tooltip-link-color: hsl(208, 100%, 74%);
 			--tooltip-shadow: none;
 
 			--colour-dull: hsla(0, 0%, 100%, 50%);
@@ -218,8 +205,8 @@
 			--table-gradient: url("../styles/doxygen/tab_bd.png");
 			--table-row-gradient: ("../styles/doxygen/nav_hd.png");
 
-			--footer-foreground-color: #5B5BB7;
-			--citation-label-color: #9090CE;
+			--footer-foreground-color: hsl(240, 39%, 54%);
+			--citation-label-color: hsl(240, 39%, 69%);
 
 			--header-nav-tab: url('../styles/doxygen/bc_sd.png');
 		}
