@@ -5,7 +5,10 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'NonLinearFilters',
-  description: 'A collection of Non-Linear filters of various topologies and types, for analysis and occasional mixing/production uses.',
+  description: 'A collection of Non-Linear filter topologies.',
+  alternates: {
+    canonical: 'https://www.stoneydsp.com/projects/nonlinearfilters'
+  }
 }
 
 export default async function NonLinearFiltersPage() {

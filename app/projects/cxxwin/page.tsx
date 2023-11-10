@@ -5,7 +5,10 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'CxxWin',
-  description: 'Win32API project implementing a COM application window for Windows platforms in C++ using Direct2D.',
+  description: 'Win32API project implementing a simple COM application window.',
+  alternates: {
+    canonical: 'https://www.stoneydsp.com/projects/cxxwin'
+  }
 }
 
 export default async function CxxWinPage() {
