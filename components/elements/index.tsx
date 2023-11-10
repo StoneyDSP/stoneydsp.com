@@ -11,8 +11,6 @@ import ConsentBanner from '@/components/elements/banner/consent'
 import ButtonBack from '@/components/elements/button/back'
 import ButtonLike from '@/components/elements/button/like'
 
-import ContactForm from '@/components/elements/form/contact'
-
 export {
   Article,
   Badge,
@@ -23,6 +21,5 @@ export {
   ConsentBanner,
 
   ButtonBack,
-  ButtonLike,
-  ContactForm
+  ButtonLike
 }
