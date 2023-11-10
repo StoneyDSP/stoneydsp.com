@@ -43,17 +43,17 @@ export default function ConsentBanner() {
       className='animate-in flex flex-col bottom-4 opacity-100 z-50 absolute justify-center text-foreground text-center bg-btn-background hover:bg-btn-background-hover text-xs group rounded-lg border hover:border-foreground transition___shadow_off'
     >
       {/* <Ribbon> */}
-
-        <button
-          type='button'
-          onClick={closeBanner}
-          className='absolute right-0 py-1 px-1 flex no-underline'
-        >
-          <span
-            className='flex text-center text-foreground border hover:border-foreground rounded-md text-xs'
-          >&nbsp;&nbsp;x&nbsp;&nbsp;</span>
-        </button>
-
+        <div className='z-60'>
+          <button
+            type='button'
+            onClick={closeBanner}
+            className='absolute right-0 py-1 px-1 flex no-underline z-70'
+          >
+            <span
+              className='flex text-center text-foreground border hover:border-foreground rounded-md text-xs'
+            >&nbsp;&nbsp;x&nbsp;&nbsp;</span>
+          </button>
+        </div>
 
         <HRGradient />
 
@@ -68,7 +68,7 @@ export default function ConsentBanner() {
             <small>{' '}</small>
             <Link
               href="/terms-of-service"
-              className="font-bold text-xs"
+              className="font-bold text-xs z-70"
               target="_blank"
             >
               Terms of Service
@@ -79,7 +79,7 @@ export default function ConsentBanner() {
             <small>{' '}</small>
             <Link
               href="/privacy-policy"
-              className="font-bold text-xs"
+              className="font-bold text-xs z-70"
               target="_blank"
             >
               Privacy Policy
@@ -93,7 +93,7 @@ export default function ConsentBanner() {
           <button
             type='button'
             onClick={acceptCookies}
-            className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-400 border-2'
+            className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-400 border-2 z-70'
           >
             <span
               className='font-bold text-center text-white'
@@ -104,7 +104,7 @@ export default function ConsentBanner() {
           <button
             type='button'
             onClick={declineCookies}
-            className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-400 border-2'
+            className='py-2 px-3 flex rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-400 border-2 z-70'
           >
             <span
               className='font-bold text-center text-white'
