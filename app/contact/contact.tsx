@@ -3,6 +3,7 @@ import {
   BackToHome,
   BackToTop
 } from '@/components/layouts'
+import { ContactForm } from '@/components/elements'
 import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -25,6 +26,10 @@ export default async function Contact() {
           <h2 className='text-center'>
             Hi! I&#39;m Nathan, a.k.a StoneyDSP.
           </h2>
+
+          <HRGradient />
+
+          <ContactForm />
 
           <HRGradient />
 
