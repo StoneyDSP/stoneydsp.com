@@ -1,5 +1,5 @@
-// 'use client'
-// import { usePathname } from 'next/navigation'
+'use client'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 export const paths = [
@@ -19,7 +19,7 @@ export const paths = [
 
 export default function NavMenu() {
 
-  // const pathname = usePathname()
+  const pathname = usePathname()
 
   return (
     <ul className="w-full flex justify-items-start gap-4 flex-row items-center">
@@ -28,7 +28,7 @@ export default function NavMenu() {
           <Link
             href={path}
             className={`
-              link
+              link ${pathname === path ? 'active' : ''}
               py-2
               px-4
               rounded-md
@@ -43,7 +43,7 @@ export default function NavMenu() {
               text-sm
               border
 
-            `/** ${pathname === path ? 'active' : ''} */}
+            `}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

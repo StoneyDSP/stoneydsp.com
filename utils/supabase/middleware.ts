@@ -14,7 +14,8 @@ const createHashedNonce = async (nonce: string) => {
 
 export const createClient = (request: NextRequest) => {
 
-  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')  // Generate a random nonce
+  // Generate a random nonce
+  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
 
   const hashedNnonce = createHashedNonce(nonce)
 
