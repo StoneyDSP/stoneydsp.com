@@ -114,6 +114,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@marsidev/react-turnstile@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@marsidev/react-turnstile/-/react-turnstile-0.3.2.tgz#8811a63b64c0b4bd0a3fdd6ff7efaa1c524ed6ed"
+  integrity sha512-NTTmQdVgSFTHZlFRw/6RwG2kveT6J57U8JdjhbSdKcSBEbhqoe9L3wPMbq8g31KCDOm2cYTu/LNavAPbCY1vgA==
+
 "@mdx-js/loader@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-3.0.0.tgz#87ccefb0cd9d37be2aecf939be0a8d3f364eec84"
