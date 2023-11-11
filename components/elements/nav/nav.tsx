@@ -53,7 +53,7 @@ export default async function Nav() {
         </span>
 
         <Link
-          href="/"
+          href="/login"
           className="
             py-2
             px-3
