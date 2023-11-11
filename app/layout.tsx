@@ -1,4 +1,5 @@
-import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
+import Header from '@/components/elements/header/header'
+import { Footer, Main, ConsentBanner } from '@/components/elements'
 // import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
