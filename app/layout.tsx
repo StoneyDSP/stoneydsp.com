@@ -1,11 +1,11 @@
 import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
 // import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
   // Layouts must accept a children prop.
@@ -17,11 +17,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        // className={inter.className}
+      >
         <Suspense>
-          <Header
-            // title={''}
-          />
+          <Header />
           <Main>
             <ConsentBanner />
             {children}

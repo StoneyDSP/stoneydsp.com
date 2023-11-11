@@ -1,7 +1,60 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { type NextRequest, NextResponse } from 'next/server'
 
+const createHashedNonce = async (nonce: string) => {
+  const encoder = new TextEncoder()
+  const encodedNonce = encoder.encode(nonce) // Encode the nonce
+  const hash = await crypto.subtle.digest('SHA-256', encodedNonce) // Hash it with SHA-256
+  const bytes = new Uint8Array(hash)
+  const hashedNonce = Array.from(bytes)
+    .map((b) => b.toString(16).padStart(2, '0')) // Convert the hash to a hexadecimal string
+    .join('')
+  return hashedNonce
+}
+
 export const createClient = (request: NextRequest) => {
+
+  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')  // Generate a random nonce
+
+  const hashedNnonce = createHashedNonce(nonce)
+
+  // Setting request headers
+  const requestHeaders = new Headers(request.headers)
+  requestHeaders.set('x-nonce', nonce)
+  requestHeaders.set('X-Content-Type-Options', 'nosniff')
+  requestHeaders.set('cache-control', 'public, max-age=0, s-maxage=86400, must-revalidate')
+  requestHeaders.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
+
+  const cspHeader = `
+    default-src 'self';
+    connect-src vitals.vercel-insights.com;
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+    style-src 'self' 'nonce-${nonce}';
+    img-src 'self' blob: data:;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    block-all-mixed-content;
+    upgrade-insecure-requests;
+  `
+
+  requestHeaders.set(
+    'Content-Security-Policy',
+    // Replace newline characters and spaces
+    cspHeader.replace(/\s{2,}/g, ' ').trim()
+  )
+
+  // requestHeaders.set(
+  //   'Content-Security-Policy-Report-Only',
+  //   // Replace newline characters and spaces
+  //   cspHeader.replace(/\s{2,}/g, ' ').trim()
+  // )
+
+  // Use 'hashedNonce' when making the authentication request to Google
+  // Use 'nonce' when invoking the supabase.auth.signInWithIdToken() method
+
   // Create an unmodified response
   let response = NextResponse.next({
     request: {
@@ -25,6 +78,7 @@ export const createClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
+            headers: requestHeaders,
             request: {
               headers: request.headers,
             },
@@ -43,6 +97,7 @@ export const createClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
+            headers: requestHeaders,
             request: {
               headers: request.headers,
             },
