@@ -1,8 +1,24 @@
 import NavMenu from '@/components/elements/nav/menu/menu'
+import AuthButton from '@/components/elements/nav/account/login'
+import { createClient } from '@/utils/supabase/server'
 import Link from 'next/link'
 import { Suspense } from 'react'
+import { cookies } from 'next/headers'
 
 export default async function Nav() {
+
+  const cookieStore = cookies()
+
+  const canInitSupabaseClient = () => {
+    try {
+      createClient(cookieStore)
+      return true
+    } catch (e) {
+      return false
+    }
+  }
+
+  const isSupabaseConnected = canInitSupabaseClient()
 
   return (
     <nav className='tableRowEven'>
@@ -52,7 +68,7 @@ export default async function Nav() {
           Systems, Web, Audio & Graphics
         </span>
 
-        <Link
+        {/* <Link
           href="/"
           className="
             py-2
@@ -70,7 +86,9 @@ export default async function Nav() {
           <span className='font-bold text-center text-white'>
             Login
           </span>
-        </Link>
+        </Link> */}
+
+        {isSupabaseConnected && <AuthButton />}
 
       </div>
     </nav>
