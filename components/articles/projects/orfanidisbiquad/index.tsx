@@ -8,7 +8,7 @@ import {
     GitProjectCard
 } from '@/components/cards'
 import mdxFetch from '@/utils/mdx/mdxFetch'
-import { Article } from '@/components/elements'
+import BlogArticle from '@/components/elements/article/blogArticle'
 import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -18,14 +18,14 @@ export default async function OrfanidisbiquadContent() {
   const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/OrfanidisBiquad/master/README.md')
 
   return (
-    <Article>
+    <BlogArticle>
       <div className={styles.container}>
 
-        <div className={styles.content}>
+        <article className={styles.content}>
 
           <div className={styles.flexboxgrid}>
 
-            <HRGradient />
+            <div className="py-4"></div>
 
             <div className="grid grid-cols-1 gap-4">
               <GitProjectCard
@@ -47,8 +47,8 @@ export default async function OrfanidisbiquadContent() {
             <HRGradient />
 
           </div>
-        </div>
+        </article>
       </div>
-    </Article>
+    </BlogArticle>
   )
 }

@@ -6,7 +6,7 @@ import {
 import { Suspense } from 'react'
 // import { useState } from 'react'
 
-export default function Article({
+export default function BlogArticle({
   children,
 }: {
   children: React.ReactNode
@@ -18,7 +18,7 @@ export default function Article({
   // }
 
   return (
-    <article className='animate-in min-h-screen'>
+    <section className='animate-in min-h-screen'>
 
       <div
         className='animate-in flex flex-col gap-8'
@@ -31,6 +31,6 @@ export default function Article({
         {children}
       </Suspense>
 
-    </article>
+    </section>
   )
 }
