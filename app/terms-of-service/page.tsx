@@ -1,4 +1,4 @@
-import TermsOfServiceContent from '@/app/terms-of-service/tos_content'
+import TermsOfServiceContent from '@/components/articles/terms-of-service'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'

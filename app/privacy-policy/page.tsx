@@ -1,4 +1,4 @@
-import PrivacyPolicyContent from '@/app/privacy-policy/pp_content'
+import PrivacyPolicyContent from '@/components/articles/privacy-policy'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'

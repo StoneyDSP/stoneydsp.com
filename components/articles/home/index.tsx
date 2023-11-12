@@ -1,3 +1,4 @@
+'use server'
 import {
   RepoCards,
   ResourceCards
@@ -12,9 +13,9 @@ import {
 // import { headers } from 'next/headers'
 import styles from '@/app/layout.module.css'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
-export default async function Home() {
+export default async function HomeContent() {
 
   // const nonce = headers().get('x-nonce')
 
