@@ -52,14 +52,14 @@ export default async function AboutContent() {
 
           <picture>
             <source
-              srcSet="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&theme=dark"
+              srcSet="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&bg_color=00000000&theme=dark"
               media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)"
             />
             <source
-              srcSet="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&theme=default"
+              srcSet="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&bg_color=00000000&theme=default"
               media="(prefers-color-scheme: light)"
             />
-            <img src="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true" alt="StoneyDSP's Top Languages" />
+            <img src="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&bg_color=00000000" alt="StoneyDSP's Top Languages" />
           </picture>
 
           <HRGradient />
