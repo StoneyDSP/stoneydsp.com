@@ -1,7 +1,8 @@
 'use server'
 import {
   GitStatsCard,
-  GitStatsTopLangsCard
+  GitStatsTopLangsCard,
+  GitProjectCard
 } from '@/components/cards'
 import {
   HRGradient,
@@ -70,6 +71,12 @@ export default async function AboutContent() {
           <p>
             When it became clear to me that there is more to software development beyond writing (and principally understanding) functional code, I took some opportunities to intern in some different fields, such as web dev consultancy, where my learning skills were well exercised with all things NodeJS, React, Next, Vue, Nuxt, SQL with Postgres and MySQL, SaaS and BaaS platforms, cybersecurity fundamentals, as well as daily routines and workflows in modern software development.
           </p>
+
+          <HRGradient />
+
+          <GitProjectCard altString={'Biquads'} repo={'Biquads'} />
+
+          <GitProjectCard altString={'Orfanidis Biquad'} repo={'OrfanidisBiquad'} />
 
           <HRGradient />
 
