@@ -1,5 +1,7 @@
 'use server'
 import {
+  GitStatsCard,
+
   RepoCards,
   ResourceCards
 } from '@/components/cards'
@@ -8,8 +10,6 @@ import {
   HRGradient,
   BackToTop
 } from '@/components/layouts'
-// import Image from 'next/image'
-// import { headers } from 'next/headers'
 import styles from '@/app/layout.module.css'
 
 // export const dynamic = 'force-dynamic'
@@ -26,12 +26,6 @@ export default async function HomeContent() {
 
         <div className={styles.flexboxgrid}>
 
-          {/* <div className='animate-in tableRowOdd py-0 text-center'>
-            <div className='animate-in pt-0 pb-1'>
-            <HRGradient />
-            </div>
-          </div> */}
-
           <HRGradient />
 
           <h2 className='animate-in text-center'>
@@ -47,6 +41,10 @@ export default async function HomeContent() {
           <h2 className='animate-in text-center'>
             Welcome to my workbench.
           </h2>
+
+          <HRGradient />
+
+          <GitStatsCard />
 
           <HRGradient />
 

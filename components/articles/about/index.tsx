@@ -1,5 +1,4 @@
 'use server'
-import { MDXRemote } from 'next-mdx-remote/rsc'
 import {
   HRGradient,
   BackToHome,
@@ -29,9 +28,17 @@ export default async function AboutContent() {
           <HRGradient />
 
           <div className='flex justify-center align-middle items-center'>
-            <MDXRemote source={`
-            [![StoneyDSP's GitHub stats](https://gh-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&theme=transparent&border_radius=0&hide_border=true)](https://github.com/nathanjhood)
-            `} />
+            <picture>
+              <source
+                srcSet="https://gh-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&border_radius=0&hide_border=true&bg_color=00000000&theme=dark"
+                media="(prefers-color-scheme: dark)"
+              />
+              <source
+                srcSet="https://gh-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&border_radius=0&hide_border=true&bg_color=00000000&theme=default"
+                media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+              />
+              <img src="https://gh-readme-stats.stoneydsp.com/api?username=nathanjhood&show_icons=true&border_radius=0&hide_border=true&bg_color=00000000" alt="StoneyDSP's GitHub stats" />
+            </picture>
           </div>
 
           <HRGradient />
@@ -43,24 +50,18 @@ export default async function AboutContent() {
           <HRGradient />
 
           <div className='flex justify-center align-middle items-center'>
-            <MDXRemote source={`
-            [![StoneyDSP's Top Languages](https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,css,html&border_radius=0&hide_border=true)](https://github.com/nathanjhood)
-            `} />
+            <picture>
+              <source
+                srcSet="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&bg_color=00000000&theme=dark"
+                media="(prefers-color-scheme: dark)"
+              />
+              <source
+                srcSet="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&bg_color=00000000&theme=default"
+                media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+              />
+              <img src="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&bg_color=00000000" alt="StoneyDSP's Top Languages" />
+            </picture>
           </div>
-
-          <HRGradient />
-
-          <picture>
-            <source
-              srcSet="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&bg_color=00000000&theme=dark"
-              media="(prefers-color-scheme: dark)"
-            />
-            <source
-              srcSet="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&bg_color=00000000&theme=default"
-              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-            />
-            <img src="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&bg_color=00000000" alt="StoneyDSP's Top Languages" />
-          </picture>
 
           <HRGradient />
 

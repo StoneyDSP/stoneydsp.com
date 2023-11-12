@@ -4,7 +4,7 @@ import {
   BackToHome,
   BackToTop
 } from '@/components/layouts'
-import RepoCards from '@/components/cards/RepoCards/RepoCards'
+import RepoCards from '@/components/cards/RepoCards'
 import styles from '@/app/layout.module.css'
 
 // export const dynamic = 'force-dynamic'
