@@ -7,8 +7,6 @@ import {
 } from '@/components/layouts'
 import styles from '@/app/layout.module.css'
 
-// export const dynamic = 'force-dynamic'
-
 export default async function AboutContent() {
 
   return (
@@ -17,12 +15,6 @@ export default async function AboutContent() {
       <article className={styles.content}>
 
         <div className={styles.flexboxgrid}>
-
-          {/* <div className='tableRowOdd py-0 text-center'>
-            <div className='pt-0 pb-1'>
-            <HRGradient />
-            </div>
-          </div> */}
 
           <h2 className='text-center'>
             Hi! I&#39;m Nathan, a.k.a StoneyDSP.
@@ -55,6 +47,20 @@ export default async function AboutContent() {
             [![StoneyDSP's Top Languages](https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,css,html&border_radius=0&hide_border=true)](https://github.com/nathanjhood)
             `} />
           </div>
+
+          <HRGradient />
+
+          <picture>
+            <source
+              srcSet="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&theme=dark"
+              media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)"
+            />
+            <source
+              srcSet="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true&theme=default"
+              media="(prefers-color-scheme: light)"
+            />
+            <img src="https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&hide=tex,css,html&border_radius=0&hide_border=true" alt="StoneyDSP's Top Languages" />
+          </picture>
 
           <HRGradient />
 
@@ -94,9 +100,10 @@ export default async function AboutContent() {
 
           <HRGradient />
 
-
         </div>
+
       </article>
+
     </div>
   )
 }

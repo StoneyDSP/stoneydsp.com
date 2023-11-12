@@ -6,7 +6,6 @@ import {
 import {
   Ribbon,
   HRGradient,
-  TextLargeBoldCenter,
   BackToTop
 } from '@/components/layouts'
 // import Image from 'next/image'
