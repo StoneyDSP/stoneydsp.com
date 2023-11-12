@@ -13,7 +13,7 @@ export default async function GitProjectCard({
   return (
     <a
       href={source}
-      className="relative flex flex-col text-foreground tableRowOdd group rounded-lg border p-6 hover:border-foreground transition___shadow_off"
+      className="relative flex flex-col text-foreground tableRowOdd group rounded-lg border p-0 hover:border-foreground transition___shadow_off"
     >
       <picture>
         <source
