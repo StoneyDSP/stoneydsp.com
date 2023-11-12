@@ -7,8 +7,6 @@ import {
 import { ContactForm } from '@/components/elements'
 import styles from '@/app/layout.module.css'
 
-// export const dynamic = 'force-dynamic'
-
 export default async function ContactContent() {
 
   return (
@@ -17,12 +15,6 @@ export default async function ContactContent() {
       <article className={styles.content}>
 
         <div className={styles.flexboxgrid}>
-
-          {/* <div className='tableRowOdd py-0 text-center'>
-            <div className='pt-0 pb-1'>
-            <HRGradient />
-            </div>
-          </div> */}
 
           <h2 className='text-center'>
             Hi! I&#39;m Nathan, a.k.a StoneyDSP.
