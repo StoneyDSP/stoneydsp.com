@@ -1,4 +1,4 @@
-import UbentoContent from '@/app/projects/ubento/ubento'
+import UbentoContent from '@/app/projects/ubento/ubento_content'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
