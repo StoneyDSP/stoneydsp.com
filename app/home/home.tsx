@@ -22,7 +22,7 @@ export default async function Home() {
 
     <div className={styles.container}>
 
-      <div className={styles.content}>
+      <article className={styles.content}>
 
         <div className={styles.flexboxgrid}>
 
@@ -60,7 +60,7 @@ export default async function Home() {
 
         <HRGradient />
 
-      </div>
+      </article>
 
     </div>
   )

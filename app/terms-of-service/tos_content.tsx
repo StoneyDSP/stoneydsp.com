@@ -13,7 +13,7 @@ export default async function TermsOfServiceContent() {
   return (
     <div className={styles.container}>
 
-      <div className={styles.content}>
+      <article className={styles.content}>
 
         <div className={styles.flexboxgrid}>
 
@@ -316,7 +316,9 @@ export default async function TermsOfServiceContent() {
           <HRGradient />
 
         </div>
-      </div>
+
+      </article>
+
     </div>
   )
 }

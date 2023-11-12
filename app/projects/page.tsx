@@ -1,4 +1,5 @@
-import ProjectsContent from '@/app/projects/projects_content'
+// import ProjectsContent from '@/app/projects/projects_content'
+import ProjectsContent from '@/components/articles/projects'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'

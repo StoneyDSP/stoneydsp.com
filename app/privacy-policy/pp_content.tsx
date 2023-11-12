@@ -1,6 +1,5 @@
 import {
   HRGradient,
-  TextLargeBoldCenter,
   BackToHome,
   BackToTop
 } from '@/components/layouts'
@@ -8,12 +7,12 @@ import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
 
-export default async function PrivacyPolicy() {
+export default async function PrivacyPolicyContent() {
 
   return (
     <div className={styles.container}>
 
-      <div className={styles.content}>
+      <article className={styles.content}>
 
         <div className={styles.flexboxgrid}>
 
@@ -226,7 +225,9 @@ export default async function PrivacyPolicy() {
           <HRGradient />
 
         </div>
-      </div>
+
+      </article>
+
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import PrivacyPolicy from '@/app/privacy-policy/pp'
+import PrivacyPolicyContent from '@/app/privacy-policy/pp_content'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
@@ -13,6 +13,6 @@ export const metadata: Metadata = {
 
 export default async function PrivacyPolicyPage() {
   return (
-    <PrivacyPolicy />
+    <PrivacyPolicyContent />
   )
 }
