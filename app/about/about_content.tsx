@@ -15,7 +15,7 @@ export default async function AboutContent() {
   return (
     <div className={styles.container}>
 
-      <div className={styles.content}>
+      <article className={styles.content}>
 
         <div className={styles.flexboxgrid}>
 
@@ -24,8 +24,6 @@ export default async function AboutContent() {
             <HRGradient />
             </div>
           </div> */}
-
-          <HRGradient />
 
           <h2 className='text-center'>
             Hi! I&#39;m Nathan, a.k.a StoneyDSP.
@@ -99,7 +97,7 @@ export default async function AboutContent() {
 
 
         </div>
-      </div>
+      </article>
     </div>
   )
 }
