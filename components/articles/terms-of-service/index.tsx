@@ -1,7 +1,6 @@
 'use server'
 import {
   HRGradient,
-  TextLargeBoldCenter,
   BackToHome,
   BackToTop
 } from '@/components/layouts'
