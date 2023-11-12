@@ -2,9 +2,9 @@ import Link from 'next/link'
 import { headers, cookies } from 'next/headers'
 import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
-import { Turnstile } from '@marsidev/react-turnstile'
-import { useState } from 'react'
-import { turnstileSiteKey } from '@/utils/captcha/turnstile'
+// import { Turnstile } from '@marsidev/react-turnstile'
+// import { useState } from 'react'
+// import { turnstileSiteKey } from '@/utils/captcha/turnstile'
 import styles from '@/app/layout.module.css'
 
 export default function Login({
@@ -13,9 +13,9 @@ export default function Login({
   searchParams: { message: string }
 }) {
 
-  const sitekey = turnstileSiteKey()
+  // const sitekey = turnstileSiteKey()
 
-  const [captchaToken, setCaptchaToken] = useState<string>()
+  // const [captchaToken, setCaptchaToken] = useState<string>()
 
   const cookieStore = cookies()
 
@@ -65,7 +65,7 @@ export default function Login({
       email,
       password,
       options: {
-        captchaToken,
+        // captchaToken,
         emailRedirectTo: `${origin}/auth/callback`,
       },
     })
@@ -130,7 +130,7 @@ export default function Login({
                 placeholder="••••••••"
                 required
               />
-              <button className="bg-green-700 rounded-md px-4 py-2 text-foreground mb-2">
+              <button className="bg-green-500 hover:bg-purple-500 rounded-lg px-4 py-2 text-foreground mb-2">
                 Sign In
               </button>
               <button
@@ -139,10 +139,10 @@ export default function Login({
               >
                 Sign Up
               </button>
-              <Turnstile
+              {/* <Turnstile
                 siteKey={`${sitekey}`}
                 onSuccess={(token) => { setCaptchaToken(token) }}
-              />
+              /> */}
               {searchParams?.message && (
                 <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
                   {searchParams.message}
