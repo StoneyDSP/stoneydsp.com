@@ -1,19 +1,20 @@
+'use server'
 import {
   HRGradient,
   BackToHome,
   BackToTop
 } from '@/components/layouts'
-import { ContactForm } from '@/components/elements'
+import RepoCards from '@/components/cards/RepoCards/RepoCards'
 import styles from '@/app/layout.module.css'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
-export default async function ContactContent() {
+export default async function ProjectsContent() {
 
   return (
     <div className={styles.container}>
 
-      <div className={styles.content}>
+      <article className={styles.content}>
 
         <div className={styles.flexboxgrid}>
 
@@ -23,15 +24,15 @@ export default async function ContactContent() {
             </div>
           </div> */}
 
+          <HRGradient />
+
           <h2 className='text-center'>
-            Hi! I&#39;m Nathan, a.k.a StoneyDSP.
+            Read about some of my most popular projects:
           </h2>
 
           <HRGradient />
 
-          <ContactForm />
-
-          <HRGradient />
+          <RepoCards />
 
           <HRGradient />
 
@@ -43,7 +44,7 @@ export default async function ContactContent() {
 
         </div>
 
-      </div>
+      </article>
 
     </div>
   )

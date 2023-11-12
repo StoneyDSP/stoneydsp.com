@@ -1,4 +1,4 @@
-import AboutContent from '@/app/about/about_content'
+import AboutContent from '@/components/articles/about'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'

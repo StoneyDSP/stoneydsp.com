@@ -1,4 +1,4 @@
-import Home from '@/app/home/home'
+import HomeContent from '@/components/articles/home'
 import { Metadata } from 'next'
 // import { createClient } from '@/utils/supabase/server'
 // import { cookies } from 'next/headers'
@@ -30,6 +30,6 @@ export default async function Index() {
   // const isSupabaseConnected = canInitSupabaseClient()
 
   return (
-    <Home />
+    <HomeContent />
   )
 }
