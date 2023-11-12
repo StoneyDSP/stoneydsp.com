@@ -18,14 +18,6 @@ export default async function ProjectsContent() {
 
         <div className={styles.flexboxgrid}>
 
-          {/* <div className='tableRowOdd py-0 text-center'>
-            <div className='pt-0 pb-1'>
-            <HRGradient />
-            </div>
-          </div> */}
-
-          <HRGradient />
-
           <h2 className='text-center'>
             Read about some of my most popular projects:
           </h2>

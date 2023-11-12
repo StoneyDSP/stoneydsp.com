@@ -1,7 +1,7 @@
 'use server'
 import {
   GitStatsCard,
-
+  GitStatsTopLangsCard,
   RepoCards,
   ResourceCards
 } from '@/components/cards'
@@ -44,7 +44,15 @@ export default async function HomeContent() {
 
           <HRGradient />
 
-          <GitStatsCard />
+          <div className='flex justify-center align-middle items-center'>
+            <GitStatsCard />
+          </div>
+
+          <HRGradient />
+
+          <div className='flex justify-center align-middle items-center'>
+            <GitStatsTopLangsCard />
+          </div>
 
           <HRGradient />
 
