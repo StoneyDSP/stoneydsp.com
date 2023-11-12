@@ -1,3 +1,5 @@
+'use server'
+
 export default async function mdxFetch(url: string) {
   try {
     // MDX text - can be from a local file, database, CMS, fetch, anywhere...

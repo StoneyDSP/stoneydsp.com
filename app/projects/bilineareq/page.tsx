@@ -1,4 +1,4 @@
-import BilineareqContent from '@/app/projects/bilineareq/bilineareq_content'
+import BilineareqContent from '@/components/articles/projects/bilineareq'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
