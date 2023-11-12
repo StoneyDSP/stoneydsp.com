@@ -1,4 +1,3 @@
-// import AudiopluginsvfContent from '@/app/projects/audioplugin-svf/audioplugin-svf_content'
 import AudiopluginsvfContent from '@/components/articles/projects/audioplugin-svf'
 import { Metadata } from 'next'
 

@@ -1,4 +1,4 @@
-import OrfanidisbiquadContent from '@/app/projects/orfanidisbiquad/orfanidisbiquad_content'
+import OrfanidisbiquadContent from '@/components/articles/projects/orfanidisbiquad'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
