@@ -9,16 +9,11 @@ import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
 
-export default async function FetchContent() {
-
-  // // MDX text - can be from a local file, database, CMS, fetch, anywhere...
-  // const res = await fetch('https://raw.githubusercontent.com/nathanjhood/Biquads/main/README.md')
-  // const markdown = await res.text()
+export default async function CmoduleContent() {
 
   try {
-
-    // Simple typo to test error...
-    const res = await fetch('https://raw.githubusercontent.com/nathanjhood/Biquads/main/READEM.md')
+    // MDX text - can be from a local file, database, CMS, fetch, anywhere...
+    const res = await fetch('https://raw.githubusercontent.com/nathanjhood/cmodule/main/README.md')
     const markdown = await res.text()
 
     return (
@@ -29,11 +24,9 @@ export default async function FetchContent() {
 
             <div className={styles.flexboxgrid}>
 
-              {/* <div className='flex justify-center align-middle'>
-                <MDXRemote source={`[![Biquads](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=Biquads\&theme=transparent)](https://github.com/nathanjhood/Biquads)`} />
-              </div> */}
-
-              <HRGradient />
+              <div className='flex justify-center align-middle'>
+                <MDXRemote source={`[![cmodule](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=cmodule\&theme=transparent)](https://github.com/nathanjhood/cmodule)`} />
+              </div>
 
               <MDXRemote source={markdown} />
 
@@ -64,9 +57,9 @@ export default async function FetchContent() {
 
             <div className={styles.flexboxgrid}>
 
-              {/* <div className='flex justify-center align-middle'>
-                <MDXRemote source={`[![Biquads](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=Biquads\&theme=transparent)](https://github.com/nathanjhood/Biquads)`} />
-              </div> */}
+              <div className='flex justify-center align-middle'>
+                <MDXRemote source={`[![cmodule](https://github-readme-stats-two-lime-18.vercel.app/api/pin/?username=nathanjhood\&repo=cmodule\&theme=transparent)](https://github.com/nathanjhood/cmodule)`} />
+              </div>
 
               <HRGradient />
 
