@@ -26,12 +26,6 @@ export default async function AboutContent() {
 
           <HRGradient />
 
-          <p className='text-center'>
-            I am a software developer with a strong interest in both native and web-based application programming, and a background in fullstack web development.
-          </p>
-
-          <HRGradient />
-
           <div className='flex justify-center align-middle items-center'>
             <GitStatsCard />
           </div>
@@ -39,7 +33,7 @@ export default async function AboutContent() {
           <HRGradient />
 
           <p className='text-center'>
-            I am also a musician making Audio software plugins using a variety of languages and workflows.
+            I am a software developer with a strong interest in both native and web-based application programming, and a background in fullstack web development.
           </p>
 
           <HRGradient />
@@ -50,9 +44,51 @@ export default async function AboutContent() {
 
           <HRGradient />
 
+          <p className='text-center'>
+            I am also a musician making Audio software plugins using a variety of languages and workflows.
+          </p>
+
+          <HRGradient />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <GitProjectCard
+              userName={'nathanjhood'}
+              linkTo={'https://github.com/nathanjhood/Biquads.git'}
+              altString={'Biquads'}
+              repoName={'Biquads'}
+            />
+
+            <GitProjectCard
+              userName={'nathanjhood'}
+              linkTo={'https://github.com/nathanjhood/BiLinearEQ.git'}
+              altString={'BiLinearEQ'}
+              repoName={'BiLinearEQ'}
+            />
+          </div>
+
+          <HRGradient />
+
           <p>
             I consider creativity to be a form of problem-solving, and myself a creative person, as well as a problem-solver. I see myself as a natural learner, unafraid of learning curves. I aim to be agnostic of language, platform, style, and opinion in my work.
           </p>
+
+          <HRGradient />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <GitProjectCard
+              userName={'nathanjhood'}
+              linkTo={'https://github.com/nathanjhood/UBento.git'}
+              altString={'UBento'}
+              repoName={'UBento'}
+            />
+
+            <GitProjectCard
+              userName={'nathanjhood'}
+              linkTo={'https://github.com/nathanjhood/MSYS2-Toolchain.git'}
+              altString={'MSYS2 Toolchain'}
+              repoName={'MSYS2-Toolchain'}
+            />
+          </div>
 
           <HRGradient />
 
@@ -62,9 +98,45 @@ export default async function AboutContent() {
 
           <HRGradient />
 
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <GitProjectCard
+              userName={'nathanjhood'}
+              linkTo={'https://github.com/nathanjhood/AudioPlugin-SVF.git'}
+              altString={'AudioPlugin-SVF'}
+              repoName={'AudioPlugin-SVF'}
+            />
+
+            <GitProjectCard
+              userName={'nathanjhood'}
+              linkTo={'https://github.com/nathanjhood/OrfanidisBiquad.git'}
+              altString={'Orfanidis Biquad'}
+              repoName={'OrfanidisBiquad'}
+            />
+          </div>
+
+          <HRGradient />
+
           <p>
             I soon ventured beyond my initial interests into Imperative, Structured, and Procedural programming styles; C and Objective C, script-based languages such as Python, Bash, Powerscript for control flow; CMake, Meson, yaml and friends for continuous integration/deployment and automated testing; and of course, HTML, CSS, and Javascript/Typescript for front end control and user experience. I then wrote a distro for Windows Subsystem for Linux based on Ubuntu, and learned the Apple/XCode tools.
           </p>
+
+          <HRGradient />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <GitProjectCard
+              userName={'nathanjhood'}
+              linkTo={'https://github.com/nathanjhood/cmodule.git'}
+              altString={'cmodule'}
+              repoName={'cmodule'}
+            />
+
+            <GitProjectCard
+              userName={'nathanjhood'}
+              linkTo={'https://github.com/nathanjhood/CxxWin.git'}
+              altString={'CxxWin'}
+              repoName={'CxxWin'}
+            />
+          </div>
 
           <HRGradient />
 
@@ -76,17 +148,17 @@ export default async function AboutContent() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <GitProjectCard
-              user={'nathanjhood'}
-              source={'https://github.com/nathanjhood/Biquads.git'}
+              userName={'nathanjhood'}
+              linkTo={'https://github.com/nathanjhood/Biquads.git'}
               altString={'Biquads'}
-              repo={'Biquads'}
+              repoName={'Biquads'}
             />
 
             <GitProjectCard
-              user={'nathanjhood'}
-              source={'https://github.com/nathanjhood/OrfanidisBiquad.git'}
+              userName={'nathanjhood'}
+              linkTo={'https://github.com/nathanjhood/OrfanidisBiquad.git'}
               altString={'Orfanidis Biquad'}
-              repo={'OrfanidisBiquad'}
+              repoName={'OrfanidisBiquad'}
             />
           </div>
 
