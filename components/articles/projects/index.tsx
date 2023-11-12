@@ -7,7 +7,7 @@ import {
 import RepoCards from '@/components/cards/RepoCards/RepoCards'
 import styles from '@/app/layout.module.css'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export default async function ProjectsContent() {
 
