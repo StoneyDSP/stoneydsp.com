@@ -52,20 +52,10 @@
 
 	@media (prefers-color-scheme: light) {
 		:root {
-
-			/* Tailwind default */
-			/* --background: 200 20% 99%; */
+			--background: 200 20% 99%;
 			--btn-background: 200 10% 91%;
 			--btn-background-hover: 200 10% 95%;
-			/* --foreground: 200 50% 3%; */
-
-			/* Github theme */
-			--git-foreground-hex: #434d58;
-			--git-background-hex: #fffefe;
-			--git-foreground-hsl: 211, 14%, 30%;
-			--git-background-hsl: 0, 99%, 100%;
-			--foreground: 211, 14%, 30%;
-			--background: 0, 99%, 100%;
+			--foreground: 200 50% 3%;
 
 			--foreground-rgb: 4, 9, 11;
 			--background-start-rgb: 214, 219, 220;
@@ -143,22 +133,14 @@
 
 	@media (prefers-color-scheme: dark) or (prefers-color-scheme: no-preference) {
 		:root {
-			/* --background: 200 50% 5%; */
+			--background: 200 50% 5%;
 			--btn-background: 200 10% 9%;
 			--btn-background-hover: 200 10% 12%;
-			/* --foreground: 200 20% 96%; */
+			--foreground: 200 20% 96%;
 
 			--foreground-rgb: 243, 245, 247;
 			--background-start-rgb: 6, 15, 19;
 			--background-end-rgb: 10, 20, 24;
-
-			/* Github theme */
-			--git-foreground-hex: #9f9f9f;
-			--git-background-hex: #151515;
-			--git-foreground-hsl: hsl(0, 0%, 62%);
-			--git-background-hsl: hsl(0, 0%, 8%);
-			--foreground: 0, 0%, 62%;
-			--background: 0, 0%, 8%;
 
 
 			--custom-bg-color: var(--background);
