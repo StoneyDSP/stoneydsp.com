@@ -17,6 +17,7 @@ export default async function AboutContent() {
 
       <article className={styles.content}>
 
+
         <div className={styles.flexboxgrid}>
 
           {/* <div className='tableRowOdd py-0 text-center'>
