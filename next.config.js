@@ -35,6 +35,15 @@ const nextConfig = {
       }
     ]
   },
+  async rewrites() {
+    return [
+      {
+        source: '/projects/cmodule',
+        destination: 'https://cmodule.stoneydsp.com',
+        basePath: false,
+      },
+    ]
+  },
 }
 
 module.exports = withMDX(nextConfig)
