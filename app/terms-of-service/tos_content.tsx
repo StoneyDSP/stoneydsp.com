@@ -8,7 +8,7 @@ import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
 
-export default async function TermsOfService() {
+export default async function TermsOfServiceContent() {
 
   return (
     <div className={styles.container}>

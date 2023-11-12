@@ -1,4 +1,4 @@
-import TermsOfService from '@/app/terms-of-service/tos'
+import TermsOfServiceContent from '@/app/terms-of-service/tos_content'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
@@ -13,6 +13,6 @@ export const metadata: Metadata = {
 
 export default async function TermsOfServicePage() {
   return (
-    <TermsOfService />
+    <TermsOfServiceContent />
   )
 }
