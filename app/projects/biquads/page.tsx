@@ -1,4 +1,4 @@
-import BiquadsContent from '@/app/projects/biquads/biquads_content'
+import BiquadsContent from '@/components/articles/projects/biquads'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
