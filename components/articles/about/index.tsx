@@ -74,9 +74,21 @@ export default async function AboutContent() {
 
           <HRGradient />
 
-          <GitProjectCard altString={'Biquads'} repo={'Biquads'} />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <GitProjectCard
+              user={'nathanjhood'}
+              source={'https://github.com/nathanjhood/Biquads.git'}
+              altString={'Biquads'}
+              repo={'Biquads'}
+            />
 
-          <GitProjectCard altString={'Orfanidis Biquad'} repo={'OrfanidisBiquad'} />
+            <GitProjectCard
+              user={'nathanjhood'}
+              source={'https://github.com/nathanjhood/OrfanidisBiquad.git'}
+              altString={'Orfanidis Biquad'}
+              repo={'OrfanidisBiquad'}
+            />
+          </div>
 
           <HRGradient />
 
