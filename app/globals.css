@@ -50,7 +50,7 @@
 		--z-index__overground: var(--z-index__900);
 	}
 
-	@media (prefers-color-scheme: light) {
+	@media (prefers-color-scheme: light) or (prefers-color-scheme: no-preference) {
 		:root {
 			--background: 200 20% 99%;
 			--btn-background: 200 10% 91%;
@@ -131,7 +131,7 @@
 		}
 	}
 
-	@media (prefers-color-scheme: dark) or (prefers-color-scheme: no-preference) {
+	@media (prefers-color-scheme: dark) {
 		:root {
 			--background: 200 50% 5%;
 			--btn-background: 200 10% 9%;
