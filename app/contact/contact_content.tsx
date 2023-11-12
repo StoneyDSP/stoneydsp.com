@@ -3,12 +3,12 @@ import {
   BackToHome,
   BackToTop
 } from '@/components/layouts'
-import RepoCards from '@/components/cards/RepoCards/RepoCards'
+import { ContactForm } from '@/components/elements'
 import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
 
-export default async function Projects() {
+export default async function ContactContent() {
 
   return (
     <div className={styles.container}>
@@ -23,15 +23,15 @@ export default async function Projects() {
             </div>
           </div> */}
 
-          <HRGradient />
-
           <h2 className='text-center'>
-            Read about some of my most popular projects:
+            Hi! I&#39;m Nathan, a.k.a StoneyDSP.
           </h2>
 
           <HRGradient />
 
-          <RepoCards />
+          <ContactForm />
+
+          <HRGradient />
 
           <HRGradient />
 

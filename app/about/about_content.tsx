@@ -10,11 +10,12 @@ import styles from '@/app/layout.module.css'
 
 export const dynamic = 'force-dynamic'
 
-export default async function About() {
+export default async function AboutContent() {
+
   return (
     <div className={styles.container}>
 
-      <div className={styles.content}>
+      <article className={styles.content}>
 
         <div className={styles.flexboxgrid}>
 
@@ -23,8 +24,6 @@ export default async function About() {
             <HRGradient />
             </div>
           </div> */}
-
-          <HRGradient />
 
           <h2 className='text-center'>
             Hi! I&#39;m Nathan, a.k.a StoneyDSP.
@@ -54,7 +53,7 @@ export default async function About() {
 
           <div className='flex justify-center align-middle items-center'>
             <MDXRemote source={`
-            [![StoneyDSP's Top Languages](https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,html&border_radius=0&hide_border=true)](https://github.com/nathanjhood)
+            [![StoneyDSP's Top Languages](https://gh-readme-stats.stoneydsp.com/api/top-langs/?username=nathanjhood&langs_count=8&show_icons=true&theme=transparent&hide=tex,css,html&border_radius=0&hide_border=true)](https://github.com/nathanjhood)
             `} />
           </div>
 
@@ -96,8 +95,9 @@ export default async function About() {
 
           <HRGradient />
 
+
         </div>
-      </div>
+      </article>
     </div>
   )
 }

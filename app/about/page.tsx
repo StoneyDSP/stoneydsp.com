@@ -1,4 +1,4 @@
-import About from './about'
+import AboutContent from '@/app/about/about_content'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
@@ -13,6 +13,6 @@ export const metadata: Metadata = {
 
 export default async function AboutPage() {
   return (
-    <About />
+    <AboutContent />
   )
 }

@@ -3,7 +3,7 @@ import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
 // import { GoogleTagManager } from '@next/third-parties/google'
-import './globals.css'
+import '@/app/globals.css'
 
 // const inter = Inter({ subsets: ['latin'] })
 
