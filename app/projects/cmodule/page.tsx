@@ -1,4 +1,4 @@
-import CmoduleContent from './cmodule_content'
+import CmoduleContent from '@/components/articles/projects/cmodule'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
