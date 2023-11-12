@@ -1,4 +1,4 @@
-import NonlinearfiltersContent from '@/app/projects/nonlinearfilters/nonlinearfilters_content'
+import NonlinearfiltersContent from '@/components/articles/projects/nonlinearfilters'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
