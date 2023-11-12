@@ -1,4 +1,4 @@
-import CxxwinContent from '@/app/projects/cxxwin/cxxwin_content'
+import CxxwinContent from '@/components/articles/projects/cxxwin'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
