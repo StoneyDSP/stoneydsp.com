@@ -15,7 +15,7 @@ export const dynamic = 'force-dynamic'
 
 export default async function MsystoolchainContent() {
 
-  const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/CxxWin/main/MSYS2-Toolchain.md')
+  const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/MSYS2-Toolchain/master/README.md')
 
   return (
     <BlogArticle>
