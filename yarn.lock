@@ -329,10 +329,10 @@
     "@types/websocket" "^1.0.3"
     websocket "^1.0.34"
 
-"@supabase/ssr@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@supabase/ssr/-/ssr-0.0.9.tgz#0c4400276675a2fdc5ba08277a7d13b6e3f2e777"
-  integrity sha512-ywCC5nOrv4HYjUhnYOGE8wMkG/6vsyb1YlP3SNbeJxxniYNLSvBcbTAM7sNLMnhlDrACLBXDgukrabCI8tnNMw==
+"@supabase/ssr@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@supabase/ssr/-/ssr-0.0.10.tgz#b2595c7dab6cc37f51d1529118fab2df4510b3bf"
+  integrity sha512-eVs7+bNlff8Fd79x8K3Jbfpmf8P8QRA1Z6rUDN+fi4ReWvRBZyWOFfR6eqlsX6vTjvGgTiEqujFSkv2PYW5kbQ==
   dependencies:
     cookie "^0.5.0"
     ramda "^0.29.0"
