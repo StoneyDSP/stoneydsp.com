@@ -8,7 +8,7 @@ export default async function mdxFetch(url: string) {
     const markdown = await res.text()
     try {
       const mdxParsed = await MDXRemote({source: markdown})
-      return markdown
+      return mdxParsed.props
     } catch (error) {
       console.log(`Failed to parse content ${url}:`, error)
       const mdxParseFailed = `# 404: Failed to parse due to ${error}`
