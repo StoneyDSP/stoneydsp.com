@@ -58,7 +58,7 @@
     "encoding": "^0.1.13",
     "eslint": "^8.52.0",
     "eslint-config-next": "14.0.1",
-    "globby": "^13.2.2",
+    "globby": "^14.0.0",
     "typescript": "^5.2.2"
   }
 }
