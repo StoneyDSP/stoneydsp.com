@@ -16,7 +16,7 @@ export default async function ContactContent() {
 
         <div className={styles.flexboxgrid}>
 
-          <h2 className='text-center'>
+          <h2 className='text-center' tabIndex={0}>
             Hi! I&#39;m Nathan, a.k.a StoneyDSP.
           </h2>
 

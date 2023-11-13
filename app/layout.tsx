@@ -20,7 +20,7 @@ export default function RootLayout({
       <body
         // className={inter.className}
       >
-        <Suspense>
+        <Suspense fallback={<>Loading...</>}>
           <Header />
           <Main>
             <ConsentBanner />

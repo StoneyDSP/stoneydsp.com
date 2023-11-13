@@ -30,7 +30,7 @@ export default async function Nav() {
 
         </a>
 
-        <Suspense>
+        <Suspense fallback={<>Loading...</>}>
           <NavMenu />
         </Suspense>
 

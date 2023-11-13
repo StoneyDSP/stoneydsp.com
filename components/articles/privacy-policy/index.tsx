@@ -25,14 +25,14 @@ export default async function PrivacyPolicyContent() {
 
           {/* [[NOTE TO MERCHANT: This template is not legal advice, and you are solely responsible for ensuring that you meet your obligations under applicable laws. As privacy laws are constantly evolving, you should regularly review your privacy notice to ensure that it is compliant with updated laws and regulation and that it accurately reflects current data handling practices. We recommend that you consult a lawyer as needed.]] */}
 
-          <section id="PP-HEADING" className="text-center">
+          <section id="PP-HEADING" className="text-center" tabIndex={0}>
 
             <p>StoneyDSP Privacy Policy.</p>
             <p>Last updated:</p>
 
           </section>
 
-          <section id="PP-OVERVIEW">
+          <section id="PP-OVERVIEW" tabIndex={0}>
 
             <p>This Privacy Policy describes how StoneyDSP (the &#34;Site&#34;, &#34;we&#34;, &#34;us&#34;, or &#34;our&#34;) collects, uses, and discloses your personal information when you visit, use our services, or make a purchase from https://www.stoneydp.com (the &#34;Site&#34;) or otherwise communicate with us (collectively, the &#34;Services&#34;). For purposes of this Privacy Policy, &#34;you&#34; and &#34;your&#34; means you as the user of the Services, whether you are a customer, website visitor, or another individual whose information we have collected pursuant to this Privacy Policy.</p>
             <br />
@@ -42,7 +42,7 @@ export default async function PrivacyPolicyContent() {
 
           <HRGradient />
 
-          <section id="PP-SECTION__Changes-to-This-Privacy-Policy">
+          <section id="PP-SECTION__Changes-to-This-Privacy-Policy" tabIndex={0}>
 
             <p>Changes to This Privacy Policy</p>
             <br />
@@ -72,15 +72,15 @@ export default async function PrivacyPolicyContent() {
             <br />
             <p>Some features of the Services may require you to directly provide us with certain information about yourself. You may elect not to provide this information, but doing so may prevent you from using or accessing these features.</p>
             <br />
-            <p>Information We Collect through Cookies</p>
+            <p tabIndex={0}>Information We Collect through Cookies</p>
             <br />
             <p>We also automatically collect certain information about your interaction with the Services (&#34;Usage Data&#34;). To do this, we may use cookies, pixels and similar technologies (&#34;Cookies&#34;). Usage Data may include information about how you access and use our Site and your account, including device information, browser information, information about your network connection, your IP address and other information regarding your interaction with the Services.</p>
             <br />
-            <p>Information We Obtain from Third Parties</p>
+            <p tabIndex={0}>Information We Obtain from Third Parties</p>
             <br />
             <p>Finally, we may obtain information about you from third parties, including from vendors and service providers who may collect information on our behalf, such as:</p>
             <br />
-            <ul>
+            <ul tabIndex={0}>
               <li>Companies who support our Site and Services, such as Shopify, Vercel, and Supabase.</li>
               <li>Our payment processors, who collect payment information (e.g., bank account, credit or debit card information, billing address) to process your payment in order to fulfill your orders and provide you with products or services you have requested, in order to perform our contract with you.</li>
               <li>When you visit our Site, open or click on emails we send you, or interact with our Services or advertisements, we, or third parties we work with, may automatically collect certain information using online tracking technologies such as pixels, web beacons, software developer kits, third-party libraries, and cookies.</li>
@@ -88,7 +88,7 @@ export default async function PrivacyPolicyContent() {
             <br />
             <p>Any information we obtain from third parties will be treated in accordance with this Privacy Policy. We are not responsible or liable for the accuracy of the information provided to us by third parties and are not responsible for any third party&#39;s policies or practices. For more information, see the section below, Third Party Websites and Links.</p>
             <br />
-            <p>How We Use Your Personal Information</p>
+            <p tabIndex={0}>How We Use Your Personal Information</p>
             <br />
             <ul>
               <li>Providing Products and Services. We use your personal information to provide you with the Services in order to perform our contract with you, including to process your payments, fulfill your orders, to send notifications to you related to you account, purchases, returns, exchanges or other transactions, to create, maintain and otherwise manage your account, to arrange for shipping, facilitate any returns and exchanges and to enable you to post reviews.</li>
@@ -97,17 +97,17 @@ export default async function PrivacyPolicyContent() {
               <li>Communicating with you. We use your personal information to provide you with customer support and improve our Services. This is in our legitimate interests in order to be responsive to you, to provide effective services to you, and to maintain our business relationship with you.</li>
             </ul>
             <br />
-            <p>Cookies</p>
+            <p tabIndex={0}>Cookies</p>
             <br />
             <p>Like many websites, we use Cookies on our Site. We use Cookies to power and improve our Site and our Services (including to remember your actions and preferences), to run analytics and better understand user interaction with the Services (in our legitimate interests to administer, improve and optimize the Services). We may also permit third parties and services providers to use Cookies on our Site to better tailor the services, products and advertising on our Site and other websites.</p>
             <br />
             <p>Most browsers automatically accept Cookies by default, but you can choose to set your browser to remove or reject Cookies through your browser controls. Please keep in mind that removing or blocking Cookies can negatively impact your user experience and may cause some of the Services, including certain features and general functionality, to work incorrectly or no longer be available. Additionally, blocking Cookies may not completely prevent how we share information with third parties such as our advertising partners.</p>
             <br />
-            <p>How We Disclose Personal Information</p>
+            <p tabIndex={0}>How We Disclose Personal Information</p>
             <br />
             <p>In certain circumstances, we may disclose your personal information to third parties for legitimate purposes subject to this Privacy Policy. Such circumstances may include:</p>
             <br />
-            <ul>
+            <ul tabIndex={0}>
               <li>With vendors or other third parties who perform services on our behalf (e.g., IT management, payment processing, data analytics, customer support, cloud storage, fulfillment and shipping).</li>
               <li>With business and marketing partners, including Shopify, to provide services and advertise to you. {/* [[NOTE TO MERCHANT: INSERT THE FOLLOWING SENTENCE IF USING SHOPIFY'S AD SERVICES, SUCH AS SHOPIFY AUDIENCES]] */} [For example, we use Shopify to support personalized advertising with third-party services]. Our business and marketing partners will use your information in accordance with their own privacy notices.</li>
               <li>When you direct, request us or otherwise consent to our disclosure of certain information to third parties, such as to ship you products or through your use of social media widgets or login integrations, with your consent.</li>
@@ -115,7 +115,7 @@ export default async function PrivacyPolicyContent() {
               <li>In connection with a business transaction such as a merger or bankruptcy, to comply with any applicable legal obligations (including to respond to subpoenas, search warrants and similar requests), to enforce any applicable terms of service, and to protect or defend the Services, our rights, and the rights of our users or others.</li>
             </ul>
             <br />
-            <p>Category:</p>
+            <p tabIndex={0}>Category:</p>
             <br />
             <ul>
               <li>Identifiers such as basic contact details and certain order and account information</li>
@@ -123,9 +123,9 @@ export default async function PrivacyPolicyContent() {
               <li>Internet or other similar network activity, such as Usage Data</li>
             </ul>
             <br />
-            <p>Categories of Recipients:</p>
+            <p tabIndex={0}>Categories of Recipients:</p>
             <br />
-            <ul>
+            <ul tabIndex={0}>
               <li>Vendors and third parties who perform services on our behalf (such as Internet service providers, payment processors, fulfillment partners, customer support partners and data analytics providers)</li>
               <li>Business and marketing partners</li>
               <li>Affiliates</li>
@@ -137,7 +137,7 @@ export default async function PrivacyPolicyContent() {
             <br />
             <p>We have &#34;sold&#34; and &#34;shared&#34; (as those terms are defined in applicable law) personal information over the preceding 12 months for the purpose of engaging in advertising and marketing activities, as follows.</p>
             <br />
-            <p>Category of Personal Information</p>
+            <p tabIndex={0}>Category of Personal Information</p>
             <br />
             <ul>
               <li>Identifiers such as basic contact details and certain order and account information</li>
@@ -145,23 +145,23 @@ export default async function PrivacyPolicyContent() {
               <li>Internet or other similar network activity, such as Usage Data</li>
             </ul>
             <br />
-            <p>Categories of Recipients</p>
+            <p tabIndex={0}>Categories of Recipients</p>
             <br />
             <ul>
               <li>Business and marketing partners</li>
             </ul>
             <br />
-            <p>User Generated Content</p>
+            <p tabIndex={0}>User Generated Content</p>
             <br />
             <p>The Services may enable you to post product reviews and other user-generated content. If you choose to submit user generated content to any public area of the Services, this content will be public and accessible by anyone.</p>
             <br />
             <p>We do not control who will have access to the information that you choose to make available to others, and cannot ensure that parties who have access to such information will respect your privacy or keep it secure. We are not responsible for the privacy or security of any information that you make publicly available, or for the accuracy, use or misuse of any information that you disclose or receive from third parties.</p>
             <br />
-            <p>Third Party Websites and Links</p>
+            <p tabIndex={0}>Third Party Websites and Links</p>
             <br />
             <p>Our Site may provide links to websites or other online platforms operated by third parties. If you follow links to sites not affiliated or controlled by us, you should review their privacy and security policies and other terms and conditions. We do not guarantee and are not responsible for the privacy or security of such sites, including the accuracy, completeness, or reliability of information found on these sites. Information you provide on public or semi-public venues, including information you share on third-party social networking platforms may also be viewable by other users of the Services and/or users of those third-party platforms without limitation as to its use by us or by a third party. Our inclusion of such links does not, by itself, imply any endorsement of the content on such platforms or of their owners or operators, except as disclosed on the Services.</p>
             <br />
-            <p>Children&#39;s Data</p>
+            <p tabIndex={0}>Children&#39;s Data</p>
             <br />
             <p>The Services are not intended to be used by children, and we do not knowingly collect any personal information about children. If you are the parent or guardian of a child who has provided us with their personal information, you may contact us using the contact details set out below to request that it be deleted.</p>
             <br />
@@ -169,13 +169,13 @@ export default async function PrivacyPolicyContent() {
             <br />
             {/* [[NOTE TO MERCHANT: PLEASE CONSULT WITH LEGAL COUNSEL IF YOUR SITE IS CHILD FOCUSSED OR DIRECTED, AS MORE SPECIFIC DISCLOSURES MAY BE REQUIRED.]] */}
             <br />
-            <p>Security and Retention of Your Information</p>
+            <p tabIndex={0}>Security and Retention of Your Information</p>
             <br />
             <p>Please be aware that no security measures are perfect or impenetrable, and we cannot guarantee &#34;perfect security.&#34; In addition, any information you send to us may not be secure while in transit. We recommend that you do not use unsecure channels to communicate sensitive or confidential information to us.</p>
             <br />
             <p>How long we retain your personal information depends on different factors, such as whether we need the information to maintain your account, to provide the Services, comply with legal obligations, resolve disputes or enforce other applicable contracts and policies.</p>
             <br />
-            <p>Your Rights and Choices</p>
+            <p tabIndex={0}>Your Rights and Choices</p>
             <br />
             <p>Depending on where you live, you may have some or all of the rights listed below in relation to your personal information. However, these rights are not absolute, may apply only in certain circumstances and, in certain cases, we may decline your request as permitted by law.</p>
             <br />
@@ -201,16 +201,16 @@ export default async function PrivacyPolicyContent() {
             {/* [[NOTE TO MERCHANT: INSERT THE FOLLOWING SENTENCE IF USING SHOPIFY'S AD SERVICES SUCH AS SHOPIFY AUDIENCES]] */}
 
             {/* We use Shopify's ad services such as Shopify Audiences to help personalize the advertising you see on third party websites. To restrict Shopify merchants that use these ad services from using your personal information for such services, visit https://privacy.shopify.com/en. */}
-            <p>Complaints</p>
+            <p tabIndex={0}>Complaints</p>
             <br />
             <p>If you have complaints about how we process your personal information, please contact us using the contact details provided below. If you are not satisfied with our response to your complaint, depending on where you live you may have the right to appeal our decision by contacting us using the contact details set out below, or lodge your complaint with your local data protection authority.</p>
             <br />
-            <p>International Users</p>
+            <p tabIndex={0}>International Users</p>
             <br />
             <p>Please note that we may transfer, store and process your personal information outside the country you live in, including the United States. Your personal information is also processed by staff and third party service providers and partners in these countries.</p>
             <p>If we transfer your personal information out of Europe, we will rely on recognized transfer mechanisms like the European Commission&#39;s Standard Contractual Clauses, or any equivalent contracts issued by the relevant competent authority of the UK, as relevant, unless the data transfer is to a country that has been determined to provide an adequate level of protection.</p>
             <br />
-            <p>Contact</p>
+            <p tabIndex={0}>Contact</p>
             <br />
             <p>Should you have any questions about our privacy practices or this Privacy Policy, or if you would like to exercise any of the rights available to you, please {/* call [[TOLL FREE TELEPHONE NUMBER IF YOU HAVE A PHYSICAL RETAIL LOCATION]] or */} email us at nathanjhood@googlemail.com.</p>
             <br />
