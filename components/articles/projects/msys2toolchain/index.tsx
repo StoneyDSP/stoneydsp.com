@@ -17,6 +17,8 @@ export default async function MsystoolchainContent() {
 
   const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/MSYS2-Toolchain/master/README.md')
 
+  const mdxParsed = await MDXRemote({source: mdx})
+
   return (
     <BlogArticle>
       <div className={styles.container}>
@@ -36,7 +38,7 @@ export default async function MsystoolchainContent() {
               />
             </div>
 
-            <MDXRemote source={mdx ? mdx : `
+            <MDXRemote source={mdxParsed ? mdx : `
 # MSYS2 toolchain
 
 THIS PAGE FAILED TO RENDER...
