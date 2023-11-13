@@ -1,4 +1,4 @@
-import MsystoolchainContent from '@/app/projects/msys2-toolchain/msys2-toolchain_content'
+import MsystoolchainContent from '@/components/articles/projects/msys2toolchain'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
