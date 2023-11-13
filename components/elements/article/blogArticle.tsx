@@ -21,13 +21,13 @@ export default function BlogArticle({
     <section className='animate-in min-h-screen'>
 
       <div
-        className='animate-in flex flex-col gap-8'
+        className='flex flex-col gap-8'
       >
         <ButtonBack />
         <ButtonLike />
       </div>
 
-      <Suspense>
+      <Suspense fallback={<>Loading...</>}>
         {children}
       </Suspense>
 

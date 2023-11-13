@@ -28,7 +28,7 @@ export default async function HomeContent() {
 
           <HRGradient />
 
-          <h2 className='animate-in text-center'>
+          <h2 className='animate-in text-center' tabIndex={0}>
             Hi! I&#39;m Nathan, a.k.a StoneyDSP.
           </h2>
 
@@ -38,7 +38,7 @@ export default async function HomeContent() {
 
           <HRGradient />
 
-          <h2 className='animate-in text-center'>
+          <h2 className='animate-in text-center' tabIndex={0}>
             Welcome to my workbench.
           </h2>
 

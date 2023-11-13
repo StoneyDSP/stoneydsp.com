@@ -18,7 +18,7 @@ export default async function ProjectsContent() {
 
         <div className={styles.flexboxgrid}>
 
-          <h2 className='text-center'>
+          <h2 className='text-center' tabIndex={0}>
             Read about some of my most popular projects:
           </h2>
 
