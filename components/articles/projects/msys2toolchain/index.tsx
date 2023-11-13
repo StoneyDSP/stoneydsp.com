@@ -15,43 +15,41 @@ export const dynamic = 'force-dynamic'
 
 export default async function MsystoolchainContent() {
 
-  const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/MSYS2-Toolchain/master/README.md')
+  // const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/MSYS2-Toolchain/master/README.md')
 
-  // const mdxParsed = await MDXRemote({source: mdx})
+  const mdx = `# MSYS2 toolchain
 
-//   {`# MSYS2 toolchain
+THIS PAGE FAILED TO RENDER...
 
-// THIS PAGE FAILED TO RENDER...
+<i>The below is quoted from <a href="https://www.msys2.org/license/">https://www.msys2.org/license/</a></i>
 
-// <i>The below is quoted from <a href="https://www.msys2.org/license/">https://www.msys2.org/license/</a></i>
+"MSYS2 is a software distribution consisting of several independent parts, each with their own licenses, comparable to a Linux distribution.
 
-// "MSYS2 is a software distribution consisting of several independent parts, each with their own licenses, comparable to a Linux distribution.
+The installer, for example, is based on the qt-installer-framework and pre-packs the direct and indirect dependencies of the base meta package. Each package has its own licenses.
 
-// The installer, for example, is based on the qt-installer-framework and pre-packs the direct and indirect dependencies of the base meta package. Each package has its own licenses.
+The "pacman" package manager in MSYS2 allows users to install other packages available in our repository, each with their own licenses.
 
-// The "pacman" package manager in MSYS2 allows users to install other packages available in our repository, each with their own licenses.
+The license information for each package as visible on <a href="https://www.msys2.org/license/">https://packages.msys2.org</a> is maintained on a best effort basis and "we" (quote) make no guarantee that it is accurate or complete."
 
-// The license information for each package as visible on <a href="https://www.msys2.org/license/">https://packages.msys2.org</a> is maintained on a best effort basis and "we" (quote) make no guarantee that it is accurate or complete."
+## vcpkg
 
-// ## vcpkg
+vcpkg - C++ Library Manager for Windows, Linux, and MacOS
 
-// vcpkg - C++ Library Manager for Windows, Linux, and MacOS
+Copyright (c) Microsoft Corporation
 
-// Copyright (c) Microsoft Corporation
+vcpkg is distributed under the MIT License
 
-// vcpkg is distributed under the MIT License
+All rights reserved.
 
-// All rights reserved.
+## CMake
 
-// ## CMake
+CMake - Cross Platform Makefile Generator
 
-// CMake - Cross Platform Makefile Generator
+Copyright 2000-2023 Kitware, Inc. and Contributors
 
-// Copyright 2000-2023 Kitware, Inc. and Contributors
+CMake is distributed under the OSI-approved BSD 3-clause License
 
-// CMake is distributed under the OSI-approved BSD 3-clause License
-
-// All rights reserved.`}
+All rights reserved.`
 
 
   return (
