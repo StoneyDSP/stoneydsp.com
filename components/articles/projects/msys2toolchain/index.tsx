@@ -51,6 +51,8 @@ CMake is distributed under the OSI-approved BSD 3-clause License
 
 All rights reserved.`
 
+  const components = {}
+
 
   return (
     <BlogArticle>
@@ -71,7 +73,39 @@ All rights reserved.`
               />
             </div>
 
-            <MDXRemote source={mdx} />
+            <MDXRemote
+              source={mdx ? mdx : '# 404: not found'}
+              components={{
+                ...components,
+                h1: (({ children }) => <h1 tabIndex={0}>
+                  {children}
+                </h1>),
+                h2: (({ children }) => <h2 tabIndex={0}>
+                  {children}
+                </h2>),
+                h3: (({ children }) => <h3 tabIndex={0}>
+                  {children}
+                </h3>),
+                h4: (({ children }) => <h4 tabIndex={0}>
+                  {children}
+                </h4>),
+                h5: (({ children }) => <h5 tabIndex={0}>
+                  {children}
+                </h5>),
+                h6: (({ children }) => <h6 tabIndex={0}>
+                  {children}
+                </h6>),
+                p: (({ children }) => <p tabIndex={-1}>
+                  {children}
+                </p>),
+                pre: (({ children }) => <pre tabIndex={0} className="fragment">
+                  {children}
+                </pre>),
+                code: (({ children }) => <code tabIndex={-1}>
+                  {children}
+                </code>),
+              }}
+            />
 
             <HRGradient />
 
