@@ -58,7 +58,6 @@ export const createClient = (request: NextRequest) => {
 
   // Create an unmodified response
   let response = NextResponse.next({
-    headers: request.headers,
     request: {
       headers: requestHeaders,
     },
@@ -81,7 +80,7 @@ export const createClient = (request: NextRequest) => {
           })
           response = NextResponse.next({
             request: {
-              headers: request.headers,
+              headers: requestHeaders,
             },
           })
           response.cookies.set({
@@ -99,7 +98,7 @@ export const createClient = (request: NextRequest) => {
           })
           response = NextResponse.next({
             request: {
-              headers: request.headers,
+              headers: requestHeaders,
             },
           })
           response.cookies.set({
