@@ -15,17 +15,24 @@ export const createHashedNonce = async (nonce: string) => {
 export const createClient = (request: NextRequest) => {
 
   // Generate a random nonce
+  // Use 'nonce' when invoking the supabase.auth.signInWithIdToken() method
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
-
+  // Use 'hashedNonce' when making the authentication request to Google
   const hashedNnonce = createHashedNonce(nonce)
 
-  // Setting request headers
-  const requestHeaders = new Headers(request.headers)
-  requestHeaders.set('x-nonce', nonce)
-  requestHeaders.set('X-Content-Type-Options', 'nosniff')
-  requestHeaders.set('cache-control', 'public, max-age=0, s-maxage=86400, must-revalidate')
-  requestHeaders.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
-
+  const cspHeader = `
+    default-src 'self';
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+    style-src 'self' 'nonce-${nonce}';
+    img-src 'self' blob: data:;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    block-all-mixed-content;
+    upgrade-insecure-requests;
+`
   // const cspHeader = `
   //   default-src 'self';
   //   connect-src vitals.vercel-insights.com;
@@ -41,25 +48,32 @@ export const createClient = (request: NextRequest) => {
   //   upgrade-insecure-requests;
   // `
 
+  // Replace newline characters and spaces
+  const contentSecurityPolicyHeaderValue = cspHeader
+    .replace(/\s{2,}/g, ' ')
+    .trim()
+
+  // Clone the request headers
+  const requestHeaders = new Headers(request.headers)
+  // set nonce request header to read in pages if needed
+  requestHeaders.set('x-nonce', nonce)
+  requestHeaders.set('X-Content-Type-Options', 'nosniff')
+  requestHeaders.set('cache-control', 'public, max-age=0, s-maxage=86400, must-revalidate')
+  requestHeaders.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
   // requestHeaders.set(
   //   'Content-Security-Policy',
-  //   // Replace newline characters and spaces
-  //   cspHeader.replace(/\s{2,}/g, ' ').trim()
+  //   contentSecurityPolicyHeaderValue
   // )
-
   // requestHeaders.set(
   //   'Content-Security-Policy-Report-Only',
-  //   // Replace newline characters and spaces
-  //   cspHeader.replace(/\s{2,}/g, ' ').trim()
+  //   contentSecurityPolicyHeaderValue
   // )
 
-  // Use 'hashedNonce' when making the authentication request to Google
-  // Use 'nonce' when invoking the supabase.auth.signInWithIdToken() method
-
-  // Create an unmodified response
+  // create a new unmodified response
   let response = NextResponse.next({
     request: {
-      headers: requestHeaders,
+      // New request headers
+      headers: request.headers,
     },
   })
 
@@ -79,6 +93,7 @@ export const createClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
+            headers: request.headers,
             request: {
               headers: requestHeaders,
             },
@@ -97,6 +112,7 @@ export const createClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
+            headers: request.headers,
             request: {
               headers: requestHeaders,
             },
@@ -110,6 +126,12 @@ export const createClient = (request: NextRequest) => {
       },
     }
   )
+
+  // // Also set the CSP so that it is outputted to the browser
+  // response.headers.set(
+  //   'Content-Security-Policy',
+  //   contentSecurityPolicyHeaderValue
+  // )
 
   return { supabase, response }
 }
