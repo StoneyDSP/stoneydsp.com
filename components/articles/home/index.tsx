@@ -31,10 +31,6 @@ export default async function HomeContent() {
 
           <HRGradient />
 
-          <LogoWideXL />
-
-          <HRGradient />
-
           <ResourceCards />
 
           <HRGradient />
