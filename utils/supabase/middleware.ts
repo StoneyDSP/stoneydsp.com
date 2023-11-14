@@ -1,6 +1,6 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import generateCsp from '@/utils/headers/generateCSP'
-import { type NextRequest, NextResponse } from 'next/server'
+// import generateCsp from '@/utils/headers/generateCSP'
+import { NextResponse, type NextRequest } from 'next/server'
 
 export const createClient = (request: NextRequest) => {
 
