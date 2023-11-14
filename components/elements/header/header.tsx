@@ -1,8 +1,7 @@
-// 'use client'
+'use client'
+import 'client-only'
 import { usePathname } from 'next/navigation'
 import { Nav } from '@/components/elements'
-
-
 
 export default function Header(
 ): JSX.Element {

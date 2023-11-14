@@ -1,6 +1,8 @@
+import Link from 'next/link'
+
 export default async function BackToTop() {
   return (
-    <a
+    <Link
       href="#"
       className='py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm transition___shadow_off'
     >
@@ -19,6 +21,6 @@ export default async function BackToTop() {
         <polyline points="6 15 12 9 18 15" />
       </svg>{' '}
       Back to Top
-    </a>
+    </Link>
   )
 }

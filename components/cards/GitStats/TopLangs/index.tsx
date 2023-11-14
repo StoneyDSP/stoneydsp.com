@@ -1,3 +1,5 @@
+import 'server-only'
+
 export default async function GitStatsTopLangsCard() {
   return (
     <picture>

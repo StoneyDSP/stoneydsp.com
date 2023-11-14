@@ -6,8 +6,6 @@ import {
 } from '@/components/layouts'
 import styles from '@/app/layout.module.css'
 
-// export const dynamic = 'force-dynamic'
-
 export default async function TermsOfServiceContent() {
 
   return (
