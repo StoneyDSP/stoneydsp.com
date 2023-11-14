@@ -6,20 +6,17 @@ import {
   ResourceCards
 } from '@/components/cards'
 import {
-  Ribbon,
   HRGradient,
   BackToTop
 } from '@/components/layouts'
+import { LogoWideXL } from '@/components/icons/logo/wide'
 import styles from '@/app/layout.module.css'
-
-// export const dynamic = 'force-dynamic'
 
 export default async function HomeContent() {
 
   // const nonce = headers().get('x-nonce')
 
   return (
-
     <div className={styles.container}>
 
       <article className={styles.content}>

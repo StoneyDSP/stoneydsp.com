@@ -1,23 +1,19 @@
 'use server'
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import 'server-only'
 import {
   HRGradient,
   BackToHome,
   BackToTop
 } from '@/components/layouts'
-import {
-    GitProjectCard
-} from '@/components/cards'
+import { GitProjectCard } from '@/components/cards'
+import MDXCache from '@/components/MDXCache'
 import BlogArticle from '@/components/elements/article/blogArticle'
 import mdxFetch from '@/utils/mdx/mdxFetch'
 import styles from '@/app/layout.module.css'
 
-// export const dynamic = 'force-dynamic'
-
 export default async function NonlinearfiltersContent() {
 
   const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/NonLinearFilters/main/README.md')
-  const components = {}
 
   return (
     <BlogArticle>
@@ -38,39 +34,7 @@ export default async function NonlinearfiltersContent() {
               />
             </div>
 
-            <MDXRemote
-              source={mdx ? mdx : '# 404: not found'}
-              components={{
-                ...components,
-                h1: (({ children }) => <h1 tabIndex={0}>
-                  {children}
-                </h1>),
-                h2: (({ children }) => <h2 tabIndex={0}>
-                  {children}
-                </h2>),
-                h3: (({ children }) => <h3 tabIndex={0}>
-                  {children}
-                </h3>),
-                h4: (({ children }) => <h4 tabIndex={0}>
-                  {children}
-                </h4>),
-                h5: (({ children }) => <h5 tabIndex={0}>
-                  {children}
-                </h5>),
-                h6: (({ children }) => <h6 tabIndex={0}>
-                  {children}
-                </h6>),
-                p: (({ children }) => <p tabIndex={-1}>
-                  {children}
-                </p>),
-                pre: (({ children }) => <pre tabIndex={0} className="fragment">
-                  {children}
-                </pre>),
-                code: (({ children }) => <code tabIndex={-1}>
-                  {children}
-                </code>),
-              }}
-            />
+            <MDXCache source={mdx ? mdx : '# 404: not found'} />
 
             <HRGradient />
 

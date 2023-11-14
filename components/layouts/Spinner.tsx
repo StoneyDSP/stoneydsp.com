@@ -1,22 +1,6 @@
-'use client' // Error components must be Client Components
-import 'client-only'
-import { LogoWideL } from '@/components/icons/logo/wide'
-import { useEffect } from 'react'
 import styles from '@/app/layout.module.css'
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string }
-  reset: () => void
-}) {
-
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error)
-  }, [error])
-
+export default function SpinnerRoot() {
   return (
     <div className={styles.container}>
 
@@ -26,17 +10,15 @@ export default function Error({
 
           <div className="py-4"></div>
 
-          <LogoWideL />
-
-          <h2 className="text-foreground">Something went wrong!</h2>
-          <button
+          <h2 className="text-foreground text-center">Loading...</h2>
+          {/* <button
             onClick={
               // Attempt to recover by trying to re-render the segment
               () => reset()
             }
             className="py-2 px-3 justify-center w-fit rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-400 border-2 hover:border-transparent">
             <span className="text-foreground">Try again</span>
-          </button>
+          </button> */}
 
         </div>
 

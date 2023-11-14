@@ -66,7 +66,15 @@ const nextConfig = {
         ]
       }
     ]
-  }
+  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       "source": "/projects/:id(\\d+)",
+  //       "destination": "http://:id.localhost:3000/"
+  //     }
+  //   ]
+  // }
 }
 
 module.exports = withMDX(nextConfig)
