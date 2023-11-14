@@ -11,8 +11,6 @@ import BlogArticle from '@/components/elements/article/blogArticle'
 // import mdxFetch from '@/utils/mdx/mdxFetch'
 import styles from '@/app/layout.module.css'
 
-export const dynamic = 'force-dynamic'
-
 export default async function MsystoolchainContent() {
 
   // const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/MSYS2-Toolchain/master/README.md')
