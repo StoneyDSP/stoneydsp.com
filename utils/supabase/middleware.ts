@@ -1,7 +1,7 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { type NextRequest, NextResponse } from 'next/server'
 
-const createHashedNonce = async (nonce: string) => {
+export const createHashedNonce = async (nonce: string) => {
   const encoder = new TextEncoder()
   const encodedNonce = encoder.encode(nonce) // Encode the nonce
   const hash = await crypto.subtle.digest('SHA-256', encodedNonce) // Hash it with SHA-256
@@ -26,26 +26,26 @@ export const createClient = (request: NextRequest) => {
   requestHeaders.set('cache-control', 'public, max-age=0, s-maxage=86400, must-revalidate')
   requestHeaders.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
 
-  const cspHeader = `
-    default-src 'self';
-    connect-src vitals.vercel-insights.com;
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
-    style-src 'self' 'nonce-${nonce}';
-    img-src 'self' blob: data:;
-    font-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    block-all-mixed-content;
-    upgrade-insecure-requests;
-  `
+  // const cspHeader = `
+  //   default-src 'self';
+  //   connect-src vitals.vercel-insights.com;
+  //   script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+  //   style-src 'self' 'nonce-${nonce}';
+  //   img-src 'self' blob: data:;
+  //   font-src 'self';
+  //   object-src 'none';
+  //   base-uri 'self';
+  //   form-action 'self';
+  //   frame-ancestors 'none';
+  //   block-all-mixed-content;
+  //   upgrade-insecure-requests;
+  // `
 
-  requestHeaders.set(
-    'Content-Security-Policy',
-    // Replace newline characters and spaces
-    cspHeader.replace(/\s{2,}/g, ' ').trim()
-  )
+  // requestHeaders.set(
+  //   'Content-Security-Policy',
+  //   // Replace newline characters and spaces
+  //   cspHeader.replace(/\s{2,}/g, ' ').trim()
+  // )
 
   // requestHeaders.set(
   //   'Content-Security-Policy-Report-Only',
@@ -58,8 +58,9 @@ export const createClient = (request: NextRequest) => {
 
   // Create an unmodified response
   let response = NextResponse.next({
+    headers: request.headers,
     request: {
-      headers: request.headers,
+      headers: requestHeaders,
     },
   })
 
@@ -79,7 +80,6 @@ export const createClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
-            headers: requestHeaders,
             request: {
               headers: request.headers,
             },
@@ -98,7 +98,6 @@ export const createClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
-            headers: requestHeaders,
             request: {
               headers: request.headers,
             },
