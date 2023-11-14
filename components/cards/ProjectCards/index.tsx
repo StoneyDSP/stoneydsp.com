@@ -1,3 +1,6 @@
+import 'server-only'
+import Link from 'next/link'
+
 export default async function GitProjectCard({
   linkTo,
   userName,
@@ -11,7 +14,7 @@ export default async function GitProjectCard({
 }) {
 
   return (
-    <a
+    <Link
       href={linkTo}
       className="relative flex flex-col text-foreground tableRowOdd group rounded-lg border p-0 hover:border-foreground transition___shadow_off"
     >
@@ -29,6 +32,6 @@ export default async function GitProjectCard({
           alt={altString}
         />
       </picture>
-    </a>
+    </Link>
   )
 }

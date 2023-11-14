@@ -3,6 +3,7 @@ import {
   ButtonBack,
   ButtonLike
 } from '@/components/elements'
+import SpinnerRoot from '@/components/layouts/Spinner'
 import { Suspense } from 'react'
 
 export default function BlogArticle({
@@ -21,7 +22,7 @@ export default function BlogArticle({
         <ButtonLike />
       </div>
 
-      <Suspense fallback={<>Loading...</>}>
+      <Suspense fallback={<SpinnerRoot />}>
         {children}
       </Suspense>
 

@@ -5,7 +5,7 @@ export default async function BackToHome() {
     // <div className='flex flex-col '>
     //   <Link href="/" className="text-center">Back to home</Link>
     // </div>
-    <a
+    <Link
       href="/"
       className={`py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm transition___shadow_off`}
     >
@@ -27,6 +27,6 @@ export default async function BackToHome() {
 
       </svg>{' '}
       Back to Home
-    </a>
+    </Link>
   )
 }

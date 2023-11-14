@@ -1,11 +1,9 @@
 import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
-// import { Inter } from 'next/font/google'
+import SpinnerRoot from '@/components/layouts/Spinner'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
 // import { GoogleTagManager } from '@next/third-parties/google'
 import '@/app/globals.css'
-
-// const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
   // Layouts must accept a children prop.
@@ -17,15 +15,13 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        // className={inter.className}
-      >
-        <Suspense fallback={<>Loading...</>}>
+      <body>
+        <Suspense fallback={<SpinnerRoot />}>
           <Header />
-          <Main>
+          <main>
             <ConsentBanner />
             {children}
-          </Main>
+          </main>
           <Footer />
         </Suspense>
       </body>
