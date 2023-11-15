@@ -39,9 +39,21 @@ const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : 'http://localhost:3000'
 
-const nextPublicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ? `${process.env.NEXT_PUBLIC_SITE_URL}`
-  : 'http://localhost:3000'
+// const nextPublicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
+//   ? `${process.env.NEXT_PUBLIC_SITE_URL}`
+//   : 'http://localhost:3000'
+
+const getURL = () => {
+  let url =
+    process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
+    process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
+    'http://localhost:3000/'
+  // Make sure to include `https://` when not localhost.
+  url = url.includes('http') ? url : `https://${url}`
+  // Make sure to include a trailing `/`.
+  url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
+  return url
+}
 
 export const metadata: Metadata  = {
   title: {
@@ -52,8 +64,8 @@ export const metadata: Metadata  = {
   description: 'Systems, Web, Audio & Graphics',
   referrer: 'origin-when-cross-origin',
   authors: [{ name: 'Nathan', url: 'https://github.com/nathanjhood' }],
-  metadataBase: new URL(nextPublicSiteUrl),
-  manifest: `${nextPublicSiteUrl}/manifest.webmanifest`,
+  metadataBase: new URL(getURL()),
+  manifest: `${getURL()}/manifest.webmanifest`,
   verification: {
     google: "U222mQRVBnX_8XrWZU9c6ETanVW8lFK6jvhJFQwtcdE",
   },
@@ -85,7 +97,7 @@ export const metadata: Metadata  = {
     title: 'StoneyDSP',
     description: 'Systems, Web, Audio & Graphics',
     siteName: 'stoneydsp.com',
-    url: new URL(nextPublicSiteUrl),
+    url: new URL(getURL()),
     images: [
       {
         url: `/images/w_icon__196x128.png`,
@@ -169,7 +181,7 @@ export const metadata: Metadata  = {
     title: 'StoneyDSP',
     description: 'Systems, Web, Audio & Graphics',
     siteId: '1467726470533754880',
-    site: `${nextPublicSiteUrl}`,
+    site: `${getURL()}`,
     images: [
       {
         url: `/images/w_icon__196x128.png`,
