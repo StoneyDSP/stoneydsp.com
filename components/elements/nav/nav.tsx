@@ -1,16 +1,17 @@
+'use client'
+import 'client-only'
 import NavMenu from '@/components/elements/nav/menu/menu'
-import { createClient } from '@/utils/supabase/client'
-import LogoutButton from '@/components/LogoutButton'
+// import { createClient } from '@/utils/supabase/client'
+// import LogoutButton from '@/components/LogoutButton'
 import Link from 'next/link'
-// import { Suspense } from 'react'
+import { Suspense } from 'react'
+import UserButton from '@/components/elements/nav/user'
 
-export default async function Nav() {
+export default function Nav() {
 
-  const supabase = createClient()
+  // const supabase = createClient()
 
-  const {
-    data: { user }
-  } = await supabase.auth.getUser()
+  // const { data: {user} } = await supabase.auth.getUser()
 
   return (
     <nav className='tableRowEven'>
@@ -66,9 +67,9 @@ export default async function Nav() {
           </span>
         </Link> */}
 
-        {user ? (
+        {/* {user ? (
           <div className="flex items-center gap-4">
-            <Link href="/account" target="_self">Hey, {user.email}!{/**  ({session?.user.role})*/}</Link>
+            <Link href="/account" target="_self">Hey, {user.email}! ({session?.user.role})</Link>
             <LogoutButton />
           </div>
           ) : (
@@ -91,7 +92,11 @@ export default async function Nav() {
               Login
             </span>
           </Link>
-        )}
+        )} */}
+
+        <Suspense fallback={<>Loading...</>}>
+          <UserButton />
+        </Suspense>
 
       </div>
     </nav>
