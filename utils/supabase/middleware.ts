@@ -1,9 +1,11 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { type NextRequest, NextResponse } from 'next/server'
+import { customStorageAdapter } from '@/utils/supabase/storage'
 
 export const createClient = (request: NextRequest) => {
   // Create an unmodified response
   let response = NextResponse.next({
+    headers: request.headers,
     request: {
       headers: request.headers,
     },
@@ -16,7 +18,7 @@ export const createClient = (request: NextRequest) => {
       auth: {
         detectSessionInUrl: true,
         flowType: 'pkce',
-        //storage: customStorageAdapter,
+        storage: customStorageAdapter,
       },
       cookies: {
         get(name: string) {
@@ -30,6 +32,7 @@ export const createClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
+            headers: request.headers,
             request: {
               headers: request.headers,
             },
@@ -48,6 +51,7 @@ export const createClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
+            headers: request.headers,
             request: {
               headers: request.headers,
             },
