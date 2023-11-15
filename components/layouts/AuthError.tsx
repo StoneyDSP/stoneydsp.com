@@ -1,4 +1,7 @@
-export default async function AuthErrorPage({
+'use client'
+import 'client-only'
+
+export default function AuthError({
   searchParams,
 }: {
   searchParams: { message: string }

@@ -1,11 +1,12 @@
 import { createSupabaseServerSideClient } from '@/utils/supabase/ssr'
-import { notFound, redirect } from 'next/navigation'
-import RealtimePost from '@/components/blog/rtpost'
 import { cookies } from 'next/headers'
+import AccountForm from '@/components/layouts/Account'
+import { redirect } from 'next/navigation'
 
-export default async function Post({ params: { id } }: { params: { id: string } }) {
+export default async function AccountPage() {
 
   const cookieStore = cookies()
+
   const supabase = createSupabaseServerSideClient(cookieStore)
 
   const {
@@ -17,13 +18,7 @@ export default async function Post({ params: { id } }: { params: { id: string } 
     redirect('/login')
   }
 
-  const { data: post } = await supabase.from('posts').select().match({ id }).single()
-
-  if (!post) {
-    notFound()
-  }
-
   return (
-    <RealtimePost serverPost={post} />
+    <AccountForm session={session} />
   )
 }

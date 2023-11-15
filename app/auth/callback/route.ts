@@ -36,10 +36,12 @@ export async function GET(request: Request) {
     if (!error) {
       return NextResponse.redirect(`${origin}${next}`)
     }
+    // return the user to an error page with instructions
+    return NextResponse.redirect(`${origin}/auth/auth-error?message=${error}`)
   }
 
   // return the user to an error page with instructions
-  return NextResponse.redirect(`${origin}/auth/auth-code-error`)
+  return NextResponse.redirect(new URL('/auth-error?message=Under construction...', origin))
 }
 
 // import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'

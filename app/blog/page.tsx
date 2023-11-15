@@ -1,10 +1,8 @@
-// import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { createSupabaseServerSideClient } from '@/utils/supabase/ssr'
 import { cookies } from 'next/headers'
 import RealtimePosts from '@/components/blog/rtlist'
 import NewPost from '@/components/blog/newpost'
-
-import type { Database } from '@/types_db'
+import '@/app/blog/page.module.css'
 
 export default async function ServerComponent() {
   const cookieStore = cookies()

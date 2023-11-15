@@ -55,7 +55,7 @@ export interface Database {
           name?: string | null
         }
         Relationships: []
-      }
+      },
       customers: {
         Row: {
           id: string
@@ -77,7 +77,7 @@ export interface Database {
             referencedColumns: ["id"]
           }
         ]
-      }
+      },
       prices: {
         Row: {
           active: boolean | null
@@ -126,7 +126,7 @@ export interface Database {
             referencedColumns: ["id"]
           }
         ]
-      }
+      },
       products: {
         Row: {
           active: boolean | null
@@ -153,7 +153,7 @@ export interface Database {
           name?: string | null
         }
         Relationships: []
-      }
+      },
       profiles: {
         Row: {
           avatar_url: string | null
@@ -187,7 +187,7 @@ export interface Database {
             referencedColumns: ["id"]
           }
         ]
-      }
+      },
       subscriptions: {
         Row: {
           cancel_at: string | null
@@ -254,7 +254,7 @@ export interface Database {
             referencedColumns: ["id"]
           }
         ]
-      }
+      },
       todos: {
         Row: {
           created_at: string
@@ -285,7 +285,7 @@ export interface Database {
             referencedColumns: ["id"]
           }
         ]
-      }
+      },
       users: {
         Row: {
           avatar_url: string | null
