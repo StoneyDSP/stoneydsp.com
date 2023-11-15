@@ -20,6 +20,9 @@ export const createClient = (request: NextRequest) => {
         flowType: 'pkce',
         storage: customStorageAdapter,
       },
+      global: {
+        headers: { Authorization: req.headers.get('Authorization')! },
+      },
       cookies: {
         get(name: string) {
           return request.cookies.get(name)?.value
