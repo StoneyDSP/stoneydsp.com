@@ -1,11 +1,9 @@
-'use client'
-import 'client-only'
 import NavMenu from '@/components/elements/nav/menu/menu'
 // import { createClient } from '@/utils/supabase/client'
 // import LogoutButton from '@/components/LogoutButton'
 import Link from 'next/link'
 import { Suspense } from 'react'
-import UserButton from '@/components/elements/nav/user'
+// import UserButton from '@/components/elements/nav/user'
 
 export default function Nav() {
 
@@ -39,15 +37,15 @@ export default function Nav() {
 
         </Link>
 
-        {/* <Suspense fallback={<>Loading...</>}> */}
+        <Suspense fallback={<>Loading...</>}>
           <NavMenu />
-        {/* </Suspense> */}
+        </Suspense>
 
         <span className="text-xs font-light text-center">
           Systems, Web, Audio & Graphics
         </span>
 
-        {/* <Link
+        <Link
           href="/login"
           className="
             py-2
@@ -65,7 +63,7 @@ export default function Nav() {
           <span className='font-bold text-center text-white'>
             Login
           </span>
-        </Link> */}
+        </Link>
 
         {/* {user ? (
           <div className="flex items-center gap-4">
@@ -94,9 +92,9 @@ export default function Nav() {
           </Link>
         )} */}
 
-        <Suspense fallback={<>Loading...</>}>
+        {/* <Suspense fallback={<>Loading...</>}>
           <UserButton />
-        </Suspense>
+        </Suspense> */}
 
       </div>
     </nav>
