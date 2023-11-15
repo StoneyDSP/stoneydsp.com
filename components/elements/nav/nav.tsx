@@ -1,3 +1,5 @@
+'use server'
+import 'server-only'
 import NavMenu from '@/components/elements/nav/menu/menu'
 import { createClient } from '@/utils/supabase/server'
 import LogoutButton from '@/components/LogoutButton'
@@ -11,9 +13,9 @@ export default async function Nav() {
 
   const supabase = createClient(cookieStore)
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
+  // const {
+  //   data: { session },
+  // } = await supabase.auth.getSession()
 
   const {
     data: { user },

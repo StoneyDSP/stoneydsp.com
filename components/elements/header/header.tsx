@@ -2,6 +2,7 @@
 import 'client-only'
 import { usePathname } from 'next/navigation'
 import { Nav } from '@/components/elements'
+import { Suspense } from 'react'
 
 export default function Header(
 ): JSX.Element {
@@ -16,7 +17,9 @@ export default function Header(
     <header
       // className='absolute w-screen z-50'
     >
-      <Nav />
+      <Suspense >
+        <Nav />
+      </Suspense>
       <span className='text-xs text-left'>
         {pathname && pathname !== '/' ? spacedSlashes : ''}
       </span>
