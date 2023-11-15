@@ -1,4 +1,5 @@
 'use server'
+import 'server-only'
 import {
   GitStatsCard,
   GitStatsTopLangsCard,
@@ -9,62 +10,58 @@ import {
   HRGradient,
   BackToTop
 } from '@/components/layouts'
-import { LogoWideXL } from '@/components/icons/logo/wide'
-import styles from '@/app/layout.module.css'
+// import { LogoWideXL } from '@/components/icons/logo/wide'
+// import styles from '@/app/layout.module.css'
 
 export default async function HomeContent() {
 
   // const nonce = headers().get('x-nonce')
 
   return (
-    <div className={styles.container}>
+    <>
+      <HRGradient />
 
-      <article className={styles.content}>
+      <h2 className='animate-in text-center' tabIndex={0}>
+        Hi! I&#39;m Nathan, a.k.a StoneyDSP.
+      </h2>
 
-        <div className={styles.flexboxgrid}>
+      <HRGradient />
 
-          <HRGradient />
+      <ResourceCards />
 
-          <h2 className='animate-in text-center' tabIndex={0}>
-            Hi! I&#39;m Nathan, a.k.a StoneyDSP.
-          </h2>
+      <HRGradient />
 
-          <HRGradient />
+      <h2 className='animate-in text-center' tabIndex={0}>
+        Welcome to my workbench.
+      </h2>
 
-          <ResourceCards />
+      <HRGradient />
 
-          <HRGradient />
+      <div className='flex justify-center align-middle items-center'>
+        <GitStatsCard />
+      </div>
 
-          <h2 className='animate-in text-center' tabIndex={0}>
-            Welcome to my workbench.
-          </h2>
+      <HRGradient />
 
-          <HRGradient />
+      <div className='flex justify-center align-middle items-center'>
+        <GitStatsTopLangsCard />
+      </div>
 
-          <div className='flex justify-center align-middle items-center'>
-            <GitStatsCard />
-          </div>
+      <HRGradient />
 
-          <HRGradient />
+      <RepoCards />
 
-          <div className='flex justify-center align-middle items-center'>
-            <GitStatsTopLangsCard />
-          </div>
+      {/* </div> */}
 
-          <HRGradient />
+      <HRGradient />
 
-          <RepoCards />
+      <BackToTop />
 
-        </div>
+      <HRGradient />
 
-        <HRGradient />
+      {/* </article>
 
-        <BackToTop />
-
-        <HRGradient />
-
-      </article>
-
-    </div>
+    </div>*/}
+    </>
   )
 }

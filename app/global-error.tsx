@@ -2,7 +2,7 @@
 import 'client-only'
 import { LogoWideL } from '@/components/icons/logo/wide'
 import { useEffect } from 'react'
-import styles from '@/app/layout.module.css'
+import styles from '@/app/template.module.css'
 
 export default function GlobalError({
   error,

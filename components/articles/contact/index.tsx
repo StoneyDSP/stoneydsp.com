@@ -5,39 +5,30 @@ import {
   BackToTop
 } from '@/components/layouts'
 import { ContactForm } from '@/components/elements'
-import styles from '@/app/layout.module.css'
 
 export default async function ContactContent() {
 
   return (
-    <div className={styles.container}>
+    <>
 
-      <article className={styles.content}>
+      <h2 className='text-center' tabIndex={0}>
+        Hi! I&#39;m Nathan, a.k.a StoneyDSP.
+      </h2>
 
-        <div className={styles.flexboxgrid}>
+      <HRGradient />
 
-          <h2 className='text-center' tabIndex={0}>
-            Hi! I&#39;m Nathan, a.k.a StoneyDSP.
-          </h2>
+      <ContactForm />
 
-          <HRGradient />
+      <HRGradient />
 
-          <ContactForm />
+      <HRGradient />
 
-          <HRGradient />
+      <BackToTop />
 
-          <HRGradient />
+      <BackToHome />
 
-          <BackToTop />
+      <HRGradient />
 
-          <BackToHome />
-
-          <HRGradient />
-
-        </div>
-
-      </article>
-
-    </div>
+    </>
   )
 }
