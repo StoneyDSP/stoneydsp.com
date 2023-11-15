@@ -1,28 +1,11 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
-// import generateCsp from '@/utils/headers/generateCSP'
-import { NextResponse, type NextRequest } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
 
 export const createClient = (request: NextRequest) => {
-
-  // // generate CSP and nonce
-  // const { csp, nonce } = generateCsp();
-
-  // Clone the request headers
-  const requestHeaders = new Headers(request.headers)
-
-  // // set nonce request header to read in pages if needed
-  // requestHeaders.set('x-nonce', nonce)
-  // requestHeaders.set('x-content-type-options', 'nosniff')
-  // requestHeaders.set('cache-control', 'public, max-age=0, s-maxage=86400, must-revalidate')
-  // requestHeaders.set('strict-transport-security', 'max-age=63072000; includeSubDomains; preload')
-  // Set the CSP header so that `app-render` can read it and generate tags with the nonce
-  // requestHeaders.set('content-security-policy', csp);
-
-  // create a new unmodified response...
+  // Create an unmodified response
   let response = NextResponse.next({
     request: {
-      // ...using the new request headers
-      headers: requestHeaders,
+      headers: request.headers,
     },
   })
 
@@ -43,7 +26,7 @@ export const createClient = (request: NextRequest) => {
           })
           response = NextResponse.next({
             request: {
-              headers: requestHeaders,
+              headers: request.headers,
             },
           })
           response.cookies.set({
@@ -61,7 +44,7 @@ export const createClient = (request: NextRequest) => {
           })
           response = NextResponse.next({
             request: {
-              headers: requestHeaders,
+              headers: request.headers,
             },
           })
           response.cookies.set({
@@ -73,19 +56,6 @@ export const createClient = (request: NextRequest) => {
       },
     }
   )
-
-  // // Also set the CSP so that it is outputted to the browser
-  // response.headers.set(
-  //   'Content-Security-Policy',
-  //   contentSecurityPolicyHeaderValue
-  // )
-
-  // Also set the CSP so that it is outputted to the browser
-  // response.headers.set('Content-Security-Policy', csp);
-
-  // response.headers.set('x-content-type-options', 'nosniff')
-  // response.headers.set('cache-control', 'public, max-age=0, s-maxage=86400, must-revalidate')
-  // response.headers.set('strict-transport-security', 'max-age=63072000; includeSubDomains; preload')
 
   return { supabase, response }
 }
