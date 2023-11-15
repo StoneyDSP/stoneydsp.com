@@ -11,7 +11,7 @@ import {
 import mdxFetch from '@/utils/mdx/mdxFetch'
 import MDXCache from '@/components/MDXCache'
 import BlogArticle from '@/components/elements/article/blogArticle'
-import styles from '@/app/layout.module.css'
+import styles from '@/app/template.module.css'
 
 export default async function BiquadsContent() {
 

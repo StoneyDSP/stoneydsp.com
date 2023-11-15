@@ -5,37 +5,28 @@ import {
   BackToTop
 } from '@/components/layouts'
 import RepoCards from '@/components/cards/RepoCards'
-import styles from '@/app/layout.module.css'
 
 export default async function ProjectsContent() {
 
   return (
-    <div className={styles.container}>
+    <>
 
-      <article className={styles.content}>
+      <h2 className='text-center' tabIndex={0}>
+        Read about some of my most popular projects:
+      </h2>
 
-        <div className={styles.flexboxgrid}>
+      <HRGradient />
 
-          <h2 className='text-center' tabIndex={0}>
-            Read about some of my most popular projects:
-          </h2>
+      <RepoCards />
 
-          <HRGradient />
+      <HRGradient />
 
-          <RepoCards />
+      <BackToTop />
 
-          <HRGradient />
+      <BackToHome />
 
-          <BackToTop />
+      <HRGradient />
 
-          <BackToHome />
-
-          <HRGradient />
-
-        </div>
-
-      </article>
-
-    </div>
+    </>
   )
 }

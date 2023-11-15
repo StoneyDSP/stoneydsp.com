@@ -1,5 +1,5 @@
 'use client'
-
+import 'client-only'
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 import { sendEmail } from '@/utils/mail/send'

@@ -9,7 +9,7 @@ import { GitProjectCard } from '@/components/cards'
 import MDXCache from '@/components/MDXCache'
 import BlogArticle from '@/components/elements/article/blogArticle'
 import mdxFetch from '@/utils/mdx/mdxFetch'
-import styles from '@/app/layout.module.css'
+import styles from '@/app/template.module.css'
 
 export default async function OrfanidisbiquadContent() {
 
