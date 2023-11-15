@@ -5,6 +5,7 @@ import { customStorageAdapter } from '@/utils/supabase/storage'
 export const createClient = (request: NextRequest) => {
   // Create an unmodified response
   let response = NextResponse.next({
+    headers: request.headers,
     request: {
       headers: request.headers,
     },
@@ -31,6 +32,7 @@ export const createClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
+            headers: request.headers,
             request: {
               headers: request.headers,
             },
@@ -49,6 +51,7 @@ export const createClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
+            headers: request.headers,
             request: {
               headers: request.headers,
             },
