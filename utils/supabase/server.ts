@@ -1,6 +1,7 @@
 'use server'
 import 'server-only'
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { customStorageAdapter } from '@/utils/supabase/storage'
 import { cookies } from 'next/headers'
 
 export const createClient = (cookieStore: ReturnType<typeof cookies>) => {
@@ -12,7 +13,7 @@ export const createClient = (cookieStore: ReturnType<typeof cookies>) => {
       auth: {
         detectSessionInUrl: true,
         flowType: 'pkce',
-        //storage: customStorageAdapter,
+        storage: customStorageAdapter,
       },
       cookies: {
         get(name: string) {

@@ -55,6 +55,8 @@ const getURL = () => {
   return url
 }
 
+const publicSiteUrl = getURL()
+
 export const metadata: Metadata  = {
   title: {
     default: 'StoneyDSP',
@@ -64,8 +66,8 @@ export const metadata: Metadata  = {
   description: 'Systems, Web, Audio & Graphics',
   referrer: 'origin-when-cross-origin',
   authors: [{ name: 'Nathan', url: 'https://github.com/nathanjhood' }],
-  metadataBase: new URL(getURL()),
-  manifest: `${getURL()}/manifest.webmanifest`,
+  metadataBase: new URL(publicSiteUrl),
+  manifest: `${publicSiteUrl}/manifest.webmanifest`,
   verification: {
     google: "U222mQRVBnX_8XrWZU9c6ETanVW8lFK6jvhJFQwtcdE",
   },
@@ -97,76 +99,76 @@ export const metadata: Metadata  = {
     title: 'StoneyDSP',
     description: 'Systems, Web, Audio & Graphics',
     siteName: 'stoneydsp.com',
-    url: new URL(getURL()),
+    url: new URL(publicSiteUrl),
     images: [
       {
-        url: `/images/w_icon__196x128.png`,
+        url: `${publicSiteUrl}/images/w_icon__196x128.png`,
         width: 196,
         height: 128,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/w_icon__384x256.png`,
+        url: `${publicSiteUrl}/images/w_icon__384x256.png`,
         width: 384,
         height: 256,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/w_icon__768x512.png`,
+        url: `${publicSiteUrl}/images/w_icon__768x512.png`,
         width: 768,
         height: 512,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/w_icon__1024x768.png`,
+        url: `${publicSiteUrl}/images/w_icon__1024x768.png`,
         width: 1024,
         height: 768,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/favicon/android-icon-36x36.png`,
+        url: `${publicSiteUrl}/images/favicon/android-icon-36x36.png`,
         width: 36,
         height: 36,
         type: 'image/png',
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/favicon/android-icon-48x48.png`,
+        url: `${publicSiteUrl}/images/favicon/android-icon-48x48.png`,
         width: 48,
         height:48,
         type: 'image/png',
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/favicon/android-icon-72x72.png`,
+        url: `${publicSiteUrl}/images/favicon/android-icon-72x72.png`,
         width: 72,
         height: 72,
         type: 'image/png',
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/favicon/android-icon-96x96.png`,
+        url: `${publicSiteUrl}/images/favicon/android-icon-96x96.png`,
         width: 96,
         height: 96,
         type: 'image/png',
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/favicon/android-icon-144x144.png`,
+        url: `${publicSiteUrl}/images/favicon/android-icon-144x144.png`,
         width: 144,
         height: 144,
         type: 'image/png',
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/favicon/android-chrome-192x192.png`,
+        url: `${publicSiteUrl}/images/favicon/android-chrome-192x192.png`,
         width: 192,
         height: 192,
         type: 'image/png',
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/favicon/android-chrome-512x512.png`,
+        url: `${publicSiteUrl}/images/favicon/android-chrome-512x512.png`,
         width: 512,
         height: 512,
         type: 'image/png',
@@ -181,28 +183,28 @@ export const metadata: Metadata  = {
     title: 'StoneyDSP',
     description: 'Systems, Web, Audio & Graphics',
     siteId: '1467726470533754880',
-    site: `${getURL()}`,
+    site: `${publicSiteUrl}`,
     images: [
       {
-        url: `/images/w_icon__196x128.png`,
+        url: `${publicSiteUrl}/images/w_icon__196x128.png`,
         width: 196,
         height: 128,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/w_icon__384x256.png`,
+        url: `${publicSiteUrl}/images/w_icon__384x256.png`,
         width: 384,
         height: 256,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/w_icon__768x512.png`,
+        url: `${publicSiteUrl}/images/w_icon__768x512.png`,
         width: 768,
         height: 512,
         alt: 'Systems, Web, Audio & Graphics',
       },
       {
-        url: `/images/w_icon__1024x768.png`,
+        url: `${publicSiteUrl}/images/w_icon__1024x768.png`,
         width: 1024,
         height: 768,
         alt: 'Systems, Web, Audio & Graphics',
