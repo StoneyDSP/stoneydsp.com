@@ -21,7 +21,7 @@ export const createClient = (request: NextRequest) => {
         storage: customStorageAdapter,
       },
       global: {
-        headers: { Authorization: req.headers.get('Authorization')! },
+        headers: { Authorization: request.headers.get('Authorization')! },
       },
       cookies: {
         get(name: string) {
