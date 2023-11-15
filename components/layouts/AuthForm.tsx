@@ -11,7 +11,7 @@ export default function AuthForm() {
 
   const supabase = createClient()
 
-  const getURL = () => {
+  const getPublicSiteURL = () => {
     let url =
       process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
       process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
@@ -23,6 +23,8 @@ export default function AuthForm() {
     return url
   }
 
+  const publicsiteUrl = getPublicSiteURL()
+
   return (
     <Auth
       supabaseClient={supabase}
@@ -31,7 +33,7 @@ export default function AuthForm() {
       theme="default"
       showLinks={false}
       providers={['github', 'google']}
-      redirectTo={`${getURL()}/auth/callback`}
+      redirectTo={`${publicsiteUrl}/auth/callback`}
     />
   )
 }
