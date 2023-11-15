@@ -1,12 +1,13 @@
-import { createClient } from '@/utils/supabase/server'
+// import { createClient } from '@/utils/supabase/ssr/server'
+import { createSupabaseServerSideClient } from '@/utils/supabase/ssr'
 import { cookies } from 'next/headers'
-import { type NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
 
   const cookieStore = cookies()
 
-  const supabase = createClient(cookieStore)
+  const supabase = createSupabaseServerSideClient(cookieStore)
 
   // Check if we have a session
   const {

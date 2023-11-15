@@ -1,15 +1,28 @@
 'use client'
 import { Auth } from '@supabase/auth-ui-react'
-import { ThemeSupa } from '@supabase/auth-ui-shared'
+import { SocialLayout, ThemeSupa, ViewType } from '@supabase/auth-ui-shared'
+import { createSupabaseClientSideClient } from '@/utils/supabase/ssr'
+import { useState } from 'react'
 // import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { createClient } from '@/utils/supabase/client'
+// import { createClient } from '@/utils/supabase/client'
 // import { Database } from '@/types_db'
+
+const views: { id: ViewType; title: string }[] = [
+  { id: 'sign_in', title: 'Sign In' },
+  { id: 'sign_up', title: 'Sign Up' },
+  { id: 'magic_link', title: 'Magic Link' },
+  { id: 'forgotten_password', title: 'Forgotten Password' },
+  { id: 'update_password', title: 'Update Password' },
+  { id: 'verify_otp', title: 'Verify Otp' },
+]
+
+const socialAlignments = ['horizontal', 'vertical'] as const
 
 export default function AuthForm() {
 
   // const supabase = createClientComponentClient<Database>()
 
-  const supabase = createClient()
+  const supabase = createSupabaseClientSideClient()
 
   const getPublicSiteURL = () => {
     let url =
@@ -23,17 +36,22 @@ export default function AuthForm() {
     return url
   }
 
-  const publicsiteUrl = getPublicSiteURL()
+  const publicSiteUrl = getPublicSiteURL()
+
+  const [theme, setTheme] = useState('prefers-color-scheme')
+  const [socialLayout, setSocialLayout] = useState<SocialLayout>(socialAlignments[1] satisfies SocialLayout)
+  const [view, setView] = useState(views[0])
 
   return (
     <Auth
       supabaseClient={supabase}
-      view="magic_link"
+      view={view.id}
       appearance={{ theme: ThemeSupa }}
-      theme="default"
+      theme={theme}
       showLinks={false}
       providers={['github', 'google']}
-      redirectTo={`${publicsiteUrl}/auth/callback`}
+      socialLayout={socialLayout}
+      redirectTo={publicSiteUrl?.concat('/auth/callback')}
     />
   )
 }

@@ -3,12 +3,13 @@ import 'client-only'
 import { useCallback, useEffect, useState } from 'react'
 // import { Database } from '../database.types'
 // import { Session, createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { createClient } from '@/utils/supabase/client'
+import { createSupabaseClientSideClient } from '@/utils/supabase/ssr'
+// import { createClient } from '@/utils/supabase/client'
 import { type Session } from '@supabase/supabase-js'
 
 export default function AccountForm({ session }: { session: Session | null }) {
   // const supabase = createClientComponentClient<Database>()
-  const supabase = createClient()
+  const supabase = createSupabaseClientSideClient()
   const [loading, setLoading] = useState(true)
   const [fullname, setFullname] = useState<string | null>(null)
   const [username, setUsername] = useState<string | null>(null)

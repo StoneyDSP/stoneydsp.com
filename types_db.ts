@@ -9,6 +9,26 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
+      posts: {
+        Row: {
+          content: string;
+          created_at: string;
+          id: number;
+          user_id: string | null;
+        };
+        Insert: {
+          content: string;
+          created_at?: string;
+          id?: number;
+          user_id?: string | null;
+        };
+        Update: {
+          content?: string;
+          created_at?: string;
+          id?: number;
+          user_id?: string | null;
+        };
+      },
       countries: {
         Row: {
           continent: Database["public"]["Enums"]["continents"] | null

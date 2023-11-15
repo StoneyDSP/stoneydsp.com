@@ -1,14 +1,7 @@
 import { type SupportedStorage } from '@supabase/supabase-js'
+import supportsLocalStorage from '@/utils/supabase/ssr/storage/support'
 
-function supportsLocalStorage(){
-  try {
-      return 'localStorage' in window && window['localStorage'] !== null;
-  } catch(e) {
-      return false;
-  }
-}
-
-export const customStorageAdapter: SupportedStorage = {
+const customStorageAdapter: SupportedStorage = {
   getItem: (key) => {
     if (!supportsLocalStorage()) {
       // Configure alternate storage
@@ -31,3 +24,5 @@ export const customStorageAdapter: SupportedStorage = {
     globalThis.localStorage.removeItem(key)
   },
 }
+
+export default customStorageAdapter
