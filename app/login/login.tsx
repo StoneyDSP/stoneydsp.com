@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { headers, cookies } from 'next/headers'
-import { createClient } from '@/utils/supabase/server'
+import { createSupabaseServerSideClient } from '@/utils/supabase/ssr'
+// import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
 // import { Turnstile } from '@marsidev/react-turnstile'
 // import { useState } from 'react'
@@ -25,7 +26,7 @@ export default function Login({
     // This function is just for the interactive tutorial.
     // Feel free to remove it once you have Supabase connected.
     try {
-      createClient(cookieStore)
+      createSupabaseServerSideClient(cookieStore)
       return true
     } catch (e) {
       return false
@@ -40,7 +41,7 @@ export default function Login({
     const email = formData.get('email') as string
     const password = formData.get('password') as string
     const cookieStore = cookies()
-    const supabase = createClient(cookieStore)
+    const supabase = createSupabaseServerSideClient(cookieStore)
 
     const { error } = await supabase.auth.signInWithPassword({
       email,
@@ -61,7 +62,7 @@ export default function Login({
     const email = formData.get('email') as string
     const password = formData.get('password') as string
     const cookieStore = cookies()
-    const supabase = createClient(cookieStore)
+    const supabase = createSupabaseServerSideClient(cookieStore)
 
     const { error } = await supabase.auth.signUp({
       email,
@@ -76,7 +77,7 @@ export default function Login({
       return redirect('/login?message=Could not authenticate user')
     }
 
-    return redirect('/login?message=Check email to continue sign in process')
+    return redirect('/')
   }
 
   // return (
