@@ -13,7 +13,7 @@ export default async function Nav() {
   // } = await supabase.auth.getSession()
 
   const {
-    data: { user },
+    data: { user }
   } = await supabase.auth.getUser()
 
   return (
