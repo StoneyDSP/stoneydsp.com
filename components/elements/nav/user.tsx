@@ -1,6 +1,7 @@
 'use server'
 import 'server-only'
-import { createClient } from '@/utils/supabase/server'
+// import { createClient } from '@/utils/supabase/server'
+import { createSupabaseServerSideClient } from '@/utils/supabase/ssr'
 import LogoutButton from '@/components/LogoutButton'
 import { cookies } from 'next/headers'
 import Link from 'next/link'
@@ -9,7 +10,7 @@ export default async function UserButton() {
 
   const cookieStore = cookies()
 
-  const supabase = createClient(cookieStore)
+  const supabase = createSupabaseServerSideClient(cookieStore)
 
   const { data: {user} } = await supabase.auth.getUser()
 

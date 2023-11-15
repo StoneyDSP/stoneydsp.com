@@ -1,8 +1,8 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { type NextRequest, NextResponse } from 'next/server'
-import { customStorageAdapter } from '@/utils/supabase/storage'
+import customStorageAdapter from '@/utils/supabase/ssr/storage'
 
-export const createClient = (request: NextRequest) => {
+const createSupabaseMiddlewareClient = (request: NextRequest) => {
   // Create an unmodified response
   let response = NextResponse.next({
     headers: request.headers,
@@ -87,3 +87,5 @@ export const createClient = (request: NextRequest) => {
 
   return { supabase, response }
 }
+
+export default createSupabaseMiddlewareClient

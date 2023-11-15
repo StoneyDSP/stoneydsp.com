@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
-import { createClient } from '@/utils/supabase/middleware'
+// import { createClient } from '@/utils/supabase/middleware'
+import { createSupabaseMiddlewareClient } from '@/utils/supabase/ssr'
 import isbot from 'isbot'
 
 export async function middleware(req: NextRequest) {
@@ -18,7 +19,7 @@ export async function middleware(req: NextRequest) {
     console.log(`User ${ip} visiting from ${city}, ${region}, ${country} with ${agent} `)
   }
 
-  const { supabase, response } = createClient(req)
+  const { supabase, response } = createSupabaseMiddlewareClient(req)
 
   // Refresh session if expired - required for Server Components
   // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
