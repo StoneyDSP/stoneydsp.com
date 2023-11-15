@@ -31,11 +31,11 @@ export async function middleware(req: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // if user is not signed in and the requested path is /contact,
-  // redirect the user to /login
-  if (((!user) || (!session)) && (req.nextUrl.pathname === '/contact')) {
-    return NextResponse.redirect(new URL('/login', req.url))
-  }
+  // // if user is not signed in and the requested path is /contact,
+  // // redirect the user to /login
+  // if (((!user) || (!session)) && (req.nextUrl.pathname === '/contact')) {
+  //   return NextResponse.redirect(new URL('/login', req.url))
+  // }
 
   return response
 }
