@@ -1,11 +1,11 @@
-import { FormData } from '@/components/elements/form/contact'
+export type TestData = {
+  itemA: string,
+  itemB: string,
+  itemC: string,
+};
 
-// export function sendEmail(data: FormData) {
-//   console.log(data)
-// }
-
-export function sendEmail(data: FormData) {
-  const apiEndpoint = '/api/supamail'
+export function sendPost(data: FormData) {
+  const apiEndpoint = '/api/supabase'
 
   fetch(apiEndpoint, {
     method: 'POST',
