@@ -1,17 +1,12 @@
-'use server'
-import 'server-only'
 import NavMenu from '@/components/elements/nav/menu/menu'
-import { createClient } from '@/utils/supabase/server'
+import { createClient } from '@/utils/supabase/client'
 import LogoutButton from '@/components/LogoutButton'
-import { cookies } from 'next/headers'
 import Link from 'next/link'
 import { Suspense } from 'react'
 
 export default async function Nav() {
 
-  const cookieStore = cookies()
-
-  const supabase = createClient(cookieStore)
+  const supabase = createClient()
 
   // const {
   //   data: { session },
