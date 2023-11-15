@@ -1,8 +1,20 @@
 import NavMenu from '@/components/elements/nav/menu/menu'
+import { createClient } from '@/utils/supabase/client'
+import LogoutButton from '@/components/LogoutButton'
 import Link from 'next/link'
 import { Suspense } from 'react'
 
 export default async function Nav() {
+
+  const supabase = createClient()
+
+  // const {
+  //   data: { session },
+  // } = await supabase.auth.getSession()
+
+  const {
+    data: { user }
+  } = await supabase.auth.getUser()
 
   return (
     <nav className='tableRowEven'>
@@ -34,25 +46,11 @@ export default async function Nav() {
           <NavMenu />
         </Suspense>
 
-        {/* {user ? (
-          <div className="flex items-center gap-4">
-            <Link href="/account" target="_self">Hey, {user.email}! ({session?.user.role})</Link>
-            <LogoutButton />
-          </div>
-          ) : (
-          <Link
-            href="/login"
-            className="py-2 px-3 flex rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
-          >
-            Login
-          </Link>
-        )} */}
-
         <span className="text-xs font-light text-center">
           Systems, Web, Audio & Graphics
         </span>
 
-        <Link
+        {/* <Link
           href="/login"
           className="
             py-2
@@ -70,7 +68,34 @@ export default async function Nav() {
           <span className='font-bold text-center text-white'>
             Login
           </span>
-        </Link>
+        </Link> */}
+
+        {user ? (
+          <div className="flex items-center gap-4">
+            <Link href="/account" target="_self">Hey, {user.email}!{/**  ({session?.user.role})*/}</Link>
+            <LogoutButton />
+          </div>
+          ) : (
+          <Link
+            href="/login"
+            className="
+            py-2
+            px-3
+            flex
+            rounded-md
+            no-underline
+            transition-colors
+            bg-green-500
+            hover:bg-purple-400
+            border-2
+            hover:border-transparent
+            "
+          >
+            <span className='font-bold text-center text-white'>
+              Login
+            </span>
+          </Link>
+        )}
 
       </div>
     </nav>
