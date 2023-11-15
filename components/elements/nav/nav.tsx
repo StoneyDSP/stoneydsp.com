@@ -2,15 +2,11 @@ import NavMenu from '@/components/elements/nav/menu/menu'
 import { createClient } from '@/utils/supabase/client'
 import LogoutButton from '@/components/LogoutButton'
 import Link from 'next/link'
-import { Suspense } from 'react'
+// import { Suspense } from 'react'
 
 export default async function Nav() {
 
   const supabase = createClient()
-
-  // const {
-  //   data: { session },
-  // } = await supabase.auth.getSession()
 
   const {
     data: { user }
@@ -42,9 +38,9 @@ export default async function Nav() {
 
         </Link>
 
-        <Suspense fallback={<>Loading...</>}>
+        {/* <Suspense fallback={<>Loading...</>}> */}
           <NavMenu />
-        </Suspense>
+        {/* </Suspense> */}
 
         <span className="text-xs font-light text-center">
           Systems, Web, Audio & Graphics
