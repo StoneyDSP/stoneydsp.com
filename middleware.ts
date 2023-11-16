@@ -24,13 +24,15 @@ export async function middleware(req: NextRequest) {
   // Refresh session if expired - required for Server Components
   // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
+  await supabase.auth.getSession()
+  
+  // const {
+  //   data: { session },
+  // } = await supabase.auth.getSession()
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  // const {
+  //   data: { user },
+  // } = await supabase.auth.getUser()
 
   // // if user is not signed in and the requested path is /contact,
   // // redirect the user to /login
