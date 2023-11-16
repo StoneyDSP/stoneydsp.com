@@ -1,12 +1,10 @@
 // import { createClient } from '@/utils/supabase/server'
-'use client'
-import 'client-only'
 import { createSupabaseServerSideClient } from '@/utils/supabase/ssr'
 import Link from 'next/link'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-export default function AuthButton() {
+export default async function AuthButton() {
 
   const cookieStore = cookies()
   const supabase = createSupabaseServerSideClient(cookieStore)
