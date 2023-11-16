@@ -2,7 +2,8 @@
 import { Auth } from '@supabase/auth-ui-react'
 import { SocialLayout, ThemeSupa, ViewType } from '@supabase/auth-ui-shared'
 import { createSupabaseClientSideClient } from '@/utils/supabase/ssr'
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
+
 // import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 // import { createClient } from '@/utils/supabase/client'
 // import { Database } from '@/types_db'
@@ -43,15 +44,17 @@ export default function AuthForm() {
   const [view, setView] = useState(views[0])
 
   return (
-    <Auth
-      supabaseClient={supabase}
-      view={view.id}
-      appearance={{ theme: ThemeSupa }}
-      theme={theme}
-      showLinks={false}
-      providers={['github', 'google']}
-      socialLayout={socialLayout}
-      redirectTo={publicSiteUrl?.concat('/auth/callback')}
-    />
+    <Suspense>
+      <Auth
+        supabaseClient={supabase}
+        view={view.id}
+        appearance={{ theme: ThemeSupa }}
+        theme={theme}
+        showLinks={false}
+        providers={['github', 'google']}
+        socialLayout={socialLayout}
+        redirectTo={publicSiteUrl?.concat('/auth/callback')}
+      />
+    </Suspense>
   )
 }
