@@ -2,14 +2,9 @@ import NavMenu from '@/components/elements/nav/menu/menu'
 // import { createClient } from '@/utils/supabase/client'
 // import LogoutButton from '@/components/LogoutButton'
 import Link from 'next/link'
-import { Suspense } from 'react'
 // import UserButton from '@/components/elements/nav/user'
 
-export default function Nav() {
-
-  // const supabase = createClient()
-
-  // const { data: {user} } = await supabase.auth.getUser()
+export default async function Nav() {
 
   return (
     <nav className='tableRowEven'>
@@ -37,9 +32,7 @@ export default function Nav() {
 
         </Link>
 
-        <Suspense fallback={<>Loading...</>}>
-          <NavMenu />
-        </Suspense>
+        <NavMenu />
 
         <span className="text-xs font-light text-center">
           Systems, Web, Audio & Graphics

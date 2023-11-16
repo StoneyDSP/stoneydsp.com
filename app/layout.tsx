@@ -16,14 +16,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Suspense fallback={<SpinnerRoot />}>
+        {/* <Suspense fallback={<SpinnerRoot />}> */}
           <Header />
           <main>
             <ConsentBanner />
             {children}
           </main>
           <Footer />
-        </Suspense>
+        {/* </Suspense> */}
       </body>
       {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
     </html>
