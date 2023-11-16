@@ -1,5 +1,5 @@
-import Login from '@/app/login/login'
 import { Metadata } from 'next'
+import AuthForm from '@/components/layouts/AuthForm'
 
 export const dynamic = 'force-dynamic'
 
@@ -11,13 +11,9 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function LoginPage({
-  searchParams,
-}: {
-  searchParams: { message: string }
-}) {
+export default async function LoginPage() {
 
   return (
-    <Login searchParams={searchParams} />
+    <AuthForm />
   )
 }

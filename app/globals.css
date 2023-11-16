@@ -724,3 +724,15 @@ body, .fadedbody {
 	background-repeat: repeat-x;
 	background-size: contain;
 }
+
+.footer {
+	padding-top: 0.5rem/* 8px */;
+	padding-bottom: 0.5rem/* 8px */;
+	background-image: var(--table-row-gradient);
+	background-repeat: repeat-x;
+	background-color: var(--header-background-color);
+	color: hsl(var(--foreground));
+
+	margin:  0px;
+	border-top: 1px solid var(--header-separator-color);
+}

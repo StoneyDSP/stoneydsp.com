@@ -1,11 +1,9 @@
-'use client'
-import 'client-only'
 import { usePathname } from 'next/navigation'
 import { Nav } from '@/components/elements'
+import NavBreadcrumbs from '@/components/elements/nav/breadcrumbs'
 // import { Suspense } from 'react'
 
-export default function Header(
-): JSX.Element {
+export default async function Header() {
 
   const pathname = usePathname()
 
@@ -14,15 +12,9 @@ export default function Header(
   const spacedSlashes = addHome.replaceAll(`/`, ` / &`).split(`&`)
 
   return (
-    <header
-      // className='absolute w-screen z-50'
-    >
-      {/* <Suspense> */}
-        <Nav />
-      {/* </Suspense> */}
-      <span className='text-xs text-left'>
-        {pathname && pathname !== '/' ? spacedSlashes : ''}
-      </span>
+    <header>
+      <Nav />
+      <NavBreadcrumbs />
     </header>
   )
 }

@@ -1,5 +1,3 @@
-'use server'
-import 'server-only'
 import {
   GitStatsCard,
   GitStatsTopLangsCard,
@@ -11,7 +9,6 @@ import {
   BackToTop
 } from '@/components/layouts'
 // import { LogoWideXL } from '@/components/icons/logo/wide'
-// import styles from '@/app/layout.module.css'
 
 export default async function HomeContent() {
 
