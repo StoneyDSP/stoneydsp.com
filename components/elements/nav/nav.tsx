@@ -1,6 +1,4 @@
 import NavMenu from '@/components/elements/nav/menu/menu'
-// import { createClient } from '@/utils/supabase/client'
-// import LogoutButton from '@/components/LogoutButton'
 import Link from 'next/link'
 // import UserButton from '@/components/elements/nav/user'
 
