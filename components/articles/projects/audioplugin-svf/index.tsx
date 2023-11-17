@@ -28,9 +28,9 @@ export default async function AudiopluginsvfContent() {
             <div className="grid grid-cols-1 gap-4">
               <GitProjectCard
                 userName={'nathanjhood'}
-                linkTo={'https://github.com/nathanjhood/OrfanidisBiquad.git'}
-                altString={'Orfanidis Biquad'}
-                repoName={'OrfanidisBiquad'}
+                linkTo={'https://github.com/nathanjhood/AudioPlugin-SVF.git'}
+                altString={'Audio Plugin SVF'}
+                repoName={'AudioPlugin-SVF'}
               />
             </div>
 
