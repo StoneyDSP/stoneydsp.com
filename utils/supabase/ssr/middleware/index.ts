@@ -5,19 +5,20 @@ import customStorageAdapter from '@/utils/supabase/ssr/storage'
 
 const createSupabaseMiddlewareClient = (request: NextRequest) => {
 
-  // generate CSP and nonce
-  const { csp, nonce } = generateCsp();
+  // // generate CSP and nonce
+  // const { csp, nonce } = generateCsp();
 
   // Clone the request headers
   const requestHeaders = new Headers(request.headers)
 
-  // set nonce request header to read in pages if needed
-  requestHeaders.set('X-Nonce', nonce)
+  // // set nonce request header to read in pages if needed
+  // requestHeaders.set('X-Nonce', nonce)
   requestHeaders.set('X-Content-Type-Options', 'nosniff')
   requestHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=86400, must-revalidate')
   requestHeaders.set('Strict-Transport-security', 'max-age=63072000; includeSubDomains; preload')
-  // Set the CSP header so that `app-render` can read it and generate tags with the nonce
-  requestHeaders.set('Content-Security-Policy', csp);
+  // // Set the CSP header so that `app-render` can read it and generate tags with the nonce
+  // requestHeaders.set('Content-Security-Policy', csp);
+  requestHeaders.set('Upgrade-Insecure-Requests', '1')
   requestHeaders.set('X-Middleware-Request', 'true')
   
   // Create an unmodified response
@@ -102,8 +103,9 @@ const createSupabaseMiddlewareClient = (request: NextRequest) => {
     }
   })
 
-  //  Also set the CSP so that it is outputted to the browser
-  response.headers.set('Content-Security-Policy', csp)
+  // //  Also set the CSP so that it is outputted to the browser
+  // response.headers.set('Content-Security-Policy', csp)
+  response.headers.set('Upgrade-Insecure-Requests', '1')
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400, must-revalidate')
   response.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
