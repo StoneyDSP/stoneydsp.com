@@ -1,11 +1,28 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import { type NextRequest, NextResponse } from 'next/server'
+import { userAgent, NextResponse, type NextRequest } from 'next/server'
+import generateCsp from '@/utils/headers/generateCSP'
 import customStorageAdapter from '@/utils/supabase/ssr/storage'
 
 const createSupabaseMiddlewareClient = (request: NextRequest) => {
+
+  // generate CSP and nonce
+  const { csp, nonce } = generateCsp();
+
+  // Clone the request headers
+  const requestHeaders = new Headers(request.headers)
+
+  // set nonce request header to read in pages if needed
+  requestHeaders.set('X-Nonce', nonce)
+  requestHeaders.set('X-Content-Type-Options', 'nosniff')
+  requestHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=86400, must-revalidate')
+  requestHeaders.set('Strict-Transport-security', 'max-age=63072000; includeSubDomains; preload')
+  // Set the CSP header so that `app-render` can read it and generate tags with the nonce
+  requestHeaders.set('Content-Security-Policy', csp);
+  requestHeaders.set('X-Middleware-Request', 'true')
+  
   // Create an unmodified response
   let response = NextResponse.next({
-    headers: request.headers,
+    headers: requestHeaders,
     request: {
       headers: request.headers,
     },
@@ -35,7 +52,7 @@ const createSupabaseMiddlewareClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
-            headers: request.headers,
+            headers: requestHeaders,
             request: {
               headers: request.headers,
             },
@@ -54,7 +71,7 @@ const createSupabaseMiddlewareClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
-            headers: request.headers,
+            headers: requestHeaders,
             request: {
               headers: request.headers,
             },
@@ -84,6 +101,25 @@ const createSupabaseMiddlewareClient = (request: NextRequest) => {
       }
     }
   })
+
+  //  Also set the CSP so that it is outputted to the browser
+  response.headers.set('Content-Security-Policy', csp)
+  response.headers.set('X-Content-Type-Options', 'nosniff')
+  response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400, must-revalidate')
+  response.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
+  response.headers.set('X-Middleware-Response', 'true')
+
+  const { isBot } = userAgent(request)
+  // Extract visitor info.
+  const visitor = isBot ? 'Bot' : 'User'
+  const travelling = isBot ? 'crawling' : 'visiting'
+  const country = (request.geo && request.geo.country) || 'Earth'
+  const city = (request.geo && request.geo.city) || 'Nowhere'
+  const region = (request.geo && request.geo.region) || 'Somewhere'
+  const ip = (request.ip) || 'Visitor'
+  const agent = (request.headers.get('user-agent')) || 'Agent Unknown'
+
+  console.log(`${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}`)
 
   return { supabase, response }
 }
