@@ -23,7 +23,7 @@ export default async function Nav() {
             border-2
             hover:border-transparent
             "
-          href="/"
+          href="https://stoneydsp.com"
           rel="noreferrer"
         >
           <span className="text-lg font-semibold text-center text-white">
