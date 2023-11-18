@@ -1,3 +1,5 @@
+'use server'
+import 'server-only'
 import NavMenu from '@/components/elements/nav/menu/menu'
 import Link from 'next/link'
 // import UserButton from '@/components/elements/nav/user'

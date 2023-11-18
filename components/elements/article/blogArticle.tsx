@@ -1,4 +1,5 @@
 'use client'
+import 'client-only'
 import {
   ButtonBack,
   ButtonLike
@@ -15,15 +16,18 @@ export default function BlogArticle({
   return (
     <section className='animate-in min-h-screen'>
 
-      <div
-        className='flex flex-col gap-8'
-      >
-        <ButtonBack />
-        <ButtonLike />
-      </div>
-
       <Suspense fallback={<SpinnerRoot />}>
+
+        <div
+          className='flex flex-col gap-8'
+        >
+          <ButtonBack />
+          <ButtonLike />
+        </div>
+
+        
         {children}
+
       </Suspense>
 
     </section>

@@ -1,4 +1,5 @@
 'use client'
+import 'client-only'
 import {
   ButtonBack,
   ButtonLike
@@ -13,16 +14,17 @@ export default function Article({
 
   return (
     <article className='animate-in min-h-screen'>
-
-      <div
-        className='flex flex-col gap-8'
-      >
-        <ButtonBack />
-        <ButtonLike />
-      </div>
-
       <Suspense fallback={<>Loading...</>}>
+
+        <div
+          className='flex flex-col gap-8'
+        >
+          <ButtonBack />
+          <ButtonLike />
+        </div>
+        
         {children}
+      
       </Suspense>
 
     </article>

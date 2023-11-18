@@ -1,6 +1,5 @@
-import { userAgent, NextResponse, type NextRequest } from 'next/server'
+import { type NextRequest } from 'next/server'
 import { createSupabaseMiddlewareClient } from '@/utils/supabase/ssr'
-import logMiddlewareRequest from '@/utils/logger'
 
 export async function middleware(request: NextRequest) {
 

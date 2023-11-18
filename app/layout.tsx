@@ -18,10 +18,10 @@ export default function RootLayout({
       <body>
         <Suspense fallback={<SpinnerRoot />}>
           <Header />
-          <main>
+          <Main>
             <ConsentBanner />
             {children}
-          </main>
+          </Main>
           <Footer />
         </Suspense>
       </body>

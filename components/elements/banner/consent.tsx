@@ -1,4 +1,5 @@
 'use client'
+import 'client-only'
 import { HRGradient } from '@/components/layouts'
 import { Analytics } from '@vercel/analytics/react'
 import { track } from '@vercel/analytics'
