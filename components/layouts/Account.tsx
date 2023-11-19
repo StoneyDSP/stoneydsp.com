@@ -80,7 +80,6 @@ export default function AccountForm({ session }: { session: Session | null }) {
   }
 
   return (
-    <Suspense>
       <div className="form-widget">
         <div>
           <label htmlFor="email">Email</label>
@@ -132,6 +131,5 @@ export default function AccountForm({ session }: { session: Session | null }) {
           </form>
         </div>
       </div>
-    </Suspense>
   )
 }
