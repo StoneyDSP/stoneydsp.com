@@ -1,7 +1,7 @@
 'use client'
 import { Auth } from '@supabase/auth-ui-react'
 import { SocialLayout, ThemeSupa, ViewType } from '@supabase/auth-ui-shared'
-import { createSupabaseClientSideClient } from '@/utils/supabase/ssr'
+import createSupabaseClientSideClient from '@/utils/supabase/ssr/client'
 import { useState, Suspense } from 'react'
 
 // import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
