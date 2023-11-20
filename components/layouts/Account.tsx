@@ -6,7 +6,6 @@ import { useCallback, useEffect, useState } from 'react'
 import createSupabaseClientSideClient from '@/utils/supabase/ssr/client'
 // import { createClient } from '@/utils/supabase/client'
 import { type Session } from '@supabase/supabase-js'
-import { Suspense } from 'react'
 
 export default function AccountForm({ session }: { session: Session | null }) {
   // const supabase = createClientComponentClient<Database>()

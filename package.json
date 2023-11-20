@@ -14,7 +14,7 @@
   },
   "private": true,
   "preferGlobal": true,
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "yarn@1.22.21",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
