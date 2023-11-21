@@ -1,6 +1,7 @@
 'use client'
+import 'client-only'
 import { createSupabaseClientSideClient } from '@/utils/supabase/ssr'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 // import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
 import type { Database } from '@/types_db'
@@ -40,5 +41,11 @@ export default function RealtimePost({ serverPost }: { serverPost: Post }) {
     }
   }, [supabase, post, setPost])
 
-  return <pre>{JSON.stringify(post, null, 2)}</pre>
+  return (
+    <Suspense>
+      <pre>
+        {JSON.stringify(post, null, 2)}
+      </pre>
+    </Suspense>
+  )
 }
