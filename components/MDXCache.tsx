@@ -1,6 +1,6 @@
 import 'server-only'
 import { MDXRemote, type MDXRemoteProps } from 'next-mdx-remote/rsc'
-import { HRGradient } from '@/components/layouts'
+import HRGradient from '@/components/layouts/HRGradient'
 
 export default async function MDXCache(props: MDXRemoteProps) {
   return (

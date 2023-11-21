@@ -4,10 +4,8 @@ import {
   RepoCards,
   ResourceCards
 } from '@/components/cards'
-import {
-  HRGradient,
-  BackToTop
-} from '@/components/layouts'
+import HRGradient from '@/components/layouts/HRGradient'
+import BackToTop from '@/components/layouts/BackToTop'
 // import { LogoWideXL } from '@/components/icons/logo/wide'
 
 export default async function HomeContent() {
