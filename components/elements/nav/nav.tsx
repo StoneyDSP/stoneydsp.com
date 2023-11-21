@@ -1,10 +1,9 @@
-'use client'
-import 'client-only'
+import 'server-only'
 import NavMenu from '@/components/elements/nav/menu/menu'
 import Link from 'next/link'
 // import UserButton from '@/components/elements/nav/user'
 
-export default function Nav() {
+export default async function Nav() {
 
   return (
     <nav className='tableRowEven'>

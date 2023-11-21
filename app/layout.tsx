@@ -1,7 +1,7 @@
-import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
-import SpinnerRoot from '@/components/layouts/Spinner'
+// import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
+// import SpinnerRoot from '@/components/layouts/Spinner'
 import { Metadata } from 'next'
-import { Suspense } from 'react'
+// import { Suspense } from 'react'
 // import { GoogleTagManager } from '@next/third-parties/google'
 import '@/app/globals.css'
 
