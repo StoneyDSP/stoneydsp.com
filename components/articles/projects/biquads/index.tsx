@@ -1,10 +1,8 @@
 'use server'
 import 'server-only'
-import {
-  HRGradient,
-  BackToHome,
-  BackToTop
-} from '@/components/layouts'
+import HRGradient from '@/components/layouts/HRGradient'
+import BackToHome from '@/components/layouts/BackToHome'
+import BackToTop from '@/components/layouts/BackToTop'
 import {
     GitProjectCard
 } from '@/components/cards'

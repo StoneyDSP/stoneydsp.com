@@ -3,6 +3,7 @@ import { createSupabaseClientSideClient } from '@/utils/supabase/ssr'
 import { useEffect, useState } from 'react'
 import type { Database } from '@/types_db'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
 type Post = Database['public']['Tables']['posts']['Row']
 
@@ -29,12 +30,12 @@ export default function RealtimePosts({ serverPosts }: { serverPosts: Post[] }) 
   }, [supabase, setPosts, posts])
 
   return (
-    <>
+    <Suspense>
       {posts.map((post) => (
         <div key={post.id}>
           <Link href={`/blog/${post.id}`}>{post.content}</Link>
         </div>
       ))}
-    </>
+    </Suspense>
   )
 }

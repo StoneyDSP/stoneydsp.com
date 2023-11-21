@@ -1,4 +1,5 @@
 'use server'
+import 'server-only'
 
 export default async function mdxFetch(url: string) {
 

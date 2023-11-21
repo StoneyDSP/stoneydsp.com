@@ -1,4 +1,7 @@
-import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
+// import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
+import Header from '@/components/elements/header/header'
+import Footer from '@/components/elements/footer/footer'
+import ConsentBanner from '@/components/elements/banner/consent'
 import SpinnerRoot from '@/components/layouts/Spinner'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
@@ -16,14 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Suspense fallback={<SpinnerRoot />}>
-          <Header />
+        <Header />
           <main>
-            <ConsentBanner />
-            {children}
+            <Suspense fallback={<SpinnerRoot />}>
+              <ConsentBanner />
+              {children}
+            </Suspense>
           </main>
-          <Footer />
-        </Suspense>
+        <Footer />
       </body>
       {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
     </html>

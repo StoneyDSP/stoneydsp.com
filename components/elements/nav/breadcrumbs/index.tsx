@@ -12,7 +12,7 @@ export default function NavBreadcrumbs() {
   const spacedSlashes = addHome.replaceAll(`/`, ` / &`).split(`&`)
 
   return (
-    <Suspense>
+    <Suspense fallback={<span className='text-foreground'>Loading nav...</span>}>
       <span className='text-xs text-left'>
         {pathname && pathname !== '/' ? spacedSlashes : ''}
       </span>

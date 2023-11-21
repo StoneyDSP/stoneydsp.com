@@ -1,4 +1,4 @@
-import { createSupabaseServerSideClient } from '@/utils/supabase/ssr'
+import createSupabaseServerSideClient from '@/utils/supabase/ssr/server'
 import { notFound, redirect } from 'next/navigation'
 import RealtimePost from '@/components/blog/rtpost'
 import { cookies } from 'next/headers'

@@ -1,3 +1,5 @@
+'use server'
+import 'server-only'
 import SocialIcons from '@/components/icons/social/IconSocial'
 import Link from 'next/link'
 

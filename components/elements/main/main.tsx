@@ -1,10 +1,11 @@
-export default function Main({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
-  children,
-}: {
-  children: React.ReactNode
-}): JSX.Element {
+'use server'
+import 'server-only'
+
+export default async function Main({ 
+  children 
+}: { 
+  children: React.ReactNode 
+}): Promise<JSX.Element> {
 
   return (
     <main>
