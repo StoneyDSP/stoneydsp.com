@@ -1,8 +1,12 @@
 import 'server-only'
+// import Image from 'next/image'
+// import { MDXComponents } from 'mdx/types'
 import { MDXRemote, type MDXRemoteProps } from 'next-mdx-remote/rsc'
 import HRGradient from '@/components/layouts/HRGradient'
 
 export default async function MDXCache(props: MDXRemoteProps) {
+  'use server'
+  
   return (
     <MDXRemote
       {...props}
@@ -11,6 +15,7 @@ export default async function MDXCache(props: MDXRemoteProps) {
         img: ((props) => <img
             alt="Copyright StoneyDSP 2023"
             className='flex w-fit h-auto'
+            // style={{ width: '100%', height: 'auto'}}
             {...props}
           />),
         h1: (({ children }) => <h1 tabIndex={0}>
