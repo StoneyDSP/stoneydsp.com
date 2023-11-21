@@ -14,17 +14,19 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'gh-readme-stats.stoneydsp.com',
-        // port: '',
+        port: '',
         pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'raw.githubusercontent.com',
+        port: '',
         pathname: '/StoneyDSP/**'
       },
       {
         protocol: 'https',
         hostname: 'raw.githubusercontent.com',
+        port: '',
         pathname: '/nathanjhood/**'
       }
     ],
