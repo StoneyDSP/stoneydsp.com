@@ -1,8 +1,6 @@
-import {
-  HRGradient,
-  BackToHome,
-  BackToTop
-} from '@/components/layouts'
+import HRGradient from '@/components/layouts/HRGradient'
+import BackToHome from '@/components/layouts/BackToHome'
+import BackToTop from '@/components/layouts/BackToTop'
 
 export default async function TermsOfServiceContent() {
 

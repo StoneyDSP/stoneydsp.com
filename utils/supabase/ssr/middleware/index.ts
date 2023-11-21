@@ -16,6 +16,8 @@ const createSupabaseMiddlewareClient = (request: NextRequest) => {
   requestHeaders.set('X-Content-Type-Options', 'nosniff')
   requestHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=86400, must-revalidate')
   requestHeaders.set('Strict-Transport-security', 'max-age=63072000; includeSubDomains; preload')
+  requestHeaders.set('X-Frame-Options', 'DENY')
+  requestHeaders.set('X-XSS-Protection', '1; mode=block')
   // // Set the CSP header so that `app-render` can read it and generate tags with the nonce
   // requestHeaders.set('Content-Security-Policy', csp);
   requestHeaders.set('Upgrade-Insecure-Requests', '1')
@@ -109,6 +111,8 @@ const createSupabaseMiddlewareClient = (request: NextRequest) => {
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400, must-revalidate')
   response.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
+  response.headers.set('X-Frame-Options', 'DENY')
+  response.headers.set('X-XSS-Protection', '1; mode=block')
   response.headers.set('X-Middleware-Response', 'true')
 
   const { isBot } = userAgent(request)

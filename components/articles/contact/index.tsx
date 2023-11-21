@@ -1,9 +1,7 @@
-import {
-  HRGradient,
-  BackToHome,
-  BackToTop
-} from '@/components/layouts'
-import { ContactForm } from '@/components/elements'
+import HRGradient from '@/components/layouts/HRGradient'
+import BackToHome from '@/components/layouts/BackToHome'
+import BackToTop from '@/components/layouts/BackToTop'
+import ContactForm from '@/components/elements/form/contact'
 
 export default async function ContactContent() {
 
