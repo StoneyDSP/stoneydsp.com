@@ -1,6 +1,6 @@
-// import { Header, Footer, Main, ConsentBanner } from '@/components/elements'
 import Header from '@/components/elements/header/header'
 import Footer from '@/components/elements/footer/footer'
+import Main from '@/components/elements/main/main'
 import ConsentBanner from '@/components/elements/banner/consent'
 import SpinnerRoot from '@/components/layouts/Spinner'
 import { Metadata } from 'next'
@@ -20,12 +20,12 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-          <main>
+          <Main>
             <Suspense fallback={<SpinnerRoot />}>
               <ConsentBanner />
               {children}
             </Suspense>
-          </main>
+          </Main>
         <Footer />
       </body>
       {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}

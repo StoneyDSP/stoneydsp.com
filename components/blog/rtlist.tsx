@@ -1,9 +1,9 @@
 'use client'
+import 'client-only'
 import { createBrowserClient } from '@supabase/ssr'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import type { Database } from '@/types_db'
 import Link from 'next/link'
-import { Suspense } from 'react'
 
 type Post = Database['public']['Tables']['posts']['Row']
 
@@ -25,7 +25,7 @@ export default function RealtimePosts({ serverPosts }: { serverPosts: Post[] }) 
   useEffect(() => {
     const channel = supabase
       .channel('*')
-      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'posts' }, (payload) =>
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'posts' }, (payload: { new: { content: string; created_at: string; id: number; user_id: string | null } }) =>
         setPosts((posts) => [...posts, payload.new as Post])
       )
       .subscribe()
