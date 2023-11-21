@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og'
 import Image from 'next/image'
+import iconPng32 from '/images/favicon/favicon-32x32.png'
  
 // Route segment config
 export const runtime = 'edge'
@@ -16,7 +17,7 @@ export default function Icon() {
   return new ImageResponse(
     (
         <Image 
-            src="/images/favicon/favicon-32x32.png"
+            src={iconPng32}
             width={32}
             height={32}
             alt="StoneyDSP"
