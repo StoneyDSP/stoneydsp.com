@@ -17,6 +17,16 @@ const nextConfig = {
         // port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        pathname: '/StoneyDSP/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        pathname: '/nathanjhood/**'
+      }
     ],
   },
   async redirects() {
