@@ -7,8 +7,8 @@ export default async function Header() {
 
   return (
     <header>
-        <Nav />
-        <NavBreadcrumbs />
+      <Nav />
+      <NavBreadcrumbs />
     </header>
   )
 }
