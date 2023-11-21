@@ -17,9 +17,10 @@ export default function Icon() {
   return new ImageResponse(
     (
         <Image 
-            src={iconPng32}
-            width={32}
-            height={32}
+            // src={iconPng32.src}
+            // width={32}
+            // height={32}
+            {...iconPng32}
             alt="StoneyDSP"
         />
       // ImageResponse JSX element
