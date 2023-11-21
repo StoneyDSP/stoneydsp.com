@@ -1,8 +1,7 @@
 'use client'
 import 'client-only'
-import { createSupabaseClientSideClient } from '@/utils/supabase/ssr'
+import { createBrowserClient } from '@supabase/ssr'
 import { useEffect, useState, Suspense } from 'react'
-// import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
 import type { Database } from '@/types_db'
 
@@ -11,6 +10,12 @@ type Post = Database['public']['Tables']['posts']['Row']
 export default function RealtimePost({ serverPost }: { serverPost: Post }) {
 
   // const supabase = createClientComponentClient<Database>()
+
+  const createSupabaseClientSideClient = () =>
+  createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
 
   const supabase = createSupabaseClientSideClient()
   const [post, setPost] = useState(serverPost)

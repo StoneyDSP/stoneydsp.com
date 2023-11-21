@@ -1,5 +1,5 @@
 'use client'
-import { createSupabaseClientSideClient } from '@/utils/supabase/ssr'
+import { createBrowserClient } from '@supabase/ssr'
 import { useEffect, useState } from 'react'
 import type { Database } from '@/types_db'
 import Link from 'next/link'
@@ -8,6 +8,12 @@ import { Suspense } from 'react'
 type Post = Database['public']['Tables']['posts']['Row']
 
 export default function RealtimePosts({ serverPosts }: { serverPosts: Post[] }) {
+
+  const createSupabaseClientSideClient = () =>
+  createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
 
   const [posts, setPosts] = useState(serverPosts)
   const supabase = createSupabaseClientSideClient()

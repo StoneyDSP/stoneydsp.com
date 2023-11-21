@@ -1,7 +1,7 @@
 'use server'
 import 'server-only'
 // import { createClient } from '@/utils/supabase/server'
-import { createSupabaseServerSideClient } from '@/utils/supabase/ssr'
+import createSupabaseServerSideClient from '@/utils/supabase/ssr/server'
 import LogoutButton from '@/components/LogoutButton'
 import { cookies } from 'next/headers'
 import Link from 'next/link'
