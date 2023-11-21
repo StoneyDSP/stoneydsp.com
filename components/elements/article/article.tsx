@@ -1,9 +1,7 @@
 'use client'
 import 'client-only'
-import {
-  ButtonBack,
-  ButtonLike
-} from '@/components/elements'
+import ButtonBack from '@/components/elements/button/back'
+import ButtonLike from '@/components/elements/button/like'
 import { Suspense } from 'react'
 
 export default function Article({
