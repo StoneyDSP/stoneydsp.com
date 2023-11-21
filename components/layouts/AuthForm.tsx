@@ -1,7 +1,7 @@
 'use client'
 import { Auth } from '@supabase/auth-ui-react'
 import { SocialLayout, ThemeSupa, ViewType } from '@supabase/auth-ui-shared'
-import createSupabaseClientSideClient from '@/utils/supabase/ssr/client'
+import { createBrowserClient } from '@supabase/ssr'
 import { useState, Suspense } from 'react'
 
 // import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
@@ -22,6 +22,12 @@ const socialAlignments = ['horizontal', 'vertical'] as const
 export default function AuthForm() {
 
   // const supabase = createClientComponentClient<Database>()
+
+  const createSupabaseClientSideClient = () =>
+  createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
 
   const supabase = createSupabaseClientSideClient()
 
