@@ -1,3 +1,4 @@
+import 'server-only'
 import { Nav } from '@/components/elements'
 import NavBreadcrumbs from '@/components/elements/nav/breadcrumbs'
 import { Suspense } from 'react'
