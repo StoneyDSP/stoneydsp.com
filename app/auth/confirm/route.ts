@@ -3,9 +3,9 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { type EmailOtpType } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
-import { NextResponse } from 'next/server'
+import { NextResponse, type NextRequest } from 'next/server'
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest): Promise<NextResponse<unknown>> {
 
   const { searchParams, origin } = new URL(request.url)
   const token_hash = searchParams.get('token_hash')
@@ -38,13 +38,12 @@ export async function GET(request: Request) {
       token_hash,
     })
     if (!error) {
-      return NextResponse.redirect(`${origin}${next}`)
+      return NextResponse.redirect(new URL(`${next}`, origin))
     }
-
     // return the user to an error page with instructions
-    return NextResponse.redirect(`${origin}/auth/auth-error?message=${error}`)
+    return NextResponse.redirect(new URL(`/auth/auth-error?message=${error}`, origin))
   }
 
   // return the user to an error page with instructions
-  return NextResponse.redirect(new URL('/auth-error?message=Under construction...', origin))
+  return NextResponse.redirect(new URL('/auth-error?message=No exchange code', origin))
 }

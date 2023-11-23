@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function AudiopluginsvfPage() {
+export default async function AudiopluginsvfPage(): Promise<JSX.Element> {
   return (
     <AudiopluginsvfContent />
   )

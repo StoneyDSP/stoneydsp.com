@@ -1,10 +1,9 @@
 import createSupabaseServerSideClient from '@/utils/supabase/ssr/server'
 import { cookies } from 'next/headers'
-import { NextResponse } from 'next/server'
+import { NextResponse, type NextRequest } from 'next/server'
 
-// import type { Database } from '@/lib/database.types'
+export async function POST(request: NextRequest): Promise<NextResponse<unknown>> {
 
-export async function POST(request: Request) {
   const requestUrl = new URL(request.url)
   const formData = await request.formData()
   const email = String(formData.get('email'))

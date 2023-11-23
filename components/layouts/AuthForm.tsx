@@ -4,10 +4,6 @@ import { SocialLayout, ThemeSupa, ViewType } from '@supabase/auth-ui-shared'
 import { createBrowserClient } from '@supabase/ssr'
 import { useState, Suspense } from 'react'
 
-// import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-// import { createClient } from '@/utils/supabase/client'
-// import { Database } from '@/types_db'
-
 const views: { id: ViewType; title: string }[] = [
   { id: 'sign_in', title: 'Sign In' },
   { id: 'sign_up', title: 'Sign Up' },
@@ -20,8 +16,6 @@ const views: { id: ViewType; title: string }[] = [
 const socialAlignments = ['horizontal', 'vertical'] as const
 
 export default function AuthForm() {
-
-  // const supabase = createClientComponentClient<Database>()
 
   const createSupabaseClientSideClient = () =>
   createBrowserClient(

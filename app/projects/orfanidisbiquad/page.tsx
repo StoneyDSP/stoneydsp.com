@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function OrfanidisbiquadPage() {
+export default async function OrfanidisbiquadPage(): Promise<JSX.Element> {
   return (
     <OrfanidisbiquadContent />
   )

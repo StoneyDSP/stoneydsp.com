@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function ContactPage() {
+export default async function ContactPage(): Promise<JSX.Element> {
   return (
     <ContactContent />
   )

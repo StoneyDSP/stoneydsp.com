@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function LoginPage() {
+export default async function LoginPage(): Promise<JSX.Element> {
 
   return (
     <AuthForm />
