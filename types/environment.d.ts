@@ -1,0 +1,23 @@
+declare namespace NodeJS {
+
+    export interface ProcessEnv {
+
+        readonly ENV_VARIABLE: string
+        readonly NEXT_PUBLIC_ENV_VARIABLE: string | undefined
+  
+        readonly DEVELOPMENT_ENV_VARIABLE: string
+        readonly NEXT_PUBLIC_DEVELOPMENT_ENV_VARIABLE: string
+  
+        readonly ENV_LOCAL_VARIABLE: string
+        readonly NEXT_PUBLIC_ENV_LOCAL_VARIABLE: string
+  
+        readonly PRODUCTION_ENV_VARIABLE: string
+        readonly NEXT_PUBLIC_PRODUCTION_ENV_VARIABLE: string
+
+        readonly NEXT_PUBLIC_SITE_URL: string | undefined
+        readonly NEXT_PUBLIC_SUPABASE_ANON_KEY: string
+        readonly NEXT_PUBLIC_SUPABASE_URL: string
+    }
+}
+
+export default NodeJS
