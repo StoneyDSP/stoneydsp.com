@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function BlogPage() {
+export default async function BlogPage(): Promise<JSX.Element> {
   const cookieStore = cookies()
 
   const supabase = createSupabaseServerSideClient(cookieStore)
