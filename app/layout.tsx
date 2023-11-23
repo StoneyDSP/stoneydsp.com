@@ -14,17 +14,19 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
+}): JSX.Element {
 
   return (
     <html lang="en">
       <body>
         <Suspense fallback={<SpinnerRoot />}>
           <Header />
-            <Main>
-              <ConsentBanner />
-              {children}
-            </Main>
+            <Suspense fallback={<p className='text-foreground'>Loading...</p>}>
+              <Main>
+                <ConsentBanner />
+                {children}
+              </Main>
+            </Suspense>
           <Footer />
         </Suspense>
       </body>
