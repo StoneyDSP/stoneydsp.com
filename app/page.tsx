@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 // import { createClient } from '@/utils/supabase/server'
 // import { cookies } from 'next/headers'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   description: 'Systems, Web, Audio & Graphics',

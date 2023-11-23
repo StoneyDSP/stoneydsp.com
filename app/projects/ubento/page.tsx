@@ -1,7 +1,7 @@
 import UbentoContent from '@/components/articles/projects/ubento'
 import { Metadata } from 'next'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'UBento',

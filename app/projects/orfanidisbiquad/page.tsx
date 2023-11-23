@@ -1,7 +1,7 @@
 import OrfanidisbiquadContent from '@/components/articles/projects/orfanidisbiquad'
 import { Metadata } from 'next'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Orfanidis Biquad',
