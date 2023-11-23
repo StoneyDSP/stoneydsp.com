@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function CxxWinPage() {
+export default async function CxxWinPage(): Promise<JSX.Element> {
   return (
     <CxxwinContent />
   )

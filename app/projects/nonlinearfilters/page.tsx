@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function NonLinearFiltersPage() {
+export default async function NonLinearFiltersPage(): Promise<JSX.Element> {
   return (
     <NonlinearfiltersContent />
   )

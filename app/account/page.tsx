@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function AccountPage() {
+export default async function AccountPage(): Promise<JSX.Element> {
 
   const cookieStore = cookies()
 

@@ -1,6 +1,6 @@
 import Link from 'next/link'
  
-export default async function NotFound() {
+export default async function NotFound(): Promise<JSX.Element> {
 
   return (
     <div>

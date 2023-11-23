@@ -3,7 +3,7 @@ import { notFound, redirect } from 'next/navigation'
 import RealtimePost from '@/components/blog/rtpost'
 import { cookies } from 'next/headers'
 
-export default async function Post({ params: { id } }: { params: { id: string } }): Promise<JSX.Element> {
+export default async function RTPost({ params: { id } }: { params: { id: string } }): Promise<JSX.Element> {
 
   const cookieStore = cookies()
   const supabase = createSupabaseServerSideClient(cookieStore)

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function PrivacyPolicyPage() {
+export default async function PrivacyPolicyPage(): Promise<JSX.Element> {
   return (
     <PrivacyPolicyContent />
   )

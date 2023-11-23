@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function BiquadsPage() {
+export default async function BiquadsPage(): Promise<JSX.Element> {
   return (
     <BiquadsContent />
   )
