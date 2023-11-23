@@ -1,7 +1,7 @@
 import NonlinearfiltersContent from '@/components/articles/projects/nonlinearfilters'
 import { Metadata } from 'next'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'NonLinearFilters',

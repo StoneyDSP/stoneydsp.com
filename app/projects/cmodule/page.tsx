@@ -1,7 +1,7 @@
 import CmoduleContent from '@/components/articles/projects/cmodule'
 import { Metadata } from 'next'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'cmodule',

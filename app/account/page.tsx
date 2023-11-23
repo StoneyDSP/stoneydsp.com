@@ -2,6 +2,15 @@ import createSupabaseServerSideClient from '@/utils/supabase/ssr/server'
 import { cookies } from 'next/headers'
 import AccountForm from '@/components/layouts/Account'
 import { redirect } from 'next/navigation'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Account',
+  description: 'User account area.',
+  alternates: {
+    canonical: 'https://www.stoneydsp.com/account'
+  }
+}
 
 export default async function AccountPage() {
 
