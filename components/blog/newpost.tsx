@@ -3,7 +3,7 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
 
-export default async function NewPost() {
+export default async function NewPost(): Promise<JSX.Element> {
 
   const addPost = async (formData: FormData) => {
     'use server'

@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 type Post = Database['public']['Tables']['posts']['Row']
 
-export default function RealtimePosts({ serverPosts }: { serverPosts: Post[] }) {
+export default function RealtimePosts({ serverPosts }: { serverPosts: Post[] }): JSX.Element {
 
   const createSupabaseClientSideClient = () =>
   createBrowserClient(

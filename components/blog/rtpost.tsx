@@ -7,7 +7,7 @@ import type { Database } from '@/types_db'
 
 type Post = Database['public']['Tables']['posts']['Row']
 
-export default function RealtimePost({ serverPost }: { serverPost: Post }) {
+export default function RealtimePost({ serverPost }: { serverPost: Post }): JSX.Element {
 
   // const supabase = createClientComponentClient<Database>()
 

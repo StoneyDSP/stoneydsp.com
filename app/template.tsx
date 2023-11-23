@@ -4,8 +4,8 @@ export default function Template({
   children
 }: {
   children: React.ReactNode
-}) {
-  
+}): JSX.Element {
+
   return (
     <div className={styles.container}>
 
@@ -14,7 +14,7 @@ export default function Template({
         <div className={styles.flexboxgrid}>
 
           {children}
-        
+
         </div>
 
       </article>
