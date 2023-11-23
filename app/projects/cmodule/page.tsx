@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function CmodulePage() {
+export default async function CmodulePage(): Promise<JSX.Element> {
   return (
     <CmoduleContent />
   )

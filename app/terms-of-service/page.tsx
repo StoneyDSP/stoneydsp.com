@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function TermsOfServicePage() {
+export default async function TermsOfServicePage(): Promise<JSX.Element> {
   return (
     <TermsOfServiceContent />
   )

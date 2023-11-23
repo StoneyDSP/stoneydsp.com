@@ -4,7 +4,11 @@ import { cookies } from 'next/headers'
 import nodemailer from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer'
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest): Promise<NextResponse<{
+  message: string;
+}> | NextResponse<{
+  error: unknown;
+}>> {
 
   const cookieStore = cookies()
 
@@ -36,9 +40,7 @@ export async function POST(request: NextRequest) {
 
   // if user is not signed in redirect the user to /login
   if (((!user) || (!session))) {
-    return NextResponse.redirect(new URL('/login', request.url), {
-      status: 302,
-    })
+    return NextResponse.json({ error: 'Not authorized.' }, { status: 401 })
   }
 
   const { email, name, message } = await request.json()

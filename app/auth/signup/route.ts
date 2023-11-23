@@ -1,9 +1,9 @@
 // import { createSupabaseServerSideClient } from '@/utils/supabase/ssr'
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import { NextResponse } from 'next/server'
+import { NextResponse, type NextRequest } from 'next/server'
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest): Promise<NextResponse<unknown>> {
 
   const requestUrl = new URL(request.url)
   const formData = await request.formData()

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function BilineareqPage() {
+export default async function BilineareqPage(): Promise<JSX.Element> {
   return (
     <BilineareqContent />
   )

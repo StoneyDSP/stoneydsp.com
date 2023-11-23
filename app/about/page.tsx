@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function AboutPage() {
+export default async function AboutPage(): Promise<JSX.Element> {
   return (
     <AboutContent />
   )

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function UbentoPage() {
+export default async function UbentoPage(): Promise<JSX.Element> {
   return (
     <UbentoContent />
   )
