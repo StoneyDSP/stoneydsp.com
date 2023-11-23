@@ -3,7 +3,7 @@ import 'server-only'
 import SocialIcons from '@/components/icons/social/IconSocial'
 import Link from 'next/link'
 
-export default async function Footer() {
+export default async function Footer(): Promise<JSX.Element> {
 
   return (
     <footer className='footer'>

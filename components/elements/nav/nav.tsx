@@ -3,7 +3,7 @@ import NavMenu from '@/components/elements/nav/menu/menu'
 import Link from 'next/link'
 // import UserButton from '@/components/elements/nav/user'
 
-export default async function Nav() {
+export default async function Nav(): Promise<JSX.Element> {
 
   return (
     <nav className='tableRowEven'>

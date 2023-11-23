@@ -12,17 +12,15 @@ export default function Article({
 
   return (
     <article className='animate-in min-h-screen'>
-      <Suspense fallback={<>Loading...</>}>
 
-        <div
-          className='flex flex-col gap-8'
-        >
-          <ButtonBack />
-          <ButtonLike />
-        </div>
-        
+      <div className='flex flex-col gap-8'>
+        <ButtonBack />
+        <ButtonLike />
+      </div>
+
+      <Suspense fallback={<span className='text-foreground'>Loading article...</span>}>
         {children}
-      
+
       </Suspense>
 
     </article>
