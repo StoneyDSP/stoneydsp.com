@@ -21,10 +21,10 @@ export default function GlobalError({
     <html lang="en">
       <body>
         <main>
+
           <div className={styles.container}>
             <article className={styles.content}>
-
-              <div className={styles.flexboxgrid}>
+              <section className={styles.flexboxgrid}>
 
                 <div className="py-4"></div>
 
@@ -40,7 +40,7 @@ export default function GlobalError({
                   <span className="text-foreground">Try again</span>
                 </button>
 
-              </div>
+              </section>
 
             </article>
           </div>
