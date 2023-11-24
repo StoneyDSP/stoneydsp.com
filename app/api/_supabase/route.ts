@@ -1,5 +1,5 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import generateCsp from '@/utils/headers/generateCSP'
+import generateCsp from '@/utils/headers/CSP'
 import { cookies } from 'next/headers'
 import { NextResponse, type NextRequest } from 'next/server'
 
