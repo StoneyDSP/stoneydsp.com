@@ -1,6 +1,4 @@
-// import { createClient } from '@/utils/supabase/ssr/server'
-import createSupabaseServerSideClient from '@/utils/supabase/ssr/server'
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { createSupabaseServerSideClient } from '@/utils/supabase/ssr/server'
 import { type EmailOtpType } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
 import { NextResponse, type NextRequest } from 'next/server'
