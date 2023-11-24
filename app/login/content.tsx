@@ -4,7 +4,7 @@ import { Auth } from '@supabase/auth-ui-react'
 import { SocialLayout, ThemeSupa, ViewType } from '@supabase/auth-ui-shared'
 // import { createBrowserClient } from '@supabase/ssr'
 import { createSupabaseClientSideClient } from '@/utils/supabase/ssr/client'
-import { useState, Suspense } from 'react'
+import { useState } from 'react'
 
 const views: { id: ViewType; title: string }[] = [
   { id: 'sign_in', title: 'Sign In' },
@@ -46,17 +46,15 @@ export default function AuthForm(): JSX.Element {
   const [view, setView] = useState(views[0])
 
   return (
-    <Suspense>
-      <Auth
-        supabaseClient={supabase}
-        view={view.id}
-        appearance={{ theme: ThemeSupa }}
-        theme={theme}
-        showLinks={true}
-        providers={['github', 'google']}
-        socialLayout={socialLayout}
-        redirectTo={`${publicSiteUrl}auth/callback`}
-      />
-    </Suspense>
+    <Auth
+      supabaseClient={supabase}
+      view={view.id}
+      appearance={{ theme: ThemeSupa }}
+      theme={theme}
+      showLinks={true}
+      providers={['github', 'google']}
+      socialLayout={socialLayout}
+      redirectTo={`${publicSiteUrl}auth/callback`}
+    />
   )
 }
