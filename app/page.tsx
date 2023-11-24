@@ -1,4 +1,5 @@
 import HomeContent from '@/components/articles/home'
+import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
 // import { createClient } from '@/utils/supabase/server'
 // import { cookies } from 'next/headers'
@@ -8,7 +9,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   description: 'Systems, Web, Audio & Graphics',
   alternates: {
-    canonical: 'https://www.stoneydsp.com/'
+    canonical: new URL(getPublicSiteURL())
   }
 }
 

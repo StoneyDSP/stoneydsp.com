@@ -1,5 +1,6 @@
-import { Metadata } from 'next'
 import AuthForm from '@/components/layouts/AuthForm'
+import { getPublicSiteURL } from '@/utils/headers/URL'
+import { Metadata } from 'next'
 
 // export const dynamic = 'force-dynamic'
 
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Login',
   description: 'Log In.',
   alternates: {
-    canonical: 'https://www.stoneydsp.com/login'
+    canonical: new URL('login', getPublicSiteURL())
   }
 }
 

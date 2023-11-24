@@ -1,4 +1,5 @@
 import BiquadsContent from '@/components/articles/projects/biquads'
+import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
 
 // export const dynamic = 'force-dynamic'
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Biquads',
   description: 'Multi-mode equalizer with variable BiLinear Tranformations and oversampling.',
   alternates: {
-    canonical: 'https://www.stoneydsp.com/projects/biquads'
+    canonical: new URL('projects/biquads', getPublicSiteURL())
   }
 }
 
