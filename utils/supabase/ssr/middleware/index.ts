@@ -34,9 +34,9 @@ export const createSupabaseMiddlewareClient = (request: NextRequest) => {
 
   // Create an unmodified response
   let response = NextResponse.next({
-    // headers: requestHeaders,
+    headers: requestHeaders,
     request: {
-      headers: requestHeaders,
+      headers: request.headers,
     },
   })
 
@@ -64,9 +64,9 @@ export const createSupabaseMiddlewareClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
-            // headers: requestHeaders,
+            headers: requestHeaders,
             request: {
-              headers: requestHeaders,
+              headers: request.headers,
             },
           })
           response.cookies.set({
@@ -83,9 +83,9 @@ export const createSupabaseMiddlewareClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
-            // headers: requestHeaders,
+            headers: requestHeaders,
             request: {
-              headers: requestHeaders,
+              headers: request.headers,
             },
           })
           response.cookies.set({

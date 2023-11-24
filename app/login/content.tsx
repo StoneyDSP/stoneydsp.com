@@ -5,6 +5,7 @@ import { SocialLayout, ThemeSupa, ViewType } from '@supabase/auth-ui-shared'
 // import { createBrowserClient } from '@supabase/ssr'
 import { createSupabaseClientSideClient } from '@/utils/supabase/ssr/client'
 import { useState } from 'react'
+import { getPublicSiteURL } from '@/utils/headers/URL'
 
 const views: { id: ViewType; title: string }[] = [
   { id: 'sign_in', title: 'Sign In' },
@@ -26,18 +27,6 @@ export default function AuthForm(): JSX.Element {
   // )
 
   const supabase = createSupabaseClientSideClient()
-
-  const getPublicSiteURL = () => {
-    let url =
-      process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
-      process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
-      'http://localhost:3000/'
-    // Make sure to include `https://` when not localhost.
-    url = url.includes('http') ? url : `https://${url}`
-    // Make sure to include a trailing `/`.
-    url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
-    return url
-  }
 
   const publicSiteUrl = getPublicSiteURL()
 
