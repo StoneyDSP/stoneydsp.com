@@ -2,14 +2,18 @@ import createSupabaseServerSideClient from '@/utils/supabase/ssr/server'
 import { cookies } from 'next/headers'
 import { NextResponse, type NextRequest } from 'next/server'
 
-export async function POST(request: NextRequest): Promise<NextResponse<unknown>> {
+export async function POST(request: NextRequest) {
 
+  const requestHeaders = new Headers(request.headers)
   const requestUrl = new URL(request.url)
+  const { searchParams, origin } = requestUrl
+  const next = searchParams.get('next') ?? '/'
+
   const formData = await request.formData()
   const email = String(formData.get('email'))
   const password = String(formData.get('password'))
-  const cookieStore = cookies()
 
+  const cookieStore = cookies()
   const supabase = createSupabaseServerSideClient(cookieStore)
 
   await supabase.auth.signInWithPassword({
@@ -17,7 +21,8 @@ export async function POST(request: NextRequest): Promise<NextResponse<unknown>>
     password,
   })
 
-  return NextResponse.redirect(requestUrl.origin, {
+  return NextResponse.redirect(new URL(next, origin), {
     status: 301,
+    headers: requestHeaders
   })
 }

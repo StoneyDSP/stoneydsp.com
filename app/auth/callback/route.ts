@@ -1,67 +1,44 @@
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import createSupabaseServerSideClient from '@/utils/supabase/ssr/server'
 import { NextResponse, type NextRequest } from 'next/server'
 import { cookies } from 'next/headers'
 
-export async function GET(request: NextRequest): Promise<NextResponse<unknown>> {
-  // The `/auth/callback` route is required for the server-side auth flow implemented
-  // by the Auth Helpers package. It exchanges an auth code for the user's session.
-  // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-sign-in-with-code-exchange
+/** The `/auth/callback` route is required for the server-side auth flow implemented
+ * by the Auth Helpers package. It exchanges an auth code for the user's session.
+ * https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-sign-in-with-code-exchange
+*/
+export async function GET(request: NextRequest){
 
-  const { searchParams, origin } = new URL(request.url)
-  const code = searchParams.get('code')
+  const requestHeaders = new Headers(request.headers)
+  const requestUrl = new URL(request.url)
+  const { searchParams, origin } = requestUrl
   // if "next" is in param, use it as the redirect URL
   const next = searchParams.get('next') ?? '/'
+  const code = searchParams.get('code')
 
   if (code) {
+
     const cookieStore = cookies()
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          get(name: string) {
-            return cookieStore.get(name)?.value
-          },
-          set(name: string, value: string, options: CookieOptions) {
-            cookieStore.set({ name, value, ...options })
-          },
-          remove(name: string, options: CookieOptions) {
-            cookieStore.delete({ name, ...options })
-          },
-        },
-      }
-    )
+    const supabase = createSupabaseServerSideClient(cookieStore)
     const { error } = await supabase.auth.exchangeCodeForSession(code)
 
     if (!error) {
-      return NextResponse.redirect(new URL(`${next}`, origin))
+
+      // return the user to "next"
+      return NextResponse.redirect(new URL(next, origin), {
+        status: 200,
+        headers: requestHeaders
+      })
     }
+
     // return the user to an error page with instructions
-    return NextResponse.redirect(new URL(`/auth/auth-error?message=${error}`, origin))
+    return NextResponse.redirect(new URL(`/auth/auth-error?message=\'${error}\'`, origin), {
+      status: 500,
+      headers: requestHeaders
+    })
   }
 
-  // return the user to an error page with instructions
-  return NextResponse.redirect(new URL('/auth-error?message=No exchange code', origin))
+  return NextResponse.redirect(new URL(`/auth/auth-error?message=\'No exchange code\'`, origin), {
+    status: 401,
+    headers: requestHeaders
+  })
 }
-
-// import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
-// import { cookies } from 'next/headers'
-// import { NextResponse } from 'next/server'
-
-// import type { NextRequest } from 'next/server'
-// // import type { Database } from '@/lib/database.types'
-
-// export async function GET(request: NextRequest) {
-//   const requestUrl = new URL(request.url)
-//   const code = requestUrl.searchParams.get('code')
-
-//   if (code) {
-//     const cookieStore = cookies()
-//     // const supabase = createRouteHandlerClient<Database>({ cookies: () => cookieStore })
-//     const supabase = createClient(cookieStore)
-//     await supabase.auth.exchangeCodeForSession(code)
-//   }
-
-//   // URL to redirect to after sign in process completes
-//   return NextResponse.redirect(requestUrl.origin)
-// }
