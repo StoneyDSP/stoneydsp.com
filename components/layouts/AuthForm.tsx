@@ -2,7 +2,8 @@
 import 'client-only'
 import { Auth } from '@supabase/auth-ui-react'
 import { SocialLayout, ThemeSupa, ViewType } from '@supabase/auth-ui-shared'
-import { createBrowserClient } from '@supabase/ssr'
+// import { createBrowserClient } from '@supabase/ssr'
+import { createSupabaseClientSideClient } from '@/utils/supabase/ssr/client'
 import { useState, Suspense } from 'react'
 
 const views: { id: ViewType; title: string }[] = [
@@ -18,11 +19,11 @@ const socialAlignments = ['horizontal', 'vertical'] as const
 
 export default function AuthForm(): JSX.Element {
 
-  const createSupabaseClientSideClient = () =>
-  createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  )
+  // const createSupabaseClientSideClient = () =>
+  // createBrowserClient(
+  //   process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  //   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  // )
 
   const supabase = createSupabaseClientSideClient()
 

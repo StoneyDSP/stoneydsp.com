@@ -9,13 +9,20 @@ export const createSupabaseMiddlewareClient = (request: NextRequest) => {
   // Clone the request
   const requestHeaders = new Headers(request.headers)
 
+  const origin = requestHeaders.get('origin') ?? '*'
+
   // generate CSP and nonce
-  const { csp, nonce } = generateCsp();
+  const { csp, nonce } = generateCsp()
 
   // set nonce request header to read in pages if needed
   requestHeaders.set('X-Nonce', nonce)
   // Set the CSP header so that `app-render` can read it and generate tags with the nonce
-  requestHeaders.set('Content-Security-Policy', csp);
+  requestHeaders.set('Content-Security-Policy', csp)
+  // Set the CORS for pre-flight requests
+  requestHeaders.set('Access-Control-Allow-Origin', origin)
+  requestHeaders.set('Access-Control-Allow-Credentials', 'true')
+  requestHeaders.set('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+  requestHeaders.set('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version')
 
   requestHeaders.set('X-Content-Type-Options', 'nosniff')
   requestHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=86400, must-revalidate')
@@ -27,9 +34,9 @@ export const createSupabaseMiddlewareClient = (request: NextRequest) => {
 
   // Create an unmodified response
   let response = NextResponse.next({
-    headers: requestHeaders,
+    // headers: requestHeaders,
     request: {
-      headers: request.headers,
+      headers: requestHeaders,
     },
   })
 
@@ -57,9 +64,9 @@ export const createSupabaseMiddlewareClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
-            headers: requestHeaders,
+            // headers: requestHeaders,
             request: {
-              headers: request.headers,
+              headers: requestHeaders,
             },
           })
           response.cookies.set({
@@ -76,9 +83,9 @@ export const createSupabaseMiddlewareClient = (request: NextRequest) => {
             ...options,
           })
           response = NextResponse.next({
-            headers: requestHeaders,
+            // headers: requestHeaders,
             request: {
-              headers: request.headers,
+              headers: requestHeaders,
             },
           })
           response.cookies.set({
@@ -109,6 +116,12 @@ export const createSupabaseMiddlewareClient = (request: NextRequest) => {
 
   //  Also set the CSP so that it is outputted to the browser
   response.headers.set('Content-Security-Policy', csp)
+
+  response.headers.set('Access-Control-Allow-Origin', origin)
+  response.headers.set('Access-Control-Allow-Credentials', 'true')
+  response.headers.set('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+  response.headers.set('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version')
+
   response.headers.set('Upgrade-Insecure-Requests', '1')
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400, must-revalidate')
