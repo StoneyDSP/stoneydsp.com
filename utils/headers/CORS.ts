@@ -1,6 +1,6 @@
 // import { NextResponse, type NextRequest } from 'next/server'
 
-// const allowCors = fn => async (req: NextRequest, res: NextResponse) => {
+// const allowCors = fn => async (req: Request, res: NextResponse) => {
 //   res.setHeader('Access-Control-Allow-Credentials', true)
 //   res.setHeader('Access-Control-Allow-Origin', '*')
 //   // another common pattern
@@ -17,7 +17,7 @@
 //   return await fn(req, res)
 // }
 
-// const handler = (req, res) => {
+// const handler = (req: Request, res: Response) => {
 //   const d = new Date()
 //   res.end(d.toString())
 // }

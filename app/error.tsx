@@ -19,10 +19,8 @@ export default function Error({
 
   return (
     <div className={styles.container}>
-
       <article className={styles.content}>
-
-        <div className={styles.flexboxgrid}>
+        <section className={styles.flexboxgrid}>
 
           <div className="py-4"></div>
 
@@ -38,10 +36,8 @@ export default function Error({
             <span className="text-foreground">Try again</span>
           </button>
 
-        </div>
-
+        </section>
       </article>
-
     </div>
   )
 }

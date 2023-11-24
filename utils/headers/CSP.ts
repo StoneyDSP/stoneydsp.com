@@ -1,5 +1,6 @@
 /** Credit: https://github.com/Sprokets/nextjs-csp-report-only */
 export default function generateCsp() {
+
   // generate random nonce converted to base64. Must be different on every HTTP page load
   // const nonce = crypto.randomBytes(16).toString('base64')
   // const nonce = crypto.randomUUID();
@@ -13,6 +14,7 @@ export default function generateCsp() {
       values: [
         "'report-sample'",
         "'self'",
+        "*.stoneydsp.com", "*-stoneydsp.vercel.app",
         `'nonce-${nonce}'`,
         "'strict-dynamic'",
       ],
@@ -23,10 +25,10 @@ export default function generateCsp() {
     },
     {
       name: "connect-src",
-      values: ["'self'", "*.vercel-insights.com", "plausible.io"],
+      values: ["'self'", "*.vercel-insights.com", "plausible.io", "*.stoneydsp.com", "*-stoneydsp.vercel.app",],
     },
     { name: "font-src", values: ["'self'", "data:"] },
-    { name: "img-src", values: ["'self'", "*.gh-readme-stats.com", "data:"] },
+    { name: "img-src", values: ["'self'", "*.stoneydsp.com", "*-stoneydsp.vercel.app", "data:"] },
     { name: "worker-src", values: ["'self'", "blob:"] },
     { name: "frame-ancestors", values: ["'none'"] },
     { name: "form-action", values: ["'self'"] },
@@ -42,12 +44,16 @@ export default function generateCsp() {
 }
 
 export const createHashedNonce = async (nonce: string) => {
+
   const encoder = new TextEncoder()
-  const encodedNonce = encoder.encode(nonce) // Encode the nonce
-  const hash = await crypto.subtle.digest('SHA-256', encodedNonce) // Hash it with SHA-256
+  // Encode the nonce
+  const encodedNonce = encoder.encode(nonce)
+  // Hash it with SHA-256
+  const hash = await crypto.subtle.digest('SHA-256', encodedNonce)
+  // Convert the hash to a hexadecimal string
   const bytes = new Uint8Array(hash)
   const hashedNonce = Array.from(bytes)
-    .map((b) => b.toString(16).padStart(2, '0')) // Convert the hash to a hexadecimal string
+    .map((b) => b.toString(16).padStart(2, '0'))
     .join('')
   return hashedNonce
 }
