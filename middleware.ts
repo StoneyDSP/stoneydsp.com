@@ -1,15 +1,28 @@
-import { type NextRequest } from 'next/server'
+import { NextResponse, type NextRequest } from 'next/server'
 import { createSupabaseMiddlewareClient } from '@/utils/supabase/ssr/middleware'
 
 export async function middleware(request: NextRequest) {
 
-  // Create Supabase Middleware Client
-  const { supabase, response } = createSupabaseMiddlewareClient(request)
+  try {
 
-  // Refresh session if expired - required for Server Components
-  await supabase.auth.getSession()
+    // Create Supabase Middleware Client
+    const { supabase, response } = createSupabaseMiddlewareClient(request)
 
-  return response
+    // Refresh session if expired - required for Server Components
+    await supabase.auth.getSession()
+
+    return response
+
+  } catch (e) {
+
+    // If you are here, a Supabase client could not be created!
+    return NextResponse.next({
+      request: {
+        headers: request.headers,
+      },
+    })
+  }
+
 }
 
 export const config = {

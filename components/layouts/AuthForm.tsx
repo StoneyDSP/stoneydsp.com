@@ -1,4 +1,5 @@
 'use client'
+import 'client-only'
 import { Auth } from '@supabase/auth-ui-react'
 import { SocialLayout, ThemeSupa, ViewType } from '@supabase/auth-ui-shared'
 import { createBrowserClient } from '@supabase/ssr'
@@ -15,7 +16,7 @@ const views: { id: ViewType; title: string }[] = [
 
 const socialAlignments = ['horizontal', 'vertical'] as const
 
-export default function AuthForm() {
+export default function AuthForm(): JSX.Element {
 
   const createSupabaseClientSideClient = () =>
   createBrowserClient(
@@ -50,7 +51,7 @@ export default function AuthForm() {
         view={view.id}
         appearance={{ theme: ThemeSupa }}
         theme={theme}
-        showLinks={false}
+        showLinks={true}
         providers={['github', 'google']}
         socialLayout={socialLayout}
         redirectTo={`${publicSiteUrl}auth/callback`}

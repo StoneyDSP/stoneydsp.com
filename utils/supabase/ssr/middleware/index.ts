@@ -6,11 +6,11 @@ import customStorageAdapter from '@/utils/supabase/ssr/storage'
 
 export const createSupabaseMiddlewareClient = (request: NextRequest) => {
 
+  // Clone the request
+  const requestHeaders = new Headers(request.headers)
+
   // generate CSP and nonce
   const { csp, nonce } = generateCsp();
-
-  // Clone the request headers
-  const requestHeaders = new Headers(request.headers)
 
   // set nonce request header to read in pages if needed
   requestHeaders.set('X-Nonce', nonce)
