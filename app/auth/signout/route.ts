@@ -1,8 +1,8 @@
 import { cookies } from 'next/headers'
-import { NextResponse, type NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
 import createSupabaseServerSideClient from '@/utils/supabase/ssr/server'
 
-export async function POST(request: NextRequest) {
+export async function POST(request: Request) {
 
   const requestHeaders = new Headers(request.headers)
   const requestUrl = new URL(request.url)
