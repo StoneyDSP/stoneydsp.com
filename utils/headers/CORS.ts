@@ -1,4 +1,4 @@
-// import { NextResponse, type NextRequest } from 'next/server'
+import { NextResponse, type NextRequest } from 'next/server'
 
 // const allowCors = fn => async (req: Request, res: NextResponse) => {
 //   res.setHeader('Access-Control-Allow-Credentials', true)
@@ -23,3 +23,29 @@
 // }
 
 // module.exports = allowCors(handler)
+
+export default async function corsHeaders(request: NextRequest) {
+
+  const requestHeaders = new Headers(request.headers)
+  const origin = request.headers.get('origin') ?? '*'
+
+  requestHeaders.set('Access-Control-Allow-Origin', origin)
+  requestHeaders.set('Access-Control-Allow-Credentials', 'true')
+  requestHeaders.set('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+  requestHeaders.set('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version')
+
+  const d = new Date()
+
+  let response = NextResponse.next({
+    request: {
+      headers: request.headers
+    }
+  })
+
+  response.headers.set('Access-Control-Allow-Origin', origin)
+  response.headers.set('Access-Control-Allow-Credentials', 'true')
+  response.headers.set('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+  response.headers.set('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version')
+
+  return response
+}
