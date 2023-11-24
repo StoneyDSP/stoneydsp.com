@@ -1,4 +1,5 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { NextResponse, type NextRequest } from 'next/server'
 import logMiddlewareRequest from '@/utils/logger'
 import generateCsp from '@/utils/headers/CSP'
 import customStorageAdapter from '@/utils/supabase/ssr/storage'
