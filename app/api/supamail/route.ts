@@ -4,7 +4,7 @@ import { cookies } from 'next/headers'
 import nodemailer from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer'
 
-export async function POST(request: NextRequest): Promise<NextResponse<{
+export async function POST(request: Request): Promise<NextResponse<{
   message: string;
 }> | NextResponse<{
   error: unknown;

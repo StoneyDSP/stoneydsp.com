@@ -8,7 +8,7 @@ import { createBrowserClient } from '@supabase/ssr'
 import { type Session } from '@supabase/supabase-js'
 
 export default function AccountForm({ session }: { session: Session | null }) {
-  
+
   const createSupabaseClientSideClient = () =>
   createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
