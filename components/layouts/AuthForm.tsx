@@ -53,7 +53,7 @@ export default function AuthForm() {
         showLinks={false}
         providers={['github', 'google']}
         socialLayout={socialLayout}
-        redirectTo={publicSiteUrl?.concat('/auth/callback')}
+        redirectTo={`${publicSiteUrl}auth/callback`}
       />
     </Suspense>
   )

@@ -1,4 +1,4 @@
-import createSupabaseServerSideClient from '@/utils/supabase/ssr/server'
+import { createSupabaseServerSideClient } from '@/utils/supabase/ssr/server'
 import { NextResponse, type NextRequest } from 'next/server'
 import { cookies } from 'next/headers'
 import nodemailer from 'nodemailer'

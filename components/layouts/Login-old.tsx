@@ -1,7 +1,7 @@
 import 'server-only'
 import Link from 'next/link'
 import { headers, cookies } from 'next/headers'
-import createSupabaseServerSideClient from '@/utils/supabase/ssr/server'
+import { createSupabaseServerSideClient } from '@/utils/supabase/ssr/server'
 // import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
 // import { Turnstile } from '@marsidev/react-turnstile'

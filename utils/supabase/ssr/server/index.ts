@@ -4,7 +4,7 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import customStorageAdapter from '@/utils/supabase/ssr/storage'
 import { cookies } from 'next/headers'
 
-const createSupabaseServerSideClient = (cookieStore: ReturnType<typeof cookies>) => {
+export const createSupabaseServerSideClient = (cookieStore: ReturnType<typeof cookies>) => {
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -43,5 +43,3 @@ const createSupabaseServerSideClient = (cookieStore: ReturnType<typeof cookies>)
 
   return supabase
 }
-
-export default createSupabaseServerSideClient
