@@ -22,7 +22,13 @@ const nextConfig = {
       { hostname: "illustrations.popsy.co" },
       {
         protocol: 'https',
-        hostname: 'gh-readme-stats.stoneydsp.com',
+        hostname: '*.stoneydsp.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*-stoneydsp.vercel.app',
         port: '',
         pathname: '/**',
       },

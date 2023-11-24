@@ -1,4 +1,4 @@
-import createSupabaseServerSideClient from '@/utils/supabase/ssr/server'
+import { createSupabaseServerSideClient } from '@/utils/supabase/ssr/server'
 import { cookies } from 'next/headers'
 import AccountForm from '@/components/layouts/Account'
 import { redirect } from 'next/navigation'
