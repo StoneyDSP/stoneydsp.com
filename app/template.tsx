@@ -8,17 +8,11 @@ export default function Template({
 
   return (
     <div className={styles.container}>
-
       <article className={styles.content}>
-
-        <div className={styles.flexboxgrid}>
-
+        <section className={styles.flexboxgrid}>
           {children}
-
-        </div>
-
+        </section>
       </article>
-
     </div>
   )
 }

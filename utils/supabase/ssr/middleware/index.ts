@@ -1,6 +1,7 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import { userAgent, NextResponse, type NextRequest } from 'next/server'
-import generateCsp from '@/utils/headers/generateCSP'
+import { NextResponse, type NextRequest } from 'next/server'
+import logMiddlewareRequest from '@/utils/logger'
+import generateCsp from '@/utils/headers/CSP'
 import customStorageAdapter from '@/utils/supabase/ssr/storage'
 
 const createSupabaseMiddlewareClient = (request: NextRequest) => {
@@ -115,17 +116,7 @@ const createSupabaseMiddlewareClient = (request: NextRequest) => {
   response.headers.set('X-XSS-Protection', '1; mode=block')
   response.headers.set('X-Middleware-Response', 'true')
 
-  const { isBot } = userAgent(request)
-  // Extract visitor info.
-  const visitor = isBot ? 'Bot' : 'User'
-  const travelling = isBot ? 'crawling' : 'visiting'
-  const country = (request.geo && request.geo.country) || 'Earth'
-  const city = (request.geo && request.geo.city) || 'Nowhere'
-  const region = (request.geo && request.geo.region) || 'Somewhere'
-  const ip = (request.ip) || 'Visitor'
-  const agent = (request.headers.get('user-agent')) || 'Agent Unknown'
-
-  console.log(`${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}`)
+  logMiddlewareRequest(request)
 
   return { supabase, response }
 }
