@@ -1,14 +1,15 @@
+import AccountForm from '@/app/account/content'
+import { getPublicSiteURL } from '@/utils/headers/URL'
 import { createSupabaseServerSideClient } from '@/utils/supabase/ssr/server'
-import { cookies } from 'next/headers'
-import AccountForm from '@/components/layouts/Account'
-import { redirect } from 'next/navigation'
 import { Metadata } from 'next'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'Account',
   description: 'User account area.',
   alternates: {
-    canonical: 'https://www.stoneydsp.com/account'
+    canonical: new URL('account', getPublicSiteURL())
   }
 }
 

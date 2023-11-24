@@ -3,7 +3,7 @@ import { type EmailOtpType } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
 import { NextResponse, type NextRequest } from 'next/server'
 
-export async function GET(request: NextRequest): Promise<NextResponse<unknown>> {
+export async function GET(request: Request): Promise<NextResponse<unknown>> {
 
   const requestHeaders = new Headers(request.headers)
   const requestUrl = new URL(request.url)

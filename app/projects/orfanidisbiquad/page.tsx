@@ -1,4 +1,5 @@
 import OrfanidisbiquadContent from '@/components/articles/projects/orfanidisbiquad'
+import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
 
 // export const dynamic = 'force-dynamic'
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Orfanidis Biquad',
   description: 'De-cramped digital filter design.',
   alternates: {
-    canonical: 'https://www.stoneydsp.com/projects/orfanidisbiquad'
+    canonical: new URL('projects/orfanidisbiquad', getPublicSiteURL())
   }
 }
 

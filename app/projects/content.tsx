@@ -1,20 +1,22 @@
 import HRGradient from '@/components/layouts/HRGradient'
 import BackToHome from '@/components/layouts/BackToHome'
 import BackToTop from '@/components/layouts/BackToTop'
-import RepoCards from '@/components/cards/RepoCards'
+import ContactForm from '@/components/elements/form/contact'
 
-export default async function ProjectsContent() {
+export default async function ContactContent() {
 
   return (
     <>
 
       <h2 className='text-center' tabIndex={0}>
-        Read about some of my most popular projects:
+        Hi! I&#39;m Nathan, a.k.a StoneyDSP.
       </h2>
 
       <HRGradient />
 
-      <RepoCards />
+      <ContactForm />
+
+      <HRGradient />
 
       <HRGradient />
 
