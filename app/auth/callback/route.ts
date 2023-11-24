@@ -1,12 +1,12 @@
 import createSupabaseServerSideClient from '@/utils/supabase/ssr/server'
-import { NextResponse, type NextRequest } from 'next/server'
+import { NextResponse} from 'next/server'
 import { cookies } from 'next/headers'
 
 /** The `/auth/callback` route is required for the server-side auth flow implemented
  * by the Auth Helpers package. It exchanges an auth code for the user's session.
  * https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-sign-in-with-code-exchange
 */
-export async function GET(request: NextRequest){
+export async function GET(request: Request){
 
   const requestHeaders = new Headers(request.headers)
   const requestUrl = new URL(request.url)
