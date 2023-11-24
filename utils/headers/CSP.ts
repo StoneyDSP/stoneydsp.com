@@ -58,29 +58,29 @@ export const createHashedNonce = async (nonce: string) => {
   return hashedNonce
 }
 
-function oldCSP() {
-  // Generate a random nonce
-  // Use 'nonce' when invoking the supabase.auth.signInWithIdToken() method
-  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
-  // Use 'hashedNonce' when making the authentication request to Google
-  const hashedNnonce = createHashedNonce(nonce)
+// function oldCSP() {
+//   // Generate a random nonce
+//   // Use 'nonce' when invoking the supabase.auth.signInWithIdToken() method
+//   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
+//   // Use 'hashedNonce' when making the authentication request to Google
+//   const hashedNnonce = createHashedNonce(nonce)
 
-  const cspHeader = `
-    default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
-    style-src 'self' 'nonce-${nonce}';
-    img-src 'self' blob: data:;
-    font-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    block-all-mixed-content;
-    upgrade-insecure-requests;
-`
+//   const cspHeader = `
+//     default-src 'self';
+//     script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+//     style-src 'self' 'nonce-${nonce}';
+//     img-src 'self' blob: data:;
+//     font-src 'self';
+//     object-src 'none';
+//     base-uri 'self';
+//     form-action 'self';
+//     frame-ancestors 'none';
+//     block-all-mixed-content;
+//     upgrade-insecure-requests;
+// `
 
-  // Replace newline characters and spaces
-  const contentSecurityPolicyHeaderValue = cspHeader
-    .replace(/\s{2,}/g, ' ')
-    .trim()
-}
+//   // Replace newline characters and spaces
+//   const contentSecurityPolicyHeaderValue = cspHeader
+//     .replace(/\s{2,}/g, ' ')
+//     .trim()
+// }
