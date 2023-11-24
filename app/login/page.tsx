@@ -1,4 +1,4 @@
-import AuthForm from '@/components/layouts/AuthForm'
+import AuthForm from '@/app/login/content'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
 

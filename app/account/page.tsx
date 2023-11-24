@@ -1,4 +1,4 @@
-import AccountForm from '@/components/layouts/Account'
+import AccountForm from '@/app/account/content'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { createSupabaseServerSideClient } from '@/utils/supabase/ssr/server'
 import { Metadata } from 'next'

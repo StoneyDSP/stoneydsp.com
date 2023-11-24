@@ -1,4 +1,4 @@
-import ContactContent from "@/components/articles/contact"
+import ContactContent from "@/app/contact/content"
 import { getPublicSiteURL } from "@/utils/headers/URL"
 import { createSupabaseServerSideClient } from "@/utils/supabase/ssr/server"
 import { Metadata } from "next"
