@@ -15,7 +15,7 @@ export const createSupabaseMiddlewareClient = (request: NextRequest) => {
   // set nonce request header to read in pages if needed
   requestHeaders.set('X-Nonce', nonce)
   // Set the CSP header so that `app-render` can read it and generate tags with the nonce
-  // requestHeaders.set('Content-Security-Policy', csp);
+  requestHeaders.set('Content-Security-Policy', csp);
 
   requestHeaders.set('X-Content-Type-Options', 'nosniff')
   requestHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=86400, must-revalidate')
@@ -108,7 +108,7 @@ export const createSupabaseMiddlewareClient = (request: NextRequest) => {
   })
 
   //  Also set the CSP so that it is outputted to the browser
-  // response.headers.set('Content-Security-Policy', csp)
+  response.headers.set('Content-Security-Policy', csp)
   response.headers.set('Upgrade-Insecure-Requests', '1')
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400, must-revalidate')
