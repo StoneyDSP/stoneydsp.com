@@ -2,20 +2,20 @@
 
 const withMDX = require('@next/mdx')()
 
-// const getSiteURL = () => {
-//   let url =
-//     process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
-//     process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
-//     'http://localhost:3000/'
-//   // Make sure to include `https://` when not localhost.
-//   url = url.includes('http') ? url : `https://${url}`
-//   // Make sure to include a trailing `/`.
-//   url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
-//   url = url.slice(0, (url.length - 2))
-//   return url
-// }
+const getSiteURL = () => {
+  let url =
+    process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
+    process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
+    'http://localhost:3000/'
+  // Make sure to include `https://` when not localhost.
+  url = url.includes('http') ? url : `https://${url}`
+  // Make sure to include a trailing `/`.
+  url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
+  url = url.slice(0, (url.length - 2))
+  return url
+}
 
-// const siteUrl = getSiteURL()
+const siteUrl = getSiteURL()
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -40,52 +40,16 @@ const nextConfig = {
       {
         source: '/www',
         destination: `https://www.stoneydsp.com`,
-        basePath: false
+        basePath: false,
+
       },
     ]
-  },
-  images: {
-    remotePatterns: [
-      { hostname: "public.blob.vercel-storage.com" },
-      { hostname: "res.cloudinary.com" },
-      { hostname: "abs.twimg.com" },
-      { hostname: "pbs.twimg.com" },
-      { hostname: "avatar.vercel.sh" },
-      { hostname: "avatars.githubusercontent.com" },
-      { hostname: "www.google.com" },
-      { hostname: "flag.vercel.app" },
-      { hostname: "illustrations.popsy.co" },
-      {
-        protocol: 'https',
-        hostname: '*.stoneydsp.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: '*-stoneydsp.vercel.app',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'raw.githubusercontent.com',
-        port: '',
-        pathname: '/StoneyDSP/**'
-      },
-      {
-        protocol: 'https',
-        hostname: 'raw.githubusercontent.com',
-        port: '',
-        pathname: '/nathanjhood/**'
-      }
-    ],
   },
   redirects: async () => {
     return [
       {
         source: '/index.html',
-        destination: '/',
+        destination: '',
         basePath: false,
         permanent: true,
       },
@@ -94,6 +58,12 @@ const nextConfig = {
         destination: '/:path*',
         basePath: false,
         permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'stoneydsp.com' }],
+        destination: `https://www.stoneydsp.com/:path*`,
+        permanent: true
       }
     ]
   },
@@ -179,6 +149,43 @@ const nextConfig = {
   //     ],
   //   }
   // },
+  images: {
+    remotePatterns: [
+      { hostname: "public.blob.vercel-storage.com" },
+      { hostname: "res.cloudinary.com" },
+      { hostname: "abs.twimg.com" },
+      { hostname: "pbs.twimg.com" },
+      { hostname: "avatar.vercel.sh" },
+      { hostname: "avatars.githubusercontent.com" },
+      { hostname: "www.google.com" },
+      { hostname: "flag.vercel.app" },
+      { hostname: "illustrations.popsy.co" },
+      {
+        protocol: 'https',
+        hostname: '*.stoneydsp.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*-stoneydsp.vercel.app',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/StoneyDSP/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/nathanjhood/**'
+      }
+    ],
+  },
 }
 
 module.exports = withMDX(nextConfig)
