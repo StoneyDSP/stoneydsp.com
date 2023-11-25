@@ -13,10 +13,10 @@ export default function Template({
   return (
     <Suspense fallback={<main><p className='text-foreground text-center'>Loading... </p><LoadingSpinner /></main>}>
       <Main>
-        <ConsentBanner />
         <div className={styles.container}>
           <article className={styles.content}>
             <section className={styles.flexboxgrid}>
+              <ConsentBanner />
               {children}
             </section>
           </article>
