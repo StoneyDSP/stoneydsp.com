@@ -24,8 +24,8 @@ const nextConfig = {
     webpackBuildWorker: true,
   },
   crossOrigin: "use-credentials",
-  trailingSlash: false,
-  basePath: '/www',
+  // trailingSlash: false,
+  // basePath: '/www',
   // rewrites: async () => {
   //   return [
   //     // {
