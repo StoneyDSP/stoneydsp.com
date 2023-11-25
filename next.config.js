@@ -25,7 +25,7 @@ const nextConfig = {
   },
   crossOrigin: "use-credentials",
   // trailingSlash: false,
-  // basePath: '/www',
+  basePath: '/www',
   // rewrites: async () => {
   //   return [
   //     // {
