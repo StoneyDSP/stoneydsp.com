@@ -17,7 +17,7 @@ export default async function HomeContent() {
       <HRGradient />
 
       <h2 className='animate-in text-center' tabIndex={0}>
-        StoneyDSP
+        StoneyDSP: Systems, Web, Audio & Visual programming
       </h2>
 
       <HRGradient />

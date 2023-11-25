@@ -8,7 +8,7 @@ export default async function ProjectsContent() {
   return (
     <>
 
-      <h2 className='text-center' tabIndex={0}>
+      <h2 className='text-center' tabIndex={0} id='Project__Title'>
         Read about some of my most popular projects:
       </h2>
 
