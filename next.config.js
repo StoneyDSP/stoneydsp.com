@@ -25,25 +25,25 @@ const nextConfig = {
   },
   crossOrigin: "use-credentials",
   // trailingSlash: false,
-  basePath: '/www',
-  // rewrites: async () => {
-  //   return [
-  //     // {
-  //     //   source: "/projects/:id(\\d+)",
-  //     //   destination: "http://:id.localhost:3000/"
-  //     // },
-  //     {
-  //       source: '/www/:path*',
-  //       destination: `${siteUrl}/:path*`,
-  //       basePath: false
-  //     },
-  //     {
-  //       source: '/www',
-  //       destination: `${siteUrl}`,
-  //       basePath: false
-  //     },
-  //   ]
-  // },
+  // basePath: '/www',
+  rewrites: async () => {
+    return [
+      // {
+      //   source: "/projects/:id(\\d+)",
+      //   destination: "http://:id.localhost:3000/"
+      // },
+      {
+        source: '/www/:path*',
+        destination: `https://www.stoneydsp.com/:path*`,
+        basePath: false
+      },
+      {
+        source: '/www',
+        destination: `https://www.stoneydsp.com`,
+        basePath: false
+      },
+    ]
+  },
   images: {
     remotePatterns: [
       { hostname: "public.blob.vercel-storage.com" },
