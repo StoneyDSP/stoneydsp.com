@@ -1,4 +1,6 @@
-import styles from '@/app/template.module.css'
+import ConsentBanner from '@/components/elements/banner/consent'
+import Main from '@/components/elements/main/main'
+import { Suspense } from 'react'
 
 export default function Template({
   children
@@ -7,12 +9,11 @@ export default function Template({
 }): JSX.Element {
 
   return (
-    <div className={styles.container}>
-      <article className={styles.content}>
-        <section className={styles.flexboxgrid}>
-          {children}
-        </section>
-      </article>
-    </div>
+    <Suspense fallback={<p className='text-foreground'>Loading...</p>}>
+      <Main>
+        <ConsentBanner />
+        {children}
+      </Main>
+    </Suspense>
   )
 }

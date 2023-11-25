@@ -1,9 +1,9 @@
-import ContactContent from "@/app/contact/content"
-import { getPublicSiteURL } from "@/utils/headers/URL"
-import { createSupabaseServerSideClient } from "@/utils/supabase/ssr/server"
-import { Metadata } from "next"
-import { cookies } from "next/headers"
-import { redirect } from "next/navigation"
+import ContactContent from './content'
+import { getPublicSiteURL } from '@/utils/headers/URL'
+import { createSupabaseServerSideClient } from '@/utils/supabase/ssr/server'
+import { Metadata } from 'next'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
 
 // export const dynamic = 'force-dynamic'
 

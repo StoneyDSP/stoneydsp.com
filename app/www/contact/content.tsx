@@ -6,7 +6,7 @@ import ContactForm from '@/components/elements/form/contact'
 export default async function ContactContent() {
 
   return (
-    <>
+    <main>
 
       <h2 className='text-center' tabIndex={0}>
         Hi! I&#39;m Nathan, a.k.a StoneyDSP.
@@ -26,6 +26,6 @@ export default async function ContactContent() {
 
       <HRGradient />
 
-    </>
+    </main>
   )
 }

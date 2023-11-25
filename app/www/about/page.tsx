@@ -1,4 +1,4 @@
-import AboutContent from '@/app/about/content'
+import AboutContent from './content'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
 

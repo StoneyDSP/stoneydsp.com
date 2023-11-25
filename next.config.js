@@ -2,6 +2,21 @@
 
 const withMDX = require('@next/mdx')()
 
+// const getSiteURL = () => {
+//   let url =
+//     process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
+//     process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
+//     'http://localhost:3000/'
+//   // Make sure to include `https://` when not localhost.
+//   url = url.includes('http') ? url : `https://${url}`
+//   // Make sure to include a trailing `/`.
+//   url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
+//   url = url.slice(0, (url.length - 2))
+//   return url
+// }
+
+// const siteUrl = getSiteURL()
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
@@ -9,6 +24,26 @@ const nextConfig = {
     webpackBuildWorker: true,
   },
   crossOrigin: "use-credentials",
+  trailingSlash: false,
+  basePath: '/www',
+  // rewrites: async () => {
+  //   return [
+  //     // {
+  //     //   source: "/projects/:id(\\d+)",
+  //     //   destination: "http://:id.localhost:3000/"
+  //     // },
+  //     {
+  //       source: '/www/:path*',
+  //       destination: `${siteUrl}/:path*`,
+  //       basePath: false
+  //     },
+  //     {
+  //       source: '/www',
+  //       destination: `${siteUrl}`,
+  //       basePath: false
+  //     },
+  //   ]
+  // },
   images: {
     remotePatterns: [
       { hostname: "public.blob.vercel-storage.com" },
@@ -46,7 +81,7 @@ const nextConfig = {
       }
     ],
   },
-  async redirects() {
+  redirects: async () => {
     return [
       {
         source: '/index.html',
@@ -62,8 +97,17 @@ const nextConfig = {
       }
     ]
   },
-  async headers() {
+  headers: async () => {
     return [
+      {
+        source: "/:path*",
+        has: [
+          { type: "query", key: "authorized" }
+        ],
+        headers: [
+          { key: "x-authorized", value: "true" }
+        ]
+      },
       {
         // matching all API routes
         source: "/api/:path*",
@@ -83,25 +127,58 @@ const nextConfig = {
       //     { key: "X-XSS-Protection", value: "1; mode=block" }
       //   ]
       // },
-      {
-        source: "/:path*",
-        has: [
-          { type: "query", key: "authorized" }
-        ],
-        headers: [
-          { key: "x-authorized", value: "true" }
-        ]
-      }
     ]
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       "source": "/projects/:id(\\d+)",
-  //       "destination": "http://:id.localhost:3000/"
-  //     }
-  //   ]
-  // }
+  // rewrites: async () => {
+  //   return {
+  //     beforeFiles: [
+  //       // These rewrites are checked after headers/redirects
+  //       // and before all files including _next/public files which
+  //       // allows overriding page files
+  //       {
+  //         source: '/some-page',
+  //         destination: '/somewhere-else',
+  //         has: [{ type: 'query', key: 'overrideMe' }],
+  //       },
+  //     ],
+  //     afterFiles: [
+  //       // These rewrites are checked after pages/public files
+  //       // are checked but before dynamic routes
+  //       // {
+  //       //   source: '/non-existent',
+  //       //   destination: '/somewhere-else',
+  //       // },
+  //       {
+  //         source: '/about',
+  //         destination: '/aboot',
+  //       },
+  //     ],
+  //     fallback: [
+  //       // These rewrites are checked after both pages/public files
+  //       // and dynamic routes are checked
+  //       // {
+  //       //   source: '/:path*',
+  //       //   destination: `https://my-old-site.com/:path*`,
+  //       // },
+
+  //       {
+  //         source: '/www/:path*',
+  //         destination:
+  //           process.env.NODE_ENV === 'production'
+  //             ? 'https://www.stoneydsp.com/:path*'
+  //             : 'http://www.locahost:3000/:path*',
+  //       },
+  //       {
+  //         source: '/www',
+  //         destination:
+  //           process.env.NODE_ENV === 'production'
+  //             ? 'https://www.stoneydsp.com'
+  //             : 'http://www.locahost:3000',
+  //       },
+
+  //     ],
+  //   }
+  // },
 }
 
 module.exports = withMDX(nextConfig)

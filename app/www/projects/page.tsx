@@ -1,4 +1,4 @@
-import ProjectsContent from '@/app/projects/content'
+import ProjectsContent from './content'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
 
