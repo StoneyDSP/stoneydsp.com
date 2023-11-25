@@ -1,4 +1,4 @@
-import HomeContent from '@/app/www/content'
+import HomeContent from '@/app/_www/content'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
 // import { createClient } from '@/utils/supabase/server'
