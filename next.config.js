@@ -26,24 +26,28 @@ const nextConfig = {
   crossOrigin: "use-credentials",
   // trailingSlash: false,
   // basePath: '/www',
-  rewrites: async () => {
-    return [
+  async rewrites() {
+    return {
+      beforeFiles: [
+      {
+        source: '/www/:path*',
+        destination: `${siteUrl}/:path*`,
+        // has: [{ type: 'host', value: 'stoneydsp.com' }],
+      },
+      {
+        source: '/www',
+        destination: `${siteUrl}`,
+        // has: [{ type: 'host', value: 'stoneydsp.com' }],
+
+      },
       // {
       //   source: "/projects/:id(\\d+)",
       //   destination: "http://:id.localhost:3000/"
       // },
-      {
-        source: '/www/:path*',
-        destination: `https://www.stoneydsp.com/:path*`,
-        basePath: false
-      },
-      {
-        source: '/www',
-        destination: `https://www.stoneydsp.com`,
-        basePath: false,
-
-      },
-    ]
+      ],
+      afterFiles: [],
+      fallback: []
+    }
   },
   redirects: async () => {
     return [
