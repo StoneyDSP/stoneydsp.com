@@ -43,17 +43,17 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/:path*/index.html',
-        destination: '/:path*',
+        source: '/:path(\\d+)/index.html',
+        destination: '/:path(\\d+)',
         basePath: false,
         permanent: true,
       },
-      {
-        source: '/www/:path*',
-        has: [{ type: 'host', value: 'stoneydsp.com' }],
-        destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}/:path*`,
-        permanent: true
-      }
+      // {
+      //   source: '/www/:path*',
+      //   has: [{ type: 'host', value: 'stoneydsp.com' }],
+      //   destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}/:path*`,
+      //   permanent: true
+      // }
     ]
   },
   headers: async () => {
