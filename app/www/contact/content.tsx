@@ -8,8 +8,8 @@ export default async function ContactContent() {
   return (
     <main>
 
-      <h2 className='text-center' tabIndex={0}>
-        Hi! I&#39;m Nathan, a.k.a StoneyDSP.
+      <h2 className='text-center' tabIndex={0} id='Contact__Title'>
+        Contact.
       </h2>
 
       <HRGradient />
