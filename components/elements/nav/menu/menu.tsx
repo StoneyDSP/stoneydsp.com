@@ -10,7 +10,7 @@ export const paths = [
   },
   {
     page: 'About',
-    path: '/about'
+    path: '/aboot'
   },
   {
     page: 'Contact',
