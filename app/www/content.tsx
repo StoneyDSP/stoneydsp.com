@@ -16,7 +16,7 @@ export default async function HomeContent() {
     <>
       <HRGradient />
 
-      <div className='flex w-1/2'>
+      <div className='flex flex-col w-1/2 justify-center align-middle items-center'>
         <h2 className='animate-in text-left' tabIndex={0}>
           StoneyDSP:
         </h2>
