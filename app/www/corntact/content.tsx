@@ -3,7 +3,7 @@ import BackToHome from '@/components/layouts/BackToHome'
 import BackToTop from '@/components/layouts/BackToTop'
 import ContactForm from '@/components/elements/form/contact'
 
-export default async function ContactContent() {
+export default async function CorntactContent() {
 
   return (
     <main>

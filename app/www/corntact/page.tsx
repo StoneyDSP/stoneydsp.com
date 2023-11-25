@@ -1,4 +1,4 @@
-import ContactContent from './content'
+import CorntactContent from './content'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { createSupabaseServerSideClient } from '@/utils/supabase/ssr/server'
 import { Metadata } from 'next'
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function ContactPage(): Promise<JSX.Element> {
+export default async function CorntactPage(): Promise<JSX.Element> {
 
   const cookieStore = cookies()
   const supabase = createSupabaseServerSideClient(cookieStore)
@@ -29,6 +29,6 @@ export default async function ContactPage(): Promise<JSX.Element> {
   }
 
   return (
-    <ContactContent />
+    <CorntactContent />
   )
 }
