@@ -47,18 +47,18 @@ const nextConfig = {
   },
   redirects: async () => {
     return [
-      {
-        source: '/index.html',
-        destination: '',
-        basePath: false,
-        permanent: true,
-      },
-      {
-        source: '/:path*/index.html',
-        destination: '/:path*',
-        basePath: false,
-        permanent: true,
-      },
+      // {
+      //   source: '/index.html',
+      //   destination: '/',
+      //   basePath: false,
+      //   permanent: true,
+      // },
+      // {
+      //   source: '/:path*/index.html',
+      //   destination: '/:path*',
+      //   basePath: false,
+      //   permanent: true,
+      // },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'stoneydsp.com' }],
