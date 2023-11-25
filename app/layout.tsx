@@ -1,7 +1,5 @@
-import ConsentBanner from '@/components/elements/banner/consent'
 import Footer from '@/components/elements/footer/footer'
 import Header from '@/components/elements/header/header'
-import Main from '@/components/elements/main/main'
 import SpinnerRoot from '@/components/layouts/Spinner'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 // import { GoogleTagManager } from '@next/third-parties/google'
@@ -22,12 +20,7 @@ export default function RootLayout({
       <body>
         <Suspense fallback={<SpinnerRoot />}>
           <Header />
-            <Suspense fallback={<p className='text-foreground'>Loading...</p>}>
-              <Main>
-                <ConsentBanner />
-                {children}
-              </Main>
-            </Suspense>
+            {children}
           <Footer />
         </Suspense>
       </body>
