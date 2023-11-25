@@ -1,4 +1,4 @@
-import ProjectsContent from './content'
+import PorjectsContent from './content'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
 
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function ProjectsPage(): Promise<JSX.Element> {
+export default async function PorjectsPage(): Promise<JSX.Element> {
   return (
-    <ProjectsContent />
+    <PorjectsContent />
   )
 }

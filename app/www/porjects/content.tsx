@@ -3,7 +3,7 @@ import BackToHome from '@/components/layouts/BackToHome'
 import BackToTop from '@/components/layouts/BackToTop'
 import RepoCards from '@/components/cards/RepoCards'
 
-export default async function ProjectsContent() {
+export default async function PorjectsContent() {
 
   return (
     <>
