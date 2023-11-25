@@ -2,21 +2,6 @@
 
 const withMDX = require('@next/mdx')()
 
-const getSiteURL = () => {
-  let url =
-    process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
-    process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
-    'http://localhost:3000/'
-  // Make sure to include `https://` when not localhost.
-  url = url.includes('http') ? url : `https://${url}`
-  // Make sure to include a trailing `/`.
-  url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
-  url = url.slice(0, (url.length - 2))
-  return url
-}
-
-const siteUrl = getSiteURL()
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
@@ -26,29 +11,29 @@ const nextConfig = {
   crossOrigin: "use-credentials",
   // trailingSlash: false,
   // basePath: '/www',
-  async rewrites() {
-    return {
-      beforeFiles: [
-      {
-        source: '/www/:path*',
-        destination: `${siteUrl}/:path*`,
-        // has: [{ type: 'host', value: 'stoneydsp.com' }],
-      },
-      {
-        source: '/www',
-        destination: `${siteUrl}`,
-        // has: [{ type: 'host', value: 'stoneydsp.com' }],
+  // async rewrites() {
+  //   return {
+  //     beforeFiles: [
+  //     {
+  //       source: '/www/:path*',
+  //       destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}/:path*`,
+  //       // has: [{ type: 'host', value: 'stoneydsp.com' }],
+  //     },
+  //     {
+  //       source: '/www',
+  //       destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}`,
+  //       // has: [{ type: 'host', value: 'stoneydsp.com' }],
 
-      },
-      // {
-      //   source: "/projects/:id(\\d+)",
-      //   destination: "http://:id.localhost:3000/"
-      // },
-      ],
-      afterFiles: [],
-      fallback: []
-    }
-  },
+  //     },
+  //     // {
+  //     //   source: "/projects/:id(\\d+)",
+  //     //   destination: "http://:id.localhost:3000/"
+  //     // },
+  //     ],
+  //     afterFiles: [],
+  //     fallback: []
+  //   }
+  // },
   redirects: async () => {
     return [
       {
@@ -63,12 +48,12 @@ const nextConfig = {
         basePath: false,
         permanent: true,
       },
-      // {
-      //   source: '/:path*',
-      //   has: [{ type: 'host', value: 'stoneydsp.com' }],
-      //   destination: `https://www.stoneydsp.com/:path*`,
-      //   permanent: true
-      // }
+      {
+        source: '/www/:path*',
+        has: [{ type: 'host', value: 'stoneydsp.com' }],
+        destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}/:path*`,
+        permanent: true
+      }
     ]
   },
   headers: async () => {
