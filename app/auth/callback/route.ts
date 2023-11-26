@@ -24,21 +24,27 @@ export async function GET(request: Request) {
     if (!error) {
 
       // return the user to "next"
-      return NextResponse.redirect(new URL(next, origin), {
-        status: 200,
-        // headers: requestHeaders
-      })
+      return NextResponse.redirect(new URL(origin /*,next, origin*/)
+        // {
+        //   status: 200,
+        //   headers: requestHeaders
+        // }
+      )
     }
 
     // return the user to an error page with instructions
-    return NextResponse.redirect(new URL(`/auth/auth-error?message=\'${error}\'`, origin), {
-      status: 400,
-      // headers: requestHeaders
-    })
+    return NextResponse.redirect(new URL(`/auth/auth-error?message=\'${error}\'` /*, origin*/)
+      // {
+      //   status: 400,
+      //   headers: requestHeaders
+      // }
+    )
   }
 
-  return NextResponse.redirect(new URL(`/auth/auth-error?message=\'No exchange code\'`, origin), {
-    status: 401,
-    // headers: requestHeaders
-  })
+  return NextResponse.redirect(new URL(`/auth/auth-error?message=\'No exchange code\'` /*, origin*/)
+    // {
+    //   status: 401,
+    //   headers: requestHeaders
+    // }
+  )
 }
