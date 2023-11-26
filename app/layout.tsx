@@ -1,8 +1,10 @@
 import Footer from '@/components/elements/footer/footer'
 import Header from '@/components/elements/header/header'
 import SpinnerRoot from '@/components/layouts/Spinner'
+import { Providers } from '@/app/providers'
 import { getPublicSiteURL } from '@/utils/headers/URL'
-import ConsentBanner from '@/components/elements/banner/consent'
+import { Analytics } from '@vercel/analytics/react'
+// import ConsentBanner from '@/components/elements/banner/consent'
 // import { GoogleTagManager } from '@next/third-parties/google'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
@@ -21,8 +23,11 @@ export default function RootLayout({
       <body>
         <Suspense fallback={<SpinnerRoot />}>
           <Header />
-            {children}
-            <ConsentBanner />
+            {/* <Providers> */}
+              <Analytics />
+              {children}
+              {/* <ConsentBanner /> */}
+            {/* </Providers> */}
           <Footer />
         </Suspense>
       </body>
