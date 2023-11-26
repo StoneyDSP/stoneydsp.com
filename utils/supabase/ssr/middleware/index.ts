@@ -16,8 +16,8 @@ export const createSupabaseMiddlewareClient = (request: NextRequest) => {
 
   // set nonce request header to read in pages if needed
   requestHeaders.set('X-Nonce', nonce)
-  // Set the CSP header so that `app-render` can read it and generate tags with the nonce
-  requestHeaders.set('Content-Security-Policy', csp)
+  // // Set the CSP header so that `app-render` can read it and generate tags with the nonce
+  // requestHeaders.set('Content-Security-Policy', csp)
   // Set the CORS for pre-flight requests
   requestHeaders.set('Access-Control-Allow-Origin', origin)
   requestHeaders.set('Access-Control-Allow-Credentials', 'true')
@@ -114,8 +114,8 @@ export const createSupabaseMiddlewareClient = (request: NextRequest) => {
     }
   })
 
-  //  Also set the CSP so that it is outputted to the browser
-  response.headers.set('Content-Security-Policy', csp)
+  // //  Also set the CSP so that it is outputted to the browser
+  // response.headers.set('Content-Security-Policy', csp)
 
   response.headers.set('Access-Control-Allow-Origin', origin)
   response.headers.set('Access-Control-Allow-Credentials', 'true')
