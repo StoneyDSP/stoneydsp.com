@@ -25,7 +25,7 @@ export default function RealtimePosts({ serverPosts }: { serverPosts: Post[] }):
   useEffect(() => {
     const channel = supabase
       .channel('*')
-      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'posts' }, (payload: { new: { content: string; created_at: string; id: number; user_id: string | null } }) =>
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'posts' }, (payload: { new: { content: string; createdAt: string; id: number; user_id: string | null } }) =>
         setPosts((posts) => [...posts, payload.new as Post])
       )
       .subscribe()
