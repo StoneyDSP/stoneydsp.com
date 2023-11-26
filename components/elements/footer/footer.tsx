@@ -93,7 +93,7 @@ export default async function Footer(): Promise<JSX.Element> {
 
       <div className="flex flex-row justify-center text-center text-xs py-2">
         <p className="text-foreground">
-          Copyright <small>StoneyDSP 2023</small>.
+          Copyright &copy; <small>StoneyDSP 2023</small>.
         </p>
       </div>
 

@@ -335,42 +335,42 @@ section {
 
 h1 {
   display: block;
-	opacity: 80%;
+	/* opacity: 80%; */
   font-size: 2.0rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h2 {
   display: block;
-	opacity: 80%;
+	/* opacity: 80%; */
   font-size: 1.5rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h3 {
   display: block;
-	opacity: 80%;
+	/* opacity: 80%; */
   font-size: 1.17rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h4 {
   display: block;
-	opacity: 80%;
+	/* opacity: 80%; */
   font-size: 1.0rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h5 {
   display: block;
-	opacity: 80%;
+	/* opacity: 80%; */
   font-size: 0.83rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h6 {
   display: block;
-	opacity: 80%;
+	/* opacity: 80%; */
   font-size: 0.67rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
@@ -380,7 +380,7 @@ hgroup {
 }
 p {
   display: block;
-	opacity: 80%;
+	/* opacity: 80%; */
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 i {
