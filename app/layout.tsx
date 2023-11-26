@@ -2,6 +2,7 @@ import Footer from '@/components/elements/footer/footer'
 import Header from '@/components/elements/header/header'
 import SpinnerRoot from '@/components/layouts/Spinner'
 import { getPublicSiteURL } from '@/utils/headers/URL'
+import ConsentBanner from '@/components/elements/banner/consent'
 // import { GoogleTagManager } from '@next/third-parties/google'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
@@ -21,6 +22,7 @@ export default function RootLayout({
         <Suspense fallback={<SpinnerRoot />}>
           <Header />
             {children}
+            <ConsentBanner />
           <Footer />
         </Suspense>
       </body>
