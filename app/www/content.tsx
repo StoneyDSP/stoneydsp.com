@@ -16,14 +16,16 @@ export default async function HomeContent() {
     <>
       <HRGradient />
 
-      <div className='flex flex-col w-1/2 justify-center align-middle items-center'>
-        <h2 className='animate-in text-left' tabIndex={0}>
-          StoneyDSP:
-        </h2>
+      <div className='flex flex-col w-1/2'>
+        <div className='justify-center align-middle items-center'>
+          <h2 className='animate-in text-left' tabIndex={0}>
+            StoneyDSP:
+          </h2>
 
-        <p className='animate-in text-right italic'>
-          Systems, Web, Audio & Visual programming
-        </p>
+          <p className='animate-in text-right italic'>
+            Systems, Web, Audio & Visual programming
+          </p>
+        </div>
       </div>
 
       <HRGradient />
