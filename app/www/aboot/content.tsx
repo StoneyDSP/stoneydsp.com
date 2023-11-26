@@ -7,12 +7,12 @@ import HRGradient from '@/components/layouts/HRGradient'
 import BackToHome from '@/components/layouts/BackToHome'
 import BackToTop from '@/components/layouts/BackToTop'
 
-export default async function AbootContent() {
+export default async function AboutContent() {
 
   return (
     <>
-      <h2 className='text-center' tabIndex={0} id='About__Title'>
-        About.
+      <h2 className='text-center' tabIndex={0}>
+        Hi! I&#39;m Nathan, a.k.a StoneyDSP.
       </h2>
 
       <HRGradient />
