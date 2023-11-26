@@ -16,10 +16,10 @@ export default async function HomeContent() {
     <>
       <HRGradient />
 
-      <div className='flex w-1/2'>
-        <div className='justify-center items-center'>
+      <div className='flex flex-col'>
+        <div className='items-center justify-center'>
           <h2 className='animate-in text-left' tabIndex={0}>
-            StoneyDSP:
+            StoneyDSP
           </h2>
 
           <p className='animate-in text-right italic'>
@@ -54,17 +54,12 @@ export default async function HomeContent() {
 
       <RepoCards />
 
-      {/* </div> */}
-
       <HRGradient />
 
       <BackToTop />
 
       <HRGradient />
 
-      {/* </article>
-
-    </div>*/}
     </>
   )
 }
