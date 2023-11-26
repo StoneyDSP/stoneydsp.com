@@ -1,4 +1,4 @@
-import AbootContent from './content'
+import AboutContent from './content'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
 
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function AbootPage(): Promise<JSX.Element> {
+export default async function AboutPage(): Promise<JSX.Element> {
   return (
-    <AbootContent />
+    <AboutContent />
   )
 }
