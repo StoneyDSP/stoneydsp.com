@@ -14,7 +14,7 @@ export default function generateCsp() {
       values: [
         "'report-sample'",
         "'self'",
-        "*.stoneydsp.com", "*-stoneydsp.vercel.app",
+        // "*.stoneydsp.com", "*-stoneydsp.vercel.app",
         `'nonce-${nonce}'`,
         "'strict-dynamic'",
       ],
@@ -28,10 +28,15 @@ export default function generateCsp() {
       values: ["'self'", "*.vercel-insights.com", "plausible.io", "*.stoneydsp.com", "*-stoneydsp.vercel.app",],
     },
     { name: "font-src", values: ["'self'", "data:"] },
-    { name: "img-src", values: ["'self'", "*.stoneydsp.com", "*-stoneydsp.vercel.app", "data:"] },
+    { name: "img-src", values: ["'self'", "*.stoneydsp.com", "*-stoneydsp.vercel.app", "blob:", "data:"] },
     { name: "worker-src", values: ["'self'", "blob:"] },
     { name: "frame-ancestors", values: ["'none'"] },
     { name: "form-action", values: ["'self'"] },
+
+    { name: "object-src", values: ["none"] },
+    { name: "base-uri", values: ['self'] },
+    { name: "upgrade-insecure-requests", values: [""] },
+    { name: "block-all-mixed-content", values: [""] }
   ];
 
   const cspString = csp
