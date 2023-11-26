@@ -9,31 +9,31 @@ const nextConfig = {
     webpackBuildWorker: true,
   },
   crossOrigin: "use-credentials",
-  trailingSlash: false,
-  basePath: '/www',
-  // async rewrites() {
-  //   return {
-  //     beforeFiles: [
-  //     {
-  //       source: '/www/:path*',
-  //       destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}/:path*`,
-  //       // has: [{ type: 'host', value: 'stoneydsp.com' }],
-  //     },
-  //     {
-  //       source: '/www',
-  //       destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}`,
-  //       // has: [{ type: 'host', value: 'stoneydsp.com' }],
+  // trailingSlash: false,
+  // basePath: '/www',
+  async rewrites() {
+    return {
+      beforeFiles: [
+      {
+        source: '/www/:path*',
+        destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}/:path*`,
+        // has: [{ type: 'host', value: 'stoneydsp.com' }],
+      },
+      {
+        source: '/www',
+        destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}`,
+        // has: [{ type: 'host', value: 'stoneydsp.com' }],
 
-  //     },
-  //     {
-  //       source: '/projects/:id*',
-  //       destination: `https://:id*.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}`
-  //     },
-  //     ],
-  //     afterFiles: [],
-  //     fallback: []
-  //   }
-  // },
+      },
+      {
+        source: '/projects/:id*',
+        destination: `https://:id*.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}`
+      },
+      ],
+      afterFiles: [],
+      fallback: []
+    }
+  },
   redirects: async () => {
     return [
       {
