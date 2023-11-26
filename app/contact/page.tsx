@@ -7,11 +7,15 @@ import { redirect } from 'next/navigation'
 
 // export const dynamic = 'force-dynamic'
 
+export const title = 'Contact'
+export const description = 'Systems, Web, Audio & Graphics'
+export const canonical = new URL('contact', getPublicSiteURL())
+
 export const metadata: Metadata = {
-  title: 'Contact',
-  description: 'Systems, Web, Audio & Graphics',
+  title: title,
+  description: description,
   alternates: {
-    canonical: new URL('contact', getPublicSiteURL())
+    canonical: canonical
   }
 }
 

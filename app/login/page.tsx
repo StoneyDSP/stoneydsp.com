@@ -4,11 +4,15 @@ import { Metadata } from 'next'
 
 // export const dynamic = 'force-dynamic'
 
+export const title = 'Login'
+export const description = 'Log In.'
+export const canonical = new URL('login', getPublicSiteURL())
+
 export const metadata: Metadata = {
-  title: 'Login',
-  description: 'Log In.',
+  title: title,
+  description: description,
   alternates: {
-    canonical: new URL('login', getPublicSiteURL())
+    canonical: canonical
   }
 }
 

@@ -6,6 +6,9 @@ import {
 import HRGradient from '@/components/layouts/HRGradient'
 import BackToHome from '@/components/layouts/BackToHome'
 import BackToTop from '@/components/layouts/BackToTop'
+// import { Typography } from '@supabase/ui'
+
+// const { Title, Text } = Typography
 
 export default async function AboutContent() {
 

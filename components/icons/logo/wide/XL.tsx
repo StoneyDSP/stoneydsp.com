@@ -8,6 +8,7 @@ export default async function LogoWideXL() {
         width={1024}
         height={768}
         alt={"Copyright StoneyDSP 2023"}
+        // className='hover:transition___glow_on'
       />
     </picture>
   )
