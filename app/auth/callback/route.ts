@@ -24,7 +24,7 @@ export async function GET(request: Request) {
     if (!error) {
 
       // return the user to "next"
-      return NextResponse.redirect(new URL(origin /*,next, origin*/)
+      return NextResponse.redirect(new URL(requestUrl /*,next, origin*/)
         // {
         //   status: 200,
         //   headers: requestHeaders
