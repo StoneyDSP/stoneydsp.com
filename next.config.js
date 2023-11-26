@@ -16,13 +16,13 @@ const nextConfig = {
       beforeFiles: [
       {
         source: '/www/:path*',
-        destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}/:path*`,
-        // has: [{ type: 'host', value: 'stoneydsp.com' }],
+        destination: `https://www.stoneydsp.com/:path*`,
+        has: [{ type: 'host', value: 'stoneydsp.com' }],
       },
       {
         source: '/www',
-        destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}`,
-        // has: [{ type: 'host', value: 'stoneydsp.com' }],
+        destination: `https://www.stoneydsp.com`,
+        has: [{ type: 'host', value: 'stoneydsp.com' }],
 
       },
       {
