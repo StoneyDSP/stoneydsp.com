@@ -109,15 +109,15 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.1.0.tgz#0709e9f4cb252351c609c6e6d8d6779a8d25edff"
   integrity sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==
 
-"@html-eslint/eslint-plugin@^0.20.0":
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/@html-eslint/eslint-plugin/-/eslint-plugin-0.20.0.tgz#bc011693e646260ecd9fb309bcc1d07ccb9e3435"
-  integrity sha512-P5DeuqL5TmIGIiWjeezGDZPM3rXzL715MEU0QR9xOOmqNTshG3yLsk7fkfLsLiDjm0x6r4e13/5mUCbEQTek7Q==
+"@html-eslint/eslint-plugin@^0.21.0":
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/@html-eslint/eslint-plugin/-/eslint-plugin-0.21.0.tgz#19881c133f36a6e4adae15369d4cf0f70e362253"
+  integrity sha512-pbai4bUwKnPlY/l4kwRUxVFOCMe4kfoaCoiF0xwWYUJUgRhO7dLgKdInNVQpJjilCdg9vLPPjKgfFfwxZ9bVng==
 
-"@html-eslint/parser@^0.20.0":
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/@html-eslint/parser/-/parser-0.20.0.tgz#2bdb13ab54b04b0c9ed4fe8f2ad659a2f21e16f7"
-  integrity sha512-qXrn2vIdqpb5f+diIDegVOAHIX4nJzCTuat9UZDFA8FN+MqVJNALGneTAOARQnW9au0P+NOmGAjyPtZF2rLmbw==
+"@html-eslint/parser@^0.21.0":
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/@html-eslint/parser/-/parser-0.21.0.tgz#f7edbf1815591b0ec5a2eba74c3cc8e4b6f37fa6"
+  integrity sha512-MzmIP/yq/4UVeRgUTFnKmPbomRu6NthcCT/68yrZi1GWhFwW0h3CIDy0wQI+gj3MDlcROzV8QOAG5uxCjCYA+A==
   dependencies:
     es-html-parser "^0.0.9"
 
@@ -195,10 +195,10 @@
     semver "^7.3.5"
     tar "^6.1.11"
 
-"@marsidev/react-turnstile@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@marsidev/react-turnstile/-/react-turnstile-0.3.2.tgz#8811a63b64c0b4bd0a3fdd6ff7efaa1c524ed6ed"
-  integrity sha512-NTTmQdVgSFTHZlFRw/6RwG2kveT6J57U8JdjhbSdKcSBEbhqoe9L3wPMbq8g31KCDOm2cYTu/LNavAPbCY1vgA==
+"@marsidev/react-turnstile@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@marsidev/react-turnstile/-/react-turnstile-0.4.0.tgz#1ab8694ee0b219a8f3a137f761fa443708294600"
+  integrity sha512-U0lwTWQhP04AnIdWEbLpF/phpqtblNbrnE4yJMdvGyeOZOTmuHW3wB+V8X+BO55pTXZitp2GgJsrGkbUjwJIeQ==
 
 "@mdx-js/loader@^3.0.0":
   version "3.0.0"
@@ -5250,10 +5250,10 @@ sucrase@^3.32.0:
     pirates "^4.0.1"
     ts-interface-checker "^0.1.9"
 
-supabase@^1.113.2:
-  version "1.113.2"
-  resolved "https://registry.yarnpkg.com/supabase/-/supabase-1.113.2.tgz#6024719aaf56b4212b78022297bc8a9f45d7a6f0"
-  integrity sha512-l0MO+MsXzONZHEadHT7IGcT511nRk+vTbnHAvF4DlGhsuQyI39F6dZVljlU4g2mUPJl9q6Cwz8n8WOZ+BhtqvA==
+supabase@^1.113.3:
+  version "1.113.3"
+  resolved "https://registry.yarnpkg.com/supabase/-/supabase-1.113.3.tgz#8ecaca8bc8b0c3b0188fc88744bc106800136c9a"
+  integrity sha512-P0HElkYYkeMhCADc+yCPnb4rj0mxGl7dYJ9wK54O5yf2W+Y0HmvEosGv8A7TVO49NTpNeREjWFVVzhW9FtfyZg==
   dependencies:
     bin-links "^4.0.1"
     https-proxy-agent "^7.0.2"

@@ -26,7 +26,7 @@
     "wipe": "yarn clean && rm -rvf node_modules"
   },
   "dependencies": {
-    "@marsidev/react-turnstile": "^0.3.2",
+    "@marsidev/react-turnstile": "^0.4.0",
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.3",
@@ -58,8 +58,8 @@
     "tailwindcss": "3.3.5"
   },
   "devDependencies": {
-    "@html-eslint/eslint-plugin": "^0.20.0",
-    "@html-eslint/parser": "^0.20.0",
+    "@html-eslint/eslint-plugin": "^0.21.0",
+    "@html-eslint/parser": "^0.21.0",
     "@types/node": "^20.9.2",
     "@types/nodemailer": "^6.4.14",
     "@types/react": "^18.2.36",
@@ -67,7 +67,7 @@
     "eslint": "^8.54.0",
     "eslint-config-next": "14.0.3",
     "globby": "^14.0.0",
-    "supabase": "^1.113.2",
+    "supabase": "^1.113.3",
     "typescript": "^5.2.2",
     "vercel": "^32.5.6"
   }
