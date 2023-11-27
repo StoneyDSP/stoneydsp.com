@@ -17,8 +17,16 @@ export async function middleware(request: NextRequest) {
     searchParams.length > 0 ? `?${searchParams}` : ""
   }`;
 
-  // if (request.headers.get("host") == "www.[::1]:3000") {
-  //   request.headers.set("host", "www.localhost:3000")
+  if (!session) {
+    // return non-users to the www dir
+    return NextResponse.rewrite(
+      new URL(`/www${path === "/" ? "" : path}`, request.url),
+      response
+    )
+  }
+
+  // if (process.env.VERCEL_ENV === 'development') {
+  //   request.headers.set("host", "test.localhost:3000")
   // }
 
   // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
@@ -26,33 +34,32 @@ export async function middleware(request: NextRequest) {
     .get("host")!
     .replace(".localhost:3000", `.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`)
 
-  // if (!session && path !== "/login") {
-  //   return NextResponse.redirect(new URL("/login", request.url), response);
-  // } else if (session && path == "/login") {
-  //   return NextResponse.redirect(new URL("/account", request.url), response);
-  // }
+  switch (hostname) {
 
-  // if (path === "/auth*") {
-  //   return response
-  // }
+  case `www.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
+    // rewrites for www pages
+    return NextResponse.rewrite(new URL(`/www${path === "/" ? "" : path}`, request.url), response)
 
-  // if (path === "/login") {
-  //   return response
-  // }
+  case `app.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
+    // rewrites for app pages
+    return NextResponse.rewrite(new URL(`/app${path === "/" ? "" : path}`, request.url), response)
 
-  // rewrites for www pages
-  if (hostname == `www.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`) {
-    return NextResponse.rewrite(
-      new URL(`/www${path === "/" ? "" : path}`, request.url),
-    );
+  case `blog.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
+    // rewrites for www pages
+    return NextResponse.rewrite(new URL(`/blog${path === "/" ? "" : path}`, request.url), response)
+
+  case `docs.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
+    // rewrites for www pages
+    return NextResponse.rewrite(new URL(`/docs${path === "/" ? "" : path}`, request.url), response)
+
+  case `test.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
+    // rewrites for www pages
+    return NextResponse.rewrite(new URL(`/test${path === "/" ? "" : path}`, request.url), response)
+
+  default:
+    // return everything else to the www dir
+    return NextResponse.rewrite(new URL(`/www${path === "/" ? "" : path}`, request.url), response)
   }
-
-  // return response
-  return NextResponse.rewrite(
-    new URL(`/www${path === "/" ? "" : path}`, request.url),
-    response
-  );
-
 }
 
 export const config = {
@@ -72,28 +79,4 @@ export const config = {
       ],
     },
   ],
-}
-
-async function canInitSupabaseMiddlewareClient(request: NextRequest) {
-
-  try {
-
-    // Create Supabase Middleware Client
-    const { supabase, response } = createSupabaseMiddlewareClient(request)
-
-    // Refresh session if expired - required for Server Components
-    await supabase.auth.getSession()
-
-    return response
-
-  } catch (e) {
-
-    // If you are here, a Supabase client could not be created!
-    return NextResponse.next({
-      request: {
-        headers: request.headers,
-      },
-    })
-  }
-
 }
