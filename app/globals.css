@@ -29,7 +29,7 @@
 		--z-index__init: 0;
 
 		/* Set a number to scale (increase and decrease) the starting point by */
-		--z-index__scale-depth: 100;
+		--z-index__scale-depth: 10;
 
 		/*  Calculate a palette by cascading those two vars */
 		--z-index__100: calc(var(--z-index__200) - var(--z-index__scale-depth));
@@ -462,21 +462,24 @@ a.code.hl_dictionary { opacity: 1; /* style for links to dictionary names in cod
 }
 
 pre.fragment {
+	/* display: flex; */
 	border: 1px solid var(--fragment-border-color);
 	background-color: var(--fragment-background-color);
 	color: var(--fragment-foreground-color);
+	/* max-width: 75vw; */
 	padding: 4px 6px;
 	margin: 4px 8px 4px 2px;
-	overflow: auto;
+	/* overflow: auto; */
 	word-wrap: break-word;
 	font-size:  9pt;
 	line-height: 125%;
 	font-family: var(--font-family-monospace);
-	font-size: 105%;
+	/* font-size: 105%; */
 	overflow-x: scroll;
 }
 
 code.fragment {
+	font-family: var(--font-family-monospace);
 	padding: 0 0 1px 0; /*Fixed: last line underline overlap border*/
 	margin: 4px 8px 4px 2px;
 	color: var(--fragment-foreground-color);

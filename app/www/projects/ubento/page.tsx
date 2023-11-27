@@ -1,4 +1,4 @@
-import UbentoContent from '@/components/articles/projects/ubento'
+import UbentoContent from './content'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
 
