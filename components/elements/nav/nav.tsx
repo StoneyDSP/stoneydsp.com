@@ -38,7 +38,8 @@ export default async function Nav(): Promise<JSX.Element> {
         </span>
 
         <Link
-          href="/login"
+          // href="/login"
+          href="/"
           className="
             py-2
             px-3
