@@ -1,3 +1,4 @@
+import 'server-only'
 import { ResourceCards } from '@/components/cards'
 import HRGradient from '@/components/layouts/HRGradient'
 import BackToTop from '@/components/layouts/BackToTop'
@@ -6,7 +7,7 @@ import { LogoWideL } from '@/components/icons/logo/wide'
 
 const { Title, Text } = Typography
 
-export default async function HomeContent() {
+export default async function HomeContent(): Promise<JSX.Element> {
 
   // const nonce = headers().get('x-nonce')
 

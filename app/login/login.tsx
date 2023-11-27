@@ -4,19 +4,13 @@ import { headers, cookies } from 'next/headers'
 import { createSupabaseServerSideClient } from '@/utils/supabase/ssr/server'
 // import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
-// import { Turnstile } from '@marsidev/react-turnstile'
-// import { useState } from 'react'
-// import { turnstileSiteKey } from '@/utils/captcha/turnstile'
 
-export default function Login({
+
+export default async function Login({
   searchParams,
 }: {
   searchParams: { message: string }
-}) {
-
-  // const sitekey = turnstileSiteKey()
-
-  // const [captchaToken, setCaptchaToken] = useState<string>()
+}): Promise<JSX.Element> {
 
   const cookieStore = cookies()
 

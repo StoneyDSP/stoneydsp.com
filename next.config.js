@@ -16,22 +16,28 @@ const nextConfig = {
   //     beforeFiles: [
   //     {
   //       source: '/www/:path*',
-  //       destination: `https://www.stoneydsp.com/:path*`,
-  //       has: [{ type: 'host', value: 'stoneydsp.com' }],
+  //       destination: `https://www.localhost:3000/:path*`,
+  //       has: [{ type: 'host', value: 'localhost:3000' }],
   //     },
   //     {
   //       source: '/www',
-  //       destination: `https://www.stoneydsp.com`,
-  //       has: [{ type: 'host', value: 'stoneydsp.com' }],
-
-  //     },
-  //     {
-  //       source: '/projects/:id*',
-  //       destination: `https://:id*.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}`
+  //       destination: 'http://www.localhost:3000',
+  //       has: [{ type: 'host', value: 'localhost:3000' }],
   //     },
   //     ],
   //     afterFiles: [],
-  //     fallback: []
+  //     fallback: [
+  //       {
+  //         source: '/www',
+  //         destination: 'http://www.localhost:3000',
+  //         has: [{ type: 'host', value: 'localhost:3000' }],
+  //       },
+  //       {
+  //         source: '/www/:path*',
+  //         destination: `https://www.localhost:3000/:path*`,
+  //         has: [{ type: 'host', value: 'localhost:3000' }],
+  //       },
+  //     ]
   //   }
   // },
   redirects: async () => {
