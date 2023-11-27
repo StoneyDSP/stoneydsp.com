@@ -21,13 +21,13 @@ export async function middleware(request: NextRequest) {
     )
   }
 
-  // if (!session) {
-  //   // return non-users to the www dir
-  //   return NextResponse.rewrite(
-  //     new URL(`/www${path === "/" ? "" : path}`, url),
-  //     response
-  //   )
-  // }
+  if (!session) {
+    // return non-users to the www dir
+    return NextResponse.rewrite(
+      new URL(`/www${path === "/" ? "" : path}`, url),
+      response
+    )
+  }
 
   // App router
   switch (hostname) {
