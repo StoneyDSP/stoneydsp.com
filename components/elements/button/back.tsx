@@ -1,12 +1,13 @@
 'use client'
+import 'client-only'
 // import Link from "next/link"
 
-export default function ButtonBack() {
+export default function ButtonBack(): JSX.Element {
 
   return (
     <a
       href="/projects"
-      className="absolute left-8 top-8 py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm transition___shadow_off"
+      className="absolute left-8 top-8 py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm z-50 transition___shadow_off"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

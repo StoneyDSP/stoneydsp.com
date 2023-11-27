@@ -1,5 +1,5 @@
 /** Credit: https://github.com/Sprokets/nextjs-csp-report-only */
-export default function generateCsp() {
+const generateCsp = async () => {
 
   // generate random nonce converted to base64. Must be different on every HTTP page load
   // const nonce = crypto.randomBytes(16).toString('base64')
@@ -47,6 +47,8 @@ export default function generateCsp() {
 
   return { csp: cspString, nonce };
 }
+
+export default generateCsp
 
 export const createHashedNonce = async (nonce: string) => {
 

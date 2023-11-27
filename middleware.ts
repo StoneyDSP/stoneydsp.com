@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
-import { createSupabaseMiddlewareClient, parseRequest } from '@/utils/supabase/ssr/middleware'
+import {  createSupabaseMiddlewareClient, parseRequest } from '@/utils/supabase/ssr/middleware'
 
 export async function middleware(request: NextRequest) {
 
@@ -14,13 +14,6 @@ export async function middleware(request: NextRequest) {
 
   if (!session) {
     // console.log('No session...')
-    if (hostname === `docs.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`) {
-      // return non-users to the www dir
-      return NextResponse.rewrite(
-        new URL(`/docs${path === "/" ? "" : path}`, url),
-        response
-      )
-    }
     // return non-users to the www dir
     return NextResponse.rewrite(
       new URL(`/www${path === "/" ? "" : path}`, url),
@@ -29,6 +22,7 @@ export async function middleware(request: NextRequest) {
   }
 
   if (!error) {
+    console.log('No error...')
     // App router
     switch (hostname) {
 

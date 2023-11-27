@@ -1,14 +1,15 @@
-'use client'
-import 'client-only'
+'use server'
+import 'server-only'
 import ButtonBack from '@/components/elements/button/back'
 import ButtonLike from '@/components/elements/button/like'
+import LoadingSpinner from '@/components/spinner/spinner'
 import { Suspense } from 'react'
 
-export default function BlogArticle({
+const BlogArticle = async ({
   children,
 }: {
-  children: React.ReactNode
-}) {
+  children: React.ReactNode | Promise<React.ReactNode>
+}) => {
 
   return (
     <section className='animate-in min-h-screen'>
@@ -19,7 +20,7 @@ export default function BlogArticle({
       </div>
 
       <Suspense fallback={
-        <span className='text-foreground'>Loading article...</span>
+        <main><p className='text-foreground text-center'>Loading... </p><LoadingSpinner /></main>
       }>
         {children}
       </Suspense>
@@ -27,3 +28,5 @@ export default function BlogArticle({
     </section>
   )
 }
+
+export default BlogArticle
