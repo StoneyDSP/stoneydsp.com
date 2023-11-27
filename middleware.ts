@@ -17,14 +17,37 @@ export async function middleware(request: NextRequest) {
     searchParams.length > 0 ? `?${searchParams}` : ""
   }`;
 
-  if (!session && path !== "/login") {
-    return NextResponse.redirect(new URL("/login", request.url), response);
-  } else if (session && path == "/login") {
-    return NextResponse.redirect(new URL("/account", request.url), response);
+  // if (request.headers.get("host") == "www.[::1]:3000") {
+  //   request.headers.set("host", "www.localhost:3000")
+  // }
+
+  // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
+  let hostname = request.headers
+    .get("host")!
+    .replace(".localhost:3000", `.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`)
+
+  // if (!session && path !== "/login") {
+  //   return NextResponse.redirect(new URL("/login", request.url), response);
+  // } else if (session && path == "/login") {
+  //   return NextResponse.redirect(new URL("/account", request.url), response);
+  // }
+
+  // if (path === "/auth*") {
+  //   return response
+  // }
+
+  // if (path === "/login") {
+  //   return response
+  // }
+
+  // rewrites for www pages
+  if (hostname == `www.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`) {
+    return NextResponse.rewrite(
+      new URL(`/www${path === "/" ? "" : path}`, request.url),
+    );
   }
 
   // return response
-
   return NextResponse.rewrite(
     new URL(`/www${path === "/" ? "" : path}`, request.url),
     response
