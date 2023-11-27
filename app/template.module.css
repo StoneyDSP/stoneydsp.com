@@ -30,6 +30,23 @@
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
+
+	animation: animateMain 0.3s ease 0.15s both;
+}
+
+.animate-main {
+  animation: animateMain 0.3s ease 0.15s both;
+}
+
+@keyframes animateMain {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 1024px) {
