@@ -52,7 +52,7 @@ export const metadata: Metadata  = {
   description: 'Systems, Web, Audio & Graphics',
   referrer: 'origin-when-cross-origin',
   authors: [{ name: 'Nathan', url: 'https://github.com/nathanjhood' }],
-  metadataBase: new URL(publicSiteUrl),
+  metadataBase: new URL('/', publicSiteUrl),
   manifest: new URL('manifest.webmanifest', publicSiteUrl),
   verification: {
     google: "U222mQRVBnX_8XrWZU9c6ETanVW8lFK6jvhJFQwtcdE",

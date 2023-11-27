@@ -12,14 +12,14 @@ export async function middleware(request: NextRequest) {
   // Refresh session if expired - required for Server Components
   const { data: { session }, error } = await supabase.auth.getSession()
 
-  if (!session) {
-    // console.log('No session...')
-    // return non-users to the www dir
-    return NextResponse.rewrite(
-      new URL(`/www${path === "/" ? "" : path}`, url),
-      response
-    )
-  }
+  // if (!session) {
+  //   // console.log('No session...')
+  //   // return non-users to the www dir
+  //   return NextResponse.rewrite(
+  //     new URL(`/www${path === "/" ? "" : path}`, url),
+  //     response
+  //   )
+  // }
 
   if (!error) {
     console.log('No error...')
@@ -70,7 +70,7 @@ export const config = {
      * - favicon.ico (favicon file)
      */
     {
-      source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
+      source: '/((?!api|_next/static|_next/image|favicon.ico|manifest.webmanifest|robots.txt|sitemap.xml|images|www_sitemap.xml).*)',
       missing: [
         { type: 'header', key: 'next-router-prefetch' },
         { type: 'header', key: 'purpose', value: 'prefetch' },
