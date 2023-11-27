@@ -43,7 +43,7 @@ export default function AuthForm(): JSX.Element {
       showLinks={true}
       providers={['github', 'google']}
       socialLayout={socialLayout}
-      redirectTo={`${publicSiteUrl}auth/callback`}
+      redirectTo="http://localhost:3000/auth/callback"
     />
   )
 }

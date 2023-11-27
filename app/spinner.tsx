@@ -1,6 +1,6 @@
-import styles from './Spinner.module.css'
+import styles from './template.module.css'
 
-export default function SpinnerGlobal() {
+export default function SpinnerRoot() {
   return (
     <div className={styles.container}>
 
