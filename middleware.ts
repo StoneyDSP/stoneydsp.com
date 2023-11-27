@@ -11,11 +11,15 @@ export async function middleware(request: NextRequest) {
 
   const url = request.nextUrl
 
+  // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
+  let hostname = request.headers
+    .get("host")!
+    .replace(".localhost:3000", `.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`)
+
   const searchParams = url.searchParams.toString();
+
   // Get the pathname of the request (e.g. /, /about, /blog/first-post)
-  const path = `${url.pathname}${
-    searchParams.length > 0 ? `?${searchParams}` : ""
-  }`;
+  const path = `${url.pathname}${searchParams.length > 0 ? `?${searchParams}` : ""}`;
 
   if (!session) {
     // return non-users to the www dir
@@ -28,11 +32,6 @@ export async function middleware(request: NextRequest) {
   // if (process.env.VERCEL_ENV === 'development') {
   //   request.headers.set("host", "test.localhost:3000")
   // }
-
-  // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
-  let hostname = request.headers
-    .get("host")!
-    .replace(".localhost:3000", `.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`)
 
   switch (hostname) {
 
