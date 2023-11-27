@@ -227,7 +227,7 @@
 @keyframes animateIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(1rem);
   }
   to {
     opacity: 1;
@@ -286,6 +286,7 @@ header {
 
 	/* position: absolute;
 	width: auto; */
+	/* animation: animateIn 0.3s ease 0.15s both; */
 	z-index: calc(inherit + var(--z-index__scale-depth));
 }
 
@@ -305,6 +306,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	/* animation: animateIn 0.3s ease 0.15s both; */
 	z-index: calc(inherit + var(--z-index__scale-depth));
 }
 
@@ -323,6 +325,7 @@ footer {
 }
 
 section {
+	/* animation: animateIn 0.3s ease 0.15s both; */
 	z-index: calc(inherit + var(--z-index__scale-depth));
 }
 

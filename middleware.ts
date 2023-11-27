@@ -1,63 +1,60 @@
 import { NextResponse, type NextRequest } from 'next/server'
-import { createSupabaseMiddlewareClient } from '@/utils/supabase/ssr/middleware'
+import { createSupabaseMiddlewareClient, parseRequest } from '@/utils/supabase/ssr/middleware'
 
 export async function middleware(request: NextRequest) {
 
+  // Parse the request URL
+  const { url, hostname, path, searchParams } = await parseRequest(request)
+
   // Create Supabase Middleware Client
-  const { supabase, response } = createSupabaseMiddlewareClient(request)
+  const { supabase, response } = await createSupabaseMiddlewareClient(request)
 
   // Refresh session if expired - required for Server Components
-  const session = await supabase.auth.getSession()
+  const { data: { session }, error } = await supabase.auth.getSession()
 
-  const url = request.nextUrl
-
-  // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
-  let hostname = request.headers
-    .get("host")!
-    .replace(".localhost:3000", `.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`)
-
-  const searchParams = url.searchParams.toString();
-
-  // Get the pathname of the request (e.g. /, /about, /blog/first-post)
-  const path = `${url.pathname}${searchParams.length > 0 ? `?${searchParams}` : ""}`;
-
-  if (!session) {
-    // return non-users to the www dir
-    return NextResponse.rewrite(
-      new URL(`/www${path === "/" ? "" : path}`, request.url),
+  if (error) {
+    console.log(`Supabase Middleware Client returned AuthError: ${error}`)
+    // return errored requests to the www dir
+    return NextResponse.redirect(
+      new URL(`/www${path === "/" ? "" : path}`, url),
       response
     )
   }
 
-  // if (process.env.VERCEL_ENV === 'development') {
-  //   request.headers.set("host", "test.localhost:3000")
+  // if (!session) {
+  //   // return non-users to the www dir
+  //   return NextResponse.rewrite(
+  //     new URL(`/www${path === "/" ? "" : path}`, url),
+  //     response
+  //   )
   // }
 
+  // App router
   switch (hostname) {
 
   case `www.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
     // rewrites for www pages
-    return NextResponse.rewrite(new URL(`/www${path === "/" ? "" : path}`, request.url), response)
+    return NextResponse.rewrite(new URL(`/www${path === "/" ? "" : path}`, url), response)
 
   case `api.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
     // rewrites for api pages
-    return NextResponse.rewrite(new URL(`/api${path === "/" ? "" : path}`, request.url), response)
+    return NextResponse.rewrite(new URL(`/api${path === "/" ? "" : path}`, url), response)
 
   case `app.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
     // rewrites for app pages
-    return NextResponse.rewrite(new URL(`/app${path === "/" ? "" : path}`, request.url), response)
+    return NextResponse.rewrite(new URL(`/app${path === "/" ? "" : path}`, url), response)
 
   case `blog.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
     // rewrites for blog pages
-    return NextResponse.rewrite(new URL(`/blog${path === "/" ? "" : path}`, request.url), response)
+    return NextResponse.rewrite(new URL(`/blog${path === "/" ? "" : path}`, url), response)
 
   case `docs.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
     // rewrites for docs pages
-    return NextResponse.rewrite(new URL(`/docs${path === "/" ? "" : path}`, request.url), response)
+    return NextResponse.rewrite(new URL(`/docs${path === "/" ? "" : path}`, url), response)
 
   default:
     // rewrite everything else to the www dir
-    return NextResponse.rewrite(new URL(`/www${path === "/" ? "" : path}`, request.url), response)
+    return NextResponse.rewrite(new URL(`/www${path === "/" ? "" : path}`, url), response)
   }
 }
 

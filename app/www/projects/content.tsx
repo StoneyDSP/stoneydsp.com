@@ -3,9 +3,7 @@ import BackToHome from '@/components/layouts/BackToHome'
 import BackToTop from '@/components/layouts/BackToTop'
 import RepoCards from '@/components/cards/RepoCards'
 import Link from 'next/link'
-import { Typography } from '@supabase/ui'
-
-const { Title, Text } = Typography
+import { Title, Text } from '@/lib/Typography'
 
 export default async function ProjectsContent() {
 
@@ -14,15 +12,23 @@ export default async function ProjectsContent() {
 
       <HRGradient />
 
-      <Title level={1} className='animate-in text-center opacity-80 font-bold' /* tabIndex={0} */>
-        Welcome to my workbench.
+      <Title level={1} className='text-center' tabIndex={0}>
+        My projects.
       </Title>
 
       <HRGradient />
 
-      <Text className='animate-in text-center opacity-80' /* tabIndex={0} */>
-        Read about some of my most popular projects here...
+      <HRGradient />
+
+      <Title level={2} className='text-center opacity-80 font-bold' /* tabIndex={0} */>
+        &ldquo;Welcome to my workbench.
+      </Title>
+
+      <Text className='text-center opacity-80' /* tabIndex={0} */>
+        Read about some of my most popular projects here...&rdquo;
       </Text>
+
+      <HRGradient />
 
       <HRGradient />
 
@@ -30,9 +36,13 @@ export default async function ProjectsContent() {
 
       <HRGradient />
 
-      <Text className='animate-in text-center opacity-80' /* tabIndex={0} */>
-        ...and <Link href="/contact">let me know what you think</Link>!
+      <HRGradient />
+
+      <Text className='text-center opacity-80' /* tabIndex={0} */>
+        &ldquo;...and <Link href="/contact">let me know what you think</Link>!&rdquo;
       </Text>
+
+      <HRGradient />
 
       <HRGradient />
 
