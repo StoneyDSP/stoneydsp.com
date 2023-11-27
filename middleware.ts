@@ -40,24 +40,24 @@ export async function middleware(request: NextRequest) {
     // rewrites for www pages
     return NextResponse.rewrite(new URL(`/www${path === "/" ? "" : path}`, request.url), response)
 
+  case `api.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
+    // rewrites for api pages
+    return NextResponse.rewrite(new URL(`/api${path === "/" ? "" : path}`, request.url), response)
+
   case `app.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
     // rewrites for app pages
     return NextResponse.rewrite(new URL(`/app${path === "/" ? "" : path}`, request.url), response)
 
   case `blog.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
-    // rewrites for www pages
+    // rewrites for blog pages
     return NextResponse.rewrite(new URL(`/blog${path === "/" ? "" : path}`, request.url), response)
 
   case `docs.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
-    // rewrites for www pages
+    // rewrites for docs pages
     return NextResponse.rewrite(new URL(`/docs${path === "/" ? "" : path}`, request.url), response)
 
-  case `test.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
-    // rewrites for www pages
-    return NextResponse.rewrite(new URL(`/test${path === "/" ? "" : path}`, request.url), response)
-
   default:
-    // return everything else to the www dir
+    // rewrite everything else to the www dir
     return NextResponse.rewrite(new URL(`/www${path === "/" ? "" : path}`, request.url), response)
   }
 }
