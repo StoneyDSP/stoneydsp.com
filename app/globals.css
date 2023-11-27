@@ -473,6 +473,7 @@ pre.fragment {
 	line-height: 125%;
 	font-family: var(--font-family-monospace);
 	font-size: 105%;
+	overflow-x: scroll;
 }
 
 code.fragment {

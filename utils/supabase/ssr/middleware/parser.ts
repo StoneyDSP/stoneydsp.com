@@ -10,7 +10,7 @@ export default async function parseRequest(request: NextRequest) {
 
     // // Test params for dev env (this header gets removed on dev server...)
     // if (process.env.VERCEL_ENV === 'development') {
-    //   request.headers.set("host", "test.localhost:3000")
+    //   request.headers.set("host", "docs.localhost:3000")
     // }
 
     // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)

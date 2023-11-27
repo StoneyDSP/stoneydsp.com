@@ -6,10 +6,10 @@ async function generate() {
 	const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
 
 	const pages = await globby([
-		'app/page.tsx',
-		'app/**/page.tsx',
-		'!app/_examples/**/page.tsx',
-		'!app/_*/**/page.tsx'
+		'app/www/page.tsx',
+		'app/www/**/page.tsx',
+		'!app/www/_examples/**/page.tsx',
+		'!app/www/_*/**/page.tsx'
 	])
 
 	const sitemap = `
@@ -23,6 +23,7 @@ async function generate() {
 				//   .replace('.js', '')
 				//   .replace('.mdx', '');
 					.replace('app', '')
+          .replace('/www', '')
 					.replace('.tsx', '')
 					.replace('/page', '');
 				const route = path === '/page' ? '' : path;
