@@ -26,7 +26,7 @@
     "wipe": "yarn clean && rm -rvf node_modules"
   },
   "dependencies": {
-    "@marsidev/react-turnstile": "^0.3.2",
+    "@marsidev/react-turnstile": "^0.4.0",
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.3",
