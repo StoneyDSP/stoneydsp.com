@@ -80,7 +80,7 @@
 			/* header */
 			--header-background-color: hsl(240, 33%, 98%);
 			--header-separator-color: hsl(240, 39%, 83%);
-			--header-gradient-image: url('../styles/doxygen/nav_h.png');
+			--header-gradient-image: url('../public/images/doxygen/nav_h.png');
 			--group-header-separator-color: hsl(240, 40%, 66%);
 			--group-header-color: hsl(240, 40%, 35%);
 			--inherit-header-color: hsl(0, 0%, 50%);
@@ -121,13 +121,13 @@
 			--colour-dull: hsla(0, 0%, 0%, 50%);
 			--colour-glow: hsl(180, 100%, 50%);
 
-			--table-gradient: url("../styles/doxygen/tab_b.png");
-			--table-row-gradient: ("../styles/doxygen/nav_h.png");
+			--table-gradient: url("../public/images/doxygen/tab_b.png");
+			--table-row-gradient: ("../public/images/doxygen/nav_h.png");
 
 			--footer-foreground-color: hsl(240, 41%, 27%);
 			--citation-label-color: hsl(240, 39%, 33%);
 
-			--header-nav-tab: url('../styles/doxygen/bc_s.png');
+			--header-nav-tab: url('../public/images/doxygen/bc_s.png');
 		}
 	}
 
@@ -162,7 +162,7 @@
 			/* header */
 			--header-background-color: hsl(240, 42%, 5%);
 			--header-separator-color: hsl(240, 39%, 13%);
-			--header-gradient-image: url('../styles/doxygen/nav_hd.png');
+			--header-gradient-image: url('../public/images/doxygen/nav_hd.png');
 			--group-header-separator-color: hsl(240, 40%, 26%);
 			--group-header-color: hsl(240, 39%, 69%);
 			--inherit-header-color: hsl(0, 0%, 63%);
@@ -203,13 +203,13 @@
 			--colour-dull: hsla(0, 0%, 100%, 50%);
 			--colour-glow: hsl(180, 100%, 50%);
 
-			--table-gradient: url("../styles/doxygen/tab_bd.png");
-			--table-row-gradient: ("../styles/doxygen/nav_hd.png");
+			--table-gradient: url("../public/images/doxygen/tab_bd.png");
+			--table-row-gradient: ("../public/images/doxygen/nav_hd.png");
 
 			--footer-foreground-color: hsl(240, 39%, 54%);
 			--citation-label-color: hsl(240, 39%, 69%);
 
-			--header-nav-tab: url('../styles/doxygen/bc_sd.png');
+			--header-nav-tab: url('../public/images/doxygen/bc_sd.png');
 		}
 	}
 }
