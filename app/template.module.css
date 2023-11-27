@@ -31,6 +31,9 @@
 	flex-direction: column;
 	gap: 2rem;
 
+	background-color: hsl(var(--background));
+	color: hsl(var(--foreground));
+
 	animation: animateMain 0.3s ease 0.15s both;
 }
 
