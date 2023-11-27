@@ -43,28 +43,6 @@ export default async function HomeContent(): Promise<JSX.Element> {
 
       <HRGradient />
 
-      {/* <h2 className='animate-in text-center' tabIndex={0}>
-        Welcome to my workbench.
-      </h2>
-
-      <HRGradient />
-
-      <div className='flex justify-center align-middle items-center'>
-        <GitStatsCard />
-      </div>
-
-      <HRGradient />
-
-      <div className='flex justify-center align-middle items-center'>
-        <GitStatsTopLangsCard />
-      </div>
-
-      <HRGradient />
-
-      <RepoCards />
-
-      <HRGradient /> */}
-
       <BackToTop />
 
       <HRGradient />
