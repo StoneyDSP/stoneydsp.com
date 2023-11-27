@@ -1,10 +1,13 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import parseRequest from '@/utils/supabase/ssr/middleware/parser'
 import logMiddlewareRequest from '@/utils/logger'
 import generateCsp from '@/utils/headers/CSP'
 import customStorageAdapter from '@/utils/supabase/ssr/storage'
 
-export const createSupabaseMiddlewareClient = (request: NextRequest) => {
+export { parseRequest }
+
+export async function createSupabaseMiddlewareClient(request: NextRequest) {
 
   // Clone the request
   const requestHeaders = new Headers(request.headers)
@@ -140,7 +143,7 @@ export async function canInitSupabaseMiddlewareClient(request: NextRequest) {
   try {
 
     // Create Supabase Middleware Client
-    const { supabase, response } = createSupabaseMiddlewareClient(request)
+    const { supabase, response } = await createSupabaseMiddlewareClient(request)
 
     // Refresh session if expired - required for Server Components
     await supabase.auth.getSession()

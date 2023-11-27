@@ -2,10 +2,8 @@ import 'server-only'
 import { ResourceCards } from '@/components/cards'
 import HRGradient from '@/components/layouts/HRGradient'
 import BackToTop from '@/components/layouts/BackToTop'
-import { Typography } from '@supabase/ui'
 import { LogoWideL } from '@/components/icons/logo/wide'
-
-const { Title, Text } = Typography
+import { Title, Text } from '@/lib/Typography'
 
 export default async function HomeContent(): Promise<JSX.Element> {
 
@@ -28,11 +26,9 @@ export default async function HomeContent(): Promise<JSX.Element> {
 
           <HRGradient />
 
-          <Text className='animate-in text-center italic'>
-            <Title level={2} className='pt-8'>
-              Systems, Web, Audio & Visual programming
-            </Title>
-          </Text>
+          <Title level={2} className='pt-8 text-center italic'>
+            Systems, Web, Audio & Visual programming
+          </Title>
 
         </div>
       </div>
@@ -42,28 +38,6 @@ export default async function HomeContent(): Promise<JSX.Element> {
       <ResourceCards />
 
       <HRGradient />
-
-      {/* <h2 className='animate-in text-center' tabIndex={0}>
-        Welcome to my workbench.
-      </h2>
-
-      <HRGradient />
-
-      <div className='flex justify-center align-middle items-center'>
-        <GitStatsCard />
-      </div>
-
-      <HRGradient />
-
-      <div className='flex justify-center align-middle items-center'>
-        <GitStatsTopLangsCard />
-      </div>
-
-      <HRGradient />
-
-      <RepoCards />
-
-      <HRGradient /> */}
 
       <BackToTop />
 
