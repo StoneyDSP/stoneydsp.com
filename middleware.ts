@@ -13,6 +13,14 @@ export async function middleware(request: NextRequest) {
   const { data: { session }, error } = await supabase.auth.getSession()
 
   if (!session) {
+    // console.log('No session...')
+    if (hostname === `docs.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`) {
+      // return non-users to the www dir
+      return NextResponse.rewrite(
+        new URL(`/docs${path === "/" ? "" : path}`, url),
+        response
+      )
+    }
     // return non-users to the www dir
     return NextResponse.rewrite(
       new URL(`/www${path === "/" ? "" : path}`, url),

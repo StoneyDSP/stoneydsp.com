@@ -1,26 +1,26 @@
 // import { DetailedHTMLProps, type HTMLAttributes } from 'react'
 'use client'
 import 'client-only'
+import classNames from 'classnames'
 import React from 'react'
 
-export function Text({
-  children,
-  className,
-  style,
-  tabIndex
-}: {
+interface Props {
   children: React.ReactNode, // This tag must have child elements
   className?: string | undefined,
   style?: React.CSSProperties | undefined,
   tabIndex?: number | undefined,
-}): React.JSX.Element {
-  return (
-    <p
-      className={className ? className : undefined}
-      tabIndex={tabIndex ? tabIndex : undefined}
-      style={style ? style : undefined}
-    >
-      {children}
-    </p>
-  )
+  id?: string
 }
+
+const Text = ({ children, className, style, tabIndex, id }: Props) => (
+  <p
+    id={id}
+    style={style ? style : undefined}
+    tabIndex={tabIndex ? tabIndex : undefined}
+    className={classNames(className)}
+  >
+    {children}
+  </p>
+)
+
+export default Text
