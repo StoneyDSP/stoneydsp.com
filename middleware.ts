@@ -3,25 +3,32 @@ import { createSupabaseMiddlewareClient } from '@/utils/supabase/ssr/middleware'
 
 export async function middleware(request: NextRequest) {
 
-  try {
+  // Create Supabase Middleware Client
+  const { supabase, response } = createSupabaseMiddlewareClient(request)
 
-    // Create Supabase Middleware Client
-    const { supabase, response } = createSupabaseMiddlewareClient(request)
+  // Refresh session if expired - required for Server Components
+  const session = await supabase.auth.getSession()
 
-    // Refresh session if expired - required for Server Components
-    await supabase.auth.getSession()
+  const url = request.nextUrl
 
-    return response
+  const searchParams = url.searchParams.toString();
+  // Get the pathname of the request (e.g. /, /about, /blog/first-post)
+  const path = `${url.pathname}${
+    searchParams.length > 0 ? `?${searchParams}` : ""
+  }`;
 
-  } catch (e) {
-
-    // If you are here, a Supabase client could not be created!
-    return NextResponse.next({
-      request: {
-        headers: request.headers,
-      },
-    })
+  if (!session && path !== "/login") {
+    return NextResponse.redirect(new URL("/login", request.url), response);
+  } else if (session && path == "/login") {
+    return NextResponse.redirect(new URL("/account", request.url), response);
   }
+
+  // return response
+
+  return NextResponse.rewrite(
+    new URL(`/www${path === "/" ? "" : path}`, request.url),
+    response
+  );
 
 }
 
@@ -42,4 +49,28 @@ export const config = {
       ],
     },
   ],
+}
+
+async function canInitSupabaseMiddlewareClient(request: NextRequest) {
+
+  try {
+
+    // Create Supabase Middleware Client
+    const { supabase, response } = createSupabaseMiddlewareClient(request)
+
+    // Refresh session if expired - required for Server Components
+    await supabase.auth.getSession()
+
+    return response
+
+  } catch (e) {
+
+    // If you are here, a Supabase client could not be created!
+    return NextResponse.next({
+      request: {
+        headers: request.headers,
+      },
+    })
+  }
+
 }

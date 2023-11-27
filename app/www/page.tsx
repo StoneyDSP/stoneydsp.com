@@ -1,7 +1,6 @@
 import HomeContent from '@/app/www/content'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
-// import { createClient } from '@/utils/supabase/server'
 // import { cookies } from 'next/headers'
 
 // export const dynamic = 'force-dynamic'
