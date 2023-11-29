@@ -1,5 +1,6 @@
 import { getPublicSiteURL } from '@/utils/headers/URL'
-import { createServerClient } from "@supabase/ssr"
+// import { type GetServerSidePropsContext } from 'next'
+import { createServerClient, type CookieOptions, serialize } from "@supabase/ssr"
 import { cookies } from "next/headers"
 import AccountForm from "./account-form"
 import { redirect } from "next/navigation"
@@ -18,11 +19,14 @@ export const metadata: Metadata = {
 }
 
 
+
+
 export default async function AccountPage() {
 
-  console.log(` \u{25CB} AccountPage() :: Returning new ${metadata.title} Page... `)
+  // console.log(` \u{25CB} AccountPage() :: Returning new ${metadata.title} Page... `)
 
-  try {
+  // try {
+
     const cookieStore = cookies()
 
     const supabase = createServerClient(
@@ -48,10 +52,10 @@ export default async function AccountPage() {
 
     return <AccountForm session={session} />
 
-  } catch(e) {
+  // } catch(e) {
 
-    const error: any = e
-    console.log(` \u{2715} AccountPage() :: Èrror returning new ${metadata.title} Page...: ${error}`)
-    return Error(error)
-  }
+  //   const error: any = e
+  //   console.log(` \u{2715} AccountPage() :: Èrror returning new ${metadata.title} Page...: ${error}`)
+  //   return Error(error)
+  // }
 }

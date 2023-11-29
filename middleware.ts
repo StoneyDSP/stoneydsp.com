@@ -72,20 +72,21 @@ export default async function middleware(request: NextRequest) {
 
                 const error: any = e
                 console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error returning Supabase Middleware Client response: ${error}`)
-                return Error(error)
+                throw new Error(error)
               }
 
             } catch(e) {
 
               const error: any = e
               console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error fetching Supabase Middleware Client user data: ${error}`)
-              return Error(error)
+              throw new Error(error)
             }
 
           } catch(e) {
 
             const error: any = e
             console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error refreshing Supabase Middleware Client Auth data: ${error}`)
+            throw new Error(error)
           }
 
         } catch (e) {
@@ -93,21 +94,21 @@ export default async function middleware(request: NextRequest) {
           const error: any = e
           console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error returning Supabase Middleware Client Auth data: ${error}`)
 
-          return Error(error)
+          throw new Error(error)
         }
       }
 
       const e: any = error
       console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error getting Supabase Middleware Client Auth data: ${e}`)
 
-      return Error(e)
+      throw new Error(e)
 
     } catch(e) {
 
       const error: any = e
       console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error creating Supabase Middleware Client Auth data: ${error}`)
 
-      return Error(error)
+      throw new Error(error)
     }
 
   } catch (e) {
@@ -115,7 +116,7 @@ export default async function middleware(request: NextRequest) {
     const error: any = e
     console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error creating Supabase Middleware Client response: ${error}`)
 
-    return Error(error)
+    throw new Error(error)
   }
 }
 

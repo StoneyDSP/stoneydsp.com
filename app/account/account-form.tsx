@@ -1,14 +1,17 @@
 'use client'
-// import 'client-only'
+import 'client-only'
 import { useCallback, useEffect, useState } from 'react'
-import { createClient } from '@/lib/supabase/client'
+import { createBrowserClient } from '@supabase/ssr'
 import { type Session } from '@supabase/supabase-js'
 // Import the new component
 import Avatar from './avatar'
 
-export default function AccountForm({ session }: { session: Session }) {
+export default function AccountForm({ session }: { session: Session | null }) {
 
-  const supabase = createClient()
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
 
   const [loading, setLoading] = useState(true)
   const [fullname, setFullname] = useState<string | null>(null)
@@ -144,7 +147,7 @@ export default function AccountForm({ session }: { session: Session }) {
         </button>
       </div>
 
-      <div>
+      <div className='w-1/2'>
         <form action="/auth/signout" method="post">
           <button
             className='

@@ -1,5 +1,5 @@
 'use client'
-// import 'client-only'
+import 'client-only'
 import { createBrowserClient } from "@supabase/ssr"
 import { useState, useEffect } from "react"
 import Image from 'next/image'

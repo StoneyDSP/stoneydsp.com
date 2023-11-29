@@ -44,36 +44,38 @@ export async function POST(req: NextRequest) {
     if (!error) {
 
       if (session) {
-        console.log('logging out...')
-        await supabase.auth.signOut()
+
+        try {
+          console.log('logging out...')
+          await supabase.auth.signOut()
+          // Middleware response was successful!
+          const { isBot } = userAgent(req)
+          const visitor = isBot ? 'Bot' : 'Human'
+          const travelling = isBot ? 'crawling' : 'visiting'
+          const country = (req.geo && req.geo.country) || 'Earth'
+          const city = (req.geo && req.geo.city) || 'Nowhere'
+          const region = (req.geo && req.geo.region) || 'Somewhere'
+          const ip = (req.ip) || 'Visitor'
+          // const agent = (request.headers.get('user-agent')) || 'Agent Unknown'
+
+          console.log(` \u{2713} Route - ${req.method} ${req.url} :: ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${'user agent' /* agent */}.`)
+
+          return NextResponse.redirect(new URL('/', req.url), {
+            status: 302,
+          })
+
+        } catch(error) {
+
+          const e: any = error
+          console.log(` \u{2715} Route - ${req.method} ${req.url} :: Error Supabase Route Handler on '/auth/signout': ${e}`)
+
+          return Error(e)
+        }
+
       } else {
+
         console.log('no session to log out from')
-      }
-
-      try {
-        // Middleware response was successful!
-        const { isBot } = userAgent(req)
-        const visitor = isBot ? 'Bot' : 'Human'
-        const travelling = isBot ? 'crawling' : 'visiting'
-        const country = (req.geo && req.geo.country) || 'Earth'
-        const city = (req.geo && req.geo.city) || 'Nowhere'
-        const region = (req.geo && req.geo.region) || 'Somewhere'
-        const ip = (req.ip) || 'Visitor'
-        // const agent = (request.headers.get('user-agent')) || 'Agent Unknown'
-
-        console.log(` \u{2713} Route - ${req.method} ${req.url} :: ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${'user agent' /* agent */}.`)
-
-        return NextResponse.redirect(new URL(next, req.nextUrl.origin), {
-          status: 302,
-          headers: requestHeaders
-        })
-
-      } catch(error) {
-
-        const e: any = error
-        console.log(` \u{2715} Route - ${req.method} ${req.url} :: Error Supabase Route Handler on '/auth/signout': ${e}`)
-
-        return Error(e)
+        throw new Error('no session to log out from')
       }
     }
 

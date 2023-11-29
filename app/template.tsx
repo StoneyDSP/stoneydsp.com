@@ -3,7 +3,7 @@
 // import { Suspense } from 'react'
 import styles from '@/app/template.module.css'
 
-export default function Template({
+export default async function Template({
   children
 }: {
   children: React.ReactNode | Promise<React.ReactNode>

@@ -1,7 +1,6 @@
 import Footer from '@/components/elements/footer/footer'
 import Header from '@/components/elements/header/header'
 import SpinnerRoot from '@/app/spinner'
-// import { Providers } from '@/app/providers'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Analytics } from '@vercel/analytics/react'
 // import ConsentBanner from '@/components/elements/banner/consent'
@@ -13,7 +12,7 @@ import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function RootLayout({
+export default async function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
   children,
