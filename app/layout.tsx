@@ -8,7 +8,10 @@ import { Analytics } from '@vercel/analytics/react'
 // import { GoogleTagManager } from '@next/third-parties/google'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
-import '@/app/globals.css'
+import { Inter } from 'next/font/google'
+import './globals.css'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
   // Layouts must accept a children prop.
@@ -16,24 +19,35 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode | Promise<React.ReactNode>
-}): JSX.Element {
+}) {
 
-  return (
-    <html lang="en">
-      <body>
-        <Suspense fallback={<SpinnerRoot />}>
-          <Header />
-            {/* <Providers> */}
+  console.log(` \u{25CB} RootLayout() :: Returning new Root Layout object... `)
+
+  try {
+
+    console.log(` \u{2713} RootLayout() :: Returned new Root Layout object. `)
+
+    return (
+      <html lang="en">
+        <body className={inter.className}>
+          <Suspense fallback={<SpinnerRoot />}>
+            <Header />
               <Analytics />
               {children}
               {/* <ConsentBanner /> */}
-            {/* </Providers> */}
-          <Footer />
-        </Suspense>
-      </body>
-      {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
-    </html>
-  )
+            <Footer />
+          </Suspense>
+        </body>
+        {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
+      </html>
+    )
+
+  } catch(e) {
+
+    const error: any = e
+    console.log(` \u{2715} RootLayout() - :: Error returning new Root Layout object: ${error}`)
+    return Error(error)
+  }
 }
 
 // export function MdxLayout({ children }: { children: React.ReactNode }) {

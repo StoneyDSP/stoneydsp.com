@@ -1,5 +1,5 @@
 import { type SupportedStorage } from '@supabase/supabase-js'
-import supportsLocalStorage from '@/utils/supabase/ssr/storage/support'
+import supportsLocalStorage from './support'
 
 const customStorageAdapter: SupportedStorage = {
   getItem: (key) => {

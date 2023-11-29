@@ -14,14 +14,14 @@ export default async function DocsContent(): Promise<JSX.Element> {
       <HRGradient />
 
       <div className='flex flex-col items-center'>
-        <Title level={1} className='animate-in w-2/3 text-center opacity-80 font-normal' /* tabIndex={0} */>
+        <Title level={1} className='animate-in w-2/3 text-center opacity-90 font-normal' /* tabIndex={0} */>
           Docs
         </Title>
       </div>
 
       <HRGradient />
 
-      <Text className='animate-in text-center opacity-80 text-3xl' /* tabIndex={0} */>
+      <Text className='animate-in text-center opacity-90 text-3xl' /* tabIndex={0} */>
         &ldquo;Under construction...&rdquo;
       </Text>
 
@@ -31,7 +31,7 @@ export default async function DocsContent(): Promise<JSX.Element> {
 
       <HRGradient />
 
-      <Text className='animate-in text-center opacity-80 text-3xl' /* tabIndex={0} */>
+      <Text className='animate-in text-center opacity-90 text-3xl' /* tabIndex={0} */>
         &ldquo;...Check back soon!&rdquo;
       </Text>
 

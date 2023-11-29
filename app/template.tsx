@@ -1,17 +1,23 @@
-import Main from '@/components/elements/main/main'
-import LoadingSpinner from '@/components/spinner/spinner'
-import { Suspense } from 'react'
+// import Main from '@/components/elements/main/main'
+// import LoadingSpinner from '@/components/spinner/spinner'
+// import { Suspense } from 'react'
 import styles from '@/app/template.module.css'
 
 export default function Template({
   children
 }: {
-  children: React.ReactNode
+  children: React.ReactNode | Promise<React.ReactNode>
 }) {
 
-  return (
-    <Suspense fallback={<main><p className='text-foreground text-center'>Loading... </p><LoadingSpinner /></main>}>
-      <Main>
+  console.log(` \u{25CB} Template() :: Returning new Template object... `)
+
+  try {
+
+    console.log(` \u{2713} Template() :: Returned Template object. `)
+
+    return (
+
+      <main>
         <div className={styles.container}>
           <article className={styles.content}>
             <section className={styles.flexboxgrid}>
@@ -19,7 +25,16 @@ export default function Template({
             </section>
           </article>
         </div>
-      </Main>
-    </Suspense>
-  )
+      </main>
+
+    )
+
+  } catch(e) {
+
+    const error: any = e
+    console.log(` \u{2715} RootLayout() - :: Error returning new Template object: ${error}`)
+    return Error(error)
+  }
+
+
 }
