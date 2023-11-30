@@ -1,4 +1,4 @@
-import AuthError from '@/app/app/auth/auth-error/content'
+import AuthError from './content'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
 
