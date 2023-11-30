@@ -1,9 +1,10 @@
+'use server'
+import 'server-only'
 import NavBadge from './badge'
 import NavMenu from './menu'
 import NavUser from './user'
 import LoadingSpinner from '@/components/layouts/Spinner'
 import { Suspense } from 'react'
-
 
 export default function Nav(){
 
