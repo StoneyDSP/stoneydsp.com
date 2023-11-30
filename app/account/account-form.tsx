@@ -1,24 +1,52 @@
 'use client'
 import 'client-only'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState, Suspense } from 'react'
 import { createBrowserClient } from '@supabase/ssr'
-import { type Session } from '@supabase/supabase-js'
+import { User } from '@supabase/supabase-js'
+
 // Import the new component
 import Avatar from './avatar'
 
-export default function AccountForm({ session }: { session: Session | null }) {
+export default function AccountForm() {
 
   const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
-
   const [loading, setLoading] = useState(true)
   const [fullname, setFullname] = useState<string | null>(null)
   const [username, setUsername] = useState<string | null>(null)
   const [website, setWebsite] = useState<string | null>(null)
   const [avatar_url, setAvatarUrl] = useState<string | null>(null)
-  const user = session?.user
+  const [user, setUser] = useState<User | undefined>(undefined)
+  // const user = session?.user
+
+  const getUser = useCallback(async () => {
+
+    try {
+
+      setLoading(true)
+      const { data: { session }, error } = await supabase.auth.getSession()
+
+      if (error) {
+        throw error
+      }
+
+      if (session) {
+        setUser(session?.user)
+      }
+
+    } catch (error) {
+      alert('Error loading getting user!')
+    } finally {
+      setLoading(false)
+    }
+
+  }, [supabase])
+
+  useEffect(() => {
+    getUser()
+  }, [supabase, getUser])
 
   const getProfile = useCallback(async () => {
     try {
@@ -97,7 +125,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
       <div>
         <label htmlFor="email">Email</label>
-        <input id="email" type="text" value={session?.user.email} disabled />
+        <input id="email" type="text" value={user?.email} disabled />
       </div>
       <div>
         <label htmlFor="fullName">Full Name</label>
@@ -130,24 +158,27 @@ export default function AccountForm({ session }: { session: Session | null }) {
       <div>
         <button
           className='
-            transition-colors
-            bg-supabutton
-            hover:bg-supabutton-hover
-            border
-            border-foreground/20
-            rounded-md
-            px-4
-            py-2
-            mb-2
-          '
+          transition-colors
+          bg-supabutton
+          hover:bg-supabutton-hover
+          border
+          border-foreground/20
+          rounded-md
+          px-4
+          py-2
+          mb-2
+        '
           onClick={() => updateProfile({ fullname, username, website, avatar_url })}
+          // onChange={(e) => getSession()}
           disabled={loading}
         >
-          <span className="text-lg font-semibold text-center text-white">{loading ? 'Loading ...' : 'Update'}</span>
+          <span className="text-lg font-semibold text-center text-white">
+            {loading ? 'Loading ...' : 'Update'}
+          </span>
         </button>
       </div>
 
-      <div className='w-1/2'>
+      <div>
         <form action="/auth/signout" method="post">
           <button
             className='
@@ -163,7 +194,9 @@ export default function AccountForm({ session }: { session: Session | null }) {
             '
             type="submit"
           >
-            <span className="text-lg font-semibold text-center text-white">Sign&nbsp;Out</span>
+            <span className="text-lg font-semibold text-center text-white">
+              Sign&nbsp;Out
+            </span>
           </button>
         </form>
       </div>

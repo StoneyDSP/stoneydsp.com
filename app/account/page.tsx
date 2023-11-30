@@ -1,10 +1,8 @@
 import { getPublicSiteURL } from '@/utils/headers/URL'
-// import { type GetServerSidePropsContext } from 'next'
-import { createServerClient, type CookieOptions, serialize } from "@supabase/ssr"
+import { redirect } from 'next/navigation'
+import { createServerClient } from "@supabase/ssr"
 import { cookies } from "next/headers"
 import AccountForm from "./account-form"
-import { redirect } from "next/navigation"
-import './account.css'
 
 import { Metadata } from 'next'
 
@@ -17,9 +15,6 @@ export const metadata: Metadata = {
     canonical: new URL('projects', getPublicSiteURL())
   }
 }
-
-
-
 
 export default async function AccountPage() {
 
@@ -42,15 +37,26 @@ export default async function AccountPage() {
     )
 
     const {
-      data: { session },
+      data: { session }, error,
     } = await supabase.auth.getSession()
 
-    if (!session) {
-      console.log(` \u{2713} AccountPage() :: No session, redirecting to /login`)
-      return redirect('/login')
+    if (!error) {
+
+      if (!session) {
+        console.log(` \u{2713} AccountPage() :: No session, redirecting to /login`)
+        return redirect('/login')
+      }
+
+      return (
+        <AccountForm
+          // session={session}
+        />
+      )
     }
 
-    return <AccountForm session={session} />
+    console.log(` \u{2713} AccountPage() :: Authentication error: ${error.message}`)
+
+    throw error
 
   // } catch(e) {
 

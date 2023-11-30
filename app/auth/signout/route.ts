@@ -69,7 +69,7 @@ export async function POST(req: NextRequest) {
           const e: any = error
           console.log(` \u{2715} Route - ${req.method} ${req.url} :: Error Supabase Route Handler on '/auth/signout': ${e}`)
 
-          return Error(e)
+          throw new Error(e)
         }
 
       } else {
@@ -79,17 +79,16 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    const e: any = error
-    console.log(` \u{2715} Route - ${req.method} ${req.url} :: Error Supabase Route Handler on '/auth/signout': ${e}`)
+    console.log(` \u{2715} Route - ${req.method} ${req.url} :: Error Supabase Route Handler on '/auth/signout': ${error.message}`)
 
-    return Error(e)
+    throw error
 
-  } catch(error) {
+  } catch(e) {
 
-    const e: any = error
-    console.log(` \u{2715} Route - ${req.method} ${req.url} :: Error Supabase Route Handler on '/auth/signout': ${e}`)
+    const error: any = e
+    console.log(` \u{2715} Route - ${req.method} ${req.url} :: Error Supabase Route Handler on '/auth/signout': ${error}`)
 
-    return Error(e)
+    throw new Error(error)
   }
 
 }

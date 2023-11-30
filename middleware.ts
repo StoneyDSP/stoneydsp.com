@@ -38,14 +38,15 @@ export default async function middleware(request: NextRequest) {
 
                 userData = 'user found'
 
-                // // if user is signed in and the current path is /login redirect the user to /account
-                // if (request.nextUrl.pathname === '/login') {
-                //   return NextResponse.redirect(new URL('/account', request.nextUrl.origin))
-                // }
+                // if user is signed in and the current path is /login redirect the user to /account
+                if (request.nextUrl.pathname === '/login') {
+                  console.log('going to login page...?')
+                  return NextResponse.redirect(new URL('/account', request.nextUrl.origin))
+                }
 
               }
 
-              // // if user is not signed in and the current path is not / redirect the user to /
+              // // // if user is not signed in and the current path is not / redirect the user to /
               // if (!user && request.nextUrl.pathname === '/account') {
               //   return NextResponse.redirect(new URL('/login', request.nextUrl.origin))
               // }
@@ -64,7 +65,7 @@ export default async function middleware(request: NextRequest) {
 
               try {
 
-                return response
+                return NextResponse.next({...response})
 
                 // return response
 
@@ -98,10 +99,8 @@ export default async function middleware(request: NextRequest) {
         }
       }
 
-      const e: any = error
-      console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error getting Supabase Middleware Client Auth data: ${e}`)
-
-      throw new Error(e)
+      console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error getting Supabase Middleware Client Auth data: ${error.message}`)
+      throw error
 
     } catch(e) {
 

@@ -5,7 +5,6 @@ import { useState, useEffect } from "react"
 import Image from 'next/image'
 import { Database } from '@/app/types_db'
 type Profiles = Database['public']['Tables']['profiles']['Row']
-import './account.css'
 
 export default function Avatar({
   uid,
