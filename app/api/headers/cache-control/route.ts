@@ -34,6 +34,6 @@ export async function GET(request: NextRequest) {
     const error: any = e
     console.log(`ERROR: ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`)
 
-    return Error(error)
+    throw new Error(error)
   }
 }
