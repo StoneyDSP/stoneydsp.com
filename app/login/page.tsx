@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation'
 import { Metadata } from 'next'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 
-// export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Login',
@@ -15,17 +15,17 @@ export const metadata: Metadata = {
   }
 }
 
-export default function Login({
+export default function LoginPage({
   searchParams,
 }: {
   searchParams: { message: string }
 }) {
 
-  console.log(` \u{25CB} Login() :: Returning new ${metadata.title} Page... `)
+  console.log(` \u{25CB} LoginPage() :: Returning new ${metadata.title} Page... `)
 
   try {
 
-    console.log(` \u{2713} Login() :: Returned new ${metadata.title} Page. `)
+    console.log(` \u{2713} LoginPage() :: Returned new ${metadata.title} Page. `)
 
     const signIn = async (formData: FormData) => {
       'use server'
@@ -211,8 +211,6 @@ export default function Login({
 
     const error: any = e
     console.log(` \u{2715} Index() - :: Error returning new ${metadata.title} Page: ${error}`)
-    return Error(error)
+    throw new Error(error)
   }
-
-
 }
