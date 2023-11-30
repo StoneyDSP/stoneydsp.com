@@ -38,7 +38,7 @@ export default async function NavUser(){
         </div>
         ) : (
         <span className="text-xs font-light text-center">
-          Systems, Web, Audio & Graphics
+          Systems,&nbsp;Web, Audio&nbsp;&&nbsp;Graphics
         </span>
         )
       }
@@ -49,8 +49,8 @@ export default async function NavUser(){
             type="submit"
             className='
               transition-colors
-              bg-supabutton
-              hover:bg-supabutton-hover
+              bg-green-600
+              hover:bg-purple-400
               border
               border-foreground/20
               rounded-md
@@ -69,8 +69,8 @@ export default async function NavUser(){
           href="/login"
           className="
             transition-colors
-            bg-supabutton
-            hover:bg-supabutton-hover
+            bg-green-600
+            hover:bg-purple-400
             border
             border-foreground/20
             rounded-md

@@ -8,8 +8,8 @@ export default function NavBadge() {
       <Link
         className="
           transition-colors
-          bg-supabutton
-          hover:bg-supabutton-hover
+          bg-green-600
+          hover:bg-purple-400
           border
           border-foreground/20
           rounded-md

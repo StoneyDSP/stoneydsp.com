@@ -87,8 +87,8 @@ export default function Avatar({
         <label
           className='
             transition-colors
-            bg-supabutton
-            hover:bg-supabutton-hover
+            bg-green-500
+            hover:bg-purple-600
             border
             border-foreground/20
             rounded-md

@@ -1,6 +1,7 @@
 import NavBadge from './badge'
 import NavMenu from './menu'
 import NavUser from './user'
+import LoadingSpinner from '@/components/layouts/Spinner'
 import { Suspense } from 'react'
 
 
@@ -14,7 +15,7 @@ export default function Nav(){
 
         <NavMenu />
 
-        <Suspense fallback={<p className='text-foreground text-sm'>Loading session...</p>}>
+        <Suspense fallback={<LoadingSpinner />}>
           <NavUser />
         </Suspense>
 
