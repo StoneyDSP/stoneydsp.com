@@ -1,73 +1,122 @@
-import { NextResponse, type NextRequest } from 'next/server'
-import {  createSupabaseMiddlewareClient, parseRequest } from '@/utils/supabase/ssr/middleware'
+import { userAgent, NextResponse, type NextRequest } from 'next/server'
+import { createClient } from '@/lib/supabase/middleware'
 
-export async function middleware(request: NextRequest) {
 
-  // Parse the request URL
-  const { url, hostname, path, searchParams } = await parseRequest(request)
+export default async function middleware(request: NextRequest) {
 
-  // Create Supabase Middleware Client
-  const { supabase, response } = await createSupabaseMiddlewareClient(request)
+  // const url = new URL(request.url)
+  // const { searchParams, origin } = url
+  // const next = searchParams.get('next') ?? '/'
 
-  // Refresh session if expired - required for Server Components
-  const { data: { session }, error } = await supabase.auth.getSession()
+  try {
 
-  // if (!session) {
-  //   // console.log('No session...')
-  //   // return non-users to the www dir
-  //   return NextResponse.rewrite(
-  //     new URL(`/www${path === "/" ? "" : path}`, url),
-  //     response
-  //   )
-  // }
+    const { supabase, response } = createClient(request)
 
-  if (!error) {
-    // console.log('No error...')
+    try {
 
-    if (session) {
-      // console.log('Session found...')
+      // Refresh session if expired - required for Server Components
+      const { data: { session }, error }  = await supabase.auth.getSession()
 
-      // App router
-      switch (hostname) {
+      if (!error) {
 
-        case `www.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
-          // rewrites for www pages
-          return NextResponse.rewrite(new URL(`/www${path === "/" ? "" : path}`, url), response)
+        try {
 
-        case `api.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
-          // rewrites for api pages
-          return NextResponse.rewrite(new URL(`/api${path === "/" ? "" : path}`, url), response)
+          try {
 
-        case `app.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
-          // rewrites for app pages
-          return NextResponse.rewrite(new URL(`/app${path === "/" ? "" : path}`, url), response)
+            let sessionData: string = 'session not found'
+            let userData: string = 'user not found'
 
-        case `blog.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
-          // rewrites for blog pages
-          return NextResponse.rewrite(new URL(`/blog${path === "/" ? "" : path}`, url), response)
+            if (session) {
+              sessionData = 'session found'
+            }
 
-        case `docs.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`:
-          // rewrites for docs pages
-          return NextResponse.rewrite(new URL(`/docs${path === "/" ? "" : path}`, url), response)
+            try {
 
-        default:
-          // rewrite everything else to the www dir
-          return NextResponse.rewrite(new URL(`/www${path === "/" ? "" : path}`, url), response)
+              const { data: { user } } = await supabase.auth.getUser()
+
+              if(user) {
+
+                userData = 'user found'
+
+                // if user is signed in and the current path is /login redirect the user to /account
+                if (request.nextUrl.pathname === '/login') {
+                  console.log('going to login page...?')
+                  return NextResponse.redirect(new URL('/account', request.nextUrl.origin))
+                }
+
+              }
+
+              // // // if user is not signed in and the current path is not / redirect the user to /
+              // if (!user && request.nextUrl.pathname === '/account') {
+              //   return NextResponse.redirect(new URL('/login', request.nextUrl.origin))
+              // }
+
+              // Middleware response was successful!
+              const { isBot } = userAgent(request)
+              const visitor = isBot ? 'Bot' : 'Human'
+              const travelling = isBot ? 'crawling' : 'visiting'
+              const country = (request.geo && request.geo.country) || 'Earth'
+              const city = (request.geo && request.geo.city) || 'Nowhere'
+              const region = (request.geo && request.geo.region) || 'Somewhere'
+              const ip = (request.ip) || 'Visitor'
+              // const agent = (request.headers.get('user-agent')) || 'Agent Unknown'
+
+              console.log(` \u{2713} Middleware - ${request.method} ${request.url} :: ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${'user agent' /* agent */}. ${sessionData} | ${userData}`)
+
+              try {
+
+                return NextResponse.next({...response})
+
+                // return response
+
+              } catch(e) {
+
+                const error: any = e
+                console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error returning Supabase Middleware Client response: ${error}`)
+                throw new Error(error)
+              }
+
+            } catch(e) {
+
+              const error: any = e
+              console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error fetching Supabase Middleware Client user data: ${error}`)
+              throw new Error(error)
+            }
+
+          } catch(e) {
+
+            const error: any = e
+            console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error refreshing Supabase Middleware Client Auth data: ${error}`)
+            throw new Error(error)
+          }
+
+        } catch (e) {
+
+          const error: any = e
+          console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error returning Supabase Middleware Client Auth data: ${error}`)
+
+          throw new Error(error)
         }
+      }
+
+      console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error getting Supabase Middleware Client Auth data: ${error.message}`)
+      throw error
+
+    } catch(e) {
+
+      const error: any = e
+      console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error creating Supabase Middleware Client Auth data: ${error}`)
+
+      throw new Error(error)
     }
 
-    // console.log('No session...')
+  } catch (e) {
 
-    // rewrite everything else to the www dir
-    return NextResponse.rewrite(new URL(`/www${path === "/" ? "" : path}`, url), response)
+    const error: any = e
+    console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error creating Supabase Middleware Client response: ${error}`)
+
+    throw new Error(error)
   }
-
-  console.log(`Supabase Middleware Client returned AuthError: ${error}`)
-  // return errored requests to the www dir
-  return NextResponse.redirect(
-    new URL(`/www${path === "/" ? "" : path}`, url),
-    response
-  )
 }
 
 export const config = {

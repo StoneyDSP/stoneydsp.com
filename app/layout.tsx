@@ -1,39 +1,52 @@
 import Footer from '@/components/elements/footer/footer'
 import Header from '@/components/elements/header/header'
 import SpinnerRoot from '@/app/spinner'
-// import { Providers } from '@/app/providers'
 import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Analytics } from '@vercel/analytics/react'
 // import ConsentBanner from '@/components/elements/banner/consent'
 // import { GoogleTagManager } from '@next/third-parties/google'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
-import '@/app/globals.css'
+import { Inter } from 'next/font/google'
+import './globals.css'
 
-export default function RootLayout({
+const inter = Inter({ subsets: ['latin'] })
+
+export default async function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
   children,
 }: {
   children: React.ReactNode | Promise<React.ReactNode>
-}): JSX.Element {
+}) {
 
-  return (
-    <html lang="en">
-      <body>
-        <Suspense fallback={<SpinnerRoot />}>
-          <Header />
-            {/* <Providers> */}
+  console.log(` \u{25CB} RootLayout() :: Returning new Root Layout object... `)
+
+  try {
+
+    console.log(` \u{2713} RootLayout() :: Returned new Root Layout object. `)
+
+    return (
+      <html lang="en">
+        <body className={inter.className}>
+          <Suspense fallback={<SpinnerRoot />}>
+            <Header />
               <Analytics />
               {children}
               {/* <ConsentBanner /> */}
-            {/* </Providers> */}
-          <Footer />
-        </Suspense>
-      </body>
-      {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
-    </html>
-  )
+            <Footer />
+          </Suspense>
+        </body>
+        {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
+      </html>
+    )
+
+  } catch(e) {
+
+    const error: any = e
+    console.log(` \u{2715} RootLayout() - :: Error returning new Root Layout object: ${error}`)
+    return Error(error)
+  }
 }
 
 // export function MdxLayout({ children }: { children: React.ReactNode }) {

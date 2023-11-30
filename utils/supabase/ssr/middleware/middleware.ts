@@ -4,7 +4,7 @@ import logMiddlewareRequest from '@/utils/logger'
 import generateCsp from '@/utils/headers/CSP'
 import customStorageAdapter from '@/utils/supabase/ssr/storage'
 
-const createSupabaseMiddlewareClient = async (request: NextRequest) => {
+export default async function createSupabaseMiddlewareClient(request: NextRequest) {
 
   // Clone the request
   const requestHeaders = new Headers(request.headers)
@@ -134,5 +134,3 @@ const createSupabaseMiddlewareClient = async (request: NextRequest) => {
 
   return { supabase, response }
 }
-
-export default createSupabaseMiddlewareClient
