@@ -6,9 +6,9 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 export async function POST(request: NextRequest) {
 
-  if (request.method !== 'POST') {
-    return Error('This route only accepts POST requests...')
-  }
+  // if (request.method !== 'POST') {
+  //   return Error('This route only accepts POST requests...')
+  // }
 
   console.log('called signInWithOTPEmail route')
 
@@ -44,13 +44,13 @@ export async function POST(request: NextRequest) {
     const e: any = error
     console.log(`Error Supabase Route Handler: ${e}`)
 
-    return Error(e)
+    throw new Error(e)
 
   }  catch(errorSupabaseRouteHandler) {
 
     const e: any = errorSupabaseRouteHandler
     console.log(`Error Supabase Route Handler: ${e}`)
 
-    return Error(e)
+    throw new Error(e)
   }
 }

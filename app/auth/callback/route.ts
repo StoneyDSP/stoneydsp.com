@@ -4,9 +4,9 @@ import { cookies } from 'next/headers'
 
 export async function GET(request: NextRequest) {
 
-  if (request.method !== 'GET') {
-    return Error('This route only accepts GET requests...')
-  }
+  // if (request.method !== 'GET') {
+  //   throw new Error('This route only accepts GET requests...')
+  // }
 
   try {
 
@@ -33,21 +33,21 @@ export async function GET(request: NextRequest) {
 
         const error: any = e
         console.log(`Error on route '/auth/callback': ${error}`)
-        return Error(error)
+        throw new Error(error)
       }
 
     } catch(e) {
 
       const error: any = e
       console.log(`Error on route '/auth/callback': ${error}`)
-      return Error(error)
+      throw new Error(error)
     }
 
   } catch(e) {
 
     const error: any = e
     console.log(`Error on route '/auth/callback': ${error}`)
-    return Error(error)
+    throw new Error(error)
 
   }
 }

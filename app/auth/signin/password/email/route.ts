@@ -4,9 +4,9 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 export async function POST(request: NextRequest) {
 
-  if (request.method !== 'POST') {
-    return Error('This route only accepts POST requests...')
-  }
+  // if (request.method !== 'POST') {
+  //   return Error('This route only accepts POST requests...')
+  // }
 
   console.log('called signInWithPassword route')
 
