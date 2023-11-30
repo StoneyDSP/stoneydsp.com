@@ -6,7 +6,7 @@ import NavUser from './user'
 import LoadingSpinner from '@/components/layouts/Spinner'
 import { Suspense } from 'react'
 
-export default function Nav(){
+export default async function Nav(){
 
   return (
     <nav className='tableRowEven'>
