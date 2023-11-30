@@ -12,7 +12,6 @@ export default function NavBreadcrumbs(): JSX.Element {
 
   return (
     <span className='text-xs text-left'>
-      {/* <Suspense fallback={<span className='text-foreground'>Loading nav...</span>}></Suspense> */}
       {pathname && pathname !== '/' ? spacedSlashes : ''}
     </span>
   )

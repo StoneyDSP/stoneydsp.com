@@ -2,6 +2,7 @@
 import 'client-only'
 import ButtonBack from '@/components/elements/button/back'
 import ButtonLike from '@/components/elements/button/like'
+import LoadingSpinner from '@/components/spinner/spinner'
 import { Suspense } from 'react'
 
 export default function Article({
@@ -18,7 +19,7 @@ export default function Article({
         <ButtonLike />
       </div>
 
-      <Suspense fallback={<span className='text-foreground'>Loading article...</span>}>
+      <Suspense fallback={<LoadingSpinner />}>
         {children}
 
       </Suspense>

@@ -1,93 +1,24 @@
+'use server'
 import 'server-only'
-import NavMenu from '@/components/elements/nav/menu/menu'
-import Link from 'next/link'
-// import UserButton from '@/components/elements/nav/user'
+import NavBadge from './badge'
+import NavMenu from './menu'
+import NavUser from './user'
+import LoadingSpinner from '@/components/layouts/Spinner'
+import { Suspense } from 'react'
 
-export default async function Nav(): Promise<JSX.Element> {
+export default async function Nav(){
 
   return (
     <nav className='tableRowEven'>
-      <div className="w-full max-w-4xl flex justify-between gap-8 items-center p-3 text-sm text-foreground">
+      <div className="w-full max-w-4xl flex justify-center gap-8 items-center p-3 text-sm text-foreground">
 
-        <Link
-          className="
-            py-2
-            px-3
-            flex
-            rounded-md
-            no-underline
-            transition-colors
-            bg-green-500
-            hover:bg-purple-400
-            border-2
-            hover:border-transparent
-            "
-          href="https://stoneydsp.com/"
-          rel="noreferrer"
-        >
-          <span className="text-lg font-semibold text-center text-white">
-            StoneyDSP
-          </span>
-
-        </Link>
+        <NavBadge />
 
         <NavMenu />
 
-        <span className="text-xs font-light text-center">
-          Systems, Web, Audio & Graphics
-        </span>
-
-        <Link
-          // href="/login"
-          href="/"
-          className="
-            py-2
-            px-3
-            flex
-            rounded-md
-            no-underline
-            transition-colors
-            bg-green-500
-            hover:bg-purple-400
-            border-2
-            hover:border-transparent
-            "
-        >
-          <span className='font-bold text-center text-white'>
-            Login
-          </span>
-        </Link>
-
-        {/* {user ? (
-          <div className="flex items-center gap-4">
-            <Link href="/account" target="_self">Hey, {user.email}! ({session?.user.role})</Link>
-            <LogoutButton />
-          </div>
-          ) : (
-          <Link
-            href="/login"
-            className="
-            py-2
-            px-3
-            flex
-            rounded-md
-            no-underline
-            transition-colors
-            bg-green-500
-            hover:bg-purple-400
-            border-2
-            hover:border-transparent
-            "
-          >
-            <span className='font-bold text-center text-white'>
-              Login
-            </span>
-          </Link>
-        )} */}
-
-        {/* <Suspense fallback={<>Loading...</>}>
-          <UserButton />
-        </Suspense> */}
+        <Suspense fallback={<LoadingSpinner />}>
+          <NavUser />
+        </Suspense>
 
       </div>
     </nav>

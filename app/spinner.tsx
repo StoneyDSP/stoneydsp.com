@@ -1,3 +1,4 @@
+import { LogoWideL } from '@/components/icons/logo/wide'
 import styles from './template.module.css'
 
 export default function SpinnerRoot() {
@@ -9,6 +10,10 @@ export default function SpinnerRoot() {
         <div className={styles.flexboxgrid}>
 
           <div className="py-4"></div>
+
+          <div className='animate-spin'>
+            <LogoWideL />
+          </div>
 
           <h2 className="text-foreground text-center">Loading...</h2>
 

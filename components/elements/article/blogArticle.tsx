@@ -20,7 +20,7 @@ const BlogArticle = async ({
       </div>
 
       <Suspense fallback={
-        <main><p className='text-foreground text-center'>Loading... </p><LoadingSpinner /></main>
+        <main><LoadingSpinner /></main>
       }>
         {children}
       </Suspense>
