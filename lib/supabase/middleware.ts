@@ -62,7 +62,7 @@ export const createClient = (request: NextRequest) => {
   // set nonce request header to read in pages if needed
   request.headers.set('X-Nonce', nonce)
   // Set the CSP header so that `app-render` can read it and generate tags with the nonce
-  request.headers.set('Content-Security-Policy', csp)
+  // request.headers.set('Content-Security-Policy', csp)
   // Set the CORS for pre-flight requests
   request.headers.set('Access-Control-Allow-Origin', '*')
   request.headers.set('Access-Control-Allow-Credentials', 'true')
@@ -142,7 +142,7 @@ export const createClient = (request: NextRequest) => {
   response.headers.set('X-StoneyDSP-Middleware-Response', `${date.toUTCString()}`)
 
   // Also set the CSP so that it is outputted to the browser
-  response.headers.set('Content-Security-Policy', csp)
+  // response.headers.set('Content-Security-Policy', csp)
   // Set the CORS for pre-flight requests
   response.headers.set('Access-Control-Allow-Origin', '*')
   response.headers.set('Access-Control-Allow-Credentials', 'true')
