@@ -10,10 +10,6 @@ export const createClient = (request: NextRequest) => {
   const generateCSP = () => {
 
     // generate random nonce converted to base64. Must be different on every HTTP page load
-    // const nonce = crypto.randomBytes(16).toString('base64')
-    // const nonce = crypto.randomUUID();
-
-    // const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
     const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
 
     const csp = [
