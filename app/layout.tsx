@@ -10,7 +10,12 @@ import { Suspense } from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
+// import { createServerClient, type CookieOptions } from '@supabase/ssr'
+// import { cookies, headers } from 'next/headers'
+
 const inter = Inter({ subsets: ['latin'] })
+
+export const dynamic = 'force-dynamic'
 
 export default async function RootLayout({
   // Layouts must accept a children prop.
@@ -20,11 +25,64 @@ export default async function RootLayout({
   children: React.ReactNode | Promise<React.ReactNode>
 }) {
 
-  console.log(` \u{25CB} RootLayout() :: Returning new Root Layout object... `)
+  // const nonce = headers().get('x-nonce')
+  // const middlewareResponse = headers().get('X-StoneyDSP-Middleware-Response')
+
+  // const cookieStore = cookies()
+
+  // const supabase = createServerClient(
+  //   process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  //   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+  //   {
+  //     cookies: {
+  //       get(name: string) {
+  //         return cookieStore.get(name)?.value
+  //       },
+  //       set(name: string, value: string, options: CookieOptions) {
+  //         try {
+  //           cookieStore.set({ name, value, ...options })
+  //         } catch (error) {
+  //           // The `set` method was called from a Server Component.
+  //           // This can be ignored if you have middleware refreshing
+  //           // user sessions.
+  //         }
+  //       },
+  //       remove(name: string, options: CookieOptions) {
+  //         try {
+  //           cookieStore.set({ name, value: '', ...options })
+  //         } catch (error) {
+  //           // The `delete` method was called from a Server Component.
+  //           // This can be ignored if you have middleware refreshing
+  //           // user sessions.
+  //         }
+  //       },
+  //     },
+  //   }
+  // )
+
+  // supabase.auth.onAuthStateChange((event, session) => {
+  //   if (session !== null) {
+  //     if (event === 'SIGNED_OUT') {
+  //       // || event === 'USER_DELETED'
+  //       // delete cookies on sign out
+  //       const expires = new Date(0).toUTCString()
+  //       console.log('SIGNED_OUT')
+  //       // document.cookie = `my-access-token=; path=/; expires=${expires}; SameSite=Lax; secure`
+  //       // document.cookie = `my-refresh-token=; path=/; expires=${expires}; SameSite=Lax; secure`
+  //     } else if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+  //       const maxAge = 100 * 365 * 24 * 60 * 60 // 100 years, never expires
+  //       console.log('SIGNED_IN')
+  //       // document.cookie = `my-access-token=${session.access_token}; path=/; max-age=${maxAge}; SameSite=Lax; secure`
+  //       // document.cookie = `my-refresh-token=${session.refresh_token}; path=/; max-age=${maxAge}; SameSite=Lax; secure`
+  //     }
+  //   }
+  // })
+
+  // console.log(` \u{25CB} RootLayout() :: Returning new Root Layout object... `)
 
   try {
 
-    console.log(` \u{2713} RootLayout() :: Returned new Root Layout object. `)
+    // console.log(` \u{2713} RootLayout() :: Returned new Root Layout object. `)
 
     return (
       <html lang="en">
@@ -35,6 +93,7 @@ export default async function RootLayout({
               {children}
               {/* <ConsentBanner /> */}
             <Footer />
+            {/* <p>Last Middleware response: {middlewareResponse ?? 'ERROR'}</p> */}
           </Suspense>
         </body>
         {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
@@ -45,7 +104,7 @@ export default async function RootLayout({
 
     const error: any = e
     console.log(` \u{2715} RootLayout() - :: Error returning new Root Layout object: ${error}`)
-    return Error(error)
+    throw new Error(error)
   }
 }
 
