@@ -1,12 +1,7 @@
 import { userAgent, NextResponse, type NextRequest } from 'next/server'
 import { createClient } from '@/lib/supabase/middleware'
 
-
 export default async function middleware(request: NextRequest) {
-
-  // const url = new URL(request.url)
-  // const { searchParams, origin } = url
-  // const next = searchParams.get('next') ?? '/'
 
   try {
 
@@ -59,13 +54,20 @@ export default async function middleware(request: NextRequest) {
               const city = (request.geo && request.geo.city) || 'Nowhere'
               const region = (request.geo && request.geo.region) || 'Somewhere'
               const ip = (request.ip) || 'Visitor'
-              // const agent = (request.headers.get('user-agent')) || 'Agent Unknown'
+              const agent = (request.headers.get('user-agent')) || 'Agent Unknown'
 
-              console.log(` \u{2713} Middleware - ${request.method} ${request.url} :: ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${'user agent' /* agent */}. ${sessionData} | ${userData}`)
+              console.log(` \u{2713} ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`)
 
               try {
 
-                return NextResponse.next({...response})
+                return NextResponse.next({
+                  headers: response.headers,
+                  request: {
+                    headers: request.headers,
+                  },
+                })
+
+                // return NextResponse.next({...response})
 
                 // return response
 
