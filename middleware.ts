@@ -60,7 +60,14 @@ export default async function middleware(request: NextRequest) {
 
               try {
 
-                return NextResponse.next({...response})
+                return NextResponse.next({
+                  headers: response.headers,
+                  request: {
+                    headers: request.headers,
+                  },
+                })
+
+                // return NextResponse.next({...response})
 
                 // return response
 
