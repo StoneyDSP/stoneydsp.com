@@ -20,11 +20,12 @@ export default async function RootLayout({
   children: React.ReactNode | Promise<React.ReactNode>
 }) {
 
-  console.log(` \u{25CB} RootLayout() :: Returning new Root Layout object... `)
+
+  // console.log(` \u{25CB} RootLayout() :: Returning new Root Layout object... `)
 
   try {
 
-    console.log(` \u{2713} RootLayout() :: Returned new Root Layout object. `)
+    // console.log(` \u{2713} RootLayout() :: Returned new Root Layout object. `)
 
     return (
       <html lang="en">
@@ -45,7 +46,7 @@ export default async function RootLayout({
 
     const error: any = e
     console.log(` \u{2715} RootLayout() - :: Error returning new Root Layout object: ${error}`)
-    return Error(error)
+    throw new Error(error)
   }
 }
 
