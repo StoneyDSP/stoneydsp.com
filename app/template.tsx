@@ -7,17 +7,16 @@ export default async function Template({
   children
 }: {
   children: React.ReactNode | Promise<React.ReactNode>
-}) {
+}): Promise<JSX.Element> {
 
-  console.log(` \u{25CB} Template() :: Returning new Template object... `)
+  // console.log(` \u{25CB} Template() :: Returning new Template object... `)
 
   try {
 
-    console.log(` \u{2713} Template() :: Returned Template object. `)
+    // console.log(` \u{2713} Template() :: Returned Template object. `)
 
     return (
-
-      <main>
+      <main className='animate-spin-in'>
         <div className={styles.container}>
           <article className={styles.content}>
             <section className={styles.flexboxgrid}>
@@ -26,15 +25,13 @@ export default async function Template({
           </article>
         </div>
       </main>
-
     )
 
   } catch(e) {
 
     const error: any = e
-    console.log(` \u{2715} RootLayout() - :: Error returning new Template object: ${error}`)
-    return Error(error)
+    console.log(` \u{2715} Template() - :: Error returning new Template object: ${error}`)
+    throw new Error(error)
+
   }
-
-
 }

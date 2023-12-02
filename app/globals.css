@@ -241,6 +241,11 @@
   }
 }
 
+.animate-spin-in {
+  animation: spin 0.3s ease 0.15s both;
+	animation: animateIn 0.3s ease 0.15s both;
+}
+
 .animate-spin {
   /* animation: spin 0.3s ease 0.15s both; */
 	animation: spin 5s ease 1s infinite;
@@ -256,22 +261,25 @@
 }
 
 html {
+	font-family: var(--custom-font-family);
+	--custom-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+	Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
 	background-color: var(--custom-bg-color);
   color: var(--custom-color);
 }
 html.dark-mode {
+	font-family: var(--custom-font-family);
+	--custom-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+	Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
 	background-color: var(--custom-bg-color);
   color: var(--custom-color);
 }
 
 html, body {
-	font-family: var(--custom-font-family);
-	--custom-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-	Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   padding: 0;
   margin: 0;
-  /* background-color: var(--custom-bg-color);
-  color: var(--custom-color); */
 }
 /* html.dark-mode,
 body.dark-mode {
@@ -359,42 +367,36 @@ section {
 
 h1 {
   display: block;
-	/* opacity: 80%; */
   font-size: 2.0rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h2 {
   display: block;
-	/* opacity: 80%; */
   font-size: 1.5rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h3 {
   display: block;
-	/* opacity: 80%; */
   font-size: 1.17rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h4 {
   display: block;
-	/* opacity: 80%; */
   font-size: 1.0rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h5 {
   display: block;
-	/* opacity: 80%; */
   font-size: 0.83rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 h6 {
   display: block;
-	/* opacity: 80%; */
   font-size: 0.67rem;
   font-weight: bold;
   z-index: calc(inherit + var(--z-index__scale-depth));
@@ -404,7 +406,6 @@ hgroup {
 }
 p {
   display: block;
-	/* opacity: 80%; */
   z-index: calc(inherit + var(--z-index__scale-depth));
 }
 i {

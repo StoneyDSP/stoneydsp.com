@@ -5,7 +5,7 @@ export default async function middleware(request: NextRequest) {
 
   try {
 
-    const { supabase, response } = createClient(request)
+    const { supabase, response } = await createClient(request)
 
     try {
 
@@ -35,7 +35,7 @@ export default async function middleware(request: NextRequest) {
 
                 // if user is signed in and the current path is /login redirect the user to /account
                 if (request.nextUrl.pathname === '/login') {
-                  console.log('going to login page...?')
+
                   return NextResponse.redirect(new URL('/account', request.nextUrl.origin))
                 }
 
@@ -58,25 +58,7 @@ export default async function middleware(request: NextRequest) {
 
               console.log(` \u{2713} ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`)
 
-              try {
-
-                return NextResponse.next({
-                  headers: response.headers,
-                  request: {
-                    headers: request.headers,
-                  },
-                })
-
-                // return NextResponse.next({...response})
-
-                // return response
-
-              } catch(e) {
-
-                const error: any = e
-                console.log(` \u{2715} Middleware - ${request.method} ${request.url} :: Error returning Supabase Middleware Client response: ${error}`)
-                throw new Error(error)
-              }
+              return response
 
             } catch(e) {
 

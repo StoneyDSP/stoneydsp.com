@@ -9,16 +9,17 @@ export const metadata: Metadata = {
   description: 'Systems, Web, Audio & Graphics',
   alternates: {
     canonical: new URL(getPublicSiteURL())
-  }
+  },
+
 }
 
-export default async function Index() {
+export default async function Index(): Promise<JSX.Element> {
 
-  console.log(` \u{25CB} Index() :: Returning new Index Page... `)
+  // console.log(` \u{25CB} Index() :: Returning new Index Page... `)
 
   try {
 
-    console.log(` \u{2713} Index() :: Returned new Index Page. `)
+    // console.log(` \u{2713} Index() :: Returned new Index Page. `)
 
     return (
       <HomeContent />
@@ -28,6 +29,6 @@ export default async function Index() {
 
     const error: any = e
     console.log(` \u{2715} Index() - :: Error returning new Index Page: ${error}`)
-    return Error(error)
+    throw new Error(error)
   }
 }

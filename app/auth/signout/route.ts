@@ -46,23 +46,35 @@ export async function POST(req: NextRequest) {
       if (session) {
 
         try {
-          console.log('logging out...')
+
           await supabase.auth.signOut()
-          // Middleware response was successful!
-          const { isBot } = userAgent(req)
-          const visitor = isBot ? 'Bot' : 'Human'
-          const travelling = isBot ? 'crawling' : 'visiting'
-          const country = (req.geo && req.geo.country) || 'Earth'
-          const city = (req.geo && req.geo.city) || 'Nowhere'
-          const region = (req.geo && req.geo.region) || 'Somewhere'
-          const ip = (req.ip) || 'Visitor'
-          // const agent = (request.headers.get('user-agent')) || 'Agent Unknown'
 
-          console.log(` \u{2713} Route - ${req.method} ${req.url} :: ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${'user agent' /* agent */}.`)
+          try {
 
-          return NextResponse.redirect(new URL('/', req.url), {
-            status: 302,
-          })
+            // Middleware response was successful! Logging out...
+            const { isBot } = userAgent(req)
+            const visitor = isBot ? 'Bot' : 'Human'
+            const travelling = isBot ? 'crawling' : 'visiting'
+            const country = (req.geo && req.geo.country) || 'Earth'
+            const city = (req.geo && req.geo.city) || 'Nowhere'
+            const region = (req.geo && req.geo.region) || 'Somewhere'
+            const ip = (req.ip) || 'Visitor'
+            const agent = (req.headers.get('user-agent')) || 'Agent Unknown'
+
+            console.log(` \u{2713} ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`)
+
+            return NextResponse.redirect(new URL('/login', req.url), {
+              status: 302,
+            })
+
+          } catch(e) {
+
+            const error: any = e
+            console.log(` \u{2715} Route - ${req.method} ${req.url} :: Error Supabase Route Handler on '/auth/signout': ${error}`)
+
+            throw new Error(error)
+
+          }
 
         } catch(error) {
 

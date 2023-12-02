@@ -2,15 +2,19 @@ import Footer from '@/components/elements/footer/footer'
 import Header from '@/components/elements/header/header'
 import SpinnerRoot from '@/app/spinner'
 import { getPublicSiteURL } from '@/utils/headers/URL'
-import { Analytics } from '@vercel/analytics/react'
-// import ConsentBanner from '@/components/elements/banner/consent'
+import { AuthWrapper } from '@/components/elements/banner/consent'
 // import { GoogleTagManager } from '@next/third-parties/google'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { cookies, headers } from 'next/headers'
+
 const inter = Inter({ subsets: ['latin'] })
+
+// export const dynamic = 'force-dynamic'
 
 export default async function RootLayout({
   // Layouts must accept a children prop.
@@ -20,22 +24,65 @@ export default async function RootLayout({
   children: React.ReactNode | Promise<React.ReactNode>
 }) {
 
-  console.log(` \u{25CB} RootLayout() :: Returning new Root Layout object... `)
+  const nonce = headers().get('x-nonce')
+  const middlewareResponse = headers().get('X-StoneyDSP-Middleware-Response')
+
+  const cookieStore = cookies()
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return cookieStore.get(name)?.value
+        },
+        set(name: string, value: string, options: CookieOptions) {
+          try {
+            cookieStore.set({ name, value, ...options })
+          } catch (error) {
+            // The `set` method was called from a Server Component.
+            // This can be ignored if you have middleware refreshing
+            // user sessions.
+          }
+        },
+        remove(name: string, options: CookieOptions) {
+          try {
+            cookieStore.set({ name, value: '', ...options })
+          } catch (error) {
+            // The `delete` method was called from a Server Component.
+            // This can be ignored if you have middleware refreshing
+            // user sessions.
+          }
+        },
+      },
+    }
+  )
+
+  // console.log(` \u{25CB} RootLayout() :: Returning new Root Layout object... `)
 
   try {
 
-    console.log(` \u{2713} RootLayout() :: Returned new Root Layout object. `)
+    const { data, error } = await supabase.auth.getSession()
+
+    // console.log(` \u{2713} RootLayout() :: Returned new Root Layout object. `)
+
+    if (error) {
+      console.log(` \u{2715} RootLayout() - :: Error returning new Root Layout object: ${error.message}`)
+      throw error
+    }
 
     return (
       <html lang="en">
         <body className={inter.className}>
           <Suspense fallback={<SpinnerRoot />}>
             <Header />
-              <Analytics />
               {children}
-              {/* <ConsentBanner /> */}
+              <AuthWrapper />
             <Footer />
+            <p className='text-right'>Last Middleware response: {middlewareResponse ?? 'ERROR'}</p>
           </Suspense>
+          <p className='text-right'>First Middleware response: {middlewareResponse ?? 'ERROR'}</p>
         </body>
         {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
       </html>
@@ -45,7 +92,7 @@ export default async function RootLayout({
 
     const error: any = e
     console.log(` \u{2715} RootLayout() - :: Error returning new Root Layout object: ${error}`)
-    return Error(error)
+    throw new Error(error)
   }
 }
 

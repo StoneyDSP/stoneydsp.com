@@ -10,3 +10,5 @@ _utils
 yarn.lock
 !*.png
 !*.ico
+.bak*
+_bak*
