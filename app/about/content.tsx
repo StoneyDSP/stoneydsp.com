@@ -18,7 +18,7 @@ export default async function AboutContent(): Promise<JSX.Element> {
 
       <HRGradient />
 
-      <h1 className='text-center' tabIndex={0}>
+      <h1 className='text-center drop-shadow' tabIndex={0}>
         About me.
       </h1>
 
@@ -43,9 +43,9 @@ export default async function AboutContent(): Promise<JSX.Element> {
 
       <div className='items-center'>
         <Title level={2} className='text-center font-normal'>
-          <div className='text-left opacity-90 font-normal text-3xl'>&ldquo;Hi! I&#39;m Nathan,</div><br />
-          <div className='text-center opacity-90 font-normal text-2xl italic'>a.k.a</div><br />
-          <div className='text-right opacity-90 font-bold text-4xl'>StoneyDSP...&rdquo;</div>
+          <div className='text-left opacity-90 font-normal text-3xl drop-shadow'>&ldquo;Hi! I&#39;m Nathan,</div><br />
+          <div className='text-center opacity-90 font-normal text-2xl italic drop-shadow'>a.k.a</div><br />
+          <div className='text-right opacity-90 font-bold text-4xl drop-shadow'>StoneyDSP...&rdquo;</div>
         </Title>
       </div>
 
@@ -59,7 +59,7 @@ export default async function AboutContent(): Promise<JSX.Element> {
 
       <HRGradient />
 
-      <Text className='text-center opacity-90 text-3xl' /* tabIndex={0} */>
+      <Text className='text-center opacity-90 text-3xl drop-shadow' /* tabIndex={0} */>
         &ldquo;...Welcome to my workbench.&rdquo;
       </Text>
 

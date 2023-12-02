@@ -16,7 +16,7 @@ export default async function HomeContent(): Promise<JSX.Element> {
       <div className='flex flex-col justify-center'>
         <div className='items-center justify-center'>
 
-          <Title level={1} className='animate-in text-center pb-8'>
+          <Title level={1} className='animate-in text-center pb-8 drop-shadow'>
               StoneyDSP
           </Title>
 
@@ -28,7 +28,7 @@ export default async function HomeContent(): Promise<JSX.Element> {
 
           <HRGradient />
 
-          <Title level={2} className='pt-8 text-center italic'>
+          <Title level={2} className='pt-8 text-center italic drop-shadow'>
             Systems, Web, Audio & Visual programming
           </Title>
 

@@ -47,12 +47,11 @@ export async function POST(req: NextRequest) {
 
         try {
 
-          await supabase.auth.signOut().then()
+          await supabase.auth.signOut()
 
           try {
 
-            console.log('logging out...')
-            // Middleware response was successful!
+            // Middleware response was successful! Logging out...
             const { isBot } = userAgent(req)
             const visitor = isBot ? 'Bot' : 'Human'
             const travelling = isBot ? 'crawling' : 'visiting'
@@ -60,11 +59,11 @@ export async function POST(req: NextRequest) {
             const city = (req.geo && req.geo.city) || 'Nowhere'
             const region = (req.geo && req.geo.region) || 'Somewhere'
             const ip = (req.ip) || 'Visitor'
-            // const agent = (request.headers.get('user-agent')) || 'Agent Unknown'
+            const agent = (req.headers.get('user-agent')) || 'Agent Unknown'
 
-            console.log(` \u{2713} ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${'user agent' /* agent */}.`)
+            console.log(` \u{2713} ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`)
 
-            return NextResponse.redirect(new URL('/', req.url), {
+            return NextResponse.redirect(new URL('/login', req.url), {
               status: 302,
             })
 

@@ -7,9 +7,7 @@
 }
 
 .content {
-	/* max-width: 56rem;  896px */
-	/* min-width: 48rem;  768px */
-	width: 56rem;
+	max-width: 56rem; /* 896px */
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
