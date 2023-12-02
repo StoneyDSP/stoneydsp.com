@@ -10,7 +10,19 @@ export default async function Nav(){
 
   return (
     <nav className='tableRowEven'>
-      <div className="w-full max-w-4xl flex justify-center gap-8 items-center p-3 text-sm text-foreground">
+      <div className="
+        w-full
+        max-w-4xl
+        flex
+        justify-center
+        align-middle
+        gap-8
+        items-center
+        p-3
+        text-sm
+        text-foreground
+        "
+      >
 
         <NavBadge />
 

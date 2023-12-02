@@ -16,7 +16,7 @@ export default async function Template({
     // console.log(` \u{2713} Template() :: Returned Template object. `)
 
     return (
-      <main>
+      <main className='animate-spin-in'>
         <div className={styles.container}>
           <article className={styles.content}>
             <section className={styles.flexboxgrid}>

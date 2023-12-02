@@ -22,19 +22,23 @@ export default function Error({
       <article className={styles.content}>
         <section className={styles.flexboxgrid}>
 
-          <div className="py-4"></div>
+          {/* <div className="py-4"></div> */}
 
-          <LogoWideL />
+          <div className='flex flex-col justify-center items-center'>
+            <h2 className="text-foreground">Something went wrong!</h2>
+            <button
+              onClick={
+                // Attempt to recover by trying to re-render the segment
+                () => reset()
+              }
+              className="py-2 px-3 justify-center w-fit rounded-md no-underline transition-colors bg-green-600 hover:bg-purple-500 border-2 hover:border-transparent">
+              <span className="text-white">Try again</span>
+            </button>
 
-          <h2 className="text-foreground">Something went wrong!</h2>
-          <button
-            onClick={
-              // Attempt to recover by trying to re-render the segment
-              () => reset()
-            }
-            className="py-2 px-3 justify-center w-fit rounded-md no-underline transition-colors bg-green-500 hover:bg-purple-400 border-2 hover:border-transparent">
-            <span className="text-foreground">Try again</span>
-          </button>
+            {/* <div className="py-4"></div> */}
+
+            <LogoWideL />
+          </div>
 
         </section>
       </article>

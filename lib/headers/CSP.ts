@@ -1,34 +1,78 @@
-/** Credit: https://github.com/Sprokets/nextjs-csp-report-only */
-const generateCsp = async () => {
+/**
+ * Credit: https://github.com/Sprokets/nextjs-csp-report-only
+ * - Generate a random nonce
+ * - Use 'nonce' when invoking the supabase.auth.signInWithIdToken() method
+ * - ```const nonce = Buffer.from(crypto.randomUUID()).toString('base64')```
+ * - Use 'hashedNonce' when making the authentication request to Google
+ * - ```const hashedNnonce = createHashedNonce(nonce)```
+ * */
+const generateCSP = (requireHashedNonce: boolean = false) => {
 
   // generate random nonce converted to base64. Must be different on every HTTP page load
-  // const nonce = crypto.randomBytes(16).toString('base64')
-  // const nonce = crypto.randomUUID();
-
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
 
+  const hashedNonce = createHashedNonce(nonce)
+
   const csp = [
-    { name: "default-src", values: ["'self'", `${process.env.NEXT_PUBLIC_SUPABASE_URL}`] },
+    { name: "default-src", values: ["'self'",] },
     {
       name: "script-src",
       values: [
         "'report-sample'",
         "'self'",
-        // "*.stoneydsp.com", "*-stoneydsp.vercel.app",
-        `'nonce-${nonce}'`,
+        `'nonce-${requireHashedNonce ? hashedNonce : nonce}'`,
         "'strict-dynamic'",
+        "https:",
+        "http:",
+        `${process.env.VERCEL_ENV === "production" ? "" : `'unsafe-eval'`}`
       ],
     },
     {
       name: "style-src",
-      values: ["'report-sample'", "'self'", `'nonce-${nonce}'`],
+      values: [
+        "'report-sample'",
+        "'self'",
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL!}`,
+        `'nonce-${requireHashedNonce ? hashedNonce : nonce}'`
+      ],
     },
     {
       name: "connect-src",
-      values: ["'self'", "*.vercel-insights.com", "plausible.io", "*.stoneydsp.com", "*-stoneydsp.vercel.app",],
+      values: [
+        "'self'",
+        "*.vercel-insights.com",
+        "plausible.io",
+        "*.stoneydsp.com",
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL!}`,
+      ],
     },
-    { name: "font-src", values: ["'self'", "data:"] },
-    { name: "img-src", values: ["'self'", "*.stoneydsp.com", "*-stoneydsp.vercel.app", "blob:", "data:"] },
+    {
+      name: "font-src",
+      values: [
+        "'self'",
+        "data:"
+      ]
+    },
+    {
+      name: "img-src",
+      values: [
+        "'self'",
+        "*.stoneydsp.com",
+        "blob:",
+        "data:",
+        'https://raw.githubusercontent.com',
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL!}`,
+      ]
+    },
+    {
+      name: "media-src",
+      values: [
+        "'self'",
+        'data:',
+        'blob:',
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL!}`
+      ]
+    },
     { name: "worker-src", values: ["'self'", "blob:"] },
     { name: "frame-ancestors", values: ["'none'"] },
     { name: "form-action", values: ["'self'"] },
@@ -36,7 +80,7 @@ const generateCsp = async () => {
     { name: "object-src", values: ["none"] },
     { name: "base-uri", values: ['self'] },
     { name: "upgrade-insecure-requests", values: [""] },
-    // { name: "block-all-mixed-content", values: [""] } - deprecated...
+    { name: "block-all-mixed-content", values: [""] }
   ];
 
   const cspString = csp
@@ -45,10 +89,11 @@ const generateCsp = async () => {
     })
     .join("; ");
 
-  return { csp: cspString, nonce };
+  return { csp: cspString, nonce, hashedNonce };
+
 }
 
-export default generateCsp
+export default generateCSP
 
 export const createHashedNonce = async (nonce: string) => {
 

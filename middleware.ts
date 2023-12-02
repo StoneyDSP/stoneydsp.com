@@ -5,7 +5,7 @@ export default async function middleware(request: NextRequest) {
 
   try {
 
-    const { supabase, response } = createClient(request)
+    const { supabase, response } = await createClient(request)
 
     try {
 

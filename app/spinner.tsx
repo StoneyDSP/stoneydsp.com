@@ -11,11 +11,13 @@ export default function SpinnerRoot() {
 
           <div className="py-4"></div>
 
-          <div className='animate-spin'>
+          <div className='animate-spin animate-spin-in'>
             <LogoWideL />
           </div>
 
           <h2 className="text-foreground text-center">Loading...</h2>
+
+          <div className='flex flex-col items-center'>
 
           <div className={styles.spinner}>
             <div></div>
@@ -30,6 +32,8 @@ export default function SpinnerRoot() {
             <div></div>
             <div></div>
             <div></div>
+          </div>
+
           </div>
 
         </div>

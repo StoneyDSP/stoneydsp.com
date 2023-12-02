@@ -2,20 +2,19 @@ import Footer from '@/components/elements/footer/footer'
 import Header from '@/components/elements/header/header'
 import SpinnerRoot from '@/app/spinner'
 import { getPublicSiteURL } from '@/utils/headers/URL'
-import { Analytics } from '@vercel/analytics/react'
-// import ConsentBanner from '@/components/elements/banner/consent'
+import { AuthWrapper } from '@/components/elements/banner/consent'
 // import { GoogleTagManager } from '@next/third-parties/google'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-// import { createServerClient, type CookieOptions } from '@supabase/ssr'
-// import { cookies, headers } from 'next/headers'
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { cookies, headers } from 'next/headers'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export default async function RootLayout({
   // Layouts must accept a children prop.
@@ -25,76 +24,65 @@ export default async function RootLayout({
   children: React.ReactNode | Promise<React.ReactNode>
 }) {
 
-  // const nonce = headers().get('x-nonce')
-  // const middlewareResponse = headers().get('X-StoneyDSP-Middleware-Response')
+  const nonce = headers().get('x-nonce')
+  const middlewareResponse = headers().get('X-StoneyDSP-Middleware-Response')
 
-  // const cookieStore = cookies()
+  const cookieStore = cookies()
 
-  // const supabase = createServerClient(
-  //   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  //   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-  //   {
-  //     cookies: {
-  //       get(name: string) {
-  //         return cookieStore.get(name)?.value
-  //       },
-  //       set(name: string, value: string, options: CookieOptions) {
-  //         try {
-  //           cookieStore.set({ name, value, ...options })
-  //         } catch (error) {
-  //           // The `set` method was called from a Server Component.
-  //           // This can be ignored if you have middleware refreshing
-  //           // user sessions.
-  //         }
-  //       },
-  //       remove(name: string, options: CookieOptions) {
-  //         try {
-  //           cookieStore.set({ name, value: '', ...options })
-  //         } catch (error) {
-  //           // The `delete` method was called from a Server Component.
-  //           // This can be ignored if you have middleware refreshing
-  //           // user sessions.
-  //         }
-  //       },
-  //     },
-  //   }
-  // )
-
-  // supabase.auth.onAuthStateChange((event, session) => {
-  //   if (session !== null) {
-  //     if (event === 'SIGNED_OUT') {
-  //       // || event === 'USER_DELETED'
-  //       // delete cookies on sign out
-  //       const expires = new Date(0).toUTCString()
-  //       console.log('SIGNED_OUT')
-  //       // document.cookie = `my-access-token=; path=/; expires=${expires}; SameSite=Lax; secure`
-  //       // document.cookie = `my-refresh-token=; path=/; expires=${expires}; SameSite=Lax; secure`
-  //     } else if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
-  //       const maxAge = 100 * 365 * 24 * 60 * 60 // 100 years, never expires
-  //       console.log('SIGNED_IN')
-  //       // document.cookie = `my-access-token=${session.access_token}; path=/; max-age=${maxAge}; SameSite=Lax; secure`
-  //       // document.cookie = `my-refresh-token=${session.refresh_token}; path=/; max-age=${maxAge}; SameSite=Lax; secure`
-  //     }
-  //   }
-  // })
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return cookieStore.get(name)?.value
+        },
+        set(name: string, value: string, options: CookieOptions) {
+          try {
+            cookieStore.set({ name, value, ...options })
+          } catch (error) {
+            // The `set` method was called from a Server Component.
+            // This can be ignored if you have middleware refreshing
+            // user sessions.
+          }
+        },
+        remove(name: string, options: CookieOptions) {
+          try {
+            cookieStore.set({ name, value: '', ...options })
+          } catch (error) {
+            // The `delete` method was called from a Server Component.
+            // This can be ignored if you have middleware refreshing
+            // user sessions.
+          }
+        },
+      },
+    }
+  )
 
   // console.log(` \u{25CB} RootLayout() :: Returning new Root Layout object... `)
 
   try {
 
+    const { data, error } = await supabase.auth.getSession()
+
     // console.log(` \u{2713} RootLayout() :: Returned new Root Layout object. `)
+
+    if (error) {
+      console.log(` \u{2715} RootLayout() - :: Error returning new Root Layout object: ${error.message}`)
+      throw error
+    }
 
     return (
       <html lang="en">
         <body className={inter.className}>
           <Suspense fallback={<SpinnerRoot />}>
             <Header />
-              <Analytics />
               {children}
-              {/* <ConsentBanner /> */}
+              <AuthWrapper />
             <Footer />
-            {/* <p>Last Middleware response: {middlewareResponse ?? 'ERROR'}</p> */}
+            <p className='text-right'>Last Middleware response: {middlewareResponse ?? 'ERROR'}</p>
           </Suspense>
+          <p className='text-right'>First Middleware response: {middlewareResponse ?? 'ERROR'}</p>
         </body>
         {/* <GoogleTagManager gtmId="GTM-WCM3NS5C" /> */}
       </html>
