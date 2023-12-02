@@ -44,7 +44,7 @@ export default async function AccountPage() {
 
       if (!session) {
         console.log(` \u{2713} AccountPage() :: No session, redirecting to /login`)
-        return redirect('/login')
+        return redirect('/login?message=Could not authenticate user')
       }
 
       return (

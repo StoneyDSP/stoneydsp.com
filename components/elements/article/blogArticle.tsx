@@ -12,9 +12,9 @@ const BlogArticle = async ({
 }) => {
 
   return (
-    <section className='animate-in min-h-screen'>
+    <section className='animate-in min-h-screen max-w-4xl'>
 
-      <div className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-8 max-w-4xl'>
         <ButtonBack />
         <ButtonLike />
       </div>

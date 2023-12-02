@@ -1,3 +1,4 @@
+import 'server-only'
 import Link from 'next/link'
 import { cookies } from 'next/headers'
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
@@ -37,7 +38,7 @@ export default async function NavUser(){
           </Link>
         </div>
         ) : (
-        <span className="text-xs font-light text-center">
+        <span className="text-xs font-light text-center drop-shadow">
           Systems,&nbsp;Web, Audio&nbsp;&&nbsp;Graphics
         </span>
         )
@@ -50,16 +51,18 @@ export default async function NavUser(){
             className='
               transition-colors
               bg-green-600
-              hover:bg-purple-400
+              hover:bg-purple-500
               border
               border-foreground/20
               rounded-md
               px-4
               py-2
               mb-2
+              drop-shadow
+              hover:drop-shadow-none
             '
           >
-            <span className='text-lg font-semibold text-center text-white'>
+            <span className='font-semibold text-center text-white drop-shadow'>
               Log&nbsp;Out
             </span>
           </button>
@@ -70,16 +73,19 @@ export default async function NavUser(){
           className="
             transition-colors
             bg-green-600
-            hover:bg-purple-400
+            hover:bg-purple-500
             border
             border-foreground/20
             rounded-md
             px-4
             py-2
             mb-2
+            drop-shadow
+            hover:drop-shadow-none
+            hover:no-underline
           "
         >
-          <span className='text-lg font-semibold text-center text-white'>
+          <span className='text-center text-white drop-shadow hover:drop-shadow-none'>
             Log&nbsp;In
           </span>
         </Link>

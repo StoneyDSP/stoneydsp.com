@@ -11,7 +11,7 @@ export default async function ContactContent() {
 
       <HRGradient />
 
-      <Title level={1} className='text-center' tabIndex={0}>
+      <Title level={1} className='text-center drop-shadow' tabIndex={0}>
         Contact me.
       </Title>
 

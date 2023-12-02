@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default async function NotFound(): Promise<JSX.Element> {
+export default function NotFound() {
   return (
     <div className='bg-background'>
       <h2 className='text-foreground'>Not Found</h2>

@@ -43,7 +43,6 @@ export default function NavMenu(): JSX.Element {
               group
               text-sm
               border
-
             `}
           >
             <svg
@@ -59,7 +58,7 @@ export default function NavMenu(): JSX.Element {
               className="mr-2 h-4 w-4 transition-transform group-hover:translate-y-1"
             >
               <polyline points="6 9 12 15 18 9" />
-            </svg><span className='hover:no-underline'>|&nbsp;&nbsp;&nbsp;&nbsp;</span>{' '}{page}
+            </svg><span className='hover:no-underline shadow-inner hover:shadow-none'>|&nbsp;&nbsp;&nbsp;&nbsp;</span>{' '}{page}
           </Link>
         </li>
       ))}
