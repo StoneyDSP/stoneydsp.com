@@ -9,7 +9,8 @@ async function generate() {
 		'app/page.tsx',
 		'app/**/page.tsx',
 		'!app/_examples/**/page.tsx',
-		'!app/_*/**/page.tsx'
+		'!app/_*/**/page.tsx',
+    '!app/account/page.tsx'
 	])
 
 	const sitemap = `
