@@ -163,11 +163,11 @@ export const headersCacheControl: readonly SecurityHeaders[] = [
 export const headersDefaults: readonly (readonly SecurityHeaders[])[] = [
   // headersCSP,
   headersCORSNextJs,
-  headersCORSSupabase,
   headersCacheControl,
   [ {name: 'Strict-Transport-security', value: 'max-age=63072000; includeSubDomains; preload'}],
   [ {name: 'X-Content-Type-Options', value: 'nosniff'}],
   [ {name: 'X-Frame-Options', value: 'DENY'}],
   [ {name: 'X-XSS-Protection', value: '1; mode=block'}],
+  // [ {name: 'X-DNS-Prefetch-Control', value: 'on'}],
   [ {name: 'Upgrade-Insecure-Requests', value: '1'}],
 ] as const

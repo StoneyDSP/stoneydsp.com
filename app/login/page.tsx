@@ -19,11 +19,7 @@ export default function LoginPage({
   searchParams: { message: string }
 }) {
 
-  // console.log(` \u{25CB} LoginPage() :: Returning new ${metadata.title} Page... `)
-
   try {
-
-    // console.log(` \u{2713} LoginPage() :: Returned new ${metadata.title} Page. `)
 
     return (
       <Login searchParams={searchParams} />
