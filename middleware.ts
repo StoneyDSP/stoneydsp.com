@@ -1,5 +1,6 @@
 import { userAgent, NextResponse, type NextRequest } from 'next/server'
 import { createClient } from '@/lib/supabase/middleware'
+import logToServer from '@/lib/logger/server'
 
 export default async function middleware(request: NextRequest) {
 
@@ -46,17 +47,19 @@ export default async function middleware(request: NextRequest) {
               //   return NextResponse.redirect(new URL('/login', request.nextUrl.origin))
               // }
 
-              // Middleware response was successful!
-              const { isBot } = userAgent(request)
-              const visitor = isBot ? 'Bot' : 'Human'
-              const travelling = isBot ? 'crawling' : 'visiting'
-              const country = (request.geo && request.geo.country) || 'Earth'
-              const city = (request.geo && request.geo.city) || 'Nowhere'
-              const region = (request.geo && request.geo.region) || 'Somewhere'
-              const ip = (request.ip) || 'Visitor'
-              const agent = (request.headers.get('user-agent')) || 'Agent Unknown'
+              // // Middleware response was successful!
+              // const { isBot } = userAgent(request)
+              // const visitor = isBot ? 'Bot' : 'Human'
+              // const travelling = isBot ? 'crawling' : 'visiting'
+              // const country = (request.geo && request.geo.country) || 'Earth'
+              // const city = (request.geo && request.geo.city) || 'Nowhere'
+              // const region = (request.geo && request.geo.region) || 'Somewhere'
+              // const ip = (request.ip) || 'Visitor'
+              // const agent = (request.headers.get('user-agent')) || 'Agent Unknown'
 
-              console.log(` \u{2713} ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`)
+              // console.log(` \u{2713} ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`)
+
+              logToServer(request)
 
               return response
 
