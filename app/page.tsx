@@ -1,34 +1,41 @@
-import HomeContent from './content'
-import { getPublicSiteURL } from '@/utils/headers/URL'
 import { Metadata } from 'next'
-// import { cookies } from 'next/headers'
+import { getPublicSiteURL } from '@/utils/headers/URL'
 
-// export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
+  title: 'StoneyDSP',
   description: 'Systems, Web, Audio & Graphics',
   alternates: {
-    canonical: new URL(getPublicSiteURL())
-  },
-
+    canonical: new URL('/', getPublicSiteURL())
+  }
 }
 
-export default async function Index(): Promise<JSX.Element> {
+export default function Page({
+  searchParams,
+}: {
+  searchParams: { message: string }
+}) {
 
-  // console.log(` \u{25CB} Index() :: Returning new Index Page... `)
+  const message = searchParams?.message
 
   try {
 
-    // console.log(` \u{2713} Index() :: Returned new Index Page. `)
-
     return (
-      <HomeContent />
+      <main>
+        <h1>StoneyDSP</h1>
+        {message && (
+          <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
+            {message}
+          </p>
+        )}
+      </main>
     )
 
   } catch(e) {
 
     const error: any = e
-    console.log(` \u{2715} Index() - :: Error returning new Index Page: ${error}`)
+    console.log(` \u{2715} :: Error returning new ${metadata.title} Page: ${error}`)
     throw new Error(error)
   }
 }
