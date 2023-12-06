@@ -14,23 +14,16 @@ export default async function middleware(nextRequest: NextRequest) {
 
     const { data: { session }, error } = await supabase.auth.getSession()
 
-    if(!error) {
-      // Middleware response was successful!
-      logRequestToServer(request)
-      // return response
-      return NextResponse.rewrite(new URL(`/www${request.nextUrl.pathname}`, request.nextUrl.origin), {
-        headers: response.headers,
-        status: 200,
-        statusText: 'ok'
-      })
-    }
 
-    // Middleware response was unsuccessful!
-    logRequestToServer(request!)
-    return NextResponse.redirect(new URL(`/?message=${error?.message}`, request!.url ), {
-      status: 400,
-      statusText: error?.message,
+    // Middleware response was successful!
+    logRequestToServer(request)
+    // return response
+    return NextResponse.rewrite(new URL(`/www${request.nextUrl.pathname}`, request.nextUrl.origin), {
+      headers: response.headers,
+      status: 200,
+      statusText: 'ok'
     })
+
   }
 
   // Middleware response was unsuccessful!
