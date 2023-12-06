@@ -1,6 +1,7 @@
 import { meta } from './meta'
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { ConsentBanner } from '@/components/elements/banner/consent'
 // import { cookies, headers } from 'next/headers'
 import './globals.css'
 
@@ -20,7 +21,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>{children}<ConsentBanner /></body>
     </html>
   )
 
