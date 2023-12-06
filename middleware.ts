@@ -1,7 +1,14 @@
+import {
+  generateCSP,
+  setHeaders,
+  headersDefaults,
+} from '@/lib/headers'
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
-import { createSupabaseMiddlewareClient } from '@/lib/supabase/middleware'
+// import { createSupabaseMiddlewareClient } from '@/lib/supabase/middleware'
 import parseNextRequest from '@/lib/parse/next/request'
 import logRequestToServer from '@/lib/log/request/server'
+// import customStorageAdapter from '@/lib/supabase/storage'
 // import parseError from './lib/parse/error'
 
 export default async function middleware(nextRequest: NextRequest) {
@@ -10,19 +17,101 @@ export default async function middleware(nextRequest: NextRequest) {
 
   if (request! && !error) {
 
-    const { data: { supabase, response } } = createSupabaseMiddlewareClient(request!)
+    const date = new Date()
+
+    request.headers.set('X-StoneyDSP-Middleware-Request', `${date.toUTCString()}`)
+
+    headersDefaults.forEach(async headerDefault => {
+      await setHeaders(request, headerDefault)
+    })
+
+    let response = NextResponse.next({
+      request: {
+        headers: request.headers
+      }
+    })
+
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        auth: {
+          detectSessionInUrl: true,
+          flowType: 'pkce',
+          // storage: customStorageAdapter,
+        },
+        cookies: {
+          get(name: string) {
+            // console.log('Middleware - getting cookie: %s', name)
+            return request.cookies.get(name)?.value
+          },
+          set(name: string, value: string, options: CookieOptions) {
+            // console.log('Middleware - setting cookie: %s', name)
+            // If the cookie is updated, update the cookies for the request and response
+            request.cookies.set({
+              name,
+              value,
+              ...options,
+            })
+            response = NextResponse.next({
+              request: {
+                headers: request.headers,
+              },
+            })
+            response.cookies.set({
+              name,
+              value,
+              ...options,
+            })
+          },
+          remove(name: string, options: CookieOptions) {
+            // console.log('Middleware - removing cookie: %s', name)
+            // If the cookie is removed, update the cookies for the request and response
+            request.cookies.set({
+              name,
+              value: '',
+              ...options,
+            })
+            response = NextResponse.next({
+              request: {
+                headers: request.headers,
+              },
+            })
+            response.cookies.set({
+              name,
+              value: '',
+              ...options,
+            })
+          },
+        },
+      }
+    )
 
     const { data: { session }, error } = await supabase.auth.getSession()
 
-    if(!error) {
+    if (!error) {
+
+      const { data: { user }, error } = await supabase.auth.getUser()
+
+      response.headers.set('X-StoneyDSP-Middleware-Response', `${date.toUTCString()}`)
+
+      headersDefaults.forEach(async headerDefault => {
+        await setHeaders(response, headerDefault)
+      })
+
       // Middleware response was successful!
       logRequestToServer(request)
-      // return response
-      return NextResponse.rewrite(new URL(`/www${request.nextUrl.pathname}`, request.nextUrl.origin), {
-        headers: response.headers,
-        status: 200,
-        statusText: 'ok'
-      })
+
+      if (request.nextUrl.pathname === '/' ||
+          request.nextUrl.pathname === '/about' ||
+          request.nextUrl.pathname === '/projects' ||
+          request.nextUrl.pathname === '/contact') {
+        return NextResponse.rewrite(new URL(`/www${request.nextUrl.pathname}`, request.nextUrl.origin), {
+          headers: response.headers,
+        })
+      }
+
+      return response
     }
 
     // Middleware response was unsuccessful!
@@ -31,6 +120,7 @@ export default async function middleware(nextRequest: NextRequest) {
       status: 400,
       statusText: error?.message,
     })
+
   }
 
   // Middleware response was unsuccessful!
@@ -40,31 +130,6 @@ export default async function middleware(nextRequest: NextRequest) {
     statusText: error?.message,
   })
 }
-
-
-
-
-
-
-
-// async function supa(request: NextRequest) {
-//   const { supabase, response } = createSupabaseMiddlewareClient(request)
-
-//   // Refresh session if expired - required for Server Components
-//   const { data: { session }, error }  = await supabase.auth.getSession()
-
-//   if (!error) {
-
-//     if (request.nextUrl.hostname === `www.${process.env.NEXT_PUBLIC_HOST_NAME}`) {
-//       return NextResponse.rewrite('/www', {
-//         headers: response.headers,
-//         request: {
-//           headers: request.headers
-//         }
-//       })
-//     }
-//   }
-// }
 
 export const config = {
   matcher: [

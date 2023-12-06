@@ -18,7 +18,7 @@ export default async function NavUser(){
       },
     }
   )
-  const { data : { session }, error } = await supabase.auth.getSession()
+  // const { data : { session }, error } = await supabase.auth.getSession()
   const {
     data: { user },
   } = await supabase.auth.getUser()
@@ -67,8 +67,7 @@ export default async function NavUser(){
         </form>
       ) : (
         <Link
-          // href="/login"
-          href="/"
+          href="/login"
           className="
             transition-colors
             bg-green-600
