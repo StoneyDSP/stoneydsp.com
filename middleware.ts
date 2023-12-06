@@ -104,7 +104,7 @@ export default async function middleware(nextRequest: NextRequest) {
 
       if (request.nextUrl.pathname === '/' ||
           request.nextUrl.pathname === '/about' ||
-          request.nextUrl.pathname === '/projects' ||
+          request.nextUrl.pathname === '/projects**' ||
           request.nextUrl.pathname === '/contact') {
         return NextResponse.rewrite(new URL(`/www${request.nextUrl.pathname}`, request.nextUrl.origin), {
           headers: response.headers,
