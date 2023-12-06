@@ -23,7 +23,7 @@
     "lint": "next lint",
     "postbuild": "node ./internals/generate-sitemap.mjs",
     "deploy": "next build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages",
-		"clean": "rm -rvf .next",
+    "clean": "rm -rvf .next",
     "wipe": "yarn clean && rm -rvf node_modules"
   },
   "dependencies": {

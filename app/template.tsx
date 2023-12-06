@@ -1,30 +1,36 @@
 // import Main from '@/components/elements/main/main'
-// import LoadingSpinner from '@/components/spinner/spinner'
-// import { Suspense } from 'react'
+import Header from '@/components/elements/header'
+import Footer from '@/components/elements/footer'
+import LoadingSpinner from '@/components/spinner/spinner'
+// import { AuthWrapper } from '@/components/elements/banner/consent'
+import { Suspense } from 'react'
 import styles from '@/app/template.module.css'
 
 export default async function Template({
   children
 }: {
-  children: React.ReactNode | Promise<React.ReactNode>
-}): Promise<JSX.Element> {
-
-  // console.log(` \u{25CB} Template() :: Returning new Template object... `)
+  children: React.ReactNode
+}) {
 
   try {
 
-    // console.log(` \u{2713} Template() :: Returned Template object. `)
-
     return (
-      <main className='animate-spin-in'>
-        <div className={styles.container}>
-          <article className={styles.content}>
-            <section className={styles.flexboxgrid}>
-              {children}
-            </section>
-          </article>
-        </div>
-      </main>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Header />
+        <main className='animate-spin-in'>
+          <div className={styles.container}>
+            <article className={styles.content}>
+              <section className={styles.flexboxgrid}>
+              <Suspense fallback={<LoadingSpinner />}>
+                {/* <AuthWrapper /> */}
+                {children}
+                </Suspense>
+              </section>
+            </article>
+          </div>
+        </main>
+        <Footer />
+      </Suspense>
     )
 
   } catch(e) {

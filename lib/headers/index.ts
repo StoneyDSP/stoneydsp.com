@@ -31,7 +31,7 @@ export async function checkHeaders(message: NextRequest | NextResponse, headers:
  *
  * https://github.com/Sprokets/nextjs-csp-report-only
  */
-const generateCSP = (requireHashedNonce: boolean = false) => {
+export const generateCSP = (requireHashedNonce: boolean = false) => {
 
   // generate random nonce converted to base64. Must be different on every HTTP page load
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
@@ -46,7 +46,7 @@ const generateCSP = (requireHashedNonce: boolean = false) => {
         "'report-sample'",
         "'self'",
         `'nonce-${requireHashedNonce ? hashedNonce : nonce}'`,
-        // "'strict-dynamic'",
+        "'strict-dynamic'",
         "https:",
         "http:",
         `${process.env.VERCEL_ENV === "production" ? "" : `'unsafe-eval'`}`
@@ -57,7 +57,6 @@ const generateCSP = (requireHashedNonce: boolean = false) => {
       values: [
         "'report-sample'",
         "'self'",
-        `${process.env.NEXT_PUBLIC_SUPABASE_URL!}`,
         `'nonce-${requireHashedNonce ? hashedNonce : nonce}'`
       ],
     },
@@ -67,7 +66,7 @@ const generateCSP = (requireHashedNonce: boolean = false) => {
         "'self'",
         "*.vercel-insights.com",
         "plausible.io",
-        "*.stoneydsp.com",
+        `*.${process.env.NEXT_PUBLIC_ROOT_DOMAIN!}`,
         `${process.env.NEXT_PUBLIC_SUPABASE_URL!}`,
       ],
     },
@@ -140,6 +139,8 @@ export const createHashedNonce = async (nonce: string) => {
 //   {name: 'Content-Security-Policy-Report-Only', value: csp,},
 // ] as const
 
+
+/** https://nextjs.org/docs/app/building-your-application/routing/route-handlers#cors */
 export const headersCORSNextJs: readonly SecurityHeaders[] = [
   {name: 'Access-Control-Allow-Origin', value: '*',},
   {name: 'Access-Control-Allow-Credentials', value: 'true',},
@@ -147,7 +148,16 @@ export const headersCORSNextJs: readonly SecurityHeaders[] = [
   {name: 'Access-Control-Allow-Headers', value: 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',},
 ] as const
 
+/** https://supabase.com/docs/guides/functions/cors */
 export const headersCORSSupabase: readonly SecurityHeaders[] = [
+  {name: 'Access-Control-Allow-Origin', value: '*',},
+  {name: 'Access-Control-Allow-Credentials', value: 'true',},
+  {name: 'Access-Control-Allow-Methods', value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT'},
+  {name: 'Access-Control-Allow-Headers', value: 'authorization, x-client-info, apikey, content-type',},
+] as const
+
+/** https://vercel.com/guides/how-to-enable-cors */
+export const headersCORSVercel: readonly SecurityHeaders[] = [
   {name: 'Access-Control-Allow-Origin', value: '*',},
   {name: 'Access-Control-Allow-Credentials', value: 'true',},
   {name: 'Access-Control-Allow-Methods', value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT'},
@@ -163,11 +173,11 @@ export const headersCacheControl: readonly SecurityHeaders[] = [
 export const headersDefaults: readonly (readonly SecurityHeaders[])[] = [
   // headersCSP,
   headersCORSNextJs,
-  headersCORSSupabase,
   headersCacheControl,
   [ {name: 'Strict-Transport-security', value: 'max-age=63072000; includeSubDomains; preload'}],
   [ {name: 'X-Content-Type-Options', value: 'nosniff'}],
   [ {name: 'X-Frame-Options', value: 'DENY'}],
   [ {name: 'X-XSS-Protection', value: '1; mode=block'}],
+  // [ {name: 'X-DNS-Prefetch-Control', value: 'on'}],
   [ {name: 'Upgrade-Insecure-Requests', value: '1'}],
 ] as const
