@@ -20,6 +20,10 @@ export default async function middleware(nextRequest: NextRequest) {
     const date = new Date()
 
     request.headers.set('X-StoneyDSP-Middleware-Request', `${date.toUTCString()}`)
+    // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
+    let hostname = request.headers
+      .get("host")!
+      .replace(".localhost:3000", `.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`)
 
     headersDefaults.forEach(async headerDefault => {
       await setHeaders(request, headerDefault)
@@ -105,7 +109,7 @@ export default async function middleware(nextRequest: NextRequest) {
       if (request.nextUrl.pathname === '/' ||
           request.nextUrl.pathname === '/about' ||
           request.nextUrl.pathname === '/projects' ||
-          request.nextUrl.pathname === '/projects/*' ||
+          request.nextUrl.pathname === '/projects/' ||
           request.nextUrl.pathname === '/contact') {
         return NextResponse.rewrite(new URL(`/www${request.nextUrl.pathname}`, request.nextUrl.origin), {
           headers: response.headers,
