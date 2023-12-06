@@ -2,11 +2,11 @@ import 'server-only'
 import Link from 'next/link'
 import { cookies } from 'next/headers'
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
+// import customStorageAdapter from '@/lib/supabase/storage'
 
 export default async function NavUser(){
 
   const cookieStore = cookies()
-
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -18,9 +18,7 @@ export default async function NavUser(){
       },
     }
   )
-
-  const session = await supabase.auth.getSession()
-
+  const { data : { session }, error } = await supabase.auth.getSession()
   const {
     data: { user },
   } = await supabase.auth.getUser()
@@ -32,7 +30,7 @@ export default async function NavUser(){
         <div className="flex items-center gap-4 text-center">
           <Link href="/account" target="_self">
             <span className="text-xs font-light text-center">
-              {user.email}<br />
+              {user?.email}<br />
               ({user?.role})
             </span>
           </Link>
@@ -69,7 +67,8 @@ export default async function NavUser(){
         </form>
       ) : (
         <Link
-          href="/login"
+          // href="/login"
+          href="/"
           className="
             transition-colors
             bg-green-600
@@ -91,6 +90,6 @@ export default async function NavUser(){
         </Link>
       )}
     </div>
-
   )
+
 }
