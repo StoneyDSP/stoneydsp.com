@@ -3,6 +3,12 @@ import { getPublicSiteURL } from '@/utils/headers/URL'
 import Login from './content'
 // import AuthForm from './auth-form'
 
+import { createSupabaseServerSideClient } from '@/utils/supabase/ssr/server'
+
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+
+
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
@@ -13,24 +19,26 @@ export const metadata: Metadata = {
   }
 }
 
-export default function LoginPage({
+export default async function LoginPage({
   searchParams,
 }: {
   searchParams: { message: string }
 }) {
 
-  try {
+  const cookieStore = cookies()
+  const supabase = createSupabaseServerSideClient(cookieStore)
 
-    return (
-      <Login searchParams={searchParams} />
-    )
+  const {
+    data: { session },
+  } = await supabase.auth.getSession()
+
+  if (session) {
+    redirect('/account')
+  }
+
+  return (
+    <Login searchParams={searchParams} />
+  )
 
     // return (<AuthForm />)
-
-  } catch(e) {
-
-    const error: any = e
-    console.log(` \u{2715} LoginPage() - :: Error returning new ${metadata.title} Page: ${error}`)
-    throw new Error(error)
-  }
 }

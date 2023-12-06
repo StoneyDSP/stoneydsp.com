@@ -12,32 +12,22 @@ export default async function Template({
   children: React.ReactNode
 }) {
 
-  try {
-
-    return (
-      <Suspense fallback={<LoadingSpinner />}>
-        <Header />
-        <main className='animate-spin-in'>
-          <div className={styles.container}>
-            <article className={styles.content}>
-              <section className={styles.flexboxgrid}>
-              <Suspense fallback={<LoadingSpinner />}>
-                {/* <AuthWrapper /> */}
-                {children}
-                </Suspense>
-              </section>
-            </article>
-          </div>
-        </main>
-        <Footer />
-      </Suspense>
-    )
-
-  } catch(e) {
-
-    const error: any = e
-    console.log(` \u{2715} Template() - :: Error returning new Template object: ${error}`)
-    throw new Error(error)
-
-  }
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <Header />
+      <main className='animate-spin-in'>
+        <div className={styles.container}>
+          <article className={styles.content}>
+            <section className={styles.flexboxgrid}>
+            <Suspense fallback={<LoadingSpinner />}>
+              {children}
+              {/* <AuthWrapper /> */}
+              </Suspense>
+            </section>
+          </article>
+        </div>
+      </main>
+      <Footer />
+    </Suspense>
+  )
 }
