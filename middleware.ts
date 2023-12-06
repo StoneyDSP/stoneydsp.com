@@ -1,3 +1,8 @@
+import {
+  generateCSP,
+  setHeaders,
+  headersDefaults,
+} from '@/lib/headers'
 import { NextResponse, type NextRequest } from 'next/server'
 import { createSupabaseMiddlewareClient } from '@/lib/supabase/middleware'
 import parseNextRequest from '@/lib/parse/next/request'
@@ -10,9 +15,25 @@ export default async function middleware(nextRequest: NextRequest) {
 
   if (request! && !error) {
 
-    const { data: { supabase, response } } = createSupabaseMiddlewareClient(request!)
+    // const { data: { supabase, response } } = createSupabaseMiddlewareClient(request!)
 
-    const { data: { session }, error } = await supabase.auth.getSession()
+    // const { data: { session }, error } = await supabase.auth.getSession()
+
+    const date = new Date()
+
+    request.headers.set('X-StoneyDSP-Middleware-Request', `${date.toUTCString()}`)
+
+    headersDefaults.forEach(async headerDefault => {
+      await setHeaders(request, headerDefault)
+    })
+
+    let response = NextResponse.next({
+      headers: request.headers
+    })
+
+    headersDefaults.forEach(async headerDefault => {
+      await setHeaders(response, headerDefault)
+    })
 
 
     // Middleware response was successful!
@@ -20,8 +41,6 @@ export default async function middleware(nextRequest: NextRequest) {
     // return response
     return NextResponse.rewrite(new URL(`/www${request.nextUrl.pathname}`, request.nextUrl.origin), {
       headers: response.headers,
-      status: 200,
-      statusText: 'ok'
     })
 
   }
