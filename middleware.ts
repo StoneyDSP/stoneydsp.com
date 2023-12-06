@@ -120,7 +120,6 @@ export default async function middleware(nextRequest: NextRequest) {
       status: 400,
       statusText: error?.message,
     })
-
   }
 
   // Middleware response was unsuccessful!
