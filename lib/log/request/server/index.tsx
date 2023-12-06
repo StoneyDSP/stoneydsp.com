@@ -2,7 +2,11 @@
 import 'server-only'
 import { userAgent, type NextRequest } from 'next/server'
 
-const logToServer = (req: NextRequest) => {
+const statusSymbolText = [
+  { status: 200, symbol: `\u{2713}`, text: "ok" }
+]
+
+const logRequestToServer = (req: NextRequest) => {
   'use server'
   const { isBot } = userAgent(req)
   const visitor = isBot ? 'Bot' : 'Human'
@@ -13,7 +17,11 @@ const logToServer = (req: NextRequest) => {
   const ip = (req.ip) || 'Visitor'
   const agent = (req.headers.get('user-agent')) || 'Agent Unknown'
 
-  console.log(` \u{2713} ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`)
+  if (process.env.VERCEL_ENV === 'development') {
+    console.log(` \u{2713} ${req.method} ${req.nextUrl.pathname}`)
+  } else {
+    console.log(` \u{2713} ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`)
+  }
 }
 
-export default logToServer
+export default logRequestToServer
