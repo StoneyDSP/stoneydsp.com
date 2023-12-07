@@ -1,7 +1,6 @@
 import { meta } from './meta'
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-// import { cookies, headers } from 'next/headers'
 import './globals.css'
 
 export const dynamic = 'force-dynamic'
@@ -23,5 +22,4 @@ export default async function RootLayout({
       <body className={inter.className}>{children}</body>
     </html>
   )
-
 }

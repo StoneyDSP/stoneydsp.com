@@ -43,7 +43,7 @@ export default async function NavUser(){
       }
 
       {user ? (
-        <form action="/auth/signout" method="post">
+        <form action="/edge/auth/v1/signout" method="post">
           <button
             type="submit"
             className='
