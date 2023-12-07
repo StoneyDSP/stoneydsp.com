@@ -37,6 +37,7 @@ export default async function middleware(nextRequest: NextRequest) {
         auth: {
           detectSessionInUrl: true,
           flowType: 'pkce',
+          // debug: process.env.VERCEL_ENV === 'development',
           // storage: customStorageAdapter,
         },
         cookies: {

@@ -9,8 +9,6 @@ const parseNextRequest = async (request: NextRequest): Promise<{
   error: Error | EvalError | RangeError | ReferenceError | SyntaxError | TypeError | URIError | AggregateError | null;
 }> => {
 
-  // let error: Error | null = null
-
   let localError: null | Error | EvalError | RangeError | ReferenceError | SyntaxError | TypeError | URIError | AggregateError = null
 
   try {
@@ -18,11 +16,11 @@ const parseNextRequest = async (request: NextRequest): Promise<{
   const data = {
     request: {
       // Internals (NextJs-specific)
-      nextUrl: request.nextUrl,
-      cookies: request.cookies,
-      geo: request.geo,
-      ip: request.ip,
-      url: request.url,
+      nextUrl: request!.nextUrl!,
+      cookies: request!.cookies!,
+      geo: request!.geo!,
+      ip: request!.ip!,
+      url: request!.url!,
 
       // Request API methods
       arrayBuffer: () => request.arrayBuffer(),
@@ -33,32 +31,34 @@ const parseNextRequest = async (request: NextRequest): Promise<{
       text: () => request.text(),
 
       // Request API members
-      body: request.body,
-      bodyUsed: request.bodyUsed,
-      cache: request.cache,
-      credentials: request.credentials,
-      destination: request.destination,
-      headers: request.headers,
-      integrity: request.integrity,
-      method: request.method,
-      mode: request.mode,
-      redirect: request.redirect,
-      referrer: request.referrer,
-      referrerPolicy: request.referrerPolicy,
-      signal: request.signal,
+      body: request!.body!,
+      bodyUsed: request!.bodyUsed!,
+      cache: request!.cache!,
+      credentials: request!.credentials!,
+      destination: request!.destination!,
+      headers: request!.headers!,
+      integrity: request!.integrity!,
+      method: request!.method!,
+      mode: request!.mode!,
+      redirect: request!.redirect!,
+      referrer: request!.referrer!,
+      referrerPolicy: request!.referrerPolicy!,
+      signal: request!.signal!,
     },
   }
 } catch(e) {
+
   const { error } = parseError(e)
   localError = error
-  localError.name = error.name
-  localError.cause = error.cause
-  localError.message = error.message
-  localError.stack = error.stack
+  localError.name = error!.name
+  localError.cause = error!.cause
+  localError.message = error!.message
+  localError.stack = error!.stack
 
 }
 
   const error = localError
+  localError = null
 
   return { data: { request }, error }
 }

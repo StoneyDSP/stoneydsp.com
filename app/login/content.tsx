@@ -1,9 +1,5 @@
-import { headers, cookies } from 'next/headers'
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import { redirect } from 'next/navigation'
 import HRGradient from '@/components/layouts/HRGradient'
 import { Title, Text } from '@/lib/Typography'
-// import customStorageAdapter from '@/lib/supabase/storage'
 
 export const dynamic = 'force-dynamic'
 
@@ -24,12 +20,20 @@ export default async function Login({
 
       <HRGradient />
 
-      <div className='py-4'></div>
+      <div className='py-2'></div>
+
+      {searchParams?.message && (
+        <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
+          {searchParams.message}
+        </p>
+      )}
+
+      <div className='py-2'></div>
 
       <form
         className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground"
         // action={signIn}
-        action="/edge/auth/v1/signin" method="post"
+        action="/auth/v1/signin" method="post"
       >
 
         <label className="text-foreground" htmlFor="email">
@@ -102,12 +106,6 @@ export default async function Login({
           </span>
 
         </button>
-
-        {searchParams?.message && (
-          <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
-            {searchParams.message}
-          </p>
-        )}
 
       </form>
 
