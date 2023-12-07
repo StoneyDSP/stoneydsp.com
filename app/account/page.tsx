@@ -39,7 +39,7 @@ export default async function AccountPage() {
 
 
   if (!session) {
-    return redirect('/login?message=Could not authenticate user')
+    return redirect(`/login?message=Could not authenticate user`)
   }
 
   return (

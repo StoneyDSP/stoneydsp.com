@@ -4,12 +4,11 @@ import {
   headersDefaults,
 } from '@/lib/headers'
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import { NextResponse, type NextRequest } from 'next/server'
+import { NextResponse, NextRequest } from 'next/server'
 // import { createSupabaseMiddlewareClient } from '@/lib/supabase/middleware'
 import parseNextRequest from '@/lib/parse/next/request'
 import logRequestToServer from '@/lib/log/request/server'
 // import customStorageAdapter from '@/lib/supabase/storage'
-// import parseError from './lib/parse/error'
 
 export default async function middleware(nextRequest: NextRequest) {
 
@@ -20,10 +19,6 @@ export default async function middleware(nextRequest: NextRequest) {
     const date = new Date()
 
     request.headers.set('X-StoneyDSP-Middleware-Request', `${date.toUTCString()}`)
-    // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
-    let hostname = request.headers
-      .get("host")!
-      .replace(".localhost:3000", `.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`)
 
     headersDefaults.forEach(async headerDefault => {
       await setHeaders(request, headerDefault)
@@ -31,7 +26,7 @@ export default async function middleware(nextRequest: NextRequest) {
 
     let response = NextResponse.next({
       request: {
-        headers: request.headers
+        headers: request.headers,
       }
     })
 
@@ -42,6 +37,7 @@ export default async function middleware(nextRequest: NextRequest) {
         auth: {
           detectSessionInUrl: true,
           flowType: 'pkce',
+          // debug: process.env.VERCEL_ENV === 'development',
           // storage: customStorageAdapter,
         },
         cookies: {
@@ -119,10 +115,11 @@ export default async function middleware(nextRequest: NextRequest) {
           request.nextUrl.pathname === '/projects/nonlinearfilters' ||
           request.nextUrl.pathname === '/projects/bilineareq' ||
           request.nextUrl.pathname === '/contact') {
-        return NextResponse.rewrite(
-          new URL(`/www${request.nextUrl.pathname === "/" ? "" : request.nextUrl.pathname}`, 
-          request.nextUrl.origin), {
-            headers: response.headers,
+        return NextResponse.rewrite(new URL(`/www${request.nextUrl.pathname === "/" ? "" : request.nextUrl.pathname}`, request.nextUrl.origin), {
+          headers: response.headers,
+          request: {
+            headers: request.headers,
+          }
         })
       }
 
