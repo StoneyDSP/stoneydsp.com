@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { headers, cookies } from 'next/headers'
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 
-export const dynamic = 'force-dynamic'
+export const runtime = 'edge'
 
 export async function POST(request: NextRequest) {
 

@@ -25,6 +25,8 @@ import WIcon384x256 from '@/public/images/w_icon__384x256.png'
 import WIcon768x512 from '@/public/images/w_icon__768x512.png'
 import WIcon1024x768 from '@/public/images/w_icon__1024x768.png'
 
+// export const dynamic = 'force-static'
+
 export default async function webmanifest(): Promise<Manifest> {
 
   // const defaultUrl = process.env.VERCEL_URL
