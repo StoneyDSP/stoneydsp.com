@@ -31,7 +31,7 @@ async function generate() {
 
 				return `
 					<url>
-						<loc>${`https://www.stoneydsp.com${route}`}</loc>
+						<loc>${`https://stoneydsp.com${route}`}</loc>
 					</url>`
 						})
 						.join('')}
