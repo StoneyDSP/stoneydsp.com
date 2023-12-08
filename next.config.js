@@ -11,35 +11,35 @@ const nextConfig = {
   // crossOrigin: "use-credentials",
   // trailingSlash: false,
   // basePath: '/www',
-  // async rewrites() {
-  //   return {
-  //     beforeFiles: [
-  //     {
-  //       source: '/www/:path*',
-  //       destination: `https://www.localhost:3000/:path*`,
-  //       has: [{ type: 'host', value: 'localhost:3000' }],
-  //     },
-  //     {
-  //       source: '/www',
-  //       destination: 'http://www.localhost:3000',
-  //       has: [{ type: 'host', value: 'localhost:3000' }],
-  //     },
-  //     ],
-  //     afterFiles: [],
-  //     fallback: [
-  //       {
-  //         source: '/www',
-  //         destination: 'http://www.localhost:3000',
-  //         has: [{ type: 'host', value: 'localhost:3000' }],
-  //       },
-  //       {
-  //         source: '/www/:path*',
-  //         destination: `https://www.localhost:3000/:path*`,
-  //         has: [{ type: 'host', value: 'localhost:3000' }],
-  //       },
-  //     ]
-  //   }
-  // },
+async rewrites() {
+  return {
+    beforeFiles: [
+      {
+        source: '/www/:path(\\d+)',
+        destination: '/:path(\\d+)',
+        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+      },
+      {
+        source: '/www',
+        destination: '/',
+        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+      },
+    ],
+    afterFiles: [],
+    fallback: [
+      {
+        source: '/www',
+        destination: '/',
+        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+      },
+      {
+        source: '/www/:path(\\d+)',
+        destination: '/:path(\\d+)',
+        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+      },
+    ]
+  }
+},
   // redirects: async () => {
   //   return [
   //     {
