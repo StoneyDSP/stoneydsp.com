@@ -15,26 +15,26 @@ async rewrites() {
   return {
     beforeFiles: [
       {
-        source: '/:path(\\d+)',
-        destination: '/www/:path(\\d+)',
+        source: '/www/:path(\\d+)',
+        destination: '/:path(\\d+)',
         has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
       },
       {
-        source: '',
-        destination: '/www',
+        source: '/www',
+        destination: '/',
         has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
       },
     ],
     afterFiles: [],
     fallback: [
       {
-        source: '',
-        destination: '/www',
+        source: '/www',
+        destination: '/',
         has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
       },
       {
-        source: '/:path(\\d+)',
-        destination: '/www/:path(\\d+)',
+        source: '/www/:path(\\d+)',
+        destination: '/:path(\\d+)',
         has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
       },
     ]
