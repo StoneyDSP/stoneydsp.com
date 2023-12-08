@@ -21,7 +21,7 @@ async rewrites() {
       },
       {
         source: '/www',
-        destination: '/',
+        destination: '',
         has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
       },
     ],
@@ -29,7 +29,7 @@ async rewrites() {
     fallback: [
       {
         source: '/www',
-        destination: '/',
+        destination: '',
         has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
       },
       {
