@@ -104,6 +104,9 @@ export default async function middleware(nextRequest: NextRequest) {
 
       if (request.nextUrl.pathname === '/' ||
           request.nextUrl.pathname === '/about' ||
+          request.nextUrl.pathname === '/contact' ||
+          request.nextUrl.pathname === '/terms-of-service' ||
+          request.nextUrl.pathname === '/privacy-policy' ||
           request.nextUrl.pathname === '/projects' ||
           request.nextUrl.pathname === '/projects/biquads' || // not ideal, but secure at least...
           request.nextUrl.pathname === '/projects/ubento' ||
@@ -113,8 +116,7 @@ export default async function middleware(nextRequest: NextRequest) {
           request.nextUrl.pathname === '/projects/audioplugin-svf' ||
           request.nextUrl.pathname === '/projects/orfanidisbiquad' ||
           request.nextUrl.pathname === '/projects/nonlinearfilters' ||
-          request.nextUrl.pathname === '/projects/bilineareq' ||
-          request.nextUrl.pathname === '/contact') {
+          request.nextUrl.pathname === '/projects/bilineareq') {
         return NextResponse.rewrite(new URL(`/www${request.nextUrl.pathname === "/" ? "" : request.nextUrl.pathname}`, request.nextUrl.origin), {
           headers: response.headers,
           request: {
