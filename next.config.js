@@ -17,22 +17,67 @@ async rewrites() {
       {
         source: '/about',
         destination: '/www/about',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
       },
       {
         source: '/contact',
         destination: '/www/contact',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
       },
       {
         source: '/projects',
         destination: '/www/projects',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
       },
       {
-        source: '/projects/:path(\\d+)',
-        destination: '/www/projects/:path(\\d+)',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        source: '/projects/biquads',
+        destination: '/www/projects/biquads',
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
+      },
+      {
+        source: '/projects/ubento',
+        destination: '/www/projects/ubento',
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
+      },
+      {
+        source: '/projects/cxxwin',
+        destination: '/www/projects/cxxwin',
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
+      },
+      {
+        source: '/projects/msys2-toolchain',
+        destination: '/www/projects/msys2-toolchain',
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
+      },
+      {
+        source: '/projects/orfanidis-biquad',
+        destination: '/www/projects/orfanidis-biquad',
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
+      },
+      {
+        source: '/projects/audioplugin-svf',
+        destination: '/www/projects/audioplugin-svf',
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
+      },
+      {
+        source: '/projects/cmodule',
+        destination: '/www/projects/cmodule',
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
+      },
+      {
+        source: '/projects/nonlinearfilters',
+        destination: '/www/projects/nonlinearfilters',
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
+      },
+      {
+        source: '/terms-of-service',
+        destination: '/www/terms-of-service',
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
+      },
+      {
+        source: '/privacy-policy',
+        destination: '/www/privacy-policy',
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
       },
     ],
     afterFiles: [],
@@ -40,12 +85,12 @@ async rewrites() {
       {
         source: '/www',
         destination: '/',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
       },
       {
         source: '/www/:path(\\d+)',
         destination: '/:path(\\d+)',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost'}` }],
       },
     ]
   }
