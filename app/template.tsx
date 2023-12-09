@@ -2,7 +2,7 @@
 import Header from '@/components/elements/header'
 import Footer from '@/components/elements/footer'
 import LoadingSpinner from '@/components/spinner/spinner'
-import { ConsentBanner } from '@/components/elements/banner/consent'
+// import { ConsentBanner } from '@/components/elements/banner/consent'
 import { Suspense } from 'react'
 import styles from '@/app/template.module.css'
 
@@ -21,7 +21,7 @@ export default async function Template({
             <section className={styles.flexboxgrid}>
             <Suspense fallback={<LoadingSpinner />}>
               {children}
-              <ConsentBanner />
+              {/* <ConsentBanner /> */}
               </Suspense>
             </section>
           </article>
