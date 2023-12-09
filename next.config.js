@@ -50,8 +50,8 @@ async rewrites() {
         has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
       },
       {
-        source: '/projects/orfanidis-biquad',
-        destination: '/www/projects/orfanidis-biquad',
+        source: '/projects/orfanidisbiquad',
+        destination: '/www/projects/orfanidisbiquad',
         has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
       },
       {
@@ -67,6 +67,11 @@ async rewrites() {
       {
         source: '/projects/nonlinearfilters',
         destination: '/www/projects/nonlinearfilters',
+        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+      },
+      {
+        source: '/projects/bilineareq',
+        destination: '/www/projects/bilineareq',
         has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
       },
       {
