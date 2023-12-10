@@ -14,11 +14,15 @@ export default async function middleware(nextRequest: NextRequest) {
 
   const { data: { request }, error } = await parseNextRequest(nextRequest)
 
+  const { csp, nonce } = generateCSP()
+
   if (request! && !error) {
 
     const date = new Date()
 
     request.headers.set('X-StoneyDSP-Middleware-Request', `${date.toUTCString()}`)
+    request.headers.set('Content-Security-Policy', csp)
+    request.headers.set('X-Data-Nonce', nonce)
 
     headersDefaults.forEach(async headerDefault => {
       await setHeaders(request, headerDefault)
@@ -94,6 +98,8 @@ export default async function middleware(nextRequest: NextRequest) {
       const { data: { user }, error } = await supabase.auth.getUser()
 
       response.headers.set('X-StoneyDSP-Middleware-Response', `${date.toUTCString()}`)
+      response.headers.set('Content-Security-Policy', csp)
+      response.headers.set('X-Data-Nonce', nonce)
 
       headersDefaults.forEach(async headerDefault => {
         await setHeaders(response, headerDefault)
