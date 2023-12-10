@@ -179,7 +179,7 @@ export default function AccountForm() {
       </div>
 
       <div>
-        <form action="/auth/signout" method="post">
+        <form action="/auth/v1/signout" method="post">
           <button
             className='
               transition-colors
