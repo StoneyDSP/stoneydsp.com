@@ -5,9 +5,9 @@ import BackToHome from '@/components/layouts/BackToHome'
 import BackToTop from '@/components/layouts/BackToTop'
 import { GitProjectCard } from '@/components/cards'
 import MDXCache from '@/components/MDXCache'
-import BlogArticle from '@/components/elements/article/blogArticle'
+// import BlogArticle from '@/components/elements/article/blogArticle'
 import mdxFetch from '@/lib/mdx/mdxFetch'
-import styles from '@/app/template.module.css'
+// import styles from '@/app/template.module.css'
 
 export default async function OrfanidisbiquadContent() {
 
