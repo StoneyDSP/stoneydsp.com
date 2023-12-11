@@ -1,5 +1,5 @@
 import ContactContent from './content'
-import { getPublicSiteURL } from '@/utils/headers/URL'
+import { getPublicSiteURL } from '@/lib/url'
 // import { createSupabaseServerSideClient } from '@/utils/supabase/ssr/server'
 import { Metadata } from 'next'
 // import { cookies } from 'next/headers'

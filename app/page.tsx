@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { getPublicSiteURL } from '@/utils/headers/URL'
+import { getPublicSiteURL } from '@/lib/url'
 
 export const dynamic = 'force-dynamic'
 

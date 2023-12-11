@@ -1,5 +1,5 @@
 import MsystoolchainContent from '@/components/articles/projects/msys2toolchain'
-import { getPublicSiteURL } from '@/utils/headers/URL'
+import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 
 // export const dynamic = 'force-dynamic'
