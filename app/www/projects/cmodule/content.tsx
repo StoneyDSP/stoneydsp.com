@@ -5,9 +5,9 @@ import BackToHome from '@/components/layouts/BackToHome'
 import BackToTop from '@/components/layouts/BackToTop'
 import { GitProjectCard } from '@/components/cards'
 import MDXCache from '@/components/MDXCache'
-import BlogArticle from '@/components/elements/article/blogArticle'
+// import BlogArticle from '@/components/elements/article/blogArticle'
 import mdxFetch from '@/lib/mdx/mdxFetch'
-import styles from '@/app/template.module.css'
+// import styles from '@/app/template.module.css'
 
 export default async function CmoduleContent() {
 
@@ -15,12 +15,13 @@ export default async function CmoduleContent() {
   const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/cmodule/main/README.md')
 
   return (
-    <BlogArticle>
-      <div className={styles.container}>
+    <>
+    {/* <BlogArticle> */}
+      {/* <div className={styles.container}>
 
         <article className={styles.content}>
 
-          <div className={styles.flexboxgrid}>
+          <div className={styles.flexboxgrid}> */}
 
             <div className="py-4"></div>
 
@@ -43,9 +44,10 @@ export default async function CmoduleContent() {
 
             <HRGradient />
 
-          </div>
+          {/* </div>
         </article>
-      </div>
-    </BlogArticle>
+      </div> */}
+    {/* </BlogArticle> */}
+    </>
   )
 }

@@ -8,20 +8,21 @@ import {
 } from '@/components/cards'
 import mdxFetch from '@/lib/mdx/mdxFetch'
 import MDXCache from '@/components/MDXCache'
-import BlogArticle from '@/components/elements/article/blogArticle'
-import styles from '@/app/template.module.css'
+// import BlogArticle from '@/components/elements/article/blogArticle'
+// import styles from '@/app/template.module.css'
 
 export default async function BiquadsContent() {
 
   const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/Biquads/main/README.md')
 
   return (
-    <BlogArticle>
-      <div className={styles.container}>
+    <>
+    {/* <BlogArticle> */}
+      {/* <div className={styles.container}>
 
         <article className={styles.content}>
 
-          <div className={styles.flexboxgrid}>
+          <div className={styles.flexboxgrid}> */}
 
             <div className="py-4"></div>
 
@@ -44,9 +45,10 @@ export default async function BiquadsContent() {
 
             <HRGradient />
 
-          </div>
+          {/* </div>
         </article>
-      </div>
-    </BlogArticle>
+      </div> */}
+    {/* </BlogArticle> */}
+    </>
   )
 }
