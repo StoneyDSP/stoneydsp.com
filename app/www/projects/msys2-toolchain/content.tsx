@@ -5,9 +5,9 @@ import BackToHome from '@/components/layouts/BackToHome'
 import BackToTop from '@/components/layouts/BackToTop'
 import { GitProjectCard } from '@/components/cards'
 import MDXCache from '@/components/MDXCache'
-import BlogArticle from '@/components/elements/article/blogArticle'
+// import BlogArticle from '@/components/elements/article/blogArticle'
 // import mdxFetch from '@/utils/mdx/mdxFetch'
-import styles from '@/app/template.module.css'
+// import styles from '@/app/template.module.css'
 
 export default async function MsystoolchainContent() {
 
@@ -48,12 +48,13 @@ CMake is distributed under the OSI-approved BSD 3-clause License
 All rights reserved.`
 
   return (
-    <BlogArticle>
-      <div className={styles.container}>
+    <>
+    {/* <BlogArticle> */}
+      {/* <div className={styles.container}>
 
         <article className={styles.content}>
 
-          <div className={styles.flexboxgrid}>
+          <div className={styles.flexboxgrid}> */}
 
             <div className="py-4"></div>
 
@@ -76,9 +77,10 @@ All rights reserved.`
 
             <HRGradient />
 
-          </div>
+          {/* </div>
         </article>
-      </div>
-    </BlogArticle>
+      </div> */}
+    {/* </BlogArticle> */}
+    </>
   )
 }

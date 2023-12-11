@@ -5,34 +5,33 @@ import {
 } from '@/lib/headers'
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, NextRequest } from 'next/server'
-// import { createSupabaseMiddlewareClient } from '@/lib/supabase/middleware'
 import parseNextRequest from '@/lib/parse/next/request'
 import logRequestToServer from '@/lib/log/request/server'
 // import customStorageAdapter from '@/lib/supabase/storage'
 
 export default async function middleware(nextRequest: NextRequest) {
 
+  const date = new Date()
+
   const { data: { request }, error } = await parseNextRequest(nextRequest)
 
   const { csp, nonce } = generateCSP()
 
+  request.headers.set('X-StoneyDSP-Middleware-Request', `${date.toUTCString()}`)
+  request.headers.set('Content-Security-Policy', csp)
+  request.headers.set('X-Data-Nonce', nonce)
+
+  headersDefaults.forEach(async headerDefault => {
+    await setHeaders(request, headerDefault)
+  })
+
+  let response = NextResponse.next({
+    request: {
+      headers: request.headers,
+    }
+  })
+
   if (request! && !error) {
-
-    const date = new Date()
-
-    request.headers.set('X-StoneyDSP-Middleware-Request', `${date.toUTCString()}`)
-    request.headers.set('Content-Security-Policy', csp)
-    request.headers.set('X-Data-Nonce', nonce)
-
-    headersDefaults.forEach(async headerDefault => {
-      await setHeaders(request, headerDefault)
-    })
-
-    let response = NextResponse.next({
-      request: {
-        headers: request.headers,
-      }
-    })
 
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -93,60 +92,52 @@ export default async function middleware(nextRequest: NextRequest) {
 
     const { data: { session }, error } = await supabase.auth.getSession()
 
-    if (!error) {
 
-      const { data: { user }, error } = await supabase.auth.getUser()
+    response.headers.set('X-StoneyDSP-Middleware-Response', `${date.toUTCString()}`)
+    response.headers.set('Content-Security-Policy', csp)
+    response.headers.set('X-Data-Nonce', nonce)
 
-      response.headers.set('X-StoneyDSP-Middleware-Response', `${date.toUTCString()}`)
-      response.headers.set('Content-Security-Policy', csp)
-      response.headers.set('X-Data-Nonce', nonce)
+    headersDefaults.forEach(async headerDefault => {
+      await setHeaders(response, headerDefault)
+    })
 
-      headersDefaults.forEach(async headerDefault => {
-        await setHeaders(response, headerDefault)
+    // Middleware response was successful!
+    logRequestToServer(request)
+
+    if (request.nextUrl.pathname === '/' ||
+        request.nextUrl.pathname === '/about' ||
+        request.nextUrl.pathname === '/contact' ||
+        request.nextUrl.pathname === '/terms-of-service' ||
+        request.nextUrl.pathname === '/privacy-policy' ||
+        request.nextUrl.pathname === '/projects' ||
+        request.nextUrl.pathname === '/projects/biquads' || // not ideal, but secure at least...
+        request.nextUrl.pathname === '/projects/ubento' ||
+        request.nextUrl.pathname === '/projects/cxxwin' ||
+        request.nextUrl.pathname === '/projects/msys2-toolchain' ||
+        request.nextUrl.pathname === '/projects/cmodule' ||
+        request.nextUrl.pathname === '/projects/audioplugin-svf' ||
+        request.nextUrl.pathname === '/projects/orfanidisbiquad' ||
+        request.nextUrl.pathname === '/projects/nonlinearfilters' ||
+        request.nextUrl.pathname === '/projects/bilineareq') {
+      return NextResponse.rewrite(new URL(`/www${request.nextUrl.pathname === "/" ? "" : request.nextUrl.pathname}`, request.nextUrl.origin), {
+        headers: response.headers,
+        request: {
+          headers: request.headers,
+        }
       })
-
-      // Middleware response was successful!
-      logRequestToServer(request)
-
-      if (request.nextUrl.pathname === '/' ||
-          request.nextUrl.pathname === '/about' ||
-          request.nextUrl.pathname === '/contact' ||
-          request.nextUrl.pathname === '/terms-of-service' ||
-          request.nextUrl.pathname === '/privacy-policy' ||
-          request.nextUrl.pathname === '/projects' ||
-          request.nextUrl.pathname === '/projects/biquads' || // not ideal, but secure at least...
-          request.nextUrl.pathname === '/projects/ubento' ||
-          request.nextUrl.pathname === '/projects/cxxwin' ||
-          request.nextUrl.pathname === '/projects/msys2-toolchain' ||
-          request.nextUrl.pathname === '/projects/cmodule' ||
-          request.nextUrl.pathname === '/projects/audioplugin-svf' ||
-          request.nextUrl.pathname === '/projects/orfanidisbiquad' ||
-          request.nextUrl.pathname === '/projects/nonlinearfilters' ||
-          request.nextUrl.pathname === '/projects/bilineareq') {
-        return NextResponse.rewrite(new URL(`/www${request.nextUrl.pathname === "/" ? "" : request.nextUrl.pathname}`, request.nextUrl.origin), {
-          headers: response.headers,
-          request: {
-            headers: request.headers,
-          }
-        })
-      }
-
-      return response
     }
 
-    // Middleware response was unsuccessful!
-    logRequestToServer(request!)
-    return NextResponse.redirect(new URL(`/?message=${error?.message}`, request!.url ), {
-      status: 400,
-      statusText: error?.message,
-    })
+    return response
   }
 
   // Middleware response was unsuccessful!
   logRequestToServer(request!)
-  return NextResponse.redirect(new URL(`/?message=${error?.message}`, request!.url ), {
-    status: 400,
-    statusText: error?.message,
+  return NextResponse.rewrite(new URL(`/?message=${error?.message}`, request!.url ), {
+    request: {
+      headers: request.headers,
+    }
+    // status: 400,
+    // statusText: error?.message,
   })
 }
 
