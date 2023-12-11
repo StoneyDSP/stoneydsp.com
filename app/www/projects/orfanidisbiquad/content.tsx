@@ -14,12 +14,13 @@ export default async function OrfanidisbiquadContent() {
   const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/OrfanidisBiquad/master/README.md')
 
   return (
-    <BlogArticle>
+    <>
+    {/* <BlogArticle>
       <div className={styles.container}>
 
         <article className={styles.content}>
 
-          <div className={styles.flexboxgrid}>
+          <div className={styles.flexboxgrid}> */}
 
             <div className="py-4"></div>
 
@@ -42,9 +43,10 @@ export default async function OrfanidisbiquadContent() {
 
             <HRGradient />
 
-          </div>
+          {/* </div>
         </article>
       </div>
-    </BlogArticle>
+    </BlogArticle> */}
+    </>
   )
 }
