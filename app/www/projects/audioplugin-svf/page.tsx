@@ -1,4 +1,4 @@
-import AudiopluginsvfContent from '@/components/articles/projects/audioplugin-svf'
+import AudiopluginsvfContent from './content'
 import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 

@@ -1,4 +1,4 @@
-import PrivacyPolicyContent from '@/components/articles/privacy-policy'
+import PrivacyPolicyContent from './content'
 import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 

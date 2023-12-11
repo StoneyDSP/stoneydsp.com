@@ -1,4 +1,4 @@
-import BiquadsContent from '@/components/articles/projects/biquads'
+import BiquadsContent from './content'
 import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 

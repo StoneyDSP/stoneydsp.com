@@ -6,7 +6,7 @@ import BackToTop from '@/components/layouts/BackToTop'
 import {
     GitProjectCard
 } from '@/components/cards'
-import mdxFetch from '@/utils/mdx/mdxFetch'
+import mdxFetch from '@/lib/mdx/mdxFetch'
 import MDXCache from '@/components/MDXCache'
 import BlogArticle from '@/components/elements/article/blogArticle'
 import styles from '@/app/template.module.css'

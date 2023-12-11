@@ -1,4 +1,4 @@
-import MsystoolchainContent from '@/components/articles/projects/msys2toolchain'
+import MsystoolchainContent from './content'
 import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 

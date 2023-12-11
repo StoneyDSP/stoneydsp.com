@@ -6,12 +6,13 @@ import BackToTop from '@/components/layouts/BackToTop'
 import { GitProjectCard } from '@/components/cards'
 import MDXCache from '@/components/MDXCache'
 import BlogArticle from '@/components/elements/article/blogArticle'
-import mdxFetch from '@/utils/mdx/mdxFetch'
+import mdxFetch from '@/lib/mdx/mdxFetch'
 import styles from '@/app/template.module.css'
 
-export default async function UbentoContent(): Promise<JSX.Element> {
+export default async function CmoduleContent() {
 
-  const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/UBento/build/README.md')
+  // MDX text - can be from a local file, database, CMS, fetch, anywhere...
+  const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/cmodule/main/README.md')
 
   return (
     <BlogArticle>
@@ -26,9 +27,9 @@ export default async function UbentoContent(): Promise<JSX.Element> {
             <div className="grid grid-cols-1 gap-4">
               <GitProjectCard
                 userName={'nathanjhood'}
-                linkTo={'https://github.com/nathanjhood/UBento.git'}
-                altString={'UBento'}
-                repoName={'UBento'}
+                linkTo={'https://github.com/nathanjhood/cmodule.git'}
+                altString={'cmodule'}
+                repoName={'cmodule'}
               />
             </div>
 
@@ -45,7 +46,6 @@ export default async function UbentoContent(): Promise<JSX.Element> {
           </div>
         </article>
       </div>
-
     </BlogArticle>
   )
 }

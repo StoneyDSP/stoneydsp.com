@@ -1,4 +1,4 @@
-import OrfanidisbiquadContent from '@/components/articles/projects/orfanidisbiquad'
+import OrfanidisbiquadContent from './content'
 import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 
