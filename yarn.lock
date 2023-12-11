@@ -280,10 +280,10 @@
   resolved "https://registry.yarnpkg.com/@next/env/-/env-14.0.3.tgz#9a58b296e7ae04ffebce8a4e5bd0f87f71de86bd"
   integrity sha512-7xRqh9nMvP5xrW4/+L0jgRRX+HoNRGnfJpD+5Wq6/13j3dsdzxO3BCXn7D3hMqsDb+vjZnJq+vI7+EtgrYZTeA==
 
-"@next/eslint-plugin-next@14.0.3":
-  version "14.0.3"
-  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-14.0.3.tgz#f32413be4db69f698538c38fd6f4091a2feb54c6"
-  integrity sha512-j4K0n+DcmQYCVnSAM+UByTVfIHnYQy2ODozfQP+4RdwtRDfobrIvKq1K4Exb2koJ79HSSa7s6B2SA8T/1YR3RA==
+"@next/eslint-plugin-next@14.0.4":
+  version "14.0.4"
+  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-14.0.4.tgz#474fd88d92209270021186043513fbdc4203f5ec"
+  integrity sha512-U3qMNHmEZoVmHA0j/57nRfi3AscXNvkOnxDmle/69Jz/G0o/gWjXTDdlgILZdrxQ0Lw/jv2mPW8PGy0EGIHXhQ==
   dependencies:
     glob "7.1.7"
 
@@ -339,10 +339,10 @@
   resolved "https://registry.yarnpkg.com/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.0.3.tgz#27b623612b1d0cea6efe0a0d31aa1a335fc99647"
   integrity sha512-ERhKPSJ1vQrPiwrs15Pjz/rvDHZmkmvbf/BjPN/UCOI++ODftT0GtasDPi0j+y6PPJi5HsXw+dpRaXUaw4vjuQ==
 
-"@next/third-parties@^14.0.3":
-  version "14.0.3"
-  resolved "https://registry.yarnpkg.com/@next/third-parties/-/third-parties-14.0.3.tgz#eec25e0bfe98d7ab5d73d627bc3336a6cd91b6c4"
-  integrity sha512-TTFuDDenb2dzO84g+S7jMfhqvw2+4bi3Xu6qdtWk1vpywHeSZNSSY9clwF15YxdBvrdRXV/Gez1AjDjCfiQiOA==
+"@next/third-parties@^14.0.4":
+  version "14.0.4"
+  resolved "https://registry.yarnpkg.com/@next/third-parties/-/third-parties-14.0.4.tgz#9fdb00af692c89a5f3c2c84580d238a656a0d875"
+  integrity sha512-K17BnacV2QOnI2o5DpeuwW/hnRjIgb8TSSMJC+y36330zh4skERb10FRhdc/0QTVuUc6k8jVJhURxdJu097GOQ==
   dependencies:
     third-party-capital "1.0.20"
 
@@ -612,10 +612,10 @@
   resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.33.tgz#80bf1da64b15f21fd8c1dc387c31929317d99ee9"
   integrity sha512-AuHIyzR5Hea7ij0P9q7vx7xu4z0C28ucwjAZC0ja7JhINyCnOw8/DnvAPQQ9TfOlCtZAmCERKQX9+o1mgQhuOQ==
 
-"@types/node@*", "@types/node@^20.10.3":
-  version "20.10.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.10.3.tgz#4900adcc7fc189d5af5bb41da8f543cea6962030"
-  integrity sha512-XJavIpZqiXID5Yxnxv3RUDKTN5b81ddNC3ecsA0SoFXz/QU8OGBwZGMomiq0zw+uuqbL/krztv/DINAQ/EV4gg==
+"@types/node@*", "@types/node@^20.10.4":
+  version "20.10.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.10.4.tgz#b246fd84d55d5b1b71bf51f964bd514409347198"
+  integrity sha512-D08YG6rr8X90YB56tSIuBaddy/UXAA9RKJoFvrsnogAum/0pmjkgi4+2nx96A330FmioegBWmEYQ+syqCFaveg==
   dependencies:
     undici-types "~5.26.4"
 
@@ -1886,12 +1886,12 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
-eslint-config-next@14.0.3:
-  version "14.0.3"
-  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-14.0.3.tgz#7a01d23e4ff143ef87b520fab9efc440fa5879f3"
-  integrity sha512-IKPhpLdpSUyKofmsXUfrvBC49JMUTdeaD8ZIH4v9Vk0sC1X6URTuTJCLtA0Vwuj7V/CQh0oISuSTvNn5//Buew==
+eslint-config-next@14.0.4:
+  version "14.0.4"
+  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-14.0.4.tgz#7cd2c0a3b310203d41cf0dbf9d31f9b0a6235b4a"
+  integrity sha512-9/xbOHEQOmQtqvQ1UsTQZpnA7SlDMBtuKJ//S4JnoyK3oGLhILKXdBgu/UO7lQo/2xOykQULS1qQ6p2+EpHgAQ==
   dependencies:
-    "@next/eslint-plugin-next" "14.0.3"
+    "@next/eslint-plugin-next" "14.0.4"
     "@rushstack/eslint-patch" "^1.3.3"
     "@typescript-eslint/parser" "^5.4.2 || ^6.0.0"
     eslint-import-resolver-node "^0.3.6"
@@ -4674,10 +4674,10 @@ react-dom@18.2.0, react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-hook-form@^7.48.2:
-  version "7.48.2"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.48.2.tgz#01150354d2be61412ff56a030b62a119283b9935"
-  integrity sha512-H0T2InFQb1hX7qKtDIZmvpU1Xfn/bdahWBN1fH19gSe4bBEqTfmlr7H3XWTaVtiK4/tpPaI1F3355GPMZYge+A==
+react-hook-form@^7.49.0:
+  version "7.49.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.49.0.tgz#9a91edfba6b6983d4b443653a9b225a780a42b3e"
+  integrity sha512-gf4qyY4WiqK2hP/E45UUT6wt3Khl49pleEVcIzxhLBrD6m+GMWtLRk0vMrRv45D1ZH8PnpXFwRPv0Pewske2jw==
 
 react-is@^16.13.1:
   version "16.13.1"
@@ -5200,10 +5200,10 @@ tabbable@^6.2.0:
   resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-6.2.0.tgz#732fb62bc0175cfcec257330be187dcfba1f3b97"
   integrity sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==
 
-tailwindcss@3.3.5:
-  version "3.3.5"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.3.5.tgz#22a59e2fbe0ecb6660809d9cc5f3976b077be3b8"
-  integrity sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==
+tailwindcss@3.3.6:
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.3.6.tgz#4dd7986bf4902ad385d90d45fd4b2fa5fab26d5f"
+  integrity sha512-AKjF7qbbLvLaPieoKeTjG1+FyNZT6KaJMJPFeQyLfIp7l82ggH1fbHJSsYIvnbTFQOlkh+gBYpyby5GT1LIdLw==
   dependencies:
     "@alloc/quick-lru" "^5.2.0"
     arg "^5.0.2"
