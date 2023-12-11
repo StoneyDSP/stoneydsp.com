@@ -6,12 +6,12 @@ import BackToTop from '@/components/layouts/BackToTop'
 import { GitProjectCard } from '@/components/cards'
 import MDXCache from '@/components/MDXCache'
 import BlogArticle from '@/components/elements/article/blogArticle'
-import mdxFetch from '@/utils/mdx/mdxFetch'
+import mdxFetch from '@/lib/mdx/mdxFetch'
 import styles from '@/app/template.module.css'
 
-export default async function AudiopluginsvfContent() {
+export default async function BilineareqContent() {
 
-  const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/AudioPlugin-SVF/main/README.md')
+  const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/BiLinearEQ/main/README.md')
 
   return (
     <BlogArticle>
@@ -26,9 +26,9 @@ export default async function AudiopluginsvfContent() {
             <div className="grid grid-cols-1 gap-4">
               <GitProjectCard
                 userName={'nathanjhood'}
-                linkTo={'https://github.com/nathanjhood/AudioPlugin-SVF.git'}
-                altString={'Audio Plugin SVF'}
-                repoName={'AudioPlugin-SVF'}
+                linkTo={'https://github.com/nathanjhood/BiLinearEQ.git'}
+                altString={'BiLinearEQ'}
+                repoName={'BiLinearEQ'}
               />
             </div>
 

@@ -1,4 +1,4 @@
-import CmoduleContent from '@/components/articles/projects/cmodule'
+import CmoduleContent from './content'
 import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 

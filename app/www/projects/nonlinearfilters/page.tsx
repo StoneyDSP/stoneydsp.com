@@ -1,4 +1,4 @@
-import NonlinearfiltersContent from '@/components/articles/projects/nonlinearfilters'
+import NonlinearfiltersContent from './content'
 import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 

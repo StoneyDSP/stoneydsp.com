@@ -1,4 +1,4 @@
-import BilineareqContent from '@/components/articles/projects/bilineareq'
+import BilineareqContent from './content'
 import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 

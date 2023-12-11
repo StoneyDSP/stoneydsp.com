@@ -1,4 +1,4 @@
-import CxxwinContent from '@/components/articles/projects/cxxwin'
+import CxxwinContent from './content'
 import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 
