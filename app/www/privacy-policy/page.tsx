@@ -1,5 +1,5 @@
-import PrivacyPolicyContent from '@/components/articles/privacy-policy'
-import { getPublicSiteURL } from '@/utils/headers/URL'
+import PrivacyPolicyContent from './content'
+import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 
 // export const dynamic = 'force-dynamic'

@@ -1,5 +1,5 @@
-import OrfanidisbiquadContent from '@/components/articles/projects/orfanidisbiquad'
-import { getPublicSiteURL } from '@/utils/headers/URL'
+import OrfanidisbiquadContent from './content'
+import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 
 // export const dynamic = 'force-dynamic'

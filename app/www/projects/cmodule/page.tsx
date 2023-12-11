@@ -1,5 +1,5 @@
-import CmoduleContent from '@/components/articles/projects/cmodule'
-import { getPublicSiteURL } from '@/utils/headers/URL'
+import CmoduleContent from './content'
+import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 
 // export const dynamic = 'force-dynamic'

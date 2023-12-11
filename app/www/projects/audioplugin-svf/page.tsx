@@ -1,5 +1,5 @@
-import AudiopluginsvfContent from '@/components/articles/projects/audioplugin-svf'
-import { getPublicSiteURL } from '@/utils/headers/URL'
+import AudiopluginsvfContent from './content'
+import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 
 // export const dynamic = 'force-dynamic'

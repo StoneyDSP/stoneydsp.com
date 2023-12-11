@@ -1,5 +1,5 @@
-import NonlinearfiltersContent from '@/components/articles/projects/nonlinearfilters'
-import { getPublicSiteURL } from '@/utils/headers/URL'
+import NonlinearfiltersContent from './content'
+import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 
 // export const dynamic = 'force-dynamic'

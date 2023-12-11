@@ -1,6 +1,6 @@
 /* TEAM */
 
-	Chef, UI developer, One eyed illustrator, Standard Man, Web designer: Nathan J. Hood
+	StoneyDSP is: Nathan J. Hood
 	LinkedIn: https://www.linkedin.com/in/nathan-hood-ab219111b/
 	From: Bristol, UK
 
@@ -8,6 +8,7 @@
 /* THANKS */
 
 	Rodrigo, Karlos & team @ Supabase support
+	Christopher Carroll Smith - thanks for the additional support
 
 
 /* SITE */

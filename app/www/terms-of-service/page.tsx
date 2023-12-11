@@ -1,5 +1,5 @@
-import TermsOfServiceContent from '@/components/articles/terms-of-service'
-import { getPublicSiteURL } from '@/utils/headers/URL'
+import TermsOfServiceContent from './content'
+import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 
 // export const dynamic = 'force-dynamic'
