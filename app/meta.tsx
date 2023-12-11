@@ -1,4 +1,4 @@
-import { getPublicSiteURL } from '@/utils/headers/URL'
+import { getPublicSiteURL } from '@/lib/url'
 import { Metadata } from 'next'
 
 const publicSiteUrl = getPublicSiteURL()
