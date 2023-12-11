@@ -2,7 +2,7 @@
 import 'client-only'
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
-import { sendEmail } from '@/utils/mail/send'
+import { sendEmail } from '@/lib/mail/send'
 
 export type FormData = {
   name: string,
