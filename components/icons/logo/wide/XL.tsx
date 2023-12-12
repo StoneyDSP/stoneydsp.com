@@ -1,14 +1,22 @@
+'use server'
+import 'server-only'
 import Image from 'next/image'
+import logoWideXL from '@/public/images/w_icon__1024x768.png'
+import { headers } from 'next/headers'
 
 export default async function LogoWideXL() {
+  const nonce = headers().get('X-Data-Nonce')
+  const nonceUsed = nonce ? nonce : 'oopswheresmynonce'
+
   return (
-    <picture className='relative'>
+    <picture className='animate-in flex items-center justify-center'>
       <Image
-        src={'/images/w_icon__1024x768.png'}
+        src={logoWideXL.src}
+        blurDataURL={logoWideXL.blurDataURL}
         width={1024}
         height={768}
         alt={"Copyright StoneyDSP 2023"}
-        // className='hover:transition___glow_on'
+        nonce={nonceUsed}
       />
     </picture>
   )

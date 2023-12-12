@@ -11,3 +11,32 @@ export const getPublicSiteURL = () => {
 }
 
 export const publicSiteUrl = getPublicSiteURL()
+
+export const getVercelURL = () => {
+  let url =
+    process?.env?.VERCEL_ENV! !== 'development'
+      ? process?.env?.VERCEL_URL! // Automatically set by Vercel.
+      : 'localhost'
+  return url
+}
+
+export const getSiteURL = () => {
+  let url: string
+  switch (process?.env?.VERCEL_ENV!) {
+    case 'production': {
+      url = process?.env?.NEXT_PUBLIC_SITE_URL!
+    }
+    case 'preview': {
+      url = process?.env?.VERCEL_URL!
+    }
+    case 'development': {
+      url = 'localhost'
+    }
+    default: {
+      url = process?.env?.VERCEL_URL!
+    }
+  }
+  return url
+}
+
+export const siteUrl = getSiteURL()

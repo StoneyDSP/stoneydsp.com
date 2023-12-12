@@ -1,18 +1,15 @@
 'use client'
 import 'client-only'
 import { useCallback, useEffect, useState, Suspense } from 'react'
-import { createBrowserClient } from '@supabase/ssr'
 import { User } from '@supabase/supabase-js'
+import createSupabaseBrowserClient from '@/lib/supabase/ssr/client'
 
 // Import the new component
 import Avatar from './avatar'
 
 export default function AccountForm() {
 
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  )
+  const supabase = createSupabaseBrowserClient()
   const [loading, setLoading] = useState(true)
   const [fullname, setFullname] = useState<string | null>(null)
   const [username, setUsername] = useState<string | null>(null)
@@ -55,7 +52,7 @@ export default function AccountForm() {
       const { data, error, status } = await supabase
         .from('profiles')
         .select(`full_name, username, website, avatar_url`)
-        .eq('id', user?.id)
+        .eq('id', user!.id)
         .single()
 
       if (error && status !== 406) {

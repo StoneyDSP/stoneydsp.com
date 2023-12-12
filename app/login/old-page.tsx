@@ -3,6 +3,7 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { redirect } from 'next/navigation'
 import HRGradient from '@/components/layouts/HRGradient'
 import { Title, Text } from '@/lib/Typography'
+import createSupabaseServerClient from '@/lib/supabase/ssr/server'
 // import customStorageAdapter from '@/lib/supabase/storage'
 
 export const dynamic = 'force-dynamic'
@@ -21,23 +22,7 @@ export default async function Login({
     const email = formData.get('email') as string
     const password = formData.get('password') as string
     const cookieStore = cookies()
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          get(name: string) {
-            return cookieStore.get(name)?.value
-          },
-          set(name: string, value: string, options: CookieOptions) {
-            cookieStore.set({ name, value, ...options })
-          },
-          remove(name: string, options: CookieOptions) {
-            cookieStore.set({ name, value: '', ...options })
-          },
-        },
-      }
-    )
+    const supabase = createSupabaseServerClient(cookieStore)
 
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
@@ -57,23 +42,7 @@ export default async function Login({
     console.log('trying Github OAuth')
 
     const cookieStore = cookies()
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          get(name: string) {
-            return cookieStore.get(name)?.value
-          },
-          set(name: string, value: string, options: CookieOptions) {
-            cookieStore.set({ name, value, ...options })
-          },
-          remove(name: string, options: CookieOptions) {
-            cookieStore.set({ name, value: '', ...options })
-          },
-        },
-      }
-    )
+    const supabase = createSupabaseServerClient(cookieStore)
 
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
@@ -96,23 +65,7 @@ export default async function Login({
     const email = formData.get('email') as string
     const password = formData.get('password') as string
     const cookieStore = cookies()
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          get(name: string) {
-            return cookieStore.get(name)?.value
-          },
-          set(name: string, value: string, options: CookieOptions) {
-            cookieStore.set({ name, value, ...options })
-          },
-          remove(name: string, options: CookieOptions) {
-            cookieStore.set({ name, value: '', ...options })
-          },
-        },
-      }
-    )
+    const supabase = createSupabaseServerClient(cookieStore)
 
     const { data, error } = await supabase.auth.signUp({
       email,
