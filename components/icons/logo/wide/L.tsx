@@ -5,7 +5,7 @@ import logoWideL from '@/public/images/w_icon__768x512.png'
 import { headers } from 'next/headers'
 
 export default async function LogoWideL() {
-  const nonce = headers().get('X-Nonce')
+  const nonce = headers().get('X-Data-Nonce')
   const nonceUsed = nonce ? nonce : 'oopswheresmynonce'
 
   return (

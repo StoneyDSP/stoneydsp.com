@@ -2,6 +2,27 @@
 
 const withMDX = require('@next/mdx')()
 
+const getSiteURL = () => {
+  let url
+  switch (process?.env?.VERCEL_ENV) {
+    case 'production': {
+      url = process?.env?.NEXT_PUBLIC_SITE_URL
+    }
+    case 'preview': {
+      url = process?.env?.VERCEL_URL
+    }
+    case 'development': {
+      url = 'localhost'
+    }
+    default: {
+      url = process?.env?.VERCEL_URL
+    }
+  }
+  return url
+}
+
+const siteUrl = getSiteURL()
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
@@ -17,72 +38,72 @@ async rewrites() {
       {
         source: '/about',
         destination: '/www/about',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/contact',
         destination: '/www/contact',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects',
         destination: '/www/projects',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/biquads',
         destination: '/www/projects/biquads',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/ubento',
         destination: '/www/projects/ubento',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/cxxwin',
         destination: '/www/projects/cxxwin',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/msys2-toolchain',
         destination: '/www/projects/msys2-toolchain',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/orfanidisbiquad',
         destination: '/www/projects/orfanidisbiquad',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/audioplugin-svf',
         destination: '/www/projects/audioplugin-svf',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/cmodule',
         destination: '/www/projects/cmodule',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/nonlinearfilters',
         destination: '/www/projects/nonlinearfilters',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/bilineareq',
         destination: '/www/projects/bilineareq',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/terms-of-service',
         destination: '/www/terms-of-service',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/privacy-policy',
         destination: '/www/privacy-policy',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
     ],
     afterFiles: [],
@@ -90,12 +111,12 @@ async rewrites() {
       {
         source: '/www',
         destination: '/',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/www/:path(\\d+)',
         destination: '/:path(\\d+)',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
     ]
   }
@@ -116,8 +137,8 @@ async rewrites() {
   //     },
   //     {
   //       source: '/www/:path*',
-  //       has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
-  //       destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}/:path*`,
+  //       has: [{ type: 'host', value: `${siteUrl}` }],
+  //       destination: `https://www.${siteUrl}/:path*`,
   //       permanent: true
   //     }
   //   ]
@@ -153,56 +174,6 @@ async rewrites() {
       //   ]
       // },
   //   ]
-  // },
-  // rewrites: async () => {
-  //   return {
-  //     beforeFiles: [
-  //       // These rewrites are checked after headers/redirects
-  //       // and before all files including _next/public files which
-  //       // allows overriding page files
-  //       {
-  //         source: '/some-page',
-  //         destination: '/somewhere-else',
-  //         has: [{ type: 'query', key: 'overrideMe' }],
-  //       },
-  //     ],
-  //     afterFiles: [
-  //       // These rewrites are checked after pages/public files
-  //       // are checked but before dynamic routes
-  //       // {
-  //       //   source: '/non-existent',
-  //       //   destination: '/somewhere-else',
-  //       // },
-  //       {
-  //         source: '/about',
-  //         destination: '/aboot',
-  //       },
-  //     ],
-  //     fallback: [
-  //       // These rewrites are checked after both pages/public files
-  //       // and dynamic routes are checked
-  //       // {
-  //       //   source: '/:path*',
-  //       //   destination: `https://my-old-site.com/:path*`,
-  //       // },
-
-  //       {
-  //         source: '/www/:path*',
-  //         destination:
-  //           process.env.NODE_ENV === 'production'
-  //             ? 'https://www.stoneydsp.com/:path*'
-  //             : 'http://www.locahost:3000/:path*',
-  //       },
-  //       {
-  //         source: '/www',
-  //         destination:
-  //           process.env.NODE_ENV === 'production'
-  //             ? 'https://www.stoneydsp.com'
-  //             : 'http://www.locahost:3000',
-  //       },
-
-  //     ],
-  //   }
   // },
   images: {
     remotePatterns: [
