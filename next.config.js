@@ -38,72 +38,72 @@ async rewrites() {
       {
         source: '/about',
         destination: '/www/about',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/contact',
         destination: '/www/contact',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects',
         destination: '/www/projects',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/biquads',
         destination: '/www/projects/biquads',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/ubento',
         destination: '/www/projects/ubento',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/cxxwin',
         destination: '/www/projects/cxxwin',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/msys2-toolchain',
         destination: '/www/projects/msys2-toolchain',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/orfanidisbiquad',
         destination: '/www/projects/orfanidisbiquad',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/audioplugin-svf',
         destination: '/www/projects/audioplugin-svf',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/cmodule',
         destination: '/www/projects/cmodule',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/nonlinearfilters',
         destination: '/www/projects/nonlinearfilters',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/projects/bilineareq',
         destination: '/www/projects/bilineareq',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/terms-of-service',
         destination: '/www/terms-of-service',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/privacy-policy',
         destination: '/www/privacy-policy',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
     ],
     afterFiles: [],
@@ -111,12 +111,12 @@ async rewrites() {
       {
         source: '/www',
         destination: '/',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
       {
         source: '/www/:path(\\d+)',
         destination: '/:path(\\d+)',
-        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+        has: [{ type: 'host', value: `${siteUrl}` }],
       },
     ]
   }
@@ -137,8 +137,8 @@ async rewrites() {
   //     },
   //     {
   //       source: '/www/:path*',
-  //       has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
-  //       destination: `https://www.${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}/:path*`,
+  //       has: [{ type: 'host', value: `${siteUrl}` }],
+  //       destination: `https://www.${siteUrl}/:path*`,
   //       permanent: true
   //     }
   //   ]

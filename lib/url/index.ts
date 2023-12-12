@@ -24,7 +24,7 @@ export const getSiteURL = () => {
   let url: string
   switch (process?.env?.VERCEL_ENV!) {
     case 'production': {
-      url = process?.env?.NEXT_PUBLIC_SITE_URL!
+      url = process?.env?.NEXT_PUBLIC_HOST_DOMAIN!
     }
     case 'preview': {
       url = process?.env?.VERCEL_URL!
