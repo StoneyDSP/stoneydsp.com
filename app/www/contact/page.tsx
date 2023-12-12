@@ -1,9 +1,9 @@
 import ContactContent from './content'
 import { getPublicSiteURL } from '@/lib/url'
-// import { createSupabaseServerSideClient } from '@/utils/supabase/ssr/server'
 import { Metadata } from 'next'
-// import { cookies } from 'next/headers'
-// import { redirect } from 'next/navigation'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+import createSupabaseServerSideClient from '@/lib/supabase/ssr/server'
 
 // export const dynamic = 'force-dynamic'
 
@@ -17,16 +17,16 @@ export const metadata: Metadata = {
 
 export default async function ContactPage(): Promise<JSX.Element> {
 
-  // const cookieStore = cookies()
-  // const supabase = createSupabaseServerSideClient(cookieStore)
+  const cookieStore = cookies()
+  const supabase = createSupabaseServerSideClient(cookieStore)
 
-  // const {
-  //   data: { session },
-  // } = await supabase.auth.getSession()
+  const {
+    data: { session },
+  } = await supabase.auth.getSession()
 
-  // if (!session) {
-  //   redirect('/login')
-  // }
+  if (!session) {
+    redirect(`/login?message=Could not authenticate user`)
+  }
 
   return (
     <ContactContent />

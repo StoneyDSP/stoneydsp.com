@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
-import { headers, cookies } from 'next/headers'
+import { cookies } from 'next/headers'
 import createSupabaseServerClient from '@/lib/supabase/ssr/server'
 import parseNextRequest from '@/lib/parse/next/request'
 
@@ -10,8 +10,6 @@ export async function POST(nextRequest: NextRequest) {
   const { data: { request }, error } = await parseNextRequest(nextRequest)
 
   if (!error) {
-
-    const origin = headers().get('origin')
 
     const formData = await request.formData()
 

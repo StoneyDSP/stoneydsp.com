@@ -1,5 +1,5 @@
 import 'client-only'
-import { Database } from '@/app/types_db'
+import { Database } from '@/types/supabase'
 import { createBrowserClient } from '@supabase/ssr'
 
 const createSupabaseBrowserClient = () =>

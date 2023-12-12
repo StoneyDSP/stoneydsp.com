@@ -65,7 +65,6 @@ export const generateCSP = (requireHashedNonce: boolean = false) => {
       values: [
         "'self'",
         "*.vercel-insights.com",
-        "plausible.io",
         `*.${process.env.NEXT_PUBLIC_ROOT_DOMAIN!}`,
         `${process.env.NEXT_PUBLIC_SUPABASE_URL!}`,
       ],
@@ -85,6 +84,7 @@ export const generateCSP = (requireHashedNonce: boolean = false) => {
         "blob:",
         "data:",
         'https://raw.githubusercontent.com',
+        'https://github.com',
         `${process.env.NEXT_PUBLIC_SUPABASE_URL!}`,
       ]
     },
