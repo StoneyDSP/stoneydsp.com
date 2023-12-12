@@ -7,7 +7,6 @@ import { LogoWideL } from '@/components/icons/logo/wide'
 
 export default async function HomeContent(): Promise<JSX.Element> {
 
-  try {
     return (
       <>
         <HRGradient />
@@ -46,10 +45,4 @@ export default async function HomeContent(): Promise<JSX.Element> {
 
       </>
     )
-  } catch(e) {
-
-    const error: any = e
-    console.log(` \u{2715} HomeContent() - :: Error returning new Index Page: ${error}`)
-    throw new Error(error)
-  }
 }

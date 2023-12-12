@@ -1,5 +1,5 @@
 import 'server-only'
-import { Database } from '@/app/types_db'
+import { Database } from '@/types/supabase'
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 

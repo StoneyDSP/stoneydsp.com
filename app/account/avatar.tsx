@@ -1,9 +1,9 @@
 'use client'
 import 'client-only'
-import { createBrowserClient } from "@supabase/ssr"
 import { useState, useEffect } from "react"
 import Image from 'next/image'
-import { Database } from '@/app/types_db'
+import { Database } from '@/types/supabase'
+import createSupabaseBrowserClient from '@/lib/supabase/ssr/client'
 type Profiles = Database['public']['Tables']['profiles']['Row']
 
 export default function Avatar({
@@ -18,10 +18,7 @@ export default function Avatar({
   onUpload: (url: string) => void
 }) {
 
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  )
+  const supabase = createSupabaseBrowserClient()
   const [avatarUrl, setAvatarUrl] = useState<Profiles['avatar_url']>(url)
   const [uploading, setUploading] = useState(false)
 
