@@ -3,11 +3,10 @@ import {
   setHeaders,
   headersDefaults,
 } from '@/lib/headers'
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, NextRequest } from 'next/server'
+import createSupabaseMiddlewareClient from '@/lib/supabase/ssr/middleware'
 import parseNextRequest from '@/lib/parse/next/request'
 import logRequestToServer from '@/lib/log/request/server'
-// import customStorageAdapter from '@/lib/supabase/storage'
 
 export default async function middleware(nextRequest: NextRequest) {
 
@@ -25,70 +24,9 @@ export default async function middleware(nextRequest: NextRequest) {
     await setHeaders(request, headerDefault)
   })
 
-  let response = NextResponse.next({
-    request: {
-      headers: request.headers,
-    }
-  })
-
   if (request! && !error) {
 
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        auth: {
-          detectSessionInUrl: true,
-          flowType: 'pkce',
-          // debug: process.env.VERCEL_ENV === 'development',
-          // storage: customStorageAdapter,
-        },
-        cookies: {
-          get(name: string) {
-            // console.log('Middleware - getting cookie: %s', name)
-            return request.cookies.get(name)?.value
-          },
-          set(name: string, value: string, options: CookieOptions) {
-            // console.log('Middleware - setting cookie: %s', name)
-            // If the cookie is updated, update the cookies for the request and response
-            request.cookies.set({
-              name,
-              value,
-              ...options,
-            })
-            response = NextResponse.next({
-              request: {
-                headers: request.headers,
-              },
-            })
-            response.cookies.set({
-              name,
-              value,
-              ...options,
-            })
-          },
-          remove(name: string, options: CookieOptions) {
-            // console.log('Middleware - removing cookie: %s', name)
-            // If the cookie is removed, update the cookies for the request and response
-            request.cookies.set({
-              name,
-              value: '',
-              ...options,
-            })
-            response = NextResponse.next({
-              request: {
-                headers: request.headers,
-              },
-            })
-            response.cookies.set({
-              name,
-              value: '',
-              ...options,
-            })
-          },
-        },
-      }
-    )
+    const { supabase, response } = createSupabaseMiddlewareClient(request)
 
     const { data: { session }, error } = await supabase.auth.getSession()
 

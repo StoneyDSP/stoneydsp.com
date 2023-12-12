@@ -8,18 +8,19 @@ export default async function MDXCache(props: MDXRemoteProps) {
   'use server'
 
   return (
+    <div className='max-w-screen-sm min-h-screen'>
     <MDXRemote
       {...props}
       components={{
         ...(props.components || {}),
         img: ((props) => <img
             alt="Copyright StoneyDSP 2023"
-            className='flex max-w-screen-sm h-auto'
+            className='flex max-w-md h-auto'
             // style={{ width: '100%', height: 'auto'}}
             {...props}
           />),
         h1: (({ children }) => (
-          <div className='flex justify-center items-left max-w-screen-md'>
+          <div className='flex justify-center items-left'>
             <h1 tabIndex={0} className='opacity-90 text-4xl'>
               {children}
               <HRGradient />
@@ -27,7 +28,7 @@ export default async function MDXCache(props: MDXRemoteProps) {
           </div>
         )),
         h2: (({ children }) => (
-          <div className='flex justify-left items-left max-w-screen-md'>
+          <div className='flex justify-left items-left'>
             <h2 tabIndex={0} className='text-left text-2xl opacity-90'>
               {children}
               <HRGradient />
@@ -35,7 +36,7 @@ export default async function MDXCache(props: MDXRemoteProps) {
           </div>
         )),
         h3: (({ children }) => (
-          <div className='flex justify-center items-left max-w-screen-md'>
+          <div className='flex justify-center items-left'>
             <h3 tabIndex={0} className='text-base opacity-90'>
               {children}
               <HRGradient />
@@ -43,7 +44,7 @@ export default async function MDXCache(props: MDXRemoteProps) {
           </div>
         )),
         h4: (({ children }) => (
-          <div className='flex justify-center items-left max-w-screen-md'>
+          <div className='flex justify-center items-left'>
             <h4 tabIndex={0} className='text-sm opacity-90'>
               {children}
               <HRGradient />
@@ -51,7 +52,7 @@ export default async function MDXCache(props: MDXRemoteProps) {
           </div>
         )),
         h5: (({ children }) => (
-          <div className='flex justify-center items-left max-w-screen-md'>
+          <div className='flex justify-center items-left'>
             <h5 tabIndex={0} className='text-xs opacity-90'>
               {children}
               <HRGradient />
@@ -59,7 +60,7 @@ export default async function MDXCache(props: MDXRemoteProps) {
           </div>
         )),
         h6: (({ children }) => (
-          <div className='flex justify-center items-left max-w-screen-md'>
+          <div className='flex justify-center items-left'>
             <h6 tabIndex={0} className='text-xxs opacity-90'>
               {children}
               <HRGradient />
@@ -67,7 +68,7 @@ export default async function MDXCache(props: MDXRemoteProps) {
           </div>
         )),
         p: (({ children }) => (
-          <div className='flex justify-left items-left max-w-screen-md text-base'>
+          <div className='flex justify-left items-left text-base'>
             <p tabIndex={-1} className='opacity-90'>
               {children}
             </p>
@@ -108,5 +109,6 @@ export default async function MDXCache(props: MDXRemoteProps) {
         )),
       }}
     />
+    </div>
   )
 }
