@@ -209,6 +209,18 @@ async rewrites() {
         hostname: 'raw.githubusercontent.com',
         port: '',
         pathname: '/nathanjhood/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'github.com',
+        port: '',
+        pathname: '/StoneyDSP/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'github.com',
+        port: '',
+        pathname: '/nathanjhood/**'
       }
     ],
   },
