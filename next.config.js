@@ -6,7 +6,7 @@ const getSiteURL = () => {
   let url
   switch (process?.env?.VERCEL_ENV) {
     case 'production': {
-      url = process?.env?.NEXT_PUBLIC_SITE_URL
+      url = process?.env?.NEXT_PUBLIC_ROOT_DOMAIN
     }
     case 'preview': {
       url = process?.env?.VERCEL_URL
