@@ -2,23 +2,14 @@ import 'server-only'
 import Link from 'next/link'
 import { cookies } from 'next/headers'
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import createSupabaseServerClient from '@/lib/supabase/ssr/server'
 // import customStorageAdapter from '@/lib/supabase/storage'
 
 export default async function NavUser(){
 
   const cookieStore = cookies()
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          return cookieStore.get(name)?.value
-        },
-      },
-    }
-  )
-  // const { data : { session }, error } = await supabase.auth.getSession()
+  const supabase = createSupabaseServerClient(cookieStore)
+  const { data : { session }, error } = await supabase.auth.getSession()
   const {
     data: { user },
   } = await supabase.auth.getUser()
