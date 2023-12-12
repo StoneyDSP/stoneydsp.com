@@ -84,6 +84,7 @@ export const generateCSP = (requireHashedNonce: boolean = false) => {
         "blob:",
         "data:",
         'https://raw.githubusercontent.com',
+        'https://github.com',
         `${process.env.NEXT_PUBLIC_SUPABASE_URL!}`,
       ]
     },
