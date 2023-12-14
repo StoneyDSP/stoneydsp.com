@@ -10,6 +10,7 @@ async function generate() {
 		'app/**/page.tsx',
 		'!app/_examples/**/page.tsx',
 		'!app/_*/**/page.tsx',
+    '!app/contact/page.tsx',
     '!app/account/page.tsx'
 	])
 
