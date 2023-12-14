@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: ['/'],
-      disallow: ['/_next/__private'],
+      disallow: ['/_next/__private', '/www/contact', '/contact'],
     },
     sitemap: 'https://www.stoneydsp.com/sitemap.xml',
   }
