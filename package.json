@@ -62,7 +62,7 @@
   "devDependencies": {
     "@html-eslint/eslint-plugin": "^0.22.0",
     "@html-eslint/parser": "^0.22.0",
-    "@types/node": "^20.10.5",
+    "@types/node": "^20.10.6",
     "@types/nodemailer": "^6.4.14",
     "@types/react": "^18.2.45",
     "encoding": "^0.1.13",
