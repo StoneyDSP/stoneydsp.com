@@ -2,27 +2,27 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export type SecurityHeaders = { readonly name: string, readonly value: string }
 
-export async function setHeaders(message: NextRequest | NextResponse, headers: readonly SecurityHeaders[]) {
+export function setHeaders(message: NextRequest | NextResponse, headers: readonly SecurityHeaders[]) {
   headers.forEach(header => {
     message.headers.set(header.name, header.value)
   })
 }
 
-export async function getHeaders(message: NextRequest | NextResponse, headers: readonly SecurityHeaders[]) {
-  message.headers.forEach(header => {
-    return header
-  })
-}
+// export async function getHeaders(message: NextRequest | NextResponse, headers: readonly SecurityHeaders[]) {
+//   message.headers.forEach(header => {
+//     return header
+//   })
+// }
 
-export async function checkHeaders(message: NextRequest | NextResponse, headers: readonly SecurityHeaders[]) {
-  let res: boolean = false
-  headers.forEach(header => {
-    if (message.headers.get(header.name)) {
-      return true
-    }
+// export async function checkHeaders(message: NextRequest | NextResponse, headers: readonly SecurityHeaders[]) {
+//   let res: boolean = false
+//   headers.forEach(header => {
+//     if (message.headers.get(header.name)) {
+//       return true
+//     }
 
-  })
-}
+//   })
+// }
 
 /**
  * - Returns a random-nonce - based Content Security Policy
