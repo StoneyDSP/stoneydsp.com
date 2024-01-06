@@ -47,6 +47,8 @@ export default async function middleware(request: NextRequest) {
         request.nextUrl.pathname === '/projects' ||
         request.nextUrl.pathname === '/projects/biquads' || // not ideal, but secure at least...
         request.nextUrl.pathname === '/projects/base64' ||
+        request.nextUrl.pathname === '/projects/hostconfig' ||
+        request.nextUrl.pathname === '/projects/modules' ||
         request.nextUrl.pathname === '/projects/ubento' ||
         request.nextUrl.pathname === '/projects/cxxwin' ||
         request.nextUrl.pathname === '/projects/msys2-toolchain' ||
