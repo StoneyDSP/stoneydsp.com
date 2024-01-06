@@ -5,14 +5,11 @@ import {
 } from '@/lib/headers'
 import { NextResponse, NextRequest } from 'next/server'
 import createSupabaseMiddlewareClient from '@/lib/supabase/ssr/middleware'
-import parseNextRequest from '@/lib/parse/next/request'
 import logRequestToServer from '@/lib/log/request/server'
 
-export default async function middleware(nextRequest: NextRequest) {
+export default async function middleware(request: NextRequest) {
 
   const date = new Date()
-
-  const { data: { request }, error } = await parseNextRequest(nextRequest)
 
   const { csp, nonce } = generateCSP()
 
@@ -21,23 +18,23 @@ export default async function middleware(nextRequest: NextRequest) {
   request.headers.set('X-Data-Nonce', nonce)
 
   headersDefaults.forEach(async headerDefault => {
-    await setHeaders(request, headerDefault)
+    setHeaders(request, headerDefault)
   })
 
-  if (request! && !error) {
+  const { supabase, response } = createSupabaseMiddlewareClient(request)
 
-    const { supabase, response } = createSupabaseMiddlewareClient(request)
-
-    const { data: { session }, error } = await supabase.auth.getSession()
+  const { data: { session }, error } = await supabase.auth.getSession()
 
 
-    response.headers.set('X-StoneyDSP-Middleware-Response', `${date.toUTCString()}`)
-    response.headers.set('Content-Security-Policy', csp)
-    response.headers.set('X-Data-Nonce', nonce)
+  response.headers.set('X-StoneyDSP-Middleware-Response', `${date.toUTCString()}`)
+  response.headers.set('Content-Security-Policy', csp)
+  response.headers.set('X-Data-Nonce', nonce)
 
-    headersDefaults.forEach(async headerDefault => {
-      await setHeaders(response, headerDefault)
-    })
+  headersDefaults.forEach(async headerDefault => {
+    await setHeaders(response, headerDefault)
+  })
+
+  if (!error) {
 
     // Middleware response was successful!
     logRequestToServer(request)
@@ -49,6 +46,7 @@ export default async function middleware(nextRequest: NextRequest) {
         request.nextUrl.pathname === '/privacy-policy' ||
         request.nextUrl.pathname === '/projects' ||
         request.nextUrl.pathname === '/projects/biquads' || // not ideal, but secure at least...
+        request.nextUrl.pathname === '/projects/base64' ||
         request.nextUrl.pathname === '/projects/ubento' ||
         request.nextUrl.pathname === '/projects/cxxwin' ||
         request.nextUrl.pathname === '/projects/msys2-toolchain' ||
