@@ -71,6 +71,6 @@
     "globby": "^14.0.0",
     "supabase": "^1.127.4",
     "typescript": "^5.2.2",
-    "vercel": "^32.7.2"
+    "vercel": "^33.0.2"
   }
 }
