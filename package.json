@@ -64,7 +64,7 @@
     "@html-eslint/parser": "^0.22.0",
     "@types/node": "^20.10.6",
     "@types/nodemailer": "^6.4.14",
-    "@types/react": "^18.2.45",
+    "@types/react": "^18.2.47",
     "encoding": "^0.1.13",
     "eslint": "^8.55.0",
     "eslint-config-next": "14.0.4",
