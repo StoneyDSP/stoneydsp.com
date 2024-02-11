@@ -67,7 +67,7 @@
     "@types/react": "^18.2.47",
     "encoding": "^0.1.13",
     "eslint": "^8.55.0",
-    "eslint-config-next": "14.0.4",
+    "eslint-config-next": "14.1.0",
     "globby": "^14.0.0",
     "supabase": "^1.127.4",
     "typescript": "^5.2.2",
