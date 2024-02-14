@@ -81,8 +81,8 @@ async rewrites() {
         has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
       },
       {
-        source: '/projects/cmodule',
-        destination: '/www/projects/cmodule',
+        source: '/projects/noderc',
+        destination: '/www/projects/noderc',
         has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
       },
       {
@@ -93,6 +93,21 @@ async rewrites() {
       {
         source: '/projects/bilineareq',
         destination: '/www/projects/bilineareq',
+        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+      },
+      {
+        source: '/projects/modules',
+        destination: '/www/projects/modules',
+        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+      },
+      {
+        source: '/projects/hostconfig',
+        destination: '/www/projects/hostconfig',
+        has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
+      },
+      {
+        source: '/projects/base64',
+        destination: '/www/projects/base64',
         has: [{ type: 'host', value: `${process?.env?.NEXT_PUBLIC_ROOT_DOMAIN}` }],
       },
       {
