@@ -104,6 +104,9 @@ export default async function middleware(request: NextRequest) {
         request.nextUrl.pathname === '/auth/v1/providers/github' ||
         request.nextUrl.pathname === '/login' ||
         request.nextUrl.pathname === '/account' ||
+        request.nextUrl.pathname === '/robots.txt' ||
+        request.nextUrl.pathname === '/humans.txt' ||
+        request.nextUrl.pathname === '/ads.txt' ||
         request.nextUrl.pathname === '/favicon.ico' ||
         request.nextUrl.pathname === '/sitemap.xml' ||
         request.nextUrl.pathname === '/www_sitemap.xml') {
@@ -141,14 +144,21 @@ export default async function middleware(request: NextRequest) {
       })
     }
 
-    // Middleware response was unsuccessful!
-    return NextResponse.rewrite(new URL(`/?message=Not found`, request!.url ), {
+    return NextResponse.next({
+      headers: response.headers,
       request: {
         headers: request.headers,
       }
-      // status: 404,
-      // statusText: `Not found`,
     })
+
+    // // Middleware response was unsuccessful!
+    // return NextResponse.rewrite(new URL(`/?message=Not found`, request!.url ), {
+    //   request: {
+    //     headers: request.headers,
+    //   }
+    //   // status: 404,
+    //   // statusText: `Not found`,
+    // })
   }
 
   // Middleware response was unsuccessful!
@@ -172,7 +182,7 @@ export const config = {
      * - favicon.ico (favicon file)
      */
     {
-      source: '/((?!api|_next/static|_next/image|favicon.ico|manifest.webmanifest|robots.txt|images).*)',
+      source: '/((?!api|_next/static|_next/image|favicon.ico|manifest.webmanifest|robots.txt|humans.txt|ads.txt|images).*)',
       missing: [
         { type: 'header', key: 'next-router-prefetch' },
         { type: 'header', key: 'purpose', value: 'prefetch' },
