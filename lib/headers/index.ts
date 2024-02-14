@@ -31,12 +31,12 @@ export function setHeaders(message: NextRequest | NextResponse, headers: readonl
  *
  * https://github.com/Sprokets/nextjs-csp-report-only
  */
-export const generateCSP = (requireHashedNonce: boolean = false) => {
+export const generateCSP = (/* requireHashedNonce: boolean = false */) => {
 
   // generate random nonce converted to base64. Must be different on every HTTP page load
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
 
-  const hashedNonce = createHashedNonce(nonce)
+  // const hashedNonce = createHashedNonce(nonce)
 
   const csp = [
     { name: "default-src", values: ["'self'",] },
@@ -45,7 +45,8 @@ export const generateCSP = (requireHashedNonce: boolean = false) => {
       values: [
         "'report-sample'",
         "'self'",
-        `'nonce-${requireHashedNonce ? hashedNonce : nonce}'`,
+        // `'nonce-${requireHashedNonce ? hashedNonce : nonce}'`,
+        `'nonce-${nonce}'`,
         "'strict-dynamic'",
         "https:",
         "http:",
@@ -57,7 +58,8 @@ export const generateCSP = (requireHashedNonce: boolean = false) => {
       values: [
         "'report-sample'",
         "'self'",
-        `'nonce-${requireHashedNonce ? hashedNonce : nonce}'`
+        // `'nonce-${requireHashedNonce ? hashedNonce : nonce}'`,
+        `'nonce-${nonce}'`,
       ],
     },
     {
@@ -114,7 +116,7 @@ export const generateCSP = (requireHashedNonce: boolean = false) => {
     })
     .join("; ");
 
-  return { csp: cspString, nonce, hashedNonce };
+  return { csp: cspString, nonce /** , hashedNonce */ };
 
 }
 
