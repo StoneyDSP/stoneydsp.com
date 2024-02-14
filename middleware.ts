@@ -4,7 +4,9 @@ import {
   headersDefaults,
 } from '@/lib/headers'
 import { NextResponse, NextRequest } from 'next/server'
-import createSupabaseMiddlewareClient from '@/lib/supabase/ssr/middleware'
+// import createSupabaseMiddlewareClient from '@/lib/supabase/ssr/middleware'
+import { Database } from '@/types/supabase'
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import logRequestToServer from '@/lib/log/request/server'
 
 export default async function middleware(request: NextRequest) {
@@ -21,10 +23,64 @@ export default async function middleware(request: NextRequest) {
     setHeaders(request, headerDefault)
   })
 
-  const { supabase, response } = createSupabaseMiddlewareClient(request)
+  // const { supabase, response } = createSupabaseMiddlewareClient(request)
+
+  // Create an unmodified response
+  let response = NextResponse.next({
+    request: {
+      headers: request.headers,
+    },
+  })
+
+  const supabase = createServerClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return request.cookies.get(name)?.value
+        },
+        set(name: string, value: string, options: CookieOptions) {
+          // If the cookie is updated, update the cookies for the request and response
+          request.cookies.set({
+            name,
+            value,
+            ...options,
+          })
+          response = NextResponse.next({
+            request: {
+              headers: request.headers,
+            },
+          })
+          response.cookies.set({
+            name,
+            value,
+            ...options,
+          })
+        },
+        remove(name: string, options: CookieOptions) {
+          // If the cookie is removed, update the cookies for the request and response
+          request.cookies.set({
+            name,
+            value: '',
+            ...options,
+          })
+          response = NextResponse.next({
+            request: {
+              headers: request.headers,
+            },
+          })
+          response.cookies.set({
+            name,
+            value: '',
+            ...options,
+          })
+        },
+      },
+    }
+  )
 
   const { data: { session }, error } = await supabase.auth.getSession()
-
 
   response.headers.set('X-StoneyDSP-Middleware-Response', `${date.toUTCString()}`)
   response.headers.set('Content-Security-Policy', csp)
