@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Account',
   description: 'Systems, Web, Audio & Graphics',
   alternates: {
-    canonical: new URL('projects', getPublicSiteURL())
+    canonical: new URL('account', getPublicSiteURL())
   }
 }
 
