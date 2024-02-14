@@ -11,7 +11,7 @@ export const metadata: Metadata = meta
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default async function RootLayout({
+export default function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
   children,
