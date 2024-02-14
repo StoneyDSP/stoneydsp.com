@@ -6,7 +6,7 @@ import LoadingSpinner from '@/components/spinner/spinner'
 import { Suspense } from 'react'
 import styles from '@/app/template.module.css'
 
-export default async function Template({
+export default function Template({
   children
 }: {
   children: React.ReactNode
