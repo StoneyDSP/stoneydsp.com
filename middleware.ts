@@ -52,7 +52,7 @@ export default async function middleware(request: NextRequest) {
         request.nextUrl.pathname === '/projects/ubento' ||
         request.nextUrl.pathname === '/projects/cxxwin' ||
         request.nextUrl.pathname === '/projects/msys2-toolchain' ||
-        request.nextUrl.pathname === '/projects/cmodule' ||
+        request.nextUrl.pathname === '/projects/noderc' ||
         request.nextUrl.pathname === '/projects/audioplugin-svf' ||
         request.nextUrl.pathname === '/projects/orfanidisbiquad' ||
         request.nextUrl.pathname === '/projects/nonlinearfilters' ||

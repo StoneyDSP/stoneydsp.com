@@ -20,7 +20,7 @@ export default async function HomeContent(): Promise<JSX.Element> {
 
             <HRGradient />
 
-            <div className='animate-spin'>
+            <div /* className='animate-spin' */>
               <LogoWideL />
             </div>
 
