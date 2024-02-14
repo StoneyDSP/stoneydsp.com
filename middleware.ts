@@ -17,7 +17,7 @@ export default async function middleware(request: NextRequest) {
   request.headers.set('Content-Security-Policy', csp)
   request.headers.set('X-Data-Nonce', nonce)
 
-  headersDefaults.forEach(async headerDefault => {
+  headersDefaults.forEach(headerDefault => {
     setHeaders(request, headerDefault)
   })
 
@@ -30,8 +30,8 @@ export default async function middleware(request: NextRequest) {
   response.headers.set('Content-Security-Policy', csp)
   response.headers.set('X-Data-Nonce', nonce)
 
-  headersDefaults.forEach(async headerDefault => {
-    await setHeaders(response, headerDefault)
+  headersDefaults.forEach(headerDefault => {
+    setHeaders(response, headerDefault)
   })
 
   if (!error) {
@@ -65,11 +65,19 @@ export default async function middleware(request: NextRequest) {
       })
     }
 
-    return response
+    // Middleware response was unsuccessful!
+    logRequestToServer(request)
+    return NextResponse.rewrite(new URL(`/?message=Not found`, request!.url ), {
+      request: {
+        headers: request.headers,
+      }
+      // status: 404,
+      // statusText: `Not found`,
+    })
   }
 
   // Middleware response was unsuccessful!
-  logRequestToServer(request!)
+  logRequestToServer(request)
   return NextResponse.rewrite(new URL(`/?message=${error?.message}`, request!.url ), {
     request: {
       headers: request.headers,
