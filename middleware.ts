@@ -42,6 +42,7 @@ export default async function middleware(request: NextRequest) {
     if (request.nextUrl.pathname === '/' ||
         request.nextUrl.pathname === '/about' ||
         request.nextUrl.pathname === '/contact' ||
+        request.nextUrl.pathname === '/login' ||
         request.nextUrl.pathname === '/terms-of-service' ||
         request.nextUrl.pathname === '/privacy-policy' ||
         request.nextUrl.pathname === '/projects' ||
