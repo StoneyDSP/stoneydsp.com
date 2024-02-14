@@ -9,15 +9,15 @@ import MDXCache from '@/components/MDXCache'
 import mdxFetch from '@/lib/mdx/mdxFetch'
 // import styles from '@/app/template.module.css'
 
-export default async function CmoduleContent() {
+export default async function NodercContent() {
 
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
-  const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/cmodule/main/README.md')
+  const mdx = await mdxFetch('https://raw.githubusercontent.com/nathanjhood/noderc/main/README.md')
 
   return (
     <>
-    {/* <BlogArticle> */}
-      {/* <div className={styles.container}>
+    {/** <BlogArticle> */}
+      {/** <div className={styles.container}>
 
         <article className={styles.content}>
 
@@ -28,9 +28,9 @@ export default async function CmoduleContent() {
             <div className="grid grid-cols-1 gap-4">
               <GitProjectCard
                 userName={'nathanjhood'}
-                linkTo={'https://github.com/nathanjhood/cmodule.git'}
-                altString={'cmodule'}
-                repoName={'cmodule'}
+                linkTo={'https://github.com/nathanjhood/noderc.git'}
+                altString={'noderc'}
+                repoName={'noderc'}
               />
             </div>
 
@@ -44,10 +44,10 @@ export default async function CmoduleContent() {
 
             <HRGradient />
 
-          {/* </div>
+          {/** </div>
         </article>
       </div> */}
-    {/* </BlogArticle> */}
+    {/** </BlogArticle> */}
     </>
   )
 }
