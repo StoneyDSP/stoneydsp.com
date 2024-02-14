@@ -16,8 +16,8 @@ export default async function CmoduleContent() {
 
   return (
     <>
-    {/* <BlogArticle> */}
-      {/* <div className={styles.container}>
+    {/** <BlogArticle> */}
+      {/** <div className={styles.container}>
 
         <article className={styles.content}>
 
@@ -44,10 +44,10 @@ export default async function CmoduleContent() {
 
             <HRGradient />
 
-          {/* </div>
+          {/** </div>
         </article>
       </div> */}
-    {/* </BlogArticle> */}
+    {/** </BlogArticle> */}
     </>
   )
 }
