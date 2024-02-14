@@ -95,7 +95,16 @@ export default async function middleware(request: NextRequest) {
     // Middleware response was successful!
     logRequestToServer(request)
 
-    if (request.nextUrl.pathname === '/favicon.ico' ||
+    // Very specific router: not ideal, but secure at least...
+
+    if (request.nextUrl.pathname === '/auth/v1/signin' ||
+        request.nextUrl.pathname === '/auth/v1/signout' ||
+        request.nextUrl.pathname === '/auth/v1/signup' ||
+        request.nextUrl.pathname === '/auth/v1/callback' ||
+        request.nextUrl.pathname === '/auth/v1/providers/github' ||
+        request.nextUrl.pathname === '/login' ||
+        request.nextUrl.pathname === '/account' ||
+        request.nextUrl.pathname === '/favicon.ico' ||
         request.nextUrl.pathname === '/sitemap.xml' ||
         request.nextUrl.pathname === '/www_sitemap.xml') {
       return NextResponse.next({
@@ -109,11 +118,10 @@ export default async function middleware(request: NextRequest) {
     if (request.nextUrl.pathname === '/' ||
         request.nextUrl.pathname === '/about' ||
         request.nextUrl.pathname === '/contact' ||
-        request.nextUrl.pathname === '/login' ||
         request.nextUrl.pathname === '/terms-of-service' ||
         request.nextUrl.pathname === '/privacy-policy' ||
         request.nextUrl.pathname === '/projects' ||
-        request.nextUrl.pathname === '/projects/biquads' || // not ideal, but secure at least...
+        request.nextUrl.pathname === '/projects/biquads' ||
         request.nextUrl.pathname === '/projects/base64' ||
         request.nextUrl.pathname === '/projects/hostconfig' ||
         request.nextUrl.pathname === '/projects/modules' ||
