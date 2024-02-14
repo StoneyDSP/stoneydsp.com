@@ -39,6 +39,17 @@ export default async function middleware(request: NextRequest) {
     // Middleware response was successful!
     logRequestToServer(request)
 
+    if (request.nextUrl.pathname === '/favicon.ico' ||
+        request.nextUrl.pathname === '/sitemap.xml' ||
+        request.nextUrl.pathname === '/www_sitemap.xml') {
+      return NextResponse.next({
+        headers: response.headers,
+        request: {
+          headers: request.headers,
+        }
+      })
+    }
+
     if (request.nextUrl.pathname === '/' ||
         request.nextUrl.pathname === '/about' ||
         request.nextUrl.pathname === '/contact' ||
@@ -67,7 +78,6 @@ export default async function middleware(request: NextRequest) {
     }
 
     // Middleware response was unsuccessful!
-    logRequestToServer(request)
     return NextResponse.rewrite(new URL(`/?message=Not found`, request!.url ), {
       request: {
         headers: request.headers,
