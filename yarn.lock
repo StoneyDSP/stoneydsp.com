@@ -200,10 +200,10 @@
     semver "^7.3.5"
     tar "^6.1.11"
 
-"@marsidev/react-turnstile@^0.4.0":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@marsidev/react-turnstile/-/react-turnstile-0.4.1.tgz#a31531643d23d6f3c056e37c490533f6eb46cffe"
-  integrity sha512-uZusUW9mPr0csWpls8bApe5iuRK0YK7H1PCKqfM4djW3OA9GB9rU68irjk7xRO8qlHyj0aDTeVu9tTLPExBO4Q==
+"@marsidev/react-turnstile@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@marsidev/react-turnstile/-/react-turnstile-0.5.3.tgz#744575cce8fd0adade222d865fc49cd2908c473d"
+  integrity sha512-lx3p2/56esPt8Ksr37K8uhPt/K4Mg8xaIfCV8MPKmE/1X4aHesRqZok1+L1ySQwsdWoEe5+KJOhBXka8lFBwNg==
 
 "@mdx-js/loader@^3.0.0":
   version "3.0.1"
