@@ -104,6 +104,8 @@ export default async function middleware(request: NextRequest) {
         request.nextUrl.pathname === '/auth/v1/providers/github' ||
         request.nextUrl.pathname === '/login' ||
         request.nextUrl.pathname === '/account' ||
+        request.nextUrl.pathname === '/images' ||
+        request.nextUrl.pathname === '/resources/projects/biquads' ||
         request.nextUrl.pathname === '/robots.txt' ||
         request.nextUrl.pathname === '/humans.txt' ||
         request.nextUrl.pathname === '/ads.txt' ||
@@ -144,6 +146,7 @@ export default async function middleware(request: NextRequest) {
       })
     }
 
+    // Middleware response was mysterious!
     return NextResponse.next({
       headers: response.headers,
       request: {
