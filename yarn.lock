@@ -486,16 +486,6 @@
     "@supabase/realtime-js" "2.9.3"
     "@supabase/storage-js" "2.5.5"
 
-"@supabase/ui@^0.36.5":
-  version "0.36.5"
-  resolved "https://registry.yarnpkg.com/@supabase/ui/-/ui-0.36.5.tgz#10ee6925bd6e529dbd5678bc457bff26ee71120a"
-  integrity sha512-SdjUf20sCVw0Ap+x4YfGmjMunUz9ZEipc0bwGxj2f5pEWf12qrDQyhhMcoWCWgjWneITfrjFcejV0jA9zTuiEw==
-  dependencies:
-    lodash "^4.17.20"
-    prop-types "^15.7.2"
-  optionalDependencies:
-    fsevents "^2.3.2"
-
 "@swc/helpers@0.5.2":
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.2.tgz#85ea0c76450b61ad7d10a37050289eded783c27d"
@@ -2424,15 +2414,15 @@ fs.realpath@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
 
-fsevents@^2.3.2, fsevents@~2.3.2:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
-  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
-
 fsevents@~2.1.2:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.1.3.tgz#fb738703ae8d2f9fe900c33836ddebee8b97f23e"
   integrity sha512-Auw9a4AxqWpa9GUfj370BMPzzyncfBABW8Mab7BGWBYDj4Isgq+cDKtx0i6u9jcX9pQDnswsaaOTgTmA5pEjuQ==
+
+fsevents@~2.3.2:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
+  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 function-bind@^1.1.1, function-bind@^1.1.2:
   version "1.1.2"
@@ -3233,11 +3223,6 @@ lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
-
-lodash@^4.17.20:
-  version "4.17.21"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
-  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 longest-streak@^3.0.0:
   version "3.1.0"
@@ -4761,10 +4746,10 @@ react-dom@18.2.0, react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-hook-form@^7.49.3:
-  version "7.50.1"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.50.1.tgz#f6aeb17a863327e5a0252de8b35b4fc8990377ed"
-  integrity sha512-3PCY82oE0WgeOgUtIr3nYNNtNvqtJ7BZjsbxh6TnYNbXButaD5WpjOmTjdxZfheuHKR68qfeFnEDVYoSSFPMTQ==
+react-hook-form@^7.51.0:
+  version "7.51.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.51.0.tgz#757ae71b37c26e00590bd3788508287dcc5ecdaf"
+  integrity sha512-BggOy5j58RdhdMzzRUHGOYhSz1oeylFAv6jUSG86OvCIvlAvS7KvnRY7yoAf2pfEiPN7BesnR0xx73nEk3qIiw==
 
 react-is@^16.13.1:
   version "16.13.1"
