@@ -6,9 +6,9 @@ import LoadingSpinner from '@/components/spinner/spinner'
 import { Suspense } from 'react'
 
 const BlogArticle = async ({
-  children,
+  children
 }: {
-  children: React.ReactNode | Promise<React.ReactNode>
+  children: React.ReactNode
 }) => {
 
   return (
