@@ -9,7 +9,7 @@ const BlogArticle = async ({
   children
 }: {
   children: React.ReactNode
-}) {
+}) => {
 
   return (
     <section className='animate-in min-h-screen max-w-4xl'>
