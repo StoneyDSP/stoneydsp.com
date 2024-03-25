@@ -63,7 +63,7 @@
     "@html-eslint/parser": "^0.23.0",
     "@types/node": "^20.11.5",
     "@types/nodemailer": "^6.4.14",
-    "@types/react": "^18.2.64",
+    "@types/react": "^18.2.70",
     "encoding": "^0.1.13",
     "eslint": "^8.55.0",
     "eslint-config-next": "14.1.0",
