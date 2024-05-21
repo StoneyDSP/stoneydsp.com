@@ -90,10 +90,10 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.1.0.tgz#0709e9f4cb252351c609c6e6d8d6779a8d25edff"
   integrity sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==
 
-"@html-eslint/eslint-plugin@^0.23.1":
-  version "0.23.1"
-  resolved "https://registry.yarnpkg.com/@html-eslint/eslint-plugin/-/eslint-plugin-0.23.1.tgz#158c11069ee74734ea4daf8e0354fb6ab18ec4d3"
-  integrity sha512-2AU58FZSPPHjNJzuv08GfgU/nfrVgNI4Uj9y6KOaU5egzAf1DO5x6HeZwvS0MPBAduqoC0i1RqHNSQrzCcmB7A==
+"@html-eslint/eslint-plugin@^0.24.1":
+  version "0.24.1"
+  resolved "https://registry.yarnpkg.com/@html-eslint/eslint-plugin/-/eslint-plugin-0.24.1.tgz#26766351e507a4ecfdbc2e4a033f2eefe4375217"
+  integrity sha512-JwNDQBrNIWEPcxgSpla/2jaUXyQCqL7Xp8CmON4Bk5qg8MwiDLXOgjylfVC+tN52i8JeHWMca34I9DqBGRj9Qg==
 
 "@html-eslint/parser@^0.24.1":
   version "0.24.1"
