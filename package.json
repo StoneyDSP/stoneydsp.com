@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@html-eslint/eslint-plugin": "^0.24.1",
-    "@html-eslint/parser": "^0.23.0",
+    "@html-eslint/parser": "^0.24.1",
     "@types/node": "^20.11.5",
     "@types/nodemailer": "^6.4.14",
     "@types/react": "^18.2.70",
