@@ -67,7 +67,7 @@
     "encoding": "^0.1.13",
     "eslint": "^8.55.0",
     "eslint-config-next": "14.1.0",
-    "globby": "^14.0.1",
+    "globby": "^14.0.2",
     "supabase": "^1.150.0",
     "typescript": "^5.5.4",
     "vercel": "^36.0.0"
