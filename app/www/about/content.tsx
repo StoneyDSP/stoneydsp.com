@@ -100,8 +100,9 @@ export default async function AboutContent(): Promise<JSX.Element> {
       <HRGradient />
       
       <p className='text-center opacity-90' tabIndex={0}>
-        Please note that there exists other peoples or entities in the social media space with the name "StoneyDSP" which is not associated with ourselves in any way - just unfortunate coincidence. If it is not about audio DSP, it is probably not me!
+        Please note that there exists other peoples or entities in the social media space with the username &quot;StoneyDSP&quot; which is/are not associated with ourselves in any way - just unfortunate coincidence. If it is not about audio DSP, it is probably not me!
       </p>
+      
       <HRGradient />
       
       <HRGradient />
