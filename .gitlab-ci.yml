@@ -1,0 +1,53 @@
+# Why child pipelines?
+# - Different images/tags per OS (Linux Docker, Android SDK image, macOS runner, Windows runner) without YAML contortions
+# - Easy to add/remove platforms via a variable
+# - Each child can have its own stages (prepare/build/package) and matrices
+stages: [fanout]
+
+# Toggle which platforms to build at pipeline time (UI or API):
+# e.g. BUILD_LINUX=1 BUILD_ANDROID=1 BUILD_IOS=0 BUILD_WINDOWS=0
+variables:
+  BUILD_LINUX: "1"
+  BUILD_ANDROID: "0"
+  BUILD_IOS: "0"
+  BUILD_WINDOWS: "0"
+
+# How you use it
+# To run all Linux + Android at once:
+# - Set pipeline variables: BUILD_LINUX=1 BUILD_ANDROID=1 BUILD_IOS=0 BUILD_WINDOWS=0
+# - Later, turn on iOS/Windows when runners are ready (just flip the variables).
+# - Inside each platform file you can add parallel:matrix for variants (ABIs, Debug/Release, arch).
+
+# Fan out into child pipelines. Each child gets its own graph & can run in
+# parallel.
+trigger:linux:
+  stage: fanout
+  rules:
+    - if: '$BUILD_LINUX == "1"'
+  trigger:
+    include: 'scripts/gitlab/platforms/x64-linux.yml'
+    strategy: depend   # surface child status/artifacts to the parent
+
+trigger:android:
+  stage: fanout
+  rules:
+    - if: '$BUILD_ANDROID == "1"'
+  trigger:
+    include: 'scripts/gitlab/platforms/android.yml'
+    strategy: depend
+
+trigger:ios:
+  stage: fanout
+  rules:
+    - if: '$BUILD_IOS == "1"'
+  trigger:
+    include: 'scripts/gitlab/platforms/ios.yml'
+    strategy: depend
+
+trigger:windows:
+  stage: fanout
+  rules:
+    - if: '$BUILD_WINDOWS == "1"'
+  trigger:
+    include: 'scripts/gitlab/platforms/x64-windows.yml'
+    strategy: depend

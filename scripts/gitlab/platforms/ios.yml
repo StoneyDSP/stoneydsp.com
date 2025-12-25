@@ -1,0 +1,32 @@
+include:
+  - local: 'ci/common.yml'
+
+# This requires a macOS runner with Xcode
+default:
+  tags: [macos]
+
+stages: [prepare, build, package]
+
+.ios-common:
+  variables:
+    CONFIG: "Release"
+    SDK: "iphoneos"
+  before_script:
+    - xcodebuild -version
+    - cmake --version || true   # optionally install newer cmake via brew if needed
+  extends:
+    - .juce-common
+    - .default-cache
+
+ios:build:
+  stage: build
+  extends: .ios-common
+  script:
+    - $VCPKG_ROOT/vcpkg install --clean-buildtrees-after-build --clean-packages-after-build
+    # JUCE iOS: either cmake toolchain or Xcode project generation
+    - cmake -S . -B build -DCMAKE_BUILD_TYPE=$CONFIG -GXcode -DCMAKE_TOOLCHAIN_FILE="$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
+    - xcodebuild -project build/YourApp.xcodeproj -configuration $CONFIG -sdk $SDK -scheme YourApp -quiet
+  artifacts:
+    paths:
+      - build/**/*.app
+      - build/**/*.ipa

@@ -1,0 +1,35 @@
+{
+	"name": "WebView Plugin Demo",
+	"short_name": "WebView Plugin Demo",
+	"description": "WebView Plugin Demo",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"sizes": "256x256",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "static/images/favicon/android-icon-144x144.png",
+			"sizes": "144x144",
+			"type": "image/png"
+		}
+	],
+	"screenshots": [
+		{
+			"src": "static/images/favicon/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"form_factor": "narrow"
+		},
+		{
+			"src": "static/images/w_icon__1024x768.png",
+			"sizes": "1024x768",
+			"type": "image/png",
+			"form_factor": "wide"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#ffffff"
+}

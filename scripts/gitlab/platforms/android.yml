@@ -1,0 +1,37 @@
+include:
+  - local: 'ci/common.yml'
+
+default:
+  image: ghcr.io/android/sdk:latest   # or your own prebaked Android image
+  # if using a special runner, add tags:
+  # tags: [android]
+
+stages: [prepare, build, package]
+
+.android-common:
+  variables:
+    ANDROID_SDK_ROOT: /opt/android-sdk
+    ANDROID_NDK_VERSION: "26.1.10909125"   # adapt to your image
+    CONFIG: "Release"
+  before_script:
+    - sdkmanager --version || true
+    - echo y | sdkmanager "ndk;$ANDROID_NDK_VERSION" "platforms;android-34" "platform-tools"
+  extends:
+    - .juce-common
+    - .default-cache
+
+android:build:
+  stage: build
+  extends: .android-common
+  parallel:
+    matrix:
+      - ABI: [arm64-v8a, armeabi-v7a, x86_64]
+  script:
+    - $VCPKG_ROOT/vcpkg install --clean-buildtrees-after-build --clean-packages-after-build
+    # your JUCE Android cmake/toolchain invocation here:
+    - cmake -S . -B build-$ABI -DANDROID_ABI=$ABI -DCMAKE_BUILD_TYPE=$CONFIG
+    - cmake --build build-$ABI --config $CONFIG -j$(nproc)
+  artifacts:
+    paths:
+      - build-*/outputs/**/*.apk
+      - build-*/lib/**/*.so

@@ -1,0 +1,38 @@
+{
+	"name": "@stoneydsp/lib",
+	"version": "0.0.0",
+	"description": "",
+	"keywords": [],
+	"author": "Nathan Hood <nathan@fxdigital.uk>",
+	"license": "UNLICENSED",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
+	"exports": {
+		"require": {
+			"types": "./dist/index.d.cts",
+			"default": "./dist/index.cjs"
+		},
+		"import": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"prepare": "pkgroll",
+		"build": "pkgroll",
+		"clean": "rimraf ./dist ./tsconfig.tsbuildinfo",
+		"wipe": "rimraf ./node_modules"
+	},
+	"devDependencies": {
+		"@types/node": "^25.0.2",
+		"@vitest/coverage-v8": "4.0.15",
+		"@vitest/ui": "4.0.15",
+		"pkgroll": "^2.21.4",
+		"rimraf": "^6.1.2",
+		"typescript": "^5.9.3"
+	}
+}

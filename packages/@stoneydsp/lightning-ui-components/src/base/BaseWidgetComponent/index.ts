@@ -1,0 +1,1 @@
+export { BaseWidgetComponent } from "./BaseWidgetComponent";

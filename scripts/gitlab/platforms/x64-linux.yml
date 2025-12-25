@@ -1,0 +1,87 @@
+# You can copy and paste this template into a new `.gitlab-ci.yml` file.
+# You should not add this template to an existing `.gitlab-ci.yml` file by using the `include:` keyword.
+#
+# To contribute improvements to CI/CD templates, please follow the Development guide at:
+# https://docs.gitlab.com/development/cicd/templates/
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Nodejs.gitlab-ci.yml
+
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+# default:
+#   image: registry.fxdigital.uk/fxd-dev-util/ci-docker-images/node/24:latest
+
+default:
+  image: ubuntu:22.04
+
+# TODO: this can be job/platform-specific, later...
+variables:
+  DEBIAN_FRONTEND: noninteractive
+  VCPKG_ROOT: "$CI_PROJECT_DIR/vcpkg"
+  VCPKG_DOWNLOADS: "$CI_PROJECT_DIR/.vcpkg_downloads"
+  VCPKG_FORCE_SYSTEM_BINARIES: "1"
+  VCPKG_MANIFEST_MODE: false
+  # Optional: speed up builds with binary caching
+  VCPKG_BINARY_SOURCES: "clear;files,$CI_PROJECT_DIR/.vcpkg_cache,readwrite"
+
+# # Pick zero or more services to be used on all builds.
+# # Only needed when using a docker container to run your tests in.
+# # Check out: https://docs.gitlab.com/ee/ci/services/
+# services:
+#   - mysql:latest
+#   - redis:latest
+#   - postgres:latest
+
+# These folders are cached between builds
+# https://docs.gitlab.com/ee/ci/yaml/#cache
+# TODO: this doesn't need to be job/platform-specific, at all...
+cache:
+  key: "v1-$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+  policy: pull-push
+  paths:
+    - node_modules/
+    - .pnpm-store/
+    - vcpkg_installed/
+    - .vcpkg_cache/
+
+# TODO: break this down into smaller jobs and make each of them interoperable
+# across platforms where required, or write platform-specific versions in the
+# relevant platform files...
+build:
+  stage: build
+  before_script:
+    # system
+    - echo 'tzdata tzdata/Areas select Europe' | debconf-set-selections
+    - echo 'tzdata tzdata/Zones/Europe select Paris' | debconf-set-selections
+    - apt -qq update
+    - apt -q -y install curl gpg ca-certificates lsb-release wget zip unzip tar zlib1g-dev libpng-dev git gcc ninja-build make pkg-config build-essential autoconf autoconf-archive automake libtool
+    # JUCE Linux build deps:
+    - apt -q -y install libasound2-dev libjack-jackd2-dev ladspa-sdk libcurl4-openssl-dev libfreetype6-dev libx11-dev libxcomposite-dev libxcursor-dev libxext-dev libxinerama-dev libxrandr-dev libxrender-dev libwebkit2gtk-4.0-dev libglu1-mesa-dev mesa-common-dev
+    - apt update -qq
+    - apt install -y
+    # CMake (latest)
+    - curl -fsSL https://apt.kitware.com/keys/kitware-archive-latest.asc | gpg --dearmor -o /usr/share/keyrings/kitware-archive-keyring.gpg
+    - echo "deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main" > /etc/apt/sources.list.d/kitware.list
+    - apt update -qq
+    - apt install -y cmake ninja-build
+    - cmake --version  # should be >= 3.25
+    # NodeJS / npm
+    # Install Node & pnpm via Corepack
+    - curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+    - apt install -y nodejs
+    - corepack enable
+    - corepack prepare pnpm@latest --activate
+    # vcpkg
+    - git clone https://github.com/microsoft/vcpkg.git
+    - mkdir -p "$VCPKG_DOWNLOADS" "$CI_PROJECT_DIR/.vcpkg_cache"
+    - $VCPKG_ROOT/bootstrap-vcpkg.sh -disableMetrics
+  script:
+    - mkdir -p "$VCPKG_DOWNLOADS" "$CI_PROJECT_DIR/.vcpkg_cache"
+    - mount | grep "$CI_PROJECT_DIR" || true
+    - which cmake && cmake --version
+    - which ninja && ninja --version
+    - set -o pipefail
+    - $VCPKG_ROOT/vcpkg install --clean-buildtrees-after-build --clean-packages-after-build
+    - make install
+    - make build
+    - make test

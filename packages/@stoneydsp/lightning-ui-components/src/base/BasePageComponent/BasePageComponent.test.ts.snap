@@ -1,0 +1,44 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BasePageComponent > should render correctly 1`] = `
+{
+  "Component": {
+    "active": false,
+    "alpha": 1,
+    "attached": true,
+    "boundsMargin": null,
+    "clipping": false,
+    "color": 4294967295,
+    "enabled": true,
+    "flex": false,
+    "flexItem": false,
+    "h": 768,
+    "hasFinalFocus": true,
+    "hasFocus": true,
+    "isComponent": true,
+    "mount": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "pivot": 0.5,
+    "pivotX": 0.5,
+    "pivotY": 0.5,
+    "ref": "Component",
+    "renderOfScreen": undefined,
+    "renderToTexture": false,
+    "scale": 1,
+    "scaleX": 1,
+    "scaleY": 1,
+    "state": "",
+    "tag": [Function],
+    "tags": [
+      "Component",
+    ],
+    "type": "BasePageComponent",
+    "visible": true,
+    "w": 1024,
+    "x": 0,
+    "y": 0,
+    "zIndex": 0,
+  },
+}
+`;

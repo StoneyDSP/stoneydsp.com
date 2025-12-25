@@ -1,0 +1,20 @@
+{
+	"files": [
+		"./src/index.ts"
+	],
+	"include": [
+		"./src",
+		"**/*.{ts,cts,mts}",
+		"**/*.d.{ts,cts,mts}"
+	],
+	"exclude": [
+		"**/*.test.ts"
+	],
+	"compilerOptions": {
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"strictNullChecks": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true
+	}
+}

@@ -1,7 +1,12 @@
 {
 	"recommendations": [
-		"esbenp.prettier-vscode",
+		"EditorConfig.EditorConfig",
 		"dbaeumer.vscode-eslint",
-		"github.vscode-pull-request-guthub"
+		"esbenp.prettier-vscode",
+		"vitest.explorer"
+	],
+	"unwantedRecommendations": [
+		"ms-vscode.cmake-tools",
+		"josetr.cmake-language-support-vscode",
 	]
 }

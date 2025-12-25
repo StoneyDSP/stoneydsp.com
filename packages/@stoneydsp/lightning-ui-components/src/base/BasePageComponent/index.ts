@@ -1,0 +1,1 @@
+export { BasePageComponent } from "./BasePageComponent";
