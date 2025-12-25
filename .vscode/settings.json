@@ -1,19 +1,33 @@
 {
-	"files.associations": {
-		"*.css": "tailwindcss"
-	},
-  "eslint.enable": true,
+	"editor.rulers": [
+		80
+	],
+	"eslint.enable": true,
+	"prettier.enable": true,
 	"eslint.validate": [
 		"javascript",
 		"typescript",
 		"javascriptreact",
-		"typescriptreact"
+		"typescriptreact",
+		"markdown",
+		"html",
+		"css"
 	],
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"typescript.tsdk": "./node_modules/typescript/lib",
+	"debug.javascript.terminalOptions": {
+		"resolveSourceMapLocations": [
+			"${workspaceFolder}/**",
+			"!**/node_modules/**",
+			"**/node_modules/.vite-temp/**"
+		],
+		"skipFiles": [
+			"<node_internals>/**"
+		]
 	},
-	"editor.quickSuggestions": {
-		"strings": "on"
-	}
+	"C_Cpp.autoAddFileAssociations": true,
+	"C_Cpp.default.includePath": [
+		"${default}",
+		"${env:HOME}/dev/juce-framework/JUCE/modules"
+	],
+	"files.associations": {}
 }

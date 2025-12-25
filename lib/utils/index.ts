@@ -1,0 +1,11 @@
+export { isBigInt } from "./isBigInt";
+export { isBoolean } from "./isBoolean";
+export { isFalse } from "./isFalse";
+export { isFunction } from "./isFunction";
+export { isNumber } from "./isNumber";
+export { isString } from "./isString";
+export { isSymbol } from "./isSymbol";
+export { isTrue } from "./isTrue";
+export { isUndefined } from "./isUndefined";
+export { createObject, freezeObject } from "./object";
+export { capitalize, toLowerCase, toUpperCase, uncapitalize } from "./string";

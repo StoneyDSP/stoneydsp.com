@@ -1,0 +1,32 @@
+include:
+  - local: 'ci/common.yml'
+
+# Requires a Windows runner (shell or powershell).
+default:
+  tags: [windows]
+
+stages: [prepare, build, package]
+
+.windows-common:
+  variables:
+    CONFIG: "Release"
+  before_script:
+    - choco --version
+    - choco install -y ninja cmake git
+  extends:
+    - .default-cache
+  # skip .juce-common's Linux apt stuff; use a Windows-flavoured setup instead
+  # (If you keep vcpkg bootstrap the same, use .bat/.ps1 equivalents.)
+
+windows:build:
+  stage: build
+  extends: .windows-common
+  script:
+    - git clone https://github.com/microsoft/vcpkg %VCPKG_ROOT% || echo ok
+    - %VCPKG_ROOT%\bootstrap-vcpkg.bat -disableMetrics
+    - %VCPKG_ROOT%\vcpkg install --clean-buildtrees-after-build --clean-packages-after-build
+    - cmake -S . -B build -G "Ninja" -DCMAKE_BUILD_TYPE=%CONFIG% -DCMAKE_TOOLCHAIN_FILE="%VCPKG_ROOT%\scripts\buildsystems\vcpkg.cmake"
+    - cmake --build build --config %CONFIG%
+  artifacts:
+    paths:
+      - build\

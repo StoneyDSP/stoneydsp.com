@@ -1,0 +1,10 @@
+{
+	"files": [
+		"index.d.ts",
+		"check_native_interop.d.ts",
+	],
+	"compilerOptions": {
+		"noEmit": true,
+		"target": "esnext"
+	}
+}
