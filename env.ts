@@ -14,7 +14,6 @@ export function getEnv() {
   return defineConfig(
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async ({ command, mode }) => {
-
       const env = loadEnvWithDefaults(mode, process.cwd(), "");
 
       return Object.freeze<UserConfig>({
@@ -24,9 +23,10 @@ export function getEnv() {
         appType: "spa",
         define: {
           __APP_VERSION__: JSON.stringify(version),
-          __NODE_ENV__: JSON.stringify(env['NODE_ENV'])
+          __NODE_ENV__: JSON.stringify(env["NODE_ENV"]),
         },
-        test: testConfig
+        test: testConfig,
       });
-  })
+    }
+  );
 }

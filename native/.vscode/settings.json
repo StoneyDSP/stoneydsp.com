@@ -1,0 +1,48 @@
+{
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"editor.trimAutoWhitespace": true,
+	"editor.insertSpaces": true,
+	"editor.rulers": [
+		80,
+		160
+	],
+	"cmake.sourceDirectory": "${workspaceFolder}",
+	"cmake.buildDirectory": "${workspaceFolder}/build",
+	"cmake.installPrefix": "${workspaceFolder}/install",
+	"cmake.exportCompileCommandsFile": true,
+	"cmake.loadCompileCommands": true,
+	"cmake.launchBehavior": "reuseTerminal",
+	"C_Cpp.formatting": "disabled",
+	"C_Cpp.autoAddFileAssociations": true,
+	"C_Cpp.default.includePath": [
+		"${workspaceFolder}/include"
+	],
+	"C_Cpp.default.defines": [
+		"JUCE_WEB_BROWSER=1",
+		"JUCE_USE_WIN_WEBVIEW2_WITH_STATIC_LINKING=1"
+	],
+	"C_Cpp.default.browse.databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+	"C_Cpp.default.browse.limitSymbolsToIncludedHeaders": true,
+	"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+	"C_Cpp.default.mergeConfigurations": true,
+	"C_Cpp.default.cStandard": "c17",
+	"C_Cpp.default.cppStandard": "c++17",
+	"json.format.enable": true,
+	"json.validate.enable": true,
+	"json.schemas": [
+		{
+			"fileMatch": [
+				"**/vcpkg.json"
+			],
+			"url": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json"
+		},
+		{
+			"fileMatch": [
+				"**/vcpkg-configuration.json"
+			],
+			"url": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg-configuration.schema.json"
+		},
+	]
+}

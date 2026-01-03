@@ -5,9 +5,9 @@ type InputEvent = globalThis.MouseEvent | globalThis.TouchEvent;
 
 let enabled: true | false = false;
 let listeners: {
-    start: () => void;
-    end: () => void;
-    move: () => void;
+  start: () => void;
+  end: () => void;
+  move: () => void;
 };
 let stage: Lightning.Stage;
 
@@ -39,72 +39,74 @@ type TranslateFn = (event: InputEvent, cb: TranslateCb) => TranslateCb;
  * @param cb
  */
 let translate: TranslateFn = (event: InputEvent, cb: TranslateCb) => {
-    let clientX = 0;
-    let clientY = 0;
-    if (event instanceof MouseEvent) {
-        clientX = event.clientX;
-        clientY = event.clientY;
-    } else {
-        const {touches, changedTouches} = event;
-        let touch = touches;
+  let clientX = 0;
+  let clientY = 0;
+  if (event instanceof MouseEvent) {
+    clientX = event.clientX;
+    clientY = event.clientY;
+  } else {
+    const { touches, changedTouches } = event;
+    let touch = touches;
 
-        if (changedTouches.length) {
-            touch = changedTouches;
-        }
-
-        if (touch.length) {
-            clientX = touch[0]!.clientX;
-            clientY = touch[0]!.clientY;
-        }
+    if (changedTouches.length) {
+      touch = changedTouches;
     }
 
-    if (typeof cb === "function") {
-        cb.call(null, ~~(clientX), ~~(clientY), event);
+    if (touch.length) {
+      clientX = touch[0]!.clientX;
+      clientY = touch[0]!.clientY;
     }
+  }
 
-    return cb;
+  if (typeof cb === "function") {
+    cb.call(null, ~~clientX, ~~clientY, event);
+  }
+
+  return cb;
 };
 
 const start = (x: number, y: number, event: InputEvent) => {
-    const child = getAt(x, y);
-    touchStarted = true;
-    startCoord = new Vector(x, y);
+  const child = getAt(x, y);
+  touchStarted = true;
+  startCoord = new Vector(x, y);
 
-    if (child) {
-        touchedElement = child;
-        emit(child, "_handleTouchStart", event);
-    }
+  if (child) {
+    touchedElement = child;
+    emit(child, "_handleTouchStart", event);
+  }
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const move = (x: number, y: number, _event?: InputEvent) => {
-    const current = new Vector(x, y);
-    if (touchedElement) {
-        emit(touchedElement, "_handleTouchMove", {
-            start: startCoord, current, delta: current.subtract(startCoord)
-        });
-    } else {
-        const child = getAt(x, y);
-        if (child) {
-            emit(child, "_handleTouchHover", {current});
-        }
+  const current = new Vector(x, y);
+  if (touchedElement) {
+    emit(touchedElement, "_handleTouchMove", {
+      start: startCoord,
+      current,
+      delta: current.subtract(startCoord),
+    });
+  } else {
+    const child = getAt(x, y);
+    if (child) {
+      emit(child, "_handleTouchHover", { current });
     }
+  }
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const end = (x: number, y: number, _event?: InputEvent) => {
-    const child = getAt(x, y);
+  const child = getAt(x, y);
 
-    endCoord = new Vector(x, y);
-    delta = endCoord.subtract(startCoord);
+  endCoord = new Vector(x, y);
+  delta = endCoord.subtract(startCoord);
 
-    if (child) {
-        emit(child, "_handleTouchEnd", {delta});
-    } else if (touchedElement) {
-        emit(touchedElement, "_handleTouchEnd", {delta});
-    }
+  if (child) {
+    emit(child, "_handleTouchEnd", { delta });
+  } else if (touchedElement) {
+    emit(touchedElement, "_handleTouchEnd", { delta });
+  }
 
-    touchedElement = null;
+  touchedElement = null;
 };
 
 /**
@@ -153,9 +155,9 @@ const emit = (
   event: string,
   args: unknown
 ) => {
-    if (instance[event]) {
-        instance[event](args);
-    }
+  if (instance[event]) {
+    instance[event](args);
+  }
 };
 
 export const initTouch = ({
@@ -165,12 +167,12 @@ export const initTouch = ({
   translate?: TranslateFn;
   listeners?: typeof listeners;
 }) => {
-    if (listenersOverride) {
-        listeners = listenersOverride;
-    }
-    if (translateOverride) {
-        translate = translateOverride;
-    }
+  if (listenersOverride) {
+    listeners = listenersOverride;
+  }
+  if (translateOverride) {
+    translate = translateOverride;
+  }
 };
 
 /**
@@ -202,7 +204,6 @@ const enable = (stageInstance: Lightning.Stage) => {
 
         document.addEventListener("touchend", evt);
         document.addEventListener("mouseup", evt);
-
       },
       move: () => {
         const evt = (event: InputEvent) => {
@@ -210,9 +211,9 @@ const enable = (stageInstance: Lightning.Stage) => {
           event.preventDefault();
         };
 
-        document.addEventListener("touchmove", evt, {passive: false});
+        document.addEventListener("touchmove", evt, { passive: false });
         document.addEventListener("mousemove", evt);
-      }
+      },
     };
   }
 
@@ -224,7 +225,7 @@ const enable = (stageInstance: Lightning.Stage) => {
 };
 
 class Touch {
-    static enable = enable;
-};
+  static enable = enable;
+}
 
 export { Touch };

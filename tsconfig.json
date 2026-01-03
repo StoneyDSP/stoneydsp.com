@@ -29,7 +29,8 @@
 		],
 		"types": [
 			"vite/client",
-			"vitest/globals"
+			"vitest/globals",
+			"@types/audioworklet"
 		],
 		"typeRoots": [
 			"./types",
@@ -59,6 +60,7 @@
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
 		"noUncheckedSideEffectImports": true,
-		"strictNullChecks": true
+		"strictNullChecks": true,
+		"forceConsistentCasingInFileNames": true
 	}
 }

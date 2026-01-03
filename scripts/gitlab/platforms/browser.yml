@@ -1,0 +1,41 @@
+stages: [build, deploy]
+
+default:
+  image: node:24
+
+# Optional: cache pnpm store for speed
+cache:
+  key:
+    files:
+      - pnpm-lock.yaml
+      - pnpm-workspace.yaml
+    prefix: "pages"
+  policy: pull-push
+  paths:
+    - .pnpm-store/
+
+pages:
+  image: node:24
+  stage: deploy
+  rules:
+    # Per-MR previews (best UX: "View app" button)
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    # Optional: also publish for branch pipelines
+    - if: "$CI_COMMIT_BRANCH"
+  script:
+    # Tell vite to use empty JUCE stubs for web builds
+    - export BUILD_TARGET=web
+    - corepack enable
+    - corepack prepare pnpm@latest --activate
+    - pnpm install --frozen-lockfile
+    - pnpm build
+  pages:
+    publish: dist
+    # MR preview URL like .../mr-123/
+    path_prefix: "mr-$CI_MERGE_REQUEST_IID"
+    # If you want branch previews instead, use:
+    # path_prefix: "$CI_COMMIT_REF_SLUG"
+    expire_in: 1 week
+  environment:
+    name: "pages/$CI_COMMIT_REF_SLUG"
+    url: "$CI_PAGES_URL"

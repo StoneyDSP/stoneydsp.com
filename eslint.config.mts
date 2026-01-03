@@ -14,10 +14,10 @@ const project = defineConfig([
     rules: {
       "@typescript-eslint/no-namespace": "off",
       "@typescript-eslint/no-unused-vars": "warn",
-      "@typescript-eslint/no-require-imports": "off"
-    }
-  }
-])
+      "@typescript-eslint/no-require-imports": "off",
+    },
+  },
+]);
 
 const config = defineConfig([
   {
@@ -84,9 +84,10 @@ const config = defineConfig([
     "dist",
     "out",
     "vcpkg_installed",
+    "packages",
     "native",
-    "vendors"
-  ])
+    "vendors",
+  ]),
 ]);
 
-export default config
+export default config;

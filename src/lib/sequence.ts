@@ -1,4 +1,6 @@
-import { Log } from "@lightningjs/sdk";
+declare type ThenFn = () => void;
+declare type CatchFn = (e: unknown) => void;
+declare type FinallyFn = () => void;
 
 /**
  * ---
@@ -48,28 +50,27 @@ import { Log } from "@lightningjs/sdk";
  * ---
  *
  */
-const sequence = (
+function sequence(
   /**
    * @param {Array<ThenFn>} tasks An array of functions to be executed in order
    */
   tasks: Array<ThenFn>,
   /**
-   * @param {CatchFn | undefined} [catchFn=Log.error] Optional callback to be executed on every `.catch()`
+   * @param {CatchFn | undefined} [Promise.reject] Optional callback to be executed on every `.catch()`
    */
-  catchFn: CatchFn | undefined = Log.error,
+  catchFn: CatchFn | undefined = Promise.reject,
   /**
    * @param {FinallyFn | undefined} [finallyFn=FinallyFn] Optional callback to be executed on every `.finally()`
    */
   finallyFn: FinallyFn | undefined = undefined
   //
-): Promise<void> =>
+): Promise<void> {
   // This line will wait for the last async function to finish.
   // The first iteration uses an already resolved Promise
   // so, it will immediately continue.
-  tasks.reduce(
-    (promise, thenFn) => promise.then(thenFn).catch(catchFn).finally(finallyFn),
-    Promise.resolve()
-  );
-
+  return tasks.reduce<Promise<void>>(function (promise, thenFn) {
+    return promise.then(thenFn).catch(catchFn).finally(finallyFn);
+  }, Promise.resolve());
+}
 
 export { sequence };

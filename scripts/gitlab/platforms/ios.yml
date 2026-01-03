@@ -1,11 +1,30 @@
-include:
-  - local: 'ci/common.yml'
+# include:
+#   - local: "scripts/gitlab/common.yml"
 
 # This requires a macOS runner with Xcode
 default:
   tags: [macos]
 
-stages: [prepare, build, package]
+# stages: [prepare, build, package]
+
+variables:
+  VCPKG_ROOT: "$CI_PROJECT_DIR/vcpkg"
+  VCPKG_DOWNLOADS: "$CI_PROJECT_DIR/.vcpkg_downloads"
+  VCPKG_FORCE_SYSTEM_BINARIES: "1"
+  # Optional: vcpkg binary caching
+  VCPKG_BINARY_SOURCES: "clear;files,$CI_PROJECT_DIR/.vcpkg_cache,readwrite"
+
+cache:
+  key:
+    files:
+      - pnpm-lock.yaml
+      - vcpkg.json
+    prefix: "v1-$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+  policy: pull-push
+  paths:
+    - .pnpm-store/
+    - .vcpkg_downloads/
+    - .vcpkg_cache/
 
 .ios-common:
   variables:
@@ -13,19 +32,29 @@ stages: [prepare, build, package]
     SDK: "iphoneos"
   before_script:
     - xcodebuild -version
-    - cmake --version || true   # optionally install newer cmake via brew if needed
-  extends:
-    - .juce-common
-    - .default-cache
+    - cmake --version || true # optionally install newer cmake via brew if needed
+  # extends:
+  #   - .juce-common
+  #   - .default-cache
 
 ios:build:
   stage: build
   extends: .ios-common
+  before_script:
+    # node + pnpm (Corepack) — adjust for non-Linux runners in their files
+    # - node --version || (curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && apt-get install -y nodejs)
+    - corepack enable
+    - corepack prepare pnpm@latest --activate
+    - pnpm config set store-dir .pnpm-store
+    # vcpkg
+    - git clone https://github.com/microsoft/vcpkg.git
+    - mkdir -p "$VCPKG_DOWNLOADS" "$CI_PROJECT_DIR/.vcpkg_cache"
+    - $VCPKG_ROOT/bootstrap-vcpkg.sh -disableMetrics
   script:
     - $VCPKG_ROOT/vcpkg install --clean-buildtrees-after-build --clean-packages-after-build
     # JUCE iOS: either cmake toolchain or Xcode project generation
     - cmake -S . -B build -DCMAKE_BUILD_TYPE=$CONFIG -GXcode -DCMAKE_TOOLCHAIN_FILE="$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
-    - xcodebuild -project build/YourApp.xcodeproj -configuration $CONFIG -sdk $SDK -scheme YourApp -quiet
+    - xcodebuild -project build/WebViewPluginDemo.xcodeproj -configuration $CONFIG -sdk $SDK -scheme WebViewPluginDemo -quiet
   artifacts:
     paths:
       - build/**/*.app

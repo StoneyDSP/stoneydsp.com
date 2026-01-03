@@ -1,6 +1,4 @@
 import { Launch as BaseLaunch, Lightning, Log } from "@lightningjs/sdk";
-import { bootstrapContainer } from "./container";
-import { sequence } from "./lib/sequence";
 
 /**
  *
@@ -16,15 +14,17 @@ function Launch(
   platformSettings: Parameters<typeof BaseLaunch>[2],
   appData: Parameters<typeof BaseLaunch>[3]
 ): ReturnType<typeof BaseLaunch> | null {
+  ///
   let app: Lightning.Application | null = null;
-  sequence([
-    () => bootstrapContainer(),
-    () => {
-      app = BaseLaunch(App, appSettings, platformSettings, appData);
-    },
-    () => document.body.appendChild(app!.stage.getCanvas()),
-    () => Log.debug("Launch", App, appSettings, platformSettings, appData),
-  ]);
+  ///
+  app = BaseLaunch(App, appSettings, platformSettings, appData);
+  ///
+  app!.stage.getCanvas().id = "canvas";
+  ///
+  document.body.appendChild(app!.stage.getCanvas());
+  ///
+  Log.debug("Launch", App, appSettings, platformSettings, appData);
+  ///
   return app;
 }
 

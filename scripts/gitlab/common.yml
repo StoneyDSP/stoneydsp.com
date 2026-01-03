@@ -3,12 +3,16 @@ stages: [prepare, build, package]
 
 .default-cache:
   cache:
-    key: "$CI_JOB_NAME"
+    key:
+      files:
+        - pnpm-lock.yaml
+        - vcpkg.json
+      prefix: "v1-$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
     policy: pull-push
     paths:
       - .pnpm-store/
+      - .vcpkg_downloads/
       - .vcpkg_cache/
-      - vcpkg_installed/
 
 .juce-common:
   variables:

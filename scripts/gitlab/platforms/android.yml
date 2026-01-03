@@ -1,8 +1,8 @@
 include:
-  - local: 'ci/common.yml'
+  - local: "ci/common.yml"
 
 default:
-  image: ghcr.io/android/sdk:latest   # or your own prebaked Android image
+  image: ghcr.io/android/sdk:latest # or your own prebaked Android image
   # if using a special runner, add tags:
   # tags: [android]
 
@@ -11,7 +11,7 @@ stages: [prepare, build, package]
 .android-common:
   variables:
     ANDROID_SDK_ROOT: /opt/android-sdk
-    ANDROID_NDK_VERSION: "26.1.10909125"   # adapt to your image
+    ANDROID_NDK_VERSION: "26.1.10909125" # adapt to your image
     CONFIG: "Release"
   before_script:
     - sdkmanager --version || true

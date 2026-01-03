@@ -1,2 +1,2 @@
-export { createObject } from "./createObject"
-export { freezeObject } from "./freezeObject"
+export { createObject } from "./createObject";
+export { freezeObject } from "./freezeObject";

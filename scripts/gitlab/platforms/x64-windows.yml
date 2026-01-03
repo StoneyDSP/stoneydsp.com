@@ -1,5 +1,5 @@
 include:
-  - local: 'ci/common.yml'
+  - local: "ci/common.yml"
 
 # Requires a Windows runner (shell or powershell).
 default:

@@ -8,21 +8,27 @@ importers:
 
   .:
     dependencies:
-      '@stoneydsp/lib':
+      '@fx-audio-dev/lib':
         specifier: workspace:*
-        version: link:packages/@stoneydsp/lib
-      '@stoneydsp/lightning-ui-components':
+        version: link:packages/@fx-audio-dev/lib
+      '@fx-audio-dev/lightning-ui-components':
         specifier: workspace:*
-        version: link:packages/@stoneydsp/lightning-ui-components
+        version: link:packages/@fx-audio-dev/lightning-ui-components
       '@lightningjs/core':
         specifier: 2.15.0
         version: 2.15.0
       '@lightningjs/sdk':
         specifier: 5.5.5
         version: 5.5.5
+      fx-audio-dev:
+        specifier: workspace:*
+        version: link:packages/fx-audio-dev
       rxjs:
         specifier: ^7.8.2
         version: 7.8.2
+      web-audio-api:
+        specifier: workspace:*
+        version: link:vendors/WebAudioAPI
     devDependencies:
       '@commitlint/cli':
         specifier: 19.8.1
@@ -48,15 +54,18 @@ importers:
       '@eslint/markdown':
         specifier: ^7.5.1
         version: 7.5.1
+      '@fx-audio-dev/ui-components-vitest-utils':
+        specifier: workspace:*
+        version: link:packages/@fx-audio-dev/lightning-ui-components-vitest-utils
       '@html-eslint/eslint-plugin':
         specifier: ^0.51.0
         version: 0.51.0(eslint@9.39.2(jiti@2.6.1))(jiti@2.6.1)
-      '@nathanjhood/ui-components-vitest-utils':
-        specifier: workspace:*
-        version: link:vendors/@nathanjhood/ui-components-vitest-utils
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
+      '@types/audioworklet':
+        specifier: ^0.0.92
+        version: 0.0.92
       '@types/juce-framework-frontend':
         specifier: workspace:*
         version: link:vendors/@types/juce-framework-frontend
@@ -127,7 +136,7 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
 
-  packages/@stoneydsp/console:
+  packages/@fx-audio-dev/console:
     devDependencies:
       '@types/node':
         specifier: ^25.0.2
@@ -148,7 +157,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/@stoneydsp/lib:
+  packages/@fx-audio-dev/lib:
     devDependencies:
       '@types/node':
         specifier: ^25.0.2
@@ -169,11 +178,14 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/@stoneydsp/lightning-ui-components:
+  packages/@fx-audio-dev/lightning-ui-components:
     dependencies:
-      '@stoneydsp/console':
+      '@fx-audio-dev/console':
         specifier: workspace:*
         version: link:../console
+      '@fx-audio-dev/lib':
+        specifier: workspace:*
+        version: link:../lib
       '@lightningjs/core':
         specifier: 2.15.0
         version: 2.15.0
@@ -181,9 +193,9 @@ importers:
         specifier: 5.5.5
         version: 5.5.5
     devDependencies:
-      '@nathanjhood/ui-components-vitest-utils':
+      '@fx-audio-dev/ui-components-vitest-utils':
         specifier: workspace:*
-        version: link:../../../vendors/@nathanjhood/ui-components-vitest-utils
+        version: link:../lightning-ui-components-vitest-utils
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
@@ -221,7 +233,7 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
 
-  vendors/@nathanjhood/ui-components-vitest-utils:
+  packages/@fx-audio-dev/lightning-ui-components-vitest-utils:
     dependencies:
       '@lightningjs/core':
         specifier: 2.15.0
@@ -254,6 +266,9 @@ importers:
       '@lightningjs/ui-components-theme-base':
         specifier: ^1.2.0
         version: 1.2.0
+      pkgroll:
+        specifier: ^2.21.4
+        version: 2.21.4(typescript@5.9.3)
       semantic-release:
         specifier: ^19.0.5
         version: 19.0.5
@@ -261,7 +276,53 @@ importers:
         specifier: ^7.0.5
         version: 7.0.8(semantic-release@19.0.5)
 
+  packages/fx-audio-dev:
+    dependencies:
+      '@fx-audio-dev/lib':
+        specifier: workspace:*
+        version: link:../@fx-audio-dev/lib
+      '@fx-audio-dev/lightning-ui-components':
+        specifier: workspace:*
+        version: link:../@fx-audio-dev/lightning-ui-components
+    devDependencies:
+      '@types/node':
+        specifier: ^25.0.2
+        version: 25.0.2
+      '@vitest/coverage-v8':
+        specifier: 4.0.15
+        version: 4.0.15(vitest@4.0.15)
+      '@vitest/ui':
+        specifier: 4.0.15
+        version: 4.0.15(vitest@4.0.15)
+      pkgroll:
+        specifier: ^2.21.4
+        version: 2.21.4(typescript@5.9.3)
+      rimraf:
+        specifier: ^6.1.2
+        version: 6.1.2
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   vendors/@types/juce-framework-frontend: {}
+
+  vendors/WebAudioAPI:
+    devDependencies:
+      globals:
+        specifier: ^16.5.0
+        version: 16.5.0
+      pkgroll:
+        specifier: ^2.21.4
+        version: 2.21.4(typescript@5.9.3)
+      rimraf:
+        specifier: ^6.1.2
+        version: 6.1.2
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+      typescript-eslint:
+        specifier: ^8.49.0
+        version: 8.49.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
 
 packages:
 
@@ -1233,8 +1294,8 @@ packages:
     peerDependencies:
       semantic-release: '>=18.0.0-beta.1'
 
-  '@sinclair/typebox@0.34.41':
-    resolution: {integrity: sha512-6gS8pZzSXdyRHTIqoqSVknxolr1kzfy4/CeDnrzsVz8TTIWUbOBr6gnzOmTYJ3eXQNh4IYHIGi5aIL7sOZ2G/g==}
+  '@sinclair/typebox@0.34.45':
+    resolution: {integrity: sha512-qJcFVfCa5jxBFSuv7S5WYbA8XdeCPmhnaVVfX/2Y6L8WYg8sk3XY2+6W0zH+3mq1Cz+YC7Ki66HfqX6IHAwnkg==}
 
   '@sinonjs/commons@3.0.1':
     resolution: {integrity: sha512-K3mCHKQ9sVh8o1C9cxkwxaOmXoAMlDxC1mYyHrjqOWEcBjYr76t96zL2zlj5dUGZ3HSw240X1qgH3Mjf1yJWpQ==}
@@ -1248,6 +1309,9 @@ packages:
   '@testing-library/jest-dom@6.9.1':
     resolution: {integrity: sha512-zIcONa+hVtVSSep9UT3jZ5rizo2BsxgyDYU7WFD5eICBE7no3881HGeb/QkGfsJs6JTkY1aQhT7rIPC7e+0nnA==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
+
+  '@types/audioworklet@0.0.92':
+    resolution: {integrity: sha512-ykniYTjl1eqgkLeHLH2AAgj4rqdFZyxeVDtCopTTlcvgH7nOHNSn0KYXZPgc0Mx0TiUAwHNEzBWoJw/i8OETBg==}
 
   '@types/chai@5.2.3':
     resolution: {integrity: sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==}
@@ -2280,8 +2344,8 @@ packages:
     resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
     engines: {node: '>=12'}
 
-  fs-extra@11.3.2:
-    resolution: {integrity: sha512-Xr9F6z6up6Ws+NjzMCZc6WXg2YFRlrLP9NQDO3VQrWrfiojdhS56TzueT88ze0uBdCTwEIhQ3ptnmKeWGFAe0A==}
+  fs-extra@11.3.3:
+    resolution: {integrity: sha512-VWSRii4t0AFm6ixFFmLLx1t7wS1gh+ckoa84aOeapGum0h+EZd1EhEumSB+ZdDLnEPuucsVB9oB7cxJHap6Afg==}
     engines: {node: '>=14.14'}
 
   fs-extra@9.1.0:
@@ -4979,7 +5043,7 @@ snapshots:
 
   '@jest/schemas@30.0.5':
     dependencies:
-      '@sinclair/typebox': 0.34.41
+      '@sinclair/typebox': 0.34.45
 
   '@jest/types@30.2.0':
     dependencies:
@@ -5321,7 +5385,7 @@ snapshots:
       aggregate-error: 3.1.0
       debug: 4.4.3
       dir-glob: 3.0.1
-      fs-extra: 11.3.2
+      fs-extra: 11.3.3
       globby: 11.1.0
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
@@ -5340,7 +5404,7 @@ snapshots:
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
       execa: 5.1.1
-      fs-extra: 11.3.2
+      fs-extra: 11.3.3
       lodash: 4.17.21
       nerf-dart: 1.0.0
       normalize-url: 6.1.0
@@ -5368,7 +5432,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sinclair/typebox@0.34.41': {}
+  '@sinclair/typebox@0.34.45': {}
 
   '@sinonjs/commons@3.0.1':
     dependencies:
@@ -5388,6 +5452,8 @@ snapshots:
       dom-accessibility-api: 0.6.3
       picocolors: 1.1.1
       redent: 3.0.0
+
+  '@types/audioworklet@0.0.92': {}
 
   '@types/chai@5.2.3':
     dependencies:
@@ -6577,7 +6643,7 @@ snapshots:
       jsonfile: 6.2.0
       universalify: 2.0.1
 
-  fs-extra@11.3.2:
+  fs-extra@11.3.3:
     dependencies:
       graceful-fs: 4.2.11
       jsonfile: 6.2.0

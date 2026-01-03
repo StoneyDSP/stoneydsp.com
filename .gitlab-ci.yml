@@ -11,6 +11,7 @@ variables:
   BUILD_ANDROID: "0"
   BUILD_IOS: "0"
   BUILD_WINDOWS: "0"
+  BUILD_PWA: "1"
 
 # How you use it
 # To run all Linux + Android at once:
@@ -25,15 +26,15 @@ trigger:linux:
   rules:
     - if: '$BUILD_LINUX == "1"'
   trigger:
-    include: 'scripts/gitlab/platforms/x64-linux.yml'
-    strategy: depend   # surface child status/artifacts to the parent
+    include: "scripts/gitlab/platforms/x64-linux.yml"
+    strategy: depend # surface child status/artifacts to the parent
 
 trigger:android:
   stage: fanout
   rules:
     - if: '$BUILD_ANDROID == "1"'
   trigger:
-    include: 'scripts/gitlab/platforms/android.yml'
+    include: "scripts/gitlab/platforms/android.yml"
     strategy: depend
 
 trigger:ios:
@@ -41,7 +42,7 @@ trigger:ios:
   rules:
     - if: '$BUILD_IOS == "1"'
   trigger:
-    include: 'scripts/gitlab/platforms/ios.yml'
+    include: "scripts/gitlab/platforms/ios.yml"
     strategy: depend
 
 trigger:windows:
@@ -49,5 +50,13 @@ trigger:windows:
   rules:
     - if: '$BUILD_WINDOWS == "1"'
   trigger:
-    include: 'scripts/gitlab/platforms/x64-windows.yml'
+    include: "scripts/gitlab/platforms/x64-windows.yml"
+    strategy: depend
+
+trigger:browser:
+  stage: fanout
+  rules:
+    - if: '$BUILD_PWA == "1"'
+  trigger:
+    include: "scripts/gitlab/platforms/browser.yml"
     strategy: depend
