@@ -5,14 +5,6 @@ import { SnapshotResolver } from "./SnapshotResolver";
 
 export const config = Object.freeze<UserConfig["test"]>({
   ...configDefaults,
-  outputFile: {
-    default: "./reporter/default",
-    html: "./reporter/html",
-    json: "./reporter/json",
-    junit: "./reporter/junit",
-    "github-actions": "./reporter/github-actions",
-  },
-  reporters: ["default", "html", "json", "junit", "github-actions"],
   // projects: [
   //   // you can use a list of glob patterns to define your projects
   //   // Vitest expects a list of config files
@@ -44,6 +36,8 @@ export const config = Object.freeze<UserConfig["test"]>({
   resolveSnapshotPath: SnapshotResolver.resolveSnapshotPath,
   environment: "jsdom",
   passWithNoTests: true,
+  // ui: true,
+  // reporters: ['default', 'html', "junit", "json"],
   include: [...defaultInclude],
   exclude: [
     "**/.{idea,git,cache,output,temp}/**",
@@ -60,10 +54,11 @@ export const config = Object.freeze<UserConfig["test"]>({
     "**/out/**",
     ...defaultExclude,
   ],
+  // outputFile: "junit",
   coverage: {
     include: ["src/**/*.{ts,cts,mts,tsx}"],
     exclude: ["lib/**/*.{ts,cts,mts,tsx}"],
-    reportsDirectory: "./coverage",
+    reportsDirectory: "coverage",
     enabled: true,
   },
 });

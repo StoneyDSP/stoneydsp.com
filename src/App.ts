@@ -1,5 +1,5 @@
 import { Router } from "@lightningjs/sdk";
-import { BaseApp, Vector } from "fx-audio-dev";
+import { BaseApp, Vector } from "stoneydsp";
 import { getAppData } from "./AppData";
 import { BootPage } from "./Components/Pages/BootPage";
 import { ErrorPage } from "./Components/Pages/ErrorPage";

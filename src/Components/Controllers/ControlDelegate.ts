@@ -1,4 +1,4 @@
-import type { BaseComponent } from "fx-audio-dev";
+import type { BaseComponent } from "stoneydsp";
 import type { Control, ControlAddress, ControlValue } from "./types";
 
 /**

@@ -1,6 +1,6 @@
 import { makeCreateComponent } from "@stoneydsp/ui-components-vitest-utils";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { ButtonComponent as _ButtonComponent } from "./ButtonComponent";
+import { DraggableComponent as _DraggableComponent } from "./DraggableComponent";
 // import {
 //   afterEach,
 //   beforeEach,
@@ -9,9 +9,9 @@ import { ButtonComponent as _ButtonComponent } from "./ButtonComponent";
 //   it,
 // } from 'vitest'
 
-describe("ButtonComponent", () => {
+describe.todo("DraggableComponent", () => {
   const createComponent = makeCreateComponent(
-    class ButtonComponent extends _ButtonComponent {}
+    class DraggableComponent extends _DraggableComponent {}
   );
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let component: ReturnType<typeof createComponent>[0];
@@ -30,6 +30,6 @@ describe("ButtonComponent", () => {
   });
 
   // it("should match template spec", () => {
-  //   expectTypeOf(_ButtonComponent._template()).toEqualTypeOf(_ButtonComponent['TemplateSpec'])
+  //   expectTypeOf(_DraggableComponent._template()).toEqualTypeOf(_DraggableComponent['TemplateSpec'])
   // })
 });

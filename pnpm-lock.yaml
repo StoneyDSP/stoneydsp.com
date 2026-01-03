@@ -8,24 +8,18 @@ importers:
 
   .:
     dependencies:
-      '@fx-audio-dev/lib':
-        specifier: workspace:*
-        version: link:packages/@fx-audio-dev/lib
-      '@fx-audio-dev/lightning-ui-components':
-        specifier: workspace:*
-        version: link:packages/@fx-audio-dev/lightning-ui-components
       '@lightningjs/core':
         specifier: 2.15.0
         version: 2.15.0
       '@lightningjs/sdk':
         specifier: 5.5.5
         version: 5.5.5
-      fx-audio-dev:
-        specifier: workspace:*
-        version: link:packages/fx-audio-dev
       rxjs:
         specifier: ^7.8.2
         version: 7.8.2
+      stoneydsp:
+        specifier: workspace:*
+        version: link:packages/stoneydsp
       web-audio-api:
         specifier: workspace:*
         version: link:vendors/WebAudioAPI
@@ -54,12 +48,12 @@ importers:
       '@eslint/markdown':
         specifier: ^7.5.1
         version: 7.5.1
-      '@fx-audio-dev/ui-components-vitest-utils':
-        specifier: workspace:*
-        version: link:packages/@fx-audio-dev/lightning-ui-components-vitest-utils
       '@html-eslint/eslint-plugin':
         specifier: ^0.51.0
         version: 0.51.0(eslint@9.39.2(jiti@2.6.1))(jiti@2.6.1)
+      '@stoneydsp/ui-components-vitest-utils':
+        specifier: workspace:*
+        version: link:packages/@stoneydsp/lightning-ui-components-vitest-utils
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
@@ -136,7 +130,7 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
 
-  packages/@fx-audio-dev/console:
+  packages/@stoneydsp/console:
     devDependencies:
       '@types/node':
         specifier: ^25.0.2
@@ -157,7 +151,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/@fx-audio-dev/lib:
+  packages/@stoneydsp/lib:
     devDependencies:
       '@types/node':
         specifier: ^25.0.2
@@ -178,22 +172,22 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/@fx-audio-dev/lightning-ui-components:
+  packages/@stoneydsp/lightning-ui-components:
     dependencies:
-      '@fx-audio-dev/console':
-        specifier: workspace:*
-        version: link:../console
-      '@fx-audio-dev/lib':
-        specifier: workspace:*
-        version: link:../lib
       '@lightningjs/core':
         specifier: 2.15.0
         version: 2.15.0
       '@lightningjs/sdk':
         specifier: 5.5.5
         version: 5.5.5
+      '@stoneydsp/console':
+        specifier: workspace:*
+        version: link:../console
+      '@stoneydsp/lib':
+        specifier: workspace:*
+        version: link:../lib
     devDependencies:
-      '@fx-audio-dev/ui-components-vitest-utils':
+      '@stoneydsp/ui-components-vitest-utils':
         specifier: workspace:*
         version: link:../lightning-ui-components-vitest-utils
       '@testing-library/jest-dom':
@@ -233,7 +227,7 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
 
-  packages/@fx-audio-dev/lightning-ui-components-vitest-utils:
+  packages/@stoneydsp/lightning-ui-components-vitest-utils:
     dependencies:
       '@lightningjs/core':
         specifier: 2.15.0
@@ -276,14 +270,14 @@ importers:
         specifier: ^7.0.5
         version: 7.0.8(semantic-release@19.0.5)
 
-  packages/fx-audio-dev:
+  packages/stoneydsp:
     dependencies:
-      '@fx-audio-dev/lib':
+      '@stoneydsp/lib':
         specifier: workspace:*
-        version: link:../@fx-audio-dev/lib
-      '@fx-audio-dev/lightning-ui-components':
+        version: link:../@stoneydsp/lib
+      '@stoneydsp/lightning-ui-components':
         specifier: workspace:*
-        version: link:../@fx-audio-dev/lightning-ui-components
+        version: link:../@stoneydsp/lightning-ui-components
     devDependencies:
       '@types/node':
         specifier: ^25.0.2

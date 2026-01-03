@@ -1,5 +1,5 @@
 import { Router } from "@lightningjs/sdk";
-import { BaseWidgetComponent } from "fx-audio-dev";
+import { BaseWidgetComponent } from "stoneydsp";
 import { getAppData } from "../../AppData";
 import { Container } from "../../Container";
 import type { EventBus } from "../../Events/EventBus";

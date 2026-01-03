@@ -1,4 +1,4 @@
-import { BaseComponent, Vector } from "fx-audio-dev";
+import { BaseComponent, Vector } from "stoneydsp";
 import { getAppData } from "../../AppData";
 import { ToggleButtonComponent } from "../../Components/Controllers/ToggleButton";
 import type { ControlAddress } from "../../Components/Controllers/types";

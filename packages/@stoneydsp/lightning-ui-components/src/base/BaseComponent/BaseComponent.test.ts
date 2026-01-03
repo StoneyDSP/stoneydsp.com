@@ -1,17 +1,10 @@
 import { makeCreateComponent } from "@stoneydsp/ui-components-vitest-utils";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { ButtonComponent as _ButtonComponent } from "./ButtonComponent";
-// import {
-//   afterEach,
-//   beforeEach,
-//   describe,
-//   expect,
-//   it,
-// } from 'vitest'
+import { BaseComponent as _BaseComponent } from "./BaseComponent";
 
-describe("ButtonComponent", () => {
+describe("BaseComponent", () => {
   const createComponent = makeCreateComponent(
-    class ButtonComponent extends _ButtonComponent {}
+    class BaseComponent extends _BaseComponent {}
   );
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let component: ReturnType<typeof createComponent>[0];
@@ -28,8 +21,4 @@ describe("ButtonComponent", () => {
   it("should render correctly", () => {
     expect(renderer.toJSON()).toMatchSnapshot();
   });
-
-  // it("should match template spec", () => {
-  //   expectTypeOf(_ButtonComponent._template()).toEqualTypeOf(_ButtonComponent['TemplateSpec'])
-  // })
 });

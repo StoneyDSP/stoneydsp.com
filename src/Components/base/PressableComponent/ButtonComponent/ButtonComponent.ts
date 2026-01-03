@@ -1,5 +1,5 @@
 import { Lightning } from "@lightningjs/sdk";
-import { PressableComponent, Vector } from "fx-audio-dev";
+import { PressableComponent, Vector } from "stoneydsp";
 import { Log } from "../../../../lib/Log";
 
 class ButtonComponent<

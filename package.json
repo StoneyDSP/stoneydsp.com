@@ -41,11 +41,9 @@
 		"gen:types": "node ./scripts/vite/generateJuceTypings.mjs"
 	},
 	"dependencies": {
-		"@fx-audio-dev/lib": "workspace:*",
-		"@fx-audio-dev/lightning-ui-components": "workspace:*",
 		"@lightningjs/core": "2.15.0",
 		"@lightningjs/sdk": "5.5.5",
-		"fx-audio-dev": "workspace:*",
+		"stoneydsp": "workspace:*",
 		"rxjs": "^7.8.2",
 		"web-audio-api": "workspace:*"
 	},
@@ -58,8 +56,8 @@
 		"@eslint/js": "^9.39.2",
 		"@eslint/json": "^0.14.0",
 		"@eslint/markdown": "^7.5.1",
-		"@fx-audio-dev/ui-components-vitest-utils": "workspace:*",
 		"@html-eslint/eslint-plugin": "^0.51.0",
+		"@stoneydsp/ui-components-vitest-utils": "workspace:*",
 		"@testing-library/jest-dom": "^6.9.1",
 		"@types/audioworklet": "^0.0.92",
 		"@types/juce-framework-frontend": "workspace:*",

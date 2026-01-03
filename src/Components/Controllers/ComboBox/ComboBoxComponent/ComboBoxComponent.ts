@@ -1,5 +1,5 @@
 import { Lightning } from "@lightningjs/sdk";
-import type { FocusableComponent } from "fx-audio-dev";
+import type { FocusableComponent } from "stoneydsp";
 import { theme } from "../../../../lib";
 import { ControlComponent } from "../../../base/ControlComponent/ControlComponent";
 import type { ControlDelegate } from "../../ControlDelegate";
