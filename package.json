@@ -43,8 +43,9 @@
 	"dependencies": {
 		"@lightningjs/core": "2.15.0",
 		"@lightningjs/sdk": "5.5.5",
-		"stoneydsp": "workspace:*",
+		"@vercel/functions": "^3.3.4",
 		"rxjs": "^7.8.2",
+		"stoneydsp": "workspace:*",
 		"web-audio-api": "workspace:*"
 	},
 	"devDependencies": {
