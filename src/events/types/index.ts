@@ -8,23 +8,50 @@ import { type StartUpEvent, StartUpEventActions } from "./StartUpEvent";
 import { UserActions, type UserEvent } from "./UserEvent";
 
 export {
-  ActionEventActions, type ActionEvent, type ActionEventData, type ActionEventType
+  ActionEventActions,
+  type ActionEvent,
+  type ActionEventData,
+  type ActionEventType,
 } from "./ActionEvent";
-export { AppActions, type AppEvent, type AppState, type AppStateData } from "./AppEvent";
-export { type NetworkActions, type NetworkData, type NetworkEvent } from "./NetworkEvent";
+export {
+  AppActions,
+  type AppEvent,
+  type AppState,
+  type AppStateData,
+} from "./AppEvent";
+export {
+  type NetworkActions,
+  type NetworkData,
+  type NetworkEvent,
+} from "./NetworkEvent";
 export { PageActions, type PageData, type PageEvent } from "./PageEvent";
 export {
   PlayerActions,
   type PlayerData,
   type PlayerEvent,
-  type PlayerInitData
+  type PlayerInitData,
 } from "./PlayerEvent";
-export { RouterActions, type RouterData, type RouterEvent } from "./RouterEvents";
 export {
-  StartUpEventActions, type StartUpEvent, type StartUpEventData
+  RouterActions,
+  type RouterData,
+  type RouterEvent,
+} from "./RouterEvents";
+export {
+  StartUpEventActions,
+  type StartUpEvent,
+  type StartUpEventData,
 } from "./StartUpEvent";
-export { UserActions, type UserAddress, type UserData, type UserEvent } from "./UserEvent";
-export { WidgetActions, type WidgetData, type WidgetEvent } from "./WidgetEvent";
+export {
+  UserActions,
+  type UserAddress,
+  type UserData,
+  type UserEvent,
+} from "./UserEvent";
+export {
+  WidgetActions,
+  type WidgetData,
+  type WidgetEvent,
+} from "./WidgetEvent";
 
 export type Events =
   | ActionEvent

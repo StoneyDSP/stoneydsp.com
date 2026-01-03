@@ -49,7 +49,9 @@ import type { ListenerList } from "./check_native_interop";
 // declare const toggleStates: Map<any, any>;
 // declare const sliderStates: Map<any, any>;
 declare type NativeFunctionReturn<T = any> = number | Promise<T>;
-declare type NativeFunction<T = any> = (...args: any[]) => NativeFunctionReturn<T>;
+declare type NativeFunction<T = any> = (
+  ...args: any[]
+) => NativeFunctionReturn<T>;
 /**
  * Returns a function object that calls a function registered on the JUCE
  * backend and forwards all parameters to it.
@@ -61,8 +63,8 @@ declare type NativeFunction<T = any> = (...args: any[]) => NativeFunctionReturn<
  */
 export declare function getNativeFunction<
   Params = any,
-  ReturnType extends NativeFunction<Params> = NativeFunction<Params>
->(name: string): (args: Params) => NativeFunctionReturn<ReturnType>;
+  ReturnType extends NativeFunction<Params> = NativeFunction<Params>,
+>(name: string): (...args: Params[]) => NativeFunctionReturn<ReturnType>;
 
 // declare const BasicControl_valueChangedEventId: string; // "valueChanged";
 // declare const BasicControl_propertiesChangedId: string; // "propertiesChanged";
@@ -83,15 +85,15 @@ declare class SliderState {
   identifier: string;
   scaledValue: number;
   properties: {
-      start: number,
-      end: number,
-      skew: number,
-      name: string,
-      label: string,
-      numSteps: number
-      interval: number
-      parameterIndex: number
-    };
+    start: number;
+    end: number;
+    skew: number;
+    name: string;
+    label: string;
+    numSteps: number;
+    interval: number;
+    parameterIndex: number;
+  };
   valueChangedEvent: ListenerList;
   propertiesChangedEvent: ListenerList;
   /**
@@ -157,11 +159,19 @@ declare class ToggleState {
   identifier: string;
   value: boolean;
   properties: {
-    name: string,
-    parameterIndex: number,
+    name: string;
+    parameterIndex: number;
   };
   valueChangedEvent: ListenerList;
   propertiesChangedEvent: ListenerList;
+  getValue(): boolean;
+  setValue(newValue: boolean): void;
+  handleEvent(event: {
+    eventType: string;
+    value: boolean;
+    name: string;
+    parameterIndex: number;
+  }): void;
 }
 /**
  * Returns a {@link ToggleState} object that is connected to the backend
@@ -186,9 +196,9 @@ declare class ComboBoxState {
   identifier: string;
   value: number;
   properties: {
-    name: string,
-    parameterIndex: number,
-    choices: unknown[],
+    name: string;
+    parameterIndex: number;
+    choices: unknown[];
   };
   valueChangedEvent: ListenerList;
   propertiesChangedEvent: ListenerList;
@@ -249,11 +259,11 @@ export declare function getBackendResourceAddress(path: string): string;
  * to these events.
  */
 export declare class ControlParameterIndexUpdater {
-    constructor(controlParameterIndexAnnotation: string);
-    controlParameterIndexAnnotation: string;
-    lastElement: Element | null;
-    lastControlParameterIndex: number | null;
-    handleMouseMove(event: MouseEvent): void;
+  constructor(controlParameterIndexAnnotation: string);
+  controlParameterIndexAnnotation: string;
+  lastElement: Element | null;
+  lastControlParameterIndex: number | null;
+  handleMouseMove(event: MouseEvent): void;
 }
 
 export type { ComboBoxState, SliderState, ToggleState };

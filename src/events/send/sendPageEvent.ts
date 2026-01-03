@@ -1,16 +1,19 @@
 import { AppData } from "@lightningjs/sdk";
+import { Container } from "../../Container";
 import { EventBusError } from "../EventBusError";
 import { EventType } from "../EventType";
 import { PageActions, type PageData } from "../types";
-import { Container } from "../../container";
 
 /**
  * @constant
  *
  * @param {PageActions} action
- * @param {PageData} data
+ * @param {Partial<PageData>} data
  */
-export const sendPageEvent = (action: PageActions, data?: PageData) => {
+export const sendPageEvent = (
+  action: PageActions,
+  data?: Partial<PageData>
+) => {
   if (!AppData)
     throw new EventBusError("ERR_CONTEXT_NOT_FOUND", "sendPageEvent()", {
       action,
@@ -30,7 +33,9 @@ export const sendPageEvent = (action: PageActions, data?: PageData) => {
             path: data?.path ?? "undefined",
             title: data?.title ?? "undefined",
             component: data?.component,
-            template: data?.template,
+            active: data?.active,
+            attached: data?.attached,
+            visible: data?.visible,
           },
         },
       },

@@ -1,9 +1,9 @@
-import { BaseSMError } from "../services/BaseSMError";
+import { BaseSMError } from "../Services/BaseSMError";
 
 class EventBusError<
-    Code extends EventBusError.Code = EventBusError.Code,
-    Details extends EventBusError.Details = EventBusError.Details,
-  >
+  Code extends EventBusError.Code = EventBusError.Code,
+  Details extends EventBusError.Details = EventBusError.Details,
+>
   extends BaseSMError<Code, Details>
   implements BaseSMError<Code, Details>
 {
@@ -18,7 +18,6 @@ class EventBusError<
   override readonly details?: Details;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
 namespace EventBusError {
   export interface Code extends BaseSMError.Code {
     /**

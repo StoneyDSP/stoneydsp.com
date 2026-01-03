@@ -26,7 +26,8 @@ export enum WidgetActions {
 export type WidgetData = {
   active: boolean;
   visible: boolean;
-  component?: string;
+  attached: boolean;
+  component: string;
 };
 
 /**
@@ -56,5 +57,5 @@ export type WidgetData = {
 export type WidgetEvent = {
   type: EventType.WidgetEvent;
   action: WidgetActions;
-  data: WidgetData;
+  data: Partial<WidgetData>;
 };

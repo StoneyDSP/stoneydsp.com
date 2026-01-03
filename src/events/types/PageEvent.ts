@@ -1,3 +1,4 @@
+import type { Router } from "@lightningjs/sdk";
 import { EventType } from "../EventType";
 
 export enum PageActions {
@@ -29,8 +30,12 @@ export enum PageActions {
 export type PageData = {
   path: string;
   title: string;
-  template?: string;
-  component?: string;
+  component: string;
+  active: boolean;
+  attached: boolean;
+  visible: boolean;
+  historyState: Router.HistoryState;
+  params: Router.QueryParams;
 };
 
 /**
@@ -63,5 +68,5 @@ export type PageData = {
 export type PageEvent = {
   type: EventType.PageEvent;
   action: PageActions;
-  data: PageData;
+  data: Partial<PageData>;
 };

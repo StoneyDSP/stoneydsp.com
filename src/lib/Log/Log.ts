@@ -1,7 +1,7 @@
-/* eslint-disable prefer-spread, prefer-rest-params, @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any, @typescript-eslint/no-namespace */
+/* eslint-disable prefer-spread, prefer-rest-params, @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any */
 
 import { __DEV__ } from "../../CONSTS";
-import { BaseSMError } from "../../services";
+import { BaseSMError } from "../../Services";
 
 /**
  * The {@link Log} class.
@@ -182,4 +182,4 @@ namespace Log {
 
 export { Log };
 
-/* eslint-enable prefer-spread, prefer-rest-params, @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any, @typescript-eslint/no-namespace */
+/* eslint-enable prefer-spread, prefer-rest-params, @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any */

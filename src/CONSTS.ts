@@ -21,6 +21,6 @@ export function getConsts() {
     PAGE_WIDTH: __PAGE_WIDTH__,
     PAGE_HEIGHT: __PAGE_HEIGHT__,
     DEV: __DEV__,
-    DBG: __DBG__
+    DBG: __DBG__,
   })!;
 }

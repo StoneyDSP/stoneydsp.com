@@ -1,0 +1,11 @@
+{
+	"name": "webview-plugin-demo",
+	"version": "0.0.2",
+	"homepage": "https://git.fxdigital.uk/fx-audio-dev/webview-plugin-demo",
+	"supports": "(linux & x64) | (osx & x64) | (osx & arm64) | (windows & mingw & x64)",
+	"dependencies": [
+		{
+			"name": "juce"
+		}
+	]
+}

@@ -1,4 +1,5 @@
-import type { Event, EventBus, EventType } from "../events";
+import type { Event, EventBus, EventType } from "../Events";
+import type { AudioSM } from "../Services/AudioSM/AudioSM";
 import type { DeviceInfo, DeviceType } from "./types";
 
 class Container {
@@ -38,7 +39,6 @@ class Container {
   }
 }
 
-
 namespace Container {
   /**
    *
@@ -49,6 +49,7 @@ namespace Container {
    * Enum for storing the different DI implementations that could exist.
    */
   export enum Token {
+    AudioSM = "AudioSM",
     // ConfigurationSM = "ConfigurationSM",
     // DRMSM = "DRMSM",
     DeviceInfo = "DeviceInfo",
@@ -70,6 +71,7 @@ namespace Container {
    * Container.
    */
   export type Type = {
+    [Token.AudioSM]: AudioSM;
     // [DependencyToken.ConfigurationSM]: ConfigurationSM;
     // [DependencyToken.DRMSM]: DRMSM;
     [Token.DeviceInfo]: () => Promise<DeviceInfo>;
@@ -115,6 +117,5 @@ function getContainer(): Container {
 // export function _resetContainerForTests(): void {
 //   container = null;
 // }
-
 
 export { bootstrapContainer, Container, getContainer };

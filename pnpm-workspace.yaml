@@ -1,4 +1,4 @@
 packages:
-  - vendors/**
-  - packages/**
-  - platforms/**
+  - "vendors/**"
+  - "packages/**"
+  - "platforms/**"

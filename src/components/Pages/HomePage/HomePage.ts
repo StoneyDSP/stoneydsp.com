@@ -1,93 +1,129 @@
-import { Router } from "@lightningjs/sdk";
-import { Vector } from "@stoneydsp/lib";
-import { theme } from "../../../lib";
-import { ButtonComponent } from "../../base/PressableComponent/ButtonComponent";
+import { RouterActions, sendRouterEvent } from "../../../Events";
+import { RouterError } from "../../../Router/RouterError";
+import { DebugTonePanel } from "../../../scenes/DebugTone/Panel";
+import { FooterWidget, HeaderWidget, SideBarWidget } from "../../Widgets";
 import { Page } from "../Page";
 
 class HomePage<
   Spec extends HomePage.TemplateSpec = HomePage.TemplateSpec,
   Config extends HomePage.TypeConfig = HomePage.TypeConfig,
+  Data extends HomePage.Data = HomePage.Data,
 >
-  extends Page<Spec, Config>
+  extends Page<Spec, Config, Data>
   implements Page.ImplementTemplateSpec<HomePage.TemplateSpec>
 {
-  /**
-   *
-   */
-  public static override route: Router.RouteDefinition = {
-    path: "home",
-    component: () => {
-      return Promise.resolve({
-        default: HomePage,
-      });
-    },
-    widgets: ["headerwidget", "footerwidget"],
-    // before: HomePage.fetchData<typeof PackageJson>,
-  };
-
-
-  static override _template(): HomePage.Template<HomePage.TemplateSpec> {
-    return {
-      ...super._template(),
-      FaderContainer: {
-        w: (w) => w,
-        h: (h) => h,
-        Fader: {
-          type: ButtonComponent,
-          color: theme.action.primary,
-          w: (w) => w * 0.125,
-          h: (h) => h * 0.125,
-          x: this.width * 0.5 - (this.width * 0.125 * 0.5),
-          y: this.height * 0.5 - (this.height * 0.125 * 0.5),
-          signals: {
-            'onDrag': "_onDrag",
-            'onDragStart': "_onDragStart",
-            'onDragEnd': "_onDragEnd"
-          },
-          Label: {
-            w: (w: number) => w,
-            h: (h: number) => h,
-            flex: {
-              alignItems: 'center',
-              justifyContent: 'center'
-            },
-            Text: {
-              text: {
-                text: "Drag me!"
-              }
+  /// -------------------------------------------------------------------- ROUTE
+  static {
+    this._route = {
+      ...this.route,
+      path: "home",
+      component: () => {
+        return Promise.resolve({
+          default: this,
+        });
+      },
+      widgets: ["headerwidget", "footerwidget", "sidebarwidget"],
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      hook: (_app, _params) => {
+        sendRouterEvent(RouterActions.HOOK, {
+          path: this.route.path,
+          data: this.bindProp("data.events.page"),
+        });
+      },
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      on: (_page, _params) => {
+        return new Promise<void>((resolve, reject) => {
+          sendRouterEvent(RouterActions.ON, {
+            path: this.route.path,
+            data: this.bindProp("data.events.page"),
+          });
+          switch (true) {
+            case true: {
+              resolve();
+              break;
+            }
+            default: {
+              reject(new RouterError("ERR_PROVIDER_HOOK", "Promise rejected"));
+              break;
             }
           }
-        }
-      }
+        });
+      },
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      beforeNavigate: (_fromHash, _toRequest) => {
+        return new Promise<boolean>((resolve, reject) => {
+          sendRouterEvent(RouterActions.BEFORE_NAVIGATE, {
+            path: this.route.path,
+            data: this.bindProp("data.events.page"),
+          });
+          switch (true) {
+            case true: {
+              resolve(true);
+              break;
+            }
+            default: {
+              reject(
+                new RouterError("ERR_BEFORE_NAVIGATE_HOOK", "Promise rejected")
+              );
+              break;
+            }
+          }
+        });
+      },
+      // before: HomePage.fetchData<typeof PackageJson>,
     };
   }
 
-  private _dragStartPos : Vector | null = null;
+  /// ------------------------------------------------------------------ WIDGETS
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  protected _onDragStart(_event: globalThis.MouseEvent | globalThis.TouchEvent) {
-    const fader = (this as HomePage).tag("FaderContainer.Fader")!;
-    this._dragStartPos = new Vector(fader.x as number, fader.y as number);
+  static override _template(): HomePage.Template<HomePage.TemplateSpec> {
+    const sidebarW = SideBarWidget.width;
+    const headerH = HeaderWidget.height;
+    const footerH = FooterWidget.height;
+    return {
+      ...super._template(),
+      flex: {
+        alignItems: "center",
+        justifyContent: "center",
+      },
+
+      Scene: {
+        x: sidebarW,
+        y: headerH,
+        w: this.width - sidebarW,
+        h: this.height - headerH - footerH,
+        rect: true,
+        color: 0x00000000,
+
+        Default: {
+          type: DebugTonePanel,
+          w: (w) => w,
+          h: (h) => h,
+        },
+      },
+    };
   }
 
-  protected _onDrag(localCoords: {start: Vector, current: Vector, delta: Vector}) {
-    if(!this._dragStartPos) return;
-    (this as HomePage).tag("FaderContainer.Fader")!.patch({
-      x: this._dragStartPos.x + localCoords.delta.x,
-      y: this._dragStartPos.y + localCoords.delta.y,
-    });
-  }
-
-  protected _onDragEnd() {
-    this._dragStartPos = null;
+  public override getPageEventData(): Page.Data["events"]["page"] {
+    return {
+      ...this.getData()?.events?.page,
+      component: this.ref ?? this.constructor.name,
+      active: this.active,
+      attached: this.attached,
+      visible: this.visible,
+      path: HomePage.route.path,
+      title: "Home",
+    };
   }
 }
 
 namespace HomePage {
   export interface TemplateSpec extends Page.TemplateSpec {
-    FaderContainer: {
-      Fader: typeof ButtonComponent
-    }
+    data: Data;
+    Scene: {
+      // Grid: typeof GridBgComponent;
+      Default: typeof DebugTonePanel;
+    };
   }
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   export interface TypeConfig extends Page.TypeConfig {
@@ -105,6 +141,9 @@ namespace HomePage {
    */
   export type Template<Spec extends TemplateSpec = TemplateSpec> =
     Page.Template<Spec>;
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  export interface Data extends Page.Data {}
 }
 
-export { HomePage };
+export { HomePage as default, HomePage };

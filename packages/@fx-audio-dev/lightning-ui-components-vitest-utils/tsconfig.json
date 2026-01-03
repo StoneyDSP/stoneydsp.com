@@ -1,0 +1,27 @@
+{
+	"files": [
+		"./src/index.js"
+	],
+	"include": [
+		"./src",
+		"**/*.{ts,cts,mts}",
+		"**/*.d.{ts,cts,mts}"
+	],
+	"exclude": [
+		"**/*.test.ts",
+		"**/dist/**",
+		"dist",
+		"**/node_modules/**",
+		"node_modules"
+	],
+	"compilerOptions": {
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"allowJs": true,
+		"esModuleInterop": true,
+		"types": [
+			"vite/client",
+			"vitest/globals"
+		]
+	}
+}

@@ -1,5 +1,5 @@
 import { AppData } from "@lightningjs/sdk";
-import { Container } from "../../container";
+import { Container } from "../../Container";
 import { EventBusError } from "../EventBusError";
 import { EventType } from "../EventType";
 import { type NetworkActions, type NetworkData } from "../types";

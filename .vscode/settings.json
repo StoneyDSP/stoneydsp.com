@@ -27,7 +27,32 @@
 	"C_Cpp.autoAddFileAssociations": true,
 	"C_Cpp.default.includePath": [
 		"${default}",
+		"${workspaceFolder}/native/include",
 		"${env:HOME}/dev/juce-framework/JUCE/modules"
 	],
-	"files.associations": {}
+	"cmake.sourceDirectory": "${workspaceFolder}",
+	"cmake.buildDirectory": "${workspaceFolder}/build",
+	"cmake.installPrefix": "${workspaceFolder}/install",
+	"cmake.exportCompileCommandsFile": true,
+	"cmake.loadCompileCommands": true,
+	"cmake.launchBehavior": "reuseTerminal",
+	"C_Cpp.default.defines": [
+		"JUCE_WEB_BROWSER=1",
+		"JUCE_USE_WIN_WEBVIEW2_WITH_STATIC_LINKING=1"
+	],
+	"C_Cpp.default.browse.databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+	"C_Cpp.default.browse.limitSymbolsToIncludedHeaders": true,
+	"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+	"C_Cpp.default.mergeConfigurations": true,
+	"C_Cpp.default.cStandard": "c17",
+	"C_Cpp.default.cppStandard": "c++17",
+	"files.associations": {},
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/bower_components": true,
+		"**/*.code-search": true,
+		"**/pnpm-lock.{yml,yaml}": true,
+		"**/native/Assets": true,
+		"**/JuceLibraryCode": true
+	}
 }

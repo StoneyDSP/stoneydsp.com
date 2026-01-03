@@ -7,6 +7,9 @@ import { EventType } from "../EventType";
 export enum RouterActions {
   BEFORE_EACH = "router:before_each",
   AFTER_EACH = "router:after_each",
+  HOOK = "router:hook",
+  BEFORE_NAVIGATE = "router:before_navigate",
+  ON = "router:on",
 }
 
 export type RouterData = {

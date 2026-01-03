@@ -32,6 +32,12 @@ exports[`ButtonComponent > should render correctly 1`] = `
       "tags": [
         "Label",
       ],
+      "texture": {
+        "precision": 0.6666666666666666,
+        "textAlign": "center",
+        "type": "_TextTexture",
+        "verticalAlign": "middle",
+      },
       "visible": true,
       "w": 0,
       "x": 0,

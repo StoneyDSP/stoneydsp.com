@@ -1,11 +1,18 @@
-
 // /// <reference types="vitest/config" />
 import { UserConfig } from "vite";
 import { configDefaults, defaultExclude, defaultInclude } from "vitest/config";
 import { SnapshotResolver } from "./SnapshotResolver";
 
-export const config = Object.freeze<UserConfig['test']>({
+export const config = Object.freeze<UserConfig["test"]>({
   ...configDefaults,
+  outputFile: {
+    default: "./reporter/default",
+    html: "./reporter/html",
+    json: "./reporter/json",
+    junit: "./reporter/junit",
+    "github-actions": "./reporter/github-actions",
+  },
+  reporters: ["default", "html", "json", "junit", "github-actions"],
   // projects: [
   //   // you can use a list of glob patterns to define your projects
   //   // Vitest expects a list of config files
@@ -16,17 +23,17 @@ export const config = Object.freeze<UserConfig['test']>({
   typecheck: {
     enabled: true,
   },
-  deps:{
+  deps: {
     interopDefault: true,
-    moduleDirectories: ['node_modules'],
+    moduleDirectories: ["node_modules"],
     optimizer: {
       client: {
         enabled: true,
         needsInterop: ["@jest/globals"],
-        include: ['@lightningjs/ui-components-vitest-utils'],
-        exclude: ["@jest/globals"]
-      }
-    }
+        include: ["@fx-audio-dev/ui-components-vitest-utils"],
+        exclude: ["@jest/globals"],
+      },
+    },
   },
   globals: true,
   setupFiles: [
@@ -35,33 +42,28 @@ export const config = Object.freeze<UserConfig['test']>({
     "vitest-webgl-canvas-mock",
   ],
   resolveSnapshotPath: SnapshotResolver.resolveSnapshotPath,
-  environment: 'jsdom',
+  environment: "jsdom",
   passWithNoTests: true,
-  // ui: true,
-  // reporters: ['default', 'html', "junit", "json"],
-  include: [
-    ...defaultInclude
-  ],
+  include: [...defaultInclude],
   exclude: [
-    '**/.{idea,git,cache,output,temp}/**',
-    '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*',
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
     //
-    '**/.git/**',
-    '**/.bak/**',
-    '**/.tmp/**',
-    '**/.vscode/**',
-    '**/cypress/**',
-    '**/node_modules/**',
-    '**/build/**',
-    '**/dist/**',
-    '**/out/**',
-    ...defaultExclude
+    "**/.git/**",
+    "**/.bak/**",
+    "**/.tmp/**",
+    "**/.vscode/**",
+    "**/cypress/**",
+    "**/node_modules/**",
+    "**/build/**",
+    "**/dist/**",
+    "**/out/**",
+    ...defaultExclude,
   ],
-  // outputFile: "junit",
   coverage: {
-    include: ['src/**/*.{ts,cts,mts,tsx}'],
-    exclude: ['lib/**/*.{ts,cts,mts,tsx}'],
-    reportsDirectory: 'coverage',
-    enabled: true
+    include: ["src/**/*.{ts,cts,mts,tsx}"],
+    exclude: ["lib/**/*.{ts,cts,mts,tsx}"],
+    reportsDirectory: "./coverage",
+    enabled: true,
   },
-})
+});

@@ -7,7 +7,7 @@ import { EventType } from "../EventType";
 export enum NetworkActions {
   CONNECTED = "connected",
   DISCONNECTED = "disconnected",
-};
+}
 
 export enum NetworkType {
   WIFI = "wifi",

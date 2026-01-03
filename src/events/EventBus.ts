@@ -1,14 +1,25 @@
 import { filter, Observable, Subject, Subscription } from "rxjs";
 import { Log } from "../lib/Log";
+import { BaseSM } from "../Services";
 import type { Event } from "./Event";
 import { EventType } from "./EventType";
 import { ActionEventActions, type Actions, type PlayerData } from "./types";
 
+const DEFAULTS = {
+  params: {
+    dbg: false,
+  } satisfies EventBus.Params,
+} as const;
+
 /**
  * The {@link EventBus} class.
  */
-class EventBus {
-  constructor() {
+class EventBus<Params extends EventBus.Params = EventBus.Params>
+  extends BaseSM<Params>
+  implements BaseSM<EventBus.Params>
+{
+  constructor(params?: Partial<Params>) {
+    super({ ...DEFAULTS.params, ...params } as Params);
     /// log subscribed events on this event bus
     this._logSubscribedEvents(this.bus);
   }
@@ -140,7 +151,8 @@ class EventBus {
           ...[
             event.data.data.component ??
               event.data.data.title ??
-              event.data.data.path,
+              event.data.data.path ??
+              "undefined",
           ],
         ];
       case this.isEventOfType(event, EventType.RouterEvent):
@@ -177,8 +189,9 @@ class EventBus {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
 namespace EventBus {
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  export interface Params extends BaseSM.Params {}
   export type Payload<T extends EventType = EventType> = { event: Event<T> };
 }
 

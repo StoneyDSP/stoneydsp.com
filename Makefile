@@ -31,15 +31,19 @@ feature_flags ?=
 
 frozen_lockfile ?= --frozen-lockfile
 build_args ?=
-dev_args ?=
-test_args ?= --passWithNoTests --update
+dev_args ?= --host
+test_args ?= --passWithNoTests
 lint_args ?= --ext "**/*.{html,js,jsx,ts,tsx,json,md,css}" ./src
 fix_args ?= "**/*.{html,js,jsx,ts,tsx,json,md,css}" --ignore-unknown ./src
 echo_arg ?=
 
 node_modules:
-	@${NPM} --filter @stoneydsp/* install
 	@${NPM} install $(frozen_lockfile)
+# 	@${NPM} --filter @fx-audio-dev/* run build
+
+dist:
+	@${NPM} -r run build $(build_args)
+	@${NPM} run build $(build_args)
 
 ## --------------------------------------------------------------------- TARGETS
 
@@ -50,19 +54,22 @@ install: node_modules
 reinstall: wipe install
 
 .PHONY: build
-build:
-	@${NPM} run build $(build_args)
+build: dist
 
 .PHONY: rebuild
 rebuild: clean build
 
 .PHONY: dev
-dev:
+dev: install
 	@${NPM} run dev $(dev_args)
 
 .PHONY: test
-test:
+test: install
 	@${NPM} run test $(test_args)
+
+.PHONY: test.ui
+test.ui: install
+	@${NPM} run test $(test_args) --ui
 
 .PHONY: lint
 lint:

@@ -45,9 +45,9 @@
  * @implements {globalThis.Error}
  */
 abstract class BaseSMError<
-    Code extends BaseSMError.Code = BaseSMError.Code,
-    Details extends BaseSMError.Details = BaseSMError.Details,
-  >
+  Code extends BaseSMError.Code = BaseSMError.Code,
+  Details extends BaseSMError.Details = BaseSMError.Details,
+>
   extends globalThis.Error
   implements globalThis.Error
 {
@@ -82,7 +82,6 @@ abstract class BaseSMError<
   readonly details?: Details;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
 namespace BaseSMError {
   /**
    * ---

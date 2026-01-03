@@ -1,6 +1,6 @@
-import { makeCreateComponent } from "@nathanjhood/ui-components-vitest-utils";
+import { makeCreateComponent } from "@fx-audio-dev/ui-components-vitest-utils";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { ButtonComponent as _ButtonComponent } from "./ButtonComponent";
-import { describe, beforeEach, afterEach, it, expect } from "vitest";
 // import {
 //   afterEach,
 //   beforeEach,
@@ -10,7 +10,9 @@ import { describe, beforeEach, afterEach, it, expect } from "vitest";
 // } from 'vitest'
 
 describe("ButtonComponent", () => {
-  const createComponent = makeCreateComponent(class ButtonComponent extends _ButtonComponent {});
+  const createComponent = makeCreateComponent(
+    class ButtonComponent extends _ButtonComponent {}
+  );
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let component: ReturnType<typeof createComponent>[0];
   let renderer: ReturnType<typeof createComponent>[1];
@@ -30,5 +32,4 @@ describe("ButtonComponent", () => {
   // it("should match template spec", () => {
   //   expectTypeOf(_ButtonComponent._template()).toEqualTypeOf(_ButtonComponent['TemplateSpec'])
   // })
-
-})
+});

@@ -1,6 +1,6 @@
 import { AppData } from "@lightningjs/sdk";
 import { filter } from "rxjs";
-import { Container } from "../../container";
+import { Container } from "../../Container";
 import { EventBusError } from "../EventBusError";
 import { EventType } from "../EventType";
 import { WidgetActions, type WidgetData } from "../types";
@@ -9,9 +9,12 @@ import { WidgetActions, type WidgetData } from "../types";
  * @constant
  *
  * @param {WidgetActions} action
- * @param {WidgetData} data
+ * @param {Partial<WidgetData>} data
  */
-export const sendWidgetEvent = (action: WidgetActions, data: WidgetData) => {
+export const sendWidgetEvent = (
+  action: WidgetActions,
+  data?: Partial<WidgetData>
+) => {
   if (!AppData)
     throw new EventBusError("ERR_CONTEXT_NOT_FOUND", "sendWidgetEvent()", {
       action,
@@ -27,7 +30,12 @@ export const sendWidgetEvent = (action: WidgetActions, data: WidgetData) => {
         data: {
           type: EventType.WidgetEvent,
           action,
-          data,
+          data: {
+            component: data?.component,
+            active: data?.active,
+            attached: data?.attached,
+            visible: data?.visible,
+          },
         },
       },
     });

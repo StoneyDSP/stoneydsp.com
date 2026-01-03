@@ -12,10 +12,11 @@ class Colour {
     this.palette = palette;
   }
 
-  private constructor() {
-  }
+  private constructor() {}
 
-  static readonly SHADES: readonly Colour.Shade[] = [50,100,200,300,400,500,600,700,800,900,950] as const;
+  static readonly SHADES: readonly Colour.Shade[] = [
+    50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950,
+  ] as const;
 
   /**
    *
@@ -23,19 +24,16 @@ class Colour {
    * @param params
    * @returns
    */
-  static async fetchJson<T extends json>(
-    url: string | URL
-  ) {
-    return fetchJson<T>(url)
-      .catch(Log.error);
+  static async fetchJson<T extends json>(url: string | URL) {
+    return fetchJson<T>(url).catch(Log.error);
   }
 
   public static opaque(rgb: number): Colour.Hex {
-    return ((0xff << 24) | (rgb & 0xffffff)) >>> 0 as Colour.Hex;
+    return (((0xff << 24) | (rgb & 0xffffff)) >>> 0) as Colour.Hex;
   }
 
   public static withAlpha(a: number, rgb: number): Colour.Hex {
-    return (((a & 0xff) << 24) | (rgb & 0xffffff)) >>> 0 as Colour.Hex;
+    return ((((a & 0xff) << 24) | (rgb & 0xffffff)) >>> 0) as Colour.Hex;
   }
 
   /**
@@ -64,13 +62,14 @@ class Colour {
    */
   public static argbToInt([a, r, g, b]: Colour.Tuple8): number {
     return (
-      ((a & 0xff) << 24) |
-      ((r & 0xff) << 16) |
-      ((g & 0xff) << 8)  |
-      (b & 0xff)
-    /// >>> 0 forces an unsigned 32-bit integer, which is important in JS when the
-    /// top bit is set (alpha ≥ 128).
-    ) >>> 0;
+      (((a & 0xff) << 24) |
+        ((r & 0xff) << 16) |
+        ((g & 0xff) << 8) |
+        (b & 0xff)) >>>
+      /// >>> 0 forces an unsigned 32-bit integer, which is important in JS when the
+      /// top bit is set (alpha ≥ 128).
+      0
+    );
   }
 
   /**
@@ -119,7 +118,7 @@ class Colour {
    * @returns {string} e.g. "0xaeeeddcc"
    */
   public static colorToHexStr(color: Colour.Hex): string {
-    return `0x${color.toString(16).padStart(8, '0')}`;
+    return `0x${color.toString(16).padStart(8, "0")}`;
   }
 
   /**
@@ -181,7 +180,10 @@ class Colour {
    * @param overrides
    * @returns merged theme.
    */
-  public static mergeTokens(base: Colour.Tokens, overrides: Colour.Tokens): Colour.Tokens {
+  public static mergeTokens(
+    base: Colour.Tokens,
+    overrides: Colour.Tokens
+  ): Colour.Tokens {
     const out: Colour.Tokens = JSON.parse(JSON.stringify(base)); // simple deep clone
 
     for (const [family, overrideScale] of Object.entries(overrides)) {
@@ -209,10 +211,30 @@ declare namespace Colour {
   /** [a,r,g,b] each intended 0–1 */
   export type Tuple01 = [a: number, r: number, g: number, b: number];
   export type ShadeStr =
-  | "50" | "100" | "200" | "300" | "400"
-  | "500" | "600" | "700" | "800" | "900" | "950";
+    | "50"
+    | "100"
+    | "200"
+    | "300"
+    | "400"
+    | "500"
+    | "600"
+    | "700"
+    | "800"
+    | "900"
+    | "950";
   export type Tokens = Record<string, Partial<Record<ShadeStr, `#${string}`>>>;
-  export type Shade = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950
+  export type Shade =
+    | 50
+    | 100
+    | 200
+    | 300
+    | 400
+    | 500
+    | 600
+    | 700
+    | 800
+    | 900
+    | 950;
   export type Range = Record<Shade, Hex>;
   export type PaletteKey =
     | "slate"

@@ -5,7 +5,10 @@
  * @module
  */
 import "@lightningjs/sdk";
-import type { Container } from "./container";
+import type { Container } from "./Container";
+import type { EventBus } from "./Events";
+import type { BaseSM } from "./Services";
+import type { AudioSM } from "./Services/AudioSM/AudioSM";
 
 declare module "@lightningjs/sdk" {
   /**
@@ -46,6 +49,7 @@ declare module "@lightningjs/sdk" {
         //   target: Lightning.Component,
         //   localCoords: { x: number; y: number }
         // ): boolean | void;
+        _handleScroll?(localCoords: { x: number; y: number }): boolean | void;
         /// -------------------------------------------------------------- HOVER
         // _captureHover?(target: Lightning.Component): boolean | void;
         // _captureHoverRelease?(target: Lightning.Component): boolean | void;
@@ -127,8 +131,9 @@ declare module "@lightningjs/sdk" {
       // Examples:
       // Menu: typeof Menu;
       // Overlay: typeof OverlayComponent;
-      HeaderWidget: typeof import("./components/Widgets/HeaderWidget");
-      FooterWidget: typeof import("./components/Widgets/FooterWidget");
+      HeaderWidget: typeof import("./Components/Widgets/HeaderWidget/HeaderWidget");
+      FooterWidget: typeof import("./Components/Widgets/FooterWidget/FooterWidget");
+      SideBarWidget: typeof import("./Components/Widgets/SideBarWidget/SideBarWidget");
     }
   }
 
@@ -140,22 +145,27 @@ declare module "@lightningjs/sdk" {
      * AppData (Application SDK) definitions
      */
 
-
     export interface AppData {
       // Examples:
       // myAppDataParam1: string;
       // myAppDataParam2: number;
-      container: Container
+      container: Container;
     }
   }
 
   namespace Application {
-
     interface AppData {
-      container: Container
+      container: Container;
     }
   }
 
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   interface AppData extends Application.AppData {}
+
+  namespace Application {
+    export interface Services extends Record<string | symbol, BaseSM> {
+      audio: AudioSM;
+      eventBus: EventBus;
+    }
+  }
 }
