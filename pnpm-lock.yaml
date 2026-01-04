@@ -12,8 +12,8 @@ importers:
         specifier: 2.17.0
         version: 2.17.0
       '@lightningjs/sdk':
-        specifier: 5.5.5
-        version: 5.5.5
+        specifier: 5.5.6
+        version: 5.5.6
       '@vercel/analytics':
         specifier: ^1.6.1
         version: 1.6.1
@@ -184,8 +184,8 @@ importers:
         specifier: 2.17.0
         version: 2.17.0
       '@lightningjs/sdk':
-        specifier: 5.5.5
-        version: 5.5.5
+        specifier: 5.5.6
+        version: 5.5.6
       '@stoneydsp/console':
         specifier: workspace:*
         version: link:../console
@@ -1135,6 +1135,9 @@ packages:
 
   '@lightningjs/sdk@5.5.5':
     resolution: {integrity: sha512-6kyyWTpkoKlsVwkdfv9jpF7sLmU/zIrOzlCla0/JRzbogsS5sL52FFWhww7G9wxk8i13VsbHuSlKs6KLvVaQ1w==}
+
+  '@lightningjs/sdk@5.5.6':
+    resolution: {integrity: sha512-S+OF55SgFKCYCpCe5EHAIgfKOxVzbD1sCENtOYCTp3nSX8BobT0nC4EffdjG9i/LpZu+9ZxyZ3D31fQHbBpS3A==}
 
   '@lightningjs/ui-components-theme-base@1.2.0':
     resolution: {integrity: sha512-Qg9kSz8ENBAG/+DtjIi4C68xqO3etUF0WPilX7ivPdGtgPnHaW/mCxiAu26R6yL/slqAwviDpw6Ad2KeiGXRxQ==}
@@ -5584,6 +5587,19 @@ snapshots:
   '@lightningjs/core@2.17.0': {}
 
   '@lightningjs/sdk@5.5.5':
+    dependencies:
+      '@babel/polyfill': 7.12.1
+      '@lightningjs/core': 2.17.0
+      '@metrological/sdk': 1.0.2
+      '@michieljs/execute-as-promise': 1.0.0
+      deepmerge: 4.3.1
+      is-plain-object: 5.0.0
+      localcookies: 2.0.0
+      shelljs: 0.8.5
+      url-polyfill: 1.1.14
+      whatwg-fetch: 3.6.20
+
+  '@lightningjs/sdk@5.5.6':
     dependencies:
       '@babel/polyfill': 7.12.1
       '@lightningjs/core': 2.17.0
