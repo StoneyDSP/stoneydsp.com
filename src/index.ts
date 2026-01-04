@@ -5,11 +5,16 @@ import { getAppSettings } from "./AppSettings";
 import { Launch } from "./Launch";
 import { getPlatformSettings } from "./PlatformSettings";
 
-const app: Lightning.Application | null = Launch(
+export default Launch(
+  // App
   getApp(),
+  // AppSettings
   getAppSettings(),
+  // PlatformSettings
   getPlatformSettings(),
+  // AppData
   getAppData()
-);
-
-export { app };
+) satisfies Lightning.Application<
+  Lightning.Application.TemplateSpec,
+  Lightning.Application.TypeConfig
+>;

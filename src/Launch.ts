@@ -1,4 +1,5 @@
 import { Launch as BaseLaunch, Lightning, Log } from "@lightningjs/sdk";
+import { bootstrapCanvas } from "./canvas";
 import { patchSocialMetaToAbsolute } from "./lib/meta";
 import { patchWebGLPreserveDrawingBuffer } from "./lib/webGLPatch";
 import { bootstrapVercel } from "./vercel";
@@ -16,17 +17,17 @@ function Launch(
   appSettings: Parameters<typeof BaseLaunch>[1],
   platformSettings: Parameters<typeof BaseLaunch>[2],
   appData: Parameters<typeof BaseLaunch>[3]
-): ReturnType<typeof BaseLaunch> | null {
-  ///
-  patchSocialMetaToAbsolute();
-  ///
-  patchWebGLPreserveDrawingBuffer();
+): ReturnType<typeof BaseLaunch> {
   ///
   let app: Lightning.Application | null = null;
   ///
+  void patchSocialMetaToAbsolute();
+  ///
+  void patchWebGLPreserveDrawingBuffer();
+  ///
   app = BaseLaunch(App, appSettings, platformSettings, appData);
   ///
-  app!.stage.getCanvas().id = "canvas";
+  void bootstrapCanvas(app);
   ///
   void document.body.appendChild(app!.stage.getCanvas());
   ///
@@ -34,7 +35,7 @@ function Launch(
     framework: "unknown",
   });
   ///
-  Log.debug("Launch", App, appSettings, platformSettings, appData);
+  void Log.debug("Launch", { App, appSettings, platformSettings, appData });
   ///
   return app;
 }
