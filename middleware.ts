@@ -1,6 +1,6 @@
 import { geolocation, ipAddress } from "@vercel/functions";
-import { generateCSP, headersDefaults, setHeaders } from "./lib/headers";
-import { userAgent } from "./lib/isBot";
+import { generateCSP, headersDefaults, setHeaders } from "./lib/headers.js";
+import { userAgent } from "./lib/isBot.js";
 
 const logRequestToServer = (req: Request) => {
   const { isBot } = userAgent(req);
