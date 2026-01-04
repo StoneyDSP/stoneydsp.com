@@ -6,6 +6,26 @@
 			"permanent": true
 		},
 		{
+			"source": "/api",
+			"destination": "/",
+			"permanent": true
+		},
+		{
+			"source": "/apps",
+			"destination": "/",
+			"permanent": true
+		},
+		{
+			"source": "/contact",
+			"destination": "/",
+			"permanent": true
+		},
+		{
+			"source": "/home",
+			"destination": "/",
+			"permanent": true
+		},
+		{
 			"source": "/projects",
 			"destination": "/",
 			"permanent": true
