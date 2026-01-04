@@ -1,13 +1,21 @@
 import { geolocation, ipAddress } from "@vercel/functions";
+import { UAParser } from "ua-parser-js";
+import { isBot } from "ua-parser-js/bot-detection";
 import { generateCSP, headersDefaults, setHeaders } from "./lib/headers.js";
-import { userAgent } from "./lib/isBot.js";
+
+const userAgent = (req: Request) => {
+  const ua = req.headers.get("user-agent") ?? "";
+  const parser = new UAParser(ua);
+  const result = parser.getResult();
+  return result;
+};
 
 const logRequestToServer = (req: Request) => {
-  const { isBot } = userAgent(req);
+  const { ua } = userAgent(req);
   const reqIp = ipAddress(req);
   const geo = geolocation(req);
-  const visitor = isBot ? "Bot" : "Human";
-  const travelling = isBot ? "crawling" : "visiting";
+  const visitor = isBot(ua) ? "Bot" : "Human";
+  const travelling = isBot(ua) ? "crawling" : "visiting";
   const country = (geo && geo.country) || "Earth";
   const city = (geo && geo.city) || "Nowhere";
   const region = (geo && geo.region) || "Somewhere";
