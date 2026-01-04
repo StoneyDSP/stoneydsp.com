@@ -1,38 +1,65 @@
 import { geolocation, ipAddress, next } from "@vercel/functions";
-import { UAParser } from "ua-parser-js";
 
-function isProbablyBot(ua: string) {
-  return /bot|crawler|spider|crawling|slurp|bingpreview|facebookexternalhit|embedly|quora link preview|discordbot|twitterbot|applebot|petalbot/i.test(
-    ua
-  );
+function isProbablyBot(req: Request): boolean {
+  const ua = (req.headers.get("user-agent") ?? "").toLowerCase();
+
+  // Common bot keywords
+  const uaLooksBot =
+    /bot|crawler|spider|crawling|slurp|bingpreview|duckduckbot|yandex|baiduspider|facebookexternalhit|twitterbot|discordbot|slackbot|telegrambot|whatsapp|pinterest|embedly|quora link preview|applebot|petalbot/.test(
+      ua
+    );
+
+  // Some automated fetchers omit UA or send super-generic ones
+  const uaMissingOrOdd = ua.length === 0 || ua === "node" || ua === "undici";
+
+  // "sec-fetch" headers usually exist for real browser navigations
+  const hasBrowserFetchMetadata =
+    req.headers.has("sec-fetch-site") ||
+    req.headers.has("sec-fetch-mode") ||
+    req.headers.has("sec-fetch-dest") ||
+    req.headers.has("sec-ch-ua");
+
+  // If it looks like a bot OR the UA is weird and it lacks browser metadata
+  return uaLooksBot || (uaMissingOrOdd && !hasBrowserFetchMetadata);
 }
 
-const userAgent = (req: Request) => {
-  const ua = req.headers.get("user-agent") ?? "";
-  const parser = new UAParser(ua);
-  return parser.getResult();
-};
-
-const logRequestToServer = (req: Request) => {
-  const { ua } = userAgent(req);
-  const ip = ipAddress(req);
-  const geo = geolocation(req);
-
-  const visitor = isProbablyBot(ua) ? "Bot" : "Human";
-  const action = isProbablyBot(ua) ? "crawling" : "visiting";
-
-  console.log(
-    `✓ ${visitor} ${ip} ${action} from ${geo?.city ?? "Nowhere"}, ${geo?.region ?? "Somewhere"}, ${
-      geo?.country ?? "Earth"
-    } with ${ua || "Agent Unknown"}.`
-  );
-};
+function shortUA(ua: string, max = 120) {
+  if (ua.length <= max) return ua;
+  return ua.slice(0, max - 1) + "…";
+}
 
 export default function middleware(request: Request) {
+  const url = new URL(request.url);
+
+  // // Avoid logging asset noise
+  // // (matcher below already helps, but this is an extra guard)
+  // if (
+  //   url.pathname.startsWith("/assets/") ||
+  //   url.pathname.startsWith("/static/")
+  // ) {
+  //   return next();
+  // }
+
   // IMPORTANT: clone headers (Request headers are not safely mutable everywhere)
   const requestHeaders = new Headers(request.headers);
 
-  logRequestToServer(request);
+  const geo = geolocation(request);
+  const ip = ipAddress(request); // optional: remove if you don't want it
+  const ua = request.headers.get("user-agent") ?? "";
+
+  const bot = isProbablyBot(request);
+  const visitor = bot ? "Bot" : "Human";
+  const action = bot ? "crawling" : "visiting";
+
+  const country = geo?.country || "Earth";
+  const region = geo?.region || "Somewhere";
+  const city = geo?.city || "Nowhere";
+
+  console.log(
+    `✓ ${visitor} ${action}: ${city}, ${region}, ${country} — ${url.pathname} — ip=${ip ?? "?"} — ua="${shortUA(
+      ua
+    )}"`
+  );
 
   /// continue chain (NextResponse.next equivalent)
   return next({
