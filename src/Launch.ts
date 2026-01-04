@@ -1,5 +1,5 @@
 import { Launch as BaseLaunch, Lightning, Log } from "@lightningjs/sdk";
-
+import { inject } from "@vercel/analytics";
 /**
  *
  * @param {Parameters<typeof BaseLaunch>[0]} App Application's Top-Level Component (will live as a child of the Root Application instance returned by this)
@@ -21,7 +21,11 @@ function Launch(
   ///
   app!.stage.getCanvas().id = "canvas";
   ///
-  document.body.appendChild(app!.stage.getCanvas());
+  void document.body.appendChild(app!.stage.getCanvas());
+  ///
+  void inject({
+    framework: "@lightningjs/sdk",
+  });
   ///
   Log.debug("Launch", App, appSettings, platformSettings, appData);
   ///

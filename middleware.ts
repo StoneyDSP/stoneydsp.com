@@ -3,7 +3,6 @@ import { generateCSP, headersDefaults, setHeaders } from "./lib/headers";
 import { userAgent } from "./lib/isBot";
 
 const logRequestToServer = (req: Request) => {
-  "use server";
   const { isBot } = userAgent(req);
   const reqIp = ipAddress(req);
   const geo = geolocation(req);
@@ -15,13 +14,9 @@ const logRequestToServer = (req: Request) => {
   const ip = reqIp || "Visitor";
   const agent = req.headers.get("user-agent") || "Agent Unknown";
 
-  if (process.env["VERCEL_ENV"] === "development") {
-    console.log(` \u{2713} ${req.method} ${req.url}`);
-  } else {
-    console.log(
-      ` \u{2713} ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`
-    );
-  }
+  console.log(
+    ` \u{2713} ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`
+  );
 };
 
 export default function middleware(request: Request) {
