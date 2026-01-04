@@ -1,4 +1,6 @@
-import parseua from "./usparser.js";
+// import parseua from "./usparser.js";
+
+const parseua = require("./usparser.js");
 
 interface UserAgent {
   isBot: boolean;
