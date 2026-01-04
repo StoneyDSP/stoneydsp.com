@@ -1,10 +1,8 @@
 import { Launch as BaseLaunch, Lightning, Log } from "@lightningjs/sdk";
-import { inject } from "@vercel/analytics";
 import { patchSocialMetaToAbsolute } from "./lib/meta";
 import { patchWebGLPreserveDrawingBuffer } from "./lib/webGLPatch";
+import { bootstrapVercel } from "./vercel";
 
-patchSocialMetaToAbsolute();
-patchWebGLPreserveDrawingBuffer();
 /**
  *
  * @param {Parameters<typeof BaseLaunch>[0]} App Application's Top-Level Component (will live as a child of the Root Application instance returned by this)
@@ -20,6 +18,10 @@ function Launch(
   appData: Parameters<typeof BaseLaunch>[3]
 ): ReturnType<typeof BaseLaunch> | null {
   ///
+  patchSocialMetaToAbsolute();
+  ///
+  patchWebGLPreserveDrawingBuffer();
+  ///
   let app: Lightning.Application | null = null;
   ///
   app = BaseLaunch(App, appSettings, platformSettings, appData);
@@ -28,8 +30,8 @@ function Launch(
   ///
   void document.body.appendChild(app!.stage.getCanvas());
   ///
-  void inject({
-    framework: "@lightningjs/sdk",
+  void bootstrapVercel({
+    framework: "unknown",
   });
   ///
   Log.debug("Launch", App, appSettings, platformSettings, appData);

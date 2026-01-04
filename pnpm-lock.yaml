@@ -20,6 +20,9 @@ importers:
       '@vercel/functions':
         specifier: ^3.3.4
         version: 3.3.4
+      '@vercel/speed-insights':
+        specifier: ^1.3.1
+        version: 1.3.1
       rxjs:
         specifier: ^7.8.2
         version: 7.8.2
@@ -1489,6 +1492,29 @@ packages:
   '@vercel/oidc@3.0.5':
     resolution: {integrity: sha512-fnYhv671l+eTTp48gB4zEsTW/YtRgRPnkI2nT7x6qw5rkI1Lq2hTmQIpHPgyThI0znLK+vX2n9XxKdXZ7BUbbw==}
     engines: {node: '>= 20'}
+
+  '@vercel/speed-insights@1.3.1':
+    resolution: {integrity: sha512-PbEr7FrMkUrGYvlcLHGkXdCkxnylCWePx7lPxxq36DNdfo9mcUjLOmqOyPDHAOgnfqgGGdmE3XI9L/4+5fr+vQ==}
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   '@vitest/coverage-v8@4.0.15':
     resolution: {integrity: sha512-FUJ+1RkpTFW7rQITdgTi93qOCWJobWhBirEPCeXh2SW2wsTlFxy51apDz5gzG+ZEYt/THvWeNmhdAoS9DTwpCw==}
@@ -5695,6 +5721,8 @@ snapshots:
       '@vercel/oidc': 3.0.5
 
   '@vercel/oidc@3.0.5': {}
+
+  '@vercel/speed-insights@1.3.1': {}
 
   '@vitest/coverage-v8@4.0.15(vitest@4.0.16)':
     dependencies:

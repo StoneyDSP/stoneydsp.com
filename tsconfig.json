@@ -22,10 +22,10 @@
 		"module": "esnext",
 		"target": "esnext",
 		"lib": [
-			"esnext",
+			"ESNext",
+			"WebWorker",
 			"DOM",
-			"DOM.Iterable",
-			"DOM.AsyncIterable"
+			"DOM.Iterable"
 		],
 		"types": [
 			"vite/client",
