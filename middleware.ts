@@ -1,72 +1,47 @@
-import { geolocation, ipAddress } from "@vercel/functions";
+import { geolocation, ipAddress, next } from "@vercel/functions";
 import { UAParser } from "ua-parser-js";
 import { isBot } from "ua-parser-js/bot-detection";
-import { generateCSP, headersDefaults, setHeaders } from "./lib/headers.js";
 
 const userAgent = (req: Request) => {
   const ua = req.headers.get("user-agent") ?? "";
   const parser = new UAParser(ua);
-  const result = parser.getResult();
-  return result;
+  return parser.getResult();
 };
 
 const logRequestToServer = (req: Request) => {
   const { ua } = userAgent(req);
   const reqIp = ipAddress(req);
   const geo = geolocation(req);
+
   const visitor = isBot(ua) ? "Bot" : "Human";
   const travelling = isBot(ua) ? "crawling" : "visiting";
-  const country = (geo && geo.country) || "Earth";
-  const city = (geo && geo.city) || "Nowhere";
-  const region = (geo && geo.region) || "Somewhere";
+
+  const country = geo?.country || "Earth";
+  const city = geo?.city || "Nowhere";
+  const region = geo?.region || "Somewhere";
+
   const ip = reqIp || "Visitor";
   const agent = req.headers.get("user-agent") || "Agent Unknown";
 
   console.log(
-    ` \u{2713} ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`
+    `✓ ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`
   );
 };
 
 export default function middleware(request: Request) {
-  // console.log("Request to:", request.url);
-  const date = new Date();
-
-  const { csp, nonce } = generateCSP();
-
-  request.headers.set(
-    "X-StoneyDSP-Middleware-Request",
-    `${date.toUTCString()}`
-  );
-  request.headers.set("Content-Security-Policy", csp);
-  request.headers.set("X-Data-Nonce", nonce);
-
-  headersDefaults.forEach((headerDefault) => {
-    setHeaders(request, headerDefault);
-  });
-
-  // Create an unmodified response
-  const response = new Response(null, {
-    headers: request.headers,
-  });
-
-  response.headers.set(
-    "X-StoneyDSP-Middleware-Response",
-    `${date.toUTCString()}`
-  );
-  response.headers.set("Content-Security-Policy", csp);
-  response.headers.set("X-Data-Nonce", nonce);
-
-  headersDefaults.forEach((headerDefault) => {
-    setHeaders(response, headerDefault);
-  });
+  // IMPORTANT: clone headers (Request headers are not safely mutable everywhere)
+  const requestHeaders = new Headers(request.headers);
 
   logRequestToServer(request);
 
-  return fetch(request);
+  /// continue chain (NextResponse.next equivalent)
+  return next({
+    request: { headers: requestHeaders },
+  });
 }
 
 export const config = {
-  runtime: "nodejs", // optional: use 'nodejs' or omit for 'edge' (default)
+  // runtime: "nodejs", // optional: use 'nodejs' or omit for 'edge' (default)
   /*
    * Match all request paths except for the ones starting with:
    * - api (API routes)
