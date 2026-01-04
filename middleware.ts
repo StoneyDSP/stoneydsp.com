@@ -51,25 +51,32 @@ function logRequestOnServer(url: URL, request: Request) {
 export default function middleware(request: Request) {
   const url = new URL(request.url);
 
-  // // Avoid logging asset noise
-  // // (matcher below already helps, but this is an extra guard)
-  // if (
-  //   url.pathname.startsWith("/assets/") ||
-  //   url.pathname.startsWith("/static/")
-  // ) {
-  //   return next();
-  // }
+  // Avoid logging asset noise
+  // (matcher below already helps, but this is an extra guard)
+  if (
+    url.pathname.startsWith("/assets/") ||
+    url.pathname.startsWith("/static/") ||
+    url.pathname.startsWith("/favicon.ico") ||
+    url.pathname.startsWith("/robots.txt") ||
+    url.pathname.startsWith("/sitemap.xml") ||
+    url.pathname.startsWith("/manifest.webmanifest") ||
+    url.pathname.startsWith("/browserconfig.xml") ||
+    url.pathname.startsWith("/humans.txt") ||
+    url.pathname.startsWith("/google.")
+  ) {
+    return next();
+  }
 
   // IMPORTANT: clone headers (Request headers are not safely mutable everywhere)
   const requestHeaders = new Headers(request.headers);
 
   logRequestOnServer(url, request);
 
-  if (url.pathname === "/about" || url.pathname.includes("/projects")) {
-    // choose one:
-    // return new Response("Gone", { status: 410 });
-    return Response.redirect(new URL("/", url.origin), 301);
-  }
+  // if (url.pathname === "/about" || url.pathname.includes("/projects")) {
+  //   // choose one:
+  //   // return new Response("Gone", { status: 410 });
+  //   return Response.redirect(new URL("/", url.origin), 301);
+  // }
 
   /// continue chain (NextResponse.next equivalent)
   return next({
@@ -86,5 +93,7 @@ export const config = {
    * - _next/image (image optimization files)
    * - favicon.ico (favicon file)
    */
-  matcher: ["/((?!_next/|assets/|favicon.ico|robots.txt|sitemap.xml).*)"],
+  matcher: [
+    "/((?!assets/|static/|favicon.ico|robots.txt|sitemap.xml|manifest.webmanifest|browserconfig.xml|humans.txt|google.*\\.html).*)",
+  ],
 };
