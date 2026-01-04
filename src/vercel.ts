@@ -12,11 +12,11 @@ export function bootstrapVercel(props?: {
   ///
   const analyticsProps: AnalyticsProps = {
     mode: "auto",
-    debug: false,
+    // debug: false,
   };
   ///
   const speedInsightsProps: SpeedInsightsProps = {
-    debug: false,
+    // debug: false,
   };
   ///
   void inject({
