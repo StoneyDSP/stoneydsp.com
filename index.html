@@ -229,49 +229,8 @@
       href="/static/images/favicon/android-chrome-512x512.png"
     />
     <!-- <link rel="icon" href="/favicon.ico" /> -->
-    <script>
-      /// derive absolute URLs from the current origin
-      (() => {
-        const origin = window.location.origin;
-
-        // Make og:url absolute
-        const ogUrl = document.querySelector('meta[property="og:url"]');
-        if (ogUrl && ogUrl.content === "/") ogUrl.content = origin + "/";
-
-        // Make twitter:site absolute
-        const twSite = document.querySelector('meta[name="twitter:site"]');
-        if (twSite && twSite.content.startsWith("http") === false)
-          twSite.content = origin;
-
-        // Make all og:image / twitter:image absolute if they're root-relative
-        const metas = document.querySelectorAll(
-          'meta[property="og:image"], meta[name="twitter:image"]'
-        );
-        metas.forEach((m) => {
-          const c = m.getAttribute("content") || "";
-          if (c.startsWith("/")) m.setAttribute("content", origin + c);
-        });
-
-        // Canonical absolute
-        const canon = document.querySelector('link[rel="canonical"]');
-        if (canon && canon.getAttribute("href") === "/")
-          canon.setAttribute("href", origin + "/");
-      })();
-    </script>
   </head>
   <body>
-    <script>
-      HTMLCanvasElement.prototype.getContext = (function (origFn) {
-        return function (type, attributes) {
-          if (type === "webgl") {
-            attributes = Object.assign({}, attributes, {
-              preserveDrawingBuffer: true,
-            });
-          }
-          return origFn.call(this, type, attributes);
-        };
-      })(HTMLCanvasElement.prototype.getContext);
-    </script>
     <script type="module" src="/src/index.ts"></script>
   </body>
 </html>

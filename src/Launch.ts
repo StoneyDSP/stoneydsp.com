@@ -1,5 +1,10 @@
 import { Launch as BaseLaunch, Lightning, Log } from "@lightningjs/sdk";
 import { inject } from "@vercel/analytics";
+import { patchSocialMetaToAbsolute } from "./lib/meta";
+import { patchWebGLPreserveDrawingBuffer } from "./lib/webGLPatch";
+
+patchSocialMetaToAbsolute();
+patchWebGLPreserveDrawingBuffer();
 /**
  *
  * @param {Parameters<typeof BaseLaunch>[0]} App Application's Top-Level Component (will live as a child of the Root Application instance returned by this)
