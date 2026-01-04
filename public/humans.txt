@@ -1,0 +1,17 @@
+/* TEAM */
+
+	StoneyDSP is: Nathan J. Hood
+	LinkedIn: https://www.linkedin.com/in/nathan-hood-ab219111b/
+	From: Bristol, UK
+  Current location: Barcelona, Spain
+
+/* SITE */
+
+	Last update:2023/10/13
+	Language: English
+	Doctype:HTML5
+	IDE: VSCode
+
+/* THANKS */
+
+  ...for stopping by!
