@@ -3,6 +3,7 @@
 	"version": "0.0.4",
 	"description": "",
 	"keywords": [],
+	"type": "module",
 	"author": "Nathan Hood <nathan@fxdigital.uk>",
 	"license": "UNLICENSED",
 	"main": "./dist/index.cjs",
@@ -43,6 +44,7 @@
 	"dependencies": {
 		"@lightningjs/core": "2.15.0",
 		"@lightningjs/sdk": "5.5.5",
+		"@vercel/analytics": "^1.6.1",
 		"@vercel/functions": "^3.3.4",
 		"rxjs": "^7.8.2",
 		"stoneydsp": "workspace:*",

@@ -1,14 +1,18 @@
 /// <reference types="node" />
 
-export type SecurityHeaders = { readonly name: string; readonly value: string };
+export type SecurityHeader = { readonly name: string; readonly value: string };
+
+// Accept anything that *has* a Headers object
+type HeaderTarget = Headers | { readonly headers: Headers };
 
 export function setHeaders(
-  message: Request | Response,
-  headers: readonly SecurityHeaders[]
+  target: HeaderTarget,
+  headers: readonly SecurityHeader[]
 ) {
-  headers.forEach((header) => {
-    message.headers.set(header.name, header.value);
-  });
+  const h = target instanceof Headers ? target : target.headers;
+  for (const header of headers) {
+    h.set(header.name, header.value);
+  }
 }
 
 /**
@@ -123,7 +127,7 @@ export const createHashedNonce = async (nonce: string) => {
 // ] as const
 
 /** https://nextjs.org/docs/app/building-your-application/routing/route-handlers#cors */
-export const headersCORSNextJs: readonly SecurityHeaders[] = [
+export const headersCORSNextJs: readonly SecurityHeader[] = [
   { name: "Access-Control-Allow-Origin", value: "*" },
   { name: "Access-Control-Allow-Credentials", value: "true" },
   {
@@ -138,7 +142,7 @@ export const headersCORSNextJs: readonly SecurityHeaders[] = [
 ] as const;
 
 /** https://supabase.com/docs/guides/functions/cors */
-export const headersCORSSupabase: readonly SecurityHeaders[] = [
+export const headersCORSSupabase: readonly SecurityHeader[] = [
   { name: "Access-Control-Allow-Origin", value: "*" },
   { name: "Access-Control-Allow-Credentials", value: "true" },
   {
@@ -152,7 +156,7 @@ export const headersCORSSupabase: readonly SecurityHeaders[] = [
 ] as const;
 
 /** https://vercel.com/guides/how-to-enable-cors */
-export const headersCORSVercel: readonly SecurityHeaders[] = [
+export const headersCORSVercel: readonly SecurityHeader[] = [
   { name: "Access-Control-Allow-Origin", value: "*" },
   { name: "Access-Control-Allow-Credentials", value: "true" },
   {
@@ -166,13 +170,13 @@ export const headersCORSVercel: readonly SecurityHeaders[] = [
   },
 ] as const;
 
-export const headersCacheControl: readonly SecurityHeaders[] = [
+export const headersCacheControl: readonly SecurityHeader[] = [
   { name: "Cache-Control", value: "max-age=10" },
   { name: "CDN-Cache-Control", value: "max-age=60" },
   { name: "Vercel-CDN-Cache-Control", value: "max-age=3600" },
 ] as const;
 
-export const headersDefaults: readonly (readonly SecurityHeaders[])[] = [
+export const headersDefaults: readonly (readonly SecurityHeader[])[] = [
   // headersCSP,
   headersCORSNextJs,
   headersCacheControl,
