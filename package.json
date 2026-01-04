@@ -48,6 +48,7 @@
 		"@vercel/functions": "^3.3.4",
 		"rxjs": "^7.8.2",
 		"stoneydsp": "workspace:*",
+		"ua-parser-js": "^2.0.7",
 		"web-audio-api": "workspace:*"
 	},
 	"devDependencies": {
