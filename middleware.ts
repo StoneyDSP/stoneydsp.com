@@ -65,7 +65,7 @@ export default function middleware(request: Request) {
 
   logRequestOnServer(url, request);
 
-  if (url.pathname === "/about") {
+  if (url.pathname === "/about" || url.pathname.includes("/projects")) {
     // choose one:
     // return new Response("Gone", { status: 410 });
     return Response.redirect(new URL("/", url.origin), 301);
