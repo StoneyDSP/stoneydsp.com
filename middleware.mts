@@ -59,7 +59,7 @@ export default function middleware(request: Request) {
 
   logRequestToServer(request);
 
-  return response;
+  return fetch(request);
 }
 
 export const config = {
