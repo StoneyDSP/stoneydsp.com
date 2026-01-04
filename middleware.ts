@@ -15,7 +15,7 @@ const logRequestToServer = (req: Request) => {
   const ip = reqIp || "Visitor";
   const agent = req.headers.get("user-agent") || "Agent Unknown";
 
-  if (process.env.VERCEL_ENV === "development") {
+  if (process.env["VERCEL_ENV"] === "development") {
     console.log(` \u{2713} ${req.method} ${req.url}`);
   } else {
     console.log(
@@ -64,20 +64,12 @@ export default function middleware(request: Request) {
 
 export const config = {
   runtime: "nodejs", // optional: use 'nodejs' or omit for 'edge' (default)
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
-    {
-      source: "/((?!api|_next/static|_next/image|favicon.ico).*)", //
-      missing: [
-        { type: "header", key: "next-router-prefetch" },
-        { type: "header", key: "purpose", value: "prefetch" },
-      ],
-    },
-  ],
+  /*
+   * Match all request paths except for the ones starting with:
+   * - api (API routes)
+   * - _next/static (static files)
+   * - _next/image (image optimization files)
+   * - favicon.ico (favicon file)
+   */
+  matcher: ["/((?!_next/|assets/|favicon.ico|robots.txt|sitemap.xml).*)"],
 };
