@@ -1,6 +1,11 @@
 import { geolocation, ipAddress, next } from "@vercel/functions";
 import { UAParser } from "ua-parser-js";
-import { isBot } from "ua-parser-js/bot-detection";
+
+function isProbablyBot(ua: string) {
+  return /bot|crawler|spider|crawling|slurp|bingpreview|facebookexternalhit|embedly|quora link preview|discordbot|twitterbot|applebot|petalbot/i.test(
+    ua
+  );
+}
 
 const userAgent = (req: Request) => {
   const ua = req.headers.get("user-agent") ?? "";
@@ -10,21 +15,16 @@ const userAgent = (req: Request) => {
 
 const logRequestToServer = (req: Request) => {
   const { ua } = userAgent(req);
-  const reqIp = ipAddress(req);
+  const ip = ipAddress(req);
   const geo = geolocation(req);
 
-  const visitor = isBot(ua) ? "Bot" : "Human";
-  const travelling = isBot(ua) ? "crawling" : "visiting";
-
-  const country = geo?.country || "Earth";
-  const city = geo?.city || "Nowhere";
-  const region = geo?.region || "Somewhere";
-
-  const ip = reqIp || "Visitor";
-  const agent = req.headers.get("user-agent") || "Agent Unknown";
+  const visitor = isProbablyBot(ua) ? "Bot" : "Human";
+  const action = isProbablyBot(ua) ? "crawling" : "visiting";
 
   console.log(
-    `✓ ${visitor} ${ip} ${travelling} from ${city}, ${region}, ${country} with ${agent}.`
+    `✓ ${visitor} ${ip} ${action} from ${geo?.city ?? "Nowhere"}, ${geo?.region ?? "Somewhere"}, ${
+      geo?.country ?? "Earth"
+    } with ${ua || "Agent Unknown"}.`
   );
 };
 
