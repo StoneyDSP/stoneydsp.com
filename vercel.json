@@ -4,6 +4,11 @@
 			"source": "/about",
 			"destination": "/",
 			"permanent": true
+		},
+		{
+			"source": "/projects",
+			"destination": "/",
+			"permanent": true
 		}
 	],
 	"headers": [
