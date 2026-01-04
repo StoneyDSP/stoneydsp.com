@@ -31,7 +31,7 @@
 	"dependencies": {
 		"@stoneydsp/console": "workspace:*",
 		"@stoneydsp/lib": "workspace:*",
-		"@lightningjs/core": "2.15.0",
+		"@lightningjs/core": "2.17.0",
 		"@lightningjs/sdk": "5.5.5"
 	},
 	"devDependencies": {
