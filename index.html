@@ -8,7 +8,7 @@
       name="description"
       content="Web site created using human intelligence"
     />
-    <link rel="apple-touch-icon" href="/logo192.png" />
+    <!-- <link rel="apple-touch-icon" href="/logo192.png" /> -->
     <style>
       @media all {
         html {
@@ -30,38 +30,6 @@
         }
       }
     </style>
-    <link rel="icon" href="/favicon.ico" />
-    <title>webview-plugin-demo</title>
-    <!-- <script>
-      /// derive absolute URLs from the current origin
-      (() => {
-        const origin = window.location.origin;
-
-        // Make og:url absolute
-        const ogUrl = document.querySelector('meta[property="og:url"]');
-        if (ogUrl && ogUrl.content === "/") ogUrl.content = origin + "/";
-
-        // Make twitter:site absolute (if you keep it as a URL)
-        const twSite = document.querySelector('meta[name="twitter:site"]');
-        if (twSite && twSite.content.startsWith("http") === false)
-          twSite.content = origin;
-
-        // Make all og:image / twitter:image absolute if they're root-relative
-        const metas = document.querySelectorAll(
-          'meta[property="og:image"], meta[name="twitter:image"]'
-        );
-        metas.forEach((m) => {
-          const c = m.getAttribute("content") || "";
-          if (c.startsWith("/")) m.setAttribute("content", origin + c);
-        });
-
-        // Canonical absolute
-        const canon = document.querySelector('link[rel="canonical"]');
-        if (canon && canon.getAttribute("href") === "/")
-          canon.setAttribute("href", origin + "/");
-      })();
-    </script> -->
-
     <!-- Primary -->
     <title>StoneyDSP</title>
     <meta name="application-name" content="StoneyDSP" />
@@ -71,8 +39,8 @@
     <link rel="author" href="https://github.com/nathanjhood" />
 
     <!-- Canonical / base -->
-    <!-- Optional, but mirrors metadataBase-ish behavior -->
-    <link rel="canonical" href="/" />
+    <!-- Mirrors metadataBase-ish behavior -->
+    <link rel="canonical" href="https://stoneydsp.com/" />
 
     <!-- Manifest -->
     <link rel="manifest" href="/.webmanifest" />
@@ -95,7 +63,7 @@
     <meta property="og:type" content="website" />
 
     <!-- Open Graph images (you can keep all, but usually 1–2 is enough) -->
-    <meta property="og:image" content="/static/images/w_icon__196x128.png" />
+    <meta property="og:image" content="/images/w_icon__196x128.png" />
     <meta property="og:image:width" content="196" />
     <meta property="og:image:height" content="128" />
     <meta
@@ -103,7 +71,7 @@
       content="Systems, Web, Audio &amp; Graphics"
     />
 
-    <meta property="og:image" content="/static/images/w_icon__384x256.png" />
+    <meta property="og:image" content="/images/w_icon__384x256.png" />
     <meta property="og:image:width" content="384" />
     <meta property="og:image:height" content="256" />
     <meta
@@ -111,7 +79,7 @@
       content="Systems, Web, Audio &amp; Graphics"
     />
 
-    <meta property="og:image" content="/static/images/w_icon__768x512.png" />
+    <meta property="og:image" content="/images/w_icon__768x512.png" />
     <meta property="og:image:width" content="768" />
     <meta property="og:image:height" content="512" />
     <meta
@@ -119,7 +87,7 @@
       content="Systems, Web, Audio &amp; Graphics"
     />
 
-    <meta property="og:image" content="/static/images/w_icon__1024x768.png" />
+    <meta property="og:image" content="/images/w_icon__1024x768.png" />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="768" />
     <meta
@@ -129,7 +97,7 @@
 
     <meta
       property="og:image"
-      content="/static/images/favicon/android-icon-36x36.png"
+      content="/images/favicon/android-icon-36x36.png"
     />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="36" />
@@ -141,7 +109,7 @@
 
     <meta
       property="og:image"
-      content="/static/images/favicon/android-icon-48x48.png"
+      content="/images/favicon/android-icon-48x48.png"
     />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="48" />
@@ -153,7 +121,7 @@
 
     <meta
       property="og:image"
-      content="/static/images/favicon/android-icon-72x72.png"
+      content="/images/favicon/android-icon-72x72.png"
     />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="72" />
@@ -165,7 +133,7 @@
 
     <meta
       property="og:image"
-      content="/static/images/favicon/android-icon-96x96.png"
+      content="/images/favicon/android-icon-96x96.png"
     />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="96" />
@@ -177,7 +145,7 @@
 
     <meta
       property="og:image"
-      content="/static/images/favicon/android-icon-144x144.png"
+      content="/images/favicon/android-icon-144x144.png"
     />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="144" />
@@ -189,7 +157,7 @@
 
     <meta
       property="og:image"
-      content="/static/images/favicon/android-chrome-192x192.png"
+      content="/images/favicon/android-chrome-192x192.png"
     />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="192" />
@@ -201,7 +169,7 @@
 
     <meta
       property="og:image"
-      content="/static/images/favicon/android-chrome-512x512.png"
+      content="/images/favicon/android-chrome-512x512.png"
     />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="512" />
@@ -223,43 +191,73 @@
     <meta name="twitter:site" content="https://stoneydsp.com" />
 
     <!-- Twitter images: twitter:image is usually 1; multiple isn't consistently respected -->
-    <meta name="twitter:image" content="/static/images/w_icon__1024x768.png" />
+    <meta name="twitter:image" content="/images/w_icon__1024x768.png" />
     <meta
       name="twitter:image:alt"
       content="Systems, Web, Audio &amp; Graphics"
     />
 
     <!-- Favicons / app icons (not explicitly in your Metadata, but you clearly have the files) -->
-    <link rel="icon" href="/static/images/favicon/favicon.ico" />
+    <link rel="icon" href="/images/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/static/images/favicon/apple-icon-180x180.png"
+      href="/images/favicon/apple-icon-180x180.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/static/images/favicon/favicon-32x32.png"
+      href="/images/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/static/images/favicon/favicon-16x16.png"
+      href="/images/favicon/favicon-16x16.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="/static/images/favicon/android-chrome-192x192.png"
+      href="/images/favicon/android-chrome-192x192.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="512x512"
-      href="/static/images/favicon/android-chrome-512x512.png"
+      href="/images/favicon/android-chrome-512x512.png"
     />
+    <!-- <link rel="icon" href="/favicon.ico" /> -->
+    <script>
+      /// derive absolute URLs from the current origin
+      (() => {
+        const origin = window.location.origin;
+
+        // Make og:url absolute
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl && ogUrl.content === "/") ogUrl.content = origin + "/";
+
+        // Make twitter:site absolute
+        const twSite = document.querySelector('meta[name="twitter:site"]');
+        if (twSite && twSite.content.startsWith("http") === false)
+          twSite.content = origin;
+
+        // Make all og:image / twitter:image absolute if they're root-relative
+        const metas = document.querySelectorAll(
+          'meta[property="og:image"], meta[name="twitter:image"]'
+        );
+        metas.forEach((m) => {
+          const c = m.getAttribute("content") || "";
+          if (c.startsWith("/")) m.setAttribute("content", origin + c);
+        });
+
+        // Canonical absolute
+        const canon = document.querySelector('link[rel="canonical"]');
+        if (canon && canon.getAttribute("href") === "/")
+          canon.setAttribute("href", origin + "/");
+      })();
+    </script>
   </head>
   <body>
     <script>
