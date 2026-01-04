@@ -28,6 +28,26 @@ function shortUA(ua: string, max = 120) {
   return ua.slice(0, max - 1) + "…";
 }
 
+function logRequestOnServer(url: URL, request: Request) {
+  const geo = geolocation(request);
+  const ip = ipAddress(request); // optional: remove if you don't want it
+  const ua = request.headers.get("user-agent") ?? "";
+
+  const bot = isProbablyBot(request);
+  const visitor = bot ? "Bot" : "Human";
+  const action = bot ? "crawling" : "visiting";
+
+  const country = geo?.country || "Earth";
+  const region = geo?.region || "Somewhere";
+  const city = geo?.city || "Nowhere";
+
+  console.log(
+    `✓ ${visitor} ${action}: ${country}, ${city}, ${region}, — ip=${ip ?? "?"} — ${url.pathname} — ua="${shortUA(
+      ua
+    )}"`
+  );
+}
+
 export default function middleware(request: Request) {
   const url = new URL(request.url);
 
@@ -43,23 +63,13 @@ export default function middleware(request: Request) {
   // IMPORTANT: clone headers (Request headers are not safely mutable everywhere)
   const requestHeaders = new Headers(request.headers);
 
-  const geo = geolocation(request);
-  const ip = ipAddress(request); // optional: remove if you don't want it
-  const ua = request.headers.get("user-agent") ?? "";
+  logRequestOnServer(url, request);
 
-  const bot = isProbablyBot(request);
-  const visitor = bot ? "Bot" : "Human";
-  const action = bot ? "crawling" : "visiting";
-
-  const country = geo?.country || "Earth";
-  const region = geo?.region || "Somewhere";
-  const city = geo?.city || "Nowhere";
-
-  console.log(
-    `✓ ${visitor} ${action}: ${city}, ${region}, ${country} — ${url.pathname} — ip=${ip ?? "?"} — ua="${shortUA(
-      ua
-    )}"`
-  );
+  if (url.pathname === "/about") {
+    // choose one:
+    // return new Response("Gone", { status: 410 });
+    return Response.redirect(new URL("/", url.origin), 301);
+  }
 
   /// continue chain (NextResponse.next equivalent)
   return next({
