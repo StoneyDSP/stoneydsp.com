@@ -87,6 +87,7 @@ const config = defineConfig([
     "packages",
     "native",
     "vendors",
+    "usparser.js",
   ]),
 ]);
 

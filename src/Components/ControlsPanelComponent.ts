@@ -1,4 +1,4 @@
-import { BaseComponent } from "fx-audio-dev";
+import { BaseComponent } from "stoneydsp";
 import { getConsts } from "../CONSTS";
 import { theme } from "../lib";
 import type { ControlSpec } from "../scenes/types";

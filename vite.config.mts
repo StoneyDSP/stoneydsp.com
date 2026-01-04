@@ -36,7 +36,7 @@ const config = defineConfig(
     };
 
     const sharedOptions = freezeObject<UserConfig>({
-      // root: process.cwd(),
+      root: process.cwd(),
       base: "/",
 
       publicDir: "public",

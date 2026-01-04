@@ -39,7 +39,7 @@ echo_arg ?=
 
 node_modules:
 	@${NPM} install $(frozen_lockfile)
-# 	@${NPM} --filter @fx-audio-dev/* run build
+# 	@${NPM} --filter @stoneydsp/* run build
 
 dist:
 	@${NPM} -r run build $(build_args)

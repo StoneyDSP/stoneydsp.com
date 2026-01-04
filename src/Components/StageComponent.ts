@@ -1,4 +1,4 @@
-import { BaseComponent } from "fx-audio-dev";
+import { BaseComponent } from "stoneydsp";
 import { Draggable } from "./base/Draggable/Draggable";
 import { GridBgComponent } from "./GridBgComponent";
 

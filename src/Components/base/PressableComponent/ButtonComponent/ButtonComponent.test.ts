@@ -1,4 +1,4 @@
-import { makeCreateComponent } from "@fx-audio-dev/ui-components-vitest-utils";
+import { makeCreateComponent } from "@stoneydsp/ui-components-vitest-utils";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { ButtonComponent as _ButtonComponent } from "./ButtonComponent";
 // import {

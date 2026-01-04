@@ -1,4 +1,4 @@
-import { Vector } from "fx-audio-dev";
+import { Vector } from "stoneydsp";
 import { RouterActions, sendRouterEvent } from "../../../Events";
 import { theme } from "../../../lib";
 import { RouterError } from "../../../Router/RouterError";

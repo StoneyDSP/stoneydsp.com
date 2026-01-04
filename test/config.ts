@@ -30,7 +30,7 @@ export const config = Object.freeze<UserConfig["test"]>({
       client: {
         enabled: true,
         needsInterop: ["@jest/globals"],
-        include: ["@fx-audio-dev/ui-components-vitest-utils"],
+        include: ["@stoneydsp/ui-components-vitest-utils"],
         exclude: ["@jest/globals"],
       },
     },

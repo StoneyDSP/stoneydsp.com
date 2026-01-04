@@ -36,7 +36,7 @@ export const generateCSP = (/* requireHashedNonce: boolean = false */) => {
         "'strict-dynamic'",
         "https:",
         "http:",
-        `${process.env.VERCEL_ENV === "production" ? "" : `'unsafe-eval'`}`,
+        `${process.env["VERCEL_ENV"] === "production" ? "" : `'unsafe-eval'`}`,
       ],
     },
     {
@@ -53,8 +53,8 @@ export const generateCSP = (/* requireHashedNonce: boolean = false */) => {
       values: [
         "'self'",
         "*.vercel-insights.com",
-        `*.${process.env.NEXT_PUBLIC_ROOT_DOMAIN!}`,
-        `${process.env.NEXT_PUBLIC_SUPABASE_URL!}`,
+        `*.${process.env["NEXT_PUBLIC_ROOT_DOMAIN"]!}`,
+        `${process.env["NEXT_PUBLIC_SUPABASE_URL"]!}`,
       ],
     },
     {
@@ -70,7 +70,7 @@ export const generateCSP = (/* requireHashedNonce: boolean = false */) => {
         "data:",
         "https://raw.githubusercontent.com",
         "https://github.com",
-        `${process.env.NEXT_PUBLIC_SUPABASE_URL!}`,
+        `${process.env["NEXT_PUBLIC_SUPABASE_URL"]!}`,
       ],
     },
     {
@@ -79,7 +79,7 @@ export const generateCSP = (/* requireHashedNonce: boolean = false */) => {
         "'self'",
         "data:",
         "blob:",
-        `${process.env.NEXT_PUBLIC_SUPABASE_URL!}`,
+        `${process.env["NEXT_PUBLIC_SUPABASE_URL"]!}`,
       ],
     },
     { name: "worker-src", values: ["'self'", "blob:"] },

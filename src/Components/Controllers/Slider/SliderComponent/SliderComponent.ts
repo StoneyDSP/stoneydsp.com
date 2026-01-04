@@ -1,5 +1,5 @@
 import { Lightning } from "@lightningjs/sdk";
-import type { Vector } from "fx-audio-dev";
+import type { Vector } from "stoneydsp";
 import { theme } from "../../../../lib";
 import { ControlComponent } from "../../../base/ControlComponent/ControlComponent";
 import { Draggable } from "../../../base/Draggable/Draggable";

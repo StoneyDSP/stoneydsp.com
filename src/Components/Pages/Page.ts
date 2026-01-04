@@ -1,5 +1,5 @@
 import { Router } from "@lightningjs/sdk";
-import { BasePageComponent } from "fx-audio-dev";
+import { BasePageComponent } from "stoneydsp";
 import { getAppData } from "../../AppData";
 import { getConsts } from "../../CONSTS";
 import { Container } from "../../Container";

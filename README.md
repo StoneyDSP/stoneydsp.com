@@ -1,4 +1,4 @@
-# @fx-audio-dev/webview-plugin-demo
+# @stoneydsp/webview-plugin-demo
 
 A multi-platform, multi-target Audio and Graphics application
 

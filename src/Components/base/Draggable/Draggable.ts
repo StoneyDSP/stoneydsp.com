@@ -1,4 +1,4 @@
-import { DraggableComponent, Vector } from "fx-audio-dev";
+import { DraggableComponent, Vector } from "stoneydsp";
 import { Log } from "../../../lib/Log";
 
 class Draggable<

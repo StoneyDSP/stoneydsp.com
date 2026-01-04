@@ -1,5 +1,5 @@
 import { Lightning, Router } from "@lightningjs/sdk";
-import { Vector } from "fx-audio-dev";
+import { Vector } from "stoneydsp";
 import { Log } from "../../../../../lib/Log";
 import { ButtonComponent } from "../../../../base/PressableComponent/ButtonComponent";
 
