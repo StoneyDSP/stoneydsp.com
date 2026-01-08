@@ -34,8 +34,8 @@ importers:
         version: link:vendors/WebAudioAPI
     devDependencies:
       '@commitlint/cli':
-        specifier: 19.8.1
-        version: 19.8.1(@types/node@25.0.2)(typescript@5.9.3)
+        specifier: 20.3.0
+        version: 20.3.0(@types/node@25.0.2)(typescript@5.9.3)
       '@commitlint/config-conventional':
         specifier: 20.3.0
         version: 20.3.0
@@ -261,7 +261,7 @@ importers:
         version: 7.3.0(@types/node@25.0.2)(jiti@2.6.1)(yaml@2.8.2)
       vitest:
         specifier: ^4.0.15
-        version: 4.0.16(@types/node@25.0.2)(@vitest/ui@4.0.15(vitest@4.0.16))(jiti@2.6.1)(jsdom@26.1.0)(yaml@2.8.2)
+        version: 4.0.16(@types/node@25.0.2)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(yaml@2.8.2)
       vitest-webgl-canvas-mock:
         specifier: ^1.1.0
         version: 1.1.0
@@ -385,6 +385,11 @@ packages:
     engines: {node: '>=v18'}
     hasBin: true
 
+  '@commitlint/cli@20.3.0':
+    resolution: {integrity: sha512-HXO8YVfqdBK+MnlX2zqNrv6waGYPs6Ysjm5W2Y0GMagWXwiIKx7C8dcIX9ca+QdHq4WA0lcMnZLQ0pzQh1piZg==}
+    engines: {node: '>=v18'}
+    hasBin: true
+
   '@commitlint/config-conventional@20.3.0':
     resolution: {integrity: sha512-g1OXVl6E2v0xF1Ru2RpxQ+Vfy7XUcUsCmLKzGUrhFLS4hSNykje0QSy6djBtzOiOBQCepBrmIlqx/gRlzrSh5A==}
     engines: {node: '>=v18'}
@@ -428,12 +433,24 @@ packages:
     resolution: {integrity: sha512-kSJj34Rp10ItP+Eh9oCItiuN/HwGQMXBnIRk69jdOwEW9llW9FlyqcWYbHPSGofmjsqeoxa38UaEA5tsbm2JWw==}
     engines: {node: '>=v18'}
 
+  '@commitlint/format@20.2.0':
+    resolution: {integrity: sha512-PhNoLNhxpfIBlW/i90uZ3yG3hwSSYx7n4d9Yc+2FAorAHS0D9btYRK4ZZXX+Gm3W5tDtu911ow/eWRfcRVgNWg==}
+    engines: {node: '>=v18'}
+
   '@commitlint/is-ignored@19.8.1':
     resolution: {integrity: sha512-AceOhEhekBUQ5dzrVhDDsbMaY5LqtN8s1mqSnT2Kz1ERvVZkNihrs3Sfk1Je/rxRNbXYFzKZSHaPsEJJDJV8dg==}
     engines: {node: '>=v18'}
 
+  '@commitlint/is-ignored@20.2.0':
+    resolution: {integrity: sha512-Lz0OGeZCo/QHUDLx5LmZc0EocwanneYJUM8z0bfWexArk62HKMLfLIodwXuKTO5y0s6ddXaTexrYHs7v96EOmw==}
+    engines: {node: '>=v18'}
+
   '@commitlint/lint@19.8.1':
     resolution: {integrity: sha512-52PFbsl+1EvMuokZXLRlOsdcLHf10isTPlWwoY1FQIidTsTvjKXVXYb7AvtpWkDzRO2ZsqIgPK7bI98x8LRUEw==}
+    engines: {node: '>=v18'}
+
+  '@commitlint/lint@20.3.0':
+    resolution: {integrity: sha512-X19HOGU5nRo6i9DIY0kG0mhgtvpn1UGO1D6aLX1ILLyeqSM5yJyMcrRqNj8SLgeSeUDODhLY9QYsBIG0LdNHkA==}
     engines: {node: '>=v18'}
 
   '@commitlint/load@19.8.1':
@@ -448,12 +465,24 @@ packages:
     resolution: {integrity: sha512-+PMLQvjRXiU+Ae0Wc+p99EoGEutzSXFVwQfa3jRNUZLNW5odZAyseb92OSBTKCu+9gGZiJASt76Cj3dLTtcTdg==}
     engines: {node: '>=v18'}
 
+  '@commitlint/message@20.0.0':
+    resolution: {integrity: sha512-gLX4YmKnZqSwkmSB9OckQUrI5VyXEYiv3J5JKZRxIp8jOQsWjZgHSG/OgEfMQBK9ibdclEdAyIPYggwXoFGXjQ==}
+    engines: {node: '>=v18'}
+
   '@commitlint/parse@19.8.1':
     resolution: {integrity: sha512-mmAHYcMBmAgJDKWdkjIGq50X4yB0pSGpxyOODwYmoexxxiUCy5JJT99t1+PEMK7KtsCtzuWYIAXYAiKR+k+/Jw==}
     engines: {node: '>=v18'}
 
+  '@commitlint/parse@20.2.0':
+    resolution: {integrity: sha512-LXStagGU1ivh07X7sM+hnEr4BvzFYn1iBJ6DRg2QsIN8lBfSzyvkUcVCDwok9Ia4PWiEgei5HQjju6xfJ1YaSQ==}
+    engines: {node: '>=v18'}
+
   '@commitlint/read@19.8.1':
     resolution: {integrity: sha512-03Jbjb1MqluaVXKHKRuGhcKWtSgh3Jizqy2lJCRbRrnWpcM06MYm8th59Xcns8EqBYvo0Xqb+2DoZFlga97uXQ==}
+    engines: {node: '>=v18'}
+
+  '@commitlint/read@20.2.0':
+    resolution: {integrity: sha512-+SjF9mxm5JCbe+8grOpXCXMMRzAnE0WWijhhtasdrpJoAFJYd5UgRTj/oCq5W3HJTwbvTOsijEJ0SUGImECD7Q==}
     engines: {node: '>=v18'}
 
   '@commitlint/resolve-extends@19.8.1':
@@ -468,12 +497,24 @@ packages:
     resolution: {integrity: sha512-Hnlhd9DyvGiGwjfjfToMi1dsnw1EXKGJNLTcsuGORHz6SS9swRgkBsou33MQ2n51/boIDrbsg4tIBbRpEWK2kw==}
     engines: {node: '>=v18'}
 
+  '@commitlint/rules@20.3.0':
+    resolution: {integrity: sha512-TGgXN/qBEhbzVD13crE1l7YSMJRrbPbUL0OBZALbUM5ER36RZmiZRu2ud2W/AA7HO9YLBRbyx6YVi2t/2Be0yQ==}
+    engines: {node: '>=v18'}
+
   '@commitlint/to-lines@19.8.1':
     resolution: {integrity: sha512-98Mm5inzbWTKuZQr2aW4SReY6WUukdWXuZhrqf1QdKPZBCCsXuG87c+iP0bwtD6DBnmVVQjgp4whoHRVixyPBg==}
     engines: {node: '>=v18'}
 
+  '@commitlint/to-lines@20.0.0':
+    resolution: {integrity: sha512-2l9gmwiCRqZNWgV+pX1X7z4yP0b3ex/86UmUFgoRt672Ez6cAM2lOQeHFRUTuE6sPpi8XBCGnd8Kh3bMoyHwJw==}
+    engines: {node: '>=v18'}
+
   '@commitlint/top-level@19.8.1':
     resolution: {integrity: sha512-Ph8IN1IOHPSDhURCSXBz44+CIu+60duFwRsg6HqaISFHQHbmBtxVw4ZrFNIYUzEP7WwrNPxa2/5qJ//NK1FGcw==}
+    engines: {node: '>=v18'}
+
+  '@commitlint/top-level@20.0.0':
+    resolution: {integrity: sha512-drXaPSP2EcopukrUXvUXmsQMu3Ey/FuJDc/5oiW4heoCfoE5BdLQyuc7veGeE3aoQaTVqZnh4D5WTWe2vefYKg==}
     engines: {node: '>=v18'}
 
   '@commitlint/types@19.8.1':
@@ -4608,6 +4649,19 @@ snapshots:
       - '@types/node'
       - typescript
 
+  '@commitlint/cli@20.3.0(@types/node@25.0.2)(typescript@5.9.3)':
+    dependencies:
+      '@commitlint/format': 20.2.0
+      '@commitlint/lint': 20.3.0
+      '@commitlint/load': 20.3.0(@types/node@25.0.2)(typescript@5.9.3)
+      '@commitlint/read': 20.2.0
+      '@commitlint/types': 20.2.0
+      tinyexec: 1.0.2
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - '@types/node'
+      - typescript
+
   '@commitlint/config-conventional@20.3.0':
     dependencies:
       '@commitlint/types': 20.2.0
@@ -4670,9 +4724,19 @@ snapshots:
       '@commitlint/types': 19.8.1
       chalk: 5.6.2
 
+  '@commitlint/format@20.2.0':
+    dependencies:
+      '@commitlint/types': 20.2.0
+      chalk: 5.6.2
+
   '@commitlint/is-ignored@19.8.1':
     dependencies:
       '@commitlint/types': 19.8.1
+      semver: 7.7.3
+
+  '@commitlint/is-ignored@20.2.0':
+    dependencies:
+      '@commitlint/types': 20.2.0
       semver: 7.7.3
 
   '@commitlint/lint@19.8.1':
@@ -4681,6 +4745,13 @@ snapshots:
       '@commitlint/parse': 19.8.1
       '@commitlint/rules': 19.8.1
       '@commitlint/types': 19.8.1
+
+  '@commitlint/lint@20.3.0':
+    dependencies:
+      '@commitlint/is-ignored': 20.2.0
+      '@commitlint/parse': 20.2.0
+      '@commitlint/rules': 20.3.0
+      '@commitlint/types': 20.2.0
 
   '@commitlint/load@19.8.1(@types/node@25.0.2)(typescript@5.9.3)':
     dependencies:
@@ -4716,9 +4787,17 @@ snapshots:
 
   '@commitlint/message@19.8.1': {}
 
+  '@commitlint/message@20.0.0': {}
+
   '@commitlint/parse@19.8.1':
     dependencies:
       '@commitlint/types': 19.8.1
+      conventional-changelog-angular: 7.0.0
+      conventional-commits-parser: 5.0.0
+
+  '@commitlint/parse@20.2.0':
+    dependencies:
+      '@commitlint/types': 20.2.0
       conventional-changelog-angular: 7.0.0
       conventional-commits-parser: 5.0.0
 
@@ -4726,6 +4805,14 @@ snapshots:
     dependencies:
       '@commitlint/top-level': 19.8.1
       '@commitlint/types': 19.8.1
+      git-raw-commits: 4.0.0
+      minimist: 1.2.8
+      tinyexec: 1.0.2
+
+  '@commitlint/read@20.2.0':
+    dependencies:
+      '@commitlint/top-level': 20.0.0
+      '@commitlint/types': 20.2.0
       git-raw-commits: 4.0.0
       minimist: 1.2.8
       tinyexec: 1.0.2
@@ -4755,9 +4842,22 @@ snapshots:
       '@commitlint/to-lines': 19.8.1
       '@commitlint/types': 19.8.1
 
+  '@commitlint/rules@20.3.0':
+    dependencies:
+      '@commitlint/ensure': 20.2.0
+      '@commitlint/message': 20.0.0
+      '@commitlint/to-lines': 20.0.0
+      '@commitlint/types': 20.2.0
+
   '@commitlint/to-lines@19.8.1': {}
 
+  '@commitlint/to-lines@20.0.0': {}
+
   '@commitlint/top-level@19.8.1':
+    dependencies:
+      find-up: 7.0.0
+
+  '@commitlint/top-level@20.0.0':
     dependencies:
       find-up: 7.0.0
 
@@ -8757,7 +8857,7 @@ snapshots:
       cssfontparser: 1.2.1
       parse-color: 1.0.0
 
-  vitest@4.0.16(@types/node@25.0.2)(@vitest/ui@4.0.15(vitest@4.0.16))(jiti@2.6.1)(jsdom@26.1.0)(yaml@2.8.2):
+  vitest@4.0.16(@types/node@25.0.2)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(yaml@2.8.2):
     dependencies:
       '@vitest/expect': 4.0.16
       '@vitest/mocker': 4.0.16(vite@7.3.0(@types/node@25.0.2)(jiti@2.6.1)(yaml@2.8.2))

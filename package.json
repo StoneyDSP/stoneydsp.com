@@ -52,7 +52,7 @@
 		"web-audio-api": "workspace:*"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "19.8.1",
+		"@commitlint/cli": "20.3.0",
 		"@commitlint/config-conventional": "20.3.0",
 		"@commitlint/config-pnpm-scopes": "20.1.0",
 		"@commitlint/cz-commitlint": "20.3.0",
