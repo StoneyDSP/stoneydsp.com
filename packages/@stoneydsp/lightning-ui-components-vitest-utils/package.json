@@ -33,7 +33,7 @@
 	},
 	"devDependencies": {
 		"@lightningjs/ui-components-theme-base": "^1.2.0",
-		"pkgroll": "^2.21.4",
+		"pkgroll": "^2.21.5",
 		"semantic-release": "^19.0.5",
 		"semantic-release-monorepo": "^7.0.5"
 	},

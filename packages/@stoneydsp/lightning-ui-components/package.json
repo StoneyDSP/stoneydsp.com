@@ -41,7 +41,7 @@
 		"@vitest/ui": "4.0.15",
 		"globals": "^16.5.0",
 		"jsdom": "^27.3.0",
-		"pkgroll": "^2.21.4",
+		"pkgroll": "^2.21.5",
 		"rimraf": "^6.1.2",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.49.0",
