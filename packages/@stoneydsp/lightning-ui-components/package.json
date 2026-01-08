@@ -37,7 +37,7 @@
 	"devDependencies": {
 		"@stoneydsp/ui-components-vitest-utils": "workspace:*",
 		"@testing-library/jest-dom": "^6.9.1",
-		"@vitest/coverage-v8": "4.0.15",
+		"@vitest/coverage-v8": "4.0.16",
 		"@vitest/ui": "4.0.15",
 		"globals": "^16.5.0",
 		"jsdom": "^27.3.0",
